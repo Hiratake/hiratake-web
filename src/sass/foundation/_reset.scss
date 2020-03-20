@@ -179,12 +179,14 @@ legend {
 
 img {
   border-style: none;
+  vertical-align: bottom;
 }
 progress {
   vertical-align: baseline;
 }
 svg:not(:root) {
   overflow: hidden;
+  vertical-align: bottom;
 }
 audio, canvas, progress, video {
   display: inline-block;

@@ -81,11 +81,11 @@ legend { border: 0; color: inherit; display: table; max-width: 100%; white-space
 
 [type="search"] { -webkit-appearance: textfield; outline-offset: -2px; }
 
-img { border-style: none; }
+img { border-style: none; vertical-align: bottom; }
 
 progress { vertical-align: baseline; }
 
-svg:not(:root) { overflow: hidden; }
+svg:not(:root) { overflow: hidden; vertical-align: bottom; }
 
 audio, canvas, progress, video { display: inline-block; }
 
@@ -105,4 +105,32 @@ audio, canvas, progress, video { display: inline-block; }
 * { -webkit-box-sizing: border-box; box-sizing: border-box; }
 
 html { font-family: "Hiragino Kaku Gothic ProN", "Meiryo", "メイリオ", sans-serif; }
+
+body { color: #1c1c1c; }
+
+.l-root { position: relative; background-color: #a83d3d; }
+
+.l-header { width: 100%; max-width: 1200px; margin: auto; padding: 16px 16px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; -webkit-box-align: center; -ms-flex-align: center; align-items: center; position: fixed; top: 0; left: 0; right: 0; z-index: 100; }
+
+@media screen and (min-width: 768px) { .l-header { padding: 16px 32px; } }
+
+.l-header__logo { width: 120px; margin-top: -8px; color: inherit; text-decoration: none; -webkit-transition-duration: 0.1s; transition-duration: 0.1s; }
+
+@media screen and (min-width: 576px) { .l-header__logo { width: 160px; margin-top: 0; } }
+
+@media screen and (min-width: 768px) { .l-header__logo { width: 200px; } }
+
+.l-header__logo:hover { color: #3c3c3c; }
+
+.c-socialLink { width: 112px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; }
+
+@media screen and (min-width: 576px) { .c-socialLink { width: 128px; } }
+
+.c-socialLink__link { width: 24px; height: 24px; color: inherit; font-size: 24px; line-height: 1; text-align: center; -webkit-transition-duration: 0.1s; transition-duration: 0.1s; }
+
+.c-socialLink__link[data-brand="twitter"]:hover { color: #1da1f3; }
+
+.c-socialLink__link[data-brand="github"]:hover { color: #171515; }
+
+.c-socialLink__link[data-brand="discord"]:hover { color: #7289da; }
 /*# sourceMappingURL=main.css.map */

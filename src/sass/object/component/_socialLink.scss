@@ -1,0 +1,34 @@
+//
+// Object > Component > Social Link
+// --------------------------------------------------------------------------------
+
+.c-socialLink {
+  width: $size-base*14;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @include bp( sm ) {
+    width: $size-base*16;
+  }
+}
+
+.c-socialLink__link {
+  width: $size-base*3;
+  height: $size-base*3;
+  color: inherit;
+  font-size: $size-base*3;
+  line-height: 1;
+  text-align: center;
+  transition-duration: $transition-duration-base;
+
+  &[data-brand="twitter"]:hover {
+    color: $color-brand-twitter;
+  }
+  &[data-brand="github"]:hover {
+    color: $color-brand-github;
+  }
+  &[data-brand="discord"]:hover {
+    color: $color-brand-discord;
+  }
+}
