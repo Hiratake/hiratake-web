@@ -1,0 +1,39 @@
+{
+  "name": "hiratake-web",
+  "version": "1.0.0",
+  "description": "Hiratake.XYZ",
+  "main": "main.js",
+  "repository": "https://github.com/Hiratake/hiratake-web",
+  "author": "Hiratake <hiratake@hiratake.xyz>",
+  "license": "none",
+  "devDependencies": {
+    "@babel/core": "^7.8.7",
+    "@babel/preset-env": "^7.8.7",
+    "autoprefixer": "^9.7.4",
+    "babel-loader": "^8.0.6",
+    "browser-sync": "^2.26.7",
+    "css-loader": "^3.4.2",
+    "file-loader": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-postcss": "^8.0.0",
+    "gulp-sass": "^4.0.2",
+    "imagemin-mozjpeg": "^8.0.0",
+    "imagemin-pngquant": "^8.0.0",
+    "vue-loader": "^15.9.1",
+    "vue-template-compiler": "^2.6.11",
+    "webpack": "^4.42.0",
+    "webpack-stream": "^5.2.1"
+  },
+  "dependencies": {
+    "vue": "^2.6.11"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "ie >= 11",
+    "Android >= 5"
+  ],
+  "scripts": {
+    "dev": "gulp dev"
+  }
+}
