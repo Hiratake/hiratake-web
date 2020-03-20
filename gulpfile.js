@@ -5,12 +5,9 @@
 
 const gulp          = require( "gulp" );
 const browsersync   = require( "browser-sync" );
-const sass          = require( "gulp-sass" );
-const postcss       = require( "gulp-postcss" );
-const autoprefixer  = require( "autoprefixer" );
 const imagemin      = require( "gulp-imagemin" );
-const minifyjpeg       = require( "imagemin-mozjpeg" );
-const minifypng        = require( "imagemin-pngquant" );
+const minifyjpeg    = require( "imagemin-mozjpeg" );
+const minifypng     = require( "imagemin-pngquant" );
 const webpack       = require( "webpack" );
 const webpackstream = require( "webpack-stream" );
 const webpackconfig = require( "./webpack.config" );
@@ -22,7 +19,6 @@ const paths = {
   },
   css: {
     src:  "./src/sass/**/*.scss",
-    dest: "./dist/css"
   },
   js: {
     src:  "./src/js/**/*.js",
@@ -57,46 +53,6 @@ const reloadBrowser = ( done ) => {
   done();
 };
 
-// Compile Sass Files
-const compileSass = () => {
-  return gulp
-  .src(
-    paths.css.src,
-    { sourcemaps: true }
-  )
-  .pipe(
-    sass({
-      outputStyle: "compact"
-    })
-  )
-  .pipe(
-    postcss([
-      autoprefixer({
-        cascade: false
-      })
-    ])
-  )
-  .pipe(
-    gulp.dest(
-      paths.css.dest,
-      { sourcemaps: "." }
-    )
-  )
-};
-
-// Watch Sass Files
-const watchSass = ( done ) => {
-  gulp
-  .watch(
-    paths.css.src,
-    gulp.series(
-      compileSass,
-      reloadBrowser
-    )
-  );
-  done();
-};
-
 // Copy HTML Files
 const copyHTML = () => {
   return gulp
@@ -108,19 +64,6 @@ const copyHTML = () => {
       paths.html.dest
     )
   )
-};
-
-// Watch HTML Files
-const watchHTML = ( done ) => {
-  gulp
-  .watch(
-    paths.html.src,
-    gulp.series(
-      copyHTML,
-      reloadBrowser
-    )
-  );
-  done();
 };
 
 // Bundle JavaScript Files
@@ -140,32 +83,6 @@ const bundleJS = () => {
       paths.js.dest
     )
   );
-};
-
-// Watch JavaScript Files
-const watchJS = ( done ) => {
-  gulp
-  .watch(
-    paths.js.src,
-    gulp.series(
-      bundleJS,
-      reloadBrowser
-    )
-  );
-  done();
-};
-
-// Watch JavaScript Files
-const watchVue = ( done ) => {
-  gulp
-  .watch(
-    paths.vue.src,
-    gulp.series(
-      bundleJS,
-      reloadBrowser
-    )
-  );
-  done();
 };
 
 // Minify Image Files
@@ -195,6 +112,58 @@ const minifyImage = () => {
       paths.image.dest
     )
   )
+};
+
+// Watch Sass Files
+const watchSass = ( done ) => {
+  gulp
+  .watch(
+    paths.css.src,
+    gulp.series(
+      bundleJS,
+      reloadBrowser
+    )
+  );
+  done();
+};
+
+// Watch HTML Files
+const watchHTML = ( done ) => {
+  gulp
+  .watch(
+    paths.html.src,
+    gulp.series(
+      copyHTML,
+      reloadBrowser
+    )
+  );
+  done();
+};
+
+// Watch JavaScript Files
+const watchJS = ( done ) => {
+  gulp
+  .watch(
+    paths.js.src,
+    gulp.series(
+      bundleJS,
+      reloadBrowser
+    )
+  );
+  done();
+};
+
+// Watch Vue Files
+const watchVue = ( done ) => {
+  gulp
+  .watch(
+    paths.vue.src,
+    gulp.series(
+      bundleJS,
+      reloadBrowser
+    )
+  );
+  done();
 };
 
 // Watch Image Files

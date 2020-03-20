@@ -18,3 +18,10 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+.l-root {
+  position: relative;
+  background-color: $color-primary;
+}
+</style>
