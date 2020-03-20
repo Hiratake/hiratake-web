@@ -41,6 +41,7 @@ export default {
     padding: $size-base*2 $size-base*4;
   }
 }
+
 .l-header__logo {
   width: $size-base*15;
   margin-top: $size-base*(-1);
