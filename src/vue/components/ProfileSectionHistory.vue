@@ -54,11 +54,13 @@ export default {
 .p-profileSectionHistory {
   width: 100%;
   max-width: $size-base*31;
+  margin: auto;
   padding-top: $size-base*10;
 
   @include bp( md ) {
     max-width: $size-base*64;
     padding-top: 0;
+    padding-left: $size-base*4;
   }
 }
 .p-profileSectionHistory__list {

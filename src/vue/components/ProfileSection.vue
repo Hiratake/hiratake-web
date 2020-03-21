@@ -32,13 +32,12 @@ export default {
   background: $color-white;
 }
 .p-profileSection__split {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
+  display: block;
 
   @include bp( md ) {
-    flex-wrap: nowrap;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
   }
 }
 </style>

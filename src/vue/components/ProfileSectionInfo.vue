@@ -39,6 +39,7 @@
 .p-profileSectionInfo {
   width: 100%;
   max-width: $size-base*31;
+  margin: auto;
   display: grid;
   grid-template-columns: auto;
   grid-template-rows: auto auto auto auto;
