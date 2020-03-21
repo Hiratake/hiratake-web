@@ -34,7 +34,6 @@
   },
   "browserslist": [
     "last 2 versions",
-    "ie >= 11",
     "Android >= 5"
   ],
   "scripts": {
