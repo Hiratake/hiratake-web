@@ -14,6 +14,7 @@
 import ProfileSectionHistory  from './ProfileSectionHistory';
 import ProfileSectionInfo     from './ProfileSectionInfo';
 import Wrap                   from './Wrap';
+
 export default {
   components: {
     ProfileSectionHistory,
@@ -26,10 +27,14 @@ export default {
 <style lang="scss">
 .p-profileSection {
   margin-top: -1px;
-  padding: $size-base*16 0;
+  padding-top: $size-base*12;
   position: relative;
   z-index: 10;
   background: $color-white;
+
+  @include bp( md ) {
+    padding-top: $size-base*16;
+  }
 }
 .p-profileSection__split {
   display: block;
