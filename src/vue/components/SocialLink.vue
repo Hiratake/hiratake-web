@@ -2,7 +2,7 @@
   <div class="c-socialLink">
     <a  class="c-socialLink__link" target="_blank"
         rel="noopener" v-for="item in links"
-        :key="item.name" :href="item.href" :data-brand="item.name">
+        :key="item.name" :href="item.url" :data-brand="item.name">
       <i :class="'fab fa-'+item.name"></i>
     </a>
   </div>

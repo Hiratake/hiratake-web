@@ -34,6 +34,10 @@ const paths = {
   },
   vue: {
     src:  "./src/vue/**/*.vue"
+  },
+  assets: {
+    src:  "./src/assets/**/*",
+    dest: "./dist/assets"
   }
 }
 
@@ -137,6 +141,19 @@ const minifyImage = () => {
   )
 };
 
+// Copy Assets Files
+const copyAssets = () => {
+  return gulp
+  .src(
+    paths.assets.src
+  )
+  .pipe(
+    gulp.dest(
+      paths.assets.dest
+    )
+  )
+};
+
 // Watch Sass Files
 const watchSass = ( done ) => {
   gulp
@@ -202,11 +219,25 @@ const watchImage = ( done ) => {
   done();
 };
 
+// Watch Assets Files
+const watchAssets = ( done ) => {
+  gulp
+  .watch(
+    paths.assets.src,
+    gulp.series(
+      copyAssets,
+      reloadBrowser
+    )
+  );
+  done();
+};
+
 exports.dev = gulp.series(
   gulp.parallel(
     copyHTML,
     bundleJS.dev,
-    minifyImage
+    minifyImage,
+    copyAssets
   ),
   startSync,
   gulp.parallel(
@@ -214,12 +245,14 @@ exports.dev = gulp.series(
     watchHTML,
     watchJS,
     watchVue,
-    watchImage
+    watchImage,
+    watchAssets
   )
 );
 exports.build = gulp.parallel(
   copyHTML,
   bundleJS.prod,
-  minifyImage
+  minifyImage,
+  copyAssets
 );
 exports.server = startSync;
