@@ -53,6 +53,10 @@ export default {
     padding-top: $size-base*24;
     padding-bottom: $size-base*8;
   }
+  @include bp( xl ) {
+    padding-top: $size-base*24;
+    padding-bottom: 0;
+  }
 }
 
 .p-heroSection__bottom {

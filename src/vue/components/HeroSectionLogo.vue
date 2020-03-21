@@ -37,6 +37,11 @@
     right: $size-base*6;
     bottom: $size-base*(-8);
   }
+  @include bp( xl ) {
+    width: $size-base*44;
+    height: $size-base*44;
+    bottom: $size-base*(-11);
+  }
 }
 .p-heroSectionLogo__logo {
   fill: $color-white;
