@@ -10,7 +10,11 @@ const minifyjpeg    = require( "imagemin-mozjpeg" );
 const minifypng     = require( "imagemin-pngquant" );
 const webpack       = require( "webpack" );
 const webpackstream = require( "webpack-stream" );
-const webpackconfig = require( "./webpack.config" );
+
+const webpackconfig = {
+                prod: require( "./webpack.config" ),
+                dev:  require( "./webpack.config.dev" )
+};
 
 const paths = {
   html: {
@@ -67,23 +71,42 @@ const copyHTML = () => {
 };
 
 // Bundle JavaScript Files
-const bundleJS = () => {
-  return gulp
-  .src(
-    paths.js.src
-  )
-  .pipe(
-    webpackstream(
-      webpackconfig,
-      webpack
+const bundleJS = {
+  prod: () => {
+    return gulp
+    .src(
+      paths.js.src
     )
-  )
-  .pipe(
-    gulp.dest(
-      paths.js.dest
+    .pipe(
+      webpackstream(
+        webpackconfig.prod,
+        webpack
+      )
     )
-  );
-};
+    .pipe(
+      gulp.dest(
+        paths.js.dest
+      )
+    );
+  },
+  dev: () => {
+    return gulp
+    .src(
+      paths.js.src
+    )
+    .pipe(
+      webpackstream(
+        webpackconfig.dev,
+        webpack
+      )
+    )
+    .pipe(
+      gulp.dest(
+        paths.js.dest
+      )
+    );
+  }
+}
 
 // Minify Image Files
 const minifyImage = () => {
@@ -120,7 +143,7 @@ const watchSass = ( done ) => {
   .watch(
     paths.css.src,
     gulp.series(
-      bundleJS,
+      bundleJS.dev,
       reloadBrowser
     )
   );
@@ -146,7 +169,7 @@ const watchJS = ( done ) => {
   .watch(
     paths.js.src,
     gulp.series(
-      bundleJS,
+      bundleJS.dev,
       reloadBrowser
     )
   );
@@ -159,7 +182,7 @@ const watchVue = ( done ) => {
   .watch(
     paths.vue.src,
     gulp.series(
-      bundleJS,
+      bundleJS.dev,
       reloadBrowser
     )
   );
@@ -180,6 +203,11 @@ const watchImage = ( done ) => {
 };
 
 exports.dev = gulp.series(
+  gulp.parallel(
+    copyHTML,
+    bundleJS.dev,
+    minifyImage
+  ),
   startSync,
   gulp.parallel(
     watchSass,
@@ -188,4 +216,10 @@ exports.dev = gulp.series(
     watchVue,
     watchImage
   )
-)
+);
+exports.build = gulp.parallel(
+  copyHTML,
+  bundleJS.prod,
+  minifyImage
+);
+exports.server = startSync;
