@@ -24,8 +24,8 @@ $font-size-l2:    $font-size-base * 8 / 6;
 $font-size-l1:    $font-size-base * 8 / 7;
 
 $font-family-base:  'Hiragino Kaku Gothic ProN', 'Meiryo', 'メイリオ', sans-serif;
-$font-family-en:    'sofia-pro';
-$font-family-ico:   'Font Awesome 5 Free', 'fontawesome';
+$font-family-en:    'sofia-pro', $font-family-base;
+$font-family-ico:   'Font Awesome 5 Free', 'fontawesome', $font-family-base;
 
 $font-weight-normal:  400;
 $font-weight-bold:    900;
