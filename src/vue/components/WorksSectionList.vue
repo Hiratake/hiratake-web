@@ -7,7 +7,7 @@
       </h4>
       <p class="p-worksSectionList__description" v-html="item.description"></p>
       <div class="p-worksSectionList__thumbnail">
-        <img :src="item.thumbnail" :alt="item.title">
+        <img v-lazy="item.thumbnail" :alt="item.title">
       </div>
     </li>
   </ul>
