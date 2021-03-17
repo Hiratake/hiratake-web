@@ -1,0 +1,17 @@
+{
+  "name": "hiratake-web",
+  "version": "2.0.0",
+  "description": "Hiratake Website",
+  "repository": "https://github.com/Hiratake/hiratake-web",
+  "author": "Hiratake <hiratake@hiratake.xyz>",
+  "license": "UNLICENSED",
+  "scripts": {
+    "dev": "gridsome develop",
+    "explore": "gridsome explore",
+    "build": "gridsome build"
+  },
+  "dependencies": {
+    "gridsome": "^0.7.0"
+  },
+  "devDependencies": {}
+}
