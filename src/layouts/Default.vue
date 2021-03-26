@@ -19,7 +19,10 @@
         </g-link>
       </nav>
     </header>
-    <slot />
+    <main class="main">
+      <slot />
+    </main>
+    <footer class="footer"></footer>
   </div>
 </template>
 
@@ -32,29 +35,21 @@ query {
 </static-query>
 
 <style>
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-  line-height: 1.5;
-}
-
 .layout {
-  max-width: 760px;
-  padding-right: 20px;
-  padding-left: 20px;
-  margin: 0 auto;
+  display: grid;
+  grid-template-rows: var(--size-outline) 1fr var(--size-outline);
+  grid-template-columns: 1fr;
+  width: 100%;
+  min-height: 100vh;
+  padding: 0 var(--size-outline);
+  color: var(--color-text);
+  background-color: var(--color-background);
+  transition-duration: var(--transition-duration);
+  transition-property: color background-color;
 }
 
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 80px;
-  margin-bottom: 20px;
-}
-
-.nav__link {
-  margin-left: 20px;
+.main {
+  background-color: var(--color-background-secondary);
+  border-radius: 4px;
 }
 </style>

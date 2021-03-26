@@ -6,6 +6,8 @@
   --color-background: #fff;
   --color-background-secondary: #fff6f6;
   --color-background-tertiary: #e5e5e5;
+  --size-outline: 72px;
+  --transition-duration: 0.2s;
 }
 
 :root [data-theme="dark"] {
