@@ -1,24 +1,6 @@
 <template>
   <div class="layout">
-    <header class="header">
-      <strong>
-        <g-link to="/">{{ $static.metadata.siteName }}</g-link>
-      </strong>
-      <nav class="nav">
-        <g-link
-          class="nav__link"
-          to="/"
-        >
-          Home
-        </g-link>
-        <g-link
-          class="nav__link"
-          to="/about/"
-        >
-          About
-        </g-link>
-      </nav>
-    </header>
+    <the-header />
     <main class="main">
       <slot />
     </main>
@@ -26,13 +8,15 @@
   </div>
 </template>
 
-<static-query>
-query {
-  metadata {
-    siteName
-  }
+<script>
+import TheHeader from '~/components/TheHeader'
+
+export default {
+  components: {
+    TheHeader,
+  },
 }
-</static-query>
+</script>
 
 <style>
 .layout {
