@@ -7,8 +7,9 @@
       <app-logo />
     </g-link>
     <app-switch
-      v-model="mode"
       class="the-header__switch"
+      :value="darkMode"
+      @change="toggleTheme"
     />
   </header>
 </template>
@@ -25,8 +26,20 @@ export default {
   },
   data() {
     return {
-      mode: false,
+      darkMode: false,
     }
+  },
+  mounted() {
+    if (window.__theme) {
+      this.darkMode = window.__theme === 'dark'
+    }
+  },
+  methods: {
+    toggleTheme(val) {
+      const mode = val ? 'dark' : 'light'
+      window.__setPreferredTheme(mode)
+      this.darkMode = val
+    },
   },
 }
 </script>

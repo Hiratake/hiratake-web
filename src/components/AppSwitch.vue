@@ -84,8 +84,8 @@ export default {
   bottom: 0;
   left: 0;
   display: block;
-  width: 28px;
-  height: 28px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   opacity: 0.2;
   transition-timing-function: inherit;
@@ -107,8 +107,8 @@ export default {
 
 .app-switch__thumb {
   position: relative;
-  width: 28px;
-  height: 28px;
+  width: 32px;
+  height: 32px;
   background-color: #fff;
   border-radius: 50%;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
