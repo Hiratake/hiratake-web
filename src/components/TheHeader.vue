@@ -6,16 +6,27 @@
     >
       <app-logo />
     </g-link>
+    <app-switch
+      v-model="mode"
+      class="the-header__switch"
+    />
   </header>
 </template>
 
 <script>
 import AppLogo from '~/components/AppLogo'
+import AppSwitch from '~/components/AppSwitch'
 
 export default {
   name: 'TheHeader',
   components: {
     AppLogo,
+    AppSwitch,
+  },
+  data() {
+    return {
+      mode: true,
+    }
   },
 }
 </script>
@@ -31,5 +42,10 @@ export default {
 
 .the-header__logo:hover {
   opacity: 0.85;
+}
+
+.the-header__switch {
+  grid-row: 1 / 2;
+  grid-column: 3 / 4;
 }
 </style>
