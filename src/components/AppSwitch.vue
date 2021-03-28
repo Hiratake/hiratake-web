@@ -1,24 +1,32 @@
 <template>
-  <div
+  <label
     :class="classes"
     :style="styles"
-    @click="click"
+    @click.prevent="click"
   >
-    <input
-      class="app-switch__input"
-      type="checkbox"
-    />
-    <div class="app-switch__track"></div>
-    <div class="app-switch__ripple"></div>
-    <div class="app-switch__thumb">
-      <template v-if="icon.length">
-        <font-awesome
-          class="app-switch__icon"
-          :icon="icon"
-        />
-      </template>
-    </div>
-  </div>
+    <span class="app-switch__action">
+      <input
+        class="app-switch__input"
+        type="checkbox"
+        role="switch"
+        :aria-checked="value ? 'true' : 'false'"
+        :aria-label="!hideLabel ? null : label ? label : null"
+      />
+      <div class="app-switch__track"></div>
+      <div class="app-switch__ripple"></div>
+      <div class="app-switch__thumb">
+        <template v-if="icon.length">
+          <font-awesome
+            class="app-switch__icon"
+            :icon="icon"
+          />
+        </template>
+      </div>
+    </span>
+    <template v-if="label && !hideLabel">
+      <span class="app-switch__label">{{ label }}</span>
+    </template>
+  </label>
 </template>
 
 <script>
@@ -28,6 +36,19 @@ export default {
     event: 'change',
   },
   props: {
+    value: {
+      type: Boolean,
+      default: false,
+      required: true,
+    },
+    label: {
+      type: String,
+      default: '',
+    },
+    hideLabel: {
+      type: Boolean,
+      default: false,
+    },
     trueIcon: {
       type: Array,
       default: () => [],
@@ -35,11 +56,6 @@ export default {
     falseIcon: {
       type: Array,
       default: () => [],
-    },
-    value: {
-      type: Boolean,
-      default: false,
-      required: true,
     },
   },
   computed: {
@@ -68,6 +84,11 @@ export default {
 </script>
 <style scoped>
 .app-switch {
+  display: flex;
+  align-items: center;
+}
+
+.app-switch__action {
   position: relative;
   display: inline-flex;
   align-items: center;
@@ -140,6 +161,10 @@ export default {
 
 .app-switch__icon {
   color: var(--color-text-lighten);
+}
+
+.app-switch__label {
+  margin-left: 8px;
 }
 
 .app-switch--active .app-switch__ripple,

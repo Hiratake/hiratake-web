@@ -8,7 +8,9 @@
     </g-link>
     <app-switch
       class="the-header__switch"
+      label="モード切替"
       :value="darkMode"
+      :hide-label="true"
       :true-icon="['fas', 'moon']"
       :false-icon="['fas', 'sun']"
       @change="toggleTheme"
