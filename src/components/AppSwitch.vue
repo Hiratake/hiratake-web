@@ -10,7 +10,14 @@
     />
     <div class="app-switch__track"></div>
     <div class="app-switch__ripple"></div>
-    <div class="app-switch__thumb"></div>
+    <div class="app-switch__thumb">
+      <template v-if="icon.length">
+        <font-awesome
+          class="app-switch__icon"
+          :icon="icon"
+        />
+      </template>
+    </div>
   </div>
 </template>
 
@@ -21,6 +28,14 @@ export default {
     event: 'change',
   },
   props: {
+    trueIcon: {
+      type: Array,
+      default: () => [],
+    },
+    falseIcon: {
+      type: Array,
+      default: () => [],
+    },
     value: {
       type: Boolean,
       default: false,
@@ -39,6 +54,9 @@ export default {
         color: this.color,
       }
     },
+    icon() {
+      return this.value ? [...this.trueIcon] : [...this.falseIcon]
+    },
   },
   methods: {
     click(e) {
@@ -53,7 +71,7 @@ export default {
   position: relative;
   display: inline-flex;
   align-items: center;
-  width: 56px;
+  width: 64px;
   color: var(--color-primary);
   cursor: pointer;
   transition-timing-function: cubic-bezier(0.6, 0.04, 0.98, 0.335);
@@ -107,6 +125,9 @@ export default {
 
 .app-switch__thumb {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 32px;
   height: 32px;
   background-color: #fff;
@@ -115,6 +136,10 @@ export default {
   transition-timing-function: inherit;
   transition-duration: inherit;
   transition-property: background-color transform;
+}
+
+.app-switch__icon {
+  color: var(--color-text-lighten);
 }
 
 .app-switch--active .app-switch__ripple,

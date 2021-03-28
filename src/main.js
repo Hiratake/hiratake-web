@@ -3,8 +3,28 @@ import DefaultLayout from '~/layouts/Default.vue'
 import '~/assets/css/reset.css'
 import '~/assets/css/variables.css'
 
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { config, library } from '@fortawesome/fontawesome-svg-core'
+import { faSun, faMoon, faChevronCircleDown, faSync } from '@fortawesome/free-solid-svg-icons'
+import { faClock } from '@fortawesome/free-regular-svg-icons'
+import { faTwitter, faGithub, faDiscord } from '@fortawesome/free-brands-svg-icons'
+import '@fortawesome/fontawesome-svg-core/styles.css'
+
+config.autoAddCss = false
+library.add(
+  faSun,
+  faMoon,
+  faChevronCircleDown,
+  faSync,
+  faClock,
+  faTwitter,
+  faGithub,
+  faDiscord
+)
+
 export default function (Vue, { router, head, isClient }) {
   Vue.component('Layout', DefaultLayout)
+  Vue.component('FontAwesome', FontAwesomeIcon)
 
   head.htmlAttrs = { lang: 'ja' }
   head.link.push({
