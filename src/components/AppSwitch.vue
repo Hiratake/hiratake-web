@@ -75,8 +75,7 @@ export default {
     },
   },
   methods: {
-    click(e) {
-      console.log(e)
+    click() {
       this.$emit('change', !this.value)
     },
   },
