@@ -9,6 +9,8 @@
     <app-switch
       class="the-header__switch"
       :value="darkMode"
+      :true-icon="['fas', 'moon']"
+      :false-icon="['fas', 'sun']"
       @change="toggleTheme"
     />
   </header>
