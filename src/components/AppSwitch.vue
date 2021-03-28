@@ -2,6 +2,7 @@
   <label
     :class="classes"
     :style="styles"
+    :title="label ? label : null"
     @click.prevent="click"
   >
     <span class="app-switch__action">

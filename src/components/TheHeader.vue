@@ -1,8 +1,12 @@
 <template>
-  <header class="the-header">
+  <header
+    class="the-header"
+    role="banner"
+  >
     <g-link
       to="/"
       class="the-header__logo"
+      title="ホームへ戻る"
     >
       <app-logo />
     </g-link>

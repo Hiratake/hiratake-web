@@ -1,10 +1,16 @@
 <template>
   <div class="layout">
     <the-header />
-    <main class="main">
+    <main
+      class="main"
+      role="main"
+    >
       <slot />
     </main>
-    <footer class="footer"></footer>
+    <footer
+      class="footer"
+      role="contentinfo"
+    ></footer>
   </div>
 </template>
 
