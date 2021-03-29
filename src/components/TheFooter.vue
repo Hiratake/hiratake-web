@@ -3,17 +3,31 @@
     class="the-footer"
     role="contentinfo"
   >
-    <p>&copy; 2021 Hiratake</p>
+    <p class="the-footer__copyright">
+      &copy; 2014-{{ currentYear }} Hiratake
+    </p>
   </footer>
 </template>
 
 <script>
-export default {}
+export default {
+  computed: {
+    currentYear() {
+      const date = new Date()
+      return date.getFullYear()
+    },
+  },
+}
 </script>
 
 <style scoped>
 .the-footer {
   display: flex;
   align-items: center;
+}
+
+.the-footer__copyright {
+  font-size: 13px;
+  color: inherit;
 }
 </style>
