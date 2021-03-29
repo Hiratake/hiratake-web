@@ -1,25 +1,21 @@
 <template>
   <div class="layout">
     <the-header />
-    <main
-      class="main"
-      role="main"
-    >
+    <main class="main">
       <slot />
     </main>
-    <footer
-      class="footer"
-      role="contentinfo"
-    ></footer>
+    <the-footer />
   </div>
 </template>
 
 <script>
 import TheHeader from '~/components/TheHeader'
+import TheFooter from '~/components/TheFooter'
 
 export default {
   components: {
     TheHeader,
+    TheFooter,
   },
 }
 </script>
