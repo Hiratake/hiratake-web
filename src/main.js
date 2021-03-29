@@ -57,6 +57,18 @@ export default function (Vue, { router, head, isClient }) {
     rel: 'shortcut icon',
     href: '/favicons/favicon.ico',
   })
+  head.link.push({
+    rel: 'preconnect',
+    href: 'https://fonts.gstatic.com'
+  })
+  head.link.push({
+    rel: 'stylesheet',
+    href: 'https://use.typekit.net/emp0pno.css',
+  })
+  head.link.push({
+    rel: 'stylesheet',
+    href: 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap',
+  })
   head.meta.push({
     name: 'msapplication-TileColor',
     content: '#a83d3d',

@@ -27,7 +27,9 @@ export default {
 }
 
 .the-footer__copyright {
+  font-family: 'Sofia Pro', sans-serif;
   font-size: 13px;
+  font-weight: 400;
   color: inherit;
 }
 </style>

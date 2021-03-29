@@ -112,7 +112,6 @@ export default {
   align-items: center;
   font-size: 24px;
   line-height: 1;
-  color: var(--color-text);
   list-style: none;
 }
 
