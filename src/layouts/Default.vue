@@ -28,6 +28,7 @@ export default {
   width: 100%;
   min-height: 100vh;
   padding: 0 var(--size-outline);
+  font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif;
   color: var(--color-text);
   background-color: var(--color-background);
   transition-duration: var(--transition-duration);
@@ -35,6 +36,10 @@ export default {
 }
 
 .main {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
   background-color: var(--color-background-secondary);
   border-radius: 4px;
 }
