@@ -7,6 +7,13 @@
 module.exports = {
   siteName: 'Hiratake',
   siteUrl: 'https://hiratake.xyz',
-  plugins: [],
+  plugins: [
+    {
+      use: '@gridsome/plugin-google-analytics',
+      options: {
+        id: 'UA-53448200-5',
+      },
+    }
+  ],
   icon: {},
 }
