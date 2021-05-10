@@ -3,18 +3,23 @@ module.exports = {
   env: {
     browser: true,
     node: true,
-    es6: true
   },
-  parser: 'vue-eslint-parser',
   parserOptions: {
     parser: 'babel-eslint',
-    sourceType: 'module',
   },
-  extends: ['standard', 'prettier', 'plugin:vue/recommended'],
-  plugins: ['vue', 'gridsome'],
+  extends: [
+    '@nuxtjs',
+    'plugin:vue/recommended',
+  ],
+  plugins: [
+  ],
   rules: {
+    'comma-dangle': ['error', 'always-multiline'],
+    'brace-style': ['error', 'stroustrup'],
+    'vue/component-tags-order': ['error', {
+      order: ['template', 'script', 'style'],
+    }],
     'vue/html-self-closing': 'off',
     'vue/singleline-html-element-content-newline': 'off',
-    'gridsome/format-query-block': 'error'
   },
 }
