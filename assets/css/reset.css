@@ -283,3 +283,7 @@ video {
   text-shadow: none;
   background-color: #b3d4fc;
 }
+
+.material-icons {
+  font-size: inherit;
+}

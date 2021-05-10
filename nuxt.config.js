@@ -41,6 +41,7 @@ export default {
       { rel: 'manifest', href: '/favicons/site.webmanifest' },
       { rel: 'mask-icon', href: '/favicons/safari-pinned-tab.svg', color: '#a83d3d' },
       { rel: 'shortcut icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/icon?family=Material+Icons' },
     ],
   },
 
@@ -68,12 +69,18 @@ export default {
   buildModules: [
     '@nuxtjs/eslint-module',
     '@nuxtjs/stylelint-module',
+    '@nuxtjs/color-mode',
   ],
 
   modules: [
     '@nuxt/http',
     '@nuxt/content',
   ],
+
+  colorMode: {
+    classSuffix: '',
+    storageKey: 'color-mode',
+  },
 
   http: {},
 
