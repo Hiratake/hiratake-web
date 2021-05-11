@@ -48,11 +48,15 @@ $root: '.the-header';
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 104px;
+  height: 80px;
 }
 
 .the-header__logo {
   display: inline-flex;
-  width: 168px;
+  width: 120px;
+
+  @include breakpoint(md) {
+    width: 168px;
+  }
 }
 </style>

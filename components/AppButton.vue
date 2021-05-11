@@ -191,7 +191,7 @@ $root: '.app-button';
   }
 
   &--icon {
-    padding: 0;
+    padding: 2px 0 0 0;
     line-height: 1;
 
     &#{$root} {
