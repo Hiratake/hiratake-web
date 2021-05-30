@@ -3,7 +3,7 @@
     <div class="page__profile">
       <div class="page__profile-icon">
         <app-image
-          src="https://gravatar.com/avatar/8fd43c0ce852b1dacd0ad04c458040b1?s=120"
+          :src="profile.image"
           width="120px"
           height="120px"
         />
