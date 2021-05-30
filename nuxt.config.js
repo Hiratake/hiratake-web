@@ -73,6 +73,7 @@ export default {
     '@nuxtjs/eslint-module',
     '@nuxtjs/stylelint-module',
     '@nuxtjs/color-mode',
+    '@nuxtjs/svg',
   ],
 
   modules: [
