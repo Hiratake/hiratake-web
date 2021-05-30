@@ -1,7 +1,7 @@
 <template>
   <app-container class="page" tag="main">
     <div class="page__profile">
-      <div class="page__profile-icon">
+      <div class="page__profile-image">
         <app-image
           :src="profile.image"
           width="120px"
@@ -75,10 +75,14 @@ $root: '.page';
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  padding: 80px 0;
+  padding: 56px 0;
+
+  @include breakpoint(md) {
+    padding: 80px 0;
+  }
 }
 
-.page__profile-icon {
+.page__profile-image {
   overflow: hidden;
   border-radius: 50%;
 }
