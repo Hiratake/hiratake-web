@@ -16,10 +16,12 @@ export default {}
 :root {
   --color-primary: #{$color-primary};
   --color-text: #{$color-gray-700};
+  --color-text-muted: #{$color-gray-500};
   --color-background: #{$color-white};
 
   &.dark {
     --color-text: #{$color-white};
+    --color-text-muted: #{$color-gray-100};
     --color-background: #{$color-gray-800};
   }
 }
@@ -30,6 +32,8 @@ export default {}
 }
 
 body {
+  font-family: $font-family-ja;
+  color: var(--color-text);
   background-color: var(--color-background);
 }
 </style>

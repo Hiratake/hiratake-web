@@ -1,9 +1,59 @@
 <template>
-  <app-container tag="main"></app-container>
+  <app-container class="page" tag="main">
+    <div class="page__profile">
+      <div class="page__profile-icon">
+        <app-image
+          src="https://gravatar.com/avatar/8fd43c0ce852b1dacd0ad04c458040b1?s=120"
+          width="120px"
+          height="120px"
+        />
+      </div>
+      <div class="page__profile-content">
+        <p class="page__profile-name">{{ profile.name }}</p>
+        <p class="page__profile-bio">{{ profile.bio }}</p>
+        <div class="page__profile-social">
+          <template v-for="item in ['twitter', 'github', 'discord']">
+            <a
+              v-if="profile.social[item]"
+              :key="item"
+              :href="profile.social[item]"
+              class="page__profile-social-item"
+              target="_blank"
+            >
+              <component
+                :is="`icon-${item}`"
+                class="page__profile-social-item-icon"
+              />
+            </a>
+          </template>
+        </div>
+      </div>
+    </div>
+  </app-container>
 </template>
 
 <script>
+import IconTwitter from '@/assets/images/twitter.svg?inline'
+import IconGithub from '@/assets/images/github.svg?inline'
+import IconDiscord from '@/assets/images/discord.svg?inline'
+
 export default {
+  components: {
+    IconTwitter,
+    IconGithub,
+    IconDiscord,
+  },
+
+  async asyncData ({ $content }) {
+    try {
+      const profile = await $content('authors').fetch()
+      return { profile }
+    }
+    catch (e) {
+      throw new Error(e)
+    }
+  },
+
   head () {
     return {
       titleTemplate: null,
@@ -17,42 +67,83 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.container {
+@use 'assets/sass/_' as *;
+$root: '.page';
+
+.page__profile {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 0;
+}
+
+.page__profile-icon {
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.page__profile-content {
+  width: 100%;
+  padding: 16px 40px 0 40px;
+  font-family: $font-family-en;
+  text-align: center;
+
+  @include breakpoint(sm) {
+    max-width: 400px;
+    padding-top: 0;
+    padding-right: 0;
+    text-align: left;
+  }
+}
+
+.page__profile-name {
+  font-size: 36px;
+  font-weight: $font-weight-bold;
+}
+
+.page__profile-bio {
+  max-width: 320px;
+  margin: auto;
+  font-size: 14px;
+  color: var(--color-text-muted);
+
+  @include breakpoint(sm) {
+    max-width: none;
+  }
+}
+
+.page__profile-social {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
-  margin: 0 auto;
-  text-align: center;
+  margin-top: 16px;
+
+  @include breakpoint(sm) {
+    justify-content: flex-start;
+  }
 }
 
-.title {
-  display: block;
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  font-size: 100px;
-  font-weight: 300;
-  color: #35495e;
-  letter-spacing: 1px;
+.page__profile-social-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  padding: 2px;
+  color: inherit;
+  text-decoration: none;
+
+  &:hover {
+    color: var(--color-text-muted);
+  }
+
+  & ~ & {
+    margin-left: 8px;
+  }
 }
 
-.subtitle {
-  padding-bottom: 15px;
-  font-size: 42px;
-  font-weight: 300;
-  color: #526488;
-  word-spacing: 5px;
-}
-
-.links {
-  padding-top: 15px;
+.page__profile-social-item-icon {
+  fill: currentColor;
 }
 </style>

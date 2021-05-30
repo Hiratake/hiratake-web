@@ -36,3 +36,12 @@ $size-breakpoints: (
   'lg':  'screen and (min-width: 992px)',
   'xl':  'screen and (min-width: 1200px)',
 );
+
+// Fonts
+
+$font-family-base: 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif;
+$font-family-ja: 'Noto Sans JP', $font-family-base;
+$font-family-en: 'sofia-pro', $font-family-base;
+
+$font-weight-regular: 400;
+$font-weight-bold: 700;
