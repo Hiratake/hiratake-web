@@ -3,6 +3,7 @@
     :is="_tag"
     :class="classes"
     :style="styles"
+    :aria-label="label"
     :disabled="disabled"
     class="app-button"
     @click="click"
@@ -54,6 +55,10 @@ export default {
       validator: (val) => {
         return validateColor(val)
       },
+    },
+    label: {
+      default: null,
+      type: String,
     },
     disabled: {
       default: false,
