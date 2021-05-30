@@ -144,6 +144,7 @@ $root: '.page';
 }
 
 .page__profile-social-item-icon {
+  width: 100%;
   fill: currentColor;
 }
 </style>
