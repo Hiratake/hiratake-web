@@ -19,6 +19,7 @@
               :href="profile.social[item]"
               class="page__profile-social-item"
               target="_blank"
+              rel="noopener"
             >
               <component
                 :is="`icon-${item}`"
