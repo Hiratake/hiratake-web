@@ -41,7 +41,10 @@ export default {
       { rel: 'manifest', href: '/favicons/site.webmanifest' },
       { rel: 'mask-icon', href: '/favicons/safari-pinned-tab.svg', color: '#a83d3d' },
       { rel: 'shortcut icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'preconnect', href: 'https://fonts.gstatic.com' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/icon?family=Material+Icons' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap' },
+      { rel: 'stylesheet', href: 'https://use.typekit.net/emp0pno.css' },
     ],
   },
 
