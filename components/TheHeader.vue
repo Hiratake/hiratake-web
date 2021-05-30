@@ -54,6 +54,12 @@ $root: '.the-header';
 .the-header__logo {
   display: inline-flex;
   width: 120px;
+  opacity: 1;
+  transition-property: color, background-color, opacity;
+
+  &:hover {
+    opacity: 0.6;
+  }
 
   @include breakpoint(md) {
     width: 168px;
