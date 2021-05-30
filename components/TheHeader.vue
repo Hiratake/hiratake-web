@@ -6,6 +6,7 @@
       </nuxt-link>
       <app-button
         :color="dark ? 'gray-800' : 'white'"
+        label="Color Mode"
         size="large"
         icon
         @click="toggleMode"

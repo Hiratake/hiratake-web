@@ -1,9 +1,9 @@
 <template>
   <app-container class="page" tag="main">
     <div class="page__profile">
-      <div class="page__profile-icon">
+      <div class="page__profile-image">
         <app-image
-          src="https://gravatar.com/avatar/8fd43c0ce852b1dacd0ad04c458040b1?s=120"
+          :src="profile.image"
           width="120px"
           height="120px"
         />
@@ -19,6 +19,7 @@
               :href="profile.social[item]"
               class="page__profile-social-item"
               target="_blank"
+              rel="noopener"
             >
               <component
                 :is="`icon-${item}`"
@@ -75,10 +76,14 @@ $root: '.page';
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  padding: 80px 0;
+  padding: 56px 0;
+
+  @include breakpoint(md) {
+    padding: 80px 0;
+  }
 }
 
-.page__profile-icon {
+.page__profile-image {
   overflow: hidden;
   border-radius: 50%;
 }
@@ -144,6 +149,7 @@ $root: '.page';
 }
 
 .page__profile-social-item-icon {
+  width: 100%;
   fill: currentColor;
 }
 </style>
