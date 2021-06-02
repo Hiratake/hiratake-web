@@ -39,8 +39,14 @@
           { label: 'works', key: 'works' },
         ]"
       >
-        <app-tab-item />
-        <app-tab-item />
+        <app-tab-item>
+          <p>テスト</p>
+          <p>テスト</p>
+          <p>テスト</p>
+        </app-tab-item>
+        <app-tab-item>
+          <p>てすと</p>
+        </app-tab-item>
       </app-tab>
     </div>
   </app-container>
