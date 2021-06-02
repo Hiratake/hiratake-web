@@ -30,6 +30,25 @@
         </div>
       </div>
     </div>
+
+    <div class="page__content">
+      <app-tab
+        v-model="tab"
+        :headers="[
+          { label: 'articles', key: 'articles' },
+          { label: 'works', key: 'works' },
+        ]"
+      >
+        <app-tab-item>
+          <p>テスト</p>
+          <p>テスト</p>
+          <p>テスト</p>
+        </app-tab-item>
+        <app-tab-item>
+          <p>てすと</p>
+        </app-tab-item>
+      </app-tab>
+    </div>
   </app-container>
 </template>
 
@@ -52,6 +71,12 @@ export default {
     }
     catch (e) {
       throw new Error(e)
+    }
+  },
+
+  data () {
+    return {
+      tab: 1,
     }
   },
 
@@ -151,5 +176,13 @@ $root: '.page';
 .page__profile-social-item-icon {
   width: 100%;
   fill: currentColor;
+}
+
+.page__content {
+  padding: 24px 0 48px;
+
+  @include breakpoint(md) {
+    padding: 40px 0 80px;
+  }
 }
 </style>
