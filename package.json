@@ -22,25 +22,25 @@
   "dependencies": {
     "@nuxt/content": "^1.14.0",
     "@nuxt/http": "^0.6.4",
-    "core-js": "^3.9.1",
-    "nuxt": "^2.15.5"
+    "core-js": "^3.13.1",
+    "nuxt": "^2.15.6"
   },
   "devDependencies": {
-    "@commitlint/cli": "^12.0.1",
-    "@commitlint/config-conventional": "^12.0.1",
-    "@nuxtjs/color-mode": "^2.0.5",
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^12.1.4",
+    "@nuxtjs/color-mode": "^2.0.9",
     "@nuxtjs/eslint-config": "^6.0.0",
     "@nuxtjs/eslint-module": "^3.0.2",
     "@nuxtjs/stylelint-module": "^4.0.0",
     "@nuxtjs/svg": "^0.1.12",
     "babel-eslint": "^10.1.0",
     "cross-env": "^7.0.3",
-    "eslint": "^7.22.0",
+    "eslint": "^7.27.0",
     "eslint-plugin-nuxt": "^2.0.0",
-    "eslint-plugin-vue": "^7.7.0",
+    "eslint-plugin-vue": "^7.10.0",
     "fibers": "^5.0.0",
     "husky": "^6.0.0",
-    "sass": "^1.32.12",
+    "sass": "^1.34.0",
     "stylelint": "^13.12.0",
     "stylelint-config-recess-order": "^2.4.0",
     "stylelint-config-standard": "^22.0.0"
