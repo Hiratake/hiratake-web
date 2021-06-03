@@ -64,5 +64,5 @@ export const getContrastColor = (val) => {
   const arr = [...val.matchAll(/[0-9]+/g)]
   return (((arr[0] * 299) + (arr[1] * 587) + (arr[2] * 114)) / 1000) < 128
     ? colors.white
-    : colors['gray-800']
+    : colors['gray-700']
 }

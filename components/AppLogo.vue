@@ -63,7 +63,7 @@ $root: '.app-logo';
 }
 
 .app-logo__icon {
-  fill: var(--color-primary);
+  fill: $color-primary;
 }
 
 .app-logo__text {

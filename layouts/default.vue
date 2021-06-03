@@ -1,20 +1,25 @@
 <template>
   <div>
-    <the-header />
+    <the-header :dark="dark" />
     <Nuxt />
     <the-footer />
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  computed: {
+    dark () {
+      return this.$colorMode.value === 'dark'
+    },
+  },
+}
 </script>
 
 <style lang="scss">
 @use 'assets/sass/_' as *;
 
 :root {
-  --color-primary: #{$color-primary};
   --color-text: #{$color-gray-700};
   --color-text-muted: #{$color-gray-500};
   --color-background: #{$color-white};
