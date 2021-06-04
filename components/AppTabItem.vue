@@ -18,7 +18,7 @@ export default {
 
   data () {
     return {
-      index: 0,
+      index: -1,
     }
   },
 
@@ -29,8 +29,8 @@ export default {
       }
     },
     visible () {
-      return this.$parent && this.$parent.value
-        ? this.$parent.value === this.index + 1
+      return this.$parent && this.$parent.value !== null
+        ? this.$parent.value === this.index
         : false
     },
   },
@@ -58,9 +58,11 @@ $root: '.app-tab-item';
   position: absolute;
   top: 0;
   left: 0;
+  opacity: 0;
 
   &--active {
     position: relative;
+    opacity: 1;
   }
 
   &.v-enter-active,
@@ -71,6 +73,10 @@ $root: '.app-tab-item';
   &.v-enter,
   &.v-leave-to {
     opacity: 0;
+  }
+
+  &.v-enter-active {
+    transition-delay: 0.1s;
   }
 
   &.v-enter {
