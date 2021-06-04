@@ -18,7 +18,7 @@ export default {
 
   data () {
     return {
-      index: 0,
+      index: -1,
     }
   },
 
@@ -29,8 +29,8 @@ export default {
       }
     },
     visible () {
-      return this.$parent && this.$parent.value
-        ? this.$parent.value === this.index + 1
+      return this.$parent && this.$parent.value !== null
+        ? this.$parent.value === this.index
         : false
     },
   },

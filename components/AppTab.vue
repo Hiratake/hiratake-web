@@ -4,9 +4,9 @@
       <template v-for="(item, index) in headers">
         <button
           :key="item.key"
-          :class="{ 'app-tab__header-item--current': value === index + 1 }"
+          :class="{ 'app-tab__header-item--current': value === index}"
           class="app-tab__header-item"
-          @click="click(index + 1)"
+          @click="click(index)"
         >
           {{ item.label }}
         </button>
