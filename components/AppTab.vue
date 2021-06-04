@@ -35,10 +35,6 @@ export default {
         return val.every(item => item.label && item.key)
       },
     },
-    centered: {
-      default: false,
-      type: Boolean,
-    },
     value: {
       default: null,
       type: Number,
