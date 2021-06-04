@@ -58,9 +58,11 @@ $root: '.app-tab-item';
   position: absolute;
   top: 0;
   left: 0;
+  opacity: 0;
 
   &--active {
     position: relative;
+    opacity: 1;
   }
 
   &.v-enter-active,
