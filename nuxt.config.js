@@ -79,6 +79,7 @@ export default {
   modules: [
     '@nuxt/http',
     '@nuxt/content',
+    '@nuxtjs/gtm',
   ],
 
   colorMode: {
@@ -89,6 +90,10 @@ export default {
   http: {},
 
   content: {},
+
+  gtm: {
+    id: 'GTM-WF3MQWM',
+  },
 
   build: {
     loaders: {
