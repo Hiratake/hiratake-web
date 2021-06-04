@@ -75,6 +75,10 @@ $root: '.app-tab-item';
     opacity: 0;
   }
 
+  &.v-enter-active {
+    transition-delay: 0.1s;
+  }
+
   &.v-enter {
     transform: translateY(10px);
   }
