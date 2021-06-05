@@ -67,6 +67,7 @@ export default {
   async asyncData ({ $content }) {
     try {
       const profile = await $content('authors').fetch()
+      const services = await $content('services').fetch()
       const blog = await $content('blog')
         .only(['title', 'slug', 'createdAt'])
         .fetch()
@@ -79,6 +80,11 @@ export default {
           obj.createdAt = new Date(item.createdAt)
           obj.postedOn = item.postedOn ? item.postedOn : 'blog'
           return obj
+        })
+        .map((item) => {
+          item.postedOn = services.services
+            .find(service => service.slug === item.postedOn)
+          return item
         })
         .sort((a, b) => {
           const aTime = a.createdAt.getTime()

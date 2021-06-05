@@ -3,18 +3,18 @@
     <div class="post-list-item__meta">
       <span>posted on</span>
       <component
-        :is="`icon-${post.postedOn}`"
-        v-if="post.postedOn !== 'blog'"
+        :is="post.postedOn.icon"
+        v-if="post.postedOn.icon"
         class="post-list-item__service-icon"
       />
-      <span>{{ post.postedOn }}</span>
+      <span>{{ post.postedOn.name }}</span>
       <span style="opacity: 0.4;">/</span>
       <span>{{ dateToString(post.createdAt) }}</span>
     </div>
     <component
-      :is="post.postedOn === 'blog' ? 'nuxt-link' : 'a'"
-      :to="post.postedOn === 'blog' ? post.url : null"
-      :href="post.postedOn !== 'blog' ? post.url : null"
+      :is="post.postedOn.slug === 'blog' ? 'nuxt-link' : 'a'"
+      :to="post.postedOn.slug === 'blog' ? post.url : null"
+      :href="post.postedOn.slug !== 'blog' ? post.url : null"
       class="post-list-item__title"
     >
       {{ post.title }}
@@ -23,12 +23,14 @@
 </template>
 
 <script>
+import IconJao from '@/assets/images/jao.svg?inline'
 import IconZenn from '@/assets/images/zenn.svg?inline'
 
 export default {
   name: 'PostListItem',
 
   components: {
+    IconJao,
     IconZenn,
   },
 
