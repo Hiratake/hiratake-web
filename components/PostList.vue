@@ -3,7 +3,7 @@
     <div class="post-list__buttons"></div>
     <div class="post-list__body">
       <template v-for="(post, index) in posts">
-        <post-list-item :key="index" :post="post" />
+        <post-list-item :key="index" :posts="posts" :index="index" />
       </template>
     </div>
   </div>
@@ -17,6 +17,12 @@ export default {
     posts: {
       default: () => [],
       type: Array,
+      required: true,
+      validator: (val) => {
+        return val.every((item) => {
+          return !!item.title && !!item.url && !!item.postedOn && !!item.createdAt
+        })
+      },
     },
   },
 }

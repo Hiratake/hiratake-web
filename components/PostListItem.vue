@@ -1,5 +1,5 @@
 <template>
-  <div class="post-list-item">
+  <div :id="id" class="post-list-item">
     <div class="post-list-item__meta">
       <span>posted on</span>
       <component
@@ -33,12 +33,36 @@ export default {
   },
 
   props: {
-    post: {
-      default: () => {},
-      type: Object,
+    posts: {
+      default: () => [],
+      type: Array,
+      required: true,
+    },
+    index: {
+      default: null,
+      type: Number,
+      required: true,
       validator: (val) => {
-        return !!val.title && !!val.url && !!val.postedOn && !!val.createdAt
+        return val >= 0
       },
+    },
+  },
+
+  computed: {
+    post () {
+      return this.posts[this.index]
+    },
+    id () {
+      const prefix = 'posts-'
+      const index = this.index
+      const currentItem = this.post.createdAt.getFullYear()
+      if (index) {
+        const previousItem = this.posts[index - 1].createdAt.getFullYear()
+        return currentItem !== previousItem ? `${prefix}${currentItem}` : null
+      }
+      else {
+        return `${prefix}${currentItem}`
+      }
     },
   },
 
