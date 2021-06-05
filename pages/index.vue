@@ -35,7 +35,7 @@
       <app-tab
         v-model="tab"
         :headers="[
-          { label: 'articles', key: 'articles' },
+          { label: 'posts', key: 'posts' },
           { label: 'works', key: 'works' },
         ]"
       >
