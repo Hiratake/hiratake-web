@@ -24,12 +24,14 @@ export default {
   --color-text-muted: #{$color-gray-500};
   --color-background: #{$color-white};
   --color-tab: #{$color-gray-50};
+  --color-timeline: #{$color-gray-100};
 
   &.dark {
     --color-text: #{$color-white};
     --color-text-muted: #{$color-gray-100};
     --color-background: #{$color-gray-800};
     --color-tab: #{$color-gray-700};
+    --color-timeline: #{$color-gray-300};
   }
 }
 

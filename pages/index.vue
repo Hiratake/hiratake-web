@@ -40,10 +40,37 @@
         ]"
       >
         <app-tab-item>
-          <pre>{{ posts }}</pre>
+          <div class="page__posts">
+            <div class="page__posts-buttons"></div>
+            <div class="page__posts-body">
+              <template v-for="(post, index) in posts">
+                <div :key="index" class="page__post">
+                  <div class="page__post-meta">
+                    <span>posted on</span>
+                    <component
+                      :is="`icon-${post.postedOn}`"
+                      v-if="post.postedOn !== 'blog'"
+                      class="page__post-meta-icon"
+                    />
+                    <span>{{ post.postedOn }}</span>
+                    <span style="opacity: 0.4;">/</span>
+                    <span>{{ dateToString(post.createdAt) }}</span>
+                  </div>
+                  <component
+                    :is="post.postedOn === 'blog' ? 'nuxt-link' : 'a'"
+                    :to="post.postedOn === 'blog' ? post.url : null"
+                    :href="post.postedOn !== 'blog' ? post.url : null"
+                    class="page__post-title"
+                  >
+                    {{ post.title }}
+                  </component>
+                </div>
+              </template>
+            </div>
+          </div>
         </app-tab-item>
         <app-tab-item>
-          <p>てすと</p>
+          <pre>{{ posts }}</pre>
         </app-tab-item>
       </app-tab>
     </div>
@@ -54,12 +81,14 @@
 import IconTwitter from '@/assets/images/twitter.svg?inline'
 import IconGithub from '@/assets/images/github.svg?inline'
 import IconDiscord from '@/assets/images/discord.svg?inline'
+import IconZenn from '@/assets/images/zenn.svg?inline'
 
 export default {
   components: {
     IconTwitter,
     IconGithub,
     IconDiscord,
+    IconZenn,
   },
 
   async asyncData ({ $content }) {
@@ -89,7 +118,7 @@ export default {
           }
           return 0
         })
-      return { profile, posts, blog }
+      return { profile, posts }
     }
     catch (e) {
       throw new Error(e)
@@ -110,6 +139,15 @@ export default {
         { hid: 'og:type', property: 'og:type', content: 'website' },
       ],
     }
+  },
+
+  methods: {
+    dateToString (val) {
+      const year = val.getFullYear()
+      const month = ('0' + (val.getMonth() + 1)).slice(-2)
+      const date = ('0' + val.getDate()).slice(-2)
+      return `${year}-${month}-${date}`
+    },
   },
 }
 </script>
@@ -205,6 +243,80 @@ $root: '.page';
 
   @include breakpoint(md) {
     padding: 40px 0 80px;
+  }
+}
+
+.page__posts {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 80px 1fr;
+  gap: 32px;
+}
+
+.page__post {
+  position: relative;
+  display: grid;
+  grid-template-rows: repeat(2, auto);
+  grid-template-columns: 100%;
+  gap: 8px;
+  padding: 24px 0 24px 52px;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 5px;
+    display: block;
+    width: 1px;
+    content: '';
+    background-color: var(--color-timeline);
+  }
+
+  &::after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+    width: 11px;
+    height: 11px;
+    margin: auto;
+    content: '';
+    background-color: var(--color-background);
+    border: solid 2px var(--color-timeline);
+    border-radius: 50%;
+  }
+}
+
+.page__post-meta {
+  display: flex;
+  align-items: center;
+  font-family: $font-family-en;
+  font-size: 13px;
+  font-weight: $font-weight-bold;
+  color: var(--color-text-muted);
+
+  * ~ * {
+    margin-left: 5px;
+  }
+}
+
+.page__post-meta-icon {
+  position: relative;
+  top: 2px;
+  width: 22px;
+  height: 22px;
+}
+
+.page__post-title {
+  font-size: 18px;
+  font-weight: $font-weight-bold;
+  color: currentColor;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
   }
 }
 </style>
