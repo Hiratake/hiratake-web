@@ -40,9 +40,7 @@
         ]"
       >
         <app-tab-item>
-          <p>テスト</p>
-          <p>テスト</p>
-          <p>テスト</p>
+          <pre>{{ posts }}</pre>
         </app-tab-item>
         <app-tab-item>
           <p>てすと</p>
@@ -67,7 +65,31 @@ export default {
   async asyncData ({ $content }) {
     try {
       const profile = await $content('authors').fetch()
-      return { profile }
+      const blog = await $content('blog')
+        .only(['title', 'slug', 'createdAt'])
+        .fetch()
+      const contributions = await $content('posts').fetch()
+      const posts = [...contributions.posts, ...blog]
+        .map((item) => {
+          const obj = {}
+          obj.title = item.title
+          obj.url = item.url ? item.url : `/${item.slug}`
+          obj.createdAt = new Date(item.createdAt)
+          obj.postedOn = item.postedOn ? item.postedOn : 'blog'
+          return obj
+        })
+        .sort((a, b) => {
+          const aTime = a.createdAt.getTime()
+          const bTime = b.createdAt.getTime()
+          if (aTime > bTime) {
+            return -1
+          }
+          if (aTime < bTime) {
+            return 1
+          }
+          return 0
+        })
+      return { profile, posts, blog }
     }
     catch (e) {
       throw new Error(e)
