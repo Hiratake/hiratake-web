@@ -65,7 +65,7 @@ $root: '.post-list';
   display: grid;
   grid-template-rows: repeat(2, auto);
   grid-template-columns: 1fr;
-  gap: 32px;
+  gap: 24px 32px;
 
   @include breakpoint(md) {
     grid-template-rows: auto;
