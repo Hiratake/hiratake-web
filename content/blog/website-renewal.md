@@ -9,6 +9,8 @@ updatedAt: "2021-06-05T22:00:00+09:00"
 本日、私のウェブサイトをリニューアルいたしました。  
 勉強のため、そして自己満足のために、なんやかんやで数年おきくらいにウェブサイトを作り直してますが、過去イチで良い出来になったと思います。たぶん。
 
+<!--more-->
+
 [Nuxt.js](https://nuxtjs.org/)と[Vercel](https://vercel.com)を使って最近流行りのJamstackでサーバレスな感じにしたり、勉強のために[Google Tag Manager](https://marketingplatform.google.com/intl/ja/about/tag-manager/)を導入してみたり、コードを書く前にちゃんと[Figma](https://www.figma.com/)とかでデザイン考えてみたり、ライトモードとダークモードを切り替えられるようにしてみたり。  
 どうせやるならと、いろいろ新しいものに挑戦しました。
 
