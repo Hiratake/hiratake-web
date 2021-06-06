@@ -1,0 +1,22 @@
+{
+  "posts": [
+    {
+      "title": "GitHub Actions で hub コマンドを使ってプルリクエストをつくる",
+      "url": "https://zenn.dev/hiratake/articles/github-actions-create-pull-request",
+      "createdAt": "2021-05-06T23:50:00+09:00",
+      "postedOn": "zenn"
+    },
+    {
+      "title": "vue-sfc-rollup と GitHub Packages でコンポーネントを配布する",
+      "url": "https://zenn.dev/hiratake/articles/publish-vue-sfc-rollup",
+      "createdAt": "2021-05-03T19:31:00+09:00",
+      "postedOn": "zenn"
+    },
+    {
+      "title": "jao鯖ウェブサイトリニューアルのお知らせ",
+      "url": "https://jaoafa.com/blog/website-renewal",
+      "createdAt": "2021-04-14T13:31:00+09:00",
+      "postedOn": "jao"
+    }
+  ]
+}

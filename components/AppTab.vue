@@ -56,7 +56,6 @@ $root: '.app-tab';
 
 .app-tab {
   width: 100%;
-  overflow: hidden;
 }
 
 .app-tab__header {
@@ -114,6 +113,10 @@ $root: '.app-tab';
 .app-tab__body {
   position: relative;
   width: 100%;
-  margin-top: 56px;
+  margin-top: 40px;
+
+  @include breakpoint(md) {
+    margin-top: 56px;
+  }
 }
 </style>

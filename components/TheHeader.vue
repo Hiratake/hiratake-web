@@ -23,10 +23,9 @@
 export default {
   name: 'TheHeader',
 
-  props: {
-    dark: {
-      default: false,
-      type: Boolean,
+  computed: {
+    dark () {
+      return this.$colorMode.value === 'dark'
     },
   },
 

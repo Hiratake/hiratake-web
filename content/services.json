@@ -1,0 +1,22 @@
+{
+  "services": [
+    {
+      "slug": "blog",
+      "name": "Blog",
+      "url": "https://hiratake.xyz/",
+      "icon": null
+    },
+    {
+      "slug": "zenn",
+      "name": "Zenn",
+      "url": "https://zenn.dev/",
+      "icon": "icon-zenn"
+    },
+    {
+      "slug": "jao",
+      "name": "jao Minecraft Server",
+      "url": "https://jaoafa.com/",
+      "icon": "icon-jao"
+    }
+  ]
+}

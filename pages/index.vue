@@ -35,18 +35,14 @@
       <app-tab
         v-model="tab"
         :headers="[
-          { label: 'articles', key: 'articles' },
+          { label: 'posts', key: 'posts' },
           { label: 'works', key: 'works' },
         ]"
       >
         <app-tab-item>
-          <p>テスト</p>
-          <p>テスト</p>
-          <p>テスト</p>
+          <post-list :dark="dark" :posts="posts" />
         </app-tab-item>
-        <app-tab-item>
-          <p>てすと</p>
-        </app-tab-item>
+        <app-tab-item></app-tab-item>
       </app-tab>
     </div>
   </app-container>
@@ -56,18 +52,50 @@
 import IconTwitter from '@/assets/images/twitter.svg?inline'
 import IconGithub from '@/assets/images/github.svg?inline'
 import IconDiscord from '@/assets/images/discord.svg?inline'
+import IconZenn from '@/assets/images/zenn.svg?inline'
 
 export default {
   components: {
     IconTwitter,
     IconGithub,
     IconDiscord,
+    IconZenn,
   },
 
   async asyncData ({ $content }) {
     try {
       const profile = await $content('authors').fetch()
-      return { profile }
+      const services = await $content('services').fetch()
+      const blog = await $content('blog')
+        .only(['title', 'slug', 'createdAt'])
+        .fetch()
+      const contributions = await $content('posts').fetch()
+      const posts = [...contributions.posts, ...blog]
+        .map((item) => {
+          const obj = {}
+          obj.title = item.title
+          obj.url = item.url ? item.url : `/${item.slug}`
+          obj.createdAt = new Date(item.createdAt)
+          obj.postedOn = item.postedOn ? item.postedOn : 'blog'
+          return obj
+        })
+        .map((item) => {
+          item.postedOn = services.services
+            .find(service => service.slug === item.postedOn)
+          return item
+        })
+        .sort((a, b) => {
+          const aTime = a.createdAt.getTime()
+          const bTime = b.createdAt.getTime()
+          if (aTime > bTime) {
+            return -1
+          }
+          if (aTime < bTime) {
+            return 1
+          }
+          return 0
+        })
+      return { profile, posts }
     }
     catch (e) {
       throw new Error(e)
@@ -88,6 +116,21 @@ export default {
         { hid: 'og:type', property: 'og:type', content: 'website' },
       ],
     }
+  },
+
+  computed: {
+    dark () {
+      return this.$colorMode.value === 'dark'
+    },
+  },
+
+  methods: {
+    dateToString (val) {
+      const year = val.getFullYear()
+      const month = ('0' + (val.getMonth() + 1)).slice(-2)
+      const date = ('0' + val.getDate()).slice(-2)
+      return `${year}-${month}-${date}`
+    },
   },
 }
 </script>

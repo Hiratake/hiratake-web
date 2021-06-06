@@ -1,19 +1,13 @@
 <template>
   <div>
-    <the-header :dark="dark" />
+    <the-header />
     <Nuxt />
     <the-footer />
   </div>
 </template>
 
 <script>
-export default {
-  computed: {
-    dark () {
-      return this.$colorMode.value === 'dark'
-    },
-  },
-}
+export default {}
 </script>
 
 <style lang="scss">
@@ -24,12 +18,14 @@ export default {
   --color-text-muted: #{$color-gray-500};
   --color-background: #{$color-white};
   --color-tab: #{$color-gray-50};
+  --color-timeline: #{$color-gray-100};
 
   &.dark {
     --color-text: #{$color-white};
     --color-text-muted: #{$color-gray-100};
     --color-background: #{$color-gray-800};
     --color-tab: #{$color-gray-700};
+    --color-timeline: #{$color-gray-300};
   }
 }
 
@@ -38,6 +34,10 @@ export default {
 *::after {
   transition-duration: 0.1s;
   transition-property: color, background-color;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
