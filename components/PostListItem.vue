@@ -14,7 +14,7 @@
     <component
       :is="post.postedOn.slug === 'blog' ? 'nuxt-link' : 'a'"
       :to="post.postedOn.slug === 'blog' ? post.url : null"
-      :href="post.postedOn.slug !== 'blog' ? post.url : null"
+      :href="post.url"
       class="post-list-item__title"
     >
       {{ post.title }}
@@ -146,7 +146,6 @@ $root: '.post-list-item';
   font-weight: $font-weight-bold;
   color: currentColor;
   text-decoration: none;
-  cursor: pointer;
 
   &:hover {
     text-decoration: underline;
