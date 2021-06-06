@@ -3,6 +3,8 @@
     :is="_tag"
     :class="classes"
     :style="styles"
+    :href="href"
+    :to="to"
     :aria-label="label"
     :disabled="disabled"
     class="app-button"
@@ -134,6 +136,7 @@ $root: '.app-button';
   justify-content: center;
   appearance: none;
   font: inherit;
+  text-decoration: none;
   cursor: pointer;
   border-color: transparent;
   border-style: solid;
