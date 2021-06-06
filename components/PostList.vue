@@ -5,7 +5,7 @@
         <app-button
           :key="year"
           :href="`#posts-${year}`"
-          color="gray-300"
+          :color="dark ? 'gray-100' : 'gray-500'"
           size="small"
           outlined
         >
@@ -36,6 +36,10 @@ export default {
         })
       },
     },
+    dark: {
+      default: false,
+      type: Boolean,
+    },
   },
 
   computed: {
@@ -61,7 +65,7 @@ $root: '.post-list';
   display: grid;
   grid-template-rows: repeat(2, auto);
   grid-template-columns: 1fr;
-  gap: 16px 32px;
+  gap: 32px;
 
   @include breakpoint(md) {
     grid-template-rows: auto;
@@ -70,13 +74,18 @@ $root: '.post-list';
 }
 
 .post-list__buttons {
-  position: sticky;
-  top: 24px;
   display: grid;
-  grid-template-columns: 100%;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
   grid-auto-rows: auto;
-  gap: 16px;
-  align-content: flex-start;
-  align-self: flex-start;
+  gap: 8px;
+
+  @include breakpoint(md) {
+    position: sticky;
+    top: 24px;
+    grid-template-columns: 100%;
+    gap: 16px;
+    align-content: flex-start;
+    align-self: flex-start;
+  }
 }
 </style>

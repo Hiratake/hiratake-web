@@ -1,19 +1,13 @@
 <template>
   <div>
-    <the-header :dark="dark" />
+    <the-header />
     <Nuxt />
     <the-footer />
   </div>
 </template>
 
 <script>
-export default {
-  computed: {
-    dark () {
-      return this.$colorMode.value === 'dark'
-    },
-  },
-}
+export default {}
 </script>
 
 <style lang="scss">

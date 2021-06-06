@@ -40,11 +40,9 @@
         ]"
       >
         <app-tab-item>
-          <post-list :posts="posts" />
+          <post-list :dark="dark" :posts="posts" />
         </app-tab-item>
-        <app-tab-item>
-          <pre>{{ posts }}</pre>
-        </app-tab-item>
+        <app-tab-item></app-tab-item>
       </app-tab>
     </div>
   </app-container>
@@ -118,6 +116,12 @@ export default {
         { hid: 'og:type', property: 'og:type', content: 'website' },
       ],
     }
+  },
+
+  computed: {
+    dark () {
+      return this.$colorMode.value === 'dark'
+    },
   },
 
   methods: {
