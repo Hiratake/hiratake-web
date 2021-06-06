@@ -34,8 +34,13 @@ $root: '.post-list';
 
 .post-list {
   display: grid;
-  grid-template-rows: auto;
-  grid-template-columns: 80px 1fr;
-  gap: 32px;
+  grid-template-rows: repeat(2, auto);
+  grid-template-columns: 1fr;
+  gap: 16px 32px;
+
+  @include breakpoint(md) {
+    grid-template-rows: auto;
+    grid-template-columns: 80px 1fr;
+  }
 }
 </style>

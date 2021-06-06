@@ -89,7 +89,11 @@ $root: '.post-list-item';
   grid-template-rows: repeat(2, auto);
   grid-template-columns: 100%;
   gap: 8px;
-  padding: 24px 0 24px 52px;
+  padding: 24px 0 24px 40px;
+
+  @include breakpoint(md) {
+    padding-left: 52px;
+  }
 
   &::before {
     position: absolute;
@@ -118,14 +122,15 @@ $root: '.post-list-item';
 
 .post-list-item__meta {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   font-family: $font-family-en;
   font-size: 13px;
   font-weight: $font-weight-bold;
   color: var(--color-text-muted);
 
-  * ~ * {
-    margin-left: 5px;
+  * {
+    margin-right: 5px;
   }
 }
 
