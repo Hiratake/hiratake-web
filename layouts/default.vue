@@ -42,6 +42,10 @@ export default {
   transition-property: color, background-color;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: $font-family-ja;
   color: var(--color-text);
