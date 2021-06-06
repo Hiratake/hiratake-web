@@ -56,7 +56,6 @@ $root: '.app-tab';
 
 .app-tab {
   width: 100%;
-  overflow: hidden;
 }
 
 .app-tab__header {

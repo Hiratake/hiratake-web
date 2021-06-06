@@ -1,6 +1,18 @@
 <template>
   <div class="post-list">
-    <div class="post-list__buttons"></div>
+    <div class="post-list__buttons">
+      <template v-for="year in years">
+        <app-button
+          :key="year"
+          :href="`#posts-${year}`"
+          color="gray-300"
+          size="small"
+          outlined
+        >
+          {{ year }}
+        </app-button>
+      </template>
+    </div>
     <div class="post-list__body">
       <template v-for="(post, index) in posts">
         <post-list-item :key="index" :posts="posts" :index="index" />
@@ -25,6 +37,19 @@ export default {
       },
     },
   },
+
+  computed: {
+    years () {
+      const years = []
+      this.posts.forEach((item) => {
+        const year = item.createdAt.getFullYear()
+        if (!years.includes(year)) {
+          years.push(year)
+        }
+      })
+      return years
+    },
+  },
 }
 </script>
 
@@ -42,5 +67,16 @@ $root: '.post-list';
     grid-template-rows: auto;
     grid-template-columns: 80px 1fr;
   }
+}
+
+.post-list__buttons {
+  position: sticky;
+  top: 24px;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-auto-rows: auto;
+  gap: 16px;
+  align-content: flex-start;
+  align-self: flex-start;
 }
 </style>
