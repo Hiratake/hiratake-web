@@ -104,13 +104,11 @@ $root: '.post-list-item';
 
   &::after {
     position: absolute;
-    top: 0;
-    bottom: 0;
+    top: 30px;
     left: 0;
     display: block;
     width: 11px;
     height: 11px;
-    margin: auto;
     content: '';
     background-color: var(--color-background);
     border: solid 2px var(--color-timeline);
