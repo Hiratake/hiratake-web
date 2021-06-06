@@ -80,6 +80,7 @@ export default {
     '@nuxt/http',
     '@nuxt/content',
     '@nuxtjs/gtm',
+    '@nuxtjs/cloudinary',
   ],
 
   colorMode: {
@@ -93,6 +94,10 @@ export default {
 
   gtm: {
     id: 'GTM-WF3MQWM',
+  },
+
+  cloudinary: {
+    cloudName: 'hiratake',
   },
 
   build: {
