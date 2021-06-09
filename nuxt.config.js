@@ -74,12 +74,12 @@ export default {
     '@nuxtjs/stylelint-module',
     '@nuxtjs/color-mode',
     '@nuxtjs/svg',
+    '@nuxtjs/google-analytics',
   ],
 
   modules: [
     '@nuxt/http',
     '@nuxt/content',
-    '@nuxtjs/gtm',
     '@nuxtjs/cloudinary',
   ],
 
@@ -88,13 +88,13 @@ export default {
     storageKey: 'color-mode',
   },
 
+  googleAnalytics: {
+    id: 'UA-53448200-5',
+  },
+
   http: {},
 
   content: {},
-
-  gtm: {
-    id: 'GTM-WF3MQWM',
-  },
 
   cloudinary: {
     cloudName: 'hiratake',
