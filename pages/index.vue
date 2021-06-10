@@ -115,6 +115,9 @@ export default {
       meta: [
         { hid: 'og:type', property: 'og:type', content: 'website' },
       ],
+      link: [
+        { rel: 'canonical', href: this.$config.baseUrl },
+      ],
     }
   },
 

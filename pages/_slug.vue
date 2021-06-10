@@ -78,6 +78,9 @@ export default {
     return {
       title: post.title,
       meta,
+      link: [
+        { rel: 'canonical', href: `${this.$config.baseUrl}/${post.slug}` },
+      ],
     }
   },
 
