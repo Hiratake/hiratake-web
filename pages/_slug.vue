@@ -80,5 +80,40 @@ export default {
       meta,
     }
   },
+
+  jsonld () {
+    const breadcrumbs = this.breadcrumbs.map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      item: {
+        '@id': (`${this.$config.baseUrl}${item.to}`).replace(/^(.*)\/$/, '$1'),
+        name: item.label,
+      },
+    }))
+    return [
+      {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: breadcrumbs,
+      },
+    ]
+  },
+
+  computed: {
+    breadcrumbs () {
+      return [
+        {
+          label: 'Home',
+          to: '/',
+          disabled: false,
+        },
+        {
+          label: this.post.title,
+          to: `/${this.post.slug}`,
+          disabled: true,
+        },
+      ]
+    },
+  },
 }
 </script>

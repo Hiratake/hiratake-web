@@ -118,6 +118,31 @@ export default {
     }
   },
 
+  jsonld () {
+    return [
+      {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          {
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              {
+                '@type': 'ListItem',
+                position: 1,
+                item: {
+                  '@id': this.$config.baseUrl,
+                  name: 'Home',
+                },
+              },
+            ],
+          },
+        ],
+      },
+    ]
+  },
+
   computed: {
     dark () {
       return this.$colorMode.value === 'dark'
