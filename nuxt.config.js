@@ -1,10 +1,20 @@
 // nuxt.config.js
 
+const appEnv = process.env.NODE_ENV || 'production'
+
 const baseName = process.env.BASE_NAME || 'Hiratake Web'
 const baseUrl = process.env.BASE_URL || 'https://hiratake.xyz'
 const baseDir = process.env.BASE_DIR || '/'
 const baseImage = process.env.BASE_IMAGE || '/images/default.jpg'
 const baseDescription = process.env.BASE_DESCRIPTION || 'マークアップ園児でデザイナーなひらたけのサイト。'
+
+const gtmId = process.env.GTM_ID || 'GTM-WF3MQWM'
+const gtmScript = `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','${gtmId}');`
+const gtmNoscript = `<iframe src="https://www.googletagmanager.com/ns.html?id=${gtmId}" height="0" width="0" style="display:none;visibility:hidden"></iframe>`
 
 export default {
   target: 'static',
@@ -34,6 +44,12 @@ export default {
       { hid: 'twitter:card', name: 'twitter:card', content: 'summary' },
       { hid: 'twitter:site', name: 'twitter:site', content: '@Hirotaisou2012' },
     ],
+    script: [
+      { hid: 'gtm-script', innerHTML: gtmScript, skip: appEnv === 'development' },
+    ],
+    noscript: [
+      { hid: 'gtm-noscript', innerHTML: gtmNoscript, pbody: true, skip: appEnv === 'development' },
+    ],
     link: [
       { rel: 'apple-touch-icon', sizes: '180x180', href: '/favicons/apple-touch-icon.png' },
       { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicons/favicon-32x32.png' },
@@ -46,6 +62,10 @@ export default {
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap' },
       { rel: 'stylesheet', href: 'https://use.typekit.net/emp0pno.css' },
     ],
+    __dangerouslyDisableSanitizersByTagID: {
+      'gtm-script': ['innerHTML'],
+      'gtm-noscript': ['innerHTML'],
+    },
   },
 
   css: [
@@ -74,11 +94,9 @@ export default {
     '@nuxtjs/stylelint-module',
     '@nuxtjs/color-mode',
     '@nuxtjs/svg',
-    '@nuxtjs/google-analytics',
   ],
 
   modules: [
-    '@nuxt/http',
     '@nuxt/content',
     '@nuxtjs/cloudinary',
   ],
@@ -87,12 +105,6 @@ export default {
     classSuffix: '',
     storageKey: 'color-mode',
   },
-
-  googleAnalytics: {
-    id: 'UA-53448200-5',
-  },
-
-  http: {},
 
   content: {},
 
