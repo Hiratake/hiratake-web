@@ -7,6 +7,7 @@ export default {
   async asyncData ({ params, error, $content, $cloudinary }) {
     const { slug } = params
     try {
+      const profile = await $content('authors').fetch()
       const post = await $content('blog', slug).fetch()
       post.image = await $cloudinary.image.url(
         'post_uakfpm.png',
@@ -24,6 +25,8 @@ export default {
           crop: 'fit',
         },
       )
+      post.createdAt = new Date(post.createdAt)
+      post.updatedAt = new Date(post.updatedAt)
       if (post.description) {
         if (post.description.length > 80) {
           post.description = (
@@ -35,7 +38,7 @@ export default {
       else {
         post.description = null
       }
-      return { post }
+      return { profile, post }
     }
     catch (e) {
       error({ statusCode: 404 })
@@ -85,19 +88,37 @@ export default {
   },
 
   jsonld () {
-    const breadcrumbs = this.breadcrumbs.map((item, index) => ({
-      '@type': 'ListItem',
-      position: index + 1,
-      item: {
-        '@id': (`${this.$config.baseUrl}${item.to}`).replace(/^(.*)\/$/, '$1'),
-        name: item.label,
-      },
-    }))
     return [
       {
         '@context': 'https://schema.org',
         '@type': 'BreadcrumbList',
-        itemListElement: breadcrumbs,
+        itemListElement: this.breadcrumbs.map((item, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          item: {
+            '@id': `${this.$config.baseUrl}${item.to}`.replace(/^(.*)\/$/, '$1'),
+            name: item.label,
+          },
+        })),
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'Article',
+        headline: this.post.title,
+        description: this.post.description,
+        url: `${this.$config.baseUrl}/${this.post.slug}`,
+        datePublished: this.post.createdAt.toISOString(),
+        dateModified: this.post.updatedAt.toISOString(),
+        image: {
+          '@type': 'ImageObject',
+          url: this.post.image,
+          width: 1200,
+          height: 630,
+        },
+        author: {
+          '@type': 'Person',
+          name: this.profile.name,
+        },
       },
     ]
   },

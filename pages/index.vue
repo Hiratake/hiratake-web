@@ -62,7 +62,7 @@ export default {
     IconZenn,
   },
 
-  async asyncData ({ $content }) {
+  async asyncData ({ error, $content }) {
     try {
       const profile = await $content('authors').fetch()
       const services = await $content('services').fetch()
@@ -98,7 +98,7 @@ export default {
       return { profile, posts }
     }
     catch (e) {
-      throw new Error(e)
+      error({ statusCode: 404 })
     }
   },
 
@@ -122,28 +122,18 @@ export default {
   },
 
   jsonld () {
-    return [
-      {
-        '@context': 'https://schema.org',
-        '@type': 'BreadcrumbList',
-        itemListElement: [
-          {
-            '@context': 'https://schema.org',
-            '@type': 'BreadcrumbList',
-            itemListElement: [
-              {
-                '@type': 'ListItem',
-                position: 1,
-                item: {
-                  '@id': this.$config.baseUrl,
-                  name: 'Home',
-                },
-              },
-            ],
-          },
-        ],
-      },
-    ]
+    return [{
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [{
+        '@type': 'ListItem',
+        position: 1,
+        item: {
+          '@id': this.$config.baseUrl,
+          name: 'Home',
+        },
+      }],
+    }]
   },
 
   computed: {
