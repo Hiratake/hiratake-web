@@ -72,7 +72,9 @@ export default {
     '@/assets/css/reset.css',
   ],
 
-  plugins: [],
+  plugins: [
+    '@/plugins/jsonld',
+  ],
 
   components: true,
 
