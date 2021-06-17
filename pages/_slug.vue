@@ -1,5 +1,9 @@
 <template>
-  <app-container class="page" tag="main"></app-container>
+  <app-container class="page" tag="main">
+    <div class="page__breadcrumbs">
+      <app-breadcrumbs :items="breadcrumbs" />
+    </div>
+  </app-container>
 </template>
 
 <script>
@@ -141,3 +145,12 @@ export default {
   },
 }
 </script>
+
+<style lang="scss" scoped>
+@use 'assets/sass/_' as *;
+$root: '.page';
+
+.page__breadcrumbs {
+  padding: 40px 0 56px;
+}
+</style>
