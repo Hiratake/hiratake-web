@@ -3,6 +3,21 @@
     <div class="page__breadcrumbs">
       <app-breadcrumbs :items="breadcrumbs" />
     </div>
+    <article class="page__post">
+      <header class="page__post-header">
+        <h1 class="page__post-title">{{ post.title }}</h1>
+        <ul class="page__post-meta">
+          <li class="page__post-meta-item">
+            <span class="page__post-meta-icon material-icons">today</span>
+            <span>{{ dateToString(post.createdAt) }}</span>
+          </li>
+          <li class="page__post-meta-item">
+            <span class="page__post-meta-icon material-icons">update</span>
+            <span>{{ dateToString(post.updatedAt) }}</span>
+          </li>
+        </ul>
+      </header>
+    </article>
   </app-container>
 </template>
 
@@ -143,6 +158,15 @@ export default {
       ]
     },
   },
+
+  methods: {
+    dateToString (val) {
+      const year = val.getFullYear()
+      const month = ('0' + (val.getMonth() + 1)).slice(-2)
+      const date = ('0' + val.getDate()).slice(-2)
+      return `${year}-${month}-${date}`
+    },
+  },
 }
 </script>
 
@@ -150,7 +174,55 @@ export default {
 @use 'assets/sass/_' as *;
 $root: '.page';
 
+.page {
+  padding: 40px 0;
+}
+
 .page__breadcrumbs {
-  padding: 40px 0 56px;
+  padding: 0 4px;
+}
+
+.page__post {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-auto-rows: auto;
+  gap: 56px;
+  margin-top: 56px;
+}
+
+.page__post-header {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-auto-rows: auto;
+  gap: 24px;
+}
+
+.page__post-title {
+  font-size: 36px;
+  font-weight: $font-weight-bold;
+  line-height: 1.35;
+}
+
+.page__post-meta {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  padding: 0 2px;
+  list-style: none;
+}
+
+.page__post-meta-item {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+.page__post-meta-icon {
+  position: relative;
+  top: 2px;
+  font-size: 16px;
+  user-select: none;
 }
 </style>
