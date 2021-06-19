@@ -20,12 +20,29 @@
       <div class="page__post-body">
         <nuxt-content :document="post" />
       </div>
+      <footer class="page__post-footer">
+        <a
+          :href="githubUrl"
+          class="page__post-edit"
+          target="_blank"
+          rel="noopener"
+        >
+          <icon-github class="page__post-edit-icon" />
+          <span>GitHubで編集を提案</span>
+        </a>
+      </footer>
     </article>
   </app-container>
 </template>
 
 <script>
+import IconGithub from '@/assets/images/github.svg?inline'
+
 export default {
+  components: {
+    IconGithub,
+  },
+
   async asyncData ({ params, error, $content, $cloudinary }) {
     const { slug } = params
     try {
@@ -160,6 +177,10 @@ export default {
         },
       ]
     },
+    githubUrl () {
+      const repo = this.$config.packageRepository.replace(/\.git$/, '')
+      return `${repo}/blob/main/content/blog/${this.post.slug}.md`
+    },
   },
 
   methods: {
@@ -248,6 +269,24 @@ $root: '.page';
   @include breakpoint(md) {
     top: 2px;
   }
+}
+
+.page__post-edit {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 12px;
+  color: var(--color-text-muted);
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.page__post-edit-icon {
+  position: relative;
+  top: 1px;
+  width: 18px;
 }
 </style>
 
