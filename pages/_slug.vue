@@ -178,7 +178,11 @@ export default {
 $root: '.page';
 
 .page {
-  padding: 40px 0;
+  padding: 8px 0 80px;
+
+  @include breakpoint(md) {
+    padding: 40px 0 104px;
+  }
 }
 
 .page__breadcrumbs {
@@ -189,21 +193,34 @@ $root: '.page';
   display: grid;
   grid-template-columns: 100%;
   grid-auto-rows: auto;
-  gap: 56px;
-  margin-top: 56px;
+  gap: 48px;
+  margin-top: 24px;
+
+  @include breakpoint(md) {
+    gap: 56px;
+    margin-top: 40px;
+  }
 }
 
 .page__post-header {
   display: grid;
   grid-template-columns: 100%;
   grid-auto-rows: auto;
-  gap: 24px;
+  gap: 16px;
+
+  @include breakpoint(md) {
+    gap: 24px;
+  }
 }
 
 .page__post-title {
-  font-size: 36px;
+  font-size: 24px;
   font-weight: $font-weight-bold;
   line-height: 1.35;
+
+  @include breakpoint(md) {
+    font-size: 36px;
+  }
 }
 
 .page__post-meta {
@@ -224,9 +241,13 @@ $root: '.page';
 
 .page__post-meta-icon {
   position: relative;
-  top: 2px;
+  top: 1px;
   font-size: 16px;
   user-select: none;
+
+  @include breakpoint(md) {
+    top: 2px;
+  }
 }
 </style>
 
