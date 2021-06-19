@@ -1,7 +1,7 @@
 <template>
   <app-container tag="header" class="the-header">
     <div class="the-header__body">
-      <nuxt-link class="the-header__logo" to="/">
+      <nuxt-link :title="$config.baseName" class="the-header__logo" to="/" exact>
         <app-logo />
       </nuxt-link>
       <app-button

@@ -23,6 +23,9 @@ export const colors = Object.freeze({
   'gray-200': '#b5b8ba',
   'gray-100': '#cdd0d1',
   'gray-50': '#e7e8e8',
+
+  link: '#004ac2',
+  'link-lighten': '#5c9bb8',
 })
 
 export const validateColor = (val) => {

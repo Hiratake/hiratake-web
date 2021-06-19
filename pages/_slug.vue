@@ -1,9 +1,48 @@
 <template>
-  <app-container class="page" tag="main"></app-container>
+  <app-container class="page" tag="main">
+    <div class="page__breadcrumbs">
+      <app-breadcrumbs :items="breadcrumbs" />
+    </div>
+    <article class="page__post">
+      <header class="page__post-header">
+        <h1 class="page__post-title">{{ post.title }}</h1>
+        <ul class="page__post-meta">
+          <li class="page__post-meta-item">
+            <span class="page__post-meta-icon material-icons">today</span>
+            <span>{{ dateToString(post.createdAt) }}</span>
+          </li>
+          <li class="page__post-meta-item">
+            <span class="page__post-meta-icon material-icons">update</span>
+            <span>{{ dateToString(post.updatedAt) }}</span>
+          </li>
+        </ul>
+      </header>
+      <div class="page__post-body">
+        <nuxt-content :document="post" />
+      </div>
+      <footer class="page__post-footer">
+        <a
+          :href="githubUrl"
+          class="page__post-edit"
+          target="_blank"
+          rel="noopener"
+        >
+          <icon-github class="page__post-edit-icon" />
+          <span>GitHubで編集を提案</span>
+        </a>
+      </footer>
+    </article>
+  </app-container>
 </template>
 
 <script>
+import IconGithub from '@/assets/images/github.svg?inline'
+
 export default {
+  components: {
+    IconGithub,
+  },
+
   async asyncData ({ params, error, $content, $cloudinary }) {
     const { slug } = params
     try {
@@ -138,6 +177,135 @@ export default {
         },
       ]
     },
+    githubUrl () {
+      const repo = this.$config.packageRepository.replace(/\.git$/, '')
+      return `${repo}/blob/main/content/blog/${this.post.slug}.md`
+    },
+  },
+
+  methods: {
+    dateToString (val) {
+      const year = val.getFullYear()
+      const month = ('0' + (val.getMonth() + 1)).slice(-2)
+      const date = ('0' + val.getDate()).slice(-2)
+      return `${year}-${month}-${date}`
+    },
   },
 }
 </script>
+
+<style lang="scss" scoped>
+@use 'assets/sass/_' as *;
+$root: '.page';
+
+.page {
+  padding: 8px 0 80px;
+
+  @include breakpoint(md) {
+    padding: 40px 0 104px;
+  }
+}
+
+.page__breadcrumbs {
+  padding: 0 4px;
+}
+
+.page__post {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-auto-rows: auto;
+  gap: 48px;
+  margin-top: 24px;
+
+  @include breakpoint(md) {
+    gap: 56px;
+    margin-top: 40px;
+  }
+}
+
+.page__post-header {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-auto-rows: auto;
+  gap: 16px;
+
+  @include breakpoint(md) {
+    gap: 24px;
+  }
+}
+
+.page__post-title {
+  font-size: 24px;
+  font-weight: $font-weight-bold;
+  line-height: 1.35;
+
+  @include breakpoint(md) {
+    font-size: 36px;
+  }
+}
+
+.page__post-meta {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  padding: 0 2px;
+  list-style: none;
+}
+
+.page__post-meta-item {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+.page__post-meta-icon {
+  position: relative;
+  top: 1px;
+  font-size: 16px;
+  user-select: none;
+
+  @include breakpoint(md) {
+    top: 2px;
+  }
+}
+
+.page__post-edit {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 12px;
+  color: var(--color-text-muted);
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.page__post-edit-icon {
+  position: relative;
+  top: 1px;
+  width: 18px;
+}
+</style>
+
+<style lang="scss">
+.nuxt-content {
+  font-size: 14px;
+  line-height: 1.75;
+  letter-spacing: 0.5pt;
+
+  & > * ~ * {
+    margin-top: 40px;
+  }
+
+  a {
+    color: var(--color-link);
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+</style>
