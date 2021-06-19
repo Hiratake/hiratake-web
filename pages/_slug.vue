@@ -17,6 +17,9 @@
           </li>
         </ul>
       </header>
+      <div class="page__post-body">
+        <nuxt-content :document="post" />
+      </div>
     </article>
   </app-container>
 </template>
@@ -224,5 +227,25 @@ $root: '.page';
   top: 2px;
   font-size: 16px;
   user-select: none;
+}
+</style>
+
+<style lang="scss">
+.nuxt-content {
+  font-size: 14px;
+  line-height: 1.75;
+  letter-spacing: 0.5pt;
+
+  & > * ~ * {
+    margin-top: 40px;
+  }
+
+  a {
+    color: var(--color-link);
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
 }
 </style>
