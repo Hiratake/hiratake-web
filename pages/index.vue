@@ -17,6 +17,7 @@
               v-if="profile.social[item]"
               :key="item"
               :href="profile.social[item]"
+              :title="item"
               class="page__profile-social-item"
               target="_blank"
               rel="noopener"
