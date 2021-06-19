@@ -103,6 +103,7 @@ export default {
 
   modules: [
     '@nuxt/content',
+    '@nuxtjs/sitemap',
     '@nuxtjs/cloudinary',
   ],
 
@@ -112,6 +113,10 @@ export default {
   },
 
   content: {},
+
+  sitemap: {
+    hostname: `${baseUrl}${baseDir}`,
+  },
 
   cloudinary: {
     cloudName: 'hiratake',
