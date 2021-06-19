@@ -142,15 +142,6 @@ export default {
       return this.$colorMode.value === 'dark'
     },
   },
-
-  methods: {
-    dateToString (val) {
-      const year = val.getFullYear()
-      const month = ('0' + (val.getMonth() + 1)).slice(-2)
-      const date = ('0' + val.getDate()).slice(-2)
-      return `${year}-${month}-${date}`
-    },
-  },
 }
 </script>
 
