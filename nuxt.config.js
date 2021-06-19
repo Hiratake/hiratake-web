@@ -103,6 +103,7 @@ export default {
 
   modules: [
     '@nuxt/content',
+    '@nuxtjs/sitemap',
     '@nuxtjs/cloudinary',
   ],
 
@@ -112,6 +113,21 @@ export default {
   },
 
   content: {},
+
+  sitemap: {
+    hostname: `${baseUrl}${baseDir}`,
+    routes: async () => {
+      const { $content } = require('@nuxt/content')
+      const pages = await $content('blog')
+        .only(['slug', 'updatedAt'])
+        .fetch()
+      return pages.map(item => ({
+        url: item.slug,
+        lastmod: item.updatedAt,
+        priority: 0.8,
+      }))
+    },
+  },
 
   cloudinary: {
     cloudName: 'hiratake',
