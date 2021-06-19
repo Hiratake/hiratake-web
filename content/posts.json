@@ -1,15 +1,21 @@
 {
   "posts": [
     {
+      "title": "Vue CLI の multi-page mode で HTML の minify を無効にする",
+      "url": "https://zenn.dev/hiratake/articles/vue-cli-without-minification",
+      "createdAt": "2021-06-17T13:50:02+09:00",
+      "postedOn": "zenn"
+    },
+    {
       "title": "GitHub Actions で hub コマンドを使ってプルリクエストをつくる",
       "url": "https://zenn.dev/hiratake/articles/github-actions-create-pull-request",
-      "createdAt": "2021-05-06T23:50:00+09:00",
+      "createdAt": "2021-05-06T23:50:19+09:00",
       "postedOn": "zenn"
     },
     {
       "title": "vue-sfc-rollup と GitHub Packages でコンポーネントを配布する",
       "url": "https://zenn.dev/hiratake/articles/publish-vue-sfc-rollup",
-      "createdAt": "2021-05-03T19:31:00+09:00",
+      "createdAt": "2021-05-03T19:39:51+09:00",
       "postedOn": "zenn"
     },
     {
