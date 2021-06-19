@@ -25,7 +25,7 @@ export default {}
     --color-text: #{$color-white};
     --color-text-muted: #{$color-gray-100};
     --color-background: #{$color-gray-800};
-    --color-link: #{$color-link--lighten};
+    --color-link: #{$color-link-lighten};
     --color-tab: #{$color-gray-700};
     --color-timeline: #{$color-gray-300};
   }
