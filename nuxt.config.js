@@ -2,8 +2,6 @@
 
 const appEnv = process.env.NODE_ENV || 'production'
 
-const packageRepository = process.env.npm_package_repository_url || ''
-
 const baseName = process.env.BASE_NAME || 'Hiratake Web'
 const baseUrl = process.env.BASE_URL || 'https://hiratake.xyz'
 const baseDir = process.env.BASE_DIR || '/'
@@ -85,7 +83,6 @@ export default {
   },
 
   publicRuntimeConfig: {
-    packageRepository,
     baseName,
     baseDescription,
     baseUrl,

@@ -178,7 +178,7 @@ export default {
       ]
     },
     githubUrl () {
-      const repo = this.$config.packageRepository.replace(/\.git$/, '')
+      const repo = 'https://github.com/Hiratake/hiratake-web'
       return `${repo}/blob/main/content/blog/${this.post.slug}.md`
     },
   },
