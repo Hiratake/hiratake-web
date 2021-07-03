@@ -287,6 +287,7 @@ $root: '.page';
   position: relative;
   top: 1px;
   width: 18px;
+  fill: currentColor;
 }
 </style>
 
