@@ -918,7 +918,7 @@
     "@babel/helper-validator-identifier" "^7.14.0"
     to-fast-properties "^2.0.0"
 
-"@cld-apis/utils@^0.1.1":
+"@cld-apis/utils@^0.1.3":
   version "0.1.3"
   resolved "https://registry.yarnpkg.com/@cld-apis/utils/-/utils-0.1.3.tgz#a12d26bef6955d4c3e501fb84ad4bf544f07aa10"
   integrity sha512-e50vj4qE6PLYrado/ypwH+AVHwMRCevvpAz8sqDhRMow9MPiWNTuY9+jnLU8K/ewmX7rgdBsxxqBpMtF/OwhIw==
@@ -1525,17 +1525,17 @@
     webpack-node-externals "^3.0.0"
     webpackbar "^4.0.0"
 
-"@nuxtjs/cloudinary@^1.0.3-beta-4":
-  version "1.0.3-beta-4"
-  resolved "https://registry.yarnpkg.com/@nuxtjs/cloudinary/-/cloudinary-1.0.3-beta-4.tgz#f3021203e8a7711562e3659b4cc37afab6a9d7aa"
-  integrity sha512-iMaJCvMKC3GW4F0Pw4Cn7lTRhw4CUm6bOoLx1ouEc66+rRQPQhTKxyeCNsMQ87tef1h8yH3U9jKSH7Sk5VtZSA==
+"@nuxtjs/cloudinary@^1.0.3":
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/cloudinary/-/cloudinary-1.0.3.tgz#6805fd91fc10885d4edb0dfc18bf5485baf02689"
+  integrity sha512-F671MbjXyAkCfHqDpouFULiCM1SMMGMEI7eHcPSvp3eKOd02exNfenOuPsO9S8M5prvzSgLGIx4UHnhVrhyntA==
   dependencies:
-    "@cld-apis/utils" "^0.1.1"
+    "@cld-apis/utils" "^0.1.3"
     chalk "^4.1.0"
-    cloudinary "^1.23.0"
+    cloudinary "^1.25.0"
     cloudinary-core "^2.11.3"
     cloudinary-vue "^1.1.2"
-    consola "^2.15.0"
+    consola "^2.15.3"
     defu "^2.0.4"
 
 "@nuxtjs/color-mode@^2.0.10":
@@ -3409,10 +3409,10 @@ cloudinary-vue@^1.1.2:
   dependencies:
     cloudinary-core "^2.10.3"
 
-cloudinary@^1.23.0:
-  version "1.26.0"
-  resolved "https://registry.yarnpkg.com/cloudinary/-/cloudinary-1.26.0.tgz#c19ac03ea2b23b4c66e15f5b2614507f497d5c87"
-  integrity sha512-IMXXthfGKr8WOK6Ja2ixjoMLwEZwYZpomp/WTgsyYvhVxNw1RlszFBevaY5pzwTMRVlUL4/LfgQpMh/GxDe8uw==
+cloudinary@^1.25.0:
+  version "1.26.2"
+  resolved "https://registry.yarnpkg.com/cloudinary/-/cloudinary-1.26.2.tgz#0a5dcec89e3e6b483ea5ed8433b8b5542d578957"
+  integrity sha512-C42qx+Be+pOIbZSZ9+qYTzKpddYkXqdFioD0mf+Tp7K6Lb61rUjROAqJhsz+RP/ZOnGBHTAkhujcooAyZkx0Kw==
   dependencies:
     cloudinary-core "^2.10.2"
     core-js "3.6.5"
