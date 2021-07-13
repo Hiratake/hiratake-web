@@ -38,7 +38,7 @@
     "cross-env": "^7.0.3",
     "eslint": "^7.30.0",
     "eslint-plugin-nuxt": "^2.0.0",
-    "eslint-plugin-vue": "^7.12.1",
+    "eslint-plugin-vue": "^7.13.0",
     "fibers": "^5.0.0",
     "husky": "^7.0.1",
     "nuxt-jsonld": "^1.5.1",
