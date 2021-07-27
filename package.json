@@ -26,7 +26,7 @@
   },
   "devDependencies": {
     "@commitlint/cli": "^12.1.4",
-    "@commitlint/config-conventional": "^12.1.4",
+    "@commitlint/config-conventional": "^13.1.0",
     "@nuxtjs/cloudinary": "^1.0.3",
     "@nuxtjs/color-mode": "^2.0.10",
     "@nuxtjs/eslint-config": "^6.0.1",
