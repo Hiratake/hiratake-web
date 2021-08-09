@@ -7390,10 +7390,10 @@ num2fraction@^1.2.2:
   resolved "https://registry.yarnpkg.com/num2fraction/-/num2fraction-1.2.2.tgz#6f682b6a027a4e9ddfa4564cd2589d1d4e669ede"
   integrity sha1-b2gragJ6Tp3fpFZM0lidHU5mnt4=
 
-nuxt-jsonld@^1.5.1:
-  version "1.5.1"
-  resolved "https://registry.yarnpkg.com/nuxt-jsonld/-/nuxt-jsonld-1.5.1.tgz#cbde4542fa142b9c80d408ec024d0d2f3ed3e8f0"
-  integrity sha512-W8M4bD9Iw+Vy9LqJylkSzAf5NEOCJhDxzUlVLpT8IDtkDs1Ahwu0goH1+L8Gi8FBeDOqpK90Yttj3gwAGLi54A==
+nuxt-jsonld@^1.5.2:
+  version "1.5.2"
+  resolved "https://registry.yarnpkg.com/nuxt-jsonld/-/nuxt-jsonld-1.5.2.tgz#0285386457433ac742c75de4ad2d4cb81d110f1c"
+  integrity sha512-48UL2kskKZGTBPSmbzLeadfm/QaNYrdoSd1xeKdv7c941DZcLgo1Qz+jVAjYkz7NZgCSjhBwjcDl6HoyF35i2Q==
   dependencies:
     schema-dts "^0.8.2"
 
