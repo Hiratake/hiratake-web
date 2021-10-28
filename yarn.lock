@@ -7484,12 +7484,12 @@ num2fraction@^1.2.2:
   resolved "https://registry.yarnpkg.com/num2fraction/-/num2fraction-1.2.2.tgz#6f682b6a027a4e9ddfa4564cd2589d1d4e669ede"
   integrity sha1-b2gragJ6Tp3fpFZM0lidHU5mnt4=
 
-nuxt-jsonld@^1.5.2:
-  version "1.5.2"
-  resolved "https://registry.yarnpkg.com/nuxt-jsonld/-/nuxt-jsonld-1.5.2.tgz#0285386457433ac742c75de4ad2d4cb81d110f1c"
-  integrity sha512-48UL2kskKZGTBPSmbzLeadfm/QaNYrdoSd1xeKdv7c941DZcLgo1Qz+jVAjYkz7NZgCSjhBwjcDl6HoyF35i2Q==
+nuxt-jsonld@^1.5.3:
+  version "1.5.3"
+  resolved "https://registry.yarnpkg.com/nuxt-jsonld/-/nuxt-jsonld-1.5.3.tgz#53e9f468f145b47a139eb84a30911cff713846f7"
+  integrity sha512-FC+mEfjyMdOR1lfjSQvmhtcDUOQiUha/+Y+2MaWGd8A8OQVZJaJ+d8ZyHU+p/XdLFFTjwQG0byKqa+jVvwVMTA==
   dependencies:
-    schema-dts "^0.8.2"
+    schema-dts "^1.0.0"
 
 nuxt@^2.15.8:
   version "2.15.8"
@@ -9486,10 +9486,10 @@ sax@>=0.6.0, sax@^1.2.4, sax@~1.2.4:
   resolved "https://registry.yarnpkg.com/sax/-/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
   integrity sha512-NqVDv9TpANUjFm0N8uM5GxL36UgKi9/atZw+x7YFnQ8ckwFGKrl4xX4yWtrey3UJm5nP1kUbnYgLopqWNSRhWw==
 
-schema-dts@^0.8.2:
-  version "0.8.3"
-  resolved "https://registry.yarnpkg.com/schema-dts/-/schema-dts-0.8.3.tgz#6c03ca47200e80e9a871d6de626a7cf04fe009b7"
-  integrity sha512-GSLeVkUgEe8DzS8/FGWou1wlC8tQ1KXA5amCqCIH/psUzF74fWswtT0QFlSoJLT08CYyixnc3S/lkAm+RExoLQ==
+schema-dts@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/schema-dts/-/schema-dts-1.0.0.tgz#60e8a0f2cef5e644c44c843b03d35b37a4423c01"
+  integrity sha512-9t8gnY3RW2CbpuvA0pIpcaHFXkJTeNnWR4uaWI+PiYSfpuEeMw+2Q0Gac6YTnQb1B8TR6/+G71gQWuSE7dq6Zw==
 
 schema-utils@^1.0.0:
   version "1.0.0"
