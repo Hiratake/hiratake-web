@@ -134,9 +134,6 @@ export default {
     loaders: {
       scss: {
         implementation: require('sass'),
-        sassOptions: {
-          fiber: require('fibers'),
-        },
       },
     },
   },
