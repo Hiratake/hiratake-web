@@ -35,6 +35,7 @@
     "husky": "^7.0.4",
     "lint-staged": "^11.2.6",
     "prettier": "^2.4.1",
+    "ress": "^4.0.0",
     "typescript": "4.4.4"
   },
   "scripts": {
