@@ -1,9 +1,13 @@
 // components > TheHeader
 
+import React from 'react'
 import Link from 'next/link'
 import { AppContainer } from '@/components/AppGrid'
 
-const TheHeader = () => {
+// Props
+type Props = {}
+
+const TheHeader: React.FC<Props> = () => {
   return (
     <AppContainer tag="header">
       <div>
