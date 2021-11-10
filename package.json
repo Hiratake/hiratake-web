@@ -27,6 +27,8 @@
   "devDependencies": {
     "@commitlint/cli": "^14.1.0",
     "@commitlint/config-conventional": "^14.1.0",
+    "@emotion/babel-plugin": "^11.3.0",
+    "@emotion/react": "^11.5.0",
     "@types/node": "16.11.7",
     "@types/react": "17.0.34",
     "eslint": "7.32.0",
