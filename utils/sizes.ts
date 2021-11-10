@@ -7,5 +7,6 @@ export const breakpoints = (type: 'sm' | 'md' | 'lg' | 'xl'): string => {
     lg: 992,
     xl: 1200,
   }
-  return `@media screen and (min-width: ${obj[type]}px)`
+  const isValidType: boolean = type in obj
+  return isValidType ? `@media screen and (min-width: ${obj[type]}px)` : ''
 }
