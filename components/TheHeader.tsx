@@ -37,12 +37,11 @@ const TheHeader: React.FC<Props> = () => {
   return (
     <AppContainer tag="header">
       <div css={styledHeader}>
-        <Link href="/" passHref>
-          <a css={styledHeaderLogo}>
+        <Link href={process.env.baseDir || '/'} passHref>
+          <a css={styledHeaderLogo} title={process.env.baseName}>
             <AppLogo />
           </a>
         </Link>
-        <div></div>
       </div>
     </AppContainer>
   )
