@@ -24,6 +24,7 @@ const TheHeader: React.FC<Props> = () => {
     width: 120px;
     color: inherit;
     opacity: 1;
+    transition-property: opacity;
 
     &:hover {
       opacity: 0.6;
