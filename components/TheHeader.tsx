@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { css } from '@emotion/react'
 import { AppButton } from '@/components/AppButton'
 import { AppContainer } from '@/components/AppGrid'
+import { AppIcon } from '@/components/AppIcon'
 import { AppLogo } from '@/components/AppLogo'
 import { breakpoints } from '@/utils/sizes'
 
@@ -51,9 +52,9 @@ const TheHeader: React.FC<Props> = () => {
           label="Color Mode"
           size="large"
           onClick={onClick}
-          // icon
+          icon
         >
-          切り替え
+          <AppIcon size={20}>light_mode</AppIcon>
         </AppButton>
       </div>
     </AppContainer>

@@ -2,7 +2,8 @@
 
 import { AppButton } from '@/components/AppButton'
 import { AppContainer } from '@/components/AppGrid'
+import { AppIcon } from '@/components/AppIcon'
 import { AppLogo } from '@/components/AppLogo'
 import TheHeader from '@/components/TheHeader'
 
-export { AppButton, AppContainer, AppLogo, TheHeader }
+export { AppButton, AppContainer, AppIcon, AppLogo, TheHeader }
