@@ -64,7 +64,7 @@ const AppButton: React.FC<Props> = ({
     position: relative;
     display: inline-flex;
     align-items: center;
-    justify-items: center;
+    justify-content: center;
     width: ${icon ? sizes[size].height : 'auto'};
     height: ${sizes[size].height};
     padding: ${icon ? 0 : sizes[size].padding};
