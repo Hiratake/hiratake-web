@@ -1,8 +1,10 @@
 // components > ToggleTheme
 
 import React, { useEffect, useState } from 'react'
+import { Global, css } from '@emotion/react'
 import { AppButton } from '@/components/AppButton'
 import { AppIcon } from '@/components/AppIcon'
+import { colors } from '@/utils/colors'
 
 // Props
 type Props = {}
@@ -24,17 +26,40 @@ const ToggleTheme: React.FC<Props> = () => {
   }
 
   return (
-    <AppButton
-      color={activeTheme === 'light' ? 'white' : 'gray800'}
-      label={`Change to ${inactiveTheme} mode`}
-      size="large"
-      onClick={onClick}
-      icon
-    >
-      <AppIcon size={20}>
-        {activeTheme === 'light' ? 'light_mode' : 'dark_mode'}
-      </AppIcon>
-    </AppButton>
+    <>
+      <Global
+        styles={css`
+          :root {
+            --color-text: ${colors.gray700};
+            --color-text-muted: ${colors.gray500};
+            --color-background: ${colors.white};
+            --color-link: ${colors.link};
+            --color-tab: ${colors.gray50};
+            --color-timeline: ${colors.gray100};
+
+            &[data-theme='dark'] {
+              --color-text: ${colors.white};
+              --color-text-muted: ${colors.gray100};
+              --color-background: ${colors.gray800};
+              --color-link: ${colors.linkLighten};
+              --color-tab: ${colors.gray700};
+              --color-timeline: ${colors.gray300};
+            }
+          }
+        `}
+      />
+      <AppButton
+        color={activeTheme === 'light' ? 'white' : 'gray800'}
+        label={`Change to ${inactiveTheme} mode`}
+        size="large"
+        onClick={onClick}
+        icon
+      >
+        <AppIcon size={20}>
+          {activeTheme === 'light' ? 'light_mode' : 'dark_mode'}
+        </AppIcon>
+      </AppButton>
+    </>
   )
 }
 
