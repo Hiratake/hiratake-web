@@ -3,6 +3,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { css } from '@emotion/react'
+import { AppButton } from '@/components/AppButton'
 import { AppContainer } from '@/components/AppGrid'
 import { AppLogo } from '@/components/AppLogo'
 import { breakpoints } from '@/utils/sizes'
@@ -12,6 +13,10 @@ type Props = {}
 
 // TheHeader
 const TheHeader: React.FC<Props> = () => {
+  const onClick = (event: React.MouseEvent<HTMLButtonElement>): void => {
+    console.log(event)
+  }
+
   // Styles
   const styledHeader = css`
     display: flex;
@@ -25,11 +30,9 @@ const TheHeader: React.FC<Props> = () => {
     color: inherit;
     opacity: 1;
     transition-property: opacity;
-
     &:hover {
       opacity: 0.6;
     }
-
     ${breakpoints('md')} {
       width: 168px;
     }
@@ -43,6 +46,15 @@ const TheHeader: React.FC<Props> = () => {
             <AppLogo />
           </a>
         </Link>
+        <AppButton
+          color="white"
+          label="Color Mode"
+          size="large"
+          onClick={onClick}
+          // icon
+        >
+          切り替え
+        </AppButton>
       </div>
     </AppContainer>
   )

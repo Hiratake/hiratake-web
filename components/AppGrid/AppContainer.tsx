@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { css } from '@emotion/react'
-import { convertNameToHex } from '@/utils/colors'
+import { convertNameToHex, validateColor } from '@/utils/colors'
 import { breakpoints } from '@/utils/sizes'
 
 // Props
@@ -30,8 +30,9 @@ const AppContainer: React.FC<Props> = ({
     max-width: ${fluid ? 'none' : '800px'};
     padding: 0 16px;
     margin: auto;
-    background-color: ${color ? convertNameToHex(color) : 'transparent'};
-
+    background-color: ${color && validateColor(color)
+      ? convertNameToHex(color)
+      : 'transparent'};
     ${breakpoints('md')} {
       padding: 0 24px;
     }
