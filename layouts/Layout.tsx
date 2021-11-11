@@ -1,7 +1,7 @@
 // layout > Layout
 
 import React from 'react'
-import { AppContainer, TheHeader } from '@/components'
+import { AppContainer, TheFooter, TheHeader } from '@/components'
 
 // Props
 type Props = {
@@ -15,6 +15,7 @@ const Layout: React.FC<Props> = (props) => {
     <>
       <TheHeader />
       <AppContainer tag="main">{props.children}</AppContainer>
+      <TheFooter />
     </>
   )
 }
