@@ -1,23 +1,22 @@
 // components > TheHeader
 
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
+import Dynamic from 'next/dynamic'
 import { css } from '@emotion/react'
-import { AppButton } from '@/components/AppButton'
 import { AppContainer } from '@/components/AppGrid'
-import { AppIcon } from '@/components/AppIcon'
 import { AppLogo } from '@/components/AppLogo'
 import { breakpoints } from '@/utils/sizes'
+
+const ToggleTheme = Dynamic(() => import('@/components/ToggleTheme'), {
+  ssr: false,
+})
 
 // Props
 type Props = {}
 
 // TheHeader
 const TheHeader: React.FC<Props> = () => {
-  const onClick = (event: React.MouseEvent<HTMLButtonElement>): void => {
-    console.log(event)
-  }
-
   // Styles
   const styledHeader = css`
     display: flex;
@@ -47,15 +46,7 @@ const TheHeader: React.FC<Props> = () => {
             <AppLogo />
           </a>
         </Link>
-        <AppButton
-          color="white"
-          label="Color Mode"
-          size="large"
-          onClick={onClick}
-          icon
-        >
-          <AppIcon size={20}>light_mode</AppIcon>
-        </AppButton>
+        <ToggleTheme />
       </div>
     </AppContainer>
   )
