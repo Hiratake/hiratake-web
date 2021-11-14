@@ -10,6 +10,9 @@ module.exports = {
     baseName,
     baseDir,
   },
+  images: {
+    domains: ['gravatar.com'],
+  },
   webpack(config) {
     config.resolve.alias['@'] = path.join(__dirname)
     return config
