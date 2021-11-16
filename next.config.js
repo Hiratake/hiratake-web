@@ -12,8 +12,13 @@ module.exports = {
   },
   images: {
     domains: ['gravatar.com'],
+    disableStaticImages: true,
   },
   webpack(config) {
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ['@svgr/webpack'],
+    })
     config.resolve.alias['@'] = path.join(__dirname)
     return config
   },
