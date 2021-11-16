@@ -1,10 +1,14 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link'
 import { css } from '@emotion/react'
 import {} from '@/components'
 import { breakpoints } from '@/utils/sizes'
 import profile from '@/assets/profile.json'
+import IconTwitter from '@/assets/images/twitter.svg'
+import IconGitHub from '@/assets/images/github.svg'
+import IconDiscord from '@/assets/images/discord.svg'
 
 const Home: NextPage = () => {
   // Styles
@@ -51,6 +55,35 @@ const Home: NextPage = () => {
       max-width: none;
     }
   `
+  const styledProfileSocial = css`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 16px;
+    ${breakpoints('sm')} {
+      justify-content: flex-start;
+    }
+  `
+  const styledProfileSocialItem = css`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    padding: 2px;
+    color: inherit;
+    text-decoration: none;
+    &:hover {
+      color: var(--color-text-muted);
+    }
+    & ~ & {
+      margin-left: 8px;
+    }
+  `
+  const styledProfileSocialIcon = css`
+    width: 100%;
+    fill: currentColor;
+  `
 
   return (
     <>
@@ -67,6 +100,23 @@ const Home: NextPage = () => {
         <div css={styledProfileContent}>
           <p css={styledProfileName}>{profile.name}</p>
           <p css={styledProfileBio}>{profile.bio}</p>
+          <div css={styledProfileSocial}>
+            <Link href={profile.social.twitter} passHref>
+              <a css={styledProfileSocialItem} target="_blank" rel="noopener">
+                <IconTwitter css={styledProfileSocialIcon} />
+              </a>
+            </Link>
+            <Link href={profile.social.github} passHref>
+              <a css={styledProfileSocialItem} target="_blank" rel="noopener">
+                <IconGitHub css={styledProfileSocialIcon} />
+              </a>
+            </Link>
+            <Link href={profile.social.discord} passHref>
+              <a css={styledProfileSocialItem} target="_blank" rel="noopener">
+                <IconDiscord css={styledProfileSocialIcon} />
+              </a>
+            </Link>
+          </div>
         </div>
       </div>
     </>
