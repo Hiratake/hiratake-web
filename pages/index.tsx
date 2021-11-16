@@ -3,8 +3,55 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { css } from '@emotion/react'
 import {} from '@/components'
+import { breakpoints } from '@/utils/sizes'
+import profile from '@/assets/profile.json'
 
 const Home: NextPage = () => {
+  // Styles
+  const styledProfile = css`
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 56px 0;
+    ${breakpoints('md')} {
+      padding: 80px 0;
+    }
+  `
+  const styledProfileIcon = css`
+    width: 120px;
+    height: 120px;
+    overflow: hidden;
+    border-radius: 50%;
+  `
+  const styledProfileContent = css`
+    width: 100%;
+    padding: 16px 40px 0 40px;
+    font-family: 'sofia-pro', 'Hiragino Kaku Gothic ProN', 'Yu Gothic',
+      sans-serif;
+    text-align: center;
+    ${breakpoints('md')} {
+      max-width: 400px;
+      padding-top: 0;
+      padding-right: 0;
+      text-align: left;
+    }
+  `
+  const styledProfileName = css`
+    font-size: 36px;
+    font-weight: 700;
+  `
+  const styledProfileBio = css`
+    max-width: 320px;
+    margin: auto;
+    font-size: 14px;
+    color: var(--color-text-muted);
+
+    ${breakpoints('sm')} {
+      max-width: none;
+    }
+  `
+
   return (
     <>
       <Head>
@@ -13,12 +60,15 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Image
-        src="https://gravatar.com/avatar/8fd43c0ce852b1dacd0ad04c458040b1?s=120"
-        alt="Icon"
-        width={120}
-        height={120}
-      />
+      <div css={styledProfile}>
+        <div css={styledProfileIcon}>
+          <Image src={profile.image} alt="Icon" width={120} height={120} />
+        </div>
+        <div css={styledProfileContent}>
+          <p css={styledProfileName}>{profile.name}</p>
+          <p css={styledProfileBio}>{profile.bio}</p>
+        </div>
+      </div>
     </>
   )
 }
