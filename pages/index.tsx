@@ -3,7 +3,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import { css } from '@emotion/react'
-import { AppTab } from '@/components'
+import { AppTab, AppTabItem } from '@/components'
 import { breakpoints } from '@/utils/sizes'
 import profile from '@/assets/profile.json'
 import IconTwitter from '@/assets/images/twitter.svg'
@@ -137,7 +137,14 @@ const Home: NextPage = () => {
           ]}
           current={currentTab}
           onChange={setCurrentTab}
-        ></AppTab>
+        >
+          <AppTabItem current={currentTab} itemKey="posts">
+            あ
+          </AppTabItem>
+          <AppTabItem current={currentTab} itemKey="works">
+            い
+          </AppTabItem>
+        </AppTab>
       </div>
     </>
   )
