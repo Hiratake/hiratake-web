@@ -3,12 +3,13 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import { css } from '@emotion/react'
-import {} from '@/components'
+import { AppTab } from '@/components'
 import { breakpoints } from '@/utils/sizes'
 import profile from '@/assets/profile.json'
 import IconTwitter from '@/assets/images/twitter.svg'
 import IconGitHub from '@/assets/images/github.svg'
 import IconDiscord from '@/assets/images/discord.svg'
+import { useState } from 'react'
 
 const Home: NextPage = () => {
   // Styles
@@ -84,6 +85,14 @@ const Home: NextPage = () => {
     width: 100%;
     fill: currentColor;
   `
+  const styledContent = css`
+    padding: 24px 0 48px;
+    ${breakpoints('md')} {
+      padding: 40px 0 80px;
+    }
+  `
+
+  const [currentTab, setCurrentTab] = useState('posts')
 
   return (
     <>
@@ -118,6 +127,17 @@ const Home: NextPage = () => {
             </Link>
           </div>
         </div>
+      </div>
+
+      <div css={styledContent}>
+        <AppTab
+          headers={[
+            { label: 'posts', key: 'posts' },
+            { label: 'works', key: 'works' },
+          ]}
+          current={currentTab}
+          onChange={setCurrentTab}
+        ></AppTab>
       </div>
     </>
   )
