@@ -115,7 +115,7 @@ const Home: NextPage<{ allPostsData: ReturnType<typeof getSortedPostsData> }> =
           <meta property="og:type" content="website" />
           <meta
             property="og:url"
-            content={`${process.env.baseUrl}${router.pathname}`}
+            content={`${process.env.baseUrl}${router.asPath}`}
           />
           <meta property="og:title" content={process.env.baseName} />
           <meta

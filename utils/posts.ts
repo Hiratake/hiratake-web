@@ -17,6 +17,30 @@ export const getAllPostIds = () => {
   })
 }
 
+export const getDescription = async (id: string) => {
+  const fullPath = path.join(postsDirectory, `${id}.md`)
+  const fileContents = fs.readFileSync(fullPath, 'utf8')
+  const matterResult = matter(fileContents, {
+    excerpt: true,
+    excerpt_separator: '<!--more-->',
+  })
+  let processedContent
+  if (matterResult.excerpt) {
+    processedContent = await remark().use(html).process(matterResult.excerpt)
+  } else {
+    processedContent = await remark().use(html).process(matterResult.content)
+  }
+  const contentHtml = processedContent.toString()
+  const descriptionText = contentHtml
+    .replace(/<("[^"]*"|'[^']*'|[^'">])*>/g, '')
+    .replace(/\r?\n/g, '')
+  const formattedDescription =
+    descriptionText.length > 80
+      ? `${descriptionText.substr(0, 80)}...`
+      : descriptionText
+  return formattedDescription
+}
+
 export const getPostData = async (id: string) => {
   const fullPath = path.join(postsDirectory, `${id}.md`)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
@@ -25,14 +49,17 @@ export const getPostData = async (id: string) => {
     .use(html)
     .process(matterResult.content)
   const contentHtml = processedContent.toString()
+  const description = await getDescription(id)
   return {
     id,
     contentHtml,
+    description,
     ...matterResult.data,
   } as {
     id: string
     contentHtml: string
     title: string
+    description: string
     createdAt: string
     updatedAt: string
   }
