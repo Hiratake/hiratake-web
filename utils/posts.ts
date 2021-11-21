@@ -1,6 +1,8 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
+import { remark } from 'remark'
+import html from 'remark-html'
 
 const postsDirectory: string = path.join(process.cwd(), 'posts')
 
@@ -15,14 +17,25 @@ export const getAllPostIds = () => {
   })
 }
 
-export const getPostData = (id: string) => {
+export const getPostData = async (id: string) => {
   const fullPath = path.join(postsDirectory, `${id}.md`)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
   const matterResult = matter(fileContents)
+  const processedContent = await remark()
+    .use(html)
+    .process(matterResult.content)
+  const contentHtml = processedContent.toString()
   return {
     id,
+    contentHtml,
     ...matterResult.data,
-  } as { id: string; title: string; createdAt: string; updatedAt: string }
+  } as {
+    id: string
+    contentHtml: string
+    title: string
+    createdAt: string
+    updatedAt: string
+  }
 }
 
 export const getSortedPostsData = () => {

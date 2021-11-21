@@ -13,7 +13,7 @@ export const getStaticPaths = async () => {
 }
 
 export const getStaticProps = async ({ params }) => {
-  const postData = getPostData(params.id as string)
+  const postData = await getPostData(params.id as string)
   return {
     props: {
       postData,
@@ -22,7 +22,7 @@ export const getStaticProps = async ({ params }) => {
 }
 
 const Post: NextPage<{
-  postData: ReturnType<typeof getPostData>
+  postData: ReturnType<typeof getPostData> extends Promise<infer T> ? T : never
 }> = ({ postData }) => {
   const router = useRouter()
 
@@ -53,6 +53,8 @@ const Post: NextPage<{
         {postData.createdAt}
         <br />
         {postData.updatedAt}
+        <br />
+        <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
       </div>
     </>
   )
