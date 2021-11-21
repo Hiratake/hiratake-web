@@ -13,6 +13,15 @@ import IconTwitter from '@/assets/images/twitter.svg'
 import IconGitHub from '@/assets/images/github.svg'
 import IconDiscord from '@/assets/images/discord.svg'
 
+export const getStaticProps = async () => {
+  const allPostsData = getSortedPostsData()
+  return {
+    props: {
+      allPostsData,
+    },
+  }
+}
+
 const Home: NextPage<{ allPostsData: ReturnType<typeof getSortedPostsData> }> =
   ({ allPostsData }) => {
     // Styles
@@ -177,14 +186,5 @@ const Home: NextPage<{ allPostsData: ReturnType<typeof getSortedPostsData> }> =
       </>
     )
   }
-
-export const getStaticProps = async () => {
-  const allPostsData = getSortedPostsData()
-  return {
-    props: {
-      allPostsData,
-    },
-  }
-}
 
 export default Home
