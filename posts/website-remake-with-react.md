@@ -1,7 +1,7 @@
 ---
 title: 'ウェブサイトをNext.jsで作り直しました'
-createdAt: '2021-11-21T22:00:00+09:00'
-updatedAt: '2021-11-21T22:00:00+09:00'
+createdAt: '2021-11-22'
+updatedAt: '2021-11-22'
 ---
 
 こんにちは、[ひらたけ](https://twitter.com/Hirotaisou2012) です。

@@ -3,6 +3,8 @@ import path from 'path'
 import matter from 'gray-matter'
 import { remark } from 'remark'
 import html from 'remark-html'
+import { parseISO, format } from 'date-fns'
+import { ja } from 'date-fns/locale'
 
 const postsDirectory: string = path.join(process.cwd(), 'posts')
 
@@ -45,6 +47,13 @@ export const getPostData = async (id: string) => {
   const fullPath = path.join(postsDirectory, `${id}.md`)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
   const matterResult = matter(fileContents)
+  const data = { ...matterResult.data }
+  data.createdAt = format(parseISO(data.createdAt), 'yyyy-MM-dd', {
+    locale: ja,
+  })
+  data.updatedAt = format(parseISO(data.updatedAt), 'yyyy-MM-dd', {
+    locale: ja,
+  })
   const processedContent = await remark()
     .use(html)
     .process(matterResult.content)
@@ -54,7 +63,7 @@ export const getPostData = async (id: string) => {
     id,
     contentHtml,
     description,
-    ...matterResult.data,
+    ...data,
   } as {
     id: string
     contentHtml: string
@@ -66,16 +75,22 @@ export const getPostData = async (id: string) => {
 }
 
 export const getSortedPostsData = () => {
-  // Get file name under /posts
   const fileNames = fs.readdirSync(postsDirectory)
   const allPostsData = fileNames.map((fileName) => {
     const id: string = fileName.replace(/\.md$/, '')
     const fullPath: string = path.join(postsDirectory, fileName)
     const fileContents = fs.readFileSync(fullPath, 'utf8')
     const matterResult = matter(fileContents)
+    const data = { ...matterResult.data }
+    data.createdAt = format(parseISO(data.createdAt), 'yyyy-MM-dd', {
+      locale: ja,
+    })
+    data.updatedAt = format(parseISO(data.updatedAt), 'yyyy-MM-dd', {
+      locale: ja,
+    })
     return {
       id,
-      ...matterResult.data,
+      ...data,
     } as { id: string; title: string; createdAt: string; updatedAt: string }
   })
   return allPostsData.sort(({ createdAt: a }, { createdAt: b }) => {

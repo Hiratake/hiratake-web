@@ -1,7 +1,7 @@
 ---
 title: 'ウェブサイトをリニューアルしました'
-createdAt: '2021-06-20T22:00:00+09:00'
-updatedAt: '2021-06-20T22:00:00+09:00'
+createdAt: '2021-06-20'
+updatedAt: '2021-06-20'
 ---
 
 こんにちは、[ひらたけ](https://twitter.com/Hirotaisou2012) です。

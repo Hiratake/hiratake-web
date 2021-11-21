@@ -33,6 +33,7 @@
     "@types/jest": "^27.0.2",
     "@types/node": "^16.11.7",
     "@types/react": "^17.0.35",
+    "date-fns": "^2.26.0",
     "eslint": "^7.32.0",
     "eslint-config-next": "^12.0.4",
     "eslint-config-prettier": "^8.3.0",
