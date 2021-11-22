@@ -17,6 +17,7 @@ type Props = {
 const AppIcon: React.FC<Props> = ({ children, color, size }) => {
   // Styles
   const styledIcon = css`
+    position: relative;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -29,6 +30,8 @@ const AppIcon: React.FC<Props> = ({ children, color, size }) => {
     user-select: none;
   `
   const styledIconBody = css`
+    position: inherit;
+    top: 2px;
     font-size: inherit;
   `
 
