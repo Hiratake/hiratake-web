@@ -2,6 +2,7 @@ import React from 'react'
 import type { NextPage } from 'next'
 import { useRouter } from 'next/router'
 import Head from 'next/head'
+import { AppBreadcrumbs } from '@/components'
 import { getAllPostIds, getPostData } from '@/utils/posts'
 
 export const getStaticPaths = async () => {
@@ -67,6 +68,16 @@ const Post: NextPage<{
       </Head>
 
       <div>
+        <AppBreadcrumbs
+          items={[
+            { label: 'Home', href: '/' },
+            {
+              label: postData.title,
+              href: `${router.asPath}`,
+              disabled: true,
+            },
+          ]}
+        />
         {postData.id}
         <br />
         {postData.title}
