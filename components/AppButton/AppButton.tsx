@@ -109,7 +109,7 @@ const AppButton: React.FC<Props> = ({
   `
   const styledButtonBody = css`
     display: flex;
-    gap: 4px;
+    gap: 8px;
     align-items: center;
     justify-content: center;
     line-height: 1;
