@@ -1,6 +1,7 @@
 <h1>
   <a href="https://hiratake.xyz/">
-    <img src="public/images/logo.svg" width="280"/>
+    <img src="public/images/logo.svg#gh-light-mode-only" width="280"/>
+    <img src="public/images/logo-dark.svg#gh-dark-mode-only" width="280"/>
   </a>
 </h1>
 
