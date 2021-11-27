@@ -5,7 +5,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import { css } from '@emotion/react'
-import { AppTab, AppTabItem } from '@/components'
+import { AppTab, AppTabItem, AppTimeline } from '@/components'
 import { breakpoints } from '@/utils/sizes'
 import { getSortedPostsData } from '@/utils/posts'
 import profile from '@/assets/profile.json'
@@ -103,6 +103,19 @@ const Home: NextPage<{ allPostsData: ReturnType<typeof getSortedPostsData> }> =
         padding: 40px 0 80px;
       }
     `
+    const styledPostMeta = css`
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      font-family: 'sofia-pro', 'Hiragino Kaku Gothic ProN', 'Yu Gothic',
+        sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--color-text-muted);
+      & > * {
+        margin-right: 5px;
+      }
+    `
 
     const router = useRouter()
     const [currentTab, setCurrentTab] = React.useState('posts')
@@ -166,20 +179,32 @@ const Home: NextPage<{ allPostsData: ReturnType<typeof getSortedPostsData> }> =
             onChange={setCurrentTab}
           >
             <AppTabItem current={currentTab} itemKey="posts">
-              {allPostsData.map(({ id, title, createdAt, updatedAt }) => (
-                <li key={id}>
-                  {title}
-                  <br />
-                  {id}
-                  <br />
-                  {createdAt}
-                  <br />
-                  {updatedAt}
-                </li>
-              ))}
+              <AppTimeline
+                items={allPostsData.map(({ id, title, createdAt }) => {
+                  return {
+                    id: id,
+                    title: title,
+                    date: createdAt,
+                    href: `/${id}`,
+                    header: (
+                      <div css={styledPostMeta}>
+                        <span>posted on</span>
+                        <span
+                          css={css`
+                            opacity: 0.4;
+                          `}
+                        >
+                          /
+                        </span>
+                        <span>{createdAt}</span>
+                      </div>
+                    ),
+                  }
+                })}
+              />
             </AppTabItem>
             <AppTabItem current={currentTab} itemKey="works">
-              い
+              準備中
             </AppTabItem>
           </AppTab>
         </div>
