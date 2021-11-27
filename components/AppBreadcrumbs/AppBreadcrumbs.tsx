@@ -42,7 +42,7 @@ const AppBreadcrumbs: React.FC<Props> = ({ items }) => {
     <li key={index} css={styledBreadcrumbsItem}>
       {index > 0 && <AppIcon>chevron_right</AppIcon>}
       {!item.disabled && item.href ? (
-        <Link href={item.href}>
+        <Link href={item.href} passHref>
           <a css={styledBreadcrumbsLink}>{item.label}</a>
         </Link>
       ) : (
