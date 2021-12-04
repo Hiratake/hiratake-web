@@ -88,10 +88,17 @@ export const getSortedPostsData = () => {
     data.updatedAt = format(parseISO(data.updatedAt), 'yyyy-MM-dd', {
       locale: ja,
     })
+    data.postedOn = 'Blog'
     return {
       id,
       ...data,
-    } as { id: string; title: string; createdAt: string; updatedAt: string }
+    } as {
+      id: string
+      title: string
+      createdAt: string
+      updatedAt: string
+      postedOn: string
+    }
   })
   return allPostsData.sort(({ createdAt: a }, { createdAt: b }) => {
     if (a < b) {

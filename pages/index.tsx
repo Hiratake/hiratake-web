@@ -180,27 +180,30 @@ const Home: NextPage<{ allPostsData: ReturnType<typeof getSortedPostsData> }> =
           >
             <AppTabItem current={currentTab} itemKey="posts">
               <AppTimeline
-                items={allPostsData.map(({ id, title, createdAt }) => {
-                  return {
-                    id: id,
-                    title: title,
-                    date: createdAt,
-                    href: `/${id}`,
-                    header: (
-                      <div css={styledPostMeta}>
-                        <span>posted on</span>
-                        <span
-                          css={css`
-                            opacity: 0.4;
-                          `}
-                        >
-                          /
-                        </span>
-                        <span>{createdAt}</span>
-                      </div>
-                    ),
+                items={allPostsData.map(
+                  ({ id, title, createdAt, postedOn }) => {
+                    return {
+                      id: id,
+                      title: title,
+                      date: createdAt,
+                      href: `/${id}`,
+                      header: (
+                        <div css={styledPostMeta}>
+                          <span>posted on</span>
+                          <span>{postedOn}</span>
+                          <span
+                            css={css`
+                              opacity: 0.4;
+                            `}
+                          >
+                            /
+                          </span>
+                          <span>{createdAt}</span>
+                        </div>
+                      ),
+                    }
                   }
-                })}
+                )}
               />
             </AppTabItem>
             <AppTabItem current={currentTab} itemKey="works">
