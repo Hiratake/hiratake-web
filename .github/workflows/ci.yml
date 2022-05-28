@@ -4,10 +4,10 @@ on:
     branches:
       - main
       - master
-  pull_request:
-    branches:
+    pull_request:
       - main
       - master
+
 jobs:
   lint:
     name: Lint
@@ -16,26 +16,49 @@ jobs:
       matrix:
         os: [ubuntu-latest]
         node: [16]
+    timeout-minutes: 10
     steps:
-      - name: Checkout 🛎
-        uses: actions/checkout@master
-      - name: Setup node env 🏗
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup node
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node }}
-          check-latest: true
-      - name: Get yarn cache directory path 🛠
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-      - name: Cache node_modules 📦
+      - name: Cache
         uses: actions/cache@v2
-        id: yarn-cache
         with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          path: ~/.npm
+          key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
-            ${{ runner.os }}-yarn-
-      - name: Install dependencies 👨🏻‍💻
-        run: yarn
-      - name: Run linter 👀
-        run: yarn lint
+            ${{ runner.os }}-npm-
+      - name: Install dependencies
+        run: npm ci
+      - name: Run linter
+        run: npm run lint
+
+  test:
+    name: Test
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node: [16]
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup node
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Cache
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-npm-
+      - name: Install dependencies
+        run: npm ci
+      - name: Run test
+        run: npm run test -- --coverage

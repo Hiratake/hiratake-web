@@ -1,21 +1,21 @@
 <h1>
   <a href="https://hiratake.xyz/">
-    <img src="assets/images/logo.svg" width="280"/>
+    <img src="public/images/logo.svg#gh-light-mode-only" width="280"/>
+    <img src="public/images/logo-dark.svg#gh-dark-mode-only" width="280"/>
   </a>
 </h1>
 
-Hiratake's website built with [Nuxt.js](https://github.com/nuxt/nuxt.js).
+Hiratake's website built with [Next.js](https://nextjs.org/).
 
 [Twitter](https://twitter.com/Hirotaisou2012)・[Discord](https://discordapp.com/users/221498004505362433)
 
 ```bash
 # Development
-$ yarn dev
+$ npm run dev
 
 # Lint
-$ yarn lint
+$ npm run lint
 
-# Build & Generate
-$ yarn build
-$ yarn generate
+# Build
+$ npm run build
 ```

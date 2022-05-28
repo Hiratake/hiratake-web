@@ -1,18 +1,18 @@
 {
-  "name": "@hiratake/hiratakeweb",
-  "version": "2.0.0",
+  "name": "@hiratake/hiratake-web",
+  "version": "2.1.0",
   "description": "Hiratake Website.",
   "keywords": [
     "hiratake",
-    "vue",
+    "react",
+    "next",
     "web"
   ],
   "homepage": "https://hiratake.xyz/",
   "bugs": "https://github.com/Hiratake/hiratake-web/issues",
-  "license": "UNLICENSED",
   "author": {
     "name": "Hiratake",
-    "url": "https://hiratake.xyz",
+    "url": "https://hiratake.xyz/",
     "email": "hiratake@hiratake.xyz"
   },
   "repository": {
@@ -20,40 +20,41 @@
     "url": "https://github.com/Hiratake/hiratake-web.git"
   },
   "dependencies": {
-    "@nuxt/content": "^1.15.0",
-    "core-js": "^3.19.0",
-    "nuxt": "^2.15.8"
+    "next": "^12.0.4",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "@commitlint/cli": "^14.1.0",
-    "@commitlint/config-conventional": "^14.1.0",
-    "@nuxtjs/cloudinary": "^1.0.3",
-    "@nuxtjs/color-mode": "^2.1.1",
-    "@nuxtjs/eslint-config": "^6.0.1",
-    "@nuxtjs/eslint-module": "^3.0.2",
-    "@nuxtjs/sitemap": "^2.4.0",
-    "@nuxtjs/stylelint-module": "^4.0.0",
-    "@nuxtjs/svg": "^0.3.0",
-    "babel-eslint": "^10.1.0",
-    "cross-env": "^7.0.3",
+    "@commitlint/cli": "^15.0.0",
+    "@commitlint/config-conventional": "^15.0.0",
+    "@emotion/babel-plugin": "^11.3.0",
+    "@emotion/react": "^11.6.0",
+    "@svgr/webpack": "^5.5.0",
+    "@types/jest": "^27.0.2",
+    "@types/node": "^16.11.7",
+    "@types/react": "^17.0.35",
+    "date-fns": "^2.26.0",
     "eslint": "^7.32.0",
-    "eslint-plugin-nuxt": "^2.0.0",
-    "eslint-plugin-vue": "^7.20.0",
+    "eslint-config-next": "^12.0.4",
+    "eslint-config-prettier": "^8.3.0",
+    "gray-matter": "^4.0.3",
     "husky": "^7.0.4",
-    "nuxt-jsonld": "^1.5.3",
-    "sass": "^1.43.3",
-    "stylelint": "^13.12.0",
-    "stylelint-config-recess-order": "^2.5.0",
-    "stylelint-config-standard": "^22.0.0"
+    "jest": "^27.3.1",
+    "lint-staged": "^12.0.2",
+    "prettier": "^2.4.1",
+    "remark": "^14.0.2",
+    "remark-html": "^15.0.0",
+    "ress": "^4.0.0",
+    "ts-jest": "^27.0.7",
+    "typescript": "^4.4.4"
   },
   "scripts": {
-    "dev": "cross-env HOST=0.0.0.0 PORT=3000 nuxt",
-    "build": "nuxt build",
-    "start": "nuxt start",
-    "generate": "nuxt generate",
-    "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
-    "lint:style": "stylelint \"**/*.{vue,css}\" --ignore-path .gitignore",
-    "lint": "yarn lint:js && yarn lint:style",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "test": "jest --config=\".jestrc.js\"",
+    "lint": "next lint",
+    "format": "prettier \"**/*.{js,jsx,ts,tsx,json}\" --write"
   }
 }
