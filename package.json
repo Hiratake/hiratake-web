@@ -27,7 +27,7 @@
   "devDependencies": {
     "@commitlint/cli": "^17.0.2",
     "@commitlint/config-conventional": "^17.0.2",
-    "@emotion/babel-plugin": "^11.3.0",
+    "@emotion/babel-plugin": "^11.9.2",
     "@emotion/react": "^11.6.0",
     "@svgr/webpack": "^6.2.1",
     "@types/jest": "^27.0.2",
