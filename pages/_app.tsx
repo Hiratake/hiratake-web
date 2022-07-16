@@ -1,8 +1,8 @@
 // pages > _app
 
 import type { AppProps } from 'next/app'
-import { LCenter } from '@/components/LCenter'
 import 'ress'
+import { LCenter } from '@/components/LCenter'
 
 export const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
