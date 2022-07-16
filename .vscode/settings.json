@@ -1,5 +1,6 @@
 {
   "editor.formatOnSave": true,
+  "stylelint.validate": ["css", "less", "postcss", "jsx", "tsx"],
   "typescript.tsdk": "node_modules\\typescript\\lib",
 
   // markdown
