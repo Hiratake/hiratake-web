@@ -1,12 +1,12 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import { websiteConfig } from '@/utils/config'
+import { config } from '@/utils/config'
 
 export const Page: NextPage = () => {
   return (
     <>
       <Head>
-        <title>{websiteConfig.name}</title>
+        <title>{config.name}</title>
       </Head>
 
       <div></div>

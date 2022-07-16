@@ -69,7 +69,7 @@ const rootStyle = css`
 `
 
 const iconStyle = css`
-  fill: #a83d3d;
+  fill: var(--color-primary);
 `
 
 const textStyle = css`
