@@ -2,6 +2,7 @@
 
 import type { AppProps } from 'next/app'
 import { LCenter } from '@/components/LCenter'
+import 'ress'
 
 export const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
