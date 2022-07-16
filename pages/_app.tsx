@@ -3,11 +3,18 @@
 import type { AppProps } from 'next/app'
 import 'ress'
 import { LCenter } from '@/components/LCenter'
+import { LStack } from '@/components/LStack'
 
 export const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
     <LCenter max="800px" gutters="24px">
-      <Component {...pageProps} />
+      <LStack space="24px">
+        <header></header>
+        <main>
+          <Component {...pageProps} />
+        </main>
+        <footer></footer>
+      </LStack>
     </LCenter>
   )
 }
