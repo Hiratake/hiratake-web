@@ -12,6 +12,7 @@ import { LIcon } from '@/components/LIcon'
 import { LStack } from '@/components/LStack'
 import { AppButton } from '@/components/AppButton'
 import { AppLogo } from '@/components/AppLogo'
+import { GoogleTagManager } from '@/components/GoogleTagManager'
 import { config } from '@/utils/config'
 
 // ----------------------------------------
@@ -67,6 +68,7 @@ export const App = ({ Component, pageProps }: AppProps) => {
   return (
     <ThemeProvider defaultTheme="system">
       <Global styles={globalStyle} />
+      <GoogleTagManager googleTagManagerId={config.googleTagManagerId} />
 
       <LCenter max="800px" gutters="24px">
         <LStack space="24px">

@@ -1,13 +1,15 @@
 // utils > config
 
-type ThemeColors = {
+export type ThemeColors = {
   text: string
   textMuted: string
   background: string
   link: string
 }
 
-type WebsiteConfig = {
+export type GoogleTagManagerId = `GTM-${string}`
+
+export type WebsiteConfig = {
   domain: string
   name: string
   colors: {
@@ -15,6 +17,7 @@ type WebsiteConfig = {
     light: ThemeColors
     dark: ThemeColors
   }
+  googleTagManagerId: `GTM-${string}`
 }
 
 export const config: WebsiteConfig = {
@@ -35,4 +38,5 @@ export const config: WebsiteConfig = {
       link: '#5c9bb8',
     },
   },
+  googleTagManagerId: 'GTM-WF3MQWM',
 }

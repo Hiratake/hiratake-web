@@ -7,7 +7,7 @@ class MyDocument extends Document {
   render(): JSX.Element {
     return (
       <Html lang="ja">
-        <Head>
+        <Head prefix="og: https://ogp.me/ns#">
           <meta name="apple-mobile-web-app-title" content={config.name} />
           <meta name="application-name" content={config.name} />
           <meta
@@ -50,6 +50,11 @@ class MyDocument extends Document {
           <link rel="stylesheet" href="https://use.typekit.net/emp0pno.css" />
         </Head>
         <body>
+          <noscript
+            dangerouslySetInnerHTML={{
+              __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=${config.googleTagManagerId}" height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
+            }}
+          />
           <Main />
           <NextScript />
         </body>
