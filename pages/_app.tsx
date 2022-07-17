@@ -7,6 +7,7 @@ import { css, Global } from '@emotion/react'
 import { LCenter } from '@/components/LCenter'
 import { LCluster } from '@/components/LCluster'
 import { LStack } from '@/components/LStack'
+import { AppButton } from '@/components/AppButton'
 import { AppLogo } from '@/components/AppLogo'
 import { config } from '@/utils/config'
 
@@ -28,6 +29,9 @@ export const App = ({ Component, pageProps }: AppProps) => {
                   <AppLogo />
                 </a>
               </Link>
+              <AppButton ariaLabel={`change to dark mode`} size="large" icon>
+                a
+              </AppButton>
             </LCluster>
           </header>
           <main>
