@@ -59,6 +59,11 @@ export const App = ({ Component, pageProps }: AppProps) => {
     )
   }
 
+  const currentYear = (() => {
+    const date = new Date()
+    return date.getFullYear()
+  })()
+
   return (
     <ThemeProvider defaultTheme="system">
       <Global styles={globalStyle} />
@@ -78,7 +83,13 @@ export const App = ({ Component, pageProps }: AppProps) => {
           <main>
             <Component {...pageProps} />
           </main>
-          <footer></footer>
+          <footer css={footerStyle}>
+            <LCenter max="100%" andText>
+              <p css={footerCopyrightStyle}>
+                &copy; 2014-{currentYear} {config.name}
+              </p>
+            </LCenter>
+          </footer>
         </LStack>
       </LCenter>
     </ThemeProvider>
@@ -119,6 +130,7 @@ const globalStyle = css`
   }
 
   body {
+    font-family: 'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic UI', sans-serif;
     color: var(--color-text);
     background-color: var(--color-background);
   }
@@ -138,4 +150,13 @@ const headerLogoStyle = css`
   &:hover {
     opacity: 0.6;
   }
+`
+
+const footerStyle = css`
+  padding-bottom: 24px;
+`
+
+const footerCopyrightStyle = css`
+  font-family: sofia-pro, sans-serif;
+  font-size: 14px;
 `
