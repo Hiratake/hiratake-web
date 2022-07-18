@@ -43,9 +43,8 @@ const rootStyle = (props: LayoutSidebarProps) => {
     }
 
     & > ${props.side === 'left' ? ':last-child' : ':first-child'} {
-      flex-basis: 0;
+      flex-basis: ${props.contentMin || '50%'};
       flex-grow: 999;
-      min-inline-size: ${props.contentMin || '50%'};
     }
   `
 }
