@@ -14,6 +14,7 @@ import { AppButton } from '@/components/AppButton'
 import { AppLogo } from '@/components/AppLogo'
 import { GoogleTagManager } from '@/components/GoogleTagManager'
 import { config } from '@/utils/config'
+import { rem } from '@/utils/style'
 
 // ----------------------------------------
 // JSX
@@ -177,12 +178,12 @@ const footerStyle = css`
 `
 
 const footerNavigationStyle = css`
-  font-size: 12px;
+  font-size: ${rem(12)};
   color: inherit;
 `
 
 const footerCopyrightStyle = css`
   font-family: sofia-pro, sans-serif;
-  font-size: 12px;
+  font-size: ${rem(12)};
   text-align: center;
 `

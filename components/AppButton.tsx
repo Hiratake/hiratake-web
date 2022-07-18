@@ -2,6 +2,7 @@
 
 import { ElementType, MouseEventHandler, ReactNode } from 'react'
 import { css } from '@emotion/react'
+import { rem } from '@/utils/style'
 
 // ----------------------------------------
 // Type
@@ -46,17 +47,17 @@ const rootStyle = (props: AppButtonProps) => {
     large: {
       height: '48px',
       padding: '0 24px',
-      fontSize: '18px',
+      fontSize: rem(18),
     },
     medium: {
       height: '32px',
       padding: '0 16px',
-      fontSize: '12px',
+      fontSize: rem(12),
     },
     small: {
       height: '24px',
       padding: '0 16px',
-      fontSize: '12px',
+      fontSize: rem(12),
     },
   } as const
 

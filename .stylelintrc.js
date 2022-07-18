@@ -10,5 +10,7 @@ module.exports = {
       customSyntax: '@stylelint/postcss-css-in-js',
     },
   ],
-  rules: {},
+  rules: {
+    'function-no-unknown': null,
+  },
 }
