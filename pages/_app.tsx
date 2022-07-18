@@ -4,8 +4,9 @@ import 'ress'
 import { useEffect, useState } from 'react'
 import type { AppProps } from 'next/app'
 import Link from 'next/link'
+import { DefaultSeo } from 'next-seo'
 import { ThemeProvider, useTheme } from 'next-themes'
-import { css, Global } from '@emotion/react'
+import { css, Global as GlobalStyle } from '@emotion/react'
 import { LCenter } from '@/components/LCenter'
 import { LCluster } from '@/components/LCluster'
 import { LIcon } from '@/components/LIcon'
@@ -68,7 +69,54 @@ export const App = ({ Component, pageProps }: AppProps) => {
 
   return (
     <ThemeProvider defaultTheme="system">
-      <Global styles={globalStyle} />
+      <GlobalStyle styles={globalStyle} />
+      <DefaultSeo
+        titleTemplate={`%s｜${config.name}`}
+        defaultTitle={config.name}
+        openGraph={{
+          type: 'website',
+          locale: 'ja_JP',
+          site_name: config.name,
+          images: [{ url: `https://${config.domain}/images/og.jpg` }],
+        }}
+        twitter={{
+          site: config.twitter,
+          cardType: 'summary_large_image',
+        }}
+        additionalMetaTags={[
+          { name: 'application-name', content: config.name },
+          { name: 'apple-mobile-web-app-title', content: config.name },
+          { name: 'msapplication-config', content: '/browserconfig.xml' },
+          { name: 'msapplication-TileColor', content: config.colors.primary },
+          { name: 'theme-color', content: config.colors.primary },
+        ]}
+        additionalLinkTags={[
+          {
+            rel: 'icon',
+            type: 'image/png',
+            sizes: '32x32',
+            href: '/favicons/favicon-32x32.png',
+          },
+          {
+            rel: 'icon',
+            type: 'image/png',
+            sizes: '16x16',
+            href: '/favicons/favicon-16x16.png',
+          },
+          {
+            rel: 'apple-touch-icon',
+            sizes: '180x180',
+            href: '/favicons/apple-touch-icon.png',
+          },
+          {
+            rel: 'mask-icon',
+            href: '/favicons/safari-pinned-tab.svg',
+            color: config.colors.primary,
+          },
+          { rel: 'shortcut icon', type: 'image/x-icon', href: '/favicon.ico' },
+          { rel: 'manifest', href: '/site.webmanifest' },
+        ]}
+      />
       <GoogleTagManager googleTagManagerId={config.googleTagManagerId} />
 
       <LCenter max="800px" gutters="24px">

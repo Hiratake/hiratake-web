@@ -1,13 +1,15 @@
 import type { NextPage } from 'next'
-import Head from 'next/head'
+import { NextSeo } from 'next-seo'
 import { config } from '@/utils/config'
 
 export const Page: NextPage = () => {
   return (
     <>
-      <Head>
-        <title>{config.name}</title>
-      </Head>
+      <NextSeo
+        description={config.description}
+        canonical={`https://${config.domain}/`}
+        openGraph={{ url: `https://${config.domain}/` }}
+      />
 
       <div></div>
     </>
