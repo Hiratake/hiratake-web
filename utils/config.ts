@@ -1,10 +1,12 @@
 // utils > config
 
+export type ColorCode = `#${string}`
+
 export type ThemeColors = {
-  text: string
-  textMuted: string
-  background: string
-  link: string
+  text: ColorCode
+  textMuted: ColorCode
+  background: ColorCode
+  link: ColorCode
 }
 
 export type GoogleTagManagerId = `GTM-${string}`
@@ -18,11 +20,11 @@ export type WebsiteConfig = {
     bio: string
   }
   colors: {
-    primary: string
+    primary: ColorCode
     light: ThemeColors
     dark: ThemeColors
   }
-  googleTagManagerId: `GTM-${string}`
+  googleTagManagerId: GoogleTagManagerId
   social: {
     twitter: string
     github: string
