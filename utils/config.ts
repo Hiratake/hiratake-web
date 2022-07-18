@@ -13,19 +13,31 @@ export type WebsiteConfig = {
   domain: string
   name: string
   description: string
+  author: {
+    name: string
+    bio: string
+  }
   colors: {
     primary: string
     light: ThemeColors
     dark: ThemeColors
   }
   googleTagManagerId: `GTM-${string}`
-  twitter: `@${string}`
+  social: {
+    twitter: string
+    github: string
+    discord: string
+  }
 }
 
 export const config: WebsiteConfig = {
   domain: 'hiratake.dev',
   name: 'Hiratake Web',
   description: 'マークアップ園児でデザイナーなひらたけのサイト。',
+  author: {
+    name: 'Hiratake',
+    bio: 'Markup and Front-end Engineer, Designer and Cat in Osaka, Japan.',
+  },
   colors: {
     primary: '#a83d3d',
     light: {
@@ -42,5 +54,9 @@ export const config: WebsiteConfig = {
     },
   },
   googleTagManagerId: 'GTM-WF3MQWM',
-  twitter: '@Hirotaisou2012',
+  social: {
+    twitter: 'Hirotaisou2012',
+    github: 'Hiratake',
+    discord: '221498004505362433',
+  },
 }

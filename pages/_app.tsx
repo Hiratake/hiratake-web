@@ -80,7 +80,7 @@ export const App = ({ Component, pageProps }: AppProps) => {
           images: [{ url: `https://${config.domain}/images/og.jpg` }],
         }}
         twitter={{
-          site: config.twitter,
+          site: `@${config.social.twitter}`,
           cardType: 'summary_large_image',
         }}
         additionalMetaTags={[
@@ -120,38 +120,36 @@ export const App = ({ Component, pageProps }: AppProps) => {
       <GoogleTagManager googleTagManagerId={config.googleTagManagerId} />
 
       <LCenter max="800px" gutters="24px">
-        <LStack space="24px">
-          <header css={headerStyle}>
-            <LCluster justify="space-between" align="center" space="24px">
-              <Link href="/" passHref>
-                <a css={headerLogoStyle} title={config.name}>
-                  <AppLogo />
-                </a>
-              </Link>
-              <ThemeToggleButton />
-            </LCluster>
-          </header>
-          <main>
-            <Component {...pageProps} />
-          </main>
-          <footer css={footerStyle}>
-            <LStack space="24px">
-              <LCenter max="400px">
-                <LCluster align="center" justify="center" space="4px 16px">
-                  <Link href="/contact" passHref>
-                    <a css={footerNavigationStyle}>お問い合わせ</a>
-                  </Link>
-                  <Link href="/privacy" passHref>
-                    <a css={footerNavigationStyle}>プライバシーポリシー</a>
-                  </Link>
-                </LCluster>
-              </LCenter>
-              <p css={footerCopyrightStyle}>
-                &copy; 2014-{currentYear} {config.name}
-              </p>
-            </LStack>
-          </footer>
-        </LStack>
+        <header css={headerStyle}>
+          <LCluster justify="space-between" align="center" space="24px">
+            <Link href="/" passHref>
+              <a css={headerLogoStyle} title={config.name}>
+                <AppLogo />
+              </a>
+            </Link>
+            <ThemeToggleButton />
+          </LCluster>
+        </header>
+        <main>
+          <Component {...pageProps} />
+        </main>
+        <footer css={footerStyle}>
+          <LStack space="24px">
+            <LCenter max="400px">
+              <LCluster align="center" justify="center" space="4px 16px">
+                <Link href="/contact" passHref>
+                  <a css={footerNavigationStyle}>お問い合わせ</a>
+                </Link>
+                <Link href="/privacy" passHref>
+                  <a css={footerNavigationStyle}>プライバシーポリシー</a>
+                </Link>
+              </LCluster>
+            </LCenter>
+            <p css={footerCopyrightStyle}>
+              &copy; 2014-{currentYear} {config.name}
+            </p>
+          </LStack>
+        </footer>
       </LCenter>
     </ThemeProvider>
   )
@@ -207,6 +205,7 @@ const globalStyle = css`
 
 const headerStyle = css`
   padding-top: 24px;
+  padding-bottom: 40px;
 `
 
 const headerLogoStyle = css`
@@ -223,6 +222,7 @@ const headerLogoStyle = css`
 
 const footerStyle = css`
   padding-bottom: 24px;
+  margin-top: 64px;
 `
 
 const footerNavigationStyle = css`
