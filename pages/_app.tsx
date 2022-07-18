@@ -34,7 +34,7 @@ export const App = ({ Component, pageProps }: AppProps) => {
 
     return (
       <AppButton
-        ariaLabel={`change to dark mode`}
+        ariaLabel={`change to ${theme === 'dark' ? 'light' : 'dark'} mode`}
         size="large"
         icon
         onClick={() => {
