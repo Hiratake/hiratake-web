@@ -46,21 +46,30 @@ export const Page: NextPage = () => {
             </div>
 
             <div css={socialStyle}>
-              <a href={`https://twitter.com/${config.social.twitter}`}>
+              <a
+                href={`https://twitter.com/${config.social.twitter}`}
+                title="Twitter"
+              >
                 <LIcon size="20px">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <path d={siTwitter.path} />
                   </svg>
                 </LIcon>
               </a>
-              <a href={`https://github.com/${config.social.github}`}>
+              <a
+                href={`https://github.com/${config.social.github}`}
+                title="GitHub"
+              >
                 <LIcon size="20px">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <path d={siGithub.path} />
                   </svg>
                 </LIcon>
               </a>
-              <a href={`https://discord.com/users/${config.social.discord}`}>
+              <a
+                href={`https://discord.com/users/${config.social.discord}`}
+                title="Discord"
+              >
                 <LIcon size="20px">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <path d={siDiscord.path} />

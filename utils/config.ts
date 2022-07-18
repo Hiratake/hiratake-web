@@ -42,7 +42,7 @@ export const config: WebsiteConfig = {
     primary: '#a83d3d',
     light: {
       text: '#394147',
-      textMuted: '#6a7175',
+      textMuted: '#525a5e',
       background: '#fff',
       link: '#004ac2',
     },
