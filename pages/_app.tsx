@@ -86,11 +86,21 @@ export const App = ({ Component, pageProps }: AppProps) => {
             <Component {...pageProps} />
           </main>
           <footer css={footerStyle}>
-            <LCenter max="100%" andText>
+            <LStack space="24px">
+              <LCenter max="400px">
+                <LCluster align="center" justify="center" space="4px 16px">
+                  <Link href="/contact" passHref>
+                    <a css={footerNavigationStyle}>お問い合わせ</a>
+                  </Link>
+                  <Link href="/privacy" passHref>
+                    <a css={footerNavigationStyle}>プライバシーポリシー</a>
+                  </Link>
+                </LCluster>
+              </LCenter>
               <p css={footerCopyrightStyle}>
                 &copy; 2014-{currentYear} {config.name}
               </p>
-            </LCenter>
+            </LStack>
           </footer>
         </LStack>
       </LCenter>
@@ -136,6 +146,14 @@ const globalStyle = css`
     color: var(--color-text);
     background-color: var(--color-background);
   }
+
+  a {
+    color: var(--color-link);
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
 `
 
 const headerStyle = css`
@@ -158,7 +176,13 @@ const footerStyle = css`
   padding-bottom: 24px;
 `
 
+const footerNavigationStyle = css`
+  font-size: 12px;
+  color: inherit;
+`
+
 const footerCopyrightStyle = css`
   font-family: sofia-pro, sans-serif;
-  font-size: 14px;
+  font-size: 12px;
+  text-align: center;
 `
