@@ -205,7 +205,7 @@ const globalStyle = css`
 
 const headerStyle = css`
   padding-top: 24px;
-  padding-bottom: 40px;
+  padding-bottom: 24px;
 `
 
 const headerLogoStyle = css`
@@ -222,7 +222,7 @@ const headerLogoStyle = css`
 
 const footerStyle = css`
   padding-bottom: 24px;
-  margin-top: 64px;
+  margin-top: 80px;
 `
 
 const footerNavigationStyle = css`
