@@ -9,7 +9,7 @@ class MyDocument extends Document {
       <Html lang="ja">
         <Head prefix="og: https://ogp.me/ns#">
           <link
-            href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&amp;display=swap"
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&amp;display=swap"
             rel="stylesheet"
           />
           <link rel="stylesheet" href="https://use.typekit.net/emp0pno.css" />
