@@ -18,12 +18,14 @@ import { rem } from '@/utils/style'
 // ----------------------------------------
 
 export const Page: NextPage = () => {
+  const currentUrl = `https://${config.domain}`
+
   return (
     <>
       <NextSeo
         description={config.description}
-        canonical={`https://${config.domain}`}
-        openGraph={{ url: `https://${config.domain}` }}
+        canonical={currentUrl}
+        openGraph={{ url: currentUrl }}
       />
 
       <LCenter max="520px">

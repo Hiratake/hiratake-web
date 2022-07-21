@@ -3,7 +3,7 @@
 import type { GetStaticProps, InferGetStaticPropsType, NextPage } from 'next'
 import type { CMSPost } from '@/types/cms'
 import { useRouter } from 'next/router'
-import { NextSeo } from 'next-seo'
+import { NextSeo, BreadcrumbJsonLd } from 'next-seo'
 import { PageContainer } from '@/components/PageContainer'
 import { client } from '@/lib/client'
 import { config } from '@/utils/config'
@@ -30,17 +30,27 @@ export const Page: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   post,
 }) => {
   const router = useRouter()
+  const currentUrl = `https://${config.domain}${router.pathname}`
 
   return (
     <>
       <NextSeo
         title={post.title}
         description={post.description}
-        canonical={`https://${config.domain}${router.pathname}`}
+        canonical={currentUrl}
         openGraph={{
           type: 'article',
-          url: `https://${config.domain}${router.pathname}`,
+          url: currentUrl,
         }}
+      />
+      <BreadcrumbJsonLd
+        itemListElements={[
+          {
+            position: 1,
+            name: post.title,
+            item: currentUrl,
+          },
+        ]}
       />
 
       <PageContainer
