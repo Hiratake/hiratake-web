@@ -1,27 +1,41 @@
 // pages > contact
 
-import type { NextPage } from 'next'
+import type { GetStaticProps, InferGetStaticPropsType, NextPage } from 'next'
+import type { CMSPost } from '@/types/cms'
 import { useRouter } from 'next/router'
 import { NextSeo } from 'next-seo'
 import { PageContainer } from '@/components/PageContainer'
+import { client } from '@/lib/client'
 import { config } from '@/utils/config'
+
+export const getStaticProps: GetStaticProps<{
+  post: CMSPost
+}> = async () => {
+  const post = await client.getListDetail({
+    endpoint: 'pages',
+    contentId: 'contact',
+  })
+  return {
+    props: {
+      post,
+    },
+  }
+}
 
 // ----------------------------------------
 // JSX
 // ----------------------------------------
 
-export const Page: NextPage = () => {
+export const Page: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
+  post,
+}) => {
   const router = useRouter()
-  const meta = {
-    title: 'お問い合わせ',
-    description: `${config.name} のお問い合わせページです。ウェブサイトの不具合や誤字・脱字のご報告、お仕事のご依頼、その他いろいろのお問い合わせ先をご案内します。`,
-  }
 
   return (
     <>
       <NextSeo
-        title={meta.title}
-        description={meta.description}
+        title={post.title}
+        description={post.description}
         canonical={`https://${config.domain}${router.pathname}`}
         openGraph={{
           type: 'article',
@@ -30,14 +44,12 @@ export const Page: NextPage = () => {
       />
 
       <PageContainer
-        breadcrumbsItems={[{ label: 'Home', href: '/' }, { label: meta.title }]}
-        title={meta.title}
-      ></PageContainer>
+        breadcrumbsItems={[{ label: 'Home', href: '/' }, { label: post.title }]}
+        title={post.title}
+      >
+        <div dangerouslySetInnerHTML={{ __html: `${post.content}` }} />
+      </PageContainer>
     </>
   )
 }
 export default Page
-
-// ----------------------------------------
-// Style
-// ----------------------------------------
