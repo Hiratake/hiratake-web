@@ -1,10 +1,9 @@
 // pages > contact
 
 import type { NextPage } from 'next'
+import { useRouter } from 'next/router'
 import { NextSeo } from 'next-seo'
-import { LStack } from '@/components/LStack'
-import { AppBreadcrumbs } from '@/components/AppBreadcrumbs'
-import { ArticleHeader } from '@/components/ArticleHeader'
+import { PageContainer } from '@/components/PageContainer'
 import { config } from '@/utils/config'
 
 // ----------------------------------------
@@ -12,6 +11,7 @@ import { config } from '@/utils/config'
 // ----------------------------------------
 
 export const Page: NextPage = () => {
+  const router = useRouter()
   const meta = {
     title: 'お問い合わせ',
     description: `${config.name} のお問い合わせページです。ウェブサイトの不具合や誤字・脱字のご報告、お仕事のご依頼、その他いろいろのお問い合わせ先をご案内します。`,
@@ -22,22 +22,18 @@ export const Page: NextPage = () => {
       <NextSeo
         title={meta.title}
         description={meta.description}
-        canonical={`https://${config.domain}/contact`}
+        canonical={`https://${config.domain}${router.pathname}`}
         openGraph={{
           type: 'article',
-          url: `https://${config.domain}/contact`,
+          url: `https://${config.domain}${router.pathname}`,
         }}
       />
 
-      <LStack space="48px">
-        <AppBreadcrumbs
-          items={[{ label: 'Home', href: '/' }, { label: meta.title }]}
-        />
-
-        <LStack tag="article" space="40px">
-          <ArticleHeader title={meta.title} description={meta.description} />
-        </LStack>
-      </LStack>
+      <PageContainer
+        breadcrumbsItems={[{ label: 'Home', href: '/' }, { label: meta.title }]}
+        title={meta.title}
+        description={meta.description}
+      ></PageContainer>
     </>
   )
 }
