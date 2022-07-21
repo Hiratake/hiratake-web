@@ -49,8 +49,8 @@ export const config: WebsiteConfig = {
       link: '#004ac2',
     },
     dark: {
-      text: '#fff',
-      textMuted: '#cdd0d1',
+      text: '#e7e8e8',
+      textMuted: '#b5b8ba',
       background: '#202a30',
       link: '#5c9bb8',
     },
