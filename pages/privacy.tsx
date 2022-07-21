@@ -1,4 +1,4 @@
-// pages > contact
+// pages > privacy
 
 import type { GetStaticProps, InferGetStaticPropsType, NextPage } from 'next'
 import type { CMSPost } from '@/types/cms'
@@ -13,7 +13,7 @@ export const getStaticProps: GetStaticProps<{
 }> = async () => {
   const post = await client.getListDetail({
     endpoint: 'pages',
-    contentId: 'contact',
+    contentId: 'privacy',
   })
   return {
     props: {
@@ -57,6 +57,7 @@ export const Page: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
       <PageContainer
         breadcrumbsItems={[{ label: 'Home', href: '/' }, { label: post.title }]}
         title={post.title}
+        updatedAt={post.updatedAt}
       >
         <div dangerouslySetInnerHTML={{ __html: `${post.content}` }} />
       </PageContainer>
