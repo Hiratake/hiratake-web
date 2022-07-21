@@ -32,7 +32,6 @@ export const Page: NextPage = () => {
       <PageContainer
         breadcrumbsItems={[{ label: 'Home', href: '/' }, { label: meta.title }]}
         title={meta.title}
-        description={meta.description}
       ></PageContainer>
     </>
   )

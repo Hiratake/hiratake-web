@@ -121,7 +121,7 @@ export const App = ({ Component, pageProps }: AppProps) => {
 
       <LCenter max="800px" gutters="24px">
         <header css={headerStyle}>
-          <LCluster justify="space-between" align="center" space="24px">
+          <LCluster align="center" justify="space-between" space="24px">
             <Link href="/" passHref>
               <a css={headerLogoStyle} title={config.name}>
                 <AppLogo />

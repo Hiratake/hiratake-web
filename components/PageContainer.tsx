@@ -1,15 +1,20 @@
 // components > PageContainer
 
 import { ReactNode } from 'react'
+import { useRouter } from 'next/router'
 import { css } from '@emotion/react'
 import dayjs from 'dayjs'
 import utc from 'dayjs/plugin/utc'
 import timezone from 'dayjs/plugin/timezone'
+import { siTwitter, siFacebook, siLine } from 'simple-icons/icons'
+import { LCluster } from '@/components/LCluster'
+import { LIcon } from '@/components/LIcon'
 import { LStack } from '@/components/LStack'
 import {
   AppBreadcrumbs,
   AppBreadcrumbsProps,
 } from '@/components/AppBreadcrumbs'
+import { config } from '@/utils/config'
 import { rem } from '@/utils/style'
 
 // ----------------------------------------
@@ -31,6 +36,7 @@ export type PageContainerProps = {
 // ----------------------------------------
 
 export const PageContainer = (props: PageContainerProps) => {
+  const router = useRouter()
   dayjs.extend(utc)
   dayjs.extend(timezone)
 
@@ -80,6 +86,63 @@ export const PageContainer = (props: PageContainerProps) => {
             </p>
           )}
         </LStack>
+        <div>{props.children}</div>
+        {props.share && (
+          <LCluster
+            tag="footer"
+            align="center"
+            justify="space-between"
+            space="24px"
+          >
+            <LCluster tag="aside" align="center" space="16px">
+              <a
+                css={iconStyle}
+                href={`https://www.twitter.com/share?url=${encodeURI(
+                  `https://${config.domain}${router.pathname}`
+                )}&text=${encodeURI(props.title)}`}
+                title="share on Twitter"
+                target="_blank"
+                rel="nofollow noopener noreferrer"
+              >
+                <LIcon size="24px">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d={siTwitter.path} />
+                  </svg>
+                </LIcon>
+              </a>
+              <a
+                css={iconStyle}
+                href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURI(
+                  `https://${config.domain}${router.pathname}`
+                )}&t=${encodeURI(props.title)}`}
+                title="share on Facebook"
+                target="_blank"
+                rel="nofollow noopener noreferrer"
+              >
+                <LIcon size="24px">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d={siFacebook.path} />
+                  </svg>
+                </LIcon>
+              </a>
+              <a
+                css={iconStyle}
+                href={`https://timeline.line.me/social-plugin/share?url=${encodeURI(
+                  `https://${config.domain}${router.pathname}`
+                )}&text=${encodeURI(props.title)}`}
+                title="share on LINE"
+                target="_blank"
+                rel="nofollow noopener noreferrer"
+              >
+                <LIcon size="24px">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d={siLine.path} />
+                  </svg>
+                </LIcon>
+              </a>
+            </LCluster>
+          </LCluster>
+        )}
       </LStack>
     </LStack>
   )
@@ -103,4 +166,12 @@ const metaStyle = css`
   font-family: sofia-pro, sans-serif;
   font-size: ${rem(14)};
   color: var(--color-text-muted);
+`
+
+const iconStyle = css`
+  color: inherit;
+
+  &:hover {
+    color: var(--color-text-muted);
+  }
 `
