@@ -7,6 +7,7 @@ import { NextSeo, BreadcrumbJsonLd } from 'next-seo'
 import { PageContainer } from '@/components/PageContainer'
 import { client } from '@/lib/client'
 import { config } from '@/utils/config'
+import { articleStyle } from '@/utils/style'
 
 export const getStaticProps: GetStaticProps<{
   post: CMSPost
@@ -59,7 +60,10 @@ export const Page: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
         title={post.title}
         updatedAt={post.updatedAt}
       >
-        <div dangerouslySetInnerHTML={{ __html: `${post.content}` }} />
+        <div
+          css={articleStyle}
+          dangerouslySetInnerHTML={{ __html: `${post.content}` }}
+        />
       </PageContainer>
     </>
   )
