@@ -39,4 +39,40 @@ export const articleStyle = css`
   h4 {
     font-size: ${rem(18)};
   }
+
+  ul {
+    list-style: none;
+    margin-bottom: 32px;
+
+    li {
+      position: relative;
+      padding-left: 24px;
+
+      &::before {
+        position: absolute;
+        top: 0.65em;
+        left: 0;
+        display: block;
+        width: 0.5em;
+        height: 0.5em;
+        content: '';
+        background-color: var(--color-primary);
+        border: solid 1px var(--color-primary);
+        border-radius: 50%;
+      }
+
+      ul {
+        padding-top: 8px;
+        padding-left: 16px;
+        padding-bottom: 8px;
+        margin-bottom: 0;
+
+        li {
+          &::before {
+            background-color: transparent;
+          }
+        }
+      }
+    }
+  }
 `
