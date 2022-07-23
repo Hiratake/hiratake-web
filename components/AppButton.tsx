@@ -93,7 +93,8 @@ const rootStyle = (props: AppButtonProps) => {
       transition-property: opacity;
     }
 
-    &:hover {
+    &:hover,
+    &:focus {
       &::before {
         opacity: 0.1;
       }
