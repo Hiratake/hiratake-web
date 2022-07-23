@@ -51,11 +51,13 @@ export const Page: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   const {
     register,
     handleSubmit,
+    watch,
     formState: { errors },
   } = useForm<ContactFormInputs>()
   const onSubmit: SubmitHandler<ContactFormInputs> = (data) => {
     console.log(data)
   }
+  const currentPrivacyInput = watch('privacy', false)
 
   return (
     <>
@@ -143,7 +145,7 @@ export const Page: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
               </LStack>
 
               <LStack space="8px">
-                <label css={checkBoxStyle}>
+                <label css={checkBoxStyle(currentPrivacyInput)}>
                   <input
                     type="checkbox"
                     required
@@ -192,43 +194,45 @@ const textFieldStyle = css`
   }
 `
 
-const checkBoxStyle = css`
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 8px;
-  align-items: center;
-  cursor: pointer;
-  user-select: none;
+const checkBoxStyle = (val: boolean) => {
+  return css`
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 8px;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
 
-  &::before {
-    grid-area: 1 / 1 / 2 / 2;
-    width: 1em;
-    height: 1em;
-    content: '';
-    background-color: transparent;
-    border: solid 1px currentcolor;
-    border-radius: 2px;
-  }
-
-  &::after {
-    grid-area: 1 / 1 / 2 / 2;
-    width: 0.4em;
-    height: 0.6em;
-    content: '';
-    border-right: solid 2px #fff;
-    border-bottom: solid 2px #fff;
-    transform: rotate(45deg) translateX(0.2em) translateY(-0.25em);
-  }
-
-  &:focus-within {
     &::before {
-      border-color: var(--color-primary);
+      grid-area: 1 / 1 / 2 / 2;
+      width: 1em;
+      height: 1em;
+      content: '';
+      background-color: ${val ? 'var(--color-primary)' : 'transparent'};
+      border: solid 1px currentcolor;
+      border-radius: 2px;
     }
-  }
 
-  input {
-    position: absolute;
-    pointer-events: none;
-    opacity: 0;
-  }
-`
+    &::after {
+      grid-area: 1 / 1 / 2 / 2;
+      width: 0.4em;
+      height: 0.6em;
+      content: '';
+      border-right: solid 2px #fff;
+      border-bottom: solid 2px #fff;
+      transform: rotate(45deg) translateX(0.2em) translateY(-0.25em);
+    }
+
+    &:focus-within {
+      &::before {
+        border-color: var(--color-primary);
+      }
+    }
+
+    input {
+      position: absolute;
+      pointer-events: none;
+      opacity: 0;
+    }
+  `
+}
