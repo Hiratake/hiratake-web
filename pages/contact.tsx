@@ -48,16 +48,39 @@ export const Page: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
 }) => {
   const router = useRouter()
   const currentUrl = `https://${config.domain}${router.pathname}`
+
   const {
     register,
     handleSubmit,
     watch,
     formState: { errors },
   } = useForm<ContactFormInputs>()
-  const onSubmit: SubmitHandler<ContactFormInputs> = (data) => {
-    console.log(data)
-  }
   const currentPrivacyInput = watch('privacy', false)
+
+  const onSubmit: SubmitHandler<ContactFormInputs> = async (data) => {
+    try {
+      if (!process.env.NEXT_PUBLIC_HYPERFORM_ID) {
+        throw new Error('HYPERFORM_ID does not exist.')
+      }
+      const response = await fetch(
+        `https://hyperform.jp/api/async/${process.env.NEXT_PUBLIC_HYPERFORM_ID}/complete`,
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            お名前: data.name,
+            メールアドレス: data.email,
+            お問い合わせ内容: data.content,
+          }),
+        }
+      )
+      if (!response.ok) {
+        throw new Error('Server returned an error.')
+      }
+    } catch (e) {}
+  }
 
   return (
     <>
