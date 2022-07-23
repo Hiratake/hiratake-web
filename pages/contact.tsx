@@ -5,6 +5,7 @@ import type { CMSPost } from '@/types/cms'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { NextSeo, BreadcrumbJsonLd } from 'next-seo'
+import { SubmitHandler, useForm } from 'react-hook-form'
 import { css } from '@emotion/react'
 import { LStack } from '@/components/LStack'
 import { AppButton } from '@/components/AppButton'
@@ -28,6 +29,17 @@ export const getStaticProps: GetStaticProps<{
 }
 
 // ----------------------------------------
+// Type
+// ----------------------------------------
+
+type ContactFormInputs = {
+  name: string
+  email: string
+  content: string
+  privacy: boolean
+}
+
+// ----------------------------------------
 // JSX
 // ----------------------------------------
 
@@ -36,6 +48,14 @@ export const Page: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
 }) => {
   const router = useRouter()
   const currentUrl = `https://${config.domain}${router.pathname}`
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<ContactFormInputs>()
+  const onSubmit: SubmitHandler<ContactFormInputs> = (data) => {
+    console.log(data)
+  }
 
   return (
     <>
@@ -69,7 +89,7 @@ export const Page: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
             dangerouslySetInnerHTML={{ __html: `${post.content}` }}
           />
 
-          <form>
+          <form onSubmit={handleSubmit(onSubmit)}>
             <LStack space="24px">
               <LStack tag="dl" space="24px">
                 <LStack space="8px">
@@ -80,9 +100,9 @@ export const Page: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
                     <input
                       css={textFieldStyle}
                       id="contactFormName"
-                      name="name"
                       type="text"
                       required
+                      {...register('name', { required: true })}
                     />
                   </dd>
                 </LStack>
@@ -94,9 +114,16 @@ export const Page: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
                     <input
                       css={textFieldStyle}
                       id="contactFormEmail"
-                      name="email"
                       type="text"
                       required
+                      {...register('email', {
+                        required: true,
+                        pattern: {
+                          value:
+                            /^[a-zA-Z0-9.!#$&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$/,
+                          message: 'メールアドレスの形式が不正です。',
+                        },
+                      })}
                     />
                   </dd>
                 </LStack>
@@ -108,8 +135,8 @@ export const Page: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
                     <textarea
                       css={textFieldStyle}
                       id="contactFormContent"
-                      name="content"
                       required
+                      {...register('content', { required: true })}
                     />
                   </dd>
                 </LStack>
@@ -117,7 +144,11 @@ export const Page: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
 
               <LStack space="8px">
                 <label css={checkBoxStyle}>
-                  <input type="checkbox" name="privacy" required />
+                  <input
+                    type="checkbox"
+                    required
+                    {...register('privacy', { required: true })}
+                  />
                   プライバシーポリシーに同意する
                 </label>
                 <p>
