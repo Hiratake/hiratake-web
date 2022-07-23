@@ -2,6 +2,7 @@
 
 import type { GetStaticProps, InferGetStaticPropsType, NextPage } from 'next'
 import type { CMSPost } from '@/types/cms'
+import { useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { NextSeo, BreadcrumbJsonLd } from 'next-seo'
@@ -49,6 +50,8 @@ export const Page: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   const router = useRouter()
   const currentUrl = `https://${config.domain}${router.pathname}`
 
+  const [formLoading, setFormLoading] = useState<boolean>(false)
+
   const {
     register,
     handleSubmit,
@@ -59,9 +62,12 @@ export const Page: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
 
   const onSubmit: SubmitHandler<ContactFormInputs> = async (data) => {
     try {
+      setFormLoading(true)
+
       if (!process.env.NEXT_PUBLIC_HYPERFORM_ID) {
         throw new Error('HYPERFORM_ID does not exist.')
       }
+
       const response = await fetch(
         `https://hyperform.jp/api/async/${process.env.NEXT_PUBLIC_HYPERFORM_ID}/complete`,
         {
@@ -70,16 +76,20 @@ export const Page: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
-            お名前: data.name,
-            メールアドレス: data.email,
-            お問い合わせ内容: data.content,
+            name: data.name,
+            email: data.email,
+            content: data.content,
           }),
         }
       )
+
       if (!response.ok) {
         throw new Error('Server returned an error.')
       }
-    } catch (e) {}
+    } catch (e) {
+    } finally {
+      setFormLoading(false)
+    }
   }
 
   return (
@@ -186,7 +196,7 @@ export const Page: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
               </LStack>
 
               <div>
-                <AppButton size="medium" outlined>
+                <AppButton size="medium" outlined loading={formLoading}>
                   送信する
                 </AppButton>
               </div>
