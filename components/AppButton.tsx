@@ -14,6 +14,7 @@ export type AppButtonProps = {
   href?: string
   target?: string
   ariaLabel?: string
+  type?: 'button' | 'reset' | 'submit'
   size: 'large' | 'medium' | 'small'
   outlined?: boolean
   icon?: boolean
@@ -33,6 +34,7 @@ export const AppButton = (props: AppButtonProps) => {
       href={props.href}
       target={props.href && props.target}
       aria-label={props.ariaLabel}
+      type={props.href ? undefined : props.type}
       onClick={props.onClick}
     >
       <span css={contentStyle(!!props.loading)}>{props.children}</span>

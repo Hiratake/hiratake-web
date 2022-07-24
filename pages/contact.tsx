@@ -196,7 +196,12 @@ export const Page: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
               </LStack>
 
               <div>
-                <AppButton size="medium" outlined loading={formLoading}>
+                <AppButton
+                  size="medium"
+                  type="submit"
+                  outlined
+                  loading={formLoading}
+                >
                   送信する
                 </AppButton>
               </div>
