@@ -281,7 +281,8 @@ const checkBoxStyle = (val: boolean) => {
       content: '';
       border-right: solid 2px #fff;
       border-bottom: solid 2px #fff;
-      transform: rotate(45deg) translateX(0.2em) translateY(-0.25em);
+      opacity: ${val ? 1 : 0};
+      transform: rotate(45deg) translateX(0.15em) translateY(-0.2em);
     }
 
     &:focus-within {
