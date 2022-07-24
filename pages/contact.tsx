@@ -51,6 +51,8 @@ export const Page: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   const currentUrl = `https://${config.domain}${router.pathname}`
 
   const [formLoading, setFormLoading] = useState<boolean>(false)
+  const [formPostSuccess, setFormPostSuccess] = useState<boolean>(false)
+  const [formPostFailure, setFormPostFailure] = useState<string>('')
 
   const {
     register,
@@ -63,9 +65,13 @@ export const Page: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   const onSubmit: SubmitHandler<ContactFormInputs> = async (data) => {
     try {
       setFormLoading(true)
+      setFormPostSuccess(false)
+      setFormPostFailure('')
 
       if (!process.env.NEXT_PUBLIC_HYPERFORM_ID) {
-        throw new Error('HYPERFORM_ID does not exist.')
+        throw new Error(
+          'フォームの送信に失敗しました。管理者にお問い合わせください。'
+        )
       }
 
       const response = await fetch(
@@ -84,9 +90,16 @@ export const Page: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
       )
 
       if (!response.ok) {
-        throw new Error('Server returned an error.')
+        throw new Error(
+          'フォームの送信に失敗しました。入力内容をお確かめの上、しばらく時間をあけて再度お試しください。'
+        )
       }
-    } catch (e) {
+
+      setFormPostSuccess(true)
+    } catch (e: unknown) {
+      if (e instanceof Error) {
+        setFormPostFailure(e.message)
+      }
     } finally {
       setFormLoading(false)
     }
@@ -205,6 +218,16 @@ export const Page: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
                   送信する
                 </AppButton>
               </div>
+
+              {formPostSuccess && (
+                <p css={formPostResponseTextStyle}>
+                  お問い合わせを送信しました。内容を確認し、ご連絡させていただきます。
+                </p>
+              )}
+
+              {!!formPostFailure && (
+                <p css={formPostResponseTextStyle}>{formPostFailure}</p>
+              )}
             </LStack>
           </form>
         </LStack>
@@ -274,3 +297,7 @@ const checkBoxStyle = (val: boolean) => {
     }
   `
 }
+
+const formPostResponseTextStyle = css`
+  font-weight: 700;
+`
