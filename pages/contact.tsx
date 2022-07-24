@@ -137,7 +137,29 @@ export const Page: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
             dangerouslySetInnerHTML={{ __html: `${post.content}` }}
           />
 
-          <form onSubmit={handleSubmit(onSubmit)}>
+          <form
+            method="post"
+            action="https://hyperform.jp/api/moR6Nl2m"
+            target="_blank"
+          >
+            <label>お名前</label>
+            <input name="お名前" type="text" required />
+            <label>メールアドレス</label>
+            <input name="email" type="email" required />
+            <label>お問い合わせ内容</label>
+            <textarea name="お問い合わせ内容"></textarea>
+            <input
+              name="個人情報の利用についての同意"
+              id="consent-check"
+              type="checkbox"
+              value="同意します"
+              required
+            />
+            <label htmlFor="consent-check">個人情報の利用についての同意</label>
+            <button type="submit">送信</button>
+          </form>
+
+          {/* <form onSubmit={handleSubmit(onSubmit)}>
             <LStack space="24px">
               <LStack tag="dl" space="24px">
                 <LStack space="8px">
@@ -229,7 +251,7 @@ export const Page: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
                 <p css={formPostResponseTextStyle}>{formPostFailure}</p>
               )}
             </LStack>
-          </form>
+          </form> */}
         </LStack>
       </PageContainer>
     </>
