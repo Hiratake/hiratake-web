@@ -7,6 +7,8 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { NextSeo, BreadcrumbJsonLd } from 'next-seo'
 import { SubmitHandler, useForm } from 'react-hook-form'
+import { zodResolver } from '@hookform/resolvers/zod'
+import * as zod from 'zod'
 import { css } from '@emotion/react'
 import { LStack } from '@/components/LStack'
 import { AppButton } from '@/components/AppButton'
@@ -30,19 +32,20 @@ export const getStaticProps: GetStaticProps<{
 }
 
 // ----------------------------------------
-// Type
-// ----------------------------------------
-
-type ContactFormInputs = {
-  name: string
-  email: string
-  content: string
-  privacy: boolean
-}
-
-// ----------------------------------------
 // JSX
 // ----------------------------------------
+
+const contactFormSchema = zod.object({
+  name: zod.string().min(1, { message: 'お名前は必須項目です。' }),
+  email: zod
+    .string()
+    .min(1, { message: 'メールアドレスは必須項目です。' })
+    .email('メールアドレスの形式が間違っています。'),
+  content: zod.string().min(1, { message: 'お問い合わせ内容は必須項目です。' }),
+  privacy: zod
+    .boolean()
+    .refine((val) => val === true, 'プライバシーポリシーへの同意は必須です。'),
+})
 
 export const Page: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   post,
@@ -59,10 +62,14 @@ export const Page: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
     handleSubmit,
     watch,
     formState: { errors },
-  } = useForm<ContactFormInputs>()
+  } = useForm<zod.infer<typeof contactFormSchema>>({
+    resolver: zodResolver(contactFormSchema),
+  })
   const currentPrivacyInput = watch('privacy', false)
 
-  const onSubmit: SubmitHandler<ContactFormInputs> = async (data) => {
+  const onSubmit: SubmitHandler<zod.infer<typeof contactFormSchema>> = async (
+    data
+  ) => {
     try {
       setFormLoading(true)
       setFormPostSuccess(false)
@@ -144,59 +151,60 @@ export const Page: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
                   <dt>
                     <label htmlFor="contactFormName">お名前</label>
                   </dt>
-                  <dd>
+                  <LStack tag="dd" space="8px">
                     <input
                       css={textFieldStyle}
                       id="contactFormName"
                       type="text"
-                      required
-                      {...register('name', { required: true })}
+                      {...register('name')}
                     />
-                  </dd>
+                    {errors.name && (
+                      <p css={formPostResponseTextStyle}>
+                        {errors.name.message}
+                      </p>
+                    )}
+                  </LStack>
                 </LStack>
                 <LStack space="8px">
                   <dt>
                     <label htmlFor="contactFormEmail">メールアドレス</label>
                   </dt>
-                  <dd>
+                  <LStack tag="dd" space="8px">
                     <input
                       css={textFieldStyle}
                       id="contactFormEmail"
                       type="text"
-                      required
-                      {...register('email', {
-                        required: true,
-                        pattern: {
-                          value:
-                            /^[a-zA-Z0-9.!#$&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$/,
-                          message: 'メールアドレスの形式が不正です。',
-                        },
-                      })}
+                      {...register('email')}
                     />
-                  </dd>
+                    {errors.email && (
+                      <p css={formPostResponseTextStyle}>
+                        {errors.email.message}
+                      </p>
+                    )}
+                  </LStack>
                 </LStack>
                 <LStack space="8px">
                   <dt>
                     <label htmlFor="contactFormContent">お問い合わせ内容</label>
                   </dt>
-                  <dd>
+                  <LStack tag="dd" space="8px">
                     <textarea
                       css={textFieldStyle}
                       id="contactFormContent"
-                      required
-                      {...register('content', { required: true })}
+                      {...register('content')}
                     />
-                  </dd>
+                    {errors.content && (
+                      <p css={formPostResponseTextStyle}>
+                        {errors.content.message}
+                      </p>
+                    )}
+                  </LStack>
                 </LStack>
               </LStack>
 
               <LStack space="8px">
                 <label css={checkBoxStyle(currentPrivacyInput)}>
-                  <input
-                    type="checkbox"
-                    required
-                    {...register('privacy', { required: true })}
-                  />
+                  <input type="checkbox" {...register('privacy')} />
                   プライバシーポリシーに同意する
                 </label>
                 <p>
@@ -206,6 +214,11 @@ export const Page: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
                   </Link>
                   からご確認ください。
                 </p>
+                {errors.privacy && (
+                  <p css={formPostResponseTextStyle}>
+                    {errors.privacy.message}
+                  </p>
+                )}
               </LStack>
 
               <div>
@@ -301,4 +314,6 @@ const checkBoxStyle = (val: boolean) => {
 
 const formPostResponseTextStyle = css`
   font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: var(--color-primary);
 `
