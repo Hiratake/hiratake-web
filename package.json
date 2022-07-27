@@ -27,6 +27,7 @@
     "microcms-js-sdk": "2.0.0",
     "next": "12.2.3",
     "next-seo": "5.5.0",
+    "next-sitemap": "3.1.15",
     "next-themes": "0.2.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -57,7 +58,7 @@
   "scripts": {
     "prepare": "husky install",
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next-sitemap",
     "start": "next start",
     "lint": "npm run lint:script && npm run lint:style",
     "lint:script": "next lint",
