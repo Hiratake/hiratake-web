@@ -92,7 +92,6 @@ export const Page: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
         ]}
         title={post.title}
         createdAt={post.createdAt}
-        updatedAt={post.updatedAt}
         share
       >
         <div
