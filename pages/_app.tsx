@@ -137,6 +137,9 @@ export const App = ({ Component, pageProps }: AppProps) => {
           <LStack space="24px">
             <LCenter max="400px">
               <LCluster align="center" justify="center" space="4px 16px">
+                <Link href="/blog" passHref>
+                  <a css={footerNavigationStyle}>ブログ</a>
+                </Link>
                 <Link href="/contact" passHref>
                   <a css={footerNavigationStyle}>お問い合わせ</a>
                 </Link>

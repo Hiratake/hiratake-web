@@ -39,20 +39,10 @@ export const Page: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
         title={post.title}
         description={post.description}
         canonical={currentUrl}
-        openGraph={{
-          type: 'article',
-          title: post.title,
-          url: currentUrl,
-        }}
+        openGraph={{ type: 'article', title: post.title, url: currentUrl }}
       />
       <BreadcrumbJsonLd
-        itemListElements={[
-          {
-            position: 1,
-            name: post.title,
-            item: currentUrl,
-          },
-        ]}
+        itemListElements={[{ position: 1, name: post.title, item: currentUrl }]}
       />
 
       <PageContainer
