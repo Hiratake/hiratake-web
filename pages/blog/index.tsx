@@ -1,16 +1,32 @@
 // pages > blog > index
 
-import type { NextPage } from 'next'
+import type { GetStaticProps, InferGetStaticPropsType, NextPage } from 'next'
+import type { CMSPost } from '@/types/cms'
+import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { BreadcrumbJsonLd, NextSeo } from 'next-seo'
 import { PageContainer } from '@/components/PageContainer'
+import { client } from '@/lib/client'
 import { config } from '@/utils/config'
+
+export const getStaticProps: GetStaticProps<{
+  posts: CMSPost[]
+}> = async () => {
+  const posts = await client.getList({ endpoint: 'blogs' })
+  return {
+    props: {
+      posts: posts.contents,
+    },
+  }
+}
 
 // ----------------------------------------
 // JSX
 // ----------------------------------------
 
-export const Page: NextPage = () => {
+export const Page: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
+  posts,
+}) => {
   const router = useRouter()
   const currentUrl = `https://${config.domain}${router.pathname}`
   const meta = {
@@ -34,7 +50,17 @@ export const Page: NextPage = () => {
       <PageContainer
         breadcrumbsItems={[{ label: 'Home', href: '/' }, { label: meta.title }]}
         title={meta.title}
-      ></PageContainer>
+      >
+        <ul>
+          {posts.map((post) => (
+            <li key={post.id}>
+              <Link href={`/blog/${post.id}`} passHref>
+                <a>{post.title}</a>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </PageContainer>
     </>
   )
 }
