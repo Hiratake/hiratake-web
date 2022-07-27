@@ -5,7 +5,7 @@ import type { CMSPost } from '@/types/cms'
 import { useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { NextSeo, BreadcrumbJsonLd } from 'next-seo'
+import { BreadcrumbJsonLd, NextSeo } from 'next-seo'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import * as zod from 'zod'
@@ -20,7 +20,7 @@ import { articleStyle } from '@/utils/style'
 export const getStaticProps: GetStaticProps<{
   post: CMSPost
 }> = async () => {
-  const post = await client.getListDetail({
+  const post = await client.getListDetail<CMSPost>({
     endpoint: 'pages',
     contentId: 'contact',
   })

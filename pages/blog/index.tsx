@@ -12,7 +12,7 @@ import { config } from '@/utils/config'
 export const getStaticProps: GetStaticProps<{
   posts: CMSPost[]
 }> = async () => {
-  const posts = await client.getList({ endpoint: 'blogs' })
+  const posts = await client.getList<CMSPost>({ endpoint: 'blogs' })
   return {
     props: {
       posts: posts.contents,
