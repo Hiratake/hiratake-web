@@ -28,7 +28,7 @@ export const Page: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   posts,
 }) => {
   const router = useRouter()
-  const currentUrl = `https://${config.domain}${router.pathname}`
+  const currentUrl = `https://${config.domain}${router.asPath}`
   const meta = {
     title: 'ブログ',
     description:

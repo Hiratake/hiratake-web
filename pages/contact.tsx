@@ -51,7 +51,7 @@ export const Page: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   post,
 }) => {
   const router = useRouter()
-  const currentUrl = `https://${config.domain}${router.pathname}`
+  const currentUrl = `https://${config.domain}${router.asPath}`
 
   const [formLoading, setFormLoading] = useState<boolean>(false)
   const [formPostSuccess, setFormPostSuccess] = useState<boolean>(false)
