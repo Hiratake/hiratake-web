@@ -48,12 +48,17 @@ export const Page: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
 }) => {
   const router = useRouter()
   const currentUrl = `https://${config.domain}${router.asPath}`
+  const description = (() => {
+    const max: number = 100
+    const content = post.content.replace(/<("[^"]*"|'[^']*'|[^'">])*>/g, '')
+    return content.length < max ? content : `${content.slice(0, max)}...`
+  })()
 
   return (
     <>
       <NextSeo
         title={post.title}
-        // description={}
+        description={description}
         canonical={currentUrl}
         openGraph={{ type: 'article', title: post.title, url: currentUrl }}
       />
