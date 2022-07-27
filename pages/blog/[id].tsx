@@ -8,7 +8,10 @@ import type {
 } from 'next'
 import type { CMSPost } from '@/types/cms'
 import { useRouter } from 'next/router'
-import { BreadcrumbJsonLd, NextSeo } from 'next-seo'
+import { ArticleJsonLd, BreadcrumbJsonLd, NextSeo } from 'next-seo'
+import dayjs from 'dayjs'
+import utc from 'dayjs/plugin/utc'
+import timezone from 'dayjs/plugin/timezone'
 import { PageContainer } from '@/components/PageContainer'
 import { client } from '@/lib/client'
 import { config } from '@/utils/config'
@@ -54,6 +57,9 @@ export const Page: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
     return content.length < max ? content : `${content.slice(0, max)}...`
   })()
 
+  dayjs.extend(utc)
+  dayjs.extend(timezone)
+
   return (
     <>
       <NextSeo
@@ -82,6 +88,16 @@ export const Page: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
           },
           { position: 2, name: post.title, item: currentUrl },
         ]}
+      />
+      <ArticleJsonLd
+        type="Blog"
+        url={currentUrl}
+        title={post.title}
+        images={[]}
+        datePublished={dayjs.utc(post.createdAt).tz('Asia/Tokyo').format()}
+        dateModified={dayjs.utc(post.updatedAt).tz('Asia/Tokyo').format()}
+        authorName="Hiratake"
+        description={description}
       />
 
       <PageContainer
