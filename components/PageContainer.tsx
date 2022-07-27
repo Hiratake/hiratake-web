@@ -98,7 +98,7 @@ export const PageContainer = (props: PageContainerProps) => {
               <a
                 css={iconStyle}
                 href={`https://www.twitter.com/share?url=${encodeURI(
-                  `https://${config.domain}${router.pathname}`
+                  `https://${config.domain}${router.asPath}`
                 )}&text=${encodeURI(props.title)}`}
                 title="share on Twitter"
                 target="_blank"
@@ -113,7 +113,7 @@ export const PageContainer = (props: PageContainerProps) => {
               <a
                 css={iconStyle}
                 href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURI(
-                  `https://${config.domain}${router.pathname}`
+                  `https://${config.domain}${router.asPath}`
                 )}&t=${encodeURI(props.title)}`}
                 title="share on Facebook"
                 target="_blank"
@@ -128,7 +128,7 @@ export const PageContainer = (props: PageContainerProps) => {
               <a
                 css={iconStyle}
                 href={`https://timeline.line.me/social-plugin/share?url=${encodeURI(
-                  `https://${config.domain}${router.pathname}`
+                  `https://${config.domain}${router.asPath}`
                 )}&text=${encodeURI(props.title)}`}
                 title="share on LINE"
                 target="_blank"
