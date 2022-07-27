@@ -60,7 +60,18 @@ export const Page: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
         title={post.title}
         description={description}
         canonical={currentUrl}
-        openGraph={{ type: 'article', title: post.title, url: currentUrl }}
+        openGraph={{
+          type: 'article',
+          title: post.title,
+          url: currentUrl,
+          images: [
+            {
+              url: `https://res.cloudinary.com/hiratake/image/upload/c_fit,co_rgb:394147,f_auto,g_north_west,l_text:notosansjp.otf_56:${encodeURI(
+                post.title
+              )},q_auto,w_1000,x_128,y_136/post_jfasyj.png`,
+            },
+          ],
+        }}
       />
       <BreadcrumbJsonLd
         itemListElements={[
