@@ -1,14 +1,18 @@
 version: 2
 updates:
-  - package-ecosystem: 'github-actions'
-    directory: '/'
+  # GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
     schedule:
-      interval: 'weekly'
+      interval: "weekly"
     labels:
-      - '🤖dependencies'
-  - package-ecosystem: 'npm'
-    directory: '/'
+      - "🤖dependencies"
+      - "🐙actions"
+  # npm
+  - package-ecosystem: "npm"
+    directory: "/"
     schedule:
-      interval: 'weekly'
+      interval: "weekly"
     labels:
-      - '🤖dependencies'
+      - "🤖dependencies"
+    open-pull-requests-limit: 0

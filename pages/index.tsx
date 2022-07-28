@@ -1,218 +1,147 @@
-import React from 'react'
+// pages > index
+
 import type { NextPage } from 'next'
-import { useRouter } from 'next/router'
-import Head from 'next/head'
 import Image from 'next/image'
-import Link from 'next/link'
+import { NextSeo } from 'next-seo'
+import { siTwitter, siGithub, siDiscord } from 'simple-icons/icons'
 import { css } from '@emotion/react'
-import { AppTab, AppTabItem, AppTimeline } from '@/components'
-import { breakpoints } from '@/utils/sizes'
-import { getSortedPostsData } from '@/utils/posts'
-import profile from '@/assets/profile.json'
-import IconTwitter from '@/assets/images/twitter.svg'
-import IconGitHub from '@/assets/images/github.svg'
-import IconDiscord from '@/assets/images/discord.svg'
+import { LCenter } from '@/components/LCenter'
+import { LCluster } from '@/components/LCluster'
+import { LIcon } from '@/components/LIcon'
+import { LSidebar } from '@/components/LSidebar'
+import { LStack } from '@/components/LStack'
+import { config } from '@/utils/config'
+import { rem } from '@/utils/style'
 
-export const getStaticProps = async () => {
-  const allPostsData = getSortedPostsData()
-  return {
-    props: {
-      allPostsData,
-    },
-  }
+// ----------------------------------------
+// JSX
+// ----------------------------------------
+
+export const Page: NextPage = () => {
+  const currentUrl = `https://${config.domain}`
+
+  return (
+    <>
+      <NextSeo
+        description={config.description}
+        canonical={currentUrl}
+        openGraph={{ url: currentUrl }}
+      />
+
+      <LCenter max="520px">
+        <div css={containerStyle}>
+          <LSidebar side="left" contentMin="360px" space="32px 40px">
+            <LCluster align="center" justify="center">
+              <div css={iconStyle}>
+                <Image
+                  src="https://images.microcms-assets.io/assets/b984f78937f74b35a1f2253f21427563/fe89794cd8514285a23ba0dd457a1f8e/icon.jpg"
+                  alt="icon"
+                  layout="fill"
+                  objectFit="contain"
+                />
+              </div>
+            </LCluster>
+
+            <LStack space="8px">
+              <div css={profileStyle}>
+                <LStack space="8px">
+                  <p css={nameStyle}>{config.author.name}</p>
+                  <p css={bioStyle}>{config.author.bio}</p>
+                </LStack>
+              </div>
+
+              <div css={socialStyle}>
+                <a
+                  href={`https://twitter.com/${config.social.twitter}`}
+                  title="Twitter"
+                >
+                  <LIcon size="20px">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                      <path d={siTwitter.path} />
+                    </svg>
+                  </LIcon>
+                </a>
+                <a
+                  href={`https://github.com/${config.social.github}`}
+                  title="GitHub"
+                >
+                  <LIcon size="20px">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                      <path d={siGithub.path} />
+                    </svg>
+                  </LIcon>
+                </a>
+                <a
+                  href={`https://discord.com/users/${config.social.discord}`}
+                  title="Discord"
+                >
+                  <LIcon size="20px">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                      <path d={siDiscord.path} />
+                    </svg>
+                  </LIcon>
+                </a>
+              </div>
+            </LStack>
+          </LSidebar>
+        </div>
+      </LCenter>
+    </>
+  )
 }
+export default Page
 
-const Home: NextPage<{ allPostsData: ReturnType<typeof getSortedPostsData> }> =
-  ({ allPostsData }) => {
-    // Styles
-    const styledProfile = css`
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-      padding: 56px 0;
-      ${breakpoints('md')} {
-        padding: 80px 0;
-      }
-    `
-    const styledProfileIcon = css`
-      width: 120px;
-      height: 120px;
-      overflow: hidden;
-      border-radius: 50%;
-    `
-    const styledProfileContent = css`
-      width: 100%;
-      padding: 16px 40px 0 40px;
-      font-family: 'sofia-pro', 'Hiragino Kaku Gothic ProN', 'Yu Gothic',
-        sans-serif;
-      text-align: center;
-      ${breakpoints('md')} {
-        max-width: 400px;
-        padding-top: 0;
-        padding-right: 0;
-        text-align: left;
-      }
-    `
-    const styledProfileName = css`
-      font-size: 36px;
-      font-weight: 700;
-    `
-    const styledProfileBio = css`
-      max-width: 320px;
-      margin: auto;
-      font-size: 14px;
-      color: var(--color-text-muted);
+// ----------------------------------------
+// Style
+// ----------------------------------------
 
-      ${breakpoints('sm')} {
-        max-width: none;
-      }
-    `
-    const styledProfileSocial = css`
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-top: 16px;
-      ${breakpoints('sm')} {
-        justify-content: flex-start;
-      }
-    `
-    const styledProfileSocialItem = css`
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 24px;
-      height: 24px;
-      padding: 2px;
-      color: inherit;
-      text-decoration: none;
-      &:hover {
-        color: var(--color-text-muted);
-      }
-      & ~ & {
-        margin-left: 8px;
-      }
-    `
-    const styledProfileSocialIcon = css`
-      width: 100%;
-      fill: currentColor;
-    `
-    const styledContent = css`
-      padding: 24px 0 48px;
-      ${breakpoints('md')} {
-        padding: 40px 0 80px;
-      }
-    `
-    const styledPostMeta = css`
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      font-family: 'sofia-pro', 'Hiragino Kaku Gothic ProN', 'Yu Gothic',
-        sans-serif;
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--color-text-muted);
-      & > * {
-        margin-right: 5px;
-      }
-    `
+const containerStyle = css`
+  margin-top: 40px;
+`
 
-    const router = useRouter()
-    const [currentTab, setCurrentTab] = React.useState('posts')
+const iconStyle = css`
+  position: relative;
+  width: 120px;
+  height: 120px;
+  overflow: hidden;
+  border-radius: 50%;
+`
 
-    return (
-      <>
-        <Head>
-          <title>{process.env.baseName}</title>
-          <meta name="description" content={process.env.baseDescription} />
-          <meta property="og:type" content="website" />
-          <meta
-            property="og:url"
-            content={`${process.env.baseUrl}${router.asPath}`}
-          />
-          <meta property="og:title" content={process.env.baseName} />
-          <meta
-            property="og:description"
-            content={process.env.baseDescription}
-          />
-          <meta
-            property="og:image"
-            content={`${process.env.baseUrl}${process.env.baseImage}`}
-          />
-          <meta name="twitter:card" content="summary" />
-        </Head>
+const profileStyle = css`
+  font-family: sofia-pro, sans-serif;
+  text-align: center;
 
-        <div css={styledProfile}>
-          <div css={styledProfileIcon}>
-            <Image src={profile.image} alt="Icon" width={120} height={120} />
-          </div>
-          <div css={styledProfileContent}>
-            <p css={styledProfileName}>{profile.name}</p>
-            <p css={styledProfileBio}>{profile.bio}</p>
-            <div css={styledProfileSocial}>
-              <Link href={profile.social.twitter} passHref>
-                <a css={styledProfileSocialItem} target="_blank" rel="noopener">
-                  <IconTwitter css={styledProfileSocialIcon} />
-                </a>
-              </Link>
-              <Link href={profile.social.github} passHref>
-                <a css={styledProfileSocialItem} target="_blank" rel="noopener">
-                  <IconGitHub css={styledProfileSocialIcon} />
-                </a>
-              </Link>
-              <Link href={profile.social.discord} passHref>
-                <a css={styledProfileSocialItem} target="_blank" rel="noopener">
-                  <IconDiscord css={styledProfileSocialIcon} />
-                </a>
-              </Link>
-            </div>
-          </div>
-        </div>
+  @media screen and (min-width: 568px) {
+    text-align: left;
+  }
+`
 
-        <div css={styledContent}>
-          <AppTab
-            headers={[
-              { label: 'posts', key: 'posts' },
-              { label: 'works', key: 'works' },
-            ]}
-            current={currentTab}
-            onChange={setCurrentTab}
-          >
-            <AppTabItem current={currentTab} itemKey="posts">
-              <AppTimeline
-                items={allPostsData.map(
-                  ({ id, title, createdAt, postedOn }) => {
-                    return {
-                      id: id,
-                      title: title,
-                      date: createdAt,
-                      href: `/${id}`,
-                      header: (
-                        <div css={styledPostMeta}>
-                          <span>posted on</span>
-                          <span>{postedOn}</span>
-                          <span
-                            css={css`
-                              opacity: 0.4;
-                            `}
-                          >
-                            /
-                          </span>
-                          <span>{createdAt}</span>
-                        </div>
-                      ),
-                    }
-                  }
-                )}
-              />
-            </AppTabItem>
-            <AppTabItem current={currentTab} itemKey="works">
-              準備中
-            </AppTabItem>
-          </AppTab>
-        </div>
-      </>
-    )
+const nameStyle = css`
+  font-size: ${rem(36)};
+  font-weight: 700;
+  line-height: 1;
+`
+
+const bioStyle = css`
+  font-size: ${rem(14)};
+  color: var(--color-text-muted);
+`
+
+const socialStyle = css`
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+
+  @media screen and (min-width: 568px) {
+    justify-content: flex-start;
   }
 
-export default Home
+  & > a {
+    color: inherit;
+
+    &:hover {
+      color: var(--color-text-muted);
+    }
+  }
+`

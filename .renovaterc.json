@@ -1,0 +1,13 @@
+{
+  "branchConcurrentLimit": 5,
+  "dependencyDashboard": false,
+  "enabledManagers": ["npm"],
+  "extends": ["config:base", "schedule:earlyMondays"],
+  "labels": ["🤖dependencies"],
+  "packageRules": [],
+  "separateMultipleMajor": true,
+  "timezone": "Asia/Tokyo",
+  "vulnerabilityAlerts": {
+    "labels": ["🤖dependencies"]
+  }
+}
