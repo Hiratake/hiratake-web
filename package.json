@@ -58,7 +58,8 @@
   "scripts": {
     "prepare": "husky install",
     "dev": "next dev",
-    "build": "next build && next-sitemap",
+    "build": "next build",
+    "postbuild": "next-sitemap",
     "start": "next start",
     "lint": "npm run lint:script && npm run lint:style",
     "lint:script": "next lint",
