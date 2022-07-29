@@ -31,30 +31,37 @@ const isDraft = (item: any): item is { draftKey: string } => {
 export const getStaticProps: GetStaticProps<{ post: CMSPost }> = async (
   context
 ) => {
-  const id = context.params?.id
-    ? Array.isArray(context.params.id)
-      ? context.params.id.join(',')
-      : context.params.id
-    : ''
-  const draftKey = isDraft(context.previewData)
-    ? context.previewData.draftKey
-    : ''
-  const post = draftKey
-    ? await client.getListDetail<CMSPost>({
-        endpoint: 'blogs',
-        contentId: id,
-        queries: {
-          draftKey,
-        },
-      })
-    : await client.getListDetail<CMSPost>({
-        endpoint: 'blogs',
-        contentId: id,
-      })
-  return {
-    props: {
-      post,
-    },
+  try {
+    const id = context.params?.id
+      ? Array.isArray(context.params.id)
+        ? context.params.id.join(',')
+        : context.params.id
+      : ''
+    const draftKey = isDraft(context.previewData)
+      ? context.previewData.draftKey
+      : ''
+    const post = draftKey
+      ? await client.getListDetail<CMSPost>({
+          endpoint: 'blogs',
+          contentId: id,
+          queries: {
+            draftKey,
+          },
+        })
+      : await client.getListDetail<CMSPost>({
+          endpoint: 'blogs',
+          contentId: id,
+        })
+    return {
+      props: {
+        post,
+      },
+      notFound: !post,
+    }
+  } catch (err) {
+    return {
+      notFound: true,
+    }
   }
 }
 
