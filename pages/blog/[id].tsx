@@ -8,6 +8,7 @@ import type {
 } from 'next'
 import type { CMSPost } from '@/types/cms'
 import { useRouter } from 'next/router'
+import ErrorPage from 'next/error'
 import { ArticleJsonLd, BreadcrumbJsonLd, NextSeo } from 'next-seo'
 import dayjs from 'dayjs'
 import utc from 'dayjs/plugin/utc'
@@ -20,7 +21,11 @@ import { articleStyle } from '@/utils/style'
 export const getStaticPaths: GetStaticPaths = async () => {
   const posts = await client.getList<CMSPost>({ endpoint: 'blogs' })
   const paths = posts.contents.map((post) => `/blog/${post.id}`)
-  return { paths, fallback: false }
+  return { paths, fallback: true }
+}
+
+const isDraft = (item: any): item is { draftKey: string } => {
+  return !!(item?.draftKey && typeof item.draftKey === 'string')
 }
 
 export const getStaticProps: GetStaticProps<{ post: CMSPost }> = async (
@@ -31,10 +36,21 @@ export const getStaticProps: GetStaticProps<{ post: CMSPost }> = async (
       ? context.params.id.join(',')
       : context.params.id
     : ''
-  const post = await client.getListDetail<CMSPost>({
-    endpoint: 'blogs',
-    contentId: id,
-  })
+  const draftKey = isDraft(context.previewData)
+    ? context.previewData.draftKey
+    : ''
+  const post = draftKey
+    ? await client.getListDetail<CMSPost>({
+        endpoint: 'blogs',
+        contentId: id,
+        queries: {
+          draftKey,
+        },
+      })
+    : await client.getListDetail<CMSPost>({
+        endpoint: 'blogs',
+        contentId: id,
+      })
   return {
     props: {
       post,
@@ -50,6 +66,11 @@ export const Page: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   post,
 }) => {
   const router = useRouter()
+
+  if (!post) {
+    return <ErrorPage statusCode={404} />
+  }
+
   const currentUrl = `https://${config.domain}${router.asPath}`
   const description = (() => {
     const max: number = 100
