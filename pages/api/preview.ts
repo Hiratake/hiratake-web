@@ -2,7 +2,6 @@
 
 import type { NextApiRequest, NextApiResponse } from 'next'
 import type { CMSPost } from '@/types/cms'
-import fetch from 'node-fetch'
 import { client } from '@/lib/client'
 
 export const handler = async (req: NextApiRequest, res: NextApiResponse) => {
