@@ -192,6 +192,7 @@ const globalStyle = css`
   }
 
   body {
+    position: relative;
     font-family: 'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic UI', sans-serif;
     font-size: ${rem(14)};
     color: var(--color-text);

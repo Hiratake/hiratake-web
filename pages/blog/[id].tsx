@@ -8,11 +8,13 @@ import type {
 } from 'next'
 import type { CMSPost } from '@/types/cms'
 import { useRouter } from 'next/router'
+import Link from 'next/link'
 import ErrorPage from 'next/error'
 import { ArticleJsonLd, BreadcrumbJsonLd, NextSeo } from 'next-seo'
 import dayjs from 'dayjs'
 import utc from 'dayjs/plugin/utc'
 import timezone from 'dayjs/plugin/timezone'
+import { css } from '@emotion/react'
 import { PageContainer } from '@/components/PageContainer'
 import { client } from '@/lib/client'
 import { config } from '@/utils/config'
@@ -28,9 +30,10 @@ const isDraft = (item: any): item is { draftKey: string } => {
   return !!(item?.draftKey && typeof item.draftKey === 'string')
 }
 
-export const getStaticProps: GetStaticProps<{ post: CMSPost }> = async (
-  context
-) => {
+export const getStaticProps: GetStaticProps<{
+  post: CMSPost
+  preview: boolean
+}> = async (context) => {
   try {
     const id = context.params?.id
       ? Array.isArray(context.params.id)
@@ -55,6 +58,7 @@ export const getStaticProps: GetStaticProps<{ post: CMSPost }> = async (
     return {
       props: {
         post,
+        preview: !!draftKey,
       },
       notFound: !post,
     }
@@ -71,6 +75,7 @@ export const getStaticProps: GetStaticProps<{ post: CMSPost }> = async (
 
 export const Page: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   post,
+  preview,
 }) => {
   const router = useRouter()
 
@@ -143,7 +148,35 @@ export const Page: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
           dangerouslySetInnerHTML={{ __html: `${post.content}` }}
         />
       </PageContainer>
+
+      {preview && (
+        <div css={previewNotificationStyle}>
+          <p>
+            現在プレビューモードです。
+            <br />
+            <Link href="/api/clear">
+              <a>解除する</a>
+            </Link>
+          </p>
+        </div>
+      )}
     </>
   )
 }
 export default Page
+
+// ----------------------------------------
+// Style
+// ----------------------------------------
+
+const previewNotificationStyle = css`
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 100;
+  padding: 8px;
+  background-color: var(--color-background);
+  border: solid 1px var(--color-text-muted);
+  border-radius: 8px;
+  box-shadow: 0 0 4px var(--color-text-muted);
+`
