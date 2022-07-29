@@ -19,6 +19,11 @@ export const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       contentId: Array.isArray(req.query.slug)
         ? req.query.slug.join(',')
         : req.query.slug,
+      queries: {
+        draftKey: Array.isArray(req.query.draftKey)
+          ? req.query.draftKey.join(',')
+          : req.query.draftKey,
+      },
     })
 
     if (!post) {
