@@ -1,7 +1,7 @@
 // pages > blog > index
 
 import type { GetStaticProps, InferGetStaticPropsType, NextPage } from 'next'
-import type { CMSPost } from '@/types/cms'
+import type { CMSBlog } from '@/types/cms'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { BreadcrumbJsonLd, NextSeo } from 'next-seo'
@@ -16,9 +16,9 @@ import { rem } from '@/utils/style'
 import { LStack } from '@/components/LStack'
 
 export const getStaticProps: GetStaticProps<{
-  posts: CMSPost[]
+  posts: CMSBlog[]
 }> = async () => {
-  const posts = await client.getList<CMSPost>({ endpoint: 'blogs' })
+  const posts = await client.getList<CMSBlog>({ endpoint: 'blogs' })
   return {
     props: {
       posts: posts.contents,

@@ -6,7 +6,7 @@ import type {
   InferGetStaticPropsType,
   NextPage,
 } from 'next'
-import type { CMSPost } from '@/types/cms'
+import type { CMSBlog } from '@/types/cms'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import ErrorPage from 'next/error'
@@ -21,7 +21,7 @@ import { config } from '@/utils/config'
 import { articleStyle } from '@/utils/style'
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const posts = await client.getList<CMSPost>({ endpoint: 'blogs' })
+  const posts = await client.getList<CMSBlog>({ endpoint: 'blogs' })
   const paths = posts.contents.map((post) => `/blog/${post.id}`)
   return { paths, fallback: true }
 }
@@ -31,7 +31,7 @@ const isDraft = (item: any): item is { draftKey: string } => {
 }
 
 export const getStaticProps: GetStaticProps<{
-  post: CMSPost
+  post: CMSBlog
   preview: boolean
 }> = async (context) => {
   try {
@@ -44,14 +44,14 @@ export const getStaticProps: GetStaticProps<{
       ? context.previewData.draftKey
       : ''
     const post = draftKey
-      ? await client.getListDetail<CMSPost>({
+      ? await client.getListDetail<CMSBlog>({
           endpoint: 'blogs',
           contentId: id,
           queries: {
             draftKey,
           },
         })
-      : await client.getListDetail<CMSPost>({
+      : await client.getListDetail<CMSBlog>({
           endpoint: 'blogs',
           contentId: id,
         })
