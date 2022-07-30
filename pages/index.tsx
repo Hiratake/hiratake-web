@@ -34,10 +34,11 @@ export const Page: NextPage = () => {
             <LCluster align="center" justify="center">
               <div css={iconStyle}>
                 <Image
-                  src="https://images.microcms-assets.io/assets/b984f78937f74b35a1f2253f21427563/fe89794cd8514285a23ba0dd457a1f8e/icon.jpg"
+                  src="https://images.microcms-assets.io/assets/b984f78937f74b35a1f2253f21427563/58920482de314652b6696c30a7137d6c/icon.webp"
                   alt="icon"
                   layout="fill"
                   objectFit="contain"
+                  priority={true}
                 />
               </div>
             </LCluster>
