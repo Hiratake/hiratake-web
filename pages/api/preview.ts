@@ -1,7 +1,7 @@
 // pages > api > preview
 
 import type { NextApiRequest, NextApiResponse } from 'next'
-import type { CMSPost } from '@/types/cms'
+import type { CMSBlog } from '@/types/cms'
 import { client } from '@/lib/client'
 
 export const handler = async (req: NextApiRequest, res: NextApiResponse) => {
@@ -13,7 +13,7 @@ export const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       throw new Error('Invalid token')
     }
 
-    const post = await client.getListDetail<CMSPost>({
+    const post = await client.getListDetail<CMSBlog>({
       endpoint: 'blogs',
       contentId: Array.isArray(req.query.slug)
         ? req.query.slug.join(',')

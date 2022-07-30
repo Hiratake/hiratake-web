@@ -1,7 +1,7 @@
 // pages > privacy
 
 import type { GetStaticProps, InferGetStaticPropsType, NextPage } from 'next'
-import type { CMSPost } from '@/types/cms'
+import type { CMSPage } from '@/types/cms'
 import { useRouter } from 'next/router'
 import { BreadcrumbJsonLd, NextSeo } from 'next-seo'
 import { PageContainer } from '@/components/PageContainer'
@@ -10,9 +10,9 @@ import { config } from '@/utils/config'
 import { articleStyle } from '@/utils/style'
 
 export const getStaticProps: GetStaticProps<{
-  post: CMSPost
+  post: CMSPage
 }> = async () => {
-  const post = await client.getListDetail<CMSPost>({
+  const post = await client.getListDetail<CMSPage>({
     endpoint: 'pages',
     contentId: 'privacy',
   })

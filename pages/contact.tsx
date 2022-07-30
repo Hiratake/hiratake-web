@@ -1,7 +1,7 @@
 // pages > contact
 
 import type { GetStaticProps, InferGetStaticPropsType, NextPage } from 'next'
-import type { CMSPost } from '@/types/cms'
+import type { CMSPage } from '@/types/cms'
 import { useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
@@ -18,9 +18,9 @@ import { config } from '@/utils/config'
 import { articleStyle } from '@/utils/style'
 
 export const getStaticProps: GetStaticProps<{
-  post: CMSPost
+  post: CMSPage
 }> = async () => {
-  const post = await client.getListDetail<CMSPost>({
+  const post = await client.getListDetail<CMSPage>({
     endpoint: 'pages',
     contentId: 'contact',
   })
