@@ -69,12 +69,12 @@ export const Page: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
                     Posted on{' '}
                     <time
                       dateTime={dayjs
-                        .utc(post.publishedAt)
+                        .utc(post.publishedAt || post.updatedAt)
                         .tz('Asia/Tokyo')
                         .format('YYYY-MM-DD')}
                     >
                       {dayjs
-                        .utc(post.publishedAt)
+                        .utc(post.publishedAt || post.updatedAt)
                         .tz('Asia/Tokyo')
                         .format('MMMM DD, YYYY')}
                     </time>
