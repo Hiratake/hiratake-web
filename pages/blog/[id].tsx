@@ -127,7 +127,10 @@ export const Page: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
         url={currentUrl}
         title={post.title}
         images={[]}
-        datePublished={dayjs.utc(post.publishedAt).tz('Asia/Tokyo').format()}
+        datePublished={dayjs
+          .utc(post.publishedAt || post.updatedAt)
+          .tz('Asia/Tokyo')
+          .format()}
         dateModified={dayjs.utc(post.updatedAt).tz('Asia/Tokyo').format()}
         authorName="Hiratake"
         description={description}
@@ -140,7 +143,7 @@ export const Page: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
           { label: post.title },
         ]}
         title={post.title}
-        createdAt={post.publishedAt}
+        createdAt={post.publishedAt || post.updatedAt}
         share
       >
         <div
