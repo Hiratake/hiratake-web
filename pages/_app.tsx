@@ -14,6 +14,7 @@ import { LStack } from '@/components/LStack'
 import { AppButton } from '@/components/AppButton'
 import { AppLogo } from '@/components/AppLogo'
 import { GoogleTagManager } from '@/components/GoogleTagManager'
+import { WebVitals } from '@/components/WebVitals'
 import { config } from '@/utils/config'
 import { rem } from '@/utils/style'
 
@@ -118,6 +119,7 @@ export const App = ({ Component, pageProps }: AppProps) => {
         ]}
       />
       <GoogleTagManager googleTagManagerId={config.googleTagManagerId} />
+      <WebVitals />
 
       <LCenter max="800px" gutters="24px">
         <header css={headerStyle}>
