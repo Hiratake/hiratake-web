@@ -1,6 +1,6 @@
 {
   "name": "@hiratake/hiratake-web",
-  "version": "2.2.0",
+  "version": "3.0.0",
   "description": "Hiratake Website",
   "keywords": [
     "hiratake",
@@ -70,5 +70,6 @@
     "lint:script": "next lint",
     "lint:style": "stylelint \"**/*.{jsx,tsx}\" -i .gitignore",
     "format": "prettier \"**/*.{js*,ts*,json}\" -w --ignore-path .gitignore"
-  }
+  },
+  "private": true
 }
