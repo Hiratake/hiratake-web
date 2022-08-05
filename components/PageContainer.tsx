@@ -3,9 +3,6 @@
 import { ReactNode } from 'react'
 import { useRouter } from 'next/router'
 import { css } from '@emotion/react'
-import dayjs from 'dayjs'
-import utc from 'dayjs/plugin/utc'
-import timezone from 'dayjs/plugin/timezone'
 import { siTwitter, siFacebook, siLine } from 'simple-icons/icons'
 import { LCluster } from '@/components/LCluster'
 import { LIcon } from '@/components/LIcon'
@@ -15,6 +12,7 @@ import {
   AppBreadcrumbsProps,
 } from '@/components/AppBreadcrumbs'
 import { config } from '@/utils/config'
+import { formatDatetime } from '@/utils/datetime'
 import { rem } from '@/utils/style'
 
 // ----------------------------------------
@@ -38,9 +36,6 @@ export type PageContainerProps = {
 export const PageContainer = (props: PageContainerProps) => {
   const router = useRouter()
 
-  dayjs.extend(utc)
-  dayjs.extend(timezone)
-
   return (
     <LStack space="48px">
       <AppBreadcrumbs items={props.breadcrumbsItems} />
@@ -57,30 +52,18 @@ export const PageContainer = (props: PageContainerProps) => {
                 <>
                   Last updated on{' '}
                   <time
-                    dateTime={dayjs
-                      .utc(props.updatedAt)
-                      .tz('Asia/Tokyo')
-                      .format('YYYY-MM-DD')}
+                    dateTime={formatDatetime(props.updatedAt, 'YYYY-MM-DD')}
                   >
-                    {dayjs
-                      .utc(props.updatedAt)
-                      .tz('Asia/Tokyo')
-                      .format('MMMM DD, YYYY')}
+                    {formatDatetime(props.updatedAt, 'MMMM DD, YYYY')}
                   </time>
                 </>
               ) : (
                 <>
                   Posted on{' '}
                   <time
-                    dateTime={dayjs
-                      .utc(props.createdAt)
-                      .tz('Asia/Tokyo')
-                      .format('YYYY-MM-DD')}
+                    dateTime={formatDatetime(props.createdAt, 'YYYY-MM-DD')}
                   >
-                    {dayjs
-                      .utc(props.createdAt)
-                      .tz('Asia/Tokyo')
-                      .format('MMMM DD, YYYY')}
+                    {formatDatetime(props.createdAt, 'MMMM DD, YYYY')}
                   </time>
                 </>
               )}

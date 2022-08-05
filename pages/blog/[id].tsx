@@ -11,13 +11,11 @@ import { useRouter } from 'next/router'
 import Link from 'next/link'
 import ErrorPage from 'next/error'
 import { ArticleJsonLd, BreadcrumbJsonLd, NextSeo } from 'next-seo'
-import dayjs from 'dayjs'
-import utc from 'dayjs/plugin/utc'
-import timezone from 'dayjs/plugin/timezone'
 import { css } from '@emotion/react'
 import { PageContainer } from '@/components/PageContainer'
 import { client } from '@/lib/client'
 import { config } from '@/utils/config'
+import { formatDatetime } from '@/utils/datetime'
 import { articleStyle } from '@/utils/style'
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -90,9 +88,6 @@ export const Page: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
     return content.length < max ? content : `${content.slice(0, max)}...`
   })()
 
-  dayjs.extend(utc)
-  dayjs.extend(timezone)
-
   return (
     <>
       <NextSeo
@@ -127,11 +122,8 @@ export const Page: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
         url={currentUrl}
         title={post.title}
         images={[]}
-        datePublished={dayjs
-          .utc(post.publishedAt || post.updatedAt)
-          .tz('Asia/Tokyo')
-          .format()}
-        dateModified={dayjs.utc(post.updatedAt).tz('Asia/Tokyo').format()}
+        datePublished={formatDatetime(post.publishedAt || post.updatedAt)}
+        dateModified={formatDatetime(post.updatedAt)}
         authorName="Hiratake"
         description={description}
       />

@@ -5,15 +5,13 @@ import type { CMSBlog } from '@/types/cms'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { BreadcrumbJsonLd, NextSeo } from 'next-seo'
-import dayjs from 'dayjs'
-import utc from 'dayjs/plugin/utc'
-import timezone from 'dayjs/plugin/timezone'
 import { css } from '@emotion/react'
+import { LStack } from '@/components/LStack'
 import { PageContainer } from '@/components/PageContainer'
 import { client } from '@/lib/client'
 import { config } from '@/utils/config'
+import { formatDatetime } from '@/utils/datetime'
 import { rem } from '@/utils/style'
-import { LStack } from '@/components/LStack'
 
 export const getStaticProps: GetStaticProps<{
   posts: CMSBlog[]
@@ -41,9 +39,6 @@ export const Page: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
       'Hiratake Web に投稿されたブログ記事をご紹介します。Web関係の技術のことや、日常の中の出来事を綴った日記のようなものまで、書きたいなあと思ったことを色々書いています。',
   }
 
-  dayjs.extend(utc)
-  dayjs.extend(timezone)
-
   return (
     <>
       <NextSeo
@@ -68,15 +63,15 @@ export const Page: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
                   <div css={dateStyle}>
                     Posted on{' '}
                     <time
-                      dateTime={dayjs
-                        .utc(post.publishedAt || post.updatedAt)
-                        .tz('Asia/Tokyo')
-                        .format('YYYY-MM-DD')}
+                      dateTime={formatDatetime(
+                        post.publishedAt || post.updatedAt,
+                        'YYYY-MM-DD'
+                      )}
                     >
-                      {dayjs
-                        .utc(post.publishedAt || post.updatedAt)
-                        .tz('Asia/Tokyo')
-                        .format('MMMM DD, YYYY')}
+                      {formatDatetime(
+                        post.publishedAt || post.updatedAt,
+                        'MMMM DD, YYYY'
+                      )}
                     </time>
                   </div>
                   <Link href={`/blog/${post.id}`} passHref>
