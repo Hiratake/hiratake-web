@@ -24,7 +24,7 @@
     "@emotion/react": "11.10.0",
     "@hookform/resolvers": "2.9.7",
     "dayjs": "1.11.5",
-    "microcms-js-sdk": "2.1.0",
+    "microcms-js-sdk": "2.2.1",
     "next": "12.2.5",
     "next-seo": "5.5.0",
     "next-sitemap": "3.1.17",
