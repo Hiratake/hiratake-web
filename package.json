@@ -38,8 +38,8 @@
     "zod": "3.17.10"
   },
   "devDependencies": {
-    "@commitlint/cli": "17.0.3",
-    "@commitlint/config-conventional": "17.0.3",
+    "@commitlint/cli": "17.1.2",
+    "@commitlint/config-conventional": "17.1.0",
     "@next/bundle-analyzer": "12.2.5",
     "@stylelint/postcss-css-in-js": "0.38.0",
     "@types/gtag.js": "0.0.10",
