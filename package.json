@@ -47,7 +47,7 @@
     "@types/react": "18.0.19",
     "@types/react-dom": "18.0.6",
     "cross-env": "7.0.3",
-    "eslint": "8.23.0",
+    "eslint": "8.23.1",
     "eslint-config-next": "12.2.5",
     "eslint-config-prettier": "8.5.0",
     "husky": "8.0.1",
