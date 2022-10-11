@@ -42,7 +42,7 @@
     "@commitlint/config-conventional": "17.1.0",
     "@next/bundle-analyzer": "12.2.5",
     "@stylelint/postcss-css-in-js": "0.38.0",
-    "@types/gtag.js": "0.0.11",
+    "@types/gtag.js": "0.0.12",
     "@types/node": "18.6.2",
     "@types/react": "18.0.21",
     "@types/react-dom": "18.0.6",
