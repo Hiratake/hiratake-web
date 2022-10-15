@@ -135,6 +135,7 @@ export const Page: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
           { label: post.title },
         ]}
         title={post.title}
+        tag={post.tag}
         createdAt={post.publishedAt || post.updatedAt}
         share
       >

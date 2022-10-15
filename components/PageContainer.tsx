@@ -24,6 +24,7 @@ export type PageContainerProps = {
   breadcrumbsItems: AppBreadcrumbsProps['items']
   title: string
   description?: string
+  tag?: string[]
   createdAt?: string
   updatedAt?: string
   share?: boolean
@@ -68,6 +69,15 @@ export const PageContainer = (props: PageContainerProps) => {
                 </>
               )}
             </p>
+          )}
+          {!!props.tag && !!props.tag.length && (
+            <LCluster space="4px">
+              {props.tag.map((item, index) => (
+                <div key={index} css={tagStyle}>
+                  {item}
+                </div>
+              ))}
+            </LCluster>
           )}
         </LStack>
         <div>{props.children}</div>
@@ -158,4 +168,11 @@ const iconStyle = css`
   &:hover {
     color: var(--color-text-muted);
   }
+`
+
+const tagStyle = css`
+  padding: 2px 8px;
+  font-size: ${rem(12)};
+  border: solid 1px var(--color-text-muted);
+  border-radius: 4px;
 `
