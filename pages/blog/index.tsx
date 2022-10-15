@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { BreadcrumbJsonLd, NextSeo } from 'next-seo'
 import { css } from '@emotion/react'
+import { LCluster } from '@/components/LCluster'
 import { LStack } from '@/components/LStack'
 import { PageContainer } from '@/components/PageContainer'
 import { client } from '@/lib/client'
@@ -77,6 +78,13 @@ export const Page: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
                   <Link href={`/blog/${post.id}`} passHref>
                     <a css={titleStyle}>{post.title}</a>
                   </Link>
+                  <LCluster space="4px">
+                    {post.tag.map((item, index) => (
+                      <div key={index} css={tagStyle}>
+                        {item}
+                      </div>
+                    ))}
+                  </LCluster>
                 </LStack>
               </div>
             </li>
@@ -139,4 +147,11 @@ const titleStyle = css`
   font-size: ${rem(18)};
   font-weight: 700;
   color: inherit;
+`
+
+const tagStyle = css`
+  padding: 0 4px;
+  font-size: ${rem(12)};
+  border: solid 1px var(--color-text-muted);
+  border-radius: 4px;
 `
