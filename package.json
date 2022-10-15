@@ -35,7 +35,7 @@
     "ress": "5.0.2",
     "simple-icons": "7.5.0",
     "web-vitals": "2.1.4",
-    "zod": "3.17.10"
+    "yup": "0.32.11"
   },
   "devDependencies": {
     "@commitlint/cli": "17.1.2",
