@@ -7,8 +7,13 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { BreadcrumbJsonLd, NextSeo } from 'next-seo'
 import { SubmitHandler, useForm } from 'react-hook-form'
-import { zodResolver } from '@hookform/resolvers/zod'
-import * as zod from 'zod'
+import { yupResolver } from '@hookform/resolvers/yup'
+import {
+  boolean as yupBoolean,
+  InferType,
+  object as yupObject,
+  string as yupString,
+} from 'yup'
 import { css } from '@emotion/react'
 import { LStack } from '@/components/LStack'
 import { AppButton } from '@/components/AppButton'
@@ -35,16 +40,16 @@ export const getStaticProps: GetStaticProps<{
 // JSX
 // ----------------------------------------
 
-const contactFormSchema = zod.object({
-  name: zod.string().min(1, { message: 'お名前は必須項目です。' }),
-  email: zod
-    .string()
-    .min(1, { message: 'メールアドレスは必須項目です。' })
+const contactFormSchema = yupObject({
+  name: yupString().required('お名前は必須項目です。'),
+  email: yupString()
+    .required('メールアドレスは必須項目です。')
     .email('メールアドレスの形式が間違っています。'),
-  content: zod.string().min(1, { message: 'お問い合わせ内容は必須項目です。' }),
-  privacy: zod
-    .boolean()
-    .refine((val) => val === true, 'プライバシーポリシーへの同意は必須です。'),
+  content: yupString().required('お問い合わせ内容は必須項目です。'),
+  privacy: yupBoolean().oneOf(
+    [true],
+    'プライバシーポリシーへの同意は必須です。'
+  ),
 })
 
 export const Page: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
@@ -62,12 +67,12 @@ export const Page: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
     handleSubmit,
     watch,
     formState: { errors },
-  } = useForm<zod.infer<typeof contactFormSchema>>({
-    resolver: zodResolver(contactFormSchema),
+  } = useForm<InferType<typeof contactFormSchema>>({
+    resolver: yupResolver(contactFormSchema),
   })
   const currentPrivacyInput = watch('privacy', false)
 
-  const onSubmit: SubmitHandler<zod.infer<typeof contactFormSchema>> = async (
+  const onSubmit: SubmitHandler<InferType<typeof contactFormSchema>> = async (
     data
   ) => {
     try {
@@ -203,7 +208,7 @@ export const Page: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
               </LStack>
 
               <LStack space="8px">
-                <label css={checkBoxStyle(currentPrivacyInput)}>
+                <label css={checkBoxStyle(!!currentPrivacyInput)}>
                   <input type="checkbox" {...register('privacy')} />
                   プライバシーポリシーに同意する
                 </label>
