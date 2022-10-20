@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "@emotion/react": "11.10.4",
-    "@hookform/resolvers": "2.9.8",
+    "@hookform/resolvers": "2.9.10",
     "dayjs": "1.11.5",
     "microcms-js-sdk": "2.2.1",
     "next": "12.2.5",
