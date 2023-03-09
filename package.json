@@ -21,7 +21,7 @@
     "url": "https://github.com/Hiratake/hiratake-web.git"
   },
   "dependencies": {
-    "@emotion/react": "11.10.5",
+    "@emotion/react": "11.10.6",
     "@hookform/resolvers": "2.9.11",
     "dayjs": "1.11.7",
     "microcms-js-sdk": "2.2.1",
