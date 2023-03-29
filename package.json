@@ -44,7 +44,7 @@
     "@stylelint/postcss-css-in-js": "0.38.0",
     "@types/gtag.js": "0.0.12",
     "@types/node": "18.15.3",
-    "@types/react": "18.0.28",
+    "@types/react": "18.0.31",
     "@types/react-dom": "18.0.11",
     "cross-env": "7.0.3",
     "eslint": "8.36.0",
