@@ -38,8 +38,8 @@
     "yup": "0.32.11"
   },
   "devDependencies": {
-    "@commitlint/cli": "17.6.1",
-    "@commitlint/config-conventional": "17.6.1",
+    "@commitlint/cli": "17.6.3",
+    "@commitlint/config-conventional": "17.6.3",
     "@next/bundle-analyzer": "12.2.5",
     "@stylelint/postcss-css-in-js": "0.38.0",
     "@types/gtag.js": "0.0.12",
