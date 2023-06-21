@@ -26,7 +26,7 @@
     "dayjs": "1.11.8",
     "microcms-js-sdk": "2.2.1",
     "next": "12.3.4",
-    "next-seo": "5.5.0",
+    "next-seo": "5.15.0",
     "next-sitemap": "3.1.55",
     "next-themes": "0.2.1",
     "react": "18.2.0",
