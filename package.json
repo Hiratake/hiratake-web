@@ -1,6 +1,6 @@
 {
-  "name": "hiratake-web",
-  "version": "4.0.0",
+  "name": "hiratake-web-monorepo",
+  "version": "0.0.0",
   "private": true,
   "packageManager": "pnpm@8.6.5",
   "engines": {
@@ -24,6 +24,9 @@
   },
   "scripts": {
     "build": "turbo run build",
+    "dev": "pnpm --filter hiratake-web dev",
+    "generate": "pnpm --filter hiratake-web generate",
+    "preview": "pnpm --filter hiratake-web preview",
     "lint": "turbo run lint",
     "typecheck": "turbo run typecheck",
     "format": "prettier -w .",
