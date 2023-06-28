@@ -1,5 +1,8 @@
 {
   "stylelint.validate": ["css", "postcss", "scss", "vue"],
+  "tailwindCSS.includeLanguages": {
+    "vue": "html"
+  },
   "[javascript][javascriptreact][typescript][typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true
