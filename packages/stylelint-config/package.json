@@ -1,0 +1,25 @@
+{
+  "name": "stylelint-config",
+  "version": "0.0.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "main": "index.js",
+  "dependencies": {
+    "postcss-html": "1.5.0",
+    "stylelint-config-recess-order": "4.2.0",
+    "stylelint-config-recommended-scss": "12.0.0",
+    "stylelint-config-recommended-vue": "1.4.0",
+    "stylelint-config-standard-scss": "9.0.0"
+  },
+  "devDependencies": {
+    "eslint": "8.43.0",
+    "eslint-config-custom": "workspace:*",
+    "stylelint": "15.9.0"
+  },
+  "peerDependencies": {
+    "stylelint": "15.9.0"
+  },
+  "scripts": {
+    "lint": "eslint . --ext .js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts,.vue"
+  }
+}
