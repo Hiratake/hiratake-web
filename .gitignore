@@ -86,8 +86,6 @@ web_modules/
 # Next.js build output
 .next
 out
-public/robots.txt
-public/sitemap*.xml
 
 # Nuxt.js build / generate output
 .nuxt

@@ -1,75 +1,13 @@
 {
-  "name": "@hiratake/hiratake-web",
-  "version": "3.0.0",
-  "description": "Hiratake Website",
-  "keywords": [
-    "hiratake",
-    "react",
-    "next",
-    "website"
-  ],
-  "homepage": "https://hiratake.xyz",
-  "bugs": "https://github.com/Hiratake/hiratake-web/issues",
-  "license": "UNLICENSED",
-  "author": {
-    "name": "Hiratake",
-    "url": "https://hiratake.xyz/",
-    "email": "hiratake@hiratake.xyz"
+  "name": "hiratake-web",
+  "version": "4.0.0",
+  "private": true,
+  "packageManager": "pnpm@8.6.5",
+  "engines": {
+    "node": "18.16.1",
+    "pnpm": "8.6.5"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Hiratake/hiratake-web.git"
-  },
-  "dependencies": {
-    "@emotion/react": "11.11.1",
-    "@hookform/resolvers": "2.9.11",
-    "dayjs": "1.11.8",
-    "microcms-js-sdk": "2.5.0",
-    "next": "12.3.4",
-    "next-seo": "5.15.0",
-    "next-sitemap": "3.1.55",
-    "next-themes": "0.2.1",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "react-hook-form": "7.34.2",
-    "ress": "5.0.2",
-    "simple-icons": "7.5.0",
-    "web-vitals": "2.1.4",
-    "yup": "0.32.11"
-  },
-  "devDependencies": {
-    "@commitlint/cli": "17.6.6",
-    "@commitlint/config-conventional": "17.6.6",
-    "@next/bundle-analyzer": "12.3.4",
-    "@stylelint/postcss-css-in-js": "0.38.0",
-    "@types/gtag.js": "0.0.12",
-    "@types/node": "18.16.18",
-    "@types/react": "18.2.14",
-    "@types/react-dom": "18.2.6",
-    "cross-env": "7.0.3",
-    "eslint": "8.43.0",
-    "eslint-config-next": "13.4.7",
-    "eslint-config-prettier": "8.8.0",
-    "husky": "8.0.3",
-    "lint-staged": "13.2.2",
-    "prettier": "2.8.8",
-    "stylelint": "14.9.1",
-    "stylelint-config-prettier": "9.0.5",
-    "stylelint-config-recess-order": "3.1.0",
-    "stylelint-config-standard": "26.0.0",
-    "typescript": "4.9.5"
-  },
-  "scripts": {
-    "prepare": "husky install",
-    "dev": "next dev",
-    "build": "next build",
-    "postbuild": "next-sitemap",
-    "start": "next start",
-    "analyze": "cross-env ANALYZE=true npm run build",
-    "lint": "npm run lint:script && npm run lint:style",
-    "lint:script": "next lint",
-    "lint:style": "stylelint \"**/*.{jsx,tsx}\" -i .gitignore",
-    "format": "prettier \"**/*.{js*,ts*,json}\" -w --ignore-path .gitignore"
-  },
-  "private": true
+  "volta": {
+    "node": "18.16.1"
+  }
 }
