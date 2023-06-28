@@ -1,0 +1,6 @@
+{
+  "*.{js,jsx,cjs,mjs,ts,tsx,cts,mts}": ["prettier -w"],
+  "*.{css,scss}": ["prettier -w"],
+  "*.{json,yml,yaml,md,html}": ["prettier -w"],
+  "*.vue": ["prettier -w"]
+}
