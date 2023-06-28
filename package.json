@@ -11,12 +11,16 @@
     "node": "18.16.1"
   },
   "devDependencies": {
+    "@commitlint/cli": "17.6.6",
+    "@commitlint/config-conventional": "17.6.6",
+    "husky": "8.0.3",
     "turbo": "1.10.6"
   },
   "scripts": {
     "build": "turbo run build",
     "lint": "turbo run lint",
     "typecheck": "turbo run typecheck",
-    "test": "turbo run test"
+    "test": "turbo run test",
+    "prepare": "husky install"
   }
 }
