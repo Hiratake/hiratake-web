@@ -29,6 +29,7 @@
     "generate": "pnpm --filter hiratake-web generate",
     "preview": "pnpm --filter hiratake-web preview",
     "lint": "turbo run lint",
+    "lint:fix": "turbo run lint:fix",
     "typecheck": "turbo run typecheck",
     "format": "prettier -w .",
     "test": "turbo run test",
