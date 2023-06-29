@@ -1,4 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import { resolve } from 'node:path'
 export default defineNuxtConfig({
   app: {
     head: {
@@ -7,6 +8,12 @@ export default defineNuxtConfig({
   },
   content: {
     documentDriven: true,
+    sources: {
+      content: {
+        driver: 'fs',
+        base: resolve(__dirname, '../content'),
+      },
+    },
   },
   css: ['@/assets/tailwind.css'],
   devtools: { enabled: true },
