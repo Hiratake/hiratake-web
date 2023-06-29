@@ -25,6 +25,7 @@ export default defineNuxtConfig({
     '@nuxt/content',
     '@nuxtjs/eslint-module',
     '@nuxtjs/stylelint-module',
+    '@vueuse/nuxt',
   ],
   postcss: {
     plugins: {
