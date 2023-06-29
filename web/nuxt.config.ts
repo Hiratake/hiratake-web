@@ -1,12 +1,24 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  app: {
+    head: {
+      titleTemplate: '%pageTitle',
+    },
+  },
+  content: {
+    documentDriven: true,
+  },
   css: ['@/assets/tailwind.css'],
   devtools: { enabled: true },
   eslint: {
     lintOnStart: false,
   },
   extends: ['nuxt-seo-kit'],
-  modules: ['@nuxtjs/eslint-module', '@nuxtjs/stylelint-module'],
+  modules: [
+    '@nuxt/content',
+    '@nuxtjs/eslint-module',
+    '@nuxtjs/stylelint-module',
+  ],
   postcss: {
     plugins: {
       tailwindcss: {},

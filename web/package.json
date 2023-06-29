@@ -4,6 +4,7 @@
   "private": true,
   "license": "UNLICENSED",
   "devDependencies": {
+    "@nuxt/content": "2.7.0",
     "@nuxt/devtools": "latest",
     "@nuxtjs/eslint-module": "4.1.0",
     "@nuxtjs/stylelint-module": "5.1.0",
