@@ -1,4 +1,5 @@
 <template>
+  <TheHeader />
   <NuxtPage />
   <SeoKit />
   <Body
