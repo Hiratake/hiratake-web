@@ -6,11 +6,9 @@ const { page } = useContent()
 const app = useAppConfig()
 const route = useRoute()
 
-/** 現在のページがトップページかどうか */
-const isTop = computed<boolean>(() => route.path === '/')
-
-/** パンくずリスト */
-const breadcrumbs = await useAsyncData('page-breadcrumbs', () => {
+/** 構造化データマークアップ */
+const schema = await useAsyncData('page-schema', () => {
+  // パンくずリストの項目を取得
   const items: string[] = page.value._path
     .split('/')
     .filter((item: string) => item)
@@ -27,14 +25,33 @@ const breadcrumbs = await useAsyncData('page-breadcrumbs', () => {
     .sort({ _path: 1 })
     .find()
 }).then((data) => {
-  return (data.data.value ?? [])?.map((item) => ({
-    name: item.title,
-    item: item._path,
-  }))
+  const items: (
+    | ReturnType<typeof defineBreadcrumb>
+    | ReturnType<typeof defineWebPage>
+  )[] = []
+  // パンくずリストの構造化データを追加
+  items.push(
+    defineBreadcrumb({
+      itemListElement: (data.data.value ?? []).map((item) => ({
+        name: item.title,
+        item: item._path,
+      })),
+    })
+  )
+  // ブログ記事一覧ページの場合に CollectionPage の指定を追加
+  if (route.path === '/blog') {
+    items.push(
+      defineWebPage({
+        '@type': 'CollectionPage',
+      })
+    )
+  }
+  return items
 })
-
-const schema = [defineBreadcrumb({ itemListElement: breadcrumbs })]
 useSchemaOrg(schema)
+
+/** 現在のページがトップページかどうか */
+const isTop = computed<boolean>(() => route.path === '/')
 </script>
 
 <template>
@@ -46,6 +63,7 @@ useSchemaOrg(schema)
     <template v-else>
       <article class="grid gap-6">
         <header
+          v-if="route.path !== '/blog'"
           :class="[
             'grid gap-6 pb-10',
             'border-b border-b-slate-300 dark:border-b-slate-700',
