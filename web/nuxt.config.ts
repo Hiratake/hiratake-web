@@ -39,6 +39,7 @@ export default defineNuxtConfig({
       siteName: 'Hiratake Web',
       siteDescription: 'ひらたけの個人ウェブサイトです。',
       language: 'ja',
+      gtmId: 'GTM-WF3MQWM',
     },
   },
   srcDir: 'src/',
