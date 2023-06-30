@@ -6,52 +6,10 @@ const { page } = useContent()
 const app = useAppConfig()
 const route = useRoute()
 
-/** 構造化データマークアップ */
-const schema = await useAsyncData('page-schema', () => {
-  // パンくずリストの項目を取得
-  const items: string[] = page.value._path
-    .split('/')
-    .filter((item: string) => item)
-    .reduce((prev: string[], current: string) => {
-      if (prev.length) {
-        return [...prev, `${prev[prev.length - 1]}/${current}`]
-      } else {
-        return [`/${current}`]
-      }
-    }, [])
-  return queryContent()
-    .where({ _path: { $in: ['/', ...items] } })
-    .only(['_path', 'title'])
-    .sort({ _path: 1 })
-    .find()
-}).then((data) => {
-  const items: (
-    | ReturnType<typeof defineBreadcrumb>
-    | ReturnType<typeof defineWebPage>
-  )[] = []
-  // パンくずリストの構造化データを追加
-  items.push(
-    defineBreadcrumb({
-      itemListElement: (data.data.value ?? []).map((item) => ({
-        name: item.title,
-        item: item._path,
-      })),
-    })
-  )
-  // ブログ記事一覧ページの場合に CollectionPage の指定を追加
-  if (route.path === '/blog') {
-    items.push(
-      defineWebPage({
-        '@type': 'CollectionPage',
-      })
-    )
-  }
-  return items
-})
-useSchemaOrg(schema)
-
 /** 現在のページがトップページかどうか */
 const isTop = computed<boolean>(() => route.path === '/')
+/** 現在のページがブログ記事一覧ページかどうか */
+const isBlog = computed<boolean>(() => route.path === '/blog')
 </script>
 
 <template>
@@ -61,9 +19,8 @@ const isTop = computed<boolean>(() => route.path === '/')
     </template>
 
     <template v-else>
-      <article class="grid gap-6">
+      <component :is="isBlog ? 'div' : 'article'" class="grid gap-6">
         <header
-          v-if="route.path !== '/blog'"
           :class="[
             'grid gap-6 pb-10',
             'border-b border-b-slate-300 dark:border-b-slate-700',
@@ -71,6 +28,7 @@ const isTop = computed<boolean>(() => route.path === '/')
         >
           <h1 class="px-1 text-3xl font-bold">{{ page.title }}</h1>
           <dl
+            v-if="!isBlog"
             :class="[
               'flex items-start gap-8 rounded-lg px-4 pb-4 pt-5',
               'bg-slate-200 dark:bg-slate-800',
@@ -142,7 +100,7 @@ const isTop = computed<boolean>(() => route.path === '/')
         <div class="prose max-w-none text-inherit dark:prose-invert">
           <slot />
         </div>
-      </article>
+      </component>
     </template>
   </main>
 </template>
