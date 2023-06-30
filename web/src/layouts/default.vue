@@ -3,6 +3,7 @@
 import { siMisskey, siTwitter } from 'simple-icons'
 
 const { page } = useContent()
+const app = useAppConfig()
 const route = useRoute()
 
 /** 現在のページがトップページかどうか */
@@ -59,10 +60,10 @@ const isTop = computed<boolean>(() => route.path === '/')
                 書いたひと
               </dt>
               <dd class="flex items-center gap-1 text-sm font-bold">
-                <span>Hiratake</span>
+                <span>{{ app.author.name }}</span>
                 <div class="flex items-center gap-1">
                   <NuxtLink
-                    href="https://twitter.com/Hirotaisou2012"
+                    :href="app.author.social.twitter"
                     title="Twitter"
                     class="h-4 w-4"
                   >
@@ -75,7 +76,7 @@ const isTop = computed<boolean>(() => route.path === '/')
                     </svg>
                   </NuxtLink>
                   <NuxtLink
-                    href="https://misskey.io/@Hiratake"
+                    :href="app.author.social.misskey"
                     title="Misskey"
                     class="h-4 w-4"
                   >
