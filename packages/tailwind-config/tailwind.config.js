@@ -18,6 +18,7 @@ module.exports = {
         sans: [
           'Hiragino Sans',
           'Hiragino Kaku Gothic ProN',
+          'Meiryo',
           ...defaultTheme.fontFamily.sans,
         ],
         serif: ['Hiragino Mincho ProN', ...defaultTheme.fontFamily.serif],
