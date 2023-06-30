@@ -1,4 +1,5 @@
 <template>
+  <NuxtLoadingIndicator :height="2" color="#a83d3d" />
   <TheHeader />
   <NuxtPage />
   <TheFooter />
