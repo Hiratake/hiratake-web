@@ -1,6 +1,7 @@
 <template>
   <TheHeader />
   <NuxtPage />
+  <TheFooter />
   <SeoKit />
   <Body
     :class="[
