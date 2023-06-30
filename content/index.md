@@ -1,6 +1,6 @@
 ---
 title: Hiratake Web
-description: Personal blog of Hiratake
+description: ひらたけの個人ウェブサイトです。
 ---
 
 トップページ

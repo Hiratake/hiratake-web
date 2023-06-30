@@ -37,7 +37,7 @@ export default defineNuxtConfig({
     public: {
       siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://hiratake.dev',
       siteName: 'Hiratake Web',
-      siteDescription: 'Personal blog of Hiratake',
+      siteDescription: 'ひらたけの個人ウェブサイトです。',
       language: 'ja',
     },
   },
