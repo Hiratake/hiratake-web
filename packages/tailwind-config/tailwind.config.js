@@ -1,5 +1,12 @@
 // https://tailwindcss.com/docs/configuration
 const defaultTheme = require('tailwindcss/defaultTheme')
+const round = (num) =>
+  num
+    .toFixed(7)
+    .replace(/(\.[0-9]+?)0+$/, '$1')
+    .replace(/\.0$/, '')
+const rem = (px) => `${round(px / 16)}rem`
+const em = (px, base) => `${round(px / base)}em`
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -54,6 +61,51 @@ module.exports = {
         'fill-72': 'repeat(auto-fill, minmax(18rem, 1fr))',
         'fill-80': 'repeat(auto-fill, minmax(20rem, 1fr))',
         'fill-96': 'repeat(auto-fill, minmax(24rem, 1fr))',
+      },
+      typography: {
+        DEFAULT: {
+          css: {
+            fontSize: rem(15),
+            lineHeight: round(32 / 16),
+            p: {
+              marginTop: em(32, 16),
+              marginBottom: em(32, 16),
+            },
+            h2: {
+              a: {
+                color: 'inherit',
+                fontWeight: '700',
+                textDecoration: 'none',
+                '&:hover': {
+                  textDecoration: 'underline',
+                },
+              },
+            },
+            h3: {
+              a: {
+                color: 'inherit',
+                fontWeight: '700',
+                textDecoration: 'none',
+                '&:hover': {
+                  textDecoration: 'underline',
+                },
+              },
+            },
+            h4: {
+              a: {
+                color: 'inherit',
+                fontWeight: '700',
+                textDecoration: 'none',
+                '&:hover': {
+                  textDecoration: 'underline',
+                },
+              },
+            },
+            img: {
+              borderRadius: defaultTheme.borderRadius.lg,
+            },
+          },
+        },
       },
     },
   },
