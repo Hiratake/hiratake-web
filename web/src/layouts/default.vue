@@ -8,6 +8,33 @@ const route = useRoute()
 
 /** 現在のページがトップページかどうか */
 const isTop = computed<boolean>(() => route.path === '/')
+
+/** パンくずリスト */
+const breadcrumbs = await useAsyncData('page-breadcrumbs', () => {
+  const items: string[] = page.value._path
+    .split('/')
+    .filter((item: string) => item)
+    .reduce((prev: string[], current: string) => {
+      if (prev.length) {
+        return [...prev, `${prev[prev.length - 1]}/${current}`]
+      } else {
+        return [`/${current}`]
+      }
+    }, [])
+  return queryContent()
+    .where({ _path: { $in: ['/', ...items] } })
+    .only(['_path', 'title'])
+    .sort({ _path: 1 })
+    .find()
+}).then((data) => {
+  return (data.data.value ?? [])?.map((item) => ({
+    name: item.title,
+    item: item._path,
+  }))
+})
+
+const schema = [defineBreadcrumb({ itemListElement: breadcrumbs })]
+useSchemaOrg(schema)
 </script>
 
 <template>
