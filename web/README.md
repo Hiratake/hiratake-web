@@ -1,63 +1,40 @@
-# Nuxt 3 Minimal Starter
+# hiratake-web
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Hiratake's website built with [Nuxt](https://nuxt.com/).  
+[Nuxt](https://nuxt.com/) を使用してつくった、ひらたけのウェブサイト。
 
-## Setup
+## 🚀 Setup
 
-Make sure to install the dependencies:
+必要なパッケージをインストールします。
 
 ```bash
-# npm
-npm install
-
-# pnpm
 pnpm install
-
-# yarn
-yarn install
 ```
 
-## Development Server
+## 🛠 Develop
 
-Start the development server on `http://localhost:3000`:
+開発用サーバを起動します。
 
 ```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
+pnpm dev
 ```
 
-## Production
+## 🏗 Build
 
-Build the application for production:
+ウェブサイトをビルドします。
 
 ```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
+pnpm build
 ```
 
-Locally preview production build:
+または、静的ファイルを生成します。
 
 ```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
+pnpm generate
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+ローカル環境でプレビューを確認するには、以下のコマンドを実行します。
+
+```bash
+pnpm preview
+```
