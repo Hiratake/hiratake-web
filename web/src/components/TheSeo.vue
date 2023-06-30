@@ -1,5 +1,7 @@
 <script lang="ts" setup>
 const { page } = useContent()
+const config = useRuntimeConfig()
+const app = useAppConfig()
 const route = useRoute()
 
 /** 構造化データマークアップ */
@@ -46,6 +48,54 @@ const schema = await useAsyncData('page-schema', () => {
   return items
 })
 useSchemaOrg(schema)
+
+useHead({
+  htmlAttrs: {
+    prefix: 'og: https://ogp.me/ns#',
+  },
+  meta: [
+    { name: 'application-name', content: config.public.siteName },
+    { name: 'theme-color', content: '#a83d3d' },
+    { name: 'apple-mobile-web-app-title', content: config.public.siteName },
+    { name: 'msapplication-Config', content: '/browserconfig.xml' },
+    { name: 'msapplication-TileColor', content: '#a83d3d' },
+  ],
+  link: [
+    {
+      rel: 'icon',
+      type: 'image/png',
+      sizes: '32x32',
+      href: '/favicon-32x32.png',
+    },
+    {
+      rel: 'icon',
+      type: 'image/png',
+      sizes: '16x16',
+      href: '/favicon-16x16.png',
+    },
+    {
+      rel: 'apple-touch-icon',
+      sizes: '180x180',
+      href: '/apple-touch-icon.png',
+    },
+    {
+      rel: 'mask-icon',
+      href: '/safari-pinned-tab.svg',
+      color: '#a83d3d',
+    },
+    {
+      rel: 'shortcut icon',
+      type: 'image/x-icon',
+      href: '/favicon.ico',
+    },
+    { rel: 'manifest', href: '/site.webmanifest' },
+  ],
+})
+
+useServerSeoMeta({
+  twitterSite: app.author.social.twitter.replace('https://twitter.com/', '@'),
+  twitterCard: 'summary_large_image',
+})
 </script>
 
 <template>
