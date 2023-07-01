@@ -1,14 +1,22 @@
 {
-  "editor.formatOnSave": true,
-  "stylelint.validate": ["css", "less", "postcss", "jsx", "tsx"],
-  "typescript.tsdk": "node_modules\\typescript\\lib",
-
-  // markdown
-  "[markdown]": {
-    "editor.formatOnSave": false
+  "stylelint.validate": ["css", "postcss", "scss", "vue"],
+  "tailwindCSS.includeLanguages": {
+    "vue": "html"
   },
-  // yaml
-  "[yaml]": {
-    "editor.formatOnSave": false
+  "[javascript][javascriptreact][typescript][typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[css][scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[json][yaml][markdown][html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
   }
 }

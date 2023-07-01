@@ -1,8 +1,13 @@
 {
   "recommendations": [
+    "bradlc.vscode-tailwindcss",
+    "csstools.postcss",
     "dbaeumer.vscode-eslint",
+    "editorconfig.editorconfig",
     "esbenp.prettier-vscode",
+    "nuxt.mdc",
     "stylelint.vscode-stylelint",
-    "styled-components.vscode-styled-components"
+    "vue.volar",
+    "vue.vscode-typescript-vue-plugin"
   ]
 }

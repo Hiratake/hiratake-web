@@ -7,6 +7,11 @@ yarn-error.log*
 lerna-debug.log*
 .pnpm-debug.log*
 
+# Misc
+.DS_Store
+.fleet
+.idea
+
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 
@@ -86,11 +91,11 @@ web_modules/
 # Next.js build output
 .next
 out
-public/robots.txt
-public/sitemap*.xml
 
 # Nuxt.js build / generate output
 .nuxt
+.nitro
+.output
 dist
 
 # Gatsby files
@@ -130,3 +135,6 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# Turborepo
+.turbo
