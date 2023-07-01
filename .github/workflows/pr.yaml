@@ -64,5 +64,5 @@ jobs:
         with:
           name: dist
           path: |
-            web/dist
+            web/.output/public
           retention-days: 1
