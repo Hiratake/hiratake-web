@@ -6,6 +6,8 @@ on:
   pull_request:
     branches:
       - main
+    types:
+      - labeled
 
 permissions: {}
 
@@ -23,6 +25,10 @@ jobs:
         os: [ubuntu-latest]
         node: [18]
     timeout-minutes: 10
+
+    if: >
+      (github.event.action == 'labeled') &&
+      (github.event.label.name == '🚀request-deploy')
 
     steps:
       - name: Checkout
