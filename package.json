@@ -21,7 +21,7 @@
     "prettier-plugin-tailwindcss": "0.3.0",
     "stylelint": "15.9.0",
     "stylelint-config": "workspace:*",
-    "turbo": "1.10.6"
+    "turbo": "1.10.7"
   },
   "scripts": {
     "build": "turbo run build",
