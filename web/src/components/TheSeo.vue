@@ -23,32 +23,38 @@ const schema = await useAsyncData('page-schema', () => {
     .sort({ _path: 1 })
     .find()
 }).then((data) => {
-  const items: (
-    | ReturnType<typeof defineBreadcrumb>
-    | ReturnType<typeof defineWebPage>
-  )[] = []
-  // パンくずリストの構造化データを追加
-  items.push(
+  return [
     defineBreadcrumb({
       itemListElement: (data.data.value ?? []).map((item) => ({
         name: item.title,
         item: item._path,
       })),
+    }),
+  ] as (
+    | ReturnType<typeof defineBreadcrumb>
+    | ReturnType<typeof defineWebPage>
+    | ReturnType<typeof defineArticle>
+  )[]
+})
+if (route.path === '/blog') {
+  schema.push(
+    defineWebPage({
+      '@type': 'CollectionPage',
     })
   )
-  // ウェブページの構造化データを追加
-  if (route.path === '/blog') {
-    // ブログ記事一覧ページの場合に CollectionPage の指定を追加
-    items.push(
-      defineWebPage({
-        '@type': 'CollectionPage',
-      })
-    )
-  }
-  return items
-})
-useSchemaOrg(schema)
+}
+if (route.path.startsWith('/blog/')) {
+  schema.push(
+    defineArticle({
+      '@type': 'BlogPosting',
+      datePublished: page.value.created,
+      dateModified: page.value.updated,
+      author: [{ name: app.author.name, url: config.public.siteUrl }],
+    })
+  )
+}
 
+useSchemaOrg(schema)
 useHead({
   htmlAttrs: {
     prefix: 'og: https://ogp.me/ns#',
@@ -103,8 +109,8 @@ useHead({
     },
   ],
 })
-
 useServerSeoMeta({
+  ogType: route.path === '/' ? 'website' : 'article',
   twitterSite: app.author.social.twitter.replace('https://twitter.com/', '@'),
   twitterCard: 'summary_large_image',
 })
