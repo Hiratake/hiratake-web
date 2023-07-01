@@ -66,3 +66,16 @@ jobs:
           path: |
             web/.output/public
           retention-days: 1
+
+      - name: Seve PR number
+        run: |
+          mkdir -p ./pr
+          echo $PR_NUMBER > ./pr/pr_number
+        env:
+          PR_NUMBER: ${{ github.event.number }}
+
+      - name: Upload PR number
+        uses: actions/upload-artifact@v3
+        with:
+          name: pr_number
+          path: pr
