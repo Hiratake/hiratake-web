@@ -26,6 +26,8 @@ jobs:
         node: [18]
     timeout-minutes: 10
 
+    if: github.event_name == 'push'
+
     steps:
       - name: Checkout
         uses: actions/checkout@v3
