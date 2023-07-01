@@ -152,10 +152,26 @@ jobs:
           echo "PR_NUMBER=$(cat pr_number)" >> $GITHUB_OUTPUT
 
       - name: Deploy to Cloudflare Pages
+        shell: bash
         run: >
           npx wrangler pages deploy dist
           --project-name hiratake
           --branch pr-${{ steps.pr-number.outputs.PR_NUMBER }}
+          --commit-dirty true
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+
+      - name: Remove label
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            let fs = require('fs');
+            let issue_number = Number(fs.readFileSync('./pr_number'));
+            await github.rest.issues.removeLabel({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: issue_number,
+              name: ['🚀request-deploy'],
+            });
