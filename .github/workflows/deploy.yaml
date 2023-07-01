@@ -87,6 +87,14 @@ jobs:
       github.event.workflow_run.conclusion == 'success'
 
     steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node }}
+
       - name: Download artifacts
         uses: actions/github-script@v6
         with:
@@ -109,14 +117,43 @@ jobs:
             fs.writeFileSync(`${process.env.GITHUB_WORKSPACE}/dist.zip`, Buffer.from(download.data));
 
       - name: Unzip artifacts
-        run: unzip dist.zip
+        run: unzip dist.zip -d dist
+
+      - name: Download PR number
+        uses: actions/github-script@v6
+        with:
+          script: |
+            let allArtifacts = await github.rest.actions.listWorkflowRunArtifacts({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              run_id: context.payload.workflow_run.id,
+            });
+            let matchArtifact = allArtifacts.data.artifacts.filter((artifact) => {
+              return artifact.name == "pr_number"
+            })[0];
+            let download = await github.rest.actions.downloadArtifact({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                artifact_id: matchArtifact.id,
+                archive_format: 'zip',
+            });
+            let fs = require('fs');
+            fs.writeFileSync(`${process.env.GITHUB_WORKSPACE}/pr_number.zip`, Buffer.from(download.data));
+
+      - name: Unzip PR number
+        run: unzip pr_number.zip
+
+      - name: Get PR number
+        id: pr-number
+        shell: bash
+        run: |
+          echo "PR_NUMBER=$(cat pr_number)" >> $GITHUB_OUTPUT
 
       - name: Deploy to Cloudflare Pages
-        uses: cloudflare/pages-action@v1
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: hiratake
-          directory: dist
-          wranglerVersion: '3'
-          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+        run: >
+          npx wrangler pages deploy dist
+          --project-name hiratake
+          --branch pr-${{ steps.pr-number.outputs.PR_NUMBER }}
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}

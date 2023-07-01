@@ -8,7 +8,7 @@
   </a>
 </h1>
 
-[![ci](https://github.com/Hiratake/hiratake-web/actions/workflows/ci.yml/badge.svg)](https://github.com/Hiratake/hiratake-web/actions/workflows/ci.yml)
+[![ci](https://github.com/Hiratake/hiratake-web/actions/workflows/ci.yaml/badge.svg)](https://github.com/Hiratake/hiratake-web/actions/workflows/ci.yaml)
 [![twitter](https://img.shields.io/badge/twitter-@hirotaisou2012-blue?logo=twitter)](https://twitter.com/Hirotaisou2012)
 [![misskey](https://img.shields.io/badge/misskey-@hiratake-green?logo=misskey)](https://misskey.io/@Hiratake)
 [![chat](https://img.shields.io/discord/353538856315912204?logo=discord)](https://discord.gg/xu2ehn3)
