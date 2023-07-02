@@ -150,8 +150,8 @@ importers:
         specifier: 1.63.6
         version: 1.63.6
       simple-icons:
-        specifier: 9.3.0
-        version: 9.3.0
+        specifier: 9.4.0
+        version: 9.4.0
       stylelint:
         specifier: 15.9.0
         version: 15.9.0
@@ -9171,8 +9171,8 @@ packages:
     dev: true
     optional: true
 
-  /simple-icons@9.3.0:
-    resolution: {integrity: sha512-T6x3teIpPdMc8nibYvE56Va1eF+l8Puk//1YYtCxQP4wbGRzYxgwZTl18YCjoFLnu/0exehwyR2hMEFZV3lflg==}
+  /simple-icons@9.4.0:
+    resolution: {integrity: sha512-rpDJGJN7txOtlP2q1eXqti8oIHR6/qCkDl+Vf+bxfCT6qVJmkb7D4ctW932eNVejn6JL2NcNQF84/PqEgXCvXQ==}
     engines: {node: '>=0.12.18'}
     dev: true
 
