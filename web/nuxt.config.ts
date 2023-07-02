@@ -21,8 +21,15 @@ export default defineNuxtConfig({
     lintOnStart: false,
   },
   extends: ['nuxt-seo-kit'],
+  image: {
+    provider: 'cloudflare',
+    cloudflare: {
+      baseURL: process.env.NUXT_PUBLIC_SITE_URL || 'https://hiratake.dev',
+    },
+  },
   modules: [
     '@nuxt/content',
+    '@nuxt/image',
     '@nuxtjs/eslint-module',
     '@nuxtjs/stylelint-module',
     '@vueuse/nuxt',
