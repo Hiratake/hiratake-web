@@ -40,8 +40,11 @@ const updatedDate = useDateFormat(props.updated || useNow(), 'YYYY/MM/DD')
       'dark:bg-slate-800 dark:hover:bg-slate-700/70',
     ]"
   >
-    <NuxtLink :to="props.url" class="grid gap-4 px-4 py-6">
-      <h2 class="font-bold">{{ props.title }}</h2>
+    <NuxtLink
+      :to="props.url"
+      class="flex h-full flex-col justify-between gap-4 px-4 py-6"
+    >
+      <h2 class="line-clamp-2 font-bold leading-snug">{{ props.title }}</h2>
       <div
         :class="[
           'flex flex-wrap gap-x-3 gap-y-2 text-xs',
