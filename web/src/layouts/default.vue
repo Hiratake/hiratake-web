@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 // Icons
-import { siMisskey, siTwitter } from 'simple-icons'
+import { siGithub, siMisskey, siTwitter } from 'simple-icons'
 
 const { page } = useContent()
 const app = useAppConfig()
@@ -89,6 +89,19 @@ const isBlog = computed<boolean>(() => route.path === '/blog')
                       class="h-full w-full fill-[#a1ca03]"
                     >
                       <path :d="siMisskey.path" />
+                    </svg>
+                  </NuxtLink>
+                  <NuxtLink
+                    :href="app.author.social.github"
+                    title="GitHub"
+                    class="h-4 w-4"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      class="h-full w-full fill-[#181717] dark:fill-white"
+                    >
+                      <path :d="siGithub.path" />
                     </svg>
                   </NuxtLink>
                 </div>
