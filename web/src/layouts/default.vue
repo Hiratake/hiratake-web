@@ -30,7 +30,7 @@ const isBlog = computed<boolean>(() => route.path === '/blog')
           <dl
             v-if="!isBlog"
             :class="[
-              'flex items-start gap-8 rounded-lg px-4 pb-4 pt-5',
+              'flex flex-wrap items-start gap-x-8 gap-y-5 rounded-lg px-4 pb-4 pt-5',
               'bg-slate-200 dark:bg-slate-800',
             ]"
           >
