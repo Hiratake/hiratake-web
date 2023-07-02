@@ -1,9 +1,9 @@
 <h1>
   <a href="https://hiratake.dev">
     <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="web/src/public/logo-dark.svg" sizes="(max-width:200px) 100vw, 200px" />
-      <source media="(prefers-color-scheme: light)" srcset="web/src/public/logo-light.svg" sizes="(max-width:200px) 100vw, 200px" />
-      <img alt="Hiratake" src="web/src/public/logo-light.svg" width="200" />
+      <source media="(prefers-color-scheme: dark)" srcset="https://github-production-user-asset-6210df.s3.amazonaws.com/23224932/250346490-14357fb1-a0b5-4af7-85b0-1de7eab311bd.svg" sizes="(max-width:200px) 100vw, 200px" />
+      <source media="(prefers-color-scheme: light)" srcset="https://github-production-user-asset-6210df.s3.amazonaws.com/23224932/250346471-47f036a3-9b03-49fe-bbea-7d6d8425142b.svg" sizes="(max-width:200px) 100vw, 200px" />
+      <img alt="Hiratake" src="https://github-production-user-asset-6210df.s3.amazonaws.com/23224932/250346471-47f036a3-9b03-49fe-bbea-7d6d8425142b.svg" width="200" />
     </picture>
   </a>
 </h1>
