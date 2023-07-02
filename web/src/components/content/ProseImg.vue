@@ -1,3 +1,3 @@
 <template>
-  <NuxtImg v-bind="$attrs" />
+  <NuxtImg v-bind="$attrs" loading="lazy" />
 </template>
