@@ -21,15 +21,8 @@ export default defineNuxtConfig({
     lintOnStart: false,
   },
   extends: ['nuxt-seo-kit'],
-  image: {
-    provider: 'cloudflare',
-    cloudflare: {
-      baseURL: process.env.NUXT_PUBLIC_SITE_URL || 'https://hiratake.dev',
-    },
-  },
   modules: [
     '@nuxt/content',
-    '@nuxt/image',
     '@nuxtjs/eslint-module',
     '@nuxtjs/stylelint-module',
     '@vueuse/nuxt',
@@ -47,6 +40,7 @@ export default defineNuxtConfig({
       siteDescription: 'ひらたけの個人ウェブサイトです。',
       language: 'ja',
       gtmId: 'GTM-WF3MQWM',
+      cloudflareImageHash: '3uWTcGTKoWPI8987WrI0hQ',
     },
   },
   srcDir: 'src/',

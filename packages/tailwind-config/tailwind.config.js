@@ -101,9 +101,6 @@ module.exports = {
                 },
               },
             },
-            img: {
-              borderRadius: defaultTheme.borderRadius.lg,
-            },
           },
         },
       },
