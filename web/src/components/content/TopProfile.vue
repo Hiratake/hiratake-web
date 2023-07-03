@@ -2,6 +2,7 @@
 // Icons
 import { siGithub, siMisskey, siTwitter } from 'simple-icons'
 
+const config = useRuntimeConfig()
 const app = useAppConfig()
 </script>
 
@@ -13,9 +14,11 @@ const app = useAppConfig()
         'bg-slate-200 dark:bg-slate-800',
       ]"
     >
-      <NuxtImg
-        src="/cdn-cgi/imagedelivery/3uWTcGTKoWPI8987WrI0hQ/69d60176-a6f2-4844-ae78-bb33d3f32400/public"
+      <img
+        :src="`${config.public.siteUrl}/cdn-cgi/imagedelivery/${config.public.cloudflareImageHash}/69d60176-a6f2-4844-ae78-bb33d3f32400/w=96`"
         alt="icon"
+        width="96"
+        height="96"
         class="h-full w-full object-cover"
       />
     </div>
