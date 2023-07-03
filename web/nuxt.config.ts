@@ -8,6 +8,9 @@ export default defineNuxtConfig({
   },
   content: {
     documentDriven: true,
+    highlight: {
+      theme: 'github-dark',
+    },
     sources: {
       content: {
         driver: 'fs',
