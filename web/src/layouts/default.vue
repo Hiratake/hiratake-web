@@ -19,7 +19,10 @@ const isBlog = computed<boolean>(() => route.path === '/blog')
     </template>
 
     <template v-else>
-      <component :is="isBlog ? 'div' : 'article'" class="grid gap-6">
+      <component
+        :is="isBlog ? 'div' : 'article'"
+        class="grid grid-cols-1 gap-6"
+      >
         <header
           :class="[
             'grid gap-6 pb-10',
