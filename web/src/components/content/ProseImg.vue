@@ -41,7 +41,7 @@ const imageUrl = `${config.public.siteUrl}/cdn-cgi/imagedelivery/${hash}/${props
       class="block h-auto w-full"
       decoding="async"
       loading="lazy"
-      sizes="(max-width: 768) 100vw, 768px"
+      sizes="(max-width: 768px) calc(100vw - 48px), 768px"
     />
   </div>
 </template>
