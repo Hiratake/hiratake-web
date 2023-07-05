@@ -19,17 +19,18 @@ const { data } = await useAsyncData(
       .where({ _dir: { $eq: pathParts[pathParts.length - 1] || query } })
       .sort({ created: -1 })
       .find()
-  }
+  },
 )
-const articles = computed(() =>
-  data.value?.filter(
-    (
-      article
-    ): article is Article & {
-      _path: Required<Article>['_path']
-      title: Required<Article>['title']
-    } => Boolean(article._path) && Boolean(article.title)
-  )
+const articles = computed(
+  () =>
+    data.value?.filter(
+      (
+        article,
+      ): article is Article & {
+        _path: Required<Article>['_path']
+        title: Required<Article>['title']
+      } => Boolean(article._path) && Boolean(article.title),
+    ),
 )
 </script>
 
