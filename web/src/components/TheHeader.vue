@@ -26,12 +26,16 @@ const isDark = computed<boolean>({
         :title="config.public.siteName"
         class="block dark:hidden"
         src="/logo-light.svg"
+        width="162"
+        height="40"
       />
       <img
         :alt="config.public.siteName"
         :title="config.public.siteName"
         class="hidden dark:block"
         src="/logo-dark.svg"
+        width="162"
+        height="40"
       />
     </NuxtLink>
 
