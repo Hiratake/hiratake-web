@@ -95,6 +95,12 @@ useHead({
       href: '/favicon.ico',
     },
     { rel: 'manifest', href: '/site.webmanifest' },
+    {
+      rel: 'alternate',
+      type: 'application/rss+xml',
+      href: `${config.public.siteUrl}/feed`,
+      title: `${config.public.siteName} Feed`,
+    },
   ],
   script: [
     {

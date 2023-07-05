@@ -30,10 +30,20 @@ export default defineNuxtConfig({
     '@nuxtjs/stylelint-module',
     '@vueuse/nuxt',
   ],
+  nitro: {
+    prerender: {
+      routes: ['/feed'],
+    },
+  },
   postcss: {
     plugins: {
       tailwindcss: {},
       autoprefixer: {},
+    },
+  },
+  routeRules: {
+    '/feed': {
+      headers: { 'content-type': 'application/rss+xml; charset=UTF-8' },
     },
   },
   runtimeConfig: {
