@@ -14,7 +14,7 @@
   "devDependencies": {
     "eslint": "8.44.0",
     "eslint-config-custom": "workspace:*",
-    "stylelint": "15.9.0"
+    "stylelint": "15.10.0"
   },
   "peerDependencies": {
     "stylelint": "15.9.0"

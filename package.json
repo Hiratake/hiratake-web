@@ -2,10 +2,10 @@
   "name": "hiratake-web-monorepo",
   "version": "0.0.0",
   "private": true,
-  "packageManager": "pnpm@8.6.5",
+  "packageManager": "pnpm@8.6.6",
   "engines": {
     "node": "18.16.1",
-    "pnpm": "8.6.5"
+    "pnpm": "8.6.6"
   },
   "volta": {
     "node": "18.16.1"
@@ -19,7 +19,7 @@
     "lint-staged": "13.2.3",
     "prettier": "2.8.8",
     "prettier-plugin-tailwindcss": "0.3.0",
-    "stylelint": "15.9.0",
+    "stylelint": "15.10.0",
     "stylelint-config": "workspace:*",
     "turbo": "1.10.7"
   },
