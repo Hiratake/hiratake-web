@@ -14,10 +14,10 @@
   "devDependencies": {
     "eslint": "8.44.0",
     "eslint-config-custom": "workspace:*",
-    "stylelint": "15.10.0"
+    "stylelint": "15.10.1"
   },
   "peerDependencies": {
-    "stylelint": "15.10.0"
+    "stylelint": "15.10.1"
   },
   "scripts": {
     "lint": "eslint . --ext .js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts,.vue",
