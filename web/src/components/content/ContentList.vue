@@ -34,7 +34,7 @@ const articles = computed(() =>
 </script>
 
 <template>
-  <div class="not-prose grid gap-6">
+  <div class="not-prose my-[2em] grid gap-6">
     <template v-if="articles?.length">
       <section class="grid grid-cols-fill-60 gap-6">
         <template v-for="article in articles" :key="article._path">

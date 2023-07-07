@@ -1,4 +1,5 @@
 import SocialShare from './SocialShare.vue'
 import SocialShareButton from './SocialShareButton.vue'
-export { SocialShare, SocialShareButton }
+import SocialSharePanel from './SocialSharePanel.vue'
+export { SocialShare, SocialShareButton, SocialSharePanel }
 export type * from './types'

@@ -1,5 +1,5 @@
 // Types
-import type { InjectionKey } from 'vue'
+import type { InjectionKey, Ref } from 'vue'
 import type { Service, ShareFunction } from '../types'
 
 /** シェアするSNSの一覧 */
@@ -46,5 +46,7 @@ export const services: {
 /** インジェクションキー */
 export const socialShareInjectionKey: InjectionKey<{
   isInstance: boolean
+  isPanelOpen: Readonly<Ref<boolean>>
   share: ShareFunction
+  togglePanelOpen: (value?: boolean) => boolean
 }> = Symbol()
