@@ -164,7 +164,7 @@ importers:
         version: 4.1.0(eslint@8.44.0)(vite@4.4.1)(webpack@5.88.1)
       '@nuxtjs/stylelint-module':
         specifier: 5.1.0
-        version: 5.1.0(postcss@8.4.25)(stylelint@15.10.1)(vite@4.3.9)(webpack@5.88.1)
+        version: 5.1.0(postcss@8.4.25)(stylelint@15.10.1)(vite@4.4.1)(webpack@5.88.1)
       '@types/node':
         specifier: 20.4.0
         version: 20.4.0
@@ -1894,7 +1894,7 @@ packages:
       - webpack
     dev: true
 
-  /@nuxtjs/stylelint-module@5.1.0(postcss@8.4.25)(stylelint@15.10.1)(vite@4.3.9)(webpack@5.88.1):
+  /@nuxtjs/stylelint-module@5.1.0(postcss@8.4.25)(stylelint@15.10.1)(vite@4.4.1)(webpack@5.88.1):
     resolution: {integrity: sha512-zpWn5nJfFstBh7PUBjsBNu6rFCN2wtz3JyLGuEqCh4yo7orKclDM3S931E3kMD6Tszpvobhq1CMsgbcZL6K3aA==}
     peerDependencies:
       stylelint: '>=13'
@@ -1904,7 +1904,7 @@ packages:
       pathe: 1.1.1
       stylelint: 15.10.1
       stylelint-webpack-plugin: 4.1.1(stylelint@15.10.1)(webpack@5.88.1)
-      vite-plugin-stylelint: 4.3.0(postcss@8.4.25)(stylelint@15.10.1)(vite@4.3.9)
+      vite-plugin-stylelint: 4.3.0(postcss@8.4.25)(stylelint@15.10.1)(vite@4.4.1)
     transitivePeerDependencies:
       - '@types/stylelint'
       - postcss
@@ -10485,7 +10485,7 @@ packages:
       - supports-color
     dev: true
 
-  /vite-plugin-stylelint@4.3.0(postcss@8.4.25)(stylelint@15.10.1)(vite@4.3.9):
+  /vite-plugin-stylelint@4.3.0(postcss@8.4.25)(stylelint@15.10.1)(vite@4.4.1):
     resolution: {integrity: sha512-S8BONq5X8TndOFt+My4lkeHxVZvkDQRL++TV0nvnuYgOU/CvDddPPOT4V6go+ETzWK0NEtXqCGFnpkmm8c8Xcg==}
     engines: {node: '>=14.18'}
     peerDependencies:

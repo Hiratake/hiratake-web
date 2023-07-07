@@ -46,6 +46,7 @@
     "typecheck": "pnpm typecheck:node && pnpm typecheck:web",
     "typecheck:node": "tsc --noEmit -p tsconfig.node.json --composite false",
     "typecheck:web": "vue-tsc --noEmit -p tsconfig.web.json --composite false",
-    "prebuild": "pnpm typecheck && rimraf dist"
+    "prebuild": "pnpm typecheck && rimraf dist",
+    "postinstall": "pnpm build"
   }
 }
