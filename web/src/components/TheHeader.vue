@@ -14,7 +14,10 @@ const isDark = computed<boolean>({
 
 <template>
   <header
-    class="mx-auto box-content flex max-w-3xl items-center justify-between px-6 py-16"
+    :class="[
+      'mx-auto box-content flex max-w-3xl items-center justify-between',
+      'px-6 pb-16 pt-10 sm:pt-16',
+    ]"
   >
     <NuxtLink
       :aria-label="`${config.public.siteName} homepage`"
