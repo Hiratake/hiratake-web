@@ -1,0 +1,9 @@
+{
+  "name": "tsconfig",
+  "version": "0.0.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@types/node": "20.4.0"
+  }
+}
