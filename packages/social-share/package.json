@@ -5,6 +5,7 @@
   "license": "UNLICENSED",
   "main": "dist/social-share.umd.js",
   "module": "dist/social-share.es.js",
+  "types": "dist/types/main.d.ts",
   "files": [
     "dist"
   ],
