@@ -17,7 +17,7 @@ export const services: {
 } = {
   /** Twitter */
   twitter: {
-    endpoint: 'www.twitter.com/share',
+    endpoint: 'www.twitter.com/intent/tweet',
     url: 'url',
     text: 'text',
   },
