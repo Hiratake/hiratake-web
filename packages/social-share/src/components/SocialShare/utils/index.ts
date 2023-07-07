@@ -43,5 +43,8 @@ export const services: {
   },
 }
 
-export const isInstanceKey: InjectionKey<boolean> = Symbol()
-export const shareFunctionKey: InjectionKey<ShareFunction> = Symbol()
+/** インジェクションキー */
+export const socialShareInjectionKey: InjectionKey<{
+  isInstance: boolean
+  share: ShareFunction
+}> = Symbol()

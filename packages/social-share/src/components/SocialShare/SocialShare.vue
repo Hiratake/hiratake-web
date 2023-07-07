@@ -5,7 +5,7 @@ import type { ShareFunction, SocialShareProps } from './types'
 import { tryOnMounted } from '@vueuse/core'
 // Utils
 import { provide } from 'vue'
-import { isInstanceKey, services, shareFunctionKey } from './utils'
+import { services, socialShareInjectionKey } from './utils'
 
 const props = withDefaults(defineProps<SocialShareProps>(), {
   url: '',
@@ -42,10 +42,14 @@ const share: ShareFunction = (domain = '') => {
   }
 }
 
-provide(isInstanceKey, !!services[props.service].instance)
-provide(shareFunctionKey, share)
+provide(socialShareInjectionKey, {
+  isInstance: !!services[props.service].instance,
+  share,
+})
 </script>
 
 <template>
-  <slot />
+  <div>
+    <slot />
+  </div>
 </template>

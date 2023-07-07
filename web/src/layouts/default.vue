@@ -132,6 +132,7 @@ const isBlog = computed<boolean>(() => route.path === '/blog')
               :url="`${config.public.siteUrl}${$route.path}`"
               :text="`${page.title} - ${config.public.siteName}`"
               service="twitter"
+              class="relative"
             >
               <SocialShareButton
                 class="flex h-10 w-10 items-center justify-center p-2"
@@ -145,10 +146,12 @@ const isBlog = computed<boolean>(() => route.path === '/blog')
                 </svg>
               </SocialShareButton>
             </SocialShare>
+
             <SocialShare
               :url="`${config.public.siteUrl}${$route.path}`"
               :text="`${page.title} - ${config.public.siteName}`"
               service="facebook"
+              class="relative"
             >
               <SocialShareButton
                 class="flex h-10 w-10 items-center justify-center p-2"
@@ -162,10 +165,12 @@ const isBlog = computed<boolean>(() => route.path === '/blog')
                 </svg>
               </SocialShareButton>
             </SocialShare>
+
             <SocialShare
               :url="`${config.public.siteUrl}${$route.path}`"
               :text="`${page.title} - ${config.public.siteName}`"
               service="mastodon"
+              class="relative"
             >
               <SocialShareButton
                 class="flex h-10 w-10 items-center justify-center p-2"
@@ -179,10 +184,12 @@ const isBlog = computed<boolean>(() => route.path === '/blog')
                 </svg>
               </SocialShareButton>
             </SocialShare>
+
             <SocialShare
               :url="`${config.public.siteUrl}${$route.path}`"
               :text="`${page.title} - ${config.public.siteName}`"
               service="misskey"
+              class="relative"
             >
               <SocialShareButton
                 class="flex h-10 w-10 items-center justify-center p-2"

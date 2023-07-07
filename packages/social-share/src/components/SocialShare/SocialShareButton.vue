@@ -1,12 +1,12 @@
 <script lang="ts" setup>
 // Utils
 import { inject } from 'vue'
-import { isInstanceKey, shareFunctionKey } from './utils'
+import { socialShareInjectionKey } from './utils'
 
-/** インスタンスドメインの入力が必要かどうか */
-const isInstance = inject(isInstanceKey, false)
-/** URLとテキストをSNSへシェアする */
-const share = inject(shareFunctionKey, () => {})
+const { isInstance, share } = inject(socialShareInjectionKey, {
+  isInstance: false,
+  share: () => {},
+})
 </script>
 
 <template>
