@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+// Components
+import { SocialShare, SocialShareButton } from 'social-share'
 // Icons
 import {
   siFacebook,

@@ -198,6 +198,9 @@ importers:
       simple-icons:
         specifier: 9.4.0
         version: 9.4.0
+      social-share:
+        specifier: workspace:*
+        version: link:../packages/social-share
       stylelint:
         specifier: 15.10.1
         version: 15.10.1
