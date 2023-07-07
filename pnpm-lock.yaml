@@ -96,6 +96,12 @@ importers:
         specifier: 3.3.2
         version: 3.3.2(ts-node@10.9.1)
 
+  packages/tsconfig:
+    dependencies:
+      '@types/node':
+        specifier: 20.4.0
+        version: 20.4.0
+
   web:
     devDependencies:
       '@headlessui/tailwindcss':
