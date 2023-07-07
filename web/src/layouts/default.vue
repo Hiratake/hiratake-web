@@ -1,6 +1,12 @@
 <script lang="ts" setup>
 // Components
-import { SocialShare, SocialShareButton, SocialSharePanel } from 'social-share'
+import {
+  SocialShare,
+  SocialShareButton,
+  SocialShareInput,
+  SocialSharePanel,
+  SocialShareSubmit,
+} from 'social-share'
 // Icons
 import {
   siFacebook,
@@ -209,12 +215,31 @@ const isBlog = computed<boolean>(() => route.path === '/blog')
                   <SocialSharePanel
                     :class="[
                       'absolute bottom-12 left-1/2 -translate-x-1/2',
-                      'grid w-48 gap-1 rounded-lg p-3',
+                      'grid w-52 gap-1 rounded-lg p-3',
                       'shadow-lg dark:shadow-slate-950/70',
                       'bg-white dark:bg-slate-800',
                     ]"
                   >
-                    <div class="select-none text-xs">サーバのドメイン：</div>
+                    <label class="select-none text-xs" for="share-mastodon">
+                      サーバのドメイン：
+                    </label>
+                    <div class="flex items-center gap-2">
+                      <SocialShareInput
+                        id="share-mastodon"
+                        placeholder="example.com"
+                        :class="[
+                          'w-full shrink grow basis-full rounded px-2 py-1 text-sm',
+                          'bg-slate-100',
+                        ]"
+                      />
+                      <SocialShareSubmit
+                        :class="[
+                          'shrink-0 rounded border border-slate-300 px-2 py-1 text-sm',
+                        ]"
+                      >
+                        投稿
+                      </SocialShareSubmit>
+                    </div>
                   </SocialSharePanel>
                 </Transition>
               </SocialShare>
@@ -252,12 +277,31 @@ const isBlog = computed<boolean>(() => route.path === '/blog')
                   <SocialSharePanel
                     :class="[
                       'absolute bottom-12 left-1/2 -translate-x-1/2',
-                      'grid w-48 gap-1 rounded-lg p-3',
+                      'grid w-52 gap-1 rounded-lg p-3',
                       'shadow-lg dark:shadow-slate-950/70',
                       'bg-white dark:bg-slate-800',
                     ]"
                   >
-                    <div class="select-none text-xs">サーバのドメイン：</div>
+                    <label class="select-none text-xs" for="share-misskey">
+                      サーバのドメイン：
+                    </label>
+                    <div class="flex items-center gap-2">
+                      <SocialShareInput
+                        id="share-misskey"
+                        placeholder="example.com"
+                        :class="[
+                          'w-full shrink grow basis-full rounded px-2 py-1 text-sm',
+                          'bg-slate-100',
+                        ]"
+                      />
+                      <SocialShareSubmit
+                        :class="[
+                          'shrink-0 rounded border border-slate-300 px-2 py-1 text-sm',
+                        ]"
+                      >
+                        投稿
+                      </SocialShareSubmit>
+                    </div>
                   </SocialSharePanel>
                 </Transition>
               </SocialShare>

@@ -4,7 +4,7 @@ import type { ShareFunction, SocialShareProps } from './types'
 // Composables
 import { tryOnMounted, useToggle } from '@vueuse/core'
 // Utils
-import { provide, readonly } from 'vue'
+import { provide, readonly, ref } from 'vue'
 import { services, socialShareInjectionKey } from './utils'
 
 const props = withDefaults(defineProps<SocialShareProps>(), {
@@ -18,6 +18,13 @@ const [
   /** パネルの開閉状態を切り替える */
   togglePanelOpen,
 ] = useToggle(false)
+
+/** インスタンスのドメイン */
+const domain = ref<string>('')
+const updateDomain = (val: typeof domain.value) => {
+  domain.value = val
+  return domain.value
+}
 
 /**
  * URLとテキストをSNSへシェアする
@@ -52,8 +59,10 @@ const share: ShareFunction = (domain = '') => {
 provide(socialShareInjectionKey, {
   isInstance: !!services[props.service].instance,
   isPanelOpen: readonly(isPanelOpen),
+  domain: readonly(domain),
   share,
   togglePanelOpen,
+  updateDomain,
 })
 </script>
 

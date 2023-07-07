@@ -47,6 +47,8 @@ export const services: {
 export const socialShareInjectionKey: InjectionKey<{
   isInstance: boolean
   isPanelOpen: Readonly<Ref<boolean>>
+  domain: Readonly<Ref<string>>
   share: ShareFunction
   togglePanelOpen: (value?: boolean) => boolean
+  updateDomain: (value: string) => string
 }> = Symbol()

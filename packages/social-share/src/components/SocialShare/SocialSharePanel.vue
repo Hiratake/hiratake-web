@@ -12,7 +12,7 @@ onClickOutside(target, () => context?.togglePanelOpen(false))
 </script>
 
 <template>
-  <div v-if="context?.isPanelOpen.value" ref="target" title="test">
+  <div v-if="context?.isPanelOpen.value" ref="target">
     <slot />
   </div>
 </template>
