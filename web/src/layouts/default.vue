@@ -1,8 +1,15 @@
 <script lang="ts" setup>
 // Icons
-import { siGithub, siMisskey, siTwitter } from 'simple-icons'
+import {
+  siFacebook,
+  siGithub,
+  siMastodon,
+  siMisskey,
+  siTwitter,
+} from 'simple-icons'
 
 const { page } = useContent()
+const config = useRuntimeConfig()
 const app = useAppConfig()
 const route = useRoute()
 
@@ -116,6 +123,79 @@ const isBlog = computed<boolean>(() => route.path === '/blog')
         <div class="prose max-w-none text-inherit dark:prose-invert">
           <slot />
         </div>
+
+        <footer>
+          <div class="flex items-center gap-1">
+            <SocialShare
+              :url="`${config.public.siteUrl}${$route.path}`"
+              :text="`${page.title} - ${config.public.siteName}`"
+              service="twitter"
+            >
+              <SocialShareButton
+                class="flex h-10 w-10 items-center justify-center p-2"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  class="h-full w-full fill-current text-current"
+                >
+                  <path :d="siTwitter.path" />
+                </svg>
+              </SocialShareButton>
+            </SocialShare>
+            <SocialShare
+              :url="`${config.public.siteUrl}${$route.path}`"
+              :text="`${page.title} - ${config.public.siteName}`"
+              service="facebook"
+            >
+              <SocialShareButton
+                class="flex h-10 w-10 items-center justify-center p-2"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  class="h-full w-full fill-current text-current"
+                >
+                  <path :d="siFacebook.path" />
+                </svg>
+              </SocialShareButton>
+            </SocialShare>
+            <SocialShare
+              :url="`${config.public.siteUrl}${$route.path}`"
+              :text="`${page.title} - ${config.public.siteName}`"
+              service="mastodon"
+            >
+              <SocialShareButton
+                class="flex h-10 w-10 items-center justify-center p-2"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  class="h-full w-full fill-current text-current"
+                >
+                  <path :d="siMastodon.path" />
+                </svg>
+              </SocialShareButton>
+            </SocialShare>
+            <SocialShare
+              :url="`${config.public.siteUrl}${$route.path}`"
+              :text="`${page.title} - ${config.public.siteName}`"
+              service="misskey"
+            >
+              <SocialShareButton
+                class="flex h-10 w-10 items-center justify-center p-2"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  class="h-full w-full fill-current text-current"
+                >
+                  <path :d="siMisskey.path" />
+                </svg>
+              </SocialShareButton>
+            </SocialShare>
+          </div>
+        </footer>
       </component>
     </template>
   </main>
