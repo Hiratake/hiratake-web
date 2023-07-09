@@ -12,7 +12,7 @@ export default defineEventHandler(async (event) => {
     description:
       'ひらたけのブログです。趣味のことから技術とかの真面目なことまで、書きたいことができたときになんとなく書く、そんな場所です。',
     id: config.public.siteUrl,
-    link: `${config.public.siteUrl}/blog`,
+    link: `${config.public.siteUrl}/blog/`,
     language: config.public.language,
     image: `${config.public.siteUrl}/logo.png`,
     copyright: config.public.siteName,
@@ -33,7 +33,9 @@ export default defineEventHandler(async (event) => {
       } => Boolean(article._path) && Boolean(article.title)
     )
     .forEach((article) => {
-      const url = `${config.public.siteUrl}${article._path}`
+      const url = `${config.public.siteUrl}${
+        article._path.endsWith('/') ? article._path : `${article._path}/`
+      }`
       feed.addItem({
         title: article.title,
         id: url,

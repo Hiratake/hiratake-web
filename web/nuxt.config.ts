@@ -45,6 +45,9 @@ export default defineNuxtConfig({
     '/feed': {
       headers: { 'content-type': 'application/rss+xml; charset=UTF-8' },
     },
+    '/feed/**': {
+      headers: { 'content-type': 'application/rss+xml; charset=UTF-8' },
+    },
   },
   runtimeConfig: {
     public: {
@@ -52,6 +55,7 @@ export default defineNuxtConfig({
       siteName: 'Hiratake Web',
       siteDescription: 'ひらたけの個人ウェブサイトです。',
       language: 'ja',
+      trailingSlash: true,
       gtmId: 'GTM-WF3MQWM',
       cloudflareImageHash: '3uWTcGTKoWPI8987WrI0hQ',
     },

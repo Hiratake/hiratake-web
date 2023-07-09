@@ -24,7 +24,9 @@ const route = useRoute()
 /** 現在のページがトップページかどうか */
 const isTop = computed<boolean>(() => route.path === '/')
 /** 現在のページがブログ記事一覧ページかどうか */
-const isBlog = computed<boolean>(() => route.path === '/blog')
+const isBlog = computed<boolean>(
+  () => route.path === '/blog' || route.path === '/blog/'
+)
 </script>
 
 <template>
@@ -128,7 +130,9 @@ const isBlog = computed<boolean>(() => route.path === '/blog')
             <div class="text-center text-xs">SNSでこのページをシェアする</div>
             <div class="flex items-center justify-center gap-1">
               <SocialShare
-                :url="`${config.public.siteUrl}${$route.path}`"
+                :url="`${config.public.siteUrl}${
+                  route.path.endsWith('/') ? route.path : `${route.path}/`
+                }`"
                 :text="`${page.title} - ${config.public.siteName}`"
                 service="twitter"
                 class="relative"
@@ -151,7 +155,9 @@ const isBlog = computed<boolean>(() => route.path === '/blog')
               </SocialShare>
 
               <SocialShare
-                :url="`${config.public.siteUrl}${$route.path}`"
+                :url="`${config.public.siteUrl}${
+                  route.path.endsWith('/') ? route.path : `${route.path}/`
+                }`"
                 :text="`${page.title} - ${config.public.siteName}`"
                 service="facebook"
                 class="relative"
@@ -174,7 +180,9 @@ const isBlog = computed<boolean>(() => route.path === '/blog')
               </SocialShare>
 
               <SocialShare
-                :url="`${config.public.siteUrl}${$route.path}`"
+                :url="`${config.public.siteUrl}${
+                  route.path.endsWith('/') ? route.path : `${route.path}/`
+                }`"
                 :text="`${page.title} - ${config.public.siteName}`"
                 service="mastodon"
                 class="relative"
@@ -236,7 +244,9 @@ const isBlog = computed<boolean>(() => route.path === '/blog')
               </SocialShare>
 
               <SocialShare
-                :url="`${config.public.siteUrl}${$route.path}`"
+                :url="`${config.public.siteUrl}${
+                  route.path.endsWith('/') ? route.path : `${route.path}/`
+                }`"
                 :text="`${page.title} - ${config.public.siteName}`"
                 service="misskey"
                 class="relative"
