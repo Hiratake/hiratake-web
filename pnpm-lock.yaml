@@ -196,8 +196,8 @@ importers:
         specifier: 1.63.6
         version: 1.63.6
       simple-icons:
-        specifier: 9.4.0
-        version: 9.4.0
+        specifier: 9.5.0
+        version: 9.5.0
       social-share:
         specifier: workspace:*
         version: link:../packages/social-share
@@ -9050,8 +9050,8 @@ packages:
       - supports-color
     dev: true
 
-  /simple-icons@9.4.0:
-    resolution: {integrity: sha512-rpDJGJN7txOtlP2q1eXqti8oIHR6/qCkDl+Vf+bxfCT6qVJmkb7D4ctW932eNVejn6JL2NcNQF84/PqEgXCvXQ==}
+  /simple-icons@9.5.0:
+    resolution: {integrity: sha512-FEtVYBJgsQb+Oz2f6DBbPipOl/9QVAEPvxZj1bllsoRsYL2LfufvhPDSLUdmpClUUDW5UjphBoEwBQvqJ1p3lg==}
     engines: {node: '>=0.12.18'}
     dev: true
 
