@@ -10,7 +10,7 @@ updated: 2023-07-01
 - **Twitter** - [@Hirotaisou2012](https://twitter.com/Hirotaisou2012)
 - **Misskey** - [@Hiratake](https://misskey.io/@Hiratake)
 
-お問い合わせを送信前に、 [プライバシーポリシー](/privacy) をご確認ください。
+お問い合わせを送信前に、 [プライバシーポリシー](/privacy/) をご確認ください。
 
 Discord サーバも運営しております。以下の招待リンクよりご参加いただき、 **サーバ内の「サポート」チャンネルにてご連絡** いただいても問題ございません。
 

@@ -39,7 +39,9 @@ const articles = computed(() =>
       <section class="grid grid-cols-fill-60 gap-6">
         <template v-for="article in articles" :key="article._path">
           <ContentListItem
-            :url="article._path"
+            :url="
+              article._path.endsWith('/') ? article._path : `${article._path}/`
+            "
             :title="article.title"
             :created="article.created"
             :updated="article.updated"
