@@ -9,17 +9,17 @@ const year = useDateFormat(new Date(), 'YYYY')
   >
     <ul class="flex flex-wrap items-center justify-center gap-6">
       <li>
-        <NuxtLink href="/blog" class="underline hover:no-underline">
+        <NuxtLink href="/blog/" class="underline hover:no-underline">
           ブログ
         </NuxtLink>
       </li>
       <li>
-        <NuxtLink href="/privacy" class="underline hover:no-underline">
+        <NuxtLink href="/privacy/" class="underline hover:no-underline">
           プライバシーポリシー
         </NuxtLink>
       </li>
       <li>
-        <NuxtLink href="/contact" class="underline hover:no-underline">
+        <NuxtLink href="/contact/" class="underline hover:no-underline">
           お問い合わせ
         </NuxtLink>
       </li>

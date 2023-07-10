@@ -21,7 +21,7 @@
     "nuxt-seo-kit": "1.3.9",
     "postcss": "8.4.25",
     "sass": "1.63.6",
-    "simple-icons": "9.4.0",
+    "simple-icons": "9.5.0",
     "social-share": "workspace:*",
     "stylelint": "15.10.1",
     "stylelint-config": "workspace:*",
