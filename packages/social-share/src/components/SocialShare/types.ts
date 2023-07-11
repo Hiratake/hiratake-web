@@ -14,5 +14,5 @@ export type SocialShareProps = {
 /** SNSへシェアする関数 */
 export type ShareFunction = (
   /** インスタンスのドメイン */
-  domain?: string
+  domain?: string,
 ) => void
