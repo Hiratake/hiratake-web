@@ -31,7 +31,7 @@
     "lint": "turbo run lint",
     "lint:fix": "turbo run lint:fix",
     "typecheck": "turbo run typecheck",
-    "format": "prettier -w .",
+    "format": "prettier \"**/!(*.md)\" -wu",
     "test": "turbo run test",
     "prepare": "husky install"
   }
