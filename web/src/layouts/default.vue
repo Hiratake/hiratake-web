@@ -25,7 +25,7 @@ const route = useRoute()
 const isTop = computed<boolean>(() => route.path === '/')
 /** 現在のページがブログ記事一覧ページかどうか */
 const isBlog = computed<boolean>(
-  () => route.path === '/blog' || route.path === '/blog/'
+  () => route.path === '/blog' || route.path === '/blog/',
 )
 </script>
 
