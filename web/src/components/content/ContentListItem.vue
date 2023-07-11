@@ -48,7 +48,7 @@ const updatedDate = useDateFormat(props.updated || useNow(), 'YYYY/MM/DD')
       <div
         :class="[
           'flex flex-wrap gap-x-3 gap-y-2 text-xs',
-          'text-slate-500 dark:text-slate-400',
+          'text-slate-600 dark:text-slate-400',
         ]"
       >
         <div class="flex items-center gap-1">

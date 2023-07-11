@@ -1,0 +1,52 @@
+{
+  "name": "social-share",
+  "version": "0.0.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "main": "dist/social-share.umd.js",
+  "module": "dist/social-share.es.js",
+  "types": "dist/types/main.d.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/types/main.d.ts",
+      "import": "./dist/social-share.es.js",
+      "require": "./dist/social-share.umd.js"
+    }
+  },
+  "dependencies": {
+    "@vueuse/core": "10.2.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "4.2.3",
+    "eslint": "8.44.0",
+    "eslint-config-custom": "workspace:*",
+    "rimraf": "5.0.1",
+    "stylelint": "15.10.1",
+    "stylelint-config": "workspace:*",
+    "tsconfig": "workspace:*",
+    "typescript": "5.1.6",
+    "vite": "4.4.3",
+    "vue": "3.3.4",
+    "vue-tsc": "1.8.4"
+  },
+  "peerDependencies": {
+    "vue": "3.3.4"
+  },
+  "scripts": {
+    "build": "vue-tsc -p tsconfig.build.json && vite build",
+    "lint": "pnpm lint:script && pnpm lint:style",
+    "lint:fix": "pnpm lint:script:fix && pnpm lint:style:fix",
+    "lint:script": "eslint . --ext .js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts,.vue",
+    "lint:script:fix": "eslint . --ext .js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts,.vue --fix",
+    "lint:style": "stylelint \"src/**/*.{css,scss,vue}\"",
+    "lint:style:fix": "stylelint \"src/**/*.{css,scss,vue}\" --fix",
+    "typecheck": "pnpm typecheck:node && pnpm typecheck:web",
+    "typecheck:node": "tsc --noEmit -p tsconfig.node.json --composite false",
+    "typecheck:web": "vue-tsc --noEmit -p tsconfig.web.json --composite false",
+    "prebuild": "pnpm typecheck && rimraf dist",
+    "postinstall": "pnpm build"
+  }
+}

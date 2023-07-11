@@ -27,7 +27,7 @@ const schema = await useAsyncData('page-schema', () => {
     defineBreadcrumb({
       itemListElement: (data.data.value ?? []).map((item) => ({
         name: item.title,
-        item: item._path,
+        item: item._path.endsWith('/') ? item._path : `${item._path}/`,
       })),
     }),
   ] as (
@@ -36,14 +36,14 @@ const schema = await useAsyncData('page-schema', () => {
     | ReturnType<typeof defineArticle>
   )[]
 })
-if (route.path === '/blog') {
+if (route.path === '/blog' || route.path === '/blog/') {
   schema.push(
     defineWebPage({
       '@type': 'CollectionPage',
     }),
   )
 }
-if (route.path.startsWith('/blog/')) {
+if (route.path !== '/blog/' && route.path.startsWith('/blog/')) {
   schema.push(
     defineArticle({
       '@type': 'BlogPosting',
@@ -98,7 +98,7 @@ useHead({
     {
       rel: 'alternate',
       type: 'application/rss+xml',
-      href: `${config.public.siteUrl}/feed`,
+      href: `${config.public.siteUrl}/feed/`,
       title: `${config.public.siteName} Feed`,
     },
   ],
