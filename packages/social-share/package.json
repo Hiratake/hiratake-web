@@ -1,8 +1,7 @@
 {
-  "name": "social-share",
+  "name": "@hiratake/social-share",
   "version": "0.0.0",
-  "private": true,
-  "license": "UNLICENSED",
+  "license": "MIT",
   "main": "dist/social-share.umd.js",
   "module": "dist/social-share.es.js",
   "types": "dist/types/main.d.ts",
@@ -47,6 +46,7 @@
     "typecheck:node": "tsc --noEmit -p tsconfig.node.json --composite false",
     "typecheck:web": "vue-tsc --noEmit -p tsconfig.web.json --composite false",
     "prebuild": "pnpm typecheck && rimraf dist",
+    "prepublishOnly": "pnpm build",
     "postinstall": "pnpm build"
   }
 }
