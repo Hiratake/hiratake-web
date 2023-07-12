@@ -35,7 +35,7 @@
     "typecheck": "turbo run typecheck",
     "format": "prettier \"**/!(*.md)\" -wu",
     "test": "turbo run test",
-    "release": "pnpm publish -r",
+    "release": "pnpm publish -r --no-git-checks",
     "prepare": "husky install"
   }
 }
