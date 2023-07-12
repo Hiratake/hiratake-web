@@ -98,7 +98,7 @@ useHead({
     {
       rel: 'alternate',
       type: 'application/rss+xml',
-      href: `${config.public.siteUrl}/feed/`,
+      href: `${config.public.siteUrl}/feed.xml`,
       title: `${config.public.siteName} Feed`,
     },
   ],

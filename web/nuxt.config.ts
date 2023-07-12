@@ -32,7 +32,7 @@ export default defineNuxtConfig({
   ],
   nitro: {
     prerender: {
-      routes: ['/feed'],
+      routes: ['/feed.xml'],
     },
   },
   postcss: {
@@ -42,10 +42,7 @@ export default defineNuxtConfig({
     },
   },
   routeRules: {
-    '/feed': {
-      headers: { 'content-type': 'application/rss+xml; charset=UTF-8' },
-    },
-    '/feed/**': {
+    '/feed.xml': {
       headers: { 'content-type': 'application/rss+xml; charset=UTF-8' },
     },
   },
