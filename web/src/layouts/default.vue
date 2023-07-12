@@ -6,7 +6,7 @@ import {
   SocialShareInput,
   SocialSharePanel,
   SocialShareSubmit,
-} from 'social-share'
+} from '@hiratake/social-share'
 // Icons
 import {
   siFacebook,
