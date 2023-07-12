@@ -1,6 +1,6 @@
 {
   "*.{js,jsx,cjs,mjs,ts,tsx,cts,mts}": ["eslint --fix", "prettier -w"],
   "*.{css,scss}": ["stylelint --fix", "prettier -w"],
-  "*.{json,yml,yaml,md,html}": ["prettier -w"],
+  "*.{json,yml,yaml,html}": ["prettier -w"],
   "*.vue": ["eslint --fix", "stylelint --fix", "prettier -w"]
 }

@@ -1,19 +1,21 @@
-# Autofix
+# Release
 
-name: autofix.ci # needed to securely identify the workflow
+name: Release
 
 on:
-  pull_request:
+  push:
     branches:
       - main
 
-permissions:
-  contents: read
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+env:
+  CI: true
 
 jobs:
-  # Autofix
-  autofix:
-    name: Autofix
+  # Release
+  release:
+    name: Release
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -50,14 +52,17 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pnpm-store-
 
+      - name: Setup npmrc
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
+
       - name: Install dependencies
         run: pnpm install
 
-      - name: Run lint fix
-        run: pnpm lint:fix
-
-      - name: Run format
-        run: pnpm format
-
-      - name: Autofix
-        uses: autofix-ci/action@8caa572fd27b0019a65e4c695447089c8d3138b9
+      - name: Create Release Pull Request or Publish to npm
+        uses: changesets/action@v1
+        with:
+          commit: 'chore: update versions'
+          publish: pnpm release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

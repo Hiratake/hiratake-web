@@ -1,8 +1,7 @@
 {
-  "name": "social-share",
-  "version": "0.0.0",
-  "private": true,
-  "license": "UNLICENSED",
+  "name": "@hiratake/social-share",
+  "version": "1.0.0",
+  "license": "MIT",
   "main": "dist/social-share.umd.js",
   "module": "dist/social-share.es.js",
   "types": "dist/types/main.d.ts",
@@ -28,7 +27,7 @@
     "stylelint-config": "workspace:*",
     "tsconfig": "workspace:*",
     "typescript": "5.1.6",
-    "vite": "4.4.2",
+    "vite": "4.4.3",
     "vue": "3.3.4",
     "vue-tsc": "1.8.4"
   },
@@ -47,6 +46,7 @@
     "typecheck:node": "tsc --noEmit -p tsconfig.node.json --composite false",
     "typecheck:web": "vue-tsc --noEmit -p tsconfig.web.json --composite false",
     "prebuild": "pnpm typecheck && rimraf dist",
+    "prepublishOnly": "pnpm build",
     "postinstall": "pnpm build"
   }
 }

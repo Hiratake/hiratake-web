@@ -11,14 +11,16 @@
     "node": "18.16.1"
   },
   "devDependencies": {
+    "@changesets/changelog-github": "0.4.8",
+    "@changesets/cli": "2.26.2",
     "@commitlint/cli": "17.6.6",
     "@commitlint/config-conventional": "17.6.6",
     "eslint": "8.44.0",
     "eslint-config-custom": "workspace:*",
     "husky": "8.0.3",
     "lint-staged": "13.2.3",
-    "prettier": "2.8.8",
-    "prettier-plugin-tailwindcss": "0.3.0",
+    "prettier": "3.0.0",
+    "prettier-plugin-tailwindcss": "0.4.0",
     "stylelint": "15.10.1",
     "stylelint-config": "workspace:*",
     "turbo": "1.10.7"
@@ -31,8 +33,9 @@
     "lint": "turbo run lint",
     "lint:fix": "turbo run lint:fix",
     "typecheck": "turbo run typecheck",
-    "format": "prettier -w .",
+    "format": "prettier \"**/!(*.md)\" -wu",
     "test": "turbo run test",
+    "release": "pnpm publish -r --no-git-checks",
     "prepare": "husky install"
   }
 }

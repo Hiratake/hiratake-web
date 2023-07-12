@@ -26,11 +26,11 @@ export default defineEventHandler(async (event) => {
   articles
     .filter(
       (
-        article
+        article,
       ): article is Article & {
         _path: Required<Article>['_path']
         title: Required<Article>['title']
-      } => Boolean(article._path) && Boolean(article.title)
+      } => Boolean(article._path) && Boolean(article.title),
     )
     .forEach((article) => {
       const url = `${config.public.siteUrl}${

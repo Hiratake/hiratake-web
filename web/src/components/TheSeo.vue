@@ -40,7 +40,7 @@ if (route.path === '/blog' || route.path === '/blog/') {
   schema.push(
     defineWebPage({
       '@type': 'CollectionPage',
-    })
+    }),
   )
 }
 if (route.path !== '/blog/' && route.path.startsWith('/blog/')) {
@@ -50,7 +50,7 @@ if (route.path !== '/blog/' && route.path.startsWith('/blog/')) {
       datePublished: page.value.created,
       dateModified: page.value.updated,
       author: [{ name: app.author.name, url: config.public.siteUrl }],
-    })
+    }),
   )
 }
 
