@@ -50,7 +50,7 @@ const share: ShareFunction = (domain = '') => {
         `https://${current.instance ? domain : ''}${current.endpoint}?${
           current.url
         }=${props.url}&${current.text}=${props.text}`,
-        '_blank'
+        '_blank',
       )
     })
   }

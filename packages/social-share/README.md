@@ -1,19 +1,19 @@
 # social-share
 
-SNS シェアボタンの [Vue.js](https://ja.vuejs.org/) コンポーネントライブラリ。
+SNS シェアボタンの Vue.js コンポーネントライブラリ。
 
 ## 🚀 Setup
 
-コンポーネントを使用するワークスペース内のパッケージに `social-share` をインストールします。
+コンポーネントを使用するワークスペース内のパッケージに `@hiratake/social-share` をインストールします。
 
 - コンポーネントを使用するパッケージのディレクトリへ移動
-- `pnpm add -D vue` で Vue.js をインストール
-- `pnpm add -D social-share --workspace` でコンポーネントをインストール
+- `pnpm add vue` で Vue.js をインストール
+- `pnpm add @hiratake/social-share` でコンポーネントをインストール
 - アプリケーション内でコンポーネントをインポート
 
 ```vue
 <script lant="ts" setup>
-import { SocialShare, SocialShareButton } from 'social-share'
+import { SocialShare, SocialShareButton } from '@hiratake/social-share'
 </script>
 
 <template>
