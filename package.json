@@ -20,9 +20,12 @@
     "husky": "8.0.3",
     "lint-staged": "13.2.3",
     "prettier": "3.0.0",
-    "prettier-plugin-tailwindcss": "0.4.0",
+    "prettier-plugin-tailwindcss": "0.4.1",
     "stylelint": "15.10.1",
     "stylelint-config": "workspace:*",
+    "textlint": "13.3.3",
+    "textlint-filter-rule-allowlist": "4.0.0",
+    "textlint-rule-preset-custom": "workspace:*",
     "turbo": "1.10.7"
   },
   "scripts": {
@@ -33,7 +36,7 @@
     "lint": "turbo run lint",
     "lint:fix": "turbo run lint:fix",
     "typecheck": "turbo run typecheck",
-    "format": "prettier \"**/!(*.md)\" -wu",
+    "format": "prettier \"**/!(*.md)\" -wu && textlint \"**/*.md\" --fix",
     "test": "turbo run test",
     "release": "pnpm publish -r --no-git-checks",
     "prepare": "husky install"

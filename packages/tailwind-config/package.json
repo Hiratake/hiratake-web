@@ -8,10 +8,11 @@
   },
   "devDependencies": {
     "eslint": "8.44.0",
-    "tailwindcss": "3.3.2"
+    "eslint-config-custom": "workspace:*",
+    "tailwindcss": "3.3.3"
   },
   "peerDependencies": {
-    "tailwindcss": "3.3.2"
+    "tailwindcss": "3.3.3"
   },
   "scripts": {
     "lint": "eslint . --ext .js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts,.vue",
