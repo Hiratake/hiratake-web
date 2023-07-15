@@ -15,6 +15,7 @@
     "@changesets/cli": "2.26.2",
     "@commitlint/cli": "17.6.6",
     "@commitlint/config-conventional": "17.6.6",
+    "@textlint-rule/textlint-rule-no-unmatched-pair": "1.0.9",
     "eslint": "8.44.0",
     "eslint-config-custom": "workspace:*",
     "husky": "8.0.3",
@@ -23,6 +24,12 @@
     "prettier-plugin-tailwindcss": "0.4.1",
     "stylelint": "15.10.1",
     "stylelint-config": "workspace:*",
+    "textlint": "13.3.3",
+    "textlint-filter-rule-allowlist": "4.0.0",
+    "textlint-rule-ja-space-around-code": "2.2.0",
+    "textlint-rule-ja-space-around-link": "2.2.0",
+    "textlint-rule-ja-space-between-half-and-full-width": "2.3.0",
+    "textlint-rule-no-mixed-zenkaku-and-hankaku-alphabet": "1.0.1",
     "turbo": "1.10.7"
   },
   "scripts": {
@@ -33,7 +40,7 @@
     "lint": "turbo run lint",
     "lint:fix": "turbo run lint:fix",
     "typecheck": "turbo run typecheck",
-    "format": "prettier \"**/!(*.md)\" -wu",
+    "format": "prettier \"**/!(*.md)\" -wu && textlint \"**/*.md\" --fix",
     "test": "turbo run test",
     "release": "pnpm publish -r --no-git-checks",
     "prepare": "husky install"
