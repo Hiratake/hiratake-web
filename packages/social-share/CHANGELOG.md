@@ -1,5 +1,11 @@
 # @hiratake/social-share
 
+## 1.0.2
+
+### Patch Changes
+
+- [#487](https://github.com/Hiratake/hiratake-web/pull/487) [`9b7b1e6`](https://github.com/Hiratake/hiratake-web/commit/9b7b1e6454a3cc0d5d2fce3ad264268e1051853a) Thanks [@Hiratake](https://github.com/Hiratake)! - update document and package.json
+
 ## 1.0.1
 
 ### Patch Changes
