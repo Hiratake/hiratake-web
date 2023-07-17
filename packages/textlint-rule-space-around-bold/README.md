@@ -24,7 +24,10 @@ $ pnpm add -D @hiratake/textlint-rule-space-around-bold
 ```json
 {
   "rules": {
-    "@hiratake/textlint-rule-space-around-bold": true
+    "@hiratake/textlint-rule-space-around-bold": {
+      "before": true, // 太字の前にスペースを入れる
+      "after": true,  // 太字の後にスペースを入れる
+    },
   }
 }
 ```

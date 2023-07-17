@@ -21,7 +21,7 @@ const reporter: TextlintRuleModule<Options> = (context, options = {}) => {
     [Syntax.Strong](node) {
       const nodeText = getSource(node)
       // 文字列の前後1文字を取得
-      const textWithPadding = getSource(node, 1, 1)
+      const textWithPadding = getSource(node, 1, 1).replace(/^\n*|\n*$/g, '')
       if (!textWithPadding) {
         return
       }
@@ -34,7 +34,8 @@ const reporter: TextlintRuleModule<Options> = (context, options = {}) => {
         // 太字の前に文字が存在している場合のみ処理を実行
         if (allowBeforeSpace) {
           // 太字の前にスペースを入れる
-          if (beforeChar !== ' ') {
+          // リンクの中にある太字には適用しない
+          if (beforeChar !== ' ' && beforeChar !== '[') {
             report(
               node,
               new RuleError('太字の前にスペースを入れてください。', {
@@ -61,7 +62,8 @@ const reporter: TextlintRuleModule<Options> = (context, options = {}) => {
         // 太字の後に文字が存在している場合のみ処理を実行
         if (allowAfterSpace) {
           // 太字の後にスペースを入れる
-          if (afterChar !== ' ') {
+          // リンクの中にある太字には適用しない
+          if (afterChar !== ' ' && afterChar !== ']') {
             report(
               node,
               new RuleError('太字の後にスペースを入れてください。', {
