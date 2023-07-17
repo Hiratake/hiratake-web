@@ -33,6 +33,36 @@ tester.run('太字の前後のスペース', rule, {
         after: true,
       },
     },
+    {
+      text: '**太字** から始まるテキストの場合は前にスペースがなくてもよい',
+      options: {
+        before: true,
+        after: true,
+      },
+    },
+    {
+      text: `
+**太字** から始まる新しい行のテキストの場合は前にスペースがなくてもよい`,
+      options: {
+        before: true,
+        after: true,
+      },
+    },
+    {
+      text: '太字で終わるテキストの場合は後にスペースが **なくてもよい**',
+      options: {
+        before: true,
+        after: true,
+      },
+    },
+    {
+      text: `太字で改行されるテキストの場合は後にスペースが **なくてもよい**
+`,
+      options: {
+        before: true,
+        after: true,
+      },
+    },
   ],
   invalid: [
     {

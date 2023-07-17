@@ -21,7 +21,7 @@ const reporter: TextlintRuleModule<Options> = (context, options = {}) => {
     [Syntax.Strong](node) {
       const nodeText = getSource(node)
       // 文字列の前後1文字を取得
-      const textWithPadding = getSource(node, 1, 1)
+      const textWithPadding = getSource(node, 1, 1).replace(/^\n*|\n*$/g, '')
       if (!textWithPadding) {
         return
       }
