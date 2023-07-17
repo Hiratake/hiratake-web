@@ -36,7 +36,9 @@
     "lint": "turbo run lint",
     "lint:fix": "turbo run lint:fix",
     "typecheck": "turbo run typecheck",
-    "format": "prettier \"**/!(*.md)\" -wu && textlint \"**/*.md\" --fix",
+    "content": "textlint \"**/*.md\"",
+    "content:fix": "textlint \"**/*.md\" --fix",
+    "format": "prettier \"**/!(*.md)\" -wu",
     "test": "turbo run test",
     "release": "pnpm publish -r --no-git-checks --access public",
     "prepare": "husky install"

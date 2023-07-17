@@ -2,6 +2,8 @@
 module.exports = {
   rules: {
     // https://github.com/Hiratake/hiratake-web
+    '@hiratake/textlint-rule-front-matter':
+      require('@hiratake/textlint-rule-front-matter').default,
     '@hiratake/textlint-rule-space-around-bold':
       require('@hiratake/textlint-rule-space-around-bold').default,
     // https://github.com/textlint-rule/textlint-rule-no-unmatched-pair
@@ -14,6 +16,14 @@ module.exports = {
     'no-mixed-zenkaku-and-hankaku-alphabet': require('textlint-rule-no-mixed-zenkaku-and-hankaku-alphabet'),
   },
   rulesConfig: {
+    // Front Matter の項目チェック
+    '@hiratake/textlint-rule-front-matter': {
+      keys: [
+        { name: 'title', required: true },
+        { name: 'created', required: true },
+        { name: 'updated', required: true },
+      ],
+    },
     // 太字の前後の半角スペースをチェック
     '@hiratake/textlint-rule-space-around-bold': {
       after: true,
