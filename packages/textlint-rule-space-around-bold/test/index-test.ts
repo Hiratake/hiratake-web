@@ -2,42 +2,100 @@ import TextLintTester from 'textlint-tester'
 import rule from '../src/index'
 
 const tester = new TextLintTester()
-// ruleName, rule, { valid, invalid }
-tester.run('rule', rule, {
+
+tester.run('太字の前後のスペース', rule, {
   valid: [
-    // no problem
-    'text',
     {
-      text: 'It is bugs, but it should be ignored',
+      text: '通常のテキストと **太字** との間はスペースを入れる',
       options: {
-        allows: ['it should be ignored'],
+        before: true,
+        after: true,
+      },
+    },
+    {
+      text: '通常のテキストと**太字**との間はスペースを入れない',
+      options: {
+        before: false,
+        after: false,
+      },
+    },
+    {
+      text: '通常のテキストと **太字**との間は前だけスペースを入れる',
+      options: {
+        before: true,
+        after: false,
+      },
+    },
+    {
+      text: '通常のテキストと**太字** との間は後だけスペースを入れる',
+      options: {
+        before: false,
+        after: true,
       },
     },
   ],
   invalid: [
-    // single match
     {
-      text: 'It is bugs.',
+      text: '通常のテキストと**太字**との間はスペースを入れる',
+      output: '通常のテキストと **太字** との間はスペースを入れる',
+      options: {
+        before: true,
+        after: true,
+      },
       errors: [
         {
-          message: 'Found bugs.',
-          range: [6, 10],
+          message: '太字の前にスペースを入れてください。',
+        },
+        {
+          message: '太字の後にスペースを入れてください。',
         },
       ],
     },
-    // multiple match
     {
-      text: `It has many bugs.
-
-One more bugs`,
+      text: '通常のテキストと **太字** との間はスペースを入れない',
+      output: '通常のテキストと**太字**との間はスペースを入れない',
+      options: {
+        before: false,
+        after: false,
+      },
       errors: [
         {
-          message: 'Found bugs.',
-          range: [12, 16],
+          message: '太字の前にスペースを入れません。',
         },
         {
-          message: 'Found bugs.',
-          range: [28, 32],
+          message: '太字の後にスペースを入れません。',
+        },
+      ],
+    },
+    {
+      text: '通常のテキストと**太字** との間は前だけスペースを入れる',
+      output: '通常のテキストと **太字**との間は前だけスペースを入れる',
+      options: {
+        before: true,
+        after: false,
+      },
+      errors: [
+        {
+          message: '太字の前にスペースを入れてください。',
+        },
+        {
+          message: '太字の後にスペースを入れません。',
+        },
+      ],
+    },
+    {
+      text: '通常のテキストと **太字**との間は後だけスペースを入れる',
+      output: '通常のテキストと**太字** との間は後だけスペースを入れる',
+      options: {
+        before: false,
+        after: true,
+      },
+      errors: [
+        {
+          message: '太字の前にスペースを入れません。',
+        },
+        {
+          message: '太字の後にスペースを入れてください。',
         },
       ],
     },
