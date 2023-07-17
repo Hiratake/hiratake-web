@@ -1,6 +1,6 @@
 {
   "name": "@hiratake/social-share",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "license": "MIT",
   "keywords": [
     "vue"
@@ -42,12 +42,12 @@
     "stylelint-config": "workspace:*",
     "tsconfig": "workspace:*",
     "typescript": "5.1.6",
-    "vite": "4.4.3",
+    "vite": "4.4.4",
     "vue": "3.3.4",
-    "vue-tsc": "1.8.4"
+    "vue-tsc": "1.8.5"
   },
   "peerDependencies": {
-    "vue": "3.3.4"
+    "vue": "^3.3.4"
   },
   "scripts": {
     "build": "vue-tsc -p tsconfig.build.json && vite build",

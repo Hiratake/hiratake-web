@@ -1,0 +1,26 @@
+{
+  "name": "textlint-rule-preset-custom",
+  "version": "0.0.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "main": "index.js",
+  "dependencies": {
+    "@textlint-rule/textlint-rule-no-unmatched-pair": "1.0.9",
+    "textlint-rule-ja-space-around-code": "2.2.0",
+    "textlint-rule-ja-space-around-link": "2.2.0",
+    "textlint-rule-ja-space-between-half-and-full-width": "2.3.0",
+    "textlint-rule-no-mixed-zenkaku-and-hankaku-alphabet": "1.0.1"
+  },
+  "devDependencies": {
+    "eslint": "8.44.0",
+    "eslint-config-custom": "workspace:*",
+    "textlint": "13.3.3"
+  },
+  "peerDependencies": {
+    "textlint": "13.3.3"
+  },
+  "scripts": {
+    "lint": "eslint . --ext .js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts,.vue",
+    "lint:fix": "eslint . --ext .js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts,.vue --fix"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "name": "@hiratake/textlint-rule-space-around-bold",
+  "version": "1.0.0",
+  "license": "MIT",
+  "keywords": [
+    "textlintrule"
+  ],
+  "homepage": "https://github.com/Hiratake/hiratake-web/tree/main/packages/textlint-rule-space-around-bold",
+  "bugs": "https://github.com/Hiratake/hiratake-web/issues",
+  "contributors": [
+    {
+      "name": "Hiratake",
+      "url": "https://hiratake.dev/"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Hiratake/hiratake-web.git"
+  },
+  "main": "lib/index.js",
+  "files": [
+    "lib/",
+    "src/"
+  ],
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {
+    "@textlint/types": "13.3.3",
+    "@types/node": "20.4.2",
+    "textlint-scripts": "13.3.3",
+    "textlint-tester": "13.3.3",
+    "ts-node": "10.9.1",
+    "typescript": "5.1.6"
+  },
+  "scripts": {
+    "build": "textlint-scripts build",
+    "watch": "textlint-scripts build --watch",
+    "test": "textlint-scripts test",
+    "prepublishOnly": "pnpm build",
+    "postinstall": "pnpm build"
+  }
+}

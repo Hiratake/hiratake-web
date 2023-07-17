@@ -138,3 +138,6 @@ dist
 
 # Turborepo
 .turbo
+
+# textlint rule
+lib/
