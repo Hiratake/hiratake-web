@@ -63,6 +63,13 @@ tester.run('太字の前後のスペース', rule, {
         after: true,
       },
     },
+    {
+      text: `[**リンクの中の太字**](https://example.com) の前後は無視する`,
+      options: {
+        before: true,
+        after: true,
+      },
+    },
   ],
   invalid: [
     {
