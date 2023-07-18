@@ -16,9 +16,6 @@
     "eslint-config-custom": "workspace:*",
     "stylelint": "15.10.1"
   },
-  "peerDependencies": {
-    "stylelint": "15.10.1"
-  },
   "scripts": {
     "lint": "eslint . --ext .js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts,.vue",
     "lint:fix": "eslint . --ext .js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts,.vue --fix"
