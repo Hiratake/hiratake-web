@@ -3,7 +3,7 @@
   "pipeline": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": ["dist/*", ".output/*", ".nuxt/*"]
+      "outputs": ["dist/*", "lib/*", ".output/*", ".nuxt/*"]
     },
     "lint": {},
     "lint:fix": {},
