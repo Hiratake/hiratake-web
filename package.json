@@ -39,7 +39,8 @@
     "content:fix": "textlint \"**/*.md\" --fix",
     "format": "prettier \"**/!(*.md)\" -wu",
     "test": "turbo run test",
-    "release": "pnpm publish -r --no-git-checks --access public",
+    "changeset:version": "changeset version",
+    "changeset:release": "pnpm publish -r --no-git-checks --access public",
     "prepare": "husky install"
   }
 }

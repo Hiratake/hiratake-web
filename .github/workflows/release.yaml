@@ -27,6 +27,8 @@ jobs:
         node: [18]
     timeout-minutes: 10
 
+    if: github.repository == 'Hiratake/hiratake-web'
+
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -66,10 +68,12 @@ jobs:
 
       - name: Create Release Pull Request or Publish to npm
         uses: changesets/action@v1
+        id: changesets
         with:
           title: 'chore: update versions'
           commit: 'chore: update versions'
-          publish: pnpm release
+          publish: pnpm changeset:release
+          version: pnpm changeset:version
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
