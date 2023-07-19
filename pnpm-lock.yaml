@@ -166,6 +166,12 @@ importers:
       '@types/node':
         specifier: 20.4.2
         version: 20.4.2
+      eslint:
+        specifier: 8.45.0
+        version: 8.45.0
+      eslint-config-custom:
+        specifier: workspace:*
+        version: link:../eslint-config-custom
       textlint-scripts:
         specifier: 13.3.3
         version: 13.3.3(ts-node@10.9.1)(typescript@5.1.6)
@@ -221,6 +227,12 @@ importers:
       '@types/node':
         specifier: 20.4.2
         version: 20.4.2
+      eslint:
+        specifier: 8.45.0
+        version: 8.45.0
+      eslint-config-custom:
+        specifier: workspace:*
+        version: link:../eslint-config-custom
       textlint-scripts:
         specifier: 13.3.3
         version: 13.3.3(ts-node@10.9.1)(typescript@5.1.6)
