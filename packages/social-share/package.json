@@ -1,6 +1,9 @@
 {
   "name": "@hiratake/social-share",
   "version": "1.0.2",
+  "publishConfig": {
+    "access": "public"
+  },
   "license": "MIT",
   "keywords": [
     "vue"

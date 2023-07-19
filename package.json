@@ -40,7 +40,7 @@
     "format": "prettier \"**/!(*.md)\" -wu",
     "test": "turbo run test",
     "changeset:version": "changeset version",
-    "changeset:release": "pnpm publish -r --no-git-checks --access public",
+    "changeset:release": "changeset publish",
     "prepare": "husky install"
   }
 }
