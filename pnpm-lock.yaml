@@ -181,6 +181,9 @@ importers:
       ts-node:
         specifier: 10.9.1
         version: 10.9.1(@types/node@20.4.2)(typescript@5.1.6)
+      tsconfig:
+        specifier: workspace:*
+        version: link:../tsconfig
       typescript:
         specifier: 5.1.6
         version: 5.1.6
@@ -242,6 +245,9 @@ importers:
       ts-node:
         specifier: 10.9.1
         version: 10.9.1(@types/node@20.4.2)(typescript@5.1.6)
+      tsconfig:
+        specifier: workspace:*
+        version: link:../tsconfig
       typescript:
         specifier: 5.1.6
         version: 5.1.6
