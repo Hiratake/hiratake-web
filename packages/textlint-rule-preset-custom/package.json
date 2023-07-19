@@ -5,6 +5,8 @@
   "license": "UNLICENSED",
   "main": "index.js",
   "dependencies": {
+    "@hiratake/textlint-rule-front-matter": "workspace:*",
+    "@hiratake/textlint-rule-space-around-bold": "workspace:*",
     "@textlint-rule/textlint-rule-no-unmatched-pair": "1.0.9",
     "textlint-rule-ja-space-around-code": "2.2.0",
     "textlint-rule-ja-space-around-link": "2.2.0",
@@ -12,11 +14,8 @@
     "textlint-rule-no-mixed-zenkaku-and-hankaku-alphabet": "1.0.1"
   },
   "devDependencies": {
-    "eslint": "8.44.0",
+    "eslint": "8.45.0",
     "eslint-config-custom": "workspace:*",
-    "textlint": "13.3.3"
-  },
-  "peerDependencies": {
     "textlint": "13.3.3"
   },
   "scripts": {
