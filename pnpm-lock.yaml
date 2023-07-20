@@ -276,8 +276,8 @@ importers:
         specifier: 2.7.1
         version: 2.7.1
       '@nuxt/devtools':
-        specifier: 0.6.7
-        version: 0.6.7(nuxt@3.6.5)(vite@4.4.4)
+        specifier: 0.7.0
+        version: 0.7.0(nuxt@3.6.5)(vite@4.4.4)
       '@nuxtjs/eslint-module':
         specifier: 4.1.0
         version: 4.1.0(eslint@8.45.0)(vite@4.4.4)(webpack@5.88.2)
@@ -2806,8 +2806,8 @@ packages:
     resolution: {integrity: sha512-GBzP8zOc7CGWyFQS6dv1lQz8VVpz5C2yRszbXufwG/9zhStTIH50EtD87NmWbTMwXDvZLNg8GIpb1UFdH93JCA==}
     dev: true
 
-  /@nuxt/devtools-kit@0.6.7(nuxt@3.6.5)(vite@4.4.4):
-    resolution: {integrity: sha512-DEJBLspLRr3zFu/DAHs8Q1o9tgzELt24qDqsuqTEKqcw/2j1iu1TefvUdmXkJo6s8Qk3GI6e3QxrvtEE3mwKqA==}
+  /@nuxt/devtools-kit@0.7.0(nuxt@3.6.5)(vite@4.4.4):
+    resolution: {integrity: sha512-cbSeiIjWau2LxNgo1YHmUunA88IQEESJOlYgpJFxyOkDXzpKaR6xA0i6MT0zZTmQFCkT+u7DtExdp999icbwXQ==}
     peerDependencies:
       nuxt: ^3.6.1
       vite: '*'
@@ -2822,8 +2822,8 @@ packages:
       - supports-color
     dev: true
 
-  /@nuxt/devtools-wizard@0.6.7:
-    resolution: {integrity: sha512-dN+3UVxsGk3Vx0T6tN+UQ1b7FjWHk3N4WWmnKOACa4pHt77RYHFzndk60KDlKq9I/bn905pghsqwvXmPfbSpJA==}
+  /@nuxt/devtools-wizard@0.7.0:
+    resolution: {integrity: sha512-YUHxV8cN6SPqX/uQyLgJ9txcc8IJkG6nsBgfdrLjAkqNU7+/KFpjR0WgpFJNfPqYVpK19mENFTmvBXaBE4kv1A==}
     hasBin: true
     dependencies:
       consola: 3.2.3
@@ -2839,19 +2839,20 @@ packages:
       semver: 7.5.4
     dev: true
 
-  /@nuxt/devtools@0.6.7(nuxt@3.6.5)(vite@4.4.4):
-    resolution: {integrity: sha512-ATjkNfceG+8DQ8kR6O3UC9MjFfUd39aeFgKA+Z6pjG8Z7e3vwK92oZCSeQ8DQRi4/2kwa/UPjN8pNclyc6FlbQ==}
+  /@nuxt/devtools@0.7.0(nuxt@3.6.5)(vite@4.4.4):
+    resolution: {integrity: sha512-2r4766kZGTPZcs+o/YcobITc6lBsfsbuz18P+N5hqUXWc6evcWFf2fQXsMYJaD377mSwS1acxuHSrhI/WEYtMg==}
     hasBin: true
     peerDependencies:
       nuxt: ^3.6.1
       vite: '*'
     dependencies:
-      '@nuxt/devtools-kit': 0.6.7(nuxt@3.6.5)(vite@4.4.4)
-      '@nuxt/devtools-wizard': 0.6.7
+      '@nuxt/devtools-kit': 0.7.0(nuxt@3.6.5)(vite@4.4.4)
+      '@nuxt/devtools-wizard': 0.7.0
       '@nuxt/kit': 3.6.5
       birpc: 0.2.12
       boxen: 7.1.1
       consola: 3.2.3
+      error-stack-parser-es: 0.1.0
       execa: 7.1.1
       fast-folder-size: 2.1.0
       fast-glob: 3.3.0
@@ -6056,6 +6057,10 @@ packages:
     resolution: {integrity: sha512-7dFHNmqeFSEt2ZBsCriorKnn3Z2pj+fd9kmI6QoWw4//DL+icEBfc0U7qJCisqrTsKTjw4fNFy2pW9OqStD84g==}
     dependencies:
       is-arrayish: 0.2.1
+
+  /error-stack-parser-es@0.1.0:
+    resolution: {integrity: sha512-K5/Oncl6ZizGM7tqGUc3Sd82zVKGsZ+l8FqhhnF8+10QujC/xT2VKwdaM/8rAR5F1BouVqgemMrhHG23vhOpMw==}
+    dev: true
 
   /es-abstract@1.22.1:
     resolution: {integrity: sha512-ioRRcXMO6OFyRpyzV3kE1IIBd4WG5/kltnzdxSCqoP8CMGs/Li+M1uF5o7lOkZVFjDs+NLesthnF66Pg/0q0Lw==}
