@@ -9,10 +9,7 @@
 </h1>
 
 [![ci](https://github.com/Hiratake/hiratake-web/actions/workflows/ci.yaml/badge.svg)](https://github.com/Hiratake/hiratake-web/actions/workflows/ci.yaml)
-[![twitter](https://img.shields.io/badge/twitter-@hirotaisou2012-blue?logo=twitter)](https://twitter.com/Hirotaisou2012)
-[![misskey](https://img.shields.io/badge/misskey-@hiratake-green?logo=misskey)](https://misskey.io/@Hiratake)
-[![chat](https://img.shields.io/discord/353538856315912204?logo=discord)](https://discord.gg/xu2ehn3)
-[![coffee](https://img.shields.io/badge/coffee-hiratake-yellow?logo=buymeacoffee)](https://www.buymeacoffee.com/hiratake)
+[![Open in Codeflow](https://developer.stackblitz.com/img/start_pr_dark_small.svg)](https:///pr.new/Hiratake/hiratake-web)
 
 Hiratake's website repository built with [Nuxt](https://nuxt.com/).  
 [Nuxt](https://nuxt.com/) を使用してつくった、ひらたけのウェブサイトのリポジトリ。
@@ -27,9 +24,16 @@ Hiratake's website repository built with [Nuxt](https://nuxt.com/).
 - **packages/social-share** - SNS シェアボタンの [Vue.js](https://ja.vuejs.org/) コンポーネントライブラリ
 - **packages/stylelint-config** - ワークスペースで使用する共通の [Stylelint](https://stylelint.io/) カスタム設定
 - **packages/tailwind-config** - ワークスペースで使用する共通の [TailwindCSS](https://tailwindcss.com/) カスタムプリセット設定
+- **packages/textlint-rule-front-matter** - YAML Front Matter のチェックをする [textlint](https://textlint.github.io/) ルール
 - **packages/textlint-rule-preset-custom** - ワークスペースで使用する共通の [textlint](https://textlint.github.io/) カスタムプリセット設定
+- **packages/textlint-rule-space-around-bold** - 太字のまわりをスペースで囲むかどうかを決める [textlint](https://textlint.github.io/) ルール
 - **packages/tsconfig** - ワークスペースで使用する [tsconfig.json](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html) カスタム設定コレクション
 
 ## 🌟 Contributing
 
 プロジェクトへの貢献をご検討の方は、 [CONTRIBUTING.md](.github/CONTRIBUTING.md) をご確認ください。
+
+## 💌 Contact
+
+- **Twitter** - [@Hirotaisou2012](https://twitter.com/Hirotaisou2012)
+- **Misskey** - [@Hiratake](https://misskey.io/@Hiratake)

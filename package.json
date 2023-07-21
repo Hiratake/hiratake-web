@@ -2,20 +2,19 @@
   "name": "hiratake-web-monorepo",
   "version": "0.0.0",
   "private": true,
-  "packageManager": "pnpm@8.6.6",
+  "packageManager": "pnpm@8.6.9",
   "engines": {
-    "node": "18.16.1",
-    "pnpm": "8.6.6"
+    "node": ">=16.10.0"
   },
   "volta": {
-    "node": "18.16.1"
+    "node": "18.17.0"
   },
   "devDependencies": {
     "@changesets/changelog-github": "0.4.8",
     "@changesets/cli": "2.26.2",
     "@commitlint/cli": "17.6.6",
     "@commitlint/config-conventional": "17.6.6",
-    "eslint": "8.44.0",
+    "eslint": "8.45.0",
     "eslint-config-custom": "workspace:*",
     "husky": "8.0.3",
     "lint-staged": "13.2.3",
@@ -26,7 +25,7 @@
     "textlint": "13.3.3",
     "textlint-filter-rule-allowlist": "4.0.0",
     "textlint-rule-preset-custom": "workspace:*",
-    "turbo": "1.10.7"
+    "turbo": "1.10.9"
   },
   "scripts": {
     "build": "turbo run build",
@@ -36,9 +35,12 @@
     "lint": "turbo run lint",
     "lint:fix": "turbo run lint:fix",
     "typecheck": "turbo run typecheck",
-    "format": "prettier \"**/!(*.md)\" -wu && textlint \"**/*.md\" --fix",
+    "content": "textlint \"**/*.md\"",
+    "content:fix": "textlint \"**/*.md\" --fix",
+    "format": "prettier \"**/!(*.md)\" -wu",
     "test": "turbo run test",
-    "release": "pnpm publish -r --no-git-checks",
+    "changeset:version": "changeset version",
+    "changeset:release": "changeset publish",
     "prepare": "husky install"
   }
 }

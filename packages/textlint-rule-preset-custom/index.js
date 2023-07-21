@@ -1,6 +1,11 @@
 // https://textlint.github.io/docs/configuring.html
 module.exports = {
   rules: {
+    // https://github.com/Hiratake/hiratake-web
+    '@hiratake/textlint-rule-front-matter':
+      require('@hiratake/textlint-rule-front-matter').default,
+    '@hiratake/textlint-rule-space-around-bold':
+      require('@hiratake/textlint-rule-space-around-bold').default,
     // https://github.com/textlint-rule/textlint-rule-no-unmatched-pair
     '@textlint-rule/textlint-rule-no-unmatched-pair': require('@textlint-rule/textlint-rule-no-unmatched-pair'),
     // https://github.com/textlint-ja/textlint-rule-preset-ja-spacing
@@ -11,6 +16,19 @@ module.exports = {
     'no-mixed-zenkaku-and-hankaku-alphabet': require('textlint-rule-no-mixed-zenkaku-and-hankaku-alphabet'),
   },
   rulesConfig: {
+    // Front Matter の項目チェック
+    '@hiratake/textlint-rule-front-matter': {
+      keys: [
+        { name: 'title', required: true },
+        { name: 'created', required: true },
+        { name: 'updated', required: true },
+      ],
+    },
+    // 太字の前後の半角スペースをチェック
+    '@hiratake/textlint-rule-space-around-bold': {
+      after: true,
+      before: true,
+    },
     // 括弧が対になっているかチェック
     '@textlint-rule/textlint-rule-no-unmatched-pair': true,
     // 単語などの前後の半角スペースをチェック
