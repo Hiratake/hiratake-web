@@ -1,0 +1,54 @@
+{
+  "name": "@hiratake/textlint-rule-front-matter",
+  "version": "1.0.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT",
+  "keywords": [
+    "textlintrule"
+  ],
+  "homepage": "https://github.com/Hiratake/hiratake-web/tree/main/packages/textlint-rule-front-matter",
+  "bugs": "https://github.com/Hiratake/hiratake-web/issues",
+  "contributors": [
+    {
+      "name": "Hiratake",
+      "url": "https://hiratake.dev/"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Hiratake/hiratake-web.git"
+  },
+  "main": "lib/index.js",
+  "files": [
+    "lib/",
+    "src/"
+  ],
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "gray-matter": "4.0.3"
+  },
+  "devDependencies": {
+    "@textlint/types": "13.3.3",
+    "@types/node": "20.4.2",
+    "eslint": "8.45.0",
+    "eslint-config-custom": "workspace:*",
+    "textlint-scripts": "13.3.3",
+    "textlint-tester": "13.3.3",
+    "ts-node": "10.9.1",
+    "tsconfig": "workspace:*",
+    "typescript": "5.1.6"
+  },
+  "scripts": {
+    "build": "textlint-scripts build",
+    "watch": "textlint-scripts build --watch",
+    "lint": "eslint . --ext .js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts,.vue",
+    "lint:fix": "eslint . --ext .js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts,.vue --fix",
+    "test": "textlint-scripts test",
+    "prepublishOnly": "pnpm build",
+    "postinstall": "pnpm build"
+  }
+}
