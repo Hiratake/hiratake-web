@@ -1,6 +1,6 @@
 {
-  "name": "@hiratake/textlint-rule-space-around-bold",
-  "version": "1.0.1",
+  "name": "@hiratake/textlint-rule-front-matter",
+  "version": "1.0.0",
   "publishConfig": {
     "access": "public"
   },
@@ -8,7 +8,7 @@
   "keywords": [
     "textlintrule"
   ],
-  "homepage": "https://github.com/Hiratake/hiratake-web/tree/main/packages/textlint-rule-space-around-bold",
+  "homepage": "https://github.com/Hiratake/hiratake-web/tree/main/packages/textlint-rule-front-matter",
   "bugs": "https://github.com/Hiratake/hiratake-web/issues",
   "contributors": [
     {
@@ -27,6 +27,9 @@
   ],
   "directories": {
     "test": "test"
+  },
+  "dependencies": {
+    "gray-matter": "4.0.3"
   },
   "devDependencies": {
     "@textlint/types": "13.3.3",

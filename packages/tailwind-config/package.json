@@ -7,11 +7,8 @@
     "@tailwindcss/typography": "0.5.9"
   },
   "devDependencies": {
-    "eslint": "8.44.0",
+    "eslint": "8.45.0",
     "eslint-config-custom": "workspace:*",
-    "tailwindcss": "3.3.3"
-  },
-  "peerDependencies": {
     "tailwindcss": "3.3.3"
   },
   "scripts": {
