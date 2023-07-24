@@ -2,7 +2,7 @@
   "name": "hiratake-web-monorepo",
   "version": "0.0.0",
   "private": true,
-  "packageManager": "pnpm@8.6.9",
+  "packageManager": "pnpm@8.6.10",
   "engines": {
     "node": ">=16.10.0"
   },
@@ -12,20 +12,20 @@
   "devDependencies": {
     "@changesets/changelog-github": "0.4.8",
     "@changesets/cli": "2.26.2",
-    "@commitlint/cli": "17.6.6",
-    "@commitlint/config-conventional": "17.6.6",
+    "@commitlint/cli": "17.6.7",
+    "@commitlint/config-conventional": "17.6.7",
     "eslint": "8.45.0",
     "eslint-config-custom": "workspace:*",
     "husky": "8.0.3",
     "lint-staged": "13.2.3",
     "prettier": "3.0.0",
     "prettier-plugin-tailwindcss": "0.4.1",
-    "stylelint": "15.10.1",
+    "stylelint": "15.10.2",
     "stylelint-config": "workspace:*",
     "textlint": "13.3.3",
     "textlint-filter-rule-allowlist": "4.0.0",
     "textlint-rule-preset-custom": "workspace:*",
-    "turbo": "1.10.8"
+    "turbo": "1.10.9"
   },
   "scripts": {
     "build": "turbo run build",
@@ -40,7 +40,7 @@
     "format": "prettier \"**/!(*.md)\" -wu",
     "test": "turbo run test",
     "changeset:version": "changeset version",
-    "changeset:release": "pnpm publish -r --no-git-checks --access public",
+    "changeset:release": "changeset publish",
     "prepare": "husky install"
   }
 }

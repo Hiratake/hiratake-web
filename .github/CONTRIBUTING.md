@@ -33,7 +33,10 @@
 
 ### IDE Setup
 
-このプロジェクトでは、 [Visual Studio Code](https://code.visualstudio.com/) の使用を推奨しています。
+このプロジェクトでは、 [Visual Studio Code](https://code.visualstudio.com/) の使用を推奨しています。  
+また、以下のボタンから [StackBlitz Codeflow](https://stackblitz.com/codeflow) を使用して開発や修正をすることも可能です。
+
+[![Open in Codeflow](https://developer.stackblitz.com/img/open_in_codeflow.svg)](https://pr.new/Hiratake/hiratake-web)
 
 推奨する拡張機能は `.vscode/extensions.json` に記載しておりますので、適宜インストールするなどの対応をおねがいいたします。
 
