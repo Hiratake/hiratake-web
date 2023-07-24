@@ -1,6 +1,9 @@
 {
   "name": "@hiratake/social-share",
   "version": "1.0.2",
+  "publishConfig": {
+    "access": "public"
+  },
   "license": "MIT",
   "keywords": [
     "vue"
@@ -38,7 +41,7 @@
     "eslint": "8.45.0",
     "eslint-config-custom": "workspace:*",
     "rimraf": "5.0.1",
-    "stylelint": "15.10.1",
+    "stylelint": "15.10.2",
     "stylelint-config": "workspace:*",
     "tsconfig": "workspace:*",
     "typescript": "5.1.6",
