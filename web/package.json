@@ -9,7 +9,7 @@
     "@heroicons/vue": "2.0.18",
     "@hiratake/social-share": "workspace:*",
     "@nuxt/content": "2.7.1",
-    "@nuxt/devtools": "0.7.0",
+    "@nuxt/devtools": "0.7.1",
     "@nuxtjs/eslint-module": "4.1.0",
     "@nuxtjs/stylelint-module": "5.1.0",
     "@types/node": "20.4.2",
