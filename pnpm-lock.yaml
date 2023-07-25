@@ -267,8 +267,8 @@ importers:
         specifier: workspace:*
         version: link:../packages/social-share
       '@nuxt/content':
-        specifier: 2.7.1
-        version: 2.7.1
+        specifier: 2.7.2
+        version: 2.7.2
       '@nuxt/devtools':
         specifier: 0.7.1
         version: 0.7.1(nuxt@3.6.5)(vite@4.4.6)
@@ -2939,8 +2939,8 @@ packages:
       - supports-color
     dev: true
 
-  /@nuxt/content@2.7.1:
-    resolution: {integrity: sha512-v7PozrJncWgo4FhjPSGz2hjcVlKYStZhazA2f2WxocKSpMWShR/bEnukn+7Ns+0oP7Llo53Nlw0LZs/nFL/XIg==}
+  /@nuxt/content@2.7.2:
+    resolution: {integrity: sha512-fP0nrnyjtFbluKltKUtC7jSMFc1xAH+bwweZyLwXb3gkIap2EHlVL+e9ptGt39+4HIkRkLgME7TNr/fUO+CHug==}
     dependencies:
       '@nuxt/kit': 3.6.5
       consola: 3.2.3
