@@ -1,6 +1,6 @@
 {
   "name": "@hiratake/textlint-rule-space-around-bold",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "publishConfig": {
     "access": "public"
   },
