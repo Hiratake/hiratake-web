@@ -1,6 +1,6 @@
 {
   "name": "@hiratake/social-share",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "publishConfig": {
     "access": "public"
   },
@@ -34,11 +34,11 @@
     }
   },
   "dependencies": {
-    "@vueuse/core": "10.2.1"
+    "@vueuse/core": "10.3.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "4.2.3",
-    "eslint": "8.45.0",
+    "eslint": "8.46.0",
     "eslint-config-custom": "workspace:*",
     "rimraf": "5.0.1",
     "stylelint": "15.10.2",
@@ -47,7 +47,7 @@
     "typescript": "5.1.6",
     "vite": "4.4.7",
     "vue": "3.3.4",
-    "vue-tsc": "1.8.6"
+    "vue-tsc": "1.8.8"
   },
   "peerDependencies": {
     "vue": "^3.3.0"
@@ -65,6 +65,6 @@
     "typecheck:web": "vue-tsc --noEmit -p tsconfig.web.json --composite false",
     "prebuild": "pnpm typecheck && rimraf dist",
     "prepublishOnly": "pnpm build",
-    "postinstall": "pnpm build"
+    "prepare": "pnpm build"
   }
 }
