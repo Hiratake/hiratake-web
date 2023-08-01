@@ -23,7 +23,7 @@ const route = useRoute()
 
 /** 現在のページがトップページかどうか */
 const isTop = computed<boolean>(() => route.path === '/')
-/** 現在のページがブログ記事一覧ページかどうか */
+// /** 現在のページがブログ記事一覧ページかどうか */
 const isBlog = computed<boolean>(
   () => route.path === '/blog' || route.path === '/blog/',
 )
@@ -46,7 +46,7 @@ const isBlog = computed<boolean>(
             'border-b border-b-slate-300 dark:border-b-slate-700',
           ]"
         >
-          <h1 class="px-1 text-3xl font-bold">{{ page.title }}</h1>
+          <h1 class="px-1 text-3xl font-bold">{{ page?.title || '' }}</h1>
           <dl
             v-if="!isBlog"
             :class="[
@@ -54,27 +54,27 @@ const isBlog = computed<boolean>(
               'bg-slate-200 dark:bg-slate-800',
             ]"
           >
-            <div v-if="page.created" class="grid gap-1">
+            <div v-if="page?.created" class="grid gap-1">
               <dt class="text-xs text-slate-600 dark:text-slate-400">
                 作成した日
               </dt>
               <dd class="text-sm font-bold">
                 <time
-                  :datetime="useDateFormat(page.created, 'YYYY-MM-DD').value"
+                  :datetime="useDateFormat(page?.created, 'YYYY-MM-DD').value"
                 >
-                  {{ useDateFormat(page.created, 'YYYY/MM/DD').value }}
+                  {{ useDateFormat(page?.created, 'YYYY/MM/DD').value }}
                 </time>
               </dd>
             </div>
-            <div v-if="page.updated" class="grid gap-1">
+            <div v-if="page?.updated" class="grid gap-1">
               <dt class="text-xs text-slate-600 dark:text-slate-400">
                 更新した日
               </dt>
               <dd class="text-sm font-bold">
                 <time
-                  :datetime="useDateFormat(page.updated, 'YYYY-MM-DD').value"
+                  :datetime="useDateFormat(page?.updated, 'YYYY-MM-DD').value"
                 >
-                  {{ useDateFormat(page.updated, 'YYYY/MM/DD').value }}
+                  {{ useDateFormat(page?.updated, 'YYYY/MM/DD').value }}
                 </time>
               </dd>
             </div>
@@ -133,7 +133,7 @@ const isBlog = computed<boolean>(
                 :url="`${config.public.siteUrl}${
                   route.path.endsWith('/') ? route.path : `${route.path}/`
                 }`"
-                :text="`${page.title} - ${config.public.siteName}`"
+                :text="`${page?.title || ''} - ${config.public.siteName}`"
                 service="twitter"
                 class="relative"
               >
@@ -158,7 +158,7 @@ const isBlog = computed<boolean>(
                 :url="`${config.public.siteUrl}${
                   route.path.endsWith('/') ? route.path : `${route.path}/`
                 }`"
-                :text="`${page.title} - ${config.public.siteName}`"
+                :text="`${page?.title || ''} - ${config.public.siteName}`"
                 service="facebook"
                 class="relative"
               >
@@ -183,7 +183,7 @@ const isBlog = computed<boolean>(
                 :url="`${config.public.siteUrl}${
                   route.path.endsWith('/') ? route.path : `${route.path}/`
                 }`"
-                :text="`${page.title} - ${config.public.siteName}`"
+                :text="`${page?.title || ''} - ${config.public.siteName}`"
                 service="mastodon"
                 class="relative"
               >
@@ -247,7 +247,7 @@ const isBlog = computed<boolean>(
                 :url="`${config.public.siteUrl}${
                   route.path.endsWith('/') ? route.path : `${route.path}/`
                 }`"
-                :text="`${page.title} - ${config.public.siteName}`"
+                :text="`${page?.title || ''} - ${config.public.siteName}`"
                 service="misskey"
                 class="relative"
               >
