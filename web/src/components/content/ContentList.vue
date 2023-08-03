@@ -17,7 +17,7 @@ const { data } = await useAsyncData(
     const [query, ...pathParts] = props.query
     return queryContent<Article>(query, ...pathParts)
       .where({ _dir: { $eq: pathParts[pathParts.length - 1] || query } })
-      .only(['_path', 'title', 'created', 'updated'])
+      .only(['_path', 'title', 'created'])
       .sort({ created: -1 })
       .find()
   },
@@ -46,7 +46,6 @@ const articles = computed(
             "
             :title="article.title"
             :created="article.created"
-            :updated="article.updated"
           />
         </template>
       </section>
