@@ -57,7 +57,7 @@ const isBlog = computed<boolean>(
           >
             <div v-if="page?.created" class="grid gap-1">
               <dt class="text-xs text-slate-600 dark:text-slate-400">
-                作成した日
+                投稿した日
               </dt>
               <dd class="text-sm font-bold">
                 <time
