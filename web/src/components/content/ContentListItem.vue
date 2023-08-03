@@ -2,11 +2,7 @@
 // Types
 import type { Article } from '@/types'
 // Icons
-import {
-  ArrowPathIcon,
-  PencilSquareIcon,
-  UserCircleIcon,
-} from '@heroicons/vue/20/solid'
+import { ArrowPathIcon, PencilSquareIcon } from '@heroicons/vue/20/solid'
 
 type ContentListItemProps = {
   /** URLを指定します */
@@ -23,8 +19,6 @@ const props = withDefaults(defineProps<ContentListItemProps>(), {
   created: undefined,
   updated: undefined,
 })
-
-const app = useAppConfig()
 
 /** 作成した日 */
 const createdDate = useDateFormat(props.created || useNow(), 'YYYY/MM/DD')
@@ -58,10 +52,6 @@ const updatedDate = useDateFormat(props.updated || useNow(), 'YYYY/MM/DD')
         <div class="flex items-center gap-1">
           <ArrowPathIcon class="h-4 w-4" aria-label="更新した日" />
           <span>{{ updatedDate }}</span>
-        </div>
-        <div class="flex items-center gap-1">
-          <UserCircleIcon class="h-4 w-4" aria-label="書いたひと" />
-          <span>{{ app.author.name }}</span>
         </div>
       </div>
     </NuxtLink>
