@@ -7,7 +7,7 @@ const route = useRoute()
 /** 構造化データマークアップ */
 const schema = await useAsyncData('page-schema', () => {
   // パンくずリストの項目を取得
-  const items: string[] = page.value._path
+  const items: string[] = (page.value?._path || '')
     .split('/')
     .filter((item: string) => item)
     .reduce((prev: string[], current: string) => {
@@ -47,14 +47,17 @@ if (route.path !== '/blog/' && route.path.startsWith('/blog/')) {
   schema.push(
     defineArticle({
       '@type': 'BlogPosting',
-      datePublished: page.value.created,
-      dateModified: page.value.updated,
+      datePublished: page.value?.created ? page.value.created : undefined,
+      dateModified: page.value?.updated ? page.value.updated : undefined,
       author: [{ name: app.author.name, url: config.public.siteUrl }],
     }),
   )
 }
+if (page.value) {
+  // ページが存在しない場合は構造化データを追加しない
+  useSchemaOrg(schema)
+}
 
-useSchemaOrg(schema)
 useHead({
   htmlAttrs: {
     prefix: 'og: https://ogp.me/ns#',

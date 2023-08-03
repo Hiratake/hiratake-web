@@ -1,6 +1,6 @@
 {
   "name": "@hiratake/textlint-rule-space-around-bold",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "publishConfig": {
     "access": "public"
   },
@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "@textlint/types": "13.3.3",
-    "eslint": "8.45.0",
+    "eslint": "8.46.0",
     "eslint-config-custom": "workspace:*",
     "textlint-scripts": "13.3.3",
     "textlint-tester": "13.3.3",
@@ -45,6 +45,6 @@
     "lint:fix": "eslint . --ext .js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts,.vue --fix",
     "test": "textlint-scripts test",
     "prepublishOnly": "pnpm build",
-    "postinstall": "pnpm build"
+    "prepare": "pnpm build"
   }
 }
