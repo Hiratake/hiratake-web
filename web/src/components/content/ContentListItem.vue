@@ -7,7 +7,7 @@ type ContentListItemProps = {
   url: Required<Article>['_path']
   /** タイトルを指定します */
   title: Required<Article>['title']
-  /** 作成した日を指定します */
+  /** 投稿した日を指定します */
   created?: Article['created']
 }
 
@@ -31,7 +31,7 @@ const props = withDefaults(defineProps<ContentListItemProps>(), {
       <h2 class="line-clamp-2 font-bold leading-snug">{{ props.title }}</h2>
       <div class="flex flex-wrap gap-x-3 gap-y-2 text-xs">
         <div class="flex items-center gap-1 text-slate-600 dark:text-slate-400">
-          <span>作成した日：</span>
+          <span>投稿した日：</span>
           <time
             :datetime="
               useDateFormat(props.created || useNow(), 'YYYY-MM-DD').value
