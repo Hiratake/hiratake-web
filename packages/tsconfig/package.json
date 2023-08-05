@@ -4,6 +4,6 @@
   "private": true,
   "license": "UNLICENSED",
   "dependencies": {
-    "@types/node": "20.4.6"
+    "@types/node": "20.4.8"
   }
 }
