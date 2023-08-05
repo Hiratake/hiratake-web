@@ -1,5 +1,11 @@
 # @hiratake/social-share
 
+## 1.0.3
+
+### Patch Changes
+
+- [#551](https://github.com/Hiratake/hiratake-web/pull/551) [`7254303`](https://github.com/Hiratake/hiratake-web/commit/72543031983939221434c7dae56e509de598b500) Thanks [@Hiratake](https://github.com/Hiratake)! - インストール時に `postinstall` が実行されインストールに失敗する問題を修正
+
 ## 1.0.2
 
 ### Patch Changes
