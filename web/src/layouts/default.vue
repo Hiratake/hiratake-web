@@ -312,21 +312,15 @@ const isBlog = computed<boolean>(
           </div>
 
           <div
-            v-if="
-              prev &&
-              prev?._dir === 'blog' &&
-              prev?._path &&
-              next &&
-              next?._dir === 'blog' &&
-              next?._path
-            "
+            v-if="page?._dir === 'blog'"
             class="flex flex-wrap items-start justify-between gap-x-12 gap-y-6"
           >
             <NuxtLink
-              :to="prev._path"
+              v-if="prev && prev?._dir === 'blog' && prev?._path"
+              :to="prev?._path"
               :class="[
-                'flex grow basis-2/5 items-center justify-start gap-4',
-                'relative min-w-[16rem] pb-2',
+                'flex grow basis-1/2 items-center justify-start gap-4',
+                'relative mr-auto max-w-xs pb-2',
                 'after:absolute after:bottom-0 after:left-0',
                 'after:bg-primary after:block after:h-0.5 after:w-full',
                 'after:scale-x-0 after:scale-y-100',
@@ -345,10 +339,11 @@ const isBlog = computed<boolean>(
               </article>
             </NuxtLink>
             <NuxtLink
-              :to="next._path"
+              v-if="next && next?._dir === 'blog' && next?._path"
+              :to="next?._path"
               :class="[
-                'flex grow basis-2/5 items-center justify-end gap-4',
-                'relative min-w-[16rem] pb-2',
+                'flex grow basis-1/2 items-center justify-end gap-4',
+                'relative ml-auto max-w-xs pb-2',
                 'after:absolute after:bottom-0 after:left-0',
                 'after:bg-primary after:block after:h-0.5 after:w-full',
                 'after:scale-x-0 after:scale-y-100',
