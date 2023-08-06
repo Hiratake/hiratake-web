@@ -317,7 +317,7 @@ const isBlog = computed<boolean>(
           >
             <NuxtLink
               v-if="prev && prev?._dir === 'blog' && prev?._path"
-              :to="prev?._path"
+              :to="prev?._path?.endsWith('/') ? prev?._path : `${prev?._path}/`"
               :class="[
                 'flex grow basis-1/2 items-center justify-start gap-4',
                 'relative mr-auto max-w-xs pb-2',
@@ -340,7 +340,7 @@ const isBlog = computed<boolean>(
             </NuxtLink>
             <NuxtLink
               v-if="next && next?._dir === 'blog' && next?._path"
-              :to="next?._path"
+              :to="next?._path?.endsWith('/') ? next?._path : `${next?._path}/`"
               :class="[
                 'flex grow basis-1/2 items-center justify-end gap-4',
                 'relative ml-auto max-w-xs pb-2',
