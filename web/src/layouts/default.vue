@@ -8,6 +8,7 @@ import {
   SocialShareSubmit,
 } from '@hiratake/social-share'
 // Icons
+import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/vue/20/solid'
 import {
   siFacebook,
   siGithub,
@@ -16,7 +17,7 @@ import {
   siTwitter,
 } from 'simple-icons'
 
-const { page } = useContent()
+const { next, page, prev } = useContent()
 const config = useRuntimeConfig()
 const app = useAppConfig()
 const route = useRoute()
@@ -126,7 +127,7 @@ const isBlog = computed<boolean>(
           <slot />
         </div>
 
-        <footer v-if="page">
+        <footer v-if="page" class="grid grid-cols-1 gap-16">
           <div class="grid gap-2">
             <div class="text-center text-xs">SNSでこのページをシェアする</div>
             <div class="flex items-center justify-center gap-1">
@@ -308,6 +309,63 @@ const isBlog = computed<boolean>(
                 </Transition>
               </SocialShare>
             </div>
+          </div>
+
+          <div
+            v-if="
+              prev &&
+              prev?._dir === 'blog' &&
+              prev?._path &&
+              next &&
+              next?._dir === 'blog' &&
+              next?._path
+            "
+            class="flex flex-wrap items-start justify-between gap-x-12 gap-y-6"
+          >
+            <NuxtLink
+              :to="prev._path"
+              :class="[
+                'flex grow basis-2/5 items-center justify-start gap-4',
+                'relative min-w-[16rem] pb-2',
+                'after:absolute after:bottom-0 after:left-0',
+                'after:bg-primary after:block after:h-0.5 after:w-full',
+                'after:scale-x-0 after:scale-y-100',
+                'after:origin-right after:transition-transform',
+                'hover:after:origin-left hover:after:scale-x-100',
+              ]"
+            >
+              <ChevronLeftIcon class="h-5 w-5" aria-hidden="true" />
+              <article class="flex flex-col items-start gap-1">
+                <span class="text-xs text-slate-600 dark:text-slate-400">
+                  前の投稿
+                </span>
+                <h2 class="text-sm font-bold">
+                  {{ prev?.title }}
+                </h2>
+              </article>
+            </NuxtLink>
+            <NuxtLink
+              :to="next._path"
+              :class="[
+                'flex grow basis-2/5 items-center justify-end gap-4',
+                'relative min-w-[16rem] pb-2',
+                'after:absolute after:bottom-0 after:left-0',
+                'after:bg-primary after:block after:h-0.5 after:w-full',
+                'after:scale-x-0 after:scale-y-100',
+                'after:origin-right after:transition-transform',
+                'hover:after:origin-left hover:after:scale-x-100',
+              ]"
+            >
+              <article class="flex flex-col items-end gap-1">
+                <span class="text-xs text-slate-600 dark:text-slate-400">
+                  次の投稿
+                </span>
+                <h2 class="text-right text-sm font-bold">
+                  {{ next?.title }}
+                </h2>
+              </article>
+              <ChevronRightIcon class="h-5 w-5" aria-hidden="true" />
+            </NuxtLink>
           </div>
         </footer>
       </component>
