@@ -1,6 +1,6 @@
 {
   "name": "@hiratake/social-share",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "publishConfig": {
     "access": "public"
   },
@@ -45,7 +45,7 @@
     "stylelint-config": "workspace:*",
     "tsconfig": "workspace:*",
     "typescript": "5.1.6",
-    "vite": "4.4.7",
+    "vite": "4.4.9",
     "vue": "3.3.4",
     "vue-tsc": "1.8.8"
   },

@@ -8,6 +8,7 @@ import {
   SocialShareSubmit,
 } from '@hiratake/social-share'
 // Icons
+import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/vue/20/solid'
 import {
   siFacebook,
   siGithub,
@@ -16,7 +17,7 @@ import {
   siTwitter,
 } from 'simple-icons'
 
-const { page } = useContent()
+const { next, page, prev } = useContent()
 const config = useRuntimeConfig()
 const app = useAppConfig()
 const route = useRoute()
@@ -41,6 +42,7 @@ const isBlog = computed<boolean>(
         class="grid grid-cols-1 gap-6"
       >
         <header
+          v-if="page"
           :class="[
             'grid gap-6 pb-10',
             'border-b border-b-slate-300 dark:border-b-slate-700',
@@ -56,7 +58,7 @@ const isBlog = computed<boolean>(
           >
             <div v-if="page?.created" class="grid gap-1">
               <dt class="text-xs text-slate-600 dark:text-slate-400">
-                作成した日
+                投稿した日
               </dt>
               <dd class="text-sm font-bold">
                 <time
@@ -125,7 +127,7 @@ const isBlog = computed<boolean>(
           <slot />
         </div>
 
-        <footer>
+        <footer v-if="page" class="grid grid-cols-1 gap-16">
           <div class="grid gap-2">
             <div class="text-center text-xs">SNSでこのページをシェアする</div>
             <div class="flex items-center justify-center gap-1">
@@ -307,6 +309,58 @@ const isBlog = computed<boolean>(
                 </Transition>
               </SocialShare>
             </div>
+          </div>
+
+          <div
+            v-if="page?._dir === 'blog'"
+            class="flex flex-wrap items-start justify-between gap-x-12 gap-y-6"
+          >
+            <NuxtLink
+              v-if="prev && prev?._dir === 'blog' && prev?._path"
+              :to="prev?._path?.endsWith('/') ? prev?._path : `${prev?._path}/`"
+              :class="[
+                'flex grow basis-1/2 items-center justify-start gap-4',
+                'relative mr-auto max-w-xs pb-2',
+                'after:absolute after:bottom-0 after:left-0',
+                'after:bg-primary after:block after:h-0.5 after:w-full',
+                'after:scale-x-0 after:scale-y-100',
+                'after:origin-right after:transition-transform',
+                'hover:after:origin-left hover:after:scale-x-100',
+              ]"
+            >
+              <ChevronLeftIcon class="h-5 w-5" aria-hidden="true" />
+              <article class="flex flex-col items-start gap-1">
+                <span class="text-xs text-slate-600 dark:text-slate-400">
+                  前の投稿
+                </span>
+                <h2 class="text-sm font-bold">
+                  {{ prev?.title }}
+                </h2>
+              </article>
+            </NuxtLink>
+            <NuxtLink
+              v-if="next && next?._dir === 'blog' && next?._path"
+              :to="next?._path?.endsWith('/') ? next?._path : `${next?._path}/`"
+              :class="[
+                'flex grow basis-1/2 items-center justify-end gap-4',
+                'relative ml-auto max-w-xs pb-2',
+                'after:absolute after:bottom-0 after:left-0',
+                'after:bg-primary after:block after:h-0.5 after:w-full',
+                'after:scale-x-0 after:scale-y-100',
+                'after:origin-right after:transition-transform',
+                'hover:after:origin-left hover:after:scale-x-100',
+              ]"
+            >
+              <article class="flex flex-col items-end gap-1">
+                <span class="text-xs text-slate-600 dark:text-slate-400">
+                  次の投稿
+                </span>
+                <h2 class="text-right text-sm font-bold">
+                  {{ next?.title }}
+                </h2>
+              </article>
+              <ChevronRightIcon class="h-5 w-5" aria-hidden="true" />
+            </NuxtLink>
           </div>
         </footer>
       </component>
