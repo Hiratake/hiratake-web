@@ -229,8 +229,9 @@ const isBlog = computed<boolean>(
                         id="share-mastodon"
                         placeholder="example.com"
                         :class="[
-                          'w-full shrink grow basis-full rounded px-2 py-1 text-sm',
-                          'bg-slate-100',
+                          'shrink grow basis-full',
+                          'w-full rounded px-2 py-1 text-sm outline-none',
+                          'bg-slate-100 dark:bg-slate-700',
                         ]"
                       />
                       <SocialShareSubmit
@@ -293,8 +294,9 @@ const isBlog = computed<boolean>(
                         id="share-misskey"
                         placeholder="example.com"
                         :class="[
-                          'w-full shrink grow basis-full rounded px-2 py-1 text-sm',
-                          'bg-slate-100',
+                          'shrink grow basis-full',
+                          'w-full rounded px-2 py-1 text-sm outline-none',
+                          'bg-slate-100 dark:bg-slate-700',
                         ]"
                       />
                       <SocialShareSubmit
