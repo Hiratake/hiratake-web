@@ -4,6 +4,10 @@ const sharedConfig = require('tailwind-config/tailwind.config')
 module.exports = {
   presets: [sharedConfig],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: '#a83d3d',
+      },
+    },
   },
 }
