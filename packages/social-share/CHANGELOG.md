@@ -1,5 +1,11 @@
 # @hiratake/social-share
 
+## 1.0.4
+
+### Patch Changes
+
+- [#584](https://github.com/Hiratake/hiratake-web/pull/584) [`fb8358b`](https://github.com/Hiratake/hiratake-web/commit/fb8358bce685706de8492070fb94f1de2328f53b) Thanks [@Hiratake](https://github.com/Hiratake)! - SNS のサービス一覧に X を追加
+
 ## 1.0.3
 
 ### Patch Changes
