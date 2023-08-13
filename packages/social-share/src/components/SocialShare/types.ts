@@ -1,5 +1,5 @@
 /** シェア先サービス */
-export type Service = 'twitter' | 'facebook' | 'mastodon' | 'misskey'
+export type Service = 'twitter' | 'x' | 'facebook' | 'mastodon' | 'misskey'
 
 /** SocialShare コンポーネントの Props */
 export type SocialShareProps = {

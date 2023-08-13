@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+// Icons
 import { HomeIcon, NewspaperIcon } from '@heroicons/vue/20/solid'
 </script>
 
