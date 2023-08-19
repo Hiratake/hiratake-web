@@ -37,3 +37,4 @@ Hiratake's website repository built with [Nuxt](https://nuxt.com/).
 
 - **Twitter** - [@Hirotaisou2012](https://twitter.com/Hirotaisou2012)
 - **Misskey** - [@Hiratake](https://misskey.io/@Hiratake)
+- **Bluesky** - [@hiratake.dev](https://bsky.app/profile/hiratake.dev)
