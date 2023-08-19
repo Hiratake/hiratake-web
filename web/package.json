@@ -22,7 +22,7 @@
     "postcss": "8.4.28",
     "sass": "1.65.1",
     "simple-icons": "9.10.0",
-    "stylelint": "15.10.2",
+    "stylelint": "15.10.3",
     "stylelint-config": "workspace:*",
     "tailwind-config": "workspace:*",
     "tailwindcss": "3.3.3",
