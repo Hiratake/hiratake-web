@@ -5,6 +5,8 @@ import type { Service, ShareFunction } from '../types'
 /** シェアするSNSの一覧 */
 export const services: {
   [key in Service]: {
+    /** サービス名 */
+    name: string
     /** Web Intent のエンドポイント */
     endpoint: string
     /** シェアするページのURL */
@@ -17,24 +19,28 @@ export const services: {
 } = {
   /** Twitter */
   twitter: {
+    name: 'Twitter',
     endpoint: 'twitter.com/intent/tweet',
     url: 'url',
     text: 'text',
   },
   /** X */
   x: {
+    name: 'X',
     endpoint: 'x.com/intent/tweet',
     url: 'url',
     text: 'text',
   },
   /** Facebook */
   facebook: {
+    name: 'Facebook',
     endpoint: 'www.facebook.com/sharer/sharer.php',
     url: 'u',
     text: 't',
   },
   /** Mastodon */
   mastodon: {
+    name: 'Mastodon',
     endpoint: '/share',
     url: 'url',
     text: 'text',
@@ -42,6 +48,7 @@ export const services: {
   },
   /** Misskey */
   misskey: {
+    name: 'Misskey',
     endpoint: '/share',
     url: 'url',
     text: 'text',
