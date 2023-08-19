@@ -12,6 +12,8 @@ import {
 } from '@hiratake/social-share'
 // Icons
 import { siFacebook, siMastodon, siMisskey, siTwitter } from 'simple-icons'
+// Utils
+import { socialShareServices } from '@hiratake/social-share'
 
 type SocialShareItemProps = Omit<SocialShareProps, 'service'> & {
   service: Extract<
@@ -23,15 +25,9 @@ type SocialShareItemProps = Omit<SocialShareProps, 'service'> & {
 const props = defineProps<SocialShareItemProps>()
 
 /** サービス名 */
-const serviceName = computed<string>(() => {
-  const services: { id: SocialShareItemProps['service']; name: string }[] = [
-    { id: 'twitter', name: 'Twitter' },
-    { id: 'facebook', name: 'Facebook' },
-    { id: 'mastodon', name: 'Mastodon' },
-    { id: 'misskey', name: 'Misskey' },
-  ]
-  return services.find((item) => item.id === props.service)?.name || ''
-})
+const serviceName = computed<string>(
+  () => socialShareServices[props.service].name,
+)
 /** サービスアイコン */
 const serviceIcon = computed<SimpleIcon['path']>(() => {
   if (props.service === 'twitter') {
