@@ -1,6 +1,6 @@
 {
   "name": "@hiratake/social-share",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "publishConfig": {
     "access": "public"
   },
@@ -37,11 +37,11 @@
     "@vueuse/core": "10.3.0"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "4.2.3",
+    "@vitejs/plugin-vue": "4.3.1",
     "eslint": "8.47.0",
     "eslint-config-custom": "workspace:*",
     "rimraf": "5.0.1",
-    "stylelint": "15.10.2",
+    "stylelint": "15.10.3",
     "stylelint-config": "workspace:*",
     "tsconfig": "workspace:*",
     "typescript": "5.1.6",
