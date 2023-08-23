@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 // Icons
-import { HomeIcon, NewspaperIcon } from '@heroicons/vue/20/solid'
+import { ChevronRightIcon } from '@heroicons/vue/20/solid'
 </script>
 
 <template>
@@ -28,46 +28,26 @@ import { HomeIcon, NewspaperIcon } from '@heroicons/vue/20/solid'
         お探しのページは、URLが変更もしくは削除された可能性があります。お手数ですが、入力されたURLに間違いがないかお確かめの上、以下より該当のページをお探しください。
       </p>
 
-      <div
-        class="grid w-full grid-cols-fill-56 items-center gap-x-6 gap-y-4 text-sm"
-      >
-        <NuxtLink
-          :class="[
-            'flex items-center justify-center gap-2',
-            'relative overflow-hidden rounded-lg border px-4 py-2 transition-colors',
-            'text-current hover:text-white',
-            'border-slate-300 hover:border-transparent',
-            'dark:border-slate-700 dark:hover:border-transparent',
-            'before:absolute before:inset-0 before:z-0 before:m-auto',
-            'before:aspect-square before:w-full',
-            'before:transition-transform before:duration-200',
-            'before:bg-primary before:pointer-events-none before:rounded-full',
-            'before:scale-0 hover:before:scale-105',
-          ]"
-          to="/"
-        >
-          <HomeIcon class="relative z-10 h-5 w-5" aria-hidden="true" />
-          <span class="relative z-10">トップページ</span>
-        </NuxtLink>
-        <NuxtLink
-          :class="[
-            'flex items-center justify-center gap-2',
-            'relative overflow-hidden rounded-lg border px-4 py-2 transition-colors',
-            'text-current hover:text-white',
-            'border-slate-300 hover:border-transparent',
-            'dark:border-slate-700 dark:hover:border-transparent',
-            'before:absolute before:inset-0 before:z-0 before:m-auto',
-            'before:aspect-square before:w-full',
-            'before:transition-transform before:duration-200',
-            'before:bg-primary before:pointer-events-none before:rounded-full',
-            'before:scale-0 hover:before:scale-105',
-          ]"
-          to="/blog/"
-        >
-          <NewspaperIcon class="relative z-10 h-5 w-5" aria-hidden="true" />
-          <span class="relative z-10">ブログ</span>
-        </NuxtLink>
-      </div>
+      <ul class="flex flex-col items-start gap-2 text-sm">
+        <li>
+          <NuxtLink to="/" class="link">
+            <ChevronRightIcon class="fill-primary h-5 w-5" aria-hidden="true" />
+            <span>トップページ</span>
+          </NuxtLink>
+        </li>
+        <li>
+          <NuxtLink to="/blog/" class="link">
+            <ChevronRightIcon class="fill-primary h-5 w-5" aria-hidden="true" />
+            <span>ブログ</span>
+          </NuxtLink>
+        </li>
+      </ul>
     </div>
   </div>
 </template>
+
+<style scoped>
+.link {
+  @apply after:bg-primary relative flex items-center gap-1 pb-0.5 pr-1 after:absolute after:bottom-0 after:left-0 after:block after:h-px after:w-full after:origin-right after:scale-x-0 after:scale-y-100 after:transition-transform hover:after:origin-left hover:after:scale-x-100;
+}
+</style>
