@@ -34,15 +34,7 @@ const services = ['twitter', 'facebook', 'mastodon', 'misskey'] as const
       <NuxtLink
         v-if="prev && prev?._dir === 'blog' && prev?._path"
         :to="prev?._path?.endsWith('/') ? prev?._path : `${prev?._path}/`"
-        :class="[
-          'flex grow basis-1/2 items-center justify-start gap-4',
-          'relative mr-auto max-w-xs pb-2',
-          'after:absolute after:bottom-0 after:left-0',
-          'after:bg-primary after:block after:h-0.5 after:w-full',
-          'after:scale-x-0 after:scale-y-100',
-          'after:origin-right after:transition-transform',
-          'hover:after:origin-left hover:after:scale-x-100',
-        ]"
+        class="link mr-auto justify-start"
       >
         <ChevronLeftIcon class="h-5 w-5" aria-hidden="true" />
         <article class="flex flex-col items-start gap-1">
@@ -57,15 +49,7 @@ const services = ['twitter', 'facebook', 'mastodon', 'misskey'] as const
       <NuxtLink
         v-if="next && next?._dir === 'blog' && next?._path"
         :to="next?._path?.endsWith('/') ? next?._path : `${next?._path}/`"
-        :class="[
-          'flex grow basis-1/2 items-center justify-end gap-4',
-          'relative ml-auto max-w-xs pb-2',
-          'after:absolute after:bottom-0 after:left-0',
-          'after:bg-primary after:block after:h-0.5 after:w-full',
-          'after:scale-x-0 after:scale-y-100',
-          'after:origin-right after:transition-transform',
-          'hover:after:origin-left hover:after:scale-x-100',
-        ]"
+        class="link ml-auto justify-end"
       >
         <article class="flex flex-col items-end gap-1">
           <span class="text-xs text-slate-600 dark:text-slate-400">
@@ -80,3 +64,9 @@ const services = ['twitter', 'facebook', 'mastodon', 'misskey'] as const
     </div>
   </footer>
 </template>
+
+<style scoped>
+.link {
+  @apply after:bg-primary relative flex max-w-xs grow basis-1/2 items-center gap-4 pb-2 after:absolute after:bottom-0 after:left-0 after:block after:h-0.5 after:w-full after:origin-right after:scale-x-0 after:scale-y-100 after:transition-transform hover:after:origin-left hover:after:scale-x-100;
+}
+</style>
