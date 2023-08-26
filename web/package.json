@@ -14,7 +14,7 @@
     "@nuxtjs/stylelint-module": "5.1.0",
     "@vueuse/nuxt": "10.3.0",
     "autoprefixer": "10.4.15",
-    "eslint": "8.47.0",
+    "eslint": "8.48.0",
     "eslint-config-custom": "workspace:*",
     "feed": "4.2.2",
     "nuxt": "3.6.5",
