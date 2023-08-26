@@ -2,7 +2,7 @@
 // Types
 import type { Article } from '@/types'
 
-type ContentListItemProps = {
+type ArticleListItemProps = {
   /** URLを指定します */
   url: Required<Article>['_path']
   /** タイトルを指定します */
@@ -11,7 +11,7 @@ type ContentListItemProps = {
   created?: Article['created']
 }
 
-const props = withDefaults(defineProps<ContentListItemProps>(), {
+const props = withDefaults(defineProps<ArticleListItemProps>(), {
   created: undefined,
 })
 </script>
