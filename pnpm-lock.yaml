@@ -306,8 +306,8 @@ importers:
         specifier: 1.66.1
         version: 1.66.1
       simple-icons:
-        specifier: 9.11.0
-        version: 9.11.0
+        specifier: 9.12.0
+        version: 9.12.0
       stylelint:
         specifier: 15.10.3
         version: 15.10.3
@@ -12458,8 +12458,8 @@ packages:
       - supports-color
     dev: true
 
-  /simple-icons@9.11.0:
-    resolution: {integrity: sha512-jI1Cv7MUZsGxiNt0AO4Xf5TWtpnDYQP55RILAsvP3Nd6YXlJRNj8SVT6mI099GLAmRuEu3LGkiT6FwsNaDjNzA==}
+  /simple-icons@9.12.0:
+    resolution: {integrity: sha512-ATl97JnoUvjNRlQzqJAtMaH0P5aCf1fAF5vQddpWG/dxisrSwyIInQ88pdEL0a5m8llEJnDU5xo4TEj9fyx2fA==}
     engines: {node: '>=0.12.18'}
     dev: true
 
