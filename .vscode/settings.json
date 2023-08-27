@@ -1,4 +1,12 @@
 {
+  "css.lint.unknownAtRules": "ignore",
+  "editor.detectIndentation": false,
+  "editor.insertSpaces": true,
+  "editor.tabSize": 2,
+  "files.eol": "\n",
+  "files.insertFinalNewline": true,
+  "git.branchProtection": ["main"],
+  "scss.lint.unknownAtRules": "ignore",
   "stylelint.validate": ["css", "postcss", "scss", "vue"],
   "tailwindCSS.includeLanguages": {
     "vue": "html"

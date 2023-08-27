@@ -7,4 +7,4 @@ updated: 2023-07-01
 
 趣味のことから技術とかの真面目なことまで、書きたいことができたときになんとなく書くブログです。
 
-:content-list{:query='["blog"]'}
+:article-list{:query='["blog"]'}
