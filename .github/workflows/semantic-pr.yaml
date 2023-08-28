@@ -1,4 +1,4 @@
-# Pull Request
+# Semantic PR
 
 name: PR
 
@@ -13,9 +13,9 @@ permissions:
   pull-requests: read
 
 jobs:
-  # Semantic PR Title
+  # Semantic Title
   semantic:
-    name: Semantic PR Title
+    name: Semantic Title
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
