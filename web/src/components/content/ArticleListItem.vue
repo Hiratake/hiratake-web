@@ -26,6 +26,7 @@ const props = withDefaults(defineProps<ArticleListItemProps>(), {
   >
     <NuxtLink
       :to="props.url"
+      :title="props.title"
       class="flex h-full flex-col justify-between gap-4 px-4 py-6"
     >
       <h2 class="line-clamp-2 font-bold leading-snug">{{ props.title }}</h2>
