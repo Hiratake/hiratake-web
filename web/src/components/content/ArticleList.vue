@@ -8,15 +8,15 @@ import {
   FaceFrownIcon,
 } from '@heroicons/vue/20/solid'
 
-type ContentListProps = {
+type ArticleListProps = {
   query: string[]
 }
 
-const props = defineProps<ContentListProps>()
+const props = defineProps<ArticleListProps>()
 
 // コンテンツの取得
 const { data } = await useAsyncData(
-  `content-list-${props.query.join('-')}`,
+  `article-list-${props.query.join('-')}`,
   () => {
     const [query, ...pathParts] = props.query
     return queryContent<Article>(query, ...pathParts)
@@ -55,7 +55,7 @@ const filteredArticles = computed(() => {
     <template v-if="articles?.length">
       <section class="grid grid-cols-fill-60 gap-6">
         <template v-for="article in filteredArticles" :key="article._path">
-          <ContentListItem
+          <ArticleListItem
             :url="
               article._path.endsWith('/') ? article._path : `${article._path}/`
             "

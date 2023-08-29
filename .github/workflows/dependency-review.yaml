@@ -1,0 +1,28 @@
+# Dependency Review
+
+name: PR
+
+on:
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  # Dependency Review
+  dependency-review:
+    name: Dependency Review
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744
+
+      - name: 'Dependency Review'
+        uses: actions/dependency-review-action@f6fff72a3217f580d5afd49a46826795305b63c7
