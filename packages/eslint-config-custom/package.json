@@ -5,7 +5,7 @@
   "license": "UNLICENSED",
   "main": "index.js",
   "dependencies": {
-    "@nuxt/eslint-config": "0.1.1",
+    "@nuxt/eslint-config": "0.2.0",
     "eslint-config-prettier": "9.0.0"
   },
   "devDependencies": {
