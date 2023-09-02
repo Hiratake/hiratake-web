@@ -3,6 +3,13 @@
 import { siGithub, siMisskey, siTwitter } from 'simple-icons'
 
 const website = useWebsite()
+
+/** アイコン画像 */
+const iconUrl = useImage({
+  id: '69d60176-a6f2-4844-ae78-bb33d3f32400',
+  provider: 'cloudflare',
+  width: 96,
+})
 </script>
 
 <template>
@@ -14,7 +21,7 @@ const website = useWebsite()
       ]"
     >
       <img
-        :src="`${website.site.url}/cdn-cgi/imagedelivery/${website.services.cloudflareImage}/69d60176-a6f2-4844-ae78-bb33d3f32400/w=96`"
+        :src="iconUrl"
         alt="icon"
         width="96"
         height="96"

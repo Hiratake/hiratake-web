@@ -15,18 +15,8 @@ const props = withDefaults(defineProps<ProseImgProps>(), {
   height: 864,
 })
 
-const website = useWebsite()
-
 /** 画像URL */
-const imageUrl = computed<string>(() =>
-  [
-    website.value.site.url,
-    '/cdn-cgi/imagedelivery/',
-    website.value.services.cloudflareImage,
-    '/',
-    props.src,
-  ].join(''),
-)
+const imageUrl = useImage({ id: props.src, provider: 'cloudflare' })
 </script>
 
 <template>
