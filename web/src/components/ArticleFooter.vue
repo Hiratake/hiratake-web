@@ -3,7 +3,7 @@
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/vue/20/solid'
 
 const { next, page, prev } = useContent()
-const config = useRuntimeConfig()
+const website = useWebsite()
 const route = useRoute()
 
 /** シェア先サービス */
@@ -19,10 +19,10 @@ const services = ['twitter', 'facebook', 'mastodon', 'misskey'] as const
           v-for="item in services"
           :key="item"
           :service="item"
-          :url="`${config.public.siteUrl}${
+          :url="`${website.site.url}${
             route.path.endsWith('/') ? route.path : `${route.path}/`
           }`"
-          :text="`${page?.title || ''} - ${config.public.siteName}`"
+          :text="`${page?.title || ''} - ${website.site.name}`"
         />
       </div>
     </div>
