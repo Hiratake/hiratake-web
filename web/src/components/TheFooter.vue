@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-const config = useRuntimeConfig()
+const website = useWebsite()
 const year = useDateFormat(new Date(), 'YYYY')
 </script>
 
@@ -24,8 +24,6 @@ const year = useDateFormat(new Date(), 'YYYY')
         </NuxtLink>
       </li>
     </ul>
-    <p class="text-center">
-      &copy; 2014-{{ year }} {{ config.public.siteName }}
-    </p>
+    <p class="text-center">&copy; 2014-{{ year }} {{ website.site.name }}</p>
   </footer>
 </template>

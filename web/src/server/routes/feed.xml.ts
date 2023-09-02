@@ -1,4 +1,5 @@
 // Types
+import type { MarkdownParsedContent } from '@nuxt/content/dist/runtime/types'
 import type { Article } from '@/types'
 // Libraries
 import { serverQueryContent } from '#content/server'
@@ -17,13 +18,17 @@ export default defineEventHandler(async (event) => {
     image: `${config.public.siteUrl}/logo.png`,
     copyright: config.public.siteName,
   })
-  const articles = await serverQueryContent(event, 'blog')
+  const articles = await serverQueryContent<MarkdownParsedContent>(
+    event,
+    'blog',
+  )
     .where({ _dir: { $eq: 'blog' } })
     .sort({ created: -1 })
     .limit(10)
     .find()
 
   articles
+    .filter((article) => article?._extension === 'md' && !article._empty)
     .filter(
       (
         article,
@@ -41,6 +46,7 @@ export default defineEventHandler(async (event) => {
         id: url,
         link: url,
         description: article.description.replace(/\r?\n/g, ''),
+        content: generateContentFromAst(article.body.children, true),
         date: new Date(article.created ? Date.parse(article.created) : ''),
       })
     })
