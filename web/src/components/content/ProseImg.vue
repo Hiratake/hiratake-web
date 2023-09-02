@@ -15,10 +15,18 @@ const props = withDefaults(defineProps<ProseImgProps>(), {
   height: 864,
 })
 
-const config = useRuntimeConfig()
+const website = useWebsite()
 
-const hash = config.public.cloudflareImageHash
-const imageUrl = `${config.public.siteUrl}/cdn-cgi/imagedelivery/${hash}/${props.src}`
+/** 画像URL */
+const imageUrl = computed<string>(() =>
+  [
+    website.value.site.url,
+    '/cdn-cgi/imagedelivery/',
+    website.value.services.cloudflareImage,
+    '/',
+    props.src,
+  ].join(''),
+)
 </script>
 
 <template>
