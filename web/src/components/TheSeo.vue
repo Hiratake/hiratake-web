@@ -121,11 +121,12 @@ useHead({
 })
 useServerSeoMeta({
   ogType: route.path === '/' ? 'website' : 'article',
+  ogImage: `${website.value.site.url}/ogp.jpg`,
   twitterSite: website.value.author.social.twitter.replace(
     'https://twitter.com/',
     '@',
   ),
-  twitterCard: 'summary_large_image',
+  twitterCard: 'summary',
 })
 </script>
 
