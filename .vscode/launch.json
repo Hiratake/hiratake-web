@@ -1,0 +1,33 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Launch Chrome",
+      "request": "launch",
+      "type": "chrome",
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}/web/src",
+      "presentation": {
+        "hidden": true
+      }
+    },
+    {
+      "name": "Launch Nuxt Server",
+      "request": "launch",
+      "type": "node",
+      "outputCapture": "std",
+      "cwd": "${workspaceFolder}/web",
+      "program": "${workspaceFolder}/node_modules/nuxi/bin/nuxi.mjs",
+      "args": ["dev"],
+      "presentation": {
+        "hidden": true
+      }
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Web",
+      "configurations": ["Launch Nuxt Server", "Launch Chrome"]
+    }
+  ]
+}
