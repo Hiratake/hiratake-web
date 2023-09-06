@@ -2,7 +2,7 @@
 // Components
 import { Switch } from '@headlessui/vue'
 
-const config = useRuntimeConfig()
+const website = useWebsite()
 const colorMode = useColorMode()
 
 /** ダークモードが指定されているかどうか */
@@ -20,21 +20,21 @@ const isDark = computed<boolean>({
     ]"
   >
     <NuxtLink
-      :aria-label="`${config.public.siteName} homepage`"
+      :aria-label="`${website.site.name} homepage`"
       href="/"
       class="w-32 transition-opacity hover:opacity-70"
     >
       <img
-        :alt="config.public.siteName"
-        :title="config.public.siteName"
+        :alt="website.site.name"
+        :title="website.site.name"
         class="block dark:hidden"
         src="/logo-light.svg"
         width="162"
         height="40"
       />
       <img
-        :alt="config.public.siteName"
-        :title="config.public.siteName"
+        :alt="website.site.name"
+        :title="website.site.name"
         class="hidden dark:block"
         src="/logo-dark.svg"
         width="162"

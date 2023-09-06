@@ -61,6 +61,9 @@ export const generateContentFromAst = (
           : ''
         const alt = (node?.props?.alt as string) || ''
         text += `<${node.tag} src="${src}" alt="${alt}" />`
+      } else if (['style', 'script'].includes(node.tag)) {
+        // styleやscript
+        continue
       }
     }
 
