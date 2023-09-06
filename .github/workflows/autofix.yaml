@@ -23,7 +23,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@3df4ab11eba7bda6032a0b82a6bb43b11571feac
+        uses: actions/checkout@72f2cec99f417b1a1c5e2e88945068983b7965f9
 
       - name: Setup Node.js
         uses: actions/setup-node@5e21ff4d9bc1a8cf6de233a3057d20ec6b3fb69d
