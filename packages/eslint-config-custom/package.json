@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "license": "UNLICENSED",
-  "main": "index.js",
+  "main": "index.cjs",
   "dependencies": {
     "@nuxt/eslint-config": "0.2.0",
     "eslint-config-prettier": "9.0.0"
@@ -12,7 +12,7 @@
     "eslint": "8.48.0"
   },
   "scripts": {
-    "lint": "eslint . --ext .js -c index.js",
-    "lint:fix": "eslint . --ext .js -c index.js --fix"
+    "lint": "eslint . --ext .cjs -c index.cjs",
+    "lint:fix": "eslint . --ext .cjs -c index.cjs --fix"
   }
 }
