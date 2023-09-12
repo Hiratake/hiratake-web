@@ -1,6 +1,7 @@
 # 📦 Packages
 
 - **packages/eslint-config-custom** - ワークスペースで使用する共通の [ESLint](https://eslint.org/) カスタム設定
+- **packages/mkarticle** - 新しいブログ記事の Markdown ファイルを生成する CLI ツール
 - **packages/social-share** - SNS シェアボタンの [Vue.js](https://ja.vuejs.org/) コンポーネントライブラリ
 - **packages/stylelint-config** - ワークスペースで使用する共通の [Stylelint](https://stylelint.io/) カスタム設定
 - **packages/tailwind-config** - ワークスペースで使用する共通の [TailwindCSS](https://tailwindcss.com/) カスタムプリセット設定

@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "license": "UNLICENSED",
-  "main": "index.js",
+  "main": "index.cjs",
   "dependencies": {
     "@hiratake/textlint-rule-front-matter": "workspace:*",
     "@hiratake/textlint-rule-space-around-bold": "workspace:*",
