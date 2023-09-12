@@ -1,0 +1,50 @@
+{
+  "name": "mkarticle",
+  "version": "0.0.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "bin"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./cli": {
+      "types": "./dist/cli.d.ts",
+      "import": "./dist/cli.mjs",
+      "require": "./dist/cli.cjs"
+    }
+  },
+  "bin": {
+    "mkarticle": "./bin/mkarticle.mjs"
+  },
+  "type": "module",
+  "sideEffects": false,
+  "dependencies": {
+    "citty": "0.1.4",
+    "consola": "3.2.3"
+  },
+  "devDependencies": {
+    "eslint": "8.48.0",
+    "eslint-config-custom": "workspace:*",
+    "jiti": "1.20.0",
+    "tsconfig": "workspace:*",
+    "typescript": "5.2.2",
+    "unbuild": "2.0.0"
+  },
+  "scripts": {
+    "mkarticle": "jiti ./scripts/mkarticle.mjs",
+    "build": "unbuild",
+    "lint": "eslint . --ext .js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts",
+    "lint:fix": "eslint . --ext .js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix",
+    "typecheck": "tsc --noEmit",
+    "prepare": "pnpm build"
+  }
+}
