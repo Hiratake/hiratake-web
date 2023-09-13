@@ -18,6 +18,7 @@
     "eslint-config-custom": "workspace:*",
     "husky": "8.0.3",
     "lint-staged": "14.0.1",
+    "mkarticle": "workspace:*",
     "prettier": "3.0.3",
     "prettier-plugin-tailwindcss": "0.5.4",
     "stylelint": "15.10.3",
@@ -31,7 +32,7 @@
     "build": "turbo run build",
     "dev": "pnpm --filter hiratake-web dev",
     "generate": "pnpm --filter hiratake-web generate",
-    "preview": "pnpm --filter hiratake-web preview",
+    "make": "mkarticle create",
     "lint": "turbo run lint",
     "lint:fix": "turbo run lint:fix",
     "typecheck": "turbo run typecheck",
@@ -41,6 +42,7 @@
     "test": "turbo run test",
     "changeset:version": "changeset version",
     "changeset:release": "changeset publish",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "preview": "pnpm --filter hiratake-web preview"
   }
 }
