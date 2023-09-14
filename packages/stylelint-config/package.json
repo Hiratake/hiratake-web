@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "license": "UNLICENSED",
-  "main": "index.js",
+  "main": "index.cjs",
   "dependencies": {
     "postcss-html": "1.5.0",
     "stylelint-config-recess-order": "4.3.0",
