@@ -26,7 +26,7 @@
     "textlint": "13.3.3",
     "textlint-filter-rule-allowlist": "4.0.0",
     "textlint-rule-preset-custom": "workspace:*",
-    "turbo": "1.10.13"
+    "turbo": "1.10.14"
   },
   "scripts": {
     "build": "turbo run build",
