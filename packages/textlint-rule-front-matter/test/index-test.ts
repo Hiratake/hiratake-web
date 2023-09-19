@@ -31,6 +31,21 @@ updated: 2023-07-17
       },
     },
     {
+      text: `---
+alphabet: AbcDef
+number: 123456
+---
+
+ここに本文
+`,
+      options: {
+        keys: [
+          { name: 'alphabet', pattern: '^[a-zA-Z]+$' },
+          { name: 'number', pattern: '^[0-9]+$' },
+        ],
+      },
+    },
+    {
       text: 'ここに本文',
     },
   ],
@@ -71,6 +86,25 @@ title: これはテスト
       errors: [
         { message: 'Front Matter に「created」を指定してください。' },
         { message: 'Front Matter に「updated」を指定してください。' },
+      ],
+    },
+    {
+      text: `---
+alphabet: Abc123
+number: Abc123
+---
+
+ここに本文
+`,
+      options: {
+        keys: [
+          { name: 'alphabet', pattern: '^[a-zA-Z]+$' },
+          { name: 'number', pattern: '^[0-9]+$' },
+        ],
+      },
+      errors: [
+        { message: '「alphabet」が指定されたパターンと一致しません。' },
+        { message: '「number」が指定されたパターンと一致しません。' },
       ],
     },
   ],
