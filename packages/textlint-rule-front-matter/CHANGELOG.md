@@ -1,5 +1,11 @@
 # @hiratake/textlint-rule-front-matter
 
+## 1.1.0
+
+### Minor Changes
+
+- [#720](https://github.com/Hiratake/hiratake-web/pull/720) [`31132b8`](https://github.com/Hiratake/hiratake-web/commit/31132b896965c03596c79e25b02efe987610e351) Thanks [@Hiratake](https://github.com/Hiratake)! - 指定した正規表現に一致するかを検証するオプションを追加
+
 ## 1.0.1
 
 ### Patch Changes

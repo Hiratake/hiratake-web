@@ -58,6 +58,27 @@ $ pnpm add -D @hiratake/textlint-rule-front-matter
 }
 ```
 
+また、 `pattern` オプションに正規表現のパターンを指定することで各項目の入力内容を検証することが可能です。以下は `alphabet` と `number` の入力内容が、それぞれ英字であるかどうか・数字であるかどうかを検証する場合の例です。
+
+```json
+{
+  "rules": {
+    "@hiratake/textlint-rule-front-matter": {
+      "keys": [
+        {
+          "name": "alphabet",
+          "pattern": "^[a-zA-Z]+$"
+        },
+        {
+          "name": "number",
+          "pattern": "^[0-9]+$"
+        },
+      ]
+    }
+  }
+}
+```
+
 デフォルトでは、Front Matter が存在していない場合はエラーを出力しません。  
 textlint を実行する全てのファイルに Front Matter が存在していることを確認する場合は `enableFrontMatterExistenceCheck` オプションを有効にします。
 
