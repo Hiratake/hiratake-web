@@ -8,6 +8,8 @@ export interface Options {
     name: string
     /** 必須かどうか */
     required?: boolean
+    /** 正規表現のパターン */
+    pattern?: string
   }[]
   /** Front Matter が定義されていない場合にエラーとするか */
   enableFrontMatterExistenceCheck?: boolean
@@ -61,6 +63,26 @@ const reporter: TextlintRuleModule<Options> = (context, options = {}) => {
                 },
               ),
             )
+          }
+        })
+
+      // 指定された正規表現のパターンと一致しているかチェック
+      keys
+        .filter((key) => key.pattern)
+        .forEach((key) => {
+          if (key.name in data) {
+            const re = new RegExp(key?.pattern || '')
+            if (!re.test(data[key.name])) {
+              report(
+                node,
+                new RuleError(
+                  `「${key.name}」が指定されたパターンと一致しません。`,
+                  {
+                    padding: locator.at(0),
+                  },
+                ),
+              )
+            }
           }
         })
     },
