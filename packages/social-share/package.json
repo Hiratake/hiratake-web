@@ -38,16 +38,16 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "4.3.4",
-    "eslint": "8.49.0",
+    "eslint": "8.50.0",
     "eslint-config-custom": "workspace:*",
-    "rimraf": "5.0.1",
+    "rimraf": "5.0.4",
     "stylelint": "15.10.3",
     "stylelint-config": "workspace:*",
     "tsconfig": "workspace:*",
     "typescript": "5.2.2",
     "vite": "4.4.9",
     "vue": "3.3.4",
-    "vue-tsc": "1.8.13"
+    "vue-tsc": "1.8.15"
   },
   "peerDependencies": {
     "vue": "^3.3.0"
