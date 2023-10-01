@@ -9,7 +9,7 @@
     "eslint-config-prettier": "9.0.0"
   },
   "devDependencies": {
-    "eslint": "8.49.0"
+    "eslint": "8.50.0"
   },
   "scripts": {
     "lint": "eslint . --ext .cjs -c index.cjs",
