@@ -4,10 +4,10 @@
   "private": true,
   "packageManager": "pnpm@8.9.0",
   "engines": {
-    "node": ">=16.14.0"
+    "node": ">=18.12.0"
   },
   "volta": {
-    "node": "18.18.0"
+    "node": "18.18.2"
   },
   "devDependencies": {
     "@changesets/changelog-github": "0.4.8",
