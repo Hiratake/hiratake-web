@@ -29,11 +29,11 @@
     "test": "test"
   },
   "devDependencies": {
-    "@textlint/types": "13.3.3",
+    "@textlint/types": "13.4.0",
     "eslint": "8.53.0",
     "eslint-config-custom": "workspace:*",
-    "textlint-scripts": "13.3.3",
-    "textlint-tester": "13.3.3",
+    "textlint-scripts": "13.4.0",
+    "textlint-tester": "13.4.0",
     "ts-node": "10.9.1",
     "tsconfig": "workspace:*",
     "typescript": "5.2.2"
