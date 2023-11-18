@@ -24,7 +24,7 @@ const props = withDefaults(defineProps<ArticleListItemProps>(), {
       'dark:bg-slate-800 dark:hover:bg-slate-700/70',
     ]"
   >
-    <NuxtLink
+    <SiteLink
       :to="props.url"
       :title="props.title"
       class="flex h-full flex-col justify-between gap-4 px-4 py-6"
@@ -42,6 +42,6 @@ const props = withDefaults(defineProps<ArticleListItemProps>(), {
           </time>
         </div>
       </div>
-    </NuxtLink>
+    </SiteLink>
   </article>
 </template>

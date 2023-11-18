@@ -34,11 +34,11 @@
     }
   },
   "dependencies": {
-    "@vueuse/core": "10.6.0"
+    "@vueuse/core": "10.6.1"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "4.4.1",
-    "eslint": "8.53.0",
+    "@vitejs/plugin-vue": "4.5.0",
+    "eslint": "8.54.0",
     "eslint-config-custom": "workspace:*",
     "rimraf": "5.0.5",
     "stylelint": "15.11.0",

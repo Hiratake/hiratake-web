@@ -7,24 +7,24 @@ const year = useDateFormat(new Date(), 'YYYY')
   <footer class="mx-auto box-content grid max-w-3xl gap-6 px-6 py-24 text-xs">
     <ul class="flex flex-wrap items-center justify-center gap-x-6 gap-y-4">
       <li>
-        <NuxtLink href="/blog/" class="underline hover:no-underline">
+        <SiteLink to="/blog/" class="underline hover:no-underline">
           ブログ
-        </NuxtLink>
+        </SiteLink>
       </li>
       <li>
-        <NuxtLink href="/privacy/" class="underline hover:no-underline">
+        <SiteLink to="/privacy/" class="underline hover:no-underline">
           プライバシーポリシー
-        </NuxtLink>
+        </SiteLink>
       </li>
       <li>
-        <NuxtLink href="/about/" class="underline hover:no-underline">
+        <SiteLink to="/about/" class="underline hover:no-underline">
           運営者情報
-        </NuxtLink>
+        </SiteLink>
       </li>
       <li>
-        <NuxtLink href="/contact/" class="underline hover:no-underline">
+        <SiteLink to="/contact/" class="underline hover:no-underline">
           お問い合わせ
-        </NuxtLink>
+        </SiteLink>
       </li>
     </ul>
     <p class="text-center">&copy; 2014-{{ year }} {{ website.site.name }}</p>
