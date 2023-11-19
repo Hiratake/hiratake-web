@@ -19,9 +19,9 @@ const isDark = computed<boolean>({
       'px-6 pb-16 pt-10 sm:pt-16',
     ]"
   >
-    <NuxtLink
+    <SiteLink
       :aria-label="`${website.site.name} homepage`"
-      href="/"
+      to="/"
       class="w-32 transition-opacity hover:opacity-70"
     >
       <img
@@ -40,7 +40,7 @@ const isDark = computed<boolean>({
         width="162"
         height="40"
       />
-    </NuxtLink>
+    </SiteLink>
 
     <Switch
       v-model="isDark"

@@ -5,18 +5,20 @@ import type { Article } from '@/types'
 import { serverQueryContent } from '#content/server'
 import { Feed } from 'feed'
 
-const config = useRuntimeConfig()
+const siteName = 'Hiratake Web'
+const siteUrl = process.env.CF_PAGES_URL || 'https://hiratake.dev'
+const siteLocalse = 'ja'
 
 export default defineEventHandler(async (event) => {
   const feed = new Feed({
-    title: config.public.siteName,
+    title: siteName,
     description:
       'ひらたけのブログです。趣味のことから技術とかの真面目なことまで、書きたいことができたときになんとなく書く、そんな場所です。',
-    id: config.public.siteUrl,
-    link: `${config.public.siteUrl}/blog/`,
-    language: config.public.language,
-    image: `${config.public.siteUrl}/logo.png`,
-    copyright: config.public.siteName,
+    id: siteUrl,
+    link: `${siteUrl}/blog/`,
+    language: siteLocalse,
+    image: `${siteUrl}/logo.png`,
+    copyright: siteName,
   })
   const articles = await serverQueryContent<MarkdownParsedContent>(
     event,
@@ -38,7 +40,7 @@ export default defineEventHandler(async (event) => {
       } => Boolean(article._path) && Boolean(article.title),
     )
     .forEach((article) => {
-      const url = `${config.public.siteUrl}${
+      const url = `${siteUrl}${
         article._path.endsWith('/') ? article._path : `${article._path}/`
       }`
       feed.addItem({

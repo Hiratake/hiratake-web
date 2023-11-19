@@ -23,11 +23,11 @@ export default defineNuxtConfig({
   eslint: {
     lintOnStart: false,
   },
-  extends: ['nuxt-seo-kit'],
   modules: [
     '@nuxt/content',
     '@nuxtjs/eslint-module',
     '@nuxtjs/stylelint-module',
+    '@nuxtseo/module',
     '@vueuse/nuxt',
   ],
   nitro: {
@@ -48,14 +48,20 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://hiratake.dev',
-      siteName: 'Hiratake Web',
-      siteDescription: 'ひらたけの個人ウェブサイトです。',
-      language: 'ja',
-      trailingSlash: true,
       gtmId: 'GTM-WF3MQWM',
       cloudflareImageHash: '3uWTcGTKoWPI8987WrI0hQ',
     },
+  },
+  site: {
+    defaultLocale: 'ja',
+    description: 'ひらたけの個人ウェブサイトです。',
+    identity: {
+      type: 'Person',
+    },
+    name: 'Hiratake Web',
+    trailingSlash: true,
+    twitter: '@Hirotaisou2012',
+    url: process.env.CF_PAGES_URL || 'https://hiratake.dev',
   },
   srcDir: 'src/',
   stylelint: {

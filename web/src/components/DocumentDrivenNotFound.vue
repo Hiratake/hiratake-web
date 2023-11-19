@@ -30,16 +30,16 @@ import { ChevronRightIcon } from '@heroicons/vue/20/solid'
 
       <ul class="flex flex-col items-start gap-2 text-sm">
         <li>
-          <NuxtLink to="/" class="link">
+          <SiteLink to="/" class="link">
             <ChevronRightIcon class="fill-primary h-5 w-5" aria-hidden="true" />
             <span>トップページ</span>
-          </NuxtLink>
+          </SiteLink>
         </li>
         <li>
-          <NuxtLink to="/blog/" class="link">
+          <SiteLink to="/blog/" class="link">
             <ChevronRightIcon class="fill-primary h-5 w-5" aria-hidden="true" />
             <span>ブログ</span>
-          </NuxtLink>
+          </SiteLink>
         </li>
       </ul>
     </div>
