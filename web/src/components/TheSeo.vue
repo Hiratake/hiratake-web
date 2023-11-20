@@ -63,6 +63,7 @@ useHead({
   htmlAttrs: {
     prefix: 'og: https://ogp.me/ns#',
   },
+  titleTemplate: '%pageTitle',
   meta: [
     { name: 'application-name', content: website.value.site.name },
     { name: 'theme-color', content: '#a83d3d' },
@@ -122,10 +123,6 @@ useHead({
 useServerSeoMeta({
   ogType: route.path === '/' ? 'website' : 'article',
   ogImage: `${website.value.site.url}/ogp.jpg`,
-  twitterSite: website.value.author.social.twitter.replace(
-    'https://twitter.com/',
-    '@',
-  ),
   twitterCard: 'summary',
 })
 </script>
