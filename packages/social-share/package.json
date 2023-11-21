@@ -33,6 +33,7 @@
       "require": "./dist/social-share.umd.js"
     }
   },
+  "type": "module",
   "dependencies": {
     "@vueuse/core": "10.6.1"
   },
