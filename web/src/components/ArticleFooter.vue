@@ -31,7 +31,7 @@ const services = ['twitter', 'facebook', 'mastodon', 'misskey'] as const
       v-if="page?._dir === 'blog'"
       class="flex flex-wrap items-start justify-between gap-x-12 gap-y-6"
     >
-      <NuxtLink
+      <SiteLink
         v-if="prev && prev?._dir === 'blog' && prev?._path"
         :to="prev?._path?.endsWith('/') ? prev?._path : `${prev?._path}/`"
         class="link mr-auto justify-start"
@@ -45,8 +45,8 @@ const services = ['twitter', 'facebook', 'mastodon', 'misskey'] as const
             {{ prev?.title }}
           </h2>
         </article>
-      </NuxtLink>
-      <NuxtLink
+      </SiteLink>
+      <SiteLink
         v-if="next && next?._dir === 'blog' && next?._path"
         :to="next?._path?.endsWith('/') ? next?._path : `${next?._path}/`"
         class="link ml-auto justify-end"
@@ -60,7 +60,7 @@ const services = ['twitter', 'facebook', 'mastodon', 'misskey'] as const
           </h2>
         </article>
         <ChevronRightIcon class="h-5 w-5" aria-hidden="true" />
-      </NuxtLink>
+      </SiteLink>
     </div>
   </footer>
 </template>

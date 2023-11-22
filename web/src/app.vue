@@ -1,5 +1,4 @@
 <template>
-  <SeoKit />
   <Body
     :class="[
       'bg-slate-100 text-slate-700',
