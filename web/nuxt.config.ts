@@ -61,7 +61,7 @@ export default defineNuxtConfig({
     name: 'Hiratake Web',
     trailingSlash: true,
     twitter: '@Hirotaisou2012',
-    url: process.env.CF_PAGES_URL || 'https://hiratake.dev',
+    url: 'https://hiratake.dev',
   },
   srcDir: 'src/',
   stylelint: {
