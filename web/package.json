@@ -21,7 +21,7 @@
     "nuxt": "3.8.2",
     "postcss": "8.4.31",
     "sass": "1.69.5",
-    "simple-icons": "9.21.0",
+    "simple-icons": "10.0.0",
     "stylelint": "15.11.0",
     "stylelint-config": "workspace:*",
     "tailwind-config": "workspace:*",
