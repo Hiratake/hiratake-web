@@ -16,7 +16,7 @@
   "devDependencies": {
     "eslint": "8.54.0",
     "eslint-config-custom": "workspace:*",
-    "textlint": "13.4.0"
+    "textlint": "13.4.1"
   },
   "scripts": {
     "lint": "eslint . --ext .js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts,.vue",
