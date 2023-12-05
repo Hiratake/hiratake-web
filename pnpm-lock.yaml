@@ -109,7 +109,7 @@ importers:
     devDependencies:
       '@vitejs/plugin-vue':
         specifier: 4.5.1
-        version: 4.5.1(vite@5.0.4)(vue@3.3.9)
+        version: 4.5.1(vite@5.0.5)(vue@3.3.9)
       eslint:
         specifier: 8.55.0
         version: 8.55.0
@@ -132,8 +132,8 @@ importers:
         specifier: 5.3.2
         version: 5.3.2
       vite:
-        specifier: 5.0.4
-        version: 5.0.4(@types/node@18.19.1)
+        specifier: 5.0.5
+        version: 5.0.5(@types/node@18.19.1)
       vue:
         specifier: 3.3.9
         version: 3.3.9(typescript@5.3.2)
@@ -3431,6 +3431,7 @@ packages:
     dependencies:
       is-glob: 4.0.3
       micromatch: 4.0.5
+      napi-wasm: 1.1.0
     dev: true
     bundledDependencies:
       - napi-wasm
@@ -4898,14 +4899,14 @@ packages:
       vue: 3.3.9(typescript@5.3.2)
     dev: true
 
-  /@vitejs/plugin-vue@4.5.1(vite@5.0.4)(vue@3.3.9):
+  /@vitejs/plugin-vue@4.5.1(vite@5.0.5)(vue@3.3.9):
     resolution: {integrity: sha512-DaUzYFr+2UGDG7VSSdShKa9sIWYBa1LL8KC0MNOf2H5LjcTPjob0x8LbkqXWmAtbANJCkpiQTj66UVcQkN2s3g==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       vite: ^4.0.0 || ^5.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 5.0.4(@types/node@18.19.1)
+      vite: 5.0.5(@types/node@18.19.1)
       vue: 3.3.9(typescript@5.3.2)
     dev: true
 
@@ -10544,6 +10545,10 @@ packages:
     hasBin: true
     dev: true
 
+  /napi-wasm@1.1.0:
+    resolution: {integrity: sha512-lHwIAJbmLSjF9VDRm9GoVOy9AGp3aIvkjv+Kvz9h16QR3uSVYH78PNQUnT2U4X53mhlnV2M7wrhibQ3GHicDmg==}
+    dev: true
+
   /natural-compare@1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
 
@@ -15345,8 +15350,8 @@ packages:
       fsevents: 2.3.3
     dev: true
 
-  /vite@5.0.4(@types/node@18.19.1):
-    resolution: {integrity: sha512-RzAr8LSvM8lmhB4tQ5OPcBhpjOZRZjuxv9zO5UcxeoY2bd3kP3Ticd40Qma9/BqZ8JS96Ll/jeBX9u+LJZrhVg==}
+  /vite@5.0.5(@types/node@18.19.1):
+    resolution: {integrity: sha512-OekeWqR9Ls56f3zd4CaxzbbS11gqYkEiBtnWFFgYR2WV8oPJRRKq0mpskYy/XaoCL3L7VINDhqqOMNDiYdGvGg==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
     peerDependencies:
