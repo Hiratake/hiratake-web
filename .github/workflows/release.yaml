@@ -24,7 +24,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        node: [18]
+        node: [20]
     timeout-minutes: 10
 
     if: github.repository == 'Hiratake/hiratake-web'

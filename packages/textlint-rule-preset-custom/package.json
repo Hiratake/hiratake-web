@@ -14,7 +14,7 @@
     "textlint-rule-no-mixed-zenkaku-and-hankaku-alphabet": "1.0.1"
   },
   "devDependencies": {
-    "eslint": "8.54.0",
+    "eslint": "8.55.0",
     "eslint-config-custom": "workspace:*",
     "textlint": "13.4.1"
   },
