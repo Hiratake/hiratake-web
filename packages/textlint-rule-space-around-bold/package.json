@@ -34,9 +34,9 @@
     "eslint-config-custom": "workspace:*",
     "textlint-scripts": "13.4.1",
     "textlint-tester": "13.4.1",
-    "ts-node": "10.9.1",
+    "ts-node": "10.9.2",
     "tsconfig": "workspace:*",
-    "typescript": "5.3.2"
+    "typescript": "5.3.3"
   },
   "scripts": {
     "build": "textlint-scripts build",
