@@ -32,11 +32,11 @@
     "consola": "3.2.3"
   },
   "devDependencies": {
-    "eslint": "8.54.0",
+    "eslint": "8.55.0",
     "eslint-config-custom": "workspace:*",
     "jiti": "1.21.0",
     "tsconfig": "workspace:*",
-    "typescript": "5.3.2",
+    "typescript": "5.3.3",
     "unbuild": "2.0.0"
   },
   "scripts": {
