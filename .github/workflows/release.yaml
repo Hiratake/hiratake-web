@@ -36,7 +36,7 @@ jobs:
           fetch-depth: 0
 
       - name: Setup Node.js
-        uses: actions/setup-node@8f152de45cc393bb48ce5d89d36b731f54556e65
+        uses: actions/setup-node@72476173717e9fa92b08abe87e9c9dc3a42dc0c8
         with:
           node-version: ${{ matrix.node }}
 
