@@ -21,7 +21,7 @@
     "mkarticle": "workspace:*",
     "prettier": "3.1.0",
     "prettier-plugin-tailwindcss": "0.5.9",
-    "stylelint": "15.11.0",
+    "stylelint": "16.0.2",
     "stylelint-config": "workspace:*",
     "textlint": "13.4.1",
     "textlint-filter-rule-allowlist": "4.0.0",
