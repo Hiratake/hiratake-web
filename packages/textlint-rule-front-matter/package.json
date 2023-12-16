@@ -33,7 +33,7 @@
   },
   "devDependencies": {
     "@textlint/types": "13.4.1",
-    "eslint": "8.55.0",
+    "eslint": "8.56.0",
     "eslint-config-custom": "workspace:*",
     "textlint-scripts": "13.4.1",
     "textlint-tester": "13.4.1",
