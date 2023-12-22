@@ -13,6 +13,7 @@ updated: 2023-10-15
 - **Bluesky** - [@hiratake.dev](https://bsky.app/profile/hiratake.dev)
 - **Discord** - [@hiratake](https://discord.com/users/221498004505362433)
 - **GitHub** - [@Hiratake](https://github.com/Hiratake)
+- **Mastodon** - [@hiratake](https://mozilla.social/@hiratake)
 - **Misskey** - [@Hiratake](https://misskey.io/@Hiratake)
 - **X** - [@Hirotaisou2012](https://x.com/Hirotaisou2012)
 
