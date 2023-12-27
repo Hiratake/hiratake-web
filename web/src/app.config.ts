@@ -7,8 +7,8 @@ export default defineAppConfig({
       散歩とか和菓子たべるのとかがすきです。
     `,
     social: {
-      twitter: 'https://twitter.com/Hirotaisou2012',
-      misskey: 'https://misskey.io/@Hiratake',
+      mastodon: 'https://mozilla.social/@hiratake',
+      bluesky: 'https://bsky.app/profile/hiratake.dev',
       github: 'https://github.com/Hiratake',
     },
   },
