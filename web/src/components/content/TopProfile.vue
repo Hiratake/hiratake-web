@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 // Icons
-import { siGithub, siMisskey, siTwitter } from 'simple-icons'
+import { siBluesky, siGithub, siMastodon } from 'simple-icons'
 
 const website = useWebsite()
 
@@ -33,34 +33,37 @@ const iconUrl = useImage({
       <div class="text-sm">{{ website.author.biography }}</div>
       <div class="flex items-center gap-3">
         <NuxtLink
-          :href="website.author.social.twitter"
-          title="Twitter"
+          :href="website.author.social.mastodon"
+          title="Mastodon"
+          rel="noopener noreferrer me"
           class="h-5 w-5"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
-            class="h-full w-full fill-[#1da1f2]"
+            class="h-full w-full fill-[#6364ff]"
           >
-            <path :d="siTwitter.path" />
+            <path :d="siMastodon.path" />
           </svg>
         </NuxtLink>
         <NuxtLink
-          :href="website.author.social.misskey"
-          title="Misskey"
+          :href="website.author.social.bluesky"
+          title="Bluesky"
+          rel="noopener noreferrer me"
           class="h-5 w-5"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
-            class="h-full w-full fill-[#a1ca03]"
+            class="h-full w-full fill-[#0285ff]"
           >
-            <path :d="siMisskey.path" />
+            <path :d="siBluesky.path" />
           </svg>
         </NuxtLink>
         <NuxtLink
           :href="website.author.social.github"
           title="GitHub"
+          rel="noopener noreferrer me"
           class="h-5 w-5"
         >
           <svg
