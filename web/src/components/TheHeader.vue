@@ -7,7 +7,7 @@ const colorMode = useColorMode()
 
 /** ダークモードが指定されているかどうか */
 const isDark = computed<boolean>({
-  get: () => colorMode.value === 'dark' ?? false,
+  get: () => colorMode.value === 'dark',
   set: (val) => (colorMode.value = val ? 'dark' : 'light'),
 })
 </script>
