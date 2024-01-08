@@ -337,8 +337,8 @@ importers:
         specifier: 1.69.5
         version: 1.69.5
       simple-icons:
-        specifier: 10.4.0
-        version: 10.4.0
+        specifier: 11.0.0
+        version: 11.0.0
       stylelint:
         specifier: 16.1.0
         version: 16.1.0(typescript@5.3.3)
@@ -3446,6 +3446,7 @@ packages:
     dependencies:
       is-glob: 4.0.3
       micromatch: 4.0.5
+      napi-wasm: 1.1.0
     dev: true
     bundledDependencies:
       - napi-wasm
@@ -10209,6 +10210,10 @@ packages:
     hasBin: true
     dev: true
 
+  /napi-wasm@1.1.0:
+    resolution: {integrity: sha512-lHwIAJbmLSjF9VDRm9GoVOy9AGp3aIvkjv+Kvz9h16QR3uSVYH78PNQUnT2U4X53mhlnV2M7wrhibQ3GHicDmg==}
+    dev: true
+
   /natural-compare@1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
 
@@ -12901,8 +12906,8 @@ packages:
       - supports-color
     dev: true
 
-  /simple-icons@10.4.0:
-    resolution: {integrity: sha512-XBoU1ljCsWjw59IVkaQ1nKc0PiaDAAKNFVx59ueC0tBy4WY/I4Q040sGj6ok2cZRLT8zBzL1HaTubi8MRqmojQ==}
+  /simple-icons@11.0.0:
+    resolution: {integrity: sha512-n6z6fQwODmhRfy4RBkNmnP67yzqGUa/0ETJDkMX8Fl2riLSl1O8nB3qAl5Ij0oyEwgYC0WbMLXn1dkyYSTDs1w==}
     engines: {node: '>=0.12.18'}
     dev: true
 
