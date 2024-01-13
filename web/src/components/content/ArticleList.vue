@@ -26,16 +26,15 @@ const { data } = await useAsyncData(
       .find()
   },
 )
-const articles = computed(
-  () =>
-    data.value?.filter(
-      (
-        article,
-      ): article is Article & {
-        _path: Required<Article>['_path']
-        title: Required<Article>['title']
-      } => Boolean(article._path) && Boolean(article.title),
-    ),
+const articles = computed(() =>
+  data.value?.filter(
+    (
+      article,
+    ): article is Article & {
+      _path: Required<Article>['_path']
+      title: Required<Article>['title']
+    } => Boolean(article._path) && Boolean(article.title),
+  ),
 )
 
 /** 現在表示中のページ番号 */
