@@ -19,7 +19,7 @@
     "husky": "8.0.3",
     "lint-staged": "15.2.0",
     "mkarticle": "workspace:*",
-    "prettier": "3.2.1",
+    "prettier": "3.2.4",
     "prettier-plugin-tailwindcss": "0.5.11",
     "stylelint": "16.1.0",
     "stylelint-config": "workspace:*",
