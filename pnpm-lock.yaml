@@ -192,8 +192,8 @@ importers:
         version: 4.0.3
     devDependencies:
       '@textlint/types':
-        specifier: 13.4.1
-        version: 13.4.1
+        specifier: 14.0.0
+        version: 14.0.0
       eslint:
         specifier: 8.56.0
         version: 8.56.0
@@ -253,8 +253,8 @@ importers:
   packages/textlint-rule-space-around-bold:
     devDependencies:
       '@textlint/types':
-        specifier: 13.4.1
-        version: 13.4.1
+        specifier: 14.0.0
+        version: 14.0.0
       eslint:
         specifier: 8.56.0
         version: 8.56.0
@@ -4331,6 +4331,10 @@ packages:
   /@textlint/ast-node-types@13.4.1:
     resolution: {integrity: sha512-qrZyhCh8Ekk6nwArx3BROybm9BnX6vF7VcZbijetV/OM3yfS4rTYhoMWISmhVEP2H2re0CtWEyMl/XF+WdvVLQ==}
 
+  /@textlint/ast-node-types@14.0.0:
+    resolution: {integrity: sha512-IZq8PpIqmCE1yWQu2h3EV/+FDZ2TemLq/P4k3C/LjsTCQroYgwbglZHzxuRD7WbEQnjb+y4FyyT9/ziCXUFzaw==}
+    dev: true
+
   /@textlint/ast-tester@13.4.1:
     resolution: {integrity: sha512-YSHUR1qDgMPGF5+nvrquEhif6zRJ667xUnfP/9rTNtThIhoTQINvczr5/7xa43F1PDWplL6Curw+2jrE1qHwGQ==}
     dependencies:
@@ -4487,6 +4491,12 @@ packages:
     resolution: {integrity: sha512-1ApwQa31sFmiJeJ5yTNFqjbb2D1ICZvIDW0tFSM0OtmQCSDFNcKD3YrrwDBgSokZ6gWQq/FpNjlhi6iETUWt0Q==}
     dependencies:
       '@textlint/ast-node-types': 13.4.1
+    dev: true
+
+  /@textlint/types@14.0.0:
+    resolution: {integrity: sha512-svpl1niFSgkhckoEgvrEZwruypSIoiY3k2VBiQXRw1njPGOwuIYh7bS2L3B/7E8YvtVnNFS0RSxd4MgG0gSxfA==}
+    dependencies:
+      '@textlint/ast-node-types': 14.0.0
     dev: true
 
   /@textlint/utils@13.4.1:
