@@ -4,7 +4,7 @@
   "private": true,
   "packageManager": "pnpm@8.14.3",
   "engines": {
-    "node": ">=18.12.0"
+    "node": ">=18.14.0"
   },
   "volta": {
     "node": "20.11.0"
@@ -23,7 +23,7 @@
     "prettier-plugin-tailwindcss": "0.5.11",
     "stylelint": "16.2.0",
     "stylelint-config": "workspace:*",
-    "textlint": "13.4.1",
+    "textlint": "14.0.0",
     "textlint-filter-rule-allowlist": "4.0.0",
     "textlint-rule-preset-custom": "workspace:*",
     "turbo": "1.11.3"
