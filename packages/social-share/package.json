@@ -42,7 +42,7 @@
     "eslint": "8.56.0",
     "eslint-config-custom": "workspace:*",
     "rimraf": "5.0.5",
-    "stylelint": "16.2.0",
+    "stylelint": "16.2.1",
     "stylelint-config": "workspace:*",
     "tsconfig": "workspace:*",
     "typescript": "5.3.3",
