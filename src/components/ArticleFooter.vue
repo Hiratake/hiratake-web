@@ -67,6 +67,6 @@ const services = ['twitter', 'facebook', 'mastodon', 'misskey'] as const
 
 <style scoped>
 .link {
-  @apply after:bg-primary relative flex max-w-xs grow basis-1/2 items-center gap-4 pb-2 after:absolute after:bottom-0 after:left-0 after:block after:h-0.5 after:w-full after:origin-right after:scale-x-0 after:scale-y-100 after:transition-transform hover:after:origin-left hover:after:scale-x-100;
+  @apply relative flex max-w-xs grow basis-1/2 items-center gap-4 pb-2 after:absolute after:bottom-0 after:left-0 after:block after:h-0.5 after:w-full after:origin-right after:scale-x-0 after:scale-y-100 after:bg-primary after:transition-transform hover:after:origin-left hover:after:scale-x-100;
 }
 </style>

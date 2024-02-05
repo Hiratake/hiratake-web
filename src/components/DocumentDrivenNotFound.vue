@@ -31,13 +31,13 @@ import { ChevronRightIcon } from '@heroicons/vue/20/solid'
       <ul class="flex flex-col items-start gap-2 text-sm">
         <li>
           <SiteLink to="/" class="link">
-            <ChevronRightIcon class="fill-primary h-5 w-5" aria-hidden="true" />
+            <ChevronRightIcon class="h-5 w-5 fill-primary" aria-hidden="true" />
             <span>トップページ</span>
           </SiteLink>
         </li>
         <li>
           <SiteLink to="/blog/" class="link">
-            <ChevronRightIcon class="fill-primary h-5 w-5" aria-hidden="true" />
+            <ChevronRightIcon class="h-5 w-5 fill-primary" aria-hidden="true" />
             <span>ブログ</span>
           </SiteLink>
         </li>
@@ -48,6 +48,6 @@ import { ChevronRightIcon } from '@heroicons/vue/20/solid'
 
 <style scoped>
 .link {
-  @apply after:bg-primary relative flex items-center gap-1 pb-0.5 pr-1 after:absolute after:bottom-0 after:left-0 after:block after:h-px after:w-full after:origin-right after:scale-x-0 after:scale-y-100 after:transition-transform hover:after:origin-left hover:after:scale-x-100;
+  @apply relative flex items-center gap-1 pb-0.5 pr-1 after:absolute after:bottom-0 after:left-0 after:block after:h-px after:w-full after:origin-right after:scale-x-0 after:scale-y-100 after:bg-primary after:transition-transform hover:after:origin-left hover:after:scale-x-100;
 }
 </style>
