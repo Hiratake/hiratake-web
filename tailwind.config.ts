@@ -1,35 +1,32 @@
 // https://tailwindcss.com/docs/configuration
-const defaultTheme = require('tailwindcss/defaultTheme')
-const round = (num) =>
+// Types
+import type { Config } from 'tailwindcss'
+// Theme
+import { fontFamily } from 'tailwindcss/defaultTheme'
+// Plugins
+import TailwindTypographyPlugin from '@tailwindcss/typography'
+import TailwindHeadlessUIPlugin from '@headlessui/tailwindcss'
+
+const round = (num: number) =>
   num
     .toFixed(7)
     .replace(/(\.[0-9]+?)0+$/, '$1')
     .replace(/\.0$/, '')
-const rem = (px) => `${round(px / 16)}rem`
-const em = (px, base) => `${round(px / base)}em`
+const rem = (px: number) => `${round(px / 16)}rem`
+const em = (px: number, base: number) => `${round(px / base)}em`
 
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: [
-    './src/components/**/*.{js,jsx,ts,tsx,vue}',
-    './src/layouts/**/*.vue',
-    './src/pages/**/*.vue',
-    './src/composables/**/*.{js,ts}',
-    './src/plugins/**/*.{js,ts}',
-    './src/app.vue',
-    './src/error.{js,jsx,ts,tsx,vue}',
-    './nuxt.config.{js,ts}',
-  ],
+export default <Partial<Config>>{
   theme: {
     extend: {
+      colors: { primary: '#a83d3d' },
       fontFamily: {
         sans: [
-          'Hiragino Sans',
-          'Hiragino Kaku Gothic ProN',
-          'Meiryo',
-          ...defaultTheme.fontFamily.sans,
+          '"Hiragino Sans"',
+          '"Hiragino Kaku Gothic ProN"',
+          '"Meiryo"',
+          ...fontFamily.sans,
         ],
-        serif: ['Hiragino Mincho ProN', ...defaultTheme.fontFamily.serif],
+        serif: ['"Hiragino Mincho ProN"', ...fontFamily.serif],
       },
       gridTemplateColumns: {
         'fill-0': 'repeat(auto-fill, minmax(0px, 1fr))',
@@ -107,9 +104,6 @@ module.exports = {
       },
     },
   },
-  plugins: [
-    require('@tailwindcss/typography'),
-    require('@headlessui/tailwindcss'),
-  ],
+  plugins: [TailwindTypographyPlugin, TailwindHeadlessUIPlugin],
   darkMode: 'class',
 }

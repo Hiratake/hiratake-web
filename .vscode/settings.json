@@ -7,10 +7,10 @@
   "files.insertFinalNewline": true,
   "git.branchProtection": ["main"],
   "scss.lint.unknownAtRules": "ignore",
-  "stylelint.validate": ["css", "postcss", "scss", "vue"],
   "tailwindCSS.includeLanguages": {
     "vue": "html"
   },
+  "typescript.tsdk": "node_modules/typescript/lib",
   "[javascript][javascriptreact][typescript][typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true
