@@ -6,7 +6,6 @@
     "editorconfig.editorconfig",
     "esbenp.prettier-vscode",
     "nuxt.mdc",
-    "stylelint.vscode-stylelint",
     "vue.volar",
     "vue.vscode-typescript-vue-plugin"
   ]

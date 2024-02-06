@@ -2,5 +2,11 @@
 /** @type {import('eslint').Linter.Config} */
 module.exports = {
   root: true,
-  extends: ['custom'],
+  extends: ['eslint:recommended', '@nuxt/eslint-config', 'prettier'],
+  rules: {
+    'vue/component-tags-order': [
+      'error',
+      { order: ['script', 'template', 'style'] },
+    ],
+  },
 }

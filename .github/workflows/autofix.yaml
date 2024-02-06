@@ -56,9 +56,6 @@ jobs:
       - name: Run lint fix
         run: pnpm lint:fix
 
-      - name: Run content fix
-        run: pnpm content:fix
-
       - name: Run format
         run: pnpm format
 
