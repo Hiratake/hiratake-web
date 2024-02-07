@@ -6,7 +6,7 @@ updates:
     schedule:
       interval: 'weekly'
     labels:
-      - '🐙actions'
+      - '🤖dependencies'
     open-pull-requests-limit: 0
   # npm / pnpm
   - package-ecosystem: 'npm'
