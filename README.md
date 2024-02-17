@@ -11,34 +11,50 @@
 [![ci](https://github.com/Hiratake/hiratake-web/actions/workflows/ci.yaml/badge.svg)](https://github.com/Hiratake/hiratake-web/actions/workflows/ci.yaml)
 [![Open in Codeflow](https://developer.stackblitz.com/img/start_pr_dark_small.svg)](https:///pr.new/Hiratake/hiratake-web)
 
-Hiratake's website repository built with [Nuxt](https://nuxt.com/).  
-[Nuxt](https://nuxt.com/) を使用してつくった、ひらたけのウェブサイトのリポジトリ。
+Hiratake's website built with [Nuxt](https://nuxt.com/).  
+[Nuxt](https://nuxt.com/) を使用してつくった、ひらたけのウェブサイト。
 
-## 🌏 Web
+## 🚀 Setup
 
-- **web** - ウェブサイト本体
+必要なパッケージをインストールします。
 
-## 📦 Packages
+```bash
+pnpm install
+```
 
-- **packages/eslint-config-custom** - ワークスペースで使用する共通の [ESLint](https://eslint.org/) カスタム設定
-- **packages/mkarticle** - 新しいブログ記事の Markdown ファイルを生成する CLI ツール
-- **packages/social-share** - SNS シェアボタンの [Vue.js](https://ja.vuejs.org/) コンポーネントライブラリ
-- **packages/stylelint-config** - ワークスペースで使用する共通の [Stylelint](https://stylelint.io/) カスタム設定
-- **packages/tailwind-config** - ワークスペースで使用する共通の [TailwindCSS](https://tailwindcss.com/) カスタムプリセット設定
-- **packages/textlint-rule-front-matter** - YAML Front Matter のチェックをする [textlint](https://textlint.github.io/) ルール
-- **packages/textlint-rule-preset-custom** - ワークスペースで使用する共通の [textlint](https://textlint.github.io/) カスタムプリセット設定
-- **packages/textlint-rule-space-around-bold** - 太字のまわりをスペースで囲むかどうかを決める [textlint](https://textlint.github.io/) ルール
-- **packages/tsconfig** - ワークスペースで使用する [tsconfig.json](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html) カスタム設定コレクション
+## 🛠 Develop
+
+開発用サーバを起動します。
+
+```bash
+pnpm dev
+```
+
+## 🏗 Build
+
+ウェブサイトをビルドします。
+
+```bash
+pnpm build
+```
+
+または、静的ファイルを生成します。
+
+```bash
+pnpm generate
+```
+
+ローカル環境でプレビューを確認するには、以下のコマンドを実行します。
+
+```bash
+pnpm preview
+```
 
 ## 🌟 Contributing
 
-プロジェクトへの貢献をご検討の方は、 [CONTRIBUTING.md](.github/CONTRIBUTING.md) をご確認ください。
+プロジェクトへの貢献をご検討の方は、[CONTRIBUTING.md](.github/CONTRIBUTING.md) をご確認ください。
 
 ## 💌 Contact
 
-- **Bluesky** - [@hiratake.dev](https://bsky.app/profile/hiratake.dev)
-- **Discord** - [@hiratake](https://discord.com/users/221498004505362433)
-- **GitHub** - [@Hiratake](https://github.com/Hiratake)
 - **Mastodon** - [@hiratake](https://mozilla.social/@hiratake)
-- **Misskey** - [@Hiratake](https://misskey.io/@Hiratake)
-- **X** - [@Hirotaisou2012](https://x.com/Hirotaisou2012)
+- **GitHub** - [@Hiratake](https://github.com/Hiratake)
