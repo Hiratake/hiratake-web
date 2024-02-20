@@ -4,6 +4,8 @@ import type { Article } from '@/types'
 // Libraries
 import { serverQueryContent } from '#content/server'
 import { Feed } from 'feed'
+// Utils
+import { withTrailingSlash } from 'ufo'
 
 const siteName = 'Hiratake Web'
 const siteUrl = process.env.CF_PAGES_URL || 'https://hiratake.dev'
@@ -24,7 +26,7 @@ export default defineEventHandler(async (event) => {
     event,
     'blog',
   )
-    .where({ _dir: { $eq: 'blog' } })
+    .where({ _path: { $regex: /^\/blog\/\d{4}\/\d{2}\/\d{2}/ } })
     .sort({ created: -1 })
     .limit(10)
     .find()
@@ -40,9 +42,7 @@ export default defineEventHandler(async (event) => {
       } => Boolean(article._path) && Boolean(article.title),
     )
     .forEach((article) => {
-      const url = `${siteUrl}${
-        article._path.endsWith('/') ? article._path : `${article._path}/`
-      }`
+      const url = `${siteUrl}/blog/${withTrailingSlash(article._path.replace('/blog', '').split('/').join(''))}`
       feed.addItem({
         title: article.title,
         id: url,
