@@ -1,6 +1,8 @@
 <script lang="ts" setup>
 // Types
 import type { Article } from '@/types'
+// Utils
+import { withTrailingSlash } from 'ufo'
 
 type ArticleListItemProps = {
   /** URLを指定します */
@@ -24,8 +26,8 @@ const props = withDefaults(defineProps<ArticleListItemProps>(), {
       'dark:bg-slate-800 dark:hover:bg-slate-700/70',
     ]"
   >
-    <SiteLink
-      :to="props.url"
+    <NuxtLink
+      :to="withTrailingSlash(props.url)"
       :title="props.title"
       class="flex h-full flex-col justify-between gap-4 px-4 py-6"
     >
@@ -42,6 +44,6 @@ const props = withDefaults(defineProps<ArticleListItemProps>(), {
           </time>
         </div>
       </div>
-    </SiteLink>
+    </NuxtLink>
   </article>
 </template>
