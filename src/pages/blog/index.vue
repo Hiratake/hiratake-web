@@ -14,7 +14,11 @@ const { data, error } = await useAsyncData('blog-list', () =>
 
 // ページが見つからない場合にエラーを出力する
 if (error.value) {
-  throw createError({ statusCode: 404, message: error.value.message })
+  throw createError({
+    statusCode: 404,
+    message: error.value.message,
+    fatal: true,
+  })
 }
 
 /** 記事データ */

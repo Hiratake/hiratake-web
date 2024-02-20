@@ -20,7 +20,7 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
   ],
   nitro: {
-    prerender: { routes: ['/feed.xml'] },
+    prerender: { crawlLinks: true, routes: ['/feed.xml'] },
   },
   ogImage: { enabled: false },
   routeRules: {

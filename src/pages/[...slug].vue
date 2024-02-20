@@ -16,7 +16,11 @@ const { data, error } = await useAsyncData(route.path, () => {
 
 // ページが見つからない場合にエラーを出力する
 if (error.value) {
-  throw createError({ statusCode: 404, message: error.value.message })
+  throw createError({
+    statusCode: 404,
+    message: error.value.message,
+    fatal: true,
+  })
 }
 
 // 構造化データマークアップの情報を生成

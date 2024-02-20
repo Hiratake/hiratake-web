@@ -8,7 +8,11 @@ const { data, error } = await useAsyncData('index', () =>
 
 // ページが見つからない場合にエラーを出力する
 if (error.value) {
-  throw createError({ statusCode: 404, message: error.value.message })
+  throw createError({
+    statusCode: 404,
+    message: error.value.message,
+    fatal: true,
+  })
 }
 
 useSchemaOrg([

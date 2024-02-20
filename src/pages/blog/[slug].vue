@@ -44,6 +44,7 @@ if (error.value || surroundError.value) {
   throw createError({
     statusCode: 404,
     message: error.value?.message || surroundError.value?.message,
+    fatal: true,
   })
 }
 
