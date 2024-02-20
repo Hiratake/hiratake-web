@@ -5,7 +5,7 @@ export default defineNuxtConfig({
     head: { titleTemplate: '%pageTitle' },
   },
   content: {
-    documentDriven: true,
+    documentDriven: false,
     highlight: { theme: 'github-dark' },
     sources: {
       content: { driver: 'fs', base: resolve(__dirname, './content') },
@@ -20,7 +20,7 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
   ],
   nitro: {
-    prerender: { routes: ['/feed.xml'] },
+    prerender: { crawlLinks: true, routes: ['/feed.xml'] },
   },
   ogImage: { enabled: false },
   routeRules: {
@@ -52,7 +52,6 @@ export default defineNuxtConfig({
     description: 'ひらたけの個人ウェブサイトです。',
     defaultLocale: 'ja',
     trailingSlash: true,
-    twitter: '@Hirotaisou2012',
   },
   srcDir: 'src/',
 })
