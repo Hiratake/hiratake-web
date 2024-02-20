@@ -22,7 +22,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+        uses: actions/checkout@473055ba18d6d2da209cd46110aadb9275e3194e
 
       - name: 'Dependency Review'
         uses: actions/dependency-review-action@fd07d42ce87ab09f10c61a2d1a5e59e6c655620a
