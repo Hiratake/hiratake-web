@@ -9,55 +9,35 @@ import {
 } from '@heroicons/vue/20/solid'
 
 type ArticleListProps = {
-  query: string[]
+  items?: (Article & {
+    path: Required<Article>['_path']
+    title: Required<Article>['title']
+  })[]
 }
 
-const props = defineProps<ArticleListProps>()
-
-// コンテンツの取得
-const { data } = await useAsyncData(
-  `article-list-${props.query.join('-')}`,
-  () => {
-    const [query, ...pathParts] = props.query
-    return queryContent<Article>(query, ...pathParts)
-      .where({ _dir: { $eq: pathParts[pathParts.length - 1] || query } })
-      .only(['_path', 'title', 'created'])
-      .sort({ created: -1 })
-      .find()
-  },
-)
-const articles = computed(() =>
-  data.value?.filter(
-    (
-      article,
-    ): article is Article & {
-      _path: Required<Article>['_path']
-      title: Required<Article>['title']
-    } => Boolean(article._path) && Boolean(article.title),
-  ),
-)
+const props = withDefaults(defineProps<ArticleListProps>(), {
+  items: () => [],
+})
 
 /** 現在表示中のページ番号 */
 const current = ref<number>(1)
 /** 1ページに表示する最大コンテンツ数 */
 const maxPerPage = 30
-/** フィルタリングされたコンテンツ */
-const filteredArticles = computed(() => {
+/** 記事データ */
+const articles = computed(() => {
   const startId = (current.value - 1) * maxPerPage
   const endId = startId + maxPerPage
-  return (articles.value || []).slice(startId, endId)
+  return props.items.slice(startId, endId)
 })
 </script>
 
 <template>
   <div class="not-prose my-[2em] grid gap-12">
-    <template v-if="articles?.length">
+    <template v-if="props.items.length">
       <section class="grid grid-cols-fill-60 gap-6">
-        <template v-for="article in filteredArticles" :key="article._path">
+        <template v-for="article in articles" :key="article.path">
           <ArticleListItem
-            :url="
-              article._path.endsWith('/') ? article._path : `${article._path}/`
-            "
+            :url="article.path"
             :title="article.title"
             :created="article.created"
           />
@@ -77,22 +57,22 @@ const filteredArticles = computed(() => {
           title="前のページへ移動"
           @click="() => (current = current - 1)"
         >
-          <ChevronLeftIcon class="h-5 w-5" aria-hidden="true" />
+          <ChevronLeftIcon class="h-5 w-5" />
         </button>
         <span class="text-sm" aria-current="page">{{ current }}</span>
         <button
-          :disabled="current === Math.ceil(articles.length / maxPerPage)"
+          :disabled="current === Math.ceil(props.items.length / maxPerPage)"
           :class="[
             'flex items-center justify-center',
             'aspect-square w-8 rounded-lg transition-colors',
-            current === Math.ceil(articles.length / maxPerPage)
+            current === Math.ceil(props.items.length / maxPerPage)
               ? 'opacity-40'
               : 'hover:bg-slate-200 dark:hover:bg-slate-800',
           ]"
           title="後のページへ移動"
           @click="current = current + 1"
         >
-          <ChevronRightIcon class="h-5 w-5" aria-hidden="true" />
+          <ChevronRightIcon class="h-5 w-5" />
         </button>
       </nav>
     </template>
@@ -104,7 +84,7 @@ const filteredArticles = computed(() => {
           'bg-slate-200 dark:bg-slate-800',
         ]"
       >
-        <FaceFrownIcon class="h-5 w-5" aria-hidden="true" />
+        <FaceFrownIcon class="h-5 w-5" />
         <p>コンテンツがありません</p>
       </div>
     </template>
