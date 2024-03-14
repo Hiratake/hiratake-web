@@ -52,7 +52,7 @@ if (error.value || surroundError.value) {
 const prev = computed(() => {
   if (surround.value && surround.value[0]) {
     return {
-      title: surround.value[0].title,
+      title: surround.value[0].title || '',
       path: `/blog/${((surround.value[0]._path as string) || '')
         .replace('/blog', '')
         .split('/')
@@ -66,7 +66,7 @@ const prev = computed(() => {
 const next = computed(() => {
   if (surround.value && surround.value[1]) {
     return {
-      title: surround.value[1].title,
+      title: surround.value[1].title || '',
       path: `/blog/${((surround.value[1]._path as string) || '')
         .replace('/blog', '')
         .split('/')

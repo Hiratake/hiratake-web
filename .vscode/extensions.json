@@ -6,7 +6,7 @@
     "editorconfig.editorconfig",
     "esbenp.prettier-vscode",
     "nuxt.mdc",
-    "vue.volar",
-    "vue.vscode-typescript-vue-plugin"
-  ]
+    "vue.volar"
+  ],
+  "unwantedRecommendations": ["vue.vscode-typescript-vue-plugin"]
 }
