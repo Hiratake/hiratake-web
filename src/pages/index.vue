@@ -35,5 +35,9 @@ useSeoMeta({
       :subtitle="data.hero.subtitle"
       :image="data.hero.image"
     />
+    <HomeProfile
+      :title="data.profile.title"
+      :biography="data.profile.biography"
+    />
   </main>
 </template>

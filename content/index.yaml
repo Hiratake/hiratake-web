@@ -8,3 +8,8 @@ hero:
     sm: '/assets/hero-sm.jpg'
     md: '/assets/hero-md.jpg'
     lg: '/assets/hero-lg.jpg'
+profile:
+  title: 'About Me'
+  biography:
+    - 'ひらたけです。マークアップとかフロントエンドとかメインのウェブ系エンジニアをやっています。'
+    - 'お散歩と甘いものと猫がすき。大阪在住。'
