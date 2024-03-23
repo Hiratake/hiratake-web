@@ -12,5 +12,6 @@ import '@fontsource/lexend/900.css'
     <NuxtLoadingIndicator :height="2" color="#a83d3d" />
     <TheHeader />
     <NuxtPage />
+    <TheFooter />
   </Body>
 </template>
