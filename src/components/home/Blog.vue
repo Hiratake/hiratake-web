@@ -43,7 +43,7 @@ if (error.value) {
     </div>
     <div class="flex flex-col gap-8 sm:gap-12 md:gap-16">
       <p class="text-sm leading-relaxed">{{ props.description }}</p>
-      <BlogList :items="data" />
+      <ArticlesList :items="data" />
     </div>
   </section>
 </template>

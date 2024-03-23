@@ -1,8 +1,8 @@
 <script lang="ts" setup>
+const website = useWebsite()
 const { data, error } = await useAsyncData('index', () =>
   queryContent('/').findOne(),
 )
-const website = useWebsite()
 
 if (error.value) {
   throw createError({
@@ -23,6 +23,9 @@ useSeoMeta({
   description: () => data.value?.description || description,
   ogType: 'website',
 })
+useSchemaOrg([
+  defineBreadcrumb({ itemListElement: [{ name: name, item: '/' }] }),
+])
 </script>
 
 <template>

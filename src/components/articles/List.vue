@@ -6,14 +6,14 @@ import { PhCaretRight } from '@phosphor-icons/vue'
 // Utils
 import { withoutTrailingSlash, withTrailingSlash } from 'ufo'
 
-type BlogListProps = {
+type ArticlesListProps = {
   /** ブログ投稿のリスト */
   items?:
     | Pick<BlogArticle, '_path' | 'title' | 'description' | 'created'>[]
     | null
 }
 
-const props = defineProps<BlogListProps>()
+const props = defineProps<ArticlesListProps>()
 
 const website = useWebsite()
 
