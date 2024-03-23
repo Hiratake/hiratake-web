@@ -1,0 +1,5 @@
+{
+  "*.{js,jsx,cjs,mjs,ts,tsx,cts,mts,vue}": ["eslint --fix", "prettier -w"],
+  "*.{json,yml,yaml,html,css,scss}": ["prettier -w"],
+  "*.md": ["textlint --fix"]
+}

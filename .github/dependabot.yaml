@@ -1,0 +1,18 @@
+version: 2
+updates:
+  # GitHub Actions
+  - package-ecosystem: 'github-actions'
+    directory: '/'
+    schedule:
+      interval: 'weekly'
+    labels:
+      - '🤖dependencies'
+    open-pull-requests-limit: 0
+  # npm / pnpm
+  - package-ecosystem: 'npm'
+    directory: '/'
+    schedule:
+      interval: 'weekly'
+    labels:
+      - '🤖dependencies'
+    open-pull-requests-limit: 0
