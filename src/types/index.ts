@@ -6,4 +6,6 @@ export type BlogArticle = MarkdownParsedContent & {
   created?: string
   /** 更新した日 */
   updated?: string
+  /** 書いたひと */
+  author?: string
 }
