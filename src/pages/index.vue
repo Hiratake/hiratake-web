@@ -39,5 +39,6 @@ useSeoMeta({
       :title="data.profile.title"
       :biography="data.profile.biography"
     />
+    <HomeBlog :title="data.blog.title" :description="data.blog.description" />
   </main>
 </template>
