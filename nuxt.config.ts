@@ -3,6 +3,9 @@ import { resolve } from 'node:path'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  app: {
+    head: { titleTemplate: '%pageTitle' },
+  },
   content: {
     documentDriven: false,
     highlight: { theme: 'github-dark' },
@@ -18,6 +21,12 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@vueuse/nuxt',
   ],
+  nitro: {
+    prerender: { failOnError: false, crawlLinks: true },
+  },
+  runtimeConfig: {
+    public: { gtmId: 'GTM-WF3MQWM' },
+  },
   schemaOrg: {
     identity: {
       type: 'Person',
