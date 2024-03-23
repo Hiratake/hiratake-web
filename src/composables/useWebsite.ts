@@ -30,11 +30,14 @@ export const useWebsite = () => {
        * @example '#a83d3d'
        */
       themeColor: app.themeColor,
+    },
+    /** 投稿一覧ページの情報 */
+    list: {
       /**
-       * URL末尾にスラッシュを付与するか
-       * @example true
+       * 1ページに表示する投稿数
+       * @example 20
        */
-      trailingSlash: (site.trailingSlash as boolean | undefined) || false,
+      perPage: app.list.perPage,
     },
   }))
 }

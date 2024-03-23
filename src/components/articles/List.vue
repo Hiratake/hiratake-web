@@ -3,8 +3,6 @@
 import type { BlogArticle } from '@/types'
 // Icons
 import { PhCaretRight } from '@phosphor-icons/vue'
-// Utils
-import { withoutTrailingSlash, withTrailingSlash } from 'ufo'
 
 type ArticlesListProps = {
   /** ブログ投稿のリスト */
@@ -14,8 +12,6 @@ type ArticlesListProps = {
 }
 
 const props = defineProps<ArticlesListProps>()
-
-const website = useWebsite()
 
 /** ブログ投稿のリスト */
 const blogArticles = computed(() =>
@@ -34,9 +30,7 @@ const blogArticles = computed(() =>
     }))
     .map((item) => ({
       ...item,
-      path: website.value.site.trailingSlash
-        ? withTrailingSlash(item.path)
-        : withoutTrailingSlash(item.path),
+      path: useTrailingSlash(item.path),
       created: {
         hyphen: useDateFormat(item.created, 'YYYY-MM-DD').value,
         slash: useDateFormat(item.created, 'YYYY/MM/DD').value,

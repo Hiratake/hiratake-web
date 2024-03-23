@@ -20,7 +20,7 @@ const { data: articles, error: listError } = await useAsyncData(
     /** ページ番号 */
     const pageNumber = Number(route.params?.page) || 1
     /** 1ページに表示する投稿数 */
-    const perPage = 20
+    const perPage = website.value.list.perPage
 
     return queryContent<BlogArticle>('blog')
       .only(['_path', 'title', 'description', 'created'])
@@ -60,10 +60,7 @@ useSchemaOrg([
   defineBreadcrumb({
     itemListElement: [
       { name: name, item: '/' },
-      {
-        name: data.value?.title,
-        item: website.value.site.trailingSlash ? '/blog/' : '/blog',
-      },
+      { name: data.value?.title, item: useTrailingSlash('/blog/') },
     ],
   }),
 ])
@@ -83,5 +80,6 @@ useSchemaOrg([
       </p>
     </header>
     <ArticlesList :items="articles" />
+    <ArticlesPagination :current="Number(route.params?.page) || 1" />
   </main>
 </template>

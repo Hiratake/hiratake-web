@@ -1,8 +1,6 @@
 <script lang="ts" setup>
 // Icons
 import { PhArrowCircleRight } from '@phosphor-icons/vue'
-// Utils
-import { withoutTrailingSlash, withTrailingSlash } from 'ufo'
 
 type HomeMoreButtonProps = {
   /** クリック時に移動するページのURL */
@@ -11,14 +9,8 @@ type HomeMoreButtonProps = {
 
 const props = defineProps<HomeMoreButtonProps>()
 
-const website = useWebsite()
-
 /** 末尾のスラッシュを考慮したURL */
-const url = computed(() =>
-  website.value.site.trailingSlash
-    ? withTrailingSlash(props.to)
-    : withoutTrailingSlash(props.to),
-)
+const url = computed(() => useTrailingSlash(props.to))
 </script>
 
 <template>

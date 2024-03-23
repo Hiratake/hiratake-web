@@ -7,6 +7,7 @@ export default defineAppConfig({
       icon: '/authors/hiratake-24x24.webp',
     },
   },
+  list: { perPage: 20 },
   socials: {
     bluesky: {
       name: 'Bluesky',
