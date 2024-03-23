@@ -1,87 +1,17 @@
 {
-  "name": "hiratake-web",
-  "version": "4.0.0",
-  "license": "MIT",
+  "name": "nuxt-app",
   "private": true,
-  "keywords": [
-    "vue",
-    "nuxt",
-    "website"
-  ],
-  "homepage": "https://hiratake.dev/",
-  "bugs": {
-    "url": "https://github.com/Hiratake/hiratake-web/issues"
-  },
-  "author": {
-    "name": "Hiratake",
-    "url": "https://hiratake.dev/"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Hiratake/hiratake-web.git"
-  },
   "type": "module",
-  "packageManager": "pnpm@8.15.5",
-  "engines": {
-    "node": ">=18.14.0"
-  },
-  "volta": {
-    "node": "20.11.1"
-  },
-  "devDependencies": {
-    "@commitlint/cli": "19.2.1",
-    "@commitlint/config-conventional": "19.1.0",
-    "@headlessui/tailwindcss": "0.2.0",
-    "@headlessui/vue": "1.7.19",
-    "@heroicons/vue": "2.1.1",
-    "@hiratake/social-share": "1.0.6",
-    "@hiratake/textlint-rule-front-matter": "1.1.2",
-    "@hiratake/textlint-rule-space-around-bold": "1.0.4",
-    "@nuxt/content": "2.12.1",
-    "@nuxt/eslint-config": "0.2.0",
-    "@nuxtjs/seo": "2.0.0-rc.9",
-    "@nuxtjs/tailwindcss": "6.11.4",
-    "@tailwindcss/typography": "0.5.10",
-    "@textlint-rule/textlint-rule-no-unmatched-pair": "2.0.2",
-    "@vueuse/nuxt": "10.9.0",
-    "autoprefixer": "10.4.18",
-    "eslint": "8.57.0",
-    "eslint-config-prettier": "9.1.0",
-    "feed": "4.2.2",
-    "husky": "9.0.11",
-    "lint-staged": "15.2.2",
-    "nuxt": "3.11.1",
-    "postcss": "8.4.37",
-    "prettier": "3.2.5",
-    "prettier-plugin-tailwindcss": "0.5.12",
-    "simple-icons": "11.9.0",
-    "tailwindcss": "3.4.1",
-    "textlint": "14.0.4",
-    "textlint-filter-rule-allowlist": "4.0.0",
-    "textlint-rule-ja-space-around-code": "2.3.1",
-    "textlint-rule-ja-space-around-link": "2.3.1",
-    "textlint-rule-ja-space-between-half-and-full-width": "2.3.1",
-    "textlint-rule-no-mixed-zenkaku-and-hankaku-alphabet": "1.0.1",
-    "typescript": "5.4.2",
-    "ufo": "1.5.2",
-    "vue": "3.4.21",
-    "vue-router": "4.3.0",
-    "vue-tsc": "2.0.6"
-  },
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
-    "lint": "pnpm lint:script && pnpm lint:text",
-    "lint:fix": "pnpm lint:script:fix && pnpm lint:text:fix",
-    "lint:script": "eslint . --ext .js,.cjs,.mjs,.ts,.cts,.mts,.vue",
-    "lint:script:fix": "eslint . --ext .js,.cjs,.mjs,.ts,.cts,.mts,.vue --fix",
-    "lint:text": "textlint \"**/*.md\"",
-    "lint:text:fix": "textlint \"**/*.md\" --fix",
-    "typecheck": "nuxt typecheck",
-    "format": "prettier \"**/!(*.md)\" -wu",
-    "prepare": "husky",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "nuxt": "^3.11.1",
+    "vue": "^3.4.21",
+    "vue-router": "^4.3.0"
   }
 }

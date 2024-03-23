@@ -1,60 +1,75 @@
-<h1>
-  <a href="https://hiratake.dev">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://github-production-user-asset-6210df.s3.amazonaws.com/23224932/250346490-14357fb1-a0b5-4af7-85b0-1de7eab311bd.svg" sizes="(max-width:200px) 100vw, 200px" />
-      <source media="(prefers-color-scheme: light)" srcset="https://github-production-user-asset-6210df.s3.amazonaws.com/23224932/250346471-47f036a3-9b03-49fe-bbea-7d6d8425142b.svg" sizes="(max-width:200px) 100vw, 200px" />
-      <img alt="Hiratake" src="https://github-production-user-asset-6210df.s3.amazonaws.com/23224932/250346471-47f036a3-9b03-49fe-bbea-7d6d8425142b.svg" width="200" />
-    </picture>
-  </a>
-</h1>
+# Nuxt 3 Minimal Starter
 
-[![ci](https://github.com/Hiratake/hiratake-web/actions/workflows/ci.yaml/badge.svg)](https://github.com/Hiratake/hiratake-web/actions/workflows/ci.yaml)
-[![Open in Codeflow](https://developer.stackblitz.com/img/start_pr_dark_small.svg)](https:///pr.new/Hiratake/hiratake-web)
+Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
-Hiratake's website built with [Nuxt](https://nuxt.com/).  
-[Nuxt](https://nuxt.com/) を使用してつくった、ひらたけのウェブサイト。
+## Setup
 
-## 🚀 Setup
-
-必要なパッケージをインストールします。
+Make sure to install the dependencies:
 
 ```bash
+# npm
+npm install
+
+# pnpm
 pnpm install
+
+# yarn
+yarn install
+
+# bun
+bun install
 ```
 
-## 🛠 Develop
+## Development Server
 
-開発用サーバを起動します。
+Start the development server on `http://localhost:3000`:
 
 ```bash
-pnpm dev
+# npm
+npm run dev
+
+# pnpm
+pnpm run dev
+
+# yarn
+yarn dev
+
+# bun
+bun run dev
 ```
 
-## 🏗 Build
+## Production
 
-ウェブサイトをビルドします。
+Build the application for production:
 
 ```bash
-pnpm build
+# npm
+npm run build
+
+# pnpm
+pnpm run build
+
+# yarn
+yarn build
+
+# bun
+bun run build
 ```
 
-または、静的ファイルを生成します。
+Locally preview production build:
 
 ```bash
-pnpm generate
+# npm
+npm run preview
+
+# pnpm
+pnpm run preview
+
+# yarn
+yarn preview
+
+# bun
+bun run preview
 ```
 
-ローカル環境でプレビューを確認するには、以下のコマンドを実行します。
-
-```bash
-pnpm preview
-```
-
-## 🌟 Contributing
-
-プロジェクトへの貢献をご検討の方は、[CONTRIBUTING.md](.github/CONTRIBUTING.md) をご確認ください。
-
-## 💌 Contact
-
-- **Mastodon** - [@hiratake](https://mozilla.social/@hiratake)
-- **GitHub** - [@Hiratake](https://github.com/Hiratake)
+Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
