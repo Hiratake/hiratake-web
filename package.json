@@ -63,6 +63,7 @@
     "textlint-rule-ja-space-between-half-and-full-width": "2.3.1",
     "textlint-rule-no-mixed-zenkaku-and-hankaku-alphabet": "1.0.1",
     "typescript": "5.4.3",
+    "ufo": "1.5.3",
     "vue": "3.4.21",
     "vue-router": "4.3.0",
     "vue-tsc": "2.0.7"
