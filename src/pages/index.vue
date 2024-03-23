@@ -26,5 +26,14 @@ useSeoMeta({
 </script>
 
 <template>
-  <main v-if="data" />
+  <main
+    v-if="data"
+    class="relative z-0 mx-auto box-content max-w-7xl px-4 md:px-6"
+  >
+    <HomeHero
+      :title="data.hero.title"
+      :subtitle="data.hero.subtitle"
+      :image="data.hero.image"
+    />
+  </main>
 </template>

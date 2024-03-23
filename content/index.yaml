@@ -1,3 +1,10 @@
 # index
 title: 'Hiratake Web'
 description: 'マークアップとフロントエンドのエンジニアをしている、ひらたけの個人ウェブサイトです。お散歩と甘いものと猫がすきです。'
+hero:
+  title: 'Hiratake Web'
+  subtitle: 'ひらたけの個人ウェブサイト'
+  image:
+    sm: '/assets/hero-sm.jpg'
+    md: '/assets/hero-md.jpg'
+    lg: '/assets/hero-lg.jpg'
