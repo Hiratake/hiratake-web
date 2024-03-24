@@ -4,38 +4,31 @@ import type { BlogArticle } from '@/types'
 
 const route = useRoute()
 const website = useWebsite()
-const schema = await useAsyncData(`${route.path}-schema`, () => {
-  // パンくずリストの項目を取得
-  const items: string[] = (route.path || '')
-    .split('/')
-    .filter((item: string) => item)
-    .reduce((prev: string[], current: string) => {
-      if (prev.length) {
-        return [...prev, `${prev[prev.length - 1]}/${current}`]
-      } else {
-        return [`/${current}`]
-      }
-    }, [])
-  return queryContent()
-    .where({ _path: { $in: ['/', ...items] } })
-    .only(['_path', 'title'])
-    .sort({ _path: 1 })
-    .find()
-}).then((data) => {
-  return [
-    defineBreadcrumb({
-      itemListElement: (data.data.value ?? []).map((item) => ({
-        name: item.title,
-        item: useTrailingSlash(item._path || ''),
-      })),
-    }),
-  ] as ReturnType<typeof defineBreadcrumb>[]
-})
 const { data, error } = await useAsyncData(route.path, () =>
   queryContent<BlogArticle>(route.path).findOne(),
 )
+const { data: breadcrumbs, error: breadcrumbsError } = await useAsyncData(
+  `${route.path}-breadcrumbs`,
+  () => {
+    const items: string[] = (route.path || '')
+      .split('/')
+      .filter((item: string) => item)
+      .reduce((prev: string[], current: string) => {
+        if (prev.length) {
+          return [...prev, `${prev[prev.length - 1]}/${current}`]
+        } else {
+          return [`/${current}`]
+        }
+      }, [])
+    return queryContent()
+      .where({ _path: { $in: ['/', ...items] } })
+      .only(['_path', 'title'])
+      .sort({ _path: 1 })
+      .find()
+  },
+)
 
-if (error.value) {
+if (error.value || breadcrumbsError.value) {
   throw createError({
     statusCode: 404,
     message: 'ページが見つかりません',
@@ -54,7 +47,14 @@ useSeoMeta({
   description: () => data.value?.description || description,
   ogType: 'website',
 })
-useSchemaOrg(schema)
+useSchemaOrg([
+  defineBreadcrumb({
+    itemListElement: (breadcrumbs.value ?? []).map((item) => ({
+      name: item.title,
+      item: useTrailingSlash(item._path || ''),
+    })),
+  }),
+])
 </script>
 
 <template>
