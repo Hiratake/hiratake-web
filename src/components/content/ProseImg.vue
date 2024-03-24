@@ -30,6 +30,7 @@ const imageUrl = computed(() => {
 
 <template>
   <img
+    v-if="props.src"
     :src="`${imageUrl}/w=1536`"
     :srcset="`
         ${imageUrl}/w=320 320w,
@@ -42,7 +43,7 @@ const imageUrl = computed(() => {
     :alt="props.alt"
     :width="props.width"
     :height="props.height"
-    class="rounded-lg"
+    class="my-10 rounded-lg border border-slate-100 bg-slate-200 dark:border-slate-800 dark:bg-slate-800"
     decoding="async"
     loading="lazy"
     sizes="(max-width: 768px) calc(100vw - 48px), 768px"

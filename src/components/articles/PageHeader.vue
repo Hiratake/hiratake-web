@@ -38,7 +38,7 @@ const updatedDate = computed(() => ({
 <template>
   <header class="flex flex-col gap-5">
     <h1
-      class="text-3xl font-bold leading-snug text-slate-800 dark:text-white md:text-4xl"
+      class="text-3xl font-bold leading-snug text-slate-800 dark:text-white md:text-4xl md:leading-normal"
     >
       {{ props.title }}
     </h1>

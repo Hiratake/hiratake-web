@@ -17,6 +17,9 @@ devDependencies:
   '@fontsource/noto-sans-jp':
     specifier: 5.0.18
     version: 5.0.18
+  '@fontsource/source-code-pro':
+    specifier: 5.0.17
+    version: 5.0.17
   '@headlessui/tailwindcss':
     specifier: 0.2.0
     version: 0.2.0(tailwindcss@3.4.1)
@@ -1209,6 +1212,10 @@ packages:
 
   /@fontsource/noto-sans-jp@5.0.18:
     resolution: {integrity: sha512-tIXpfwpwxxn/Gl60fj2w4R7JK1ZQnE2onyY6saEvAdG42MzgvVZ3xsCUIlyhRtkTCB0qukfSj+eZ8tyS7Yxkuw==}
+    dev: true
+
+  /@fontsource/source-code-pro@5.0.17:
+    resolution: {integrity: sha512-Q5GfthInOTW+Ek5k97/LH6FWLmD+IwHwBEEXF+KStvsyPwSZz+0ssdWJfz/ZRaTZxOk7FwlRgysXAWo41fq6bQ==}
     dev: true
 
   /@fortawesome/fontawesome-common-types@6.5.1:

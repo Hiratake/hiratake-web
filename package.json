@@ -33,6 +33,7 @@
     "@commitlint/config-conventional": "19.1.0",
     "@fontsource/lexend": "5.0.19",
     "@fontsource/noto-sans-jp": "5.0.18",
+    "@fontsource/source-code-pro": "5.0.17",
     "@headlessui/tailwindcss": "0.2.0",
     "@headlessui/vue": "1.7.19",
     "@hiratake/textlint-rule-front-matter": "1.1.2",

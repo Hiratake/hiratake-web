@@ -13,6 +13,7 @@ export default <Partial<Config>>{
       colors: { primary: '#a83d3d', discord: '#5865f2' },
       fontFamily: {
         sans: ['"Noto Sans JP"', ...fontFamily.sans],
+        mono: ['"Source Code Pro"', '"Noto Sans JP"', ...fontFamily.mono],
         accent: ['Lexend', 'sans-serif'],
       },
       gridTemplateColumns: {
