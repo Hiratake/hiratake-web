@@ -22,10 +22,18 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
   ],
   nitro: {
-    prerender: { failOnError: false, crawlLinks: true },
+    prerender: { failOnError: false, crawlLinks: true, routes: ['/feed.xml'] },
+  },
+  routeRules: {
+    '/feed.xml': {
+      headers: { 'content-type': 'application/rss+xml; charset=UTF-8' },
+    },
   },
   runtimeConfig: {
-    public: { gtmId: 'GTM-WF3MQWM' },
+    public: {
+      gtmId: 'GTM-WF3MQWM',
+      cloudflareImageHash: '3uWTcGTKoWPI8987WrI0hQ',
+    },
   },
   schemaOrg: {
     identity: {
