@@ -3,6 +3,7 @@
 import type { BlogArticle } from '@/types'
 
 const route = useRoute()
+const app = useAppConfig()
 const website = useWebsite()
 const { data, error } = await useAsyncData(route.path, () =>
   queryContent<BlogArticle>(route.path).findOne(),
@@ -40,6 +41,8 @@ if (error.value || breadcrumbsError.value) {
 const name = website.value.site.name
 /** ウェブサイトの概要 */
 const description = website.value.site.description
+/** 投稿者 */
+const author = app.authors.hiratake
 
 defineOgImage({ url: '/ogp.jpg', width: 1200, height: 630, alt: name })
 useSeoMeta({
@@ -63,8 +66,20 @@ useSchemaOrg([
     class="mx-auto mt-12 box-content min-h-[calc(100vh-28rem)] max-w-3xl px-6 md:mt-20"
   >
     <article class="flex flex-col gap-14">
-      <ArticlesPageHeader :title="data.title" :updated="data.updated" />
-      <div></div>
+      <ArticlesPageHeader
+        :title="data.title"
+        :updated="data.updated"
+        :author="author"
+      />
+      <div
+        class="prose max-w-none text-[0.925rem] leading-loose tracking-wide text-inherit dark:prose-invert"
+      >
+        <ContentRenderer :value="data" class="[&>*:first-child]:mt-0">
+          <template #empty>
+            <DocumentEmpty />
+          </template>
+        </ContentRenderer>
+      </div>
     </article>
   </main>
 </template>

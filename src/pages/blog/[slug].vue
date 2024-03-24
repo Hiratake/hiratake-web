@@ -132,7 +132,15 @@ useSchemaOrg([
         :updated="article.updated"
         :author="author"
       />
-      <div></div>
+      <div
+        class="prose max-w-none text-[0.925rem] leading-loose tracking-wide text-inherit dark:prose-invert"
+      >
+        <ContentRenderer :value="article" class="[&>*:first-child]:mt-0">
+          <template #empty>
+            <DocumentEmpty />
+          </template>
+        </ContentRenderer>
+      </div>
       <ArticlesPageFooter :prev="prev" :next="next" />
     </article>
   </main>

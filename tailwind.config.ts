@@ -3,6 +3,7 @@ import type { Config } from 'tailwindcss'
 // Theme
 import { fontFamily } from 'tailwindcss/defaultTheme'
 // Plugins
+import TailwindTypographyPlugin from '@tailwindcss/typography'
 import TailwindHeadlessUIPlugin from '@headlessui/tailwindcss'
 
 // https://tailwindcss.com/docs/configuration
@@ -48,6 +49,6 @@ export default <Partial<Config>>{
       },
     },
   },
-  plugins: [TailwindHeadlessUIPlugin],
+  plugins: [TailwindTypographyPlugin, TailwindHeadlessUIPlugin],
   darkMode: 'class',
 }
