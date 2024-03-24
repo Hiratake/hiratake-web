@@ -24,8 +24,27 @@ const { data: article, error: articleError } = await useAsyncData(
     }
   },
 )
+const { data: surround, error: surroundError } = await useAsyncData(
+  `${route.path}-surround`,
+  () => {
+    if (
+      route.params?.slug &&
+      !Array.isArray(route.params.slug) &&
+      /^\d{8}$/.test(route.params.slug)
+    ) {
+      return queryContent<BlogArticle>()
+        .where({ _path: { $regex: /^\/blog\/\d{4}\/\d{2}\/\d{2}/ } })
+        .only(['_path', 'title', 'description', 'created'])
+        .findSurround(
+          `/blog/${route.params.slug.slice(0, 4)}/${route.params.slug.slice(4, 6)}/${route.params.slug.slice(6, 8)}`,
+        )
+    } else {
+      throw new Error('URLの形式が不正です')
+    }
+  },
+)
 
-if (error.value || articleError.value) {
+if (error.value || articleError.value || surroundError.value) {
   throw createError({
     statusCode: 404,
     message: 'ページが見つかりません',
@@ -39,6 +58,42 @@ const name = website.value.site.name
 const description = website.value.site.description
 /** 投稿者 */
 const author = app.authors[article.value?.author || 'hiratake']
+/** 前の投稿 */
+const prev = computed(() => {
+  if (surround.value && surround.value[0]) {
+    return {
+      _path: useTrailingSlash(
+        `/blog/${((surround.value[0]._path as string) || '')
+          .replace('/blog', '')
+          .split('/')
+          .join('')}/`,
+      ),
+      title: surround.value[0].title || '',
+      description: surround.value[0].description || '',
+      created: surround.value[0].created,
+    }
+  } else {
+    return undefined
+  }
+})
+/** 次の投稿 */
+const next = computed(() => {
+  if (surround.value && surround.value[1]) {
+    return {
+      _path: useTrailingSlash(
+        `/blog/${((surround.value[1]._path as string) || '')
+          .replace('/blog', '')
+          .split('/')
+          .join('')}/`,
+      ),
+      title: surround.value[1].title || '',
+      description: surround.value[1].description || '',
+      created: surround.value[1].created,
+    }
+  } else {
+    return undefined
+  }
+})
 
 useSeoMeta({
   title: () => article.value?.title || name,
@@ -77,6 +132,8 @@ useSchemaOrg([
         :updated="article.updated"
         :author="author"
       />
+      <div></div>
+      <ArticlesPageFooter :prev="prev" :next="next" />
     </article>
   </main>
 </template>

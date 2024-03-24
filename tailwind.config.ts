@@ -9,7 +9,7 @@ import TailwindHeadlessUIPlugin from '@headlessui/tailwindcss'
 export default <Partial<Config>>{
   theme: {
     extend: {
-      colors: { primary: '#a83d3d' },
+      colors: { primary: '#a83d3d', discord: '#5865f2' },
       fontFamily: {
         sans: ['"Noto Sans JP"', ...fontFamily.sans],
         accent: ['Lexend', 'sans-serif'],
