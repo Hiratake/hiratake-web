@@ -24,6 +24,9 @@ export default defineNuxtConfig({
   nitro: {
     prerender: { failOnError: false, crawlLinks: true, routes: ['/feed.xml'] },
   },
+  ogImage: {
+    fonts: ['Noto+Sans+JP:400', 'Noto+Sans+JP:700'],
+  },
   routeRules: {
     '/feed.xml': {
       headers: { 'content-type': 'application/rss+xml; charset=UTF-8' },

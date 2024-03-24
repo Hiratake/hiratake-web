@@ -44,7 +44,6 @@ const description = website.value.site.description
 /** 投稿者 */
 const author = app.authors.hiratake
 
-defineOgImage({ url: '/ogp.jpg', width: 1200, height: 630, alt: name })
 useSeoMeta({
   title: () => data.value?.title || name,
   description: () => data.value?.description || description,
@@ -58,6 +57,7 @@ useSchemaOrg([
     })),
   }),
 ])
+defineOgImage({ url: '/ogp.jpg', width: 1200, height: 630, alt: name })
 </script>
 
 <template>

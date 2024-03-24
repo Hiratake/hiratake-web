@@ -17,7 +17,6 @@ const name = website.value.site.name
 /** ウェブサイトの概要 */
 const description = website.value.site.description
 
-defineOgImage({ url: '/ogp.jpg', width: 1200, height: 630, alt: name })
 useSeoMeta({
   title: () => data.value?.title || name,
   description: () => data.value?.description || description,
@@ -26,6 +25,7 @@ useSeoMeta({
 useSchemaOrg([
   defineBreadcrumb({ itemListElement: [{ name: name, item: '/' }] }),
 ])
+defineOgImage({ url: '/ogp.jpg', width: 1200, height: 630, alt: name })
 </script>
 
 <template>
