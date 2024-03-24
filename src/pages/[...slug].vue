@@ -58,7 +58,10 @@ useSchemaOrg([
 </script>
 
 <template>
-  <main v-if="data" class="mx-auto mt-12 box-content max-w-3xl px-6 md:mt-20">
+  <main
+    v-if="data"
+    class="mx-auto mt-12 box-content min-h-[calc(100vh-28rem)] max-w-3xl px-6 md:mt-20"
+  >
     <article class="flex flex-col gap-14">
       <ArticlesPageHeader :title="data.title" :updated="data.updated" />
       <div></div>

@@ -69,7 +69,7 @@ useSchemaOrg([
 <template>
   <main
     v-if="data"
-    class="mx-auto mt-12 box-content flex max-w-5xl flex-col gap-8 px-6 md:mt-20 md:gap-16"
+    class="mx-auto mt-12 box-content flex min-h-[calc(100vh-28rem)] max-w-5xl flex-col gap-8 px-6 md:mt-20 md:gap-16"
   >
     <header class="flex flex-col gap-6 md:gap-8">
       <h1 class="text-3xl font-bold text-slate-800 dark:text-white md:text-4xl">

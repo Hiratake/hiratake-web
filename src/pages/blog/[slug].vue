@@ -123,7 +123,7 @@ useSchemaOrg([
 <template>
   <main
     v-if="article"
-    class="mx-auto mt-12 box-content max-w-3xl px-6 md:mt-20"
+    class="mx-auto mt-12 box-content min-h-[calc(100vh-28rem)] max-w-3xl px-6 md:mt-20"
   >
     <article class="flex flex-col gap-14">
       <ArticlesPageHeader
