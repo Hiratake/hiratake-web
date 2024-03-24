@@ -97,6 +97,7 @@ whenever(
             <NuxtLink
               :to="item.url"
               class="relative flex items-center justify-center px-4 py-2 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:origin-right after:scale-x-0 after:scale-y-100 after:bg-primary after:transition-transform hover:after:origin-left hover:after:scale-x-100"
+              @click="() => toggleOverlay(false)"
             >
               <span class="text-sm font-bold md:text-xs">{{ item.title }}</span>
             </NuxtLink>
