@@ -8,6 +8,7 @@ import { withoutTrailingSlash, withTrailingSlash } from 'ufo'
 
 export default defineEventHandler(async (event) => {
   /** ウェブサイトの情報 */
+  // @ts-ignore
   const site = useSiteConfig(event)
   /** ブログ一覧ページの情報 */
   const blogIndexContent = await serverQueryContent<ParsedContent>(

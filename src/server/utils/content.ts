@@ -13,8 +13,9 @@ export const generateContentFromAst = (
   children: MarkdownParsedContent['body']['children'],
   tag?: boolean,
 ): string => {
-  const config = useRuntimeConfig()
+  // @ts-ignore
   const site = useSiteConfig(event)
+  const config = useRuntimeConfig()
 
   let text = ''
 
