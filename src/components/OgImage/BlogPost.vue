@@ -15,15 +15,13 @@ const props = withDefaults(defineProps<OgImageBlogPostProps>(), {
     style="font-family: 'Noto Sans JP', sans-serif"
   >
     <div
-      class="absolute flex size-full items-center justify-center bg-[#a83d3d] p-24"
+      class="absolute flex size-full items-center justify-center bg-[#a83d3d] p-20"
     >
       <div
-        class="flex size-full flex-col items-center justify-center gap-5 rounded-3xl bg-white p-10"
+        class="flex size-full flex-col items-center justify-center gap-5 rounded-[3rem] bg-white px-20 py-12"
       >
         <div class="flex grow items-center justify-center">
-          <h1 class="text-center text-4xl leading-relaxed text-slate-800">
-            {{ props.title }}
-          </h1>
+          <h1 class="text-[2.5rem] text-slate-800">{{ props.title }}</h1>
         </div>
         <div
           class="flex h-9 w-full shrink-0 flex-row items-center justify-between"
