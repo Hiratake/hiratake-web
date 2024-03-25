@@ -3,11 +3,6 @@
 import type { NuxtError } from '#app'
 // Icons
 import { PhArrowUDownLeft } from '@phosphor-icons/vue'
-// Assets
-import '@fontsource/noto-sans-jp/400.css'
-import '@fontsource/noto-sans-jp/700.css'
-import '@fontsource/lexend/400.css'
-import '@fontsource/lexend/900.css'
 
 type ErrorProps = {
   error: NuxtError
