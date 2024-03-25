@@ -17,7 +17,6 @@ export default defineNuxtConfig({
   linkChecker: { enabled: false },
   modules: [
     '@nuxt/content',
-    '@nuxt/fonts',
     '@nuxtjs/seo',
     '@nuxtjs/tailwindcss',
     '@vueuse/nuxt',
