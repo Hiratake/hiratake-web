@@ -75,7 +75,7 @@ defineOgImage({ url: '/ogp.jpg', width: 1200, height: 630, alt: name })
       <h1 class="text-3xl font-bold text-slate-800 dark:text-white md:text-4xl">
         {{ data.title }}
       </h1>
-      <p class="text-xs leading-relaxed md:text-sm">
+      <p class="text-sm leading-relaxed">
         {{ data.description }}
       </p>
     </header>
