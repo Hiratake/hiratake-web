@@ -80,9 +80,11 @@ const blogArticles = computed(() =>
             >
               {{ article.description }}
             </p>
-            <div class="flex items-center gap-2 text-primary">
-              <span class="text-xs underline">続きを読む</span>
-              <PhCaretRight class="mt-1 size-3" weight="bold" />
+            <div class="flex items-center gap-2">
+              <span class="text-xs text-primary underline dark:text-white">
+                続きを読む
+              </span>
+              <PhCaretRight class="mt-1 size-3 text-primary" weight="bold" />
             </div>
           </div>
         </NuxtLink>
