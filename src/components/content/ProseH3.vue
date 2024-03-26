@@ -14,11 +14,11 @@ const generate = computed(() => props.id && headings?.anchorLinks?.h3)
 </script>
 
 <template>
-  <h3 :id="id">
+  <h3 :id="id" class="font-bold md:text-2xl">
     <a
       v-if="id && generate"
       :href="`#${id}`"
-      class="font-bold no-underline hover:underline"
+      class="relative font-bold no-underline before:absolute before:-left-5 before:top-0.5 before:hidden before:text-[0.7em] before:leading-8 before:opacity-0 before:content-['#'] hover:underline hover:before:opacity-40 md:before:block"
     >
       <slot />
     </a>
