@@ -5,9 +5,9 @@ hero:
   title: 'Hiratake Web'
   subtitle: 'ひらたけの個人ウェブサイト'
   image:
-    sm: '/assets/hero-sm.jpg'
-    md: '/assets/hero-md.jpg'
-    lg: '/assets/hero-lg.jpg'
+    sm: '/assets/hero-sm.webp'
+    md: '/assets/hero-md.webp'
+    lg: '/assets/hero-lg.webp'
 profile:
   title: 'About Me'
   biography:
