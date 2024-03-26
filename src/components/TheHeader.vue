@@ -51,14 +51,14 @@ whenever(
     >
       <img
         :alt="`${name} ロゴ`"
-        src="/logo-light.svg"
+        src="/assets/logo-light.svg"
         width="162"
         height="40"
         class="block dark:hidden"
       />
       <img
         :alt="`${name} ロゴ`"
-        src="/logo-dark.svg"
+        src="/assets/logo-dark.svg"
         width="162"
         height="40"
         class="hidden dark:block"
