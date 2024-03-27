@@ -11,7 +11,7 @@ type HomeBlogProps = {
 
 const props = defineProps<HomeBlogProps>()
 
-const { data, error } = await useAsyncData('index-blog-list', () =>
+const { data, error } = await useAsyncData('index_articles', () =>
   queryContent<BlogArticle>('blog')
     .only(['_path', 'title', 'description', 'created'])
     .where({ _path: { $not: '/blog' } })

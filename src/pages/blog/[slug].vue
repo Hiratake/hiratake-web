@@ -2,29 +2,22 @@
 // Types
 import type { BlogArticle } from '@/types'
 
-const route = useRoute()
 const website = useWebsite()
-const { data, error } = await useAsyncData('blog', () =>
+const route = useRoute()
+const { data, error } = await useAsyncData(route.path, () => {
+  if (!Array.isArray(route.params?.slug) && /^\d{8}$/.test(route.params.slug)) {
+    return queryContent<BlogArticle>(
+      `/blog/${route.params.slug.slice(0, 4)}/${route.params.slug.slice(4, 6)}/${route.params.slug.slice(6, 8)}`,
+    ).findOne()
+  } else {
+    throw new Error('URLの形式が不正です')
+  }
+})
+const { data: blogData, error: blogError } = await useAsyncData('blog', () =>
   queryContent('/blog').findOne(),
 )
-const { data: article, error: articleError } = await useAsyncData(
-  route.path,
-  () => {
-    if (
-      route.params?.slug &&
-      !Array.isArray(route.params.slug) &&
-      /^\d{8}$/.test(route.params.slug)
-    ) {
-      return queryContent<BlogArticle>(
-        `/blog/${route.params.slug.slice(0, 4)}/${route.params.slug.slice(4, 6)}/${route.params.slug.slice(6, 8)}`,
-      ).findOne()
-    } else {
-      throw new Error('URLの形式が不正です')
-    }
-  },
-)
 const { data: surround, error: surroundError } = await useAsyncData(
-  `${route.path}-surround`,
+  `${route.path}_surround`,
   () => {
     if (
       route.params?.slug &&
@@ -43,7 +36,7 @@ const { data: surround, error: surroundError } = await useAsyncData(
   },
 )
 
-if (error.value || articleError.value || surroundError.value) {
+if (error.value || blogError.value || surroundError.value) {
   throw createError({
     statusCode: 404,
     message: 'ページが見つかりません',
@@ -95,25 +88,25 @@ const next = computed(() => {
 })
 
 useSeoMeta({
-  title: () => article.value?.title || name,
-  description: () => article.value?.description || description,
+  title: () => data.value?.title || name,
+  description: () => data.value?.description || description,
   ogType: 'article',
 })
 useSchemaOrg([
   defineBreadcrumb({
     itemListElement: [
       { name: name, item: '/' },
-      { name: data.value?.title, item: useTrailingSlash('/blog/') },
+      { name: blogData.value?.title, item: useTrailingSlash('/blog/') },
       {
-        name: article.value?.title,
+        name: data.value?.title,
         item: useTrailingSlash(`/blog/${route.params.slug}/`),
       },
     ],
   }),
   defineArticle({
     '@type': 'BlogPosting',
-    datePublished: article.value?.created ?? undefined,
-    dateModified: article.value?.updated ?? undefined,
+    datePublished: data.value?.created ?? undefined,
+    dateModified: data.value?.updated ?? undefined,
     author: [{ name: author.name, url: author.url }],
   }),
 ])
@@ -121,16 +114,16 @@ defineOgImageComponent('BlogPost')
 </script>
 
 <template>
-  <main v-if="article" class="main mt-12 max-w-3xl md:mt-20">
+  <main v-if="data" class="main mt-12 max-w-3xl md:mt-20">
     <article class="flex flex-col gap-14">
       <ArticlesPageHeader
-        :title="article.title"
-        :created="article.created"
-        :updated="article.updated"
+        :title="data.title"
+        :created="data.created"
+        :updated="data.updated"
         :author="author"
       />
       <div class="content prose">
-        <ContentRenderer :value="article">
+        <ContentRenderer :value="data">
           <template #empty>
             <DocumentEmpty />
           </template>

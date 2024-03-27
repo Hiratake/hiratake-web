@@ -10,7 +10,7 @@ type ArticlesPaginationProps = {
 const props = defineProps<ArticlesPaginationProps>()
 
 const website = useWebsite()
-const { data: max, error } = await useAsyncData('blog-count', () =>
+const { data: max, error } = await useAsyncData('blog_count', () =>
   queryContent('blog')
     .where({ _path: { $not: '/blog' } })
     .count(),

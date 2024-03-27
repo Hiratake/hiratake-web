@@ -2,12 +2,12 @@
 // Types
 import type { BlogArticle } from '@/types'
 
-const route = useRoute()
 const website = useWebsite()
+const route = useRoute()
 const { data, error } = await useAsyncData('blog', () =>
   queryContent('/blog').findOne(),
 )
-const { data: articles, error: listError } = await useAsyncData(
+const { data: articles, error: articlesError } = await useAsyncData(
   route.path,
   () => {
     if (!/^\/blog(\/page\/[1-9]\d*)?\/?$/.test(route.path)) {
@@ -32,12 +32,7 @@ const { data: articles, error: listError } = await useAsyncData(
   },
 )
 
-if (
-  error.value ||
-  listError.value ||
-  !articles.value ||
-  !articles.value.length
-) {
+if (error.value || articlesError.value || !articles.value?.length) {
   throw createError({
     statusCode: 404,
     message: 'ページが見つかりません',

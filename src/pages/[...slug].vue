@@ -8,7 +8,7 @@ const { data, error } = await useAsyncData(route.path, () =>
   queryContent<BlogArticle>(route.path).findOne(),
 )
 const { data: breadcrumbs, error: breadcrumbsError } = await useAsyncData(
-  `${route.path}-breadcrumbs`,
+  `${route.path}_breadcrumbs`,
   () => {
     const items: string[] = (route.path || '')
       .split('/')
