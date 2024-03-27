@@ -39,7 +39,9 @@ if (error.value) {
       >
         {{ props.title }}
       </h2>
-      <HomeMoreButton to="/blog/" />
+      <AppLink to="/blog/">
+        <span class="text-xs">もっとみる</span>
+      </AppLink>
     </div>
     <div class="flex flex-col gap-8 sm:gap-12 md:gap-16">
       <p class="text-sm leading-relaxed">{{ props.description }}</p>

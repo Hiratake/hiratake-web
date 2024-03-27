@@ -19,7 +19,9 @@ const props = defineProps<HomeProfileProps>()
       >
         {{ props.title }}
       </h2>
-      <HomeMoreButton to="/about/" />
+      <AppLink to="/about/">
+        <span class="text-xs">もっとみる</span>
+      </AppLink>
     </div>
     <div>
       <p
