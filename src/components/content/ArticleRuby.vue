@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 type ArticleRubyProps = {
-  /** ルビの文字列を指定します */
+  /** ルビの文字列 */
   ruby: string
 }
 

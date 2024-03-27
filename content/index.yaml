@@ -1,0 +1,18 @@
+# index
+title: 'Hiratake Web'
+description: 'マークアップとフロントエンドのエンジニアをしている、ひらたけの個人ウェブサイトです。お散歩と甘いものと猫がすきです。'
+hero:
+  title: 'Hiratake Web'
+  subtitle: 'ひらたけの個人ウェブサイト'
+  image:
+    sm: '/assets/hero-sm.webp'
+    md: '/assets/hero-md.webp'
+    lg: '/assets/hero-lg.webp'
+profile:
+  title: 'About Me'
+  biography:
+    - 'ひらたけです。マークアップとかフロントエンドとかメインのウェブ系エンジニアをやっています。'
+    - 'お散歩と甘いものと猫がすき。大阪在住。'
+blog:
+  title: 'Blog'
+  description: '趣味のことから技術系の真面目なことまで、書きたいことができたときになんとなく書いている日記的なブログです。'

@@ -1,31 +1,37 @@
 <script lang="ts" setup>
 type ProseImgProps = {
-  /** Cloudflare Images の画像 ID を指定します */
-  src: string
-  /** 代替文字列を指定します */
-  alt: string
-  /** 幅を指定します */
+  /** 画像URL */
+  src?: string
+  /** 代替テキスト */
+  alt?: string
+  /** 幅 */
   width?: string | number
-  /** 高さを指定します */
+  /** 高さ */
   height?: string | number
 }
 
 const props = withDefaults(defineProps<ProseImgProps>(), {
+  src: '',
+  alt: '',
   width: 1536,
   height: 864,
 })
 
+const website = useWebsite()
+
 /** 画像URL */
-const imageUrl = useImage({ id: props.src, provider: 'cloudflare' })
+const imageUrl = computed(() => {
+  const url = website.value.url
+  const hash = website.value.cloudflareImageHash
+  return `${url}/cdn-cgi/imagedelivery/${hash}/${props.src}`
+})
 </script>
 
 <template>
-  <div
-    class="not-prose my-[2em] overflow-hidden rounded-lg bg-slate-200 dark:bg-slate-800"
-  >
-    <img
-      :src="`${imageUrl}/w=1536`"
-      :srcset="`
+  <img
+    v-if="props.src"
+    :src="`${imageUrl}/w=1536`"
+    :srcset="`
         ${imageUrl}/w=320 320w,
         ${imageUrl}/w=640 640w,
         ${imageUrl}/w=768 768w,
@@ -33,13 +39,12 @@ const imageUrl = useImage({ id: props.src, provider: 'cloudflare' })
         ${imageUrl}/w=1280 1280w,
         ${imageUrl}/w=1536 1536w
       `"
-      :alt="props.alt"
-      :width="props.width"
-      :height="props.height"
-      class="block h-auto w-full"
-      decoding="async"
-      loading="lazy"
-      sizes="(max-width: 768px) calc(100vw - 48px), 768px"
-    />
-  </div>
+    :alt="props.alt"
+    :width="props.width"
+    :height="props.height"
+    class="my-10 rounded-lg border border-slate-100 bg-slate-200 dark:border-slate-800 dark:bg-slate-800"
+    decoding="async"
+    loading="lazy"
+    sizes="(max-width: 768px) calc(100vw - 48px), 768px"
+  />
 </template>

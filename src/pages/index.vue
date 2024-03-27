@@ -1,34 +1,44 @@
 <script lang="ts" setup>
 const website = useWebsite()
-
-// 記事データの取得
 const { data, error } = await useAsyncData('index', () =>
   queryContent('/').findOne(),
 )
 
-// ページが見つからない場合にエラーを出力する
 if (error.value) {
   throw createError({
     statusCode: 404,
-    message: error.value.message,
+    message: 'ページが見つかりません',
     fatal: true,
   })
 }
 
-useSchemaOrg([
-  defineBreadcrumb({
-    itemListElement: [{ name: website.value.site.name, item: '/' }],
-  }),
-])
+/** ウェブサイトの名前 */
+const name = website.value.name
+/** ウェブサイトの概要 */
+const description = website.value.description
+
 useSeoMeta({
-  title: website.value.site.name,
-  description: website.value.site.description,
+  title: () => data.value?.title || name,
+  description: () => data.value?.description || description,
   ogType: 'website',
 })
+useSchemaOrg([
+  defineBreadcrumb({ itemListElement: [{ name: name, item: '/' }] }),
+])
+defineOgImage({ url: '/ogp.jpg', width: 1200, height: 630, alt: name })
 </script>
 
 <template>
-  <main v-if="data" class="mx-auto box-content max-w-3xl px-6">
-    <ContentRenderer :value="data" />
+  <main v-if="data" class="main max-w-7xl gap-16 md:gap-20">
+    <HomeHero
+      :title="data.hero.title"
+      :subtitle="data.hero.subtitle"
+      :image="data.hero.image"
+    />
+    <HomeProfile
+      :title="data.profile.title"
+      :biography="data.profile.biography"
+    />
+    <HomeBlog :title="data.blog.title" :description="data.blog.description" />
   </main>
 </template>
