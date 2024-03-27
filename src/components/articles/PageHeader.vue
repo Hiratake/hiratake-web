@@ -42,49 +42,51 @@ const updatedDate = computed(() => ({
     >
       {{ props.title }}
     </h1>
-    <dl class="grid grid-cols-fill-36 gap-3 text-xs sm:gap-4">
-      <div
-        v-if="props.created"
-        class="flex flex-col gap-1 rounded-lg bg-slate-100 px-4 py-2.5 dark:bg-slate-800"
-      >
-        <dt>投稿した日</dt>
-        <dd class="flex items-center gap-1 font-bold">
-          <PhCalendarBlank class="mt-0.5 size-5" weight="bold" />
-          <time :datetime="createdDate.hyphen">
-            {{ createdDate.slash }}
-          </time>
-        </dd>
-      </div>
-      <div
-        v-if="props.updated"
-        class="flex flex-col gap-1 rounded-lg bg-slate-100 px-4 py-2.5 dark:bg-slate-800"
-      >
-        <dt>更新した日</dt>
-        <dd class="flex items-center gap-1 font-bold">
-          <PhClockClockwise class="mt-0.5 size-5" weight="bold" />
-          <time :datetime="updatedDate.hyphen">
-            {{ updatedDate.slash }}
-          </time>
-        </dd>
-      </div>
-      <div
-        v-if="props.author.name"
-        class="flex flex-col gap-1 rounded-lg bg-slate-100 px-4 py-2.5 dark:bg-slate-800"
-      >
-        <dt>書いたひと</dt>
-        <dd class="flex items-center gap-1 font-bold">
-          <div class="size-6 overflow-hidden rounded-full">
-            <img
-              :src="props.author.icon"
-              alt="icon"
-              class="size-full object-contain"
-              width="24"
-              height="24"
-            />
-          </div>
-          <span>{{ props.author.name }}</span>
-        </dd>
-      </div>
-    </dl>
+    <slot>
+      <dl class="grid grid-cols-fill-36 gap-3 text-xs sm:gap-4">
+        <div
+          v-if="props.created"
+          class="flex flex-col gap-1 rounded-lg bg-slate-100 px-4 py-2.5 dark:bg-slate-800"
+        >
+          <dt>投稿した日</dt>
+          <dd class="flex items-center gap-1 font-bold">
+            <PhCalendarBlank class="mt-0.5 size-5" weight="bold" />
+            <time :datetime="createdDate.hyphen">
+              {{ createdDate.slash }}
+            </time>
+          </dd>
+        </div>
+        <div
+          v-if="props.updated"
+          class="flex flex-col gap-1 rounded-lg bg-slate-100 px-4 py-2.5 dark:bg-slate-800"
+        >
+          <dt>更新した日</dt>
+          <dd class="flex items-center gap-1 font-bold">
+            <PhClockClockwise class="mt-0.5 size-5" weight="bold" />
+            <time :datetime="updatedDate.hyphen">
+              {{ updatedDate.slash }}
+            </time>
+          </dd>
+        </div>
+        <div
+          v-if="props.author.name"
+          class="flex flex-col gap-1 rounded-lg bg-slate-100 px-4 py-2.5 dark:bg-slate-800"
+        >
+          <dt>書いたひと</dt>
+          <dd class="flex items-center gap-1 font-bold">
+            <div class="size-6 overflow-hidden rounded-full">
+              <img
+                :src="props.author.icon"
+                alt="icon"
+                class="size-full object-contain"
+                width="24"
+                height="24"
+              />
+            </div>
+            <span>{{ props.author.name }}</span>
+          </dd>
+        </div>
+      </dl>
+    </slot>
   </header>
 </template>

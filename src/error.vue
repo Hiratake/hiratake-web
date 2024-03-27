@@ -4,9 +4,7 @@ import type { NuxtError } from '#app'
 // Icons
 import { PhArrowUDownLeft } from '@phosphor-icons/vue'
 
-type ErrorProps = {
-  error: NuxtError
-}
+type ErrorProps = { error: NuxtError }
 
 const props = defineProps<ErrorProps>()
 
@@ -37,12 +35,7 @@ useSeoMeta({ title: title.value, description: description.value })
     <main
       class="mx-auto mt-12 box-content flex min-h-[calc(100vh-28rem)] max-w-5xl flex-col gap-8 px-6 md:mt-20 md:gap-16"
     >
-      <header class="flex flex-col gap-6">
-        <h1
-          class="text-3xl font-bold text-slate-800 dark:text-white md:text-4xl"
-        >
-          {{ title }}
-        </h1>
+      <ArticlesPageHeader :title="title">
         <div class="flex gap-2 text-xs">
           <span class="shrink-0 py-1">現在のURL：</span>
           <div
@@ -51,7 +44,7 @@ useSeoMeta({ title: title.value, description: description.value })
             {{ route.fullPath }}
           </div>
         </div>
-      </header>
+      </ArticlesPageHeader>
       <div class="flex flex-col items-start gap-8">
         <p class="text-sm leading-relaxed">{{ description }}</p>
         <NuxtLink
