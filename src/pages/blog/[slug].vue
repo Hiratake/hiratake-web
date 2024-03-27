@@ -121,10 +121,7 @@ defineOgImageComponent('BlogPost')
 </script>
 
 <template>
-  <main
-    v-if="article"
-    class="mx-auto mt-12 box-content min-h-[calc(100vh-28rem)] max-w-3xl px-6 md:mt-20"
-  >
+  <main v-if="article" class="main mt-12 max-w-3xl md:mt-20">
     <article class="flex flex-col gap-14">
       <ArticlesPageHeader
         :title="article.title"
@@ -132,10 +129,8 @@ defineOgImageComponent('BlogPost')
         :updated="article.updated"
         :author="author"
       />
-      <div
-        class="prose max-w-none text-[0.925rem] leading-loose tracking-wide text-inherit dark:prose-invert"
-      >
-        <ContentRenderer :value="article" class="[&>*:first-child]:mt-0">
+      <div class="content prose">
+        <ContentRenderer :value="article">
           <template #empty>
             <DocumentEmpty />
           </template>

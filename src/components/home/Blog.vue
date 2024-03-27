@@ -31,7 +31,7 @@ if (error.value) {
 
 <template>
   <section
-    class="mx-auto mt-16 box-content flex max-w-6xl flex-col gap-10 px-2 sm:px-4 md:mt-20 md:px-6"
+    class="mx-auto box-content flex w-full max-w-6xl flex-col gap-10 sm:px-2 md:px-6"
   >
     <div class="flex items-center justify-between">
       <h2

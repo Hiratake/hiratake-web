@@ -5,3 +5,11 @@
 .body {
   @apply bg-white text-slate-600 dark:bg-slate-900 dark:text-slate-100;
 }
+
+.main {
+  @apply relative z-0 mx-auto box-content flex min-h-[calc(100vh-30rem)] flex-col px-6;
+}
+
+.content {
+  @apply max-w-none text-[0.925rem] leading-loose tracking-wide text-inherit dark:prose-invert [&>div>*:first-child]:mt-0;
+}

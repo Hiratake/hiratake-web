@@ -60,20 +60,15 @@ defineOgImage({ url: '/ogp.jpg', width: 1200, height: 630, alt: name })
 </script>
 
 <template>
-  <main
-    v-if="data"
-    class="mx-auto mt-12 box-content min-h-[calc(100vh-28rem)] max-w-3xl px-6 md:mt-20"
-  >
+  <main v-if="data" class="main mt-12 max-w-3xl md:mt-20">
     <article class="flex flex-col gap-14">
       <ArticlesPageHeader
         :title="data.title"
         :updated="data.updated"
         :author="owner"
       />
-      <div
-        class="prose max-w-none text-[0.925rem] leading-loose tracking-wide text-inherit dark:prose-invert"
-      >
-        <ContentRenderer :value="data" class="[&>*:first-child]:mt-0">
+      <div class="content prose">
+        <ContentRenderer :value="data">
           <template #empty>
             <DocumentEmpty />
           </template>

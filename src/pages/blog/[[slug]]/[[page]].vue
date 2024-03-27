@@ -67,10 +67,7 @@ defineOgImage({ url: '/ogp.jpg', width: 1200, height: 630, alt: name })
 </script>
 
 <template>
-  <main
-    v-if="data"
-    class="mx-auto mt-12 box-content flex min-h-[calc(100vh-28rem)] max-w-5xl flex-col gap-8 px-6 md:mt-20 md:gap-16"
-  >
+  <main v-if="data" class="main mt-12 max-w-5xl gap-8 md:mt-20 md:gap-16">
     <ArticlesPageHeader :title="data.title">
       <p class="text-sm leading-relaxed">
         {{ data.description }}

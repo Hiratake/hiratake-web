@@ -29,10 +29,7 @@ defineOgImage({ url: '/ogp.jpg', width: 1200, height: 630, alt: name })
 </script>
 
 <template>
-  <main
-    v-if="data"
-    class="relative z-0 mx-auto box-content max-w-7xl px-4 md:px-6"
-  >
+  <main v-if="data" class="main max-w-7xl gap-16 md:gap-20">
     <HomeHero
       :title="data.hero.title"
       :subtitle="data.hero.subtitle"

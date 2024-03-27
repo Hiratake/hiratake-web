@@ -19,7 +19,7 @@ const props = defineProps<HomeHeroProps>()
 </script>
 
 <template>
-  <section class="relative">
+  <section class="relative -mx-2 md:mx-0">
     <div
       class="mx-auto -mt-5 box-content grid h-96 max-w-6xl overflow-hidden px-4 md:-mt-7 md:px-6"
     >
