@@ -2,9 +2,8 @@
 // Types
 import type { BlogArticle } from '@/types'
 
-const route = useRoute()
-const app = useAppConfig()
 const website = useWebsite()
+const route = useRoute()
 const { data, error } = await useAsyncData(route.path, () =>
   queryContent<BlogArticle>(route.path).findOne(),
 )
@@ -38,11 +37,11 @@ if (error.value || breadcrumbsError.value) {
 }
 
 /** ウェブサイトの名前 */
-const name = website.value.site.name
+const name = website.value.name
 /** ウェブサイトの概要 */
-const description = website.value.site.description
-/** 投稿者 */
-const author = app.authors.hiratake
+const description = website.value.description
+/** ウェブサイトの運営者 */
+const owner = website.value.owner
 
 useSeoMeta({
   title: () => data.value?.title || name,
@@ -69,7 +68,7 @@ defineOgImage({ url: '/ogp.jpg', width: 1200, height: 630, alt: name })
       <ArticlesPageHeader
         :title="data.title"
         :updated="data.updated"
-        :author="author"
+        :author="owner"
       />
       <div
         class="prose max-w-none text-[0.925rem] leading-loose tracking-wide text-inherit dark:prose-invert"

@@ -15,7 +15,7 @@ const props = withDefaults(defineProps<ArticlesPageFooterProps>(), {
   next: () => ({ _path: '', title: '', description: '', created: '' }),
 })
 
-const app = useAppConfig()
+const website = useWebsite()
 
 /** 前の投稿 */
 const prevArticle = computed(() =>
@@ -125,7 +125,7 @@ const nextArticle = computed(() =>
         サーバにて受け付けております。もしよろしければ、以下のボタンよりご参加ください！
       </p>
       <NuxtLink
-        :to="app.socials.discord.url"
+        :to="website.socials.discord.url"
         class="flex items-center gap-2 rounded-2xl bg-discord px-6 py-1.5 text-white transition-colors hover:bg-discord/80"
       >
         <svg

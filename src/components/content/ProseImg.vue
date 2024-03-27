@@ -22,7 +22,7 @@ const website = useWebsite()
 
 /** 画像URL */
 const imageUrl = computed(() => {
-  const url = website.value.site.url
+  const url = website.value.url
   const hash = config.public.cloudflareImageHash
   return `${url}/cdn-cgi/imagedelivery/${hash}/${props.src}`
 })

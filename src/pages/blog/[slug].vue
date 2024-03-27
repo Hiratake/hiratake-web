@@ -3,7 +3,6 @@
 import type { BlogArticle } from '@/types'
 
 const route = useRoute()
-const app = useAppConfig()
 const website = useWebsite()
 const { data, error } = await useAsyncData('blog', () =>
   queryContent('/blog').findOne(),
@@ -53,11 +52,11 @@ if (error.value || articleError.value || surroundError.value) {
 }
 
 /** ウェブサイトの名前 */
-const name = website.value.site.name
+const name = website.value.name
 /** ウェブサイトの概要 */
-const description = website.value.site.description
+const description = website.value.description
 /** 投稿者 */
-const author = app.authors[article.value?.author || 'hiratake']
+const author = website.value.owner
 /** 前の投稿 */
 const prev = computed(() => {
   if (surround.value && surround.value[0]) {

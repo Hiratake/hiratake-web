@@ -1,32 +1,51 @@
-type Author = {
-  /** 名前 */
-  name: string
-  /** URL */
-  url: string
-  /** アイコン */
-  icon: string
-}
-
-/** 投稿者のリスト */
-const authors: { [key: string]: Author } = {
-  hiratake: {
+// https://nuxt.com/docs/guide/directory-structure/app-config
+export default defineAppConfig({
+  /** ウェブサイトのテーマカラー */
+  themeColor: '#a83d3d',
+  /** ウェブサイトの運営者 */
+  owner: {
     name: 'ひらたけ',
     url: 'https://hiratake.dev/',
     icon: '/authors/hiratake-24x24.webp',
   },
-}
-
-// https://nuxt.com/docs/guide/directory-structure/app-config
-export default defineAppConfig({
-  authors,
-  themeColor: '#a83d3d',
-  list: { perPage: 20 },
+  /** ソーシャルメディア */
   socials: {
-    bluesky: { name: 'Bluesky', url: 'https://bsky.app/profile/hiratake.dev' },
-    github: { name: 'GitHub', url: 'https://github.com/Hiratake' },
-    discord: { name: 'Discord', url: 'https://chat.hiratake.dev/' },
-    rss: { name: 'RSS', url: 'https://hiratake.dev/feed.xml' },
+    bluesky: {
+      name: 'Bluesky',
+      handle: '@hiratake.dev',
+      url: 'https://bsky.app/profile/hiratake.dev',
+    },
+    github: {
+      name: 'GitHub',
+      handle: '@Hiratake',
+      url: 'https://github.com/Hiratake',
+    },
+    discord: {
+      name: 'Discord',
+      handle: '@hiratake',
+      url: 'https://chat.hiratake.dev/',
+    },
+    x: {
+      name: 'X',
+      handle: '@Hirotaisou2012',
+      url: 'https://x.com/Hirotaisou2012',
+    },
+    misskey: {
+      name: 'Misskey',
+      handle: '@Hiratake',
+      url: 'https://misskey.io/@Hiratake',
+    },
+    mastodon: {
+      name: 'Mastodon',
+      handle: '@hiratake@mozilla.social',
+      url: 'https://mozilla.social/@hiratake',
+    },
+    rss: {
+      name: 'Hiratake Web Blog RSS Feed',
+      url: 'https://hiratake.dev/feed.xml',
+    },
   },
+  /** ヘッダーの情報 */
   header: {
     menu: [
       { title: 'ブログ', url: '/blog/' },
@@ -34,6 +53,7 @@ export default defineAppConfig({
       { title: 'お問い合わせ', url: '/contact/' },
     ],
   },
+  /** フッターの情報 */
   footer: {
     menu: [
       { title: 'ブログ', url: '/blog/' },
@@ -42,4 +62,6 @@ export default defineAppConfig({
       { title: 'プライバシーポリシー', url: '/privacy/' },
     ],
   },
+  /** 一覧画面に表示するページあたりの投稿数 */
+  itemPerPage: 20,
 })

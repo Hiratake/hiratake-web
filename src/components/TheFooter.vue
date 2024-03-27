@@ -3,17 +3,16 @@
 import { PhRss } from '@phosphor-icons/vue'
 import { siBluesky, siDiscord, siGithub } from 'simple-icons'
 
-const app = useAppConfig()
 const website = useWebsite()
 const year = useDateFormat(new Date(), 'YYYY')
-const { copy } = useClipboard({ source: app.socials.rss.url })
+const { copy } = useClipboard({ source: website.value.socials.rss.url })
 
 /** ウェブサイトの名前 */
-const name = website.value.site.name
+const name = website.value.name
 /** ソーシャルリンク */
-const socials = app.socials
+const socials = website.value.socials
 /** フッターナビゲーションの項目 */
-const menu = app.footer.menu
+const menu = website.value.footer.menu
 /** RSSフィードのURLをコピーしたことを通知するツールチップを表示するか */
 const isVisibleRssFeedCopyTooltip = ref<boolean>(false)
 /** RSSフィードのURLをコピーする */

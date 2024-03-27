@@ -9,6 +9,8 @@ import '@fontsource/lexend/900.css'
 import '@fontsource/source-code-pro/400.css'
 import '@fontsource/source-code-pro/700.css'
 
+const website = useWebsite()
+
 // TODO: Vue v3.5 がリリースされたら削除
 provideUseId(() => useId())
 </script>
@@ -16,7 +18,7 @@ provideUseId(() => useId())
 <template>
   <Body class="body">
     <SeoDefault />
-    <NuxtLoadingIndicator :height="2" color="#a83d3d" />
+    <NuxtLoadingIndicator :height="2" :color="website.themeColor" />
     <TheHeader />
     <NuxtPage />
     <TheFooter />

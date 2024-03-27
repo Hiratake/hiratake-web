@@ -13,9 +13,9 @@ if (error.value) {
 }
 
 /** ウェブサイトの名前 */
-const name = website.value.site.name
+const name = website.value.name
 /** ウェブサイトの概要 */
-const description = website.value.site.description
+const description = website.value.description
 
 useSeoMeta({
   title: () => data.value?.title || name,

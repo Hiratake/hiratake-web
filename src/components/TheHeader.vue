@@ -5,23 +5,22 @@ import { Switch } from '@headlessui/vue'
 import { PhMoon, PhRss, PhSun } from '@phosphor-icons/vue'
 import { siDiscord } from 'simple-icons'
 
-const app = useAppConfig()
 const website = useWebsite()
 const colorMode = useColorMode()
 const [isVisibleOverlay, toggleOverlay] = useToggle()
-const { copy } = useClipboard({ source: app.socials.rss.url })
+const { copy } = useClipboard({ source: website.value.socials.rss.url })
 
 /** ウェブサイトの名前 */
-const name = website.value.site.name
+const name = website.value.name
 /** ダークモードが指定されているか */
 const isDark = computed<boolean>({
   get: () => colorMode.value === 'dark',
   set: (val) => (colorMode.value = val ? 'dark' : 'light'),
 })
 /** ソーシャルリンク */
-const socials = app.socials
+const socials = website.value.socials
 /** グローバルナビゲーションの項目 */
-const menu = app.header.menu
+const menu = website.value.header.menu
 /** RSSフィードのURLをコピーしたことを通知するツールチップを表示するか */
 const isVisibleRssFeedCopyTooltip = ref<boolean>(false)
 /** RSSフィードのURLをコピーする */

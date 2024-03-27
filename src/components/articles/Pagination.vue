@@ -20,7 +20,7 @@ const { data: max, error } = await useAsyncData('blog-count', () =>
 const currentPage = computed(() => Number(props.current))
 /** 最後のページ番号 */
 const lastPage = computed(() =>
-  Math.ceil((max.value || 0) / website.value.list.perPage),
+  Math.ceil((max.value || 0) / website.value.itemPerPage),
 )
 /** 前のページのURL */
 const prev = computed<string | undefined>(() => {

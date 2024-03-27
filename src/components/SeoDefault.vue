@@ -5,11 +5,11 @@ const website = useWebsite()
 /** Google Tag Manager の ID */
 const gtmId = config.public.gtmId
 /** ウェブサイトのURL */
-const url = website.value.site.url
+const url = website.value.url
 /** ウェブサイトの名前 */
-const name = website.value.site.name
+const name = website.value.name
 /** ウェブサイトのテーマカラー */
-const themeColor = website.value.site.themeColor
+const themeColor = website.value.themeColor
 
 useHead({
   htmlAttrs: { prefix: 'og: https://ogp.me/ns#', dir: 'ltr' },

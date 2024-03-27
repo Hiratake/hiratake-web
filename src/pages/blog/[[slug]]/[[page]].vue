@@ -20,7 +20,7 @@ const { data: articles, error: listError } = await useAsyncData(
     /** ページ番号 */
     const pageNumber = Number(route.params?.page) || 1
     /** 1ページに表示する投稿数 */
-    const perPage = website.value.list.perPage
+    const perPage = website.value.itemPerPage
 
     return queryContent<BlogArticle>('blog')
       .only(['_path', 'title', 'description', 'created'])
@@ -46,9 +46,9 @@ if (
 }
 
 /** ウェブサイトの名前 */
-const name = website.value.site.name
+const name = website.value.name
 /** ウェブサイトの概要 */
-const description = website.value.site.description
+const description = website.value.description
 
 useSeoMeta({
   title: () => data.value?.title || name,

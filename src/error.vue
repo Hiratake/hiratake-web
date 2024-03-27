@@ -10,6 +10,7 @@ type ErrorProps = {
 
 const props = defineProps<ErrorProps>()
 
+const website = useWebsite()
 const route = useRoute()
 
 /** エラーページのタイトル */
@@ -31,7 +32,7 @@ useSeoMeta({ title: title.value, description: description.value })
 <template>
   <Body class="body">
     <SeoDefault />
-    <NuxtLoadingIndicator :height="2" color="#a83d3d" />
+    <NuxtLoadingIndicator :height="2" :color="website.themeColor" />
     <TheHeader />
     <main
       class="mx-auto mt-12 box-content flex min-h-[calc(100vh-28rem)] max-w-5xl flex-col gap-8 px-6 md:mt-20 md:gap-16"
