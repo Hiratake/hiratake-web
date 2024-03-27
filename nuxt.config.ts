@@ -58,4 +58,5 @@ export default defineNuxtConfig({
     trailingSlash: true,
   },
   srcDir: 'src/',
+  tailwindcss: { cssPath: '@/assets/tailwind.css' },
 })

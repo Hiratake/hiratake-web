@@ -10,12 +10,11 @@ import '@fontsource/source-code-pro/400.css'
 import '@fontsource/source-code-pro/700.css'
 
 // TODO: Vue v3.5 がリリースされたら削除
-// https://github.com/tailwindlabs/headlessui/issues/2913
 provideUseId(() => useId())
 </script>
 
 <template>
-  <Body class="bg-white text-slate-600 dark:bg-slate-900 dark:text-slate-100">
+  <Body class="body">
     <SeoDefault />
     <NuxtLoadingIndicator :height="2" color="#a83d3d" />
     <TheHeader />

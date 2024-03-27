@@ -29,7 +29,7 @@ useSeoMeta({ title: title.value, description: description.value })
 </script>
 
 <template>
-  <Body class="bg-white text-slate-600 dark:bg-slate-900 dark:text-slate-100">
+  <Body class="body">
     <SeoDefault />
     <NuxtLoadingIndicator :height="2" color="#a83d3d" />
     <TheHeader />
