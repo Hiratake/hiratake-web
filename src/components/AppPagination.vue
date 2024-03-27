@@ -1,71 +1,70 @@
 <script lang="ts" setup>
 // Icons
 import { PhCaretLeft, PhCaretRight } from '@phosphor-icons/vue'
+// Utils
+import { withoutTrailingSlash } from 'ufo'
 
-type ArticlesPaginationProps = {
+type AppPaginationProps = {
   /** 現在のページ番号 */
-  current: string | number
+  current: number
+  /** アイテムの総数 */
+  itemCount: number
+  /** ベースとなるURL */
+  baseUrl?: string
 }
 
-const props = defineProps<ArticlesPaginationProps>()
+const props = withDefaults(defineProps<AppPaginationProps>(), {
+  baseUrl: '/',
+})
 
 const website = useWebsite()
-const { data: max, error } = await useAsyncData('blog_count', () =>
-  queryContent('blog')
-    .where({ _path: { $not: '/blog' } })
-    .count(),
-)
 
-/** 現在のページ番号 */
-const currentPage = computed(() => Number(props.current))
+/**
+ * 指定したページ番号のURLを取得する
+ * @param val ページ番号
+ */
+const getPageUrl = (val: number): string => {
+  const url = withoutTrailingSlash(props.baseUrl)
+  return val === 1
+    ? useTrailingSlash(url)
+    : useTrailingSlash(`${url}/page/${val}`)
+}
+
 /** 最後のページ番号 */
-const lastPage = computed(() =>
-  Math.ceil((max.value || 0) / website.value.itemPerPage),
+const last = computed(() =>
+  Math.ceil(props.itemCount / website.value.itemPerPage),
 )
 /** 前のページのURL */
-const prev = computed<string | undefined>(() => {
-  if (currentPage.value === 1) {
-    return undefined
-  } else {
-    return useTrailingSlash(
-      currentPage.value === 2
-        ? '/blog/'
-        : `/blog/page/${currentPage.value - 1}/`,
-    )
-  }
-})
+const prev = computed(() =>
+  props.current === 1 ? undefined : getPageUrl(props.current - 1),
+)
 /** 次のページのURL */
-const next = computed<string | undefined>(() => {
-  if (currentPage.value === lastPage.value) {
-    return undefined
-  } else {
-    return useTrailingSlash(`/blog/page/${currentPage.value + 1}/`)
-  }
-})
+const next = computed(() =>
+  props.current === last.value ? undefined : getPageUrl(props.current + 1),
+)
 /** ページネーションの項目 */
-const paginationItems = computed(() =>
-  [...Array(lastPage.value < 5 ? lastPage.value : 5)]
+const items = computed(() =>
+  [...Array(last.value < 5 ? last.value : 5)]
     .map(
       (_, i) =>
         i +
-        (lastPage.value < 5 || currentPage.value - 2 < 1
+        (last.value < 5 || props.current - 2 < 1
           ? 1
-          : currentPage.value + 2 > lastPage.value
-            ? lastPage.value - 4
-            : currentPage.value - 2),
+          : props.current + 2 > last.value
+            ? last.value - 4
+            : props.current - 2),
     )
     .map((item) => ({
-      to: item === 1 ? '/blog/' : `/blog/page/${item}/`,
+      to: getPageUrl(item),
       label: item,
-      current: item === currentPage.value,
-    }))
-    .map((item) => ({ ...item, to: useTrailingSlash(item.to) })),
+      current: item === props.current,
+    })),
 )
 </script>
 
 <template>
   <nav
-    v-if="!error && max"
+    v-if="props.current && props.itemCount"
     class="mx-auto flex max-w-3xl items-center justify-center gap-3 rounded-3xl border border-primary bg-white px-8 py-1.5 font-accent shadow-xl dark:bg-slate-900 dark:shadow-slate-200/10"
   >
     <NuxtLink
@@ -77,7 +76,7 @@ const paginationItems = computed(() =>
       <PhCaretLeft class="size-3" weight="bold" />
     </NuxtLink>
     <NuxtLink
-      v-for="item in paginationItems"
+      v-for="item in items"
       :key="item.label"
       :to="item.to"
       :class="[

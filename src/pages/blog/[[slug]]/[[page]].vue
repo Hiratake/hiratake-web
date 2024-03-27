@@ -31,8 +31,20 @@ const { data: articles, error: articlesError } = await useAsyncData(
       .find()
   },
 )
+const { data: count, error: countError } = await useAsyncData(
+  'blog_count',
+  () =>
+    queryContent('blog')
+      .where({ _path: { $not: '/blog' } })
+      .count(),
+)
 
-if (error.value || articlesError.value || !articles.value?.length) {
+if (
+  error.value ||
+  articlesError.value ||
+  countError.value ||
+  !articles.value?.length
+) {
   throw createError({
     statusCode: 404,
     message: 'ページが見つかりません',
@@ -40,25 +52,25 @@ if (error.value || articlesError.value || !articles.value?.length) {
   })
 }
 
-/** ウェブサイトの名前 */
-const name = website.value.name
-/** ウェブサイトの概要 */
-const description = website.value.description
-
 useSeoMeta({
-  title: () => data.value?.title || name,
-  description: () => data.value?.description || description,
+  title: () => data.value?.title || website.value.name,
+  description: () => data.value?.description || website.value.description,
   ogType: 'website',
 })
 useSchemaOrg([
   defineBreadcrumb({
     itemListElement: [
-      { name: name, item: '/' },
+      { name: website.value.name, item: '/' },
       { name: data.value?.title, item: useTrailingSlash('/blog/') },
     ],
   }),
 ])
-defineOgImage({ url: '/ogp.jpg', width: 1200, height: 630, alt: name })
+defineOgImage({
+  url: '/ogp.jpg',
+  width: 1200,
+  height: 630,
+  alt: website.value.name,
+})
 </script>
 
 <template>
@@ -69,6 +81,10 @@ defineOgImage({ url: '/ogp.jpg', width: 1200, height: 630, alt: name })
       </p>
     </ArticlesPageHeader>
     <ArticlesList :items="articles" />
-    <ArticlesPagination :current="Number(route.params?.page) || 1" />
+    <AppPagination
+      :current="Number(route.params?.page || 1)"
+      :item-count="count || 0"
+      base-url="/blog/"
+    />
   </main>
 </template>
