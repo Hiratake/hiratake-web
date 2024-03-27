@@ -18,17 +18,13 @@ const blogArticles = computed(() =>
   (props.items || [])
     .filter((item) => item._path && item.title && item.created)
     .map((item) => ({
-      // /blog/YYYY/MM/DD -> /blog/YYYYMMDD
-      path: item._path
-        ? `/blog/${item._path.replace('/blog', '').split('/').join('')}`
-        : '',
+      path: useTrailingSlash(blogPathToUrl(item._path)),
       title: item.title || '',
       description: item.description || '',
       created: item.created || new Date(),
     }))
     .map((item) => ({
       ...item,
-      path: useTrailingSlash(item.path),
       created: {
         hyphen: useDateFormat(item.created, 'YYYY-MM-DD').value,
         slash: useDateFormat(item.created, 'YYYY/MM/DD').value,

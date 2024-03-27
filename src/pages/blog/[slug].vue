@@ -6,9 +6,7 @@ const website = useWebsite()
 const route = useRoute()
 const { data, error } = await useAsyncData(route.path, () => {
   if (!Array.isArray(route.params?.slug) && /^\d{8}$/.test(route.params.slug)) {
-    return queryContent<BlogArticle>(
-      `/blog/${route.params.slug.slice(0, 4)}/${route.params.slug.slice(4, 6)}/${route.params.slug.slice(6, 8)}`,
-    ).findOne()
+    return queryContent<BlogArticle>(blogUrlToPath(route.path)).findOne()
   } else {
     throw new Error('URLの形式が不正です')
   }
@@ -27,9 +25,7 @@ const { data: surround, error: surroundError } = await useAsyncData(
       return queryContent<BlogArticle>()
         .where({ _path: { $regex: /^\/blog\/\d{4}\/\d{2}\/\d{2}/ } })
         .only(['_path', 'title', 'description', 'created'])
-        .findSurround(
-          `/blog/${route.params.slug.slice(0, 4)}/${route.params.slug.slice(4, 6)}/${route.params.slug.slice(6, 8)}`,
-        )
+        .findSurround(blogUrlToPath(route.path))
     } else {
       throw new Error('URLの形式が不正です')
     }
@@ -54,12 +50,7 @@ const author = website.value.owner
 const prev = computed(() => {
   if (surround.value && surround.value[0]) {
     return {
-      _path: useTrailingSlash(
-        `/blog/${((surround.value[0]._path as string) || '')
-          .replace('/blog', '')
-          .split('/')
-          .join('')}/`,
-      ),
+      _path: useTrailingSlash(blogPathToUrl(surround.value[0]._path)),
       title: surround.value[0].title || '',
       description: surround.value[0].description || '',
       created: surround.value[0].created,
@@ -72,12 +63,7 @@ const prev = computed(() => {
 const next = computed(() => {
   if (surround.value && surround.value[1]) {
     return {
-      _path: useTrailingSlash(
-        `/blog/${((surround.value[1]._path as string) || '')
-          .replace('/blog', '')
-          .split('/')
-          .join('')}/`,
-      ),
+      _path: useTrailingSlash(blogPathToUrl(surround.value[1]._path)),
       title: surround.value[1].title || '',
       description: surround.value[1].description || '',
       created: surround.value[1].created,
