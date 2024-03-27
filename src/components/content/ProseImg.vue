@@ -17,13 +17,12 @@ const props = withDefaults(defineProps<ProseImgProps>(), {
   height: 864,
 })
 
-const config = useRuntimeConfig()
 const website = useWebsite()
 
 /** 画像URL */
 const imageUrl = computed(() => {
   const url = website.value.url
-  const hash = config.public.cloudflareImageHash
+  const hash = website.value.cloudflareImageHash
   return `${url}/cdn-cgi/imagedelivery/${hash}/${props.src}`
 })
 </script>

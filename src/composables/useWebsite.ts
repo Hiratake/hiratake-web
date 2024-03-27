@@ -1,4 +1,5 @@
 export const useWebsite = () => {
+  const config = useRuntimeConfig()
   const app = useAppConfig()
   const site = useSiteConfig()
 
@@ -180,6 +181,16 @@ export const useWebsite = () => {
     },
     /** 一覧画面に表示するページあたりの投稿数 */
     itemPerPage: app.itemPerPage,
+    /**
+     * Google Tag Manager ID
+     * @example 'GTM-XXXXXXX'
+     */
+    gtmId: config.public.gtmId,
+    /**
+     * Cloudflare Images のアカウントハッシュ
+     * @example 'xxxxxxxxxxxxxxxxxxxxxx'
+     */
+    cloudflareImageHash: config.public.cloudflareImageHash,
   }))
 }
 

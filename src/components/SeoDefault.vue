@@ -1,11 +1,8 @@
 <script lang="ts" setup>
-const config = useRuntimeConfig()
 const website = useWebsite()
 
-/** Google Tag Manager の ID */
-const gtmId = config.public.gtmId
-/** ウェブサイトのURL */
-const url = website.value.url
+/** Google Tag Manager ID */
+const gtmId = website.value.gtmId
 /** ウェブサイトの名前 */
 const name = website.value.name
 /** ウェブサイトのテーマカラー */
@@ -23,7 +20,7 @@ useHead({
   link: [
     { rel: 'shortcut icon', type: 'image/x-icon', href: '/favicon.ico' },
     { rel: 'manifest', href: '/site.webmanifest' },
-    { rel: 'mask-icon', href: '/safari-pinned-tab.svg', color: '#a83d3d' },
+    { rel: 'mask-icon', href: '/safari-pinned-tab.svg', color: themeColor },
     {
       rel: 'icon',
       type: 'image/png',
@@ -44,8 +41,8 @@ useHead({
     {
       rel: 'alternate',
       type: 'application/rss+xml',
-      href: `${url}/feed.xml`,
-      title: `${name} Blog Feed`,
+      href: website.value.socials.rss.url,
+      title: website.value.socials.rss.name,
     },
   ],
   script: [
@@ -64,7 +61,7 @@ useHead({
 useSeoMeta({
   titleTemplate: '%pageTitle',
   twitterCard: 'summary_large_image',
-  twitterSite: '@Hirotaisou2012',
+  twitterSite: website.value.socials.x.handle,
 })
 </script>
 
