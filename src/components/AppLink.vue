@@ -1,7 +1,4 @@
 <script lang="ts" setup>
-// Icons
-import { PhArrowCircleRight } from '@phosphor-icons/vue'
-
 type AppLinkProps = {
   /** クリック時に移動するページのURL */
   to: string
@@ -20,7 +17,7 @@ const url = computed(() => useTrailingSlash(props.to))
   >
     <slot />
     <slot name="icon">
-      <PhArrowCircleRight class="mt-0.5 size-4" weight="bold" />
+      <span class="i-ph-arrow-circle-right-bold mt-0.5 size-4" />
     </slot>
   </NuxtLink>
 </template>

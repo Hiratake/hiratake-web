@@ -1,9 +1,6 @@
 <script lang="ts" setup>
 // Types
 import type { BlogArticle } from '@/types'
-// Icons
-import { PhArrowLeft, PhArrowRight } from '@phosphor-icons/vue'
-import { siDiscord } from 'simple-icons'
 
 type ArticlesPageFooterProps = {
   prev?: Pick<BlogArticle, '_path' | 'title' | 'description' | 'created'>
@@ -59,7 +56,7 @@ const nextArticle = computed(() =>
         class="flex shrink-0 grow basis-80 flex-col items-start gap-3"
       >
         <div class="flex items-center gap-1">
-          <PhArrowLeft class="size-5 text-primary" weight="fill" />
+          <span class="i-ph-arrow-left-fill size-5 text-primary" />
           <span class="text-sm font-bold">前の投稿</span>
         </div>
         <NuxtLink
@@ -90,7 +87,7 @@ const nextArticle = computed(() =>
       >
         <div class="flex items-center gap-1">
           <span class="text-sm font-bold">次の投稿</span>
-          <PhArrowRight class="size-5 text-primary" weight="fill" />
+          <span class="i-ph-arrow-right-fill size-5 text-primary" />
         </div>
         <NuxtLink
           :to="nextArticle.to"
@@ -128,13 +125,7 @@ const nextArticle = computed(() =>
         :to="website.socials.discord.url"
         class="flex items-center gap-2 rounded-2xl bg-discord px-6 py-1.5 text-white transition-colors hover:bg-discord/80"
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          class="size-5 fill-current"
-        >
-          <path :d="siDiscord.path" />
-        </svg>
+        <span class="i-simple-icons-discord size-5" />
         <span class="pb-0.5 text-xs font-bold">Discord に参加</span>
       </NuxtLink>
     </div>

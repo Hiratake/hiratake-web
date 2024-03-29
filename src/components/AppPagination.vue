@@ -1,6 +1,4 @@
 <script lang="ts" setup>
-// Icons
-import { PhCaretLeft, PhCaretRight } from '@phosphor-icons/vue'
 // Utils
 import { withoutTrailingSlash } from 'ufo'
 
@@ -73,7 +71,7 @@ const items = computed(() =>
       title="前のページへ"
       class="mr-4 flex size-9 items-center justify-center rounded-full transition-colors hover:bg-slate-100 hover:dark:bg-slate-800"
     >
-      <PhCaretLeft class="size-3" weight="bold" />
+      <span class="i-ph-caret-left-bold size-3" />
     </NuxtLink>
     <NuxtLink
       v-for="item in items"
@@ -94,7 +92,7 @@ const items = computed(() =>
       title="次のページへ"
       class="ml-4 flex size-9 items-center justify-center rounded-full transition-colors hover:bg-slate-100 hover:dark:bg-slate-800"
     >
-      <PhCaretRight class="size-3" weight="bold" />
+      <span class="i-ph-caret-right-bold size-3" />
     </NuxtLink>
   </nav>
 </template>

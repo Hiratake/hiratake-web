@@ -1,8 +1,6 @@
 <script lang="ts" setup>
 // Types
 import type { BlogArticle } from '@/types'
-// Icons
-import { PhCaretRight } from '@phosphor-icons/vue'
 
 type ArticlesListProps = {
   /** ブログ投稿のリスト */
@@ -80,7 +78,7 @@ const blogArticles = computed(() =>
               <span class="text-xs text-primary underline dark:text-white">
                 続きを読む
               </span>
-              <PhCaretRight class="mt-1 size-3 text-primary" weight="bold" />
+              <span class="i-ph-caret-right-bold mt-1 size-3 text-primary" />
             </div>
           </div>
         </NuxtLink>

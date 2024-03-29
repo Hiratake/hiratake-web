@@ -1,8 +1,6 @@
 <script lang="ts" setup>
 // Types
 import type { NuxtError } from '#app'
-// Icons
-import { PhArrowUDownLeft } from '@phosphor-icons/vue'
 
 type ErrorProps = {
   /** エラーの情報 */
@@ -51,7 +49,7 @@ useSeoMeta({ title: title.value, description: description.value })
         <AppLink to="/">
           <span class="text-xs">トップページへ戻る</span>
           <template #icon>
-            <PhArrowUDownLeft class="mt-0.5 size-4" weight="bold" />
+            <span class="i-ph-arrow-u-down-left-bold mt-0.5 size-4" />
           </template>
         </AppLink>
       </div>

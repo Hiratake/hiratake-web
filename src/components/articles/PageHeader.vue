@@ -1,7 +1,4 @@
 <script lang="ts" setup>
-// Icons
-import { PhCalendarBlank, PhClockClockwise } from '@phosphor-icons/vue'
-
 type ArticlesHeaderProps = {
   /** タイトル */
   title?: string
@@ -50,7 +47,7 @@ const updatedDate = computed(() => ({
         >
           <dt>投稿した日</dt>
           <dd class="flex items-center gap-1 font-bold">
-            <PhCalendarBlank class="mt-0.5 size-5" weight="bold" />
+            <span class="i-ph-calendar-blank-bold mt-0.5 size-5" />
             <time :datetime="createdDate.hyphen">
               {{ createdDate.slash }}
             </time>
@@ -62,7 +59,7 @@ const updatedDate = computed(() => ({
         >
           <dt>更新した日</dt>
           <dd class="flex items-center gap-1 font-bold">
-            <PhClockClockwise class="mt-0.5 size-5" weight="bold" />
+            <span class="i-ph-clock-clockwise-bold mt-0.5 size-5" />
             <time :datetime="updatedDate.hyphen">
               {{ updatedDate.slash }}
             </time>

@@ -1,8 +1,4 @@
 <script lang="ts" setup>
-// Icons
-import { PhRss } from '@phosphor-icons/vue'
-import { siBluesky, siDiscord, siGithub } from 'simple-icons'
-
 const website = useWebsite()
 const year = useDateFormat(new Date(), 'YYYY')
 const { copy } = useClipboard({ source: website.value.socials.rss.url })
@@ -56,13 +52,7 @@ whenever(
             class="relative flex size-8 items-center justify-center rounded before:absolute before:size-full before:rounded before:bg-current before:opacity-0 before:transition-opacity hover:before:opacity-20"
             target="_blank"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              class="size-5 fill-current"
-            >
-              <path :d="siBluesky.path" />
-            </svg>
+            <span class="i-simple-icons-bluesky size-5" />
           </NuxtLink>
           <NuxtLink
             :title="socials.github.name"
@@ -71,13 +61,7 @@ whenever(
             class="relative flex size-8 items-center justify-center rounded before:absolute before:size-full before:rounded before:bg-current before:opacity-0 before:transition-opacity hover:before:opacity-20"
             target="_blank"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              class="size-5 fill-current"
-            >
-              <path :d="siGithub.path" />
-            </svg>
+            <span class="i-simple-icons-github size-5" />
           </NuxtLink>
           <NuxtLink
             :title="socials.discord.name"
@@ -86,13 +70,7 @@ whenever(
             class="relative flex size-8 items-center justify-center rounded before:absolute before:size-full before:rounded before:bg-current before:opacity-0 before:transition-opacity hover:before:opacity-20"
             target="_blank"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              class="size-5 fill-current"
-            >
-              <path :d="siDiscord.path" />
-            </svg>
+            <span class="i-simple-icons-discord size-5" />
           </NuxtLink>
           <button
             :title="socials.rss.name"
@@ -100,7 +78,7 @@ whenever(
             class="relative flex size-8 items-center justify-center rounded before:absolute before:size-full before:rounded before:bg-current before:opacity-0 before:transition-opacity hover:before:opacity-20"
             @click="() => rssFeedCopy()"
           >
-            <PhRss class="size-5" weight="bold" />
+            <span class="i-ph-rss-bold size-5" />
             <span
               :class="[
                 isVisibleRssFeedCopyTooltip ? 'opacity-100' : 'opacity-0',

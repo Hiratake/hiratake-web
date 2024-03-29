@@ -11,6 +11,9 @@ devDependencies:
   '@commitlint/config-conventional':
     specifier: 19.1.0
     version: 19.1.0
+  '@egoist/tailwindcss-icons':
+    specifier: 1.7.4
+    version: 1.7.4(tailwindcss@3.4.3)
   '@fontsource/lexend':
     specifier: 5.0.19
     version: 5.0.19
@@ -32,6 +35,12 @@ devDependencies:
   '@hiratake/textlint-rule-space-around-bold':
     specifier: 1.0.4
     version: 1.0.4
+  '@iconify-json/ph':
+    specifier: 1.1.11
+    version: 1.1.11
+  '@iconify-json/simple-icons':
+    specifier: 1.1.97
+    version: 1.1.97
   '@nuxt/content':
     specifier: 2.12.1
     version: 2.12.1(nuxt@3.11.1)(vue@3.4.21)
@@ -44,9 +53,6 @@ devDependencies:
   '@nuxtjs/tailwindcss':
     specifier: 6.11.4
     version: 6.11.4
-  '@phosphor-icons/vue':
-    specifier: 2.1.6
-    version: 2.1.6(vue@3.4.21)
   '@tailwindcss/typography':
     specifier: 0.5.12
     version: 0.5.12(tailwindcss@3.4.3)
@@ -89,9 +95,6 @@ devDependencies:
   prettier-plugin-tailwindcss:
     specifier: 0.5.13
     version: 0.5.13(prettier@3.2.5)
-  simple-icons:
-    specifier: 11.10.0
-    version: 11.10.0
   tailwindcss:
     specifier: 3.4.3
     version: 3.4.3
@@ -947,6 +950,17 @@ packages:
       postcss: 8.4.38
     dev: true
 
+  /@egoist/tailwindcss-icons@1.7.4(tailwindcss@3.4.3):
+    resolution: {integrity: sha512-883qx0sqeNb8km7os0w8K6UYue88dbgTWwyEUwW74Bgz0H7t+m7PMIIEvSQ4JqHwA823Qd5ciz+NoTBWKaMYfg==}
+    peerDependencies:
+      tailwindcss: '*'
+    dependencies:
+      '@iconify/utils': 2.1.22
+      tailwindcss: 3.4.3
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
   /@esbuild/aix-ppc64@0.20.2:
     resolution: {integrity: sha512-D+EBOJHXdNZcLJRBkhENNG8Wji2kgc9AZ9KiPr1JuZjsNtyHzrsfLRrY0tk2H2aoFu6RANO1y1iPPUCDYWkb5g==}
     engines: {node: '>=12'}
@@ -1309,8 +1323,20 @@ packages:
       '@iconify/types': 2.0.0
     dev: true
 
+  /@iconify-json/ph@1.1.11:
+    resolution: {integrity: sha512-izLvLZrU7WM03zNwNWNrAySv3i45hM3D3K6USjCGBSQMUG0HB8zxwrMf4O0leDrganmuQBH7Z0DWTgyH1ET/fg==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: true
+
   /@iconify-json/ri@1.1.20:
     resolution: {integrity: sha512-yScIGjLFBCJKWKskQTWRjNI2Awoq+VRDkRxEsCQvSfdz41n+xkRtFG2K6J1OVI90ClRHfjFC8VJ2+WzxxyFjTQ==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: true
+
+  /@iconify-json/simple-icons@1.1.97:
+    resolution: {integrity: sha512-/jTwrcAM2Gh8FtgEn8mHolaoY1iNbRgH3AE8OXu7JULi4Tdp31u7bmCSIaNDTLdBrXjcDpw0y98Dm20TbauBCg==}
     dependencies:
       '@iconify/types': 2.0.0
     dev: true
@@ -2334,15 +2360,6 @@ packages:
       '@parcel/watcher-win32-arm64': 2.4.1
       '@parcel/watcher-win32-ia32': 2.4.1
       '@parcel/watcher-win32-x64': 2.4.1
-    dev: true
-
-  /@phosphor-icons/vue@2.1.6(vue@3.4.21):
-    resolution: {integrity: sha512-j4iVvNT4JbDR2udIVfakKZHd14i3jCvO4b24OC0W/1rasftU8qVg1Tnb3QDwAT0teNU+UxvaM+kCWxfGHC2dUg==}
-    engines: {node: '>=14'}
-    peerDependencies:
-      vue: '>=3.2.39'
-    dependencies:
-      vue: 3.4.21(typescript@5.4.3)
     dev: true
 
   /@pkgjs/parseargs@0.11.0:
@@ -11413,11 +11430,6 @@ packages:
       debug: 4.3.4
     transitivePeerDependencies:
       - supports-color
-    dev: true
-
-  /simple-icons@11.10.0:
-    resolution: {integrity: sha512-3jhPx5xgbDCx/tuegpnW82VmUc4xe7yVd5r/BwIhfei02hS3IbOfgLKPPczd2OasngeNEd0J31vU19/0jmfxrQ==}
-    engines: {node: '>=0.12.18'}
     dev: true
 
   /sirv@2.0.4:

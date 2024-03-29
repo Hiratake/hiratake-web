@@ -3,8 +3,9 @@ import type { Config } from 'tailwindcss'
 // Theme
 import { fontFamily } from 'tailwindcss/defaultTheme'
 // Plugins
-import TailwindTypographyPlugin from '@tailwindcss/typography'
-import TailwindHeadlessUIPlugin from '@headlessui/tailwindcss'
+import headlessUIPlugin from '@headlessui/tailwindcss'
+import typographyPlugin from '@tailwindcss/typography'
+import { iconsPlugin, getIconCollections } from '@egoist/tailwindcss-icons'
 
 // https://tailwindcss.com/docs/configuration
 export default <Partial<Config>>{
@@ -50,6 +51,10 @@ export default <Partial<Config>>{
       },
     },
   },
-  plugins: [TailwindTypographyPlugin, TailwindHeadlessUIPlugin],
+  plugins: [
+    headlessUIPlugin,
+    typographyPlugin,
+    iconsPlugin({ collections: getIconCollections(['ph', 'simple-icons']) }),
+  ],
   darkMode: 'class',
 }
