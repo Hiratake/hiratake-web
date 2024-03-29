@@ -8,7 +8,7 @@ import { withoutTrailingSlash, withTrailingSlash } from 'ufo'
 
 export default defineEventHandler(async (event) => {
   /** ウェブサイトの情報 */
-  // @ts-ignore
+  // @ts-ignore: Nuxt Site Config 側の問題が解決次第削除
   const site = useSiteConfig(event)
   /** ブログ一覧ページの情報 */
   const blogIndexContent = await serverQueryContent<ParsedContent>(

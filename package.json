@@ -23,10 +23,10 @@
   "type": "module",
   "packageManager": "pnpm@8.15.5",
   "engines": {
-    "node": ">=18.14.0"
+    "node": ">=20.9.0"
   },
   "volta": {
-    "node": "20.11.1"
+    "node": "20.12.0"
   },
   "devDependencies": {
     "@commitlint/cli": "19.2.1",
@@ -39,17 +39,16 @@
     "@hiratake/textlint-rule-front-matter": "1.1.2",
     "@hiratake/textlint-rule-space-around-bold": "1.0.4",
     "@nuxt/content": "2.12.1",
-    "@nuxt/eslint-config": "0.2.0",
+    "@nuxt/eslint": "0.3.0-beta.6",
     "@nuxtjs/seo": "2.0.0-rc.10",
     "@nuxtjs/tailwindcss": "6.11.4",
     "@phosphor-icons/vue": "2.1.6",
-    "@tailwindcss/typography": "0.5.10",
+    "@tailwindcss/typography": "0.5.12",
     "@textlint-rule/textlint-rule-no-unmatched-pair": "2.0.2",
     "@vueuse/core": "10.9.0",
     "@vueuse/nuxt": "10.9.0",
     "autoprefixer": "10.4.19",
     "eslint": "8.57.0",
-    "eslint-config-prettier": "9.1.0",
     "feed": "4.2.2",
     "h3": "1.11.1",
     "husky": "9.0.11",
@@ -57,9 +56,9 @@
     "nuxt": "3.11.1",
     "postcss": "8.4.38",
     "prettier": "3.2.5",
-    "prettier-plugin-tailwindcss": "0.5.12",
+    "prettier-plugin-tailwindcss": "0.5.13",
     "simple-icons": "11.10.0",
-    "tailwindcss": "3.4.1",
+    "tailwindcss": "3.4.3",
     "textlint": "14.0.4",
     "textlint-filter-rule-allowlist": "4.0.0",
     "textlint-rule-ja-space-around-code": "2.3.1",
@@ -78,8 +77,8 @@
     "generate": "nuxt generate",
     "lint": "pnpm lint:script && pnpm lint:text",
     "lint:fix": "pnpm lint:script:fix && pnpm lint:text:fix",
-    "lint:script": "eslint . --ext .js,.cjs,.mjs,.ts,.cts,.mts,.vue",
-    "lint:script:fix": "eslint . --ext .js,.cjs,.mjs,.ts,.cts,.mts,.vue --fix",
+    "lint:script": "eslint \"**/*.{js,cjs,mjs,ts,cts,mts,vue}\"",
+    "lint:script:fix": "eslint \"**/*.{js,cjs,mjs,ts,cts,mts,vue}\" --fix",
     "lint:text": "textlint \"**/*.md\"",
     "lint:text:fix": "textlint \"**/*.md\" --fix",
     "typecheck": "nuxt typecheck",

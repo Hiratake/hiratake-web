@@ -13,7 +13,7 @@ export const generateContentFromAst = (
   children: MarkdownParsedContent['body']['children'],
   tag?: boolean,
 ): string => {
-  // @ts-ignore
+  // @ts-ignore: Nuxt Site Config 側の問題が解決次第削除
   const site = useSiteConfig(event)
   const config = useRuntimeConfig()
 

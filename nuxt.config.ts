@@ -16,6 +16,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   linkChecker: { enabled: false },
   modules: [
+    '@nuxt/eslint',
     '@nuxt/content',
     '@nuxtjs/seo',
     '@nuxtjs/tailwindcss',
