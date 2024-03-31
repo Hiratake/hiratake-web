@@ -5,10 +5,7 @@ import type { BlogPost } from '@/types'
 const website = useWebsite()
 const route = useRoute()
 const { data, error } = await useAsyncData(
-  route.path
-    .split('/')
-    .filter((item) => item)
-    .join('-'),
+  pathToUseAsyncDataKey(route.path),
   () => {
     if (
       !Array.isArray(route.params?.slug) &&
@@ -20,14 +17,12 @@ const { data, error } = await useAsyncData(
     }
   },
 )
-const { data: blogData, error: blogError } = await useAsyncData('blog', () =>
-  queryContent('/blog').findOne(),
+const { data: blogData, error: blogError } = await useAsyncData(
+  pathToUseAsyncDataKey('/blog'),
+  () => queryContent('/blog').findOne(),
 )
 const { data: surround, error: surroundError } = await useAsyncData(
-  `${route.path
-    .split('/')
-    .filter((item) => item)
-    .join('-')}_surround`,
+  pathToUseAsyncDataKey(route.path, 'surround'),
   () => {
     if (
       route.params?.slug &&

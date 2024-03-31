@@ -16,7 +16,11 @@ const props = withDefaults(defineProps<BlogPostListProps>(), {
 
 const website = useWebsite()
 const { data, error } = await useAsyncData(
-  `blog_limit${props.limit || website.value.itemPerPage}_skip${props.skip}`,
+  pathToUseAsyncDataKey(
+    '/blog',
+    `limit-${props.limit || website.value.itemPerPage}`,
+    `skip-${props.skip}`,
+  ),
   () =>
     queryContent<BlogPost>('blog')
       .only(['_path', 'title', 'description', 'created'])

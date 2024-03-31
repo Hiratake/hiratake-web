@@ -1,11 +1,11 @@
 <script lang="ts" setup>
 const website = useWebsite()
 const route = useRoute()
-const { data, error } = await useAsyncData('blog', () =>
+const { data, error } = await useAsyncData(pathToUseAsyncDataKey('/blog'), () =>
   queryContent('/blog').findOne(),
 )
 const { data: count, error: countError } = await useAsyncData(
-  'blog_count',
+  pathToUseAsyncDataKey('/blog', 'count'),
   () => {
     if (!/^\/blog(\/page\/[1-9]\d*)?\/?$/.test(route.path)) {
       throw new Error('URLの形式が不正です')
