@@ -15,36 +15,24 @@ const props = withDefaults(defineProps<PageFooterProps>(), {
 const website = useWebsite()
 
 /** 前の投稿 */
-const prevArticle = computed(() =>
-  props.prev._path
-    ? {
-        to: props.prev._path,
-        title: props.prev.title || '',
-        description: props.prev.description,
-        created: {
-          hyphen: useDateFormat(props.prev.created || new Date(), 'YYYY-MM-DD')
-            .value,
-          slash: useDateFormat(props.prev.created || new Date(), 'YYYY/MM/DD')
-            .value,
-        },
-      }
-    : undefined,
+const prevArticle = computed(
+  () =>
+    props.prev._path && {
+      to: props.prev._path,
+      title: props.prev.title || '',
+      description: props.prev.description,
+      created: useDatetimeFormat(props.prev.created),
+    },
 )
 /** 次の投稿 */
-const nextArticle = computed(() =>
-  props.next._path
-    ? {
-        to: props.next._path,
-        title: props.next.title || '',
-        description: props.next.description,
-        created: {
-          hyphen: useDateFormat(props.next.created || new Date(), 'YYYY-MM-DD')
-            .value,
-          slash: useDateFormat(props.next.created || new Date(), 'YYYY/MM/DD')
-            .value,
-        },
-      }
-    : undefined,
+const nextArticle = computed(
+  () =>
+    props.next._path && {
+      to: props.next._path,
+      title: props.next.title || '',
+      description: props.next.description,
+      created: useDatetimeFormat(props.next.created),
+    },
 )
 </script>
 

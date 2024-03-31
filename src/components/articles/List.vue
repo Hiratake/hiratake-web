@@ -19,14 +19,7 @@ const blogArticles = computed(() =>
       path: useTrailingSlash(blogPathToUrl(item._path)),
       title: item.title || '',
       description: item.description || '',
-      created: item.created || new Date(),
-    }))
-    .map((item) => ({
-      ...item,
-      created: {
-        hyphen: useDateFormat(item.created, 'YYYY-MM-DD').value,
-        slash: useDateFormat(item.created, 'YYYY/MM/DD').value,
-      },
+      created: useDatetimeFormat(item.created),
     })),
 )
 </script>

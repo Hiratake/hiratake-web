@@ -21,15 +21,9 @@ const props = withDefaults(defineProps<PageHeaderProps>(), {
 })
 
 /** 投稿した日 */
-const createdDate = computed(() => ({
-  hyphen: useDateFormat(props.created || new Date(), 'YYYY-MM-DD').value,
-  slash: useDateFormat(props.created || new Date(), 'YYYY/MM/DD').value,
-}))
+const createdDate = computed(() => useDatetimeFormat(props.created))
 /** 更新した日 */
-const updatedDate = computed(() => ({
-  hyphen: useDateFormat(props.updated || new Date(), 'YYYY-MM-DD').value,
-  slash: useDateFormat(props.updated || new Date(), 'YYYY/MM/DD').value,
-}))
+const updatedDate = computed(() => useDatetimeFormat(props.updated))
 </script>
 
 <template>
