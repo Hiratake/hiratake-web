@@ -1,10 +1,10 @@
 <script lang="ts" setup>
 // Types
-import type { BlogArticle } from '@/types'
+import type { BlogPost } from '@/types'
 
 type PageFooterProps = {
-  prev?: Pick<BlogArticle, '_path' | 'title' | 'description' | 'created'>
-  next?: Pick<BlogArticle, '_path' | 'title' | 'description' | 'created'>
+  prev?: Pick<BlogPost, '_path' | 'title' | 'description' | 'created'>
+  next?: Pick<BlogPost, '_path' | 'title' | 'description' | 'created'>
 }
 
 const props = withDefaults(defineProps<PageFooterProps>(), {
@@ -15,7 +15,7 @@ const props = withDefaults(defineProps<PageFooterProps>(), {
 const website = useWebsite()
 
 /** 前の投稿 */
-const prevArticle = computed(
+const prevPost = computed(
   () =>
     props.prev._path && {
       to: props.prev._path,
@@ -25,7 +25,7 @@ const prevArticle = computed(
     },
 )
 /** 次の投稿 */
-const nextArticle = computed(
+const nextPost = computed(
   () =>
     props.next._path && {
       to: props.next._path,
@@ -40,7 +40,7 @@ const nextArticle = computed(
   <footer class="flex flex-col gap-16">
     <div class="flex flex-wrap gap-x-16 gap-y-10">
       <div
-        v-if="prevArticle"
+        v-if="prevPost"
         class="flex shrink-0 grow basis-80 flex-col items-start gap-3"
       >
         <div class="flex items-center gap-1">
@@ -48,29 +48,29 @@ const nextArticle = computed(
           <span class="text-sm font-bold">前の投稿</span>
         </div>
         <NuxtLink
-          :to="prevArticle.to"
+          :to="prevPost.to"
           class="flex grow flex-col gap-1.5 border-l border-l-slate-200 pl-6 transition-colors hover:border-l-primary dark:border-l-slate-700 dark:hover:border-l-primary"
         >
           <dl>
             <dt class="sr-only">投稿した日</dt>
             <dd class="text-xs">
-              <time :datetime="prevArticle.created.hyphen">
-                {{ prevArticle.created.slash }}
+              <time :datetime="prevPost.created.hyphen">
+                {{ prevPost.created.slash }}
               </time>
             </dd>
           </dl>
           <h3 class="font-bold text-slate-800 dark:text-white">
-            {{ prevArticle.title }}
+            {{ prevPost.title }}
           </h3>
           <p
             class="line-clamp-2 text-xs text-slate-500 dark:text-slate-400 md:text-sm"
           >
-            {{ prevArticle.description }}
+            {{ prevPost.description }}
           </p>
         </NuxtLink>
       </div>
       <div
-        v-if="nextArticle"
+        v-if="nextPost"
         class="flex shrink-0 grow basis-80 flex-col items-end gap-3"
       >
         <div class="flex items-center gap-1">
@@ -78,24 +78,24 @@ const nextArticle = computed(
           <span class="i-ph-arrow-right-fill size-5 text-primary" />
         </div>
         <NuxtLink
-          :to="nextArticle.to"
+          :to="nextPost.to"
           class="flex grow flex-col gap-1.5 border-r border-r-slate-200 pr-6 transition-colors hover:border-r-primary dark:border-r-slate-700 dark:hover:border-r-primary"
         >
           <dl>
             <dt class="sr-only">投稿した日</dt>
             <dd class="text-xs">
-              <time :datetime="nextArticle.created.hyphen">
-                {{ nextArticle.created.slash }}
+              <time :datetime="nextPost.created.hyphen">
+                {{ nextPost.created.slash }}
               </time>
             </dd>
           </dl>
           <h3 class="font-bold text-slate-800 dark:text-white">
-            {{ nextArticle.title }}
+            {{ nextPost.title }}
           </h3>
           <p
             class="line-clamp-2 text-xs text-slate-500 dark:text-slate-400 md:text-sm"
           >
-            {{ nextArticle.description }}
+            {{ nextPost.description }}
           </p>
         </NuxtLink>
       </div>

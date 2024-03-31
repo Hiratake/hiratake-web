@@ -1,11 +1,11 @@
 <script lang="ts" setup>
 // Types
-import type { BlogArticle } from '@/types'
+import type { BlogPost } from '@/types'
 
 const website = useWebsite()
 const route = useRoute()
 const { data, error } = await useAsyncData(route.path, () =>
-  queryContent<BlogArticle>(route.path).findOne(),
+  queryContent<BlogPost>(route.path).findOne(),
 )
 const { data: breadcrumbs, error: breadcrumbsError } = await useAsyncData(
   `${route.path}_breadcrumbs`,

@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 // Types
-import type { BlogArticle } from '@/types'
+import type { BlogPost } from '@/types'
 
 type BlogPostListProps = {
   /** 取得する投稿数 */
@@ -18,7 +18,7 @@ const website = useWebsite()
 const { data, error } = await useAsyncData(
   `blog_limit${props.limit || website.value.itemPerPage}_skip${props.skip}`,
   () =>
-    queryContent<BlogArticle>('blog')
+    queryContent<BlogPost>('blog')
       .only(['_path', 'title', 'description', 'created'])
       .where({ _path: { $not: '/blog' } })
       .sort({ created: -1 })

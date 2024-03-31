@@ -1,12 +1,12 @@
 <script lang="ts" setup>
 // Types
-import type { BlogArticle } from '@/types'
+import type { BlogPost } from '@/types'
 
 const website = useWebsite()
 const route = useRoute()
 const { data, error } = await useAsyncData(route.path, () => {
   if (!Array.isArray(route.params?.slug) && /^\d{8}$/.test(route.params.slug)) {
-    return queryContent<BlogArticle>(blogUrlToPath(route.path)).findOne()
+    return queryContent<BlogPost>(blogUrlToPath(route.path)).findOne()
   } else {
     throw new Error('URLの形式が不正です')
   }
@@ -22,7 +22,7 @@ const { data: surround, error: surroundError } = await useAsyncData(
       !Array.isArray(route.params.slug) &&
       /^\d{8}$/.test(route.params.slug)
     ) {
-      return queryContent<BlogArticle>()
+      return queryContent<BlogPost>()
         .where({ _path: { $regex: /^\/blog\/\d{4}\/\d{2}\/\d{2}/ } })
         .only(['_path', 'title', 'description', 'created'])
         .findSurround(blogUrlToPath(route.path))

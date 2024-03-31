@@ -1,6 +1,6 @@
 // Types
 import type { ParsedContent } from '@nuxt/content/types'
-import type { BlogArticle } from '@/types'
+import type { BlogPost } from '@/types'
 // Utils
 import { serverQueryContent } from '#content/server'
 import { Feed } from 'feed'
@@ -35,31 +35,28 @@ export default defineEventHandler(async (event) => {
     copyright: site?.name || 'Hiratake Web',
   })
   /** ブログの投稿 */
-  const articles = await serverQueryContent<BlogArticle>(event, 'blog')
+  const posts = await serverQueryContent<BlogPost>(event, 'blog')
     .where({ _path: { $regex: /^\/blog\/\d{4}\/\d{2}\/\d{2}/ } })
     .sort({ created: -1 })
     .limit(10)
     .find()
 
-  articles
+  posts
     .filter(
-      (article) =>
-        article._extension === 'md' &&
-        !article._empty &&
-        article._path &&
-        article.title,
+      (post) =>
+        post._extension === 'md' && !post._empty && post._path && post.title,
     )
-    .forEach((article) => {
+    .forEach((post) => {
       /** 投稿のURL */
-      const url = `${site.url}/blog/${withTrailingSlash((article._path || '').replace('/blog', '').split('/').join(''))}`
+      const url = `${site.url}/blog/${withTrailingSlash((post._path || '').replace('/blog', '').split('/').join(''))}`
 
       feed.addItem({
-        title: article.title || '',
+        title: post.title || '',
         id: url,
         link: url,
-        description: article.description.replace(/\r?\n/g, ''),
-        content: generateContentFromAst(event, article.body.children, true),
-        date: new Date(article?.created ? Date.parse(article.created) : ''),
+        description: post.description.replace(/\r?\n/g, ''),
+        content: generateContentFromAst(event, post.body.children, true),
+        date: new Date(post?.created ? Date.parse(post.created) : ''),
       })
     })
 
