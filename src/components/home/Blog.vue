@@ -1,7 +1,4 @@
 <script lang="ts" setup>
-// Types
-import type { BlogArticle } from '@/types'
-
 type HomeBlogProps = {
   /** セクションのタイトル */
   title: string
@@ -10,23 +7,6 @@ type HomeBlogProps = {
 }
 
 const props = defineProps<HomeBlogProps>()
-
-const { data, error } = await useAsyncData('index_articles', () =>
-  queryContent<BlogArticle>('blog')
-    .only(['_path', 'title', 'description', 'created'])
-    .where({ _path: { $not: '/blog' } })
-    .sort({ created: -1 })
-    .limit(5)
-    .find(),
-)
-
-if (error.value) {
-  throw createError({
-    statusCode: 404,
-    message: 'ページが見つかりません',
-    fatal: true,
-  })
-}
 </script>
 
 <template>
@@ -45,7 +25,7 @@ if (error.value) {
     </div>
     <div class="flex flex-col gap-8 sm:gap-12 md:gap-16">
       <p class="text-sm leading-relaxed">{{ props.description }}</p>
-      <ArticlesList :items="data" />
+      <BlogPostList :limit="5" />
     </div>
   </section>
 </template>

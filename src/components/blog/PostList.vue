@@ -2,18 +2,42 @@
 // Types
 import type { BlogArticle } from '@/types'
 
-type ArticlesListProps = {
-  /** ブログ投稿のリスト */
-  items?:
-    | Pick<BlogArticle, '_path' | 'title' | 'description' | 'created'>[]
-    | null
+type BlogPostListProps = {
+  /** 取得する投稿数 */
+  limit?: number
+  /** スキップする投稿数 */
+  skip?: number
 }
 
-const props = defineProps<ArticlesListProps>()
+const props = withDefaults(defineProps<BlogPostListProps>(), {
+  limit: undefined,
+  skip: 0,
+})
 
-/** ブログ投稿のリスト */
-const blogArticles = computed(() =>
-  (props.items || [])
+const website = useWebsite()
+const { data, error } = await useAsyncData(
+  `blog_limit${props.limit || website.value.itemPerPage}_skip${props.skip}`,
+  () =>
+    queryContent<BlogArticle>('blog')
+      .only(['_path', 'title', 'description', 'created'])
+      .where({ _path: { $not: '/blog' } })
+      .sort({ created: -1 })
+      .limit(props.limit || website.value.itemPerPage)
+      .skip(props.skip)
+      .find(),
+)
+
+if (error.value || !data.value?.length) {
+  throw createError({
+    statusCode: 404,
+    message: 'ページが見つかりません',
+    fatal: true,
+  })
+}
+
+/** ブログの投稿 */
+const items = computed(() =>
+  (data.value || [])
     .filter((item) => item._path && item.title && item.created)
     .map((item) => ({
       path: useTrailingSlash(blogPathToUrl(item._path)),
@@ -26,11 +50,7 @@ const blogArticles = computed(() =>
 
 <template>
   <div class="mx-auto w-full max-w-5xl">
-    <article
-      v-for="article in blogArticles"
-      :key="article.path"
-      class="flex gap-10"
-    >
+    <article v-for="post in items" :key="post.path" class="flex gap-10">
       <div
         class="hidden shrink-0 basis-12 items-start justify-center text-slate-300 dark:text-slate-700 sm:flex"
       >
@@ -49,23 +69,23 @@ const blogArticles = computed(() =>
         >
           <dt class="sr-only">投稿した日</dt>
           <dd class="text-xs">
-            <time :datetime="article.created.hyphen">
-              {{ article.created.slash }}
+            <time :datetime="post.created.hyphen">
+              {{ post.created.slash }}
             </time>
           </dd>
         </dl>
         <NuxtLink
-          :to="article.path"
+          :to="post.path"
           class="grid rounded-lg transition-opacity hover:opacity-65 md:row-span-full md:grid-rows-subgrid md:px-6 md:py-4 md:transition-colors md:hover:bg-slate-100 md:hover:opacity-100 md:hover:dark:bg-slate-800"
         >
           <h3 class="font-bold text-slate-800 dark:text-white">
-            {{ article.title }}
+            {{ post.title }}
           </h3>
           <div class="flex flex-col gap-3 pt-2 leading-relaxed md:pt-4">
             <p
               class="line-clamp-2 text-xs text-slate-500 dark:text-slate-400 md:text-sm"
             >
-              {{ article.description }}
+              {{ post.description }}
             </p>
             <div class="flex items-center gap-2">
               <span class="text-xs text-primary underline dark:text-white">

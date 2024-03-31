@@ -1,14 +1,11 @@
 <script lang="ts" setup>
-// Types
-import type { BlogArticle } from '@/types'
-
 const website = useWebsite()
 const route = useRoute()
 const { data, error } = await useAsyncData('blog', () =>
   queryContent('/blog').findOne(),
 )
-const { data: articles, error: articlesError } = await useAsyncData(
-  route.path,
+const { data: count, error: countError } = await useAsyncData(
+  'blog_count',
   () => {
     if (!/^\/blog(\/page\/[1-9]\d*)?\/?$/.test(route.path)) {
       throw new Error('URLの形式が不正です')
@@ -17,34 +14,13 @@ const { data: articles, error: articlesError } = await useAsyncData(
       throw new Error('URLの形式が不正です')
     }
 
-    /** ページ番号 */
-    const pageNumber = Number(route.params?.page) || 1
-    /** 1ページに表示する投稿数 */
-    const perPage = website.value.itemPerPage
-
-    return queryContent<BlogArticle>('blog')
-      .only(['_path', 'title', 'description', 'created'])
+    return queryContent('blog')
       .where({ _path: { $not: '/blog' } })
-      .sort({ created: -1 })
-      .limit(perPage)
-      .skip((pageNumber - 1) * perPage)
-      .find()
+      .count()
   },
 )
-const { data: count, error: countError } = await useAsyncData(
-  'blog_count',
-  () =>
-    queryContent('blog')
-      .where({ _path: { $not: '/blog' } })
-      .count(),
-)
 
-if (
-  error.value ||
-  articlesError.value ||
-  countError.value ||
-  !articles.value?.length
-) {
+if (error.value || countError.value) {
   throw createError({
     statusCode: 404,
     message: 'ページが見つかりません',
@@ -78,7 +54,9 @@ defineOgImage({
     <PageHeader :title="data.title">
       <p class="text-sm leading-relaxed">{{ data.description }}</p>
     </PageHeader>
-    <ArticlesList :items="articles" />
+    <BlogPostList
+      :skip="((Number(route.params?.page) || 1) - 1) * website.itemPerPage"
+    />
     <AppPagination
       :current="Number(route.params?.page || 1)"
       :item-count="count || 0"
