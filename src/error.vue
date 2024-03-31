@@ -34,7 +34,7 @@ useSeoMeta({ title: title.value, description: description.value })
     <NuxtLoadingIndicator :height="2" :color="website.themeColor" />
     <TheHeader />
     <main class="main mt-12 max-w-5xl gap-8 md:mt-20 md:gap-16">
-      <ArticlesPageHeader :title="title">
+      <PageHeader :title="title">
         <div class="flex gap-2 text-xs">
           <span class="shrink-0 py-1">現在のURL：</span>
           <div
@@ -43,7 +43,7 @@ useSeoMeta({ title: title.value, description: description.value })
             {{ route.fullPath }}
           </div>
         </div>
-      </ArticlesPageHeader>
+      </PageHeader>
       <div class="flex flex-col items-start gap-8">
         <p class="text-sm leading-relaxed">{{ description }}</p>
         <AppLink to="/">

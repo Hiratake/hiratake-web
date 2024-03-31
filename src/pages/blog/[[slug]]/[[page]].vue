@@ -75,11 +75,9 @@ defineOgImage({
 
 <template>
   <main v-if="data" class="main mt-12 max-w-5xl gap-8 md:mt-20 md:gap-16">
-    <ArticlesPageHeader :title="data.title">
-      <p class="text-sm leading-relaxed">
-        {{ data.description }}
-      </p>
-    </ArticlesPageHeader>
+    <PageHeader :title="data.title">
+      <p class="text-sm leading-relaxed">{{ data.description }}</p>
+    </PageHeader>
     <ArticlesList :items="articles" />
     <AppPagination
       :current="Number(route.params?.page || 1)"

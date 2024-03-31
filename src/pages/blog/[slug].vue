@@ -102,7 +102,7 @@ defineOgImageComponent('BlogPost')
 <template>
   <main v-if="data" class="main mt-12 max-w-3xl md:mt-20">
     <article class="flex flex-col gap-14">
-      <ArticlesPageHeader
+      <PageHeader
         :title="data.title"
         :created="data.created"
         :updated="data.updated"
@@ -115,7 +115,7 @@ defineOgImageComponent('BlogPost')
           </template>
         </ContentRenderer>
       </div>
-      <ArticlesPageFooter :prev="prev" :next="next" />
+      <PageFooter :prev="prev" :next="next" />
     </article>
   </main>
 </template>

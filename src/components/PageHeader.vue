@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-type ArticlesHeaderProps = {
+type PageHeaderProps = {
   /** タイトル */
   title?: string
   /** 投稿した日 */
@@ -13,7 +13,7 @@ type ArticlesHeaderProps = {
   }
 }
 
-const props = withDefaults(defineProps<ArticlesHeaderProps>(), {
+const props = withDefaults(defineProps<PageHeaderProps>(), {
   title: '',
   created: '',
   updated: '',

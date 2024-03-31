@@ -2,12 +2,12 @@
 // Types
 import type { BlogArticle } from '@/types'
 
-type ArticlesPageFooterProps = {
+type PageFooterProps = {
   prev?: Pick<BlogArticle, '_path' | 'title' | 'description' | 'created'>
   next?: Pick<BlogArticle, '_path' | 'title' | 'description' | 'created'>
 }
 
-const props = withDefaults(defineProps<ArticlesPageFooterProps>(), {
+const props = withDefaults(defineProps<PageFooterProps>(), {
   prev: () => ({ _path: '', title: '', description: '', created: '' }),
   next: () => ({ _path: '', title: '', description: '', created: '' }),
 })
