@@ -4,18 +4,30 @@ import type { BlogPost } from '@/types'
 
 const website = useWebsite()
 const route = useRoute()
-const { data, error } = await useAsyncData(route.path, () => {
-  if (!Array.isArray(route.params?.slug) && /^\d{8}$/.test(route.params.slug)) {
-    return queryContent<BlogPost>(blogUrlToPath(route.path)).findOne()
-  } else {
-    throw new Error('URLの形式が不正です')
-  }
-})
+const { data, error } = await useAsyncData(
+  route.path
+    .split('/')
+    .filter((item) => item)
+    .join('-'),
+  () => {
+    if (
+      !Array.isArray(route.params?.slug) &&
+      /^\d{8}$/.test(route.params.slug)
+    ) {
+      return queryContent<BlogPost>(blogUrlToPath(route.path)).findOne()
+    } else {
+      throw new Error('URLの形式が不正です')
+    }
+  },
+)
 const { data: blogData, error: blogError } = await useAsyncData('blog', () =>
   queryContent('/blog').findOne(),
 )
 const { data: surround, error: surroundError } = await useAsyncData(
-  `${route.path}_surround`,
+  `${route.path
+    .split('/')
+    .filter((item) => item)
+    .join('-')}_surround`,
   () => {
     if (
       route.params?.slug &&
