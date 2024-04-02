@@ -65,6 +65,9 @@ whenever(
       class="relative z-50 aspect-square rounded-full transition-colors before:absolute before:inset-0 before:m-auto before:scale-0 before:rounded-full before:bg-primary before:transition-transform after:absolute after:inset-0 after:rounded-full after:border-2 after:border-primary hover:text-white hover:before:scale-100 md:hidden [&>span]:absolute [&>span]:inset-x-0 [&>span]:m-auto [&>span]:h-0.5 [&>span]:bg-current [&>span]:duration-200 [&>span]:ease-in-out"
       @click="() => toggleOverlay()"
     >
+      <span class="sr-only">
+        ナビゲーションメニューを{{ isVisibleOverlay ? '閉じる' : '開く' }}
+      </span>
       <span :class="[isVisibleOverlay ? 'w-0' : 'top-[35%] w-1/2']" />
       <span
         :class="[isVisibleOverlay && 'rotate-[30deg]']"
