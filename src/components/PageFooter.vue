@@ -39,7 +39,7 @@ const nextPost = computed(
 <template>
   <footer class="flex flex-col gap-16">
     <div class="flex flex-wrap gap-x-16 gap-y-10">
-      <div
+      <article
         v-if="prevPost"
         class="flex shrink-0 grow basis-80 flex-col items-start gap-3"
       >
@@ -59,17 +59,17 @@ const nextPost = computed(
               </time>
             </dd>
           </dl>
-          <h3 class="font-bold text-slate-800 dark:text-white">
+          <h2 class="font-bold text-slate-800 dark:text-white">
             {{ prevPost.title }}
-          </h3>
+          </h2>
           <p
             class="line-clamp-2 text-xs text-slate-500 dark:text-slate-400 md:text-sm"
           >
             {{ prevPost.description }}
           </p>
         </NuxtLink>
-      </div>
-      <div
+      </article>
+      <article
         v-if="nextPost"
         class="flex shrink-0 grow basis-80 flex-col items-end gap-3"
       >
@@ -89,16 +89,16 @@ const nextPost = computed(
               </time>
             </dd>
           </dl>
-          <h3 class="font-bold text-slate-800 dark:text-white">
+          <h2 class="font-bold text-slate-800 dark:text-white">
             {{ nextPost.title }}
-          </h3>
+          </h2>
           <p
             class="line-clamp-2 text-xs text-slate-500 dark:text-slate-400 md:text-sm"
           >
             {{ nextPost.description }}
           </p>
         </NuxtLink>
-      </div>
+      </article>
     </div>
 
     <div
