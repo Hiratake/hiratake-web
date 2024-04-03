@@ -14,91 +14,79 @@ const props = withDefaults(defineProps<PageFooterProps>(), {
 
 const website = useWebsite()
 
-/** 前の投稿 */
-const prevPost = computed(
-  () =>
-    props.prev._path && {
-      to: props.prev._path,
-      title: props.prev.title || '',
-      description: props.prev.description,
-      created: useDatetimeFormat(props.prev.created),
-    },
-)
-/** 次の投稿 */
-const nextPost = computed(
-  () =>
-    props.next._path && {
-      to: props.next._path,
-      title: props.next.title || '',
-      description: props.next.description,
-      created: useDatetimeFormat(props.next.created),
-    },
-)
+/** 前後の投稿 */
+const surroundPost = computed(() => [
+  props.prev._path && {
+    type: 'prev',
+    to: props.prev._path,
+    title: props.prev.title || '',
+    description: props.prev.description,
+    created: useDatetimeFormat(props.prev.created),
+  },
+  props.next._path && {
+    type: 'next',
+    to: props.next._path,
+    title: props.next.title || '',
+    description: props.next.description,
+    created: useDatetimeFormat(props.next.created),
+  },
+])
 </script>
 
 <template>
   <footer class="flex flex-col gap-16">
     <div class="flex flex-wrap gap-x-16 gap-y-10">
-      <article
-        v-if="prevPost"
-        class="flex shrink-0 grow basis-80 flex-col items-start gap-3"
-      >
-        <div class="flex items-center gap-1">
-          <span class="i-ph-arrow-left-fill size-5 text-primary" />
-          <span class="text-sm font-bold">前の投稿</span>
-        </div>
-        <NuxtLink
-          :to="prevPost.to"
-          class="flex grow flex-col gap-1.5 border-l border-l-slate-200 pl-6 transition-colors hover:border-l-primary dark:border-l-slate-700 dark:hover:border-l-primary"
+      <template v-for="post in surroundPost">
+        <article
+          v-if="post"
+          :key="post.type"
+          :class="[post.type === 'next' ? 'items-end' : 'items-start']"
+          class="flex shrink-0 grow basis-80 flex-col gap-3"
         >
-          <dl>
-            <dt class="sr-only">投稿した日</dt>
-            <dd class="text-xs">
-              <time :datetime="prevPost.created.hyphen">
-                {{ prevPost.created.slash }}
-              </time>
-            </dd>
-          </dl>
-          <h2 class="font-bold text-slate-800 dark:text-white">
-            {{ prevPost.title }}
-          </h2>
-          <p
-            class="line-clamp-2 text-xs text-slate-500 dark:text-slate-400 md:text-sm"
+          <div
+            :class="[post.type === 'next' && 'flex-row-reverse']"
+            class="flex items-center gap-1"
           >
-            {{ prevPost.description }}
-          </p>
-        </NuxtLink>
-      </article>
-      <article
-        v-if="nextPost"
-        class="flex shrink-0 grow basis-80 flex-col items-end gap-3"
-      >
-        <div class="flex items-center gap-1">
-          <span class="text-sm font-bold">次の投稿</span>
-          <span class="i-ph-arrow-right-fill size-5 text-primary" />
-        </div>
-        <NuxtLink
-          :to="nextPost.to"
-          class="flex grow flex-col gap-1.5 border-r border-r-slate-200 pr-6 transition-colors hover:border-r-primary dark:border-r-slate-700 dark:hover:border-r-primary"
-        >
-          <dl>
-            <dt class="sr-only">投稿した日</dt>
-            <dd class="text-xs">
-              <time :datetime="nextPost.created.hyphen">
-                {{ nextPost.created.slash }}
-              </time>
-            </dd>
-          </dl>
-          <h2 class="font-bold text-slate-800 dark:text-white">
-            {{ nextPost.title }}
-          </h2>
-          <p
-            class="line-clamp-2 text-xs text-slate-500 dark:text-slate-400 md:text-sm"
+            <span
+              :class="[
+                post.type === 'next'
+                  ? 'i-ph-arrow-right-fill'
+                  : 'i-ph-arrow-left-fill',
+              ]"
+              class="size-5 text-primary"
+            />
+            <span class="text-sm font-bold">
+              {{ post.type === 'next' ? '次の投稿' : '前の投稿' }}
+            </span>
+          </div>
+          <NuxtLink
+            :to="post.to"
+            :class="[
+              post.type === 'next'
+                ? 'border-r-2 pr-6 before:-right-0.5'
+                : 'border-l-2 pl-6 before:-left-0.5',
+            ]"
+            class="relative flex grow flex-col gap-1.5 border-slate-200 transition-colors before:absolute before:h-full before:w-0.5 before:origin-bottom before:scale-x-100 before:scale-y-0 before:bg-primary before:transition-transform hover:before:origin-top hover:before:scale-y-100 dark:border-slate-700 [&>*]:transition-opacity [&>*]:hover:opacity-70"
           >
-            {{ nextPost.description }}
-          </p>
-        </NuxtLink>
-      </article>
+            <dl>
+              <dt class="sr-only">投稿した日</dt>
+              <dd class="text-xs">
+                <time :datetime="post.created.hyphen">
+                  {{ post.created.slash }}
+                </time>
+              </dd>
+            </dl>
+            <h2 class="font-bold text-slate-800 dark:text-white">
+              {{ post.title }}
+            </h2>
+            <p
+              class="line-clamp-2 text-xs text-slate-500 dark:text-slate-400 md:text-sm"
+            >
+              {{ post.description }}
+            </p>
+          </NuxtLink>
+        </article>
+      </template>
     </div>
 
     <div
