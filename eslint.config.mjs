@@ -18,7 +18,7 @@ export default withNuxt({
       { order: ['script', 'template', 'style'] },
     ],
   },
-}).override('nuxt:typescript', {
+}).override('nuxt/typescript/rules', {
   rules: {
     '@typescript-eslint/ban-ts-comment': [
       'error',
@@ -29,5 +29,6 @@ export default withNuxt({
         'ts-check': false,
       },
     ],
+    '@typescript-eslint/prefer-ts-expect-error': 'off',
   },
 })
