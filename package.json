@@ -45,7 +45,7 @@
     "@textlint-rule/textlint-rule-no-unmatched-pair": "2.0.2",
     "@vueuse/nuxt": "10.9.0",
     "autoprefixer": "10.4.18",
-    "eslint": "8.57.0",
+    "eslint": "9.0.0",
     "eslint-config-prettier": "9.1.0",
     "feed": "4.2.2",
     "husky": "9.0.11",
