@@ -1,5 +1,7 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
+// Utils
 import { resolve } from 'node:path'
+
+// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   app: {
     head: { titleTemplate: '%pageTitle' },
@@ -14,6 +16,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   linkChecker: { enabled: false },
   modules: [
+    '@nuxt/eslint',
     '@nuxt/content',
     '@nuxtjs/seo',
     '@nuxtjs/tailwindcss',
@@ -22,7 +25,9 @@ export default defineNuxtConfig({
   nitro: {
     prerender: { failOnError: false, crawlLinks: true, routes: ['/feed.xml'] },
   },
-  ogImage: { enabled: false },
+  ogImage: {
+    fonts: ['Noto+Sans+JP:400', 'Noto+Sans+JP:700'],
+  },
   routeRules: {
     '/feed.xml': {
       headers: { 'content-type': 'application/rss+xml; charset=UTF-8' },
@@ -38,10 +43,10 @@ export default defineNuxtConfig({
     identity: {
       type: 'Person',
       name: 'ひらたけ',
+      logo: '/logo.png',
       sameAs: [
+        'https://bsky.app/profile/hiratake.dev',
         'https://github.com/Hiratake',
-        'https://mozilla.social/@hiratake',
-        'https://x.com/Hirotaisou2012',
       ],
     },
   },
@@ -54,4 +59,5 @@ export default defineNuxtConfig({
     trailingSlash: true,
   },
   srcDir: 'src/',
+  tailwindcss: { cssPath: '@/assets/tailwind.css' },
 })
