@@ -1,17 +1,22 @@
 // Types
-import type { MarkdownParsedContent } from '@nuxt/content/dist/runtime/types'
-
-const config = useRuntimeConfig()
+import type { MarkdownParsedContent } from '@nuxt/content/types'
+import type { H3Event } from 'h3'
 
 /**
  * Markdownの本文テキストを生成する
+ * @param event イベント
  * @param children Markdownノードの配列
  * @param tag HTMLタグを含めるかどうか
  */
 export const generateContentFromAst = (
+  event: H3Event,
   children: MarkdownParsedContent['body']['children'],
   tag?: boolean,
 ): string => {
+  // @ts-ignore: Nuxt Site Config 側の問題が解決次第削除
+  const site = useSiteConfig(event)
+  const config = useRuntimeConfig()
+
   let text = ''
 
   for (const node of children) {
@@ -57,7 +62,7 @@ export const generateContentFromAst = (
         // 画像
         const imageId = (node?.props?.src as string) || ''
         const src = imageId
-          ? `${config.public.siteUrl}/cdn-cgi/imagedelivery/${config.public.cloudflareImageHash}/${imageId}/w=1536`
+          ? `${site.url}/cdn-cgi/imagedelivery/${config.public.cloudflareImageHash}/${imageId}/w=1536`
           : ''
         const alt = (node?.props?.alt as string) || ''
         text += `<${node.tag} src="${src}" alt="${alt}" />`
@@ -73,6 +78,7 @@ export const generateContentFromAst = (
 
     if (node?.children) {
       text += `${startTag}${generateContentFromAst(
+        event,
         node.children,
         tag ?? false,
       ).trim()}${endTag}`
