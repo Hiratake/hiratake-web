@@ -1,117 +1,128 @@
 <script lang="ts" setup>
-const app = useAppConfig()
+// Types
+import type { BlogPost } from '@/types'
+
 const website = useWebsite()
 const route = useRoute()
-
-// 記事データの取得
-const { data, error } = await useAsyncData(route.path, () => {
-  if (
-    route.params?.slug &&
-    !Array.isArray(route.params.slug) &&
-    /^\d{8}$/.test(route.params.slug)
-  ) {
-    return queryContent(
-      `/blog/${route.params.slug.slice(0, 4)}/${route.params.slug.slice(4, 6)}/${route.params.slug.slice(6, 8)}`,
-    ).findOne()
-  } else {
-    throw new Error('見つかりません')
-  }
-})
-
-// 前後の記事データの取得
+const { data, error } = await useAsyncData(
+  pathToUseAsyncDataKey(route.path),
+  () => {
+    if (
+      !Array.isArray(route.params?.slug) &&
+      /^\d{8}$/.test(route.params.slug)
+    ) {
+      return queryContent<BlogPost>(blogUrlToPath(route.path)).findOne()
+    } else {
+      throw new Error('URLの形式が不正です')
+    }
+  },
+)
+const { data: blogData, error: blogError } = await useAsyncData(
+  pathToUseAsyncDataKey('/blog'),
+  () => queryContent('/blog').findOne(),
+)
 const { data: surround, error: surroundError } = await useAsyncData(
-  `${route.path}-surround`,
+  pathToUseAsyncDataKey(route.path, 'surround'),
   () => {
     if (
       route.params?.slug &&
       !Array.isArray(route.params.slug) &&
       /^\d{8}$/.test(route.params.slug)
     ) {
-      return queryContent()
+      return queryContent<BlogPost>()
         .where({ _path: { $regex: /^\/blog\/\d{4}\/\d{2}\/\d{2}/ } })
-        .only(['_path', 'title'])
-        .findSurround(
-          `/blog/${route.params.slug.slice(0, 4)}/${route.params.slug.slice(4, 6)}/${route.params.slug.slice(6, 8)}`,
-        )
+        .only(['_path', 'title', 'description', 'created'])
+        .findSurround(blogUrlToPath(route.path))
     } else {
-      throw new Error('見つかりません')
+      throw new Error('URLの形式が不正です')
     }
   },
 )
 
-// ページが見つからない場合にエラーを出力する
-if (error.value || surroundError.value) {
+if (error.value || blogError.value || surroundError.value) {
   throw createError({
     statusCode: 404,
-    message: error.value?.message || surroundError.value?.message,
+    message: 'ページが見つかりません',
     fatal: true,
   })
 }
 
-/** 前のページ */
+/** ウェブサイトの名前 */
+const name = website.value.name
+/** ウェブサイトの概要 */
+const description = website.value.description
+/** 投稿者 */
+const author = website.value.owner
+/** 前の投稿 */
 const prev = computed(() => {
   if (surround.value && surround.value[0]) {
     return {
+      _path: useTrailingSlash(blogPathToUrl(surround.value[0]._path)),
       title: surround.value[0].title || '',
-      path: `/blog/${((surround.value[0]._path as string) || '')
-        .replace('/blog', '')
-        .split('/')
-        .join('')}`,
+      description: surround.value[0].description || '',
+      created: surround.value[0].created,
     }
   } else {
     return undefined
   }
 })
-/** 次のページ */
+/** 次の投稿 */
 const next = computed(() => {
   if (surround.value && surround.value[1]) {
     return {
+      _path: useTrailingSlash(blogPathToUrl(surround.value[1]._path)),
       title: surround.value[1].title || '',
-      path: `/blog/${((surround.value[1]._path as string) || '')
-        .replace('/blog', '')
-        .split('/')
-        .join('')}`,
+      description: surround.value[1].description || '',
+      created: surround.value[1].created,
     }
   } else {
     return undefined
   }
 })
 
+useSeoMeta({
+  title: () => data.value?.title || name,
+  description: () => data.value?.description || description,
+  ogType: 'article',
+})
 useSchemaOrg([
   defineBreadcrumb({
     itemListElement: [
-      { name: website.value.site.name, item: '/' },
-      { name: 'ブログ', item: '/blog/' },
-      { name: data.value?.title, item: `/blog/${route.params.slug}/` },
+      { name: name, item: '/' },
+      { name: blogData.value?.title, item: useTrailingSlash('/blog/') },
+      {
+        name: data.value?.title,
+        item: useTrailingSlash(`/blog/${route.params.slug}/`),
+      },
     ],
   }),
   defineArticle({
     '@type': 'BlogPosting',
-    datePublished: data.value?.created ? data.value.created : undefined,
-    dateModified: data.value?.updated ? data.value.updated : undefined,
-    author: [{ name: website.value.author.name, url: website.value.site.url }],
+    datePublished: data.value?.created ?? undefined,
+    dateModified: data.value?.updated ?? undefined,
+    author: [{ name: author.name, url: author.url }],
   }),
 ])
-useSeoMeta({
-  title: () => data.value?.title || website.value.site.name,
-  description: () => data.value?.description,
-  ogType: 'article',
-})
+defineOgImageComponent('BlogPost')
 </script>
 
 <template>
-  <main v-if="data" class="mx-auto box-content max-w-3xl px-6">
-    <article class="grid grid-cols-1 gap-6">
-      <ArticleHeader
+  <main v-if="data" class="main mt-12 max-w-3xl md:mt-20">
+    <article class="flex flex-col gap-14">
+      <PageHeader
         :title="data.title"
-        :created="data?.created"
-        :updated="data?.updated"
-        :author="app.author.name"
+        :created="data.created"
+        :updated="data.updated"
+        :author="author"
       />
-      <div class="prose max-w-none text-inherit dark:prose-invert">
-        <ContentRenderer :value="data" />
+      <div class="content prose">
+        <ContentRenderer :value="data">
+          <template #empty>
+            <DocumentEmpty />
+          </template>
+        </ContentRenderer>
       </div>
-      <ArticleFooter :title="data.title" :prev="prev" :next="next" />
+      <PageFooter :prev="prev" :next="next" />
     </article>
   </main>
 </template>
