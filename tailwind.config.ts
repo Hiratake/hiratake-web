@@ -1,32 +1,21 @@
-// https://tailwindcss.com/docs/configuration
 // Types
 import type { Config } from 'tailwindcss'
 // Theme
 import { fontFamily } from 'tailwindcss/defaultTheme'
 // Plugins
-import TailwindTypographyPlugin from '@tailwindcss/typography'
-import TailwindHeadlessUIPlugin from '@headlessui/tailwindcss'
+import headlessUIPlugin from '@headlessui/tailwindcss'
+import typographyPlugin from '@tailwindcss/typography'
+import { iconsPlugin, getIconCollections } from '@egoist/tailwindcss-icons'
 
-const round = (num: number) =>
-  num
-    .toFixed(7)
-    .replace(/(\.[0-9]+?)0+$/, '$1')
-    .replace(/\.0$/, '')
-const rem = (px: number) => `${round(px / 16)}rem`
-const em = (px: number, base: number) => `${round(px / base)}em`
-
+// https://tailwindcss.com/docs/configuration
 export default <Partial<Config>>{
   theme: {
     extend: {
-      colors: { primary: '#a83d3d' },
+      colors: { primary: '#a83d3d', discord: '#5865f2' },
       fontFamily: {
-        sans: [
-          '"Hiragino Sans"',
-          '"Hiragino Kaku Gothic ProN"',
-          '"Meiryo"',
-          ...fontFamily.sans,
-        ],
-        serif: ['"Hiragino Mincho ProN"', ...fontFamily.serif],
+        sans: ['"Noto Sans JP"', ...fontFamily.sans],
+        mono: ['"Source Code Pro"', '"Noto Sans JP"', ...fontFamily.mono],
+        accent: ['Lexend', 'sans-serif'],
       },
       gridTemplateColumns: {
         'fill-0': 'repeat(auto-fill, minmax(0px, 1fr))',
@@ -60,50 +49,12 @@ export default <Partial<Config>>{
         'fill-80': 'repeat(auto-fill, minmax(20rem, 1fr))',
         'fill-96': 'repeat(auto-fill, minmax(24rem, 1fr))',
       },
-      typography: {
-        DEFAULT: {
-          css: {
-            fontSize: rem(15),
-            lineHeight: round(32 / 16),
-            p: {
-              marginTop: em(32, 16),
-              marginBottom: em(32, 16),
-            },
-            h2: {
-              a: {
-                color: 'inherit',
-                fontWeight: '700',
-                textDecoration: 'none',
-                '&:hover': {
-                  textDecoration: 'underline',
-                },
-              },
-            },
-            h3: {
-              a: {
-                color: 'inherit',
-                fontWeight: '700',
-                textDecoration: 'none',
-                '&:hover': {
-                  textDecoration: 'underline',
-                },
-              },
-            },
-            h4: {
-              a: {
-                color: 'inherit',
-                fontWeight: '700',
-                textDecoration: 'none',
-                '&:hover': {
-                  textDecoration: 'underline',
-                },
-              },
-            },
-          },
-        },
-      },
     },
   },
-  plugins: [TailwindTypographyPlugin, TailwindHeadlessUIPlugin],
+  plugins: [
+    headlessUIPlugin,
+    typographyPlugin,
+    iconsPlugin({ collections: getIconCollections(['ph', 'simple-icons']) }),
+  ],
   darkMode: 'class',
 }

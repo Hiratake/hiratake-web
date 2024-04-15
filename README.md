@@ -56,5 +56,5 @@ pnpm preview
 
 ## 💌 Contact
 
-- **Mastodon** - [@hiratake](https://mozilla.social/@hiratake)
+- **Bluesky** - [@hiratake.dev](https://bsky.app/profile/hiratake.dev)
 - **GitHub** - [@Hiratake](https://github.com/Hiratake)
