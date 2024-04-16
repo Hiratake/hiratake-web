@@ -3,6 +3,7 @@
   "editor.detectIndentation": false,
   "editor.insertSpaces": true,
   "editor.tabSize": 2,
+  "eslint.experimental.useFlatConfig": true,
   "files.eol": "\n",
   "files.insertFinalNewline": true,
   "git.branchProtection": ["main"],
