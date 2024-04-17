@@ -40,7 +40,6 @@ export const generateContentFromAst = (
           'em',
           'strong',
           'del',
-          'pre',
           'code',
         ].includes(node.tag)
       ) {
@@ -66,6 +65,11 @@ export const generateContentFromAst = (
           : ''
         const alt = (node?.props?.alt as string) || ''
         text += `<${node.tag} src="${src}" alt="${alt}" />`
+      } else if (['pre'].includes(node.tag)) {
+        // コードブロック
+        const code = (node?.props?.code as string) || ''
+        text += `<${node.tag}><code>${code.trim().replace(/\n/g, '\\n')}</code><${node.tag}`
+        continue
       } else if (['style', 'script'].includes(node.tag)) {
         // styleやscript
         continue
