@@ -1,73 +1,76 @@
 <script lang="ts" setup>
-// Utils
-import { withTrailingSlash } from 'ufo'
+// Types
+import type { BlogPost } from '@/types'
 
 const website = useWebsite()
 const route = useRoute()
+const { data, error } = await useAsyncData(
+  pathToUseAsyncDataKey(route.path),
+  () => queryContent<BlogPost>(route.path).findOne(),
+)
+const { data: breadcrumbs, error: breadcrumbsError } = await useAsyncData(
+  pathToUseAsyncDataKey(route.path, 'breadcrumbs'),
+  () => {
+    const items: string[] = (route.path || '')
+      .split('/')
+      .filter((item: string) => item)
+      .reduce((prev: string[], current: string) => {
+        if (prev.length) {
+          return [...prev, `${prev[prev.length - 1]}/${current}`]
+        } else {
+          return [`/${current}`]
+        }
+      }, [])
+    return queryContent()
+      .where({ _path: { $in: ['/', ...items] } })
+      .only(['_path', 'title'])
+      .sort({ _path: 1 })
+      .find()
+  },
+)
 
-// 記事データの取得
-const { data, error } = await useAsyncData(route.path, () => {
-  if (!route.path.startsWith('/blog')) {
-    return queryContent(route.path).findOne()
-  } else {
-    throw new Error('見つかりません')
-  }
-})
-
-// ページが見つからない場合にエラーを出力する
-if (error.value) {
+if (error.value || breadcrumbsError.value) {
   throw createError({
     statusCode: 404,
-    message: error.value.message,
+    message: 'ページが見つかりません',
     fatal: true,
   })
 }
 
-// 構造化データマークアップの情報を生成
-const schema = await useAsyncData('page-schema', () => {
-  // パンくずリストの項目を取得
-  const items: string[] = (data.value?._path || '')
-    .split('/')
-    .filter((item: string) => item)
-    .reduce((prev: string[], current: string) => {
-      if (prev.length) {
-        return [...prev, `${prev[prev.length - 1]}/${current}`]
-      } else {
-        return [`/${current}`]
-      }
-    }, [])
-  return queryContent()
-    .where({ _path: { $in: ['/', ...items] } })
-    .only(['_path', 'title'])
-    .sort({ _path: 1 })
-    .find()
-}).then((data) => {
-  return [
-    defineBreadcrumb({
-      itemListElement: (data.data.value ?? []).map((item) => ({
-        name: item.title,
-        item: withTrailingSlash(item._path),
-      })),
-    }),
-  ] as ReturnType<typeof defineBreadcrumb>[]
-})
+/** ウェブサイトの名前 */
+const name = website.value.name
+/** ウェブサイトの概要 */
+const description = website.value.description
+/** ウェブサイトの運営者 */
+const owner = website.value.owner
 
-useSchemaOrg(schema)
 useSeoMeta({
-  title: () => data.value?.title || website.value.site.name,
-  description: () => data.value?.description,
+  title: () => data.value?.title || name,
+  description: () => data.value?.description || description,
   ogType: 'website',
 })
+useSchemaOrg([
+  defineBreadcrumb({
+    itemListElement: (breadcrumbs.value ?? []).map((item) => ({
+      name: item.title,
+      item: useTrailingSlash(item._path || ''),
+    })),
+  }),
+])
+defineOgImage({ url: '/ogp.jpg', width: 1200, height: 630, alt: name })
 </script>
 
 <template>
-  <main v-if="data" class="mx-auto box-content max-w-3xl px-6">
-    <article class="grid grid-cols-1 gap-6">
-      <ArticleHeader :title="data.title" :updated="data?.updated" />
-      <div class="prose max-w-none text-inherit dark:prose-invert">
-        <ContentRenderer :value="data" />
+  <main v-if="data" class="main mt-12 max-w-3xl md:mt-20">
+    <article class="flex flex-col gap-14">
+      <PageHeader :title="data.title" :updated="data.updated" :author="owner" />
+      <div class="content prose">
+        <ContentRenderer :value="data">
+          <template #empty>
+            <DocumentEmpty />
+          </template>
+        </ContentRenderer>
       </div>
-      <ArticleFooter :title="data.title" />
     </article>
   </main>
 </template>
