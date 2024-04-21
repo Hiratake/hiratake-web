@@ -1,55 +1,62 @@
 // Types
-import type { MarkdownParsedContent } from '@nuxt/content/dist/runtime/types'
-import type { Article } from '@/types'
-// Libraries
+import type { ParsedContent } from '@nuxt/content/types'
+import type { BlogPost } from '@/types'
+// Utils
 import { serverQueryContent } from '#content/server'
 import { Feed } from 'feed'
-// Utils
-import { withTrailingSlash } from 'ufo'
-
-const siteName = 'Hiratake Web'
-const siteUrl = process.env.CF_PAGES_URL || 'https://hiratake.dev'
-const siteLocalse = 'ja'
+import { withoutTrailingSlash, withTrailingSlash } from 'ufo'
 
 export default defineEventHandler(async (event) => {
-  const feed = new Feed({
-    title: siteName,
-    description:
-      'ひらたけのブログです。趣味のことから技術とかの真面目なことまで、書きたいことができたときになんとなく書く、そんな場所です。',
-    id: siteUrl,
-    link: `${siteUrl}/blog/`,
-    language: siteLocalse,
-    image: `${siteUrl}/logo.png`,
-    copyright: siteName,
-  })
-  const articles = await serverQueryContent<MarkdownParsedContent>(
+  /** ウェブサイトの情報 */
+  // @ts-ignore: Nuxt Site Config 側の問題が解決次第削除
+  const site = useSiteConfig(event)
+  /** ブログ一覧ページの情報 */
+  const blogIndexContent = await serverQueryContent<ParsedContent>(
     event,
     'blog',
-  )
+  ).findOne()
+
+  /**
+   * 末尾のスラッシュの設定を反映したURLを返す
+   * @param val URL
+   * @returns 末尾のスラッシュの設定を反映したURL
+   */
+  const useTrailingSlash = (val: string) =>
+    site?.trailingSlash ? withTrailingSlash(val) : withoutTrailingSlash(val)
+
+  /** RSSフィード */
+  const feed = new Feed({
+    title: `${site.name || 'Hiratake Web'} Blog Feed`,
+    description: blogIndexContent?.description || '',
+    id: site.url,
+    link: useTrailingSlash(`${site.url}/blog/`),
+    language: site?.defaultLocale || 'ja',
+    image: `${site.url}/logo.png`,
+    copyright: site?.name || 'Hiratake Web',
+  })
+  /** ブログの投稿 */
+  const posts = await serverQueryContent<BlogPost>(event, 'blog')
     .where({ _path: { $regex: /^\/blog\/\d{4}\/\d{2}\/\d{2}/ } })
     .sort({ created: -1 })
     .limit(10)
     .find()
 
-  articles
-    .filter((article) => article?._extension === 'md' && !article._empty)
+  posts
     .filter(
-      (
-        article,
-      ): article is Article & {
-        _path: Required<Article>['_path']
-        title: Required<Article>['title']
-      } => Boolean(article._path) && Boolean(article.title),
+      (post) =>
+        post._extension === 'md' && !post._empty && post._path && post.title,
     )
-    .forEach((article) => {
-      const url = `${siteUrl}/blog/${withTrailingSlash(article._path.replace('/blog', '').split('/').join(''))}`
+    .forEach((post) => {
+      /** 投稿のURL */
+      const url = `${site.url}/blog/${withTrailingSlash((post._path || '').replace('/blog', '').split('/').join(''))}`
+
       feed.addItem({
-        title: article.title,
+        title: post.title || '',
         id: url,
         link: url,
-        description: article.description.replace(/\r?\n/g, ''),
-        content: generateContentFromAst(article.body.children, true),
-        date: new Date(article.created ? Date.parse(article.created) : ''),
+        description: post.description.replace(/\r?\n/g, ''),
+        content: generateContentFromAst(event, post.body.children),
+        date: new Date(post?.created ? Date.parse(post.created) : ''),
       })
     })
 
