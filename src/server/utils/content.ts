@@ -50,7 +50,7 @@ export const generateContentFromAst = (
       } else if (node.tag === 'pre') {
         // コードブロック
         const code =
-          (node.props?.code as string).trim().replace(/\n/g, '\\n') || ''
+          (node.props?.code as string).trim().replace(/\n/g, '&#xA;') || ''
         content += `<${node.tag}><code>${code}</code></${node.tag}>`
         continue
       } else if (['hr', 'br'].includes(node.tag)) {
