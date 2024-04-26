@@ -55,7 +55,7 @@ export default defineEventHandler(async (event) => {
         id: url,
         link: url,
         description: post.description.replace(/\r?\n/g, ''),
-        content: generateContentFromAst(event, post.body.children, true),
+        content: generateContentFromAst(event, post.body.children),
         date: new Date(post?.created ? Date.parse(post.created) : ''),
       })
     })
