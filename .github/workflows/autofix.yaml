@@ -31,7 +31,7 @@ jobs:
           node-version: ${{ matrix.node }}
 
       - name: Setup pnpm
-        uses: pnpm/action-setup@fe02b34f77f8bc703788d5817da081398fad5dd2
+        uses: pnpm/action-setup@5d79380f29283fbb7806036c6a8806b66be5c663
         id: pnpm-install
         with:
           run_install: false
