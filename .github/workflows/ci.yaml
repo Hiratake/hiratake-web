@@ -38,7 +38,7 @@ jobs:
           node-version: ${{ matrix.node }}
 
       - name: Setup pnpm
-        uses: pnpm/action-setup@fe02b34f77f8bc703788d5817da081398fad5dd2
+        uses: pnpm/action-setup@23657c8550e9be4f7ee7e9d7fe8adda6d703bb4e
         id: pnpm-install
         with:
           run_install: false
@@ -83,7 +83,7 @@ jobs:
           node-version: ${{ matrix.node }}
 
       - name: Setup pnpm
-        uses: pnpm/action-setup@fe02b34f77f8bc703788d5817da081398fad5dd2
+        uses: pnpm/action-setup@23657c8550e9be4f7ee7e9d7fe8adda6d703bb4e
         id: pnpm-install
         with:
           run_install: false
@@ -128,7 +128,7 @@ jobs:
           node-version: ${{ matrix.node }}
 
       - name: Setup pnpm
-        uses: pnpm/action-setup@fe02b34f77f8bc703788d5817da081398fad5dd2
+        uses: pnpm/action-setup@23657c8550e9be4f7ee7e9d7fe8adda6d703bb4e
         id: pnpm-install
         with:
           run_install: false
@@ -173,7 +173,7 @@ jobs:
           node-version: ${{ matrix.node }}
 
       - name: Setup pnpm
-        uses: pnpm/action-setup@fe02b34f77f8bc703788d5817da081398fad5dd2
+        uses: pnpm/action-setup@23657c8550e9be4f7ee7e9d7fe8adda6d703bb4e
         id: pnpm-install
         with:
           run_install: false
