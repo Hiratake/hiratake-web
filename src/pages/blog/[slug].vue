@@ -8,7 +8,8 @@ const { data, error } = await useAsyncData(
   pathToUseAsyncDataKey(route.path),
   () => {
     if (
-      !Array.isArray(route.params?.slug) &&
+      route.params?.slug &&
+      !Array.isArray(route.params.slug) &&
       /^\d{8}$/.test(route.params.slug)
     ) {
       return queryContent<BlogPost>(blogUrlToPath(route.path)).findOne()
