@@ -1,5 +1,5 @@
 // Types
-import type { MarkdownParsedContent } from '@nuxt/content/types'
+import type { MarkdownParsedContent } from '@nuxt/content'
 
 export type BlogPost = MarkdownParsedContent & {
   /** 投稿した日 */
