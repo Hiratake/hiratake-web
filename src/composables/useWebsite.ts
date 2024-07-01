@@ -153,7 +153,7 @@ export const useWebsite = () => {
       rss: {
         /**
          * サービス名
-         * @example 'Hiratake Web Blog RSS Feed'
+         * @example 'Hiratake Web Diary RSS Feed'
          */
         name: app.socials.rss.name,
         /**
