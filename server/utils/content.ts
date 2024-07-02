@@ -1,5 +1,5 @@
 // Types
-import type { MarkdownParsedContent } from '@nuxt/content/types'
+import type { MarkdownParsedContent } from '@nuxt/content'
 import type { H3Event } from 'h3'
 
 /**
