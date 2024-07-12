@@ -1,19 +1,15 @@
-// Utils
-import { resolve } from 'node:path'
-
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   app: {
     head: { titleTemplate: '%pageTitle' },
   },
+  compatibilityDate: '2024-07-12',
   content: {
     documentDriven: false,
     highlight: { theme: 'github-dark' },
-    sources: {
-      content: { driver: 'fs', base: resolve(__dirname, './content') },
-    },
   },
   devtools: { enabled: true },
+  future: { compatibilityVersion: 4 },
   linkChecker: { enabled: false },
   modules: [
     '@nuxt/eslint',
