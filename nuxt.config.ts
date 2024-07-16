@@ -3,6 +3,7 @@ export default defineNuxtConfig({
   app: {
     head: { titleTemplate: '%pageTitle' },
   },
+  compatibilityDate: '2024-07-12',
   content: {
     documentDriven: false,
     highlight: { theme: 'github-dark' },
