@@ -26,7 +26,7 @@ jobs:
         uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332
 
       - name: Setup Node.js
-        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8
+        uses: actions/setup-node@1e60f620b9541d16bece96c5465dc8ee9832be0b
         with:
           node-version: ${{ matrix.node }}
 
@@ -60,4 +60,4 @@ jobs:
         run: pnpm format
 
       - name: Autofix
-        uses: autofix-ci/action@d3e591514b99d0fca6779455ff8338516663f7cc
+        uses: autofix-ci/action@2891949f3779a1cafafae1523058501de3d4e944
