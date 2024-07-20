@@ -43,7 +43,7 @@
     "@iconify-json/simple-icons": "1.1.109",
     "@nuxt/content": "2.13.2",
     "@nuxt/eslint": "0.3.13",
-    "@nuxtjs/seo": "2.0.0-rc.15",
+    "@nuxtjs/seo": "2.0.0-rc.16",
     "@nuxtjs/tailwindcss": "6.12.1",
     "@tailwindcss/typography": "0.5.13",
     "@textlint-rule/textlint-rule-no-unmatched-pair": "2.0.3",
