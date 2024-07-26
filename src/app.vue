@@ -18,6 +18,7 @@ provideUseId(() => useId())
 <template>
   <Body class="body">
     <SeoDefault />
+    <NuxtRouteAnnouncer />
     <NuxtLoadingIndicator :height="2" :color="website.themeColor" />
     <TheHeader />
     <NuxtPage />
