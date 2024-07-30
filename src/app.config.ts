@@ -41,14 +41,14 @@ export default defineAppConfig({
       url: 'https://mozilla.social/@hiratake',
     },
     rss: {
-      name: 'Hiratake Web Blog RSS Feed',
+      name: 'Hiratake Web Diary RSS Feed',
       url: 'https://hiratake.dev/feed.xml',
     },
   },
   /** ヘッダーの情報 */
   header: {
     menu: [
-      { title: 'ブログ', url: '/blog/' },
+      { title: '日記', url: '/blog/' },
       { title: '運営者情報', url: '/about/' },
       { title: 'お問い合わせ', url: '/contact/' },
     ],
@@ -56,7 +56,7 @@ export default defineAppConfig({
   /** フッターの情報 */
   footer: {
     menu: [
-      { title: 'ブログ', url: '/blog/' },
+      { title: '日記', url: '/blog/' },
       { title: '運営者情報', url: '/about/' },
       { title: 'お問い合わせ', url: '/contact/' },
       { title: 'プライバシーポリシー', url: '/privacy/' },
