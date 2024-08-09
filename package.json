@@ -21,12 +21,12 @@
     "url": "https://github.com/Hiratake/hiratake-web.git"
   },
   "type": "module",
-  "packageManager": "pnpm@9.5.0",
+  "packageManager": "pnpm@9.6.0",
   "engines": {
     "node": ">=20.9.0"
   },
   "volta": {
-    "node": "20.15.1"
+    "node": "20.16.0"
   },
   "devDependencies": {
     "@commitlint/cli": "19.3.0",
@@ -41,36 +41,36 @@
     "@hiratake/textlint-rule-space-around-bold": "1.0.4",
     "@iconify-json/ph": "1.1.13",
     "@iconify-json/simple-icons": "1.1.109",
-    "@nuxt/content": "2.13.0",
+    "@nuxt/content": "2.13.2",
     "@nuxt/eslint": "0.3.13",
-    "@nuxtjs/seo": "2.0.0-rc.12",
+    "@nuxtjs/seo": "2.0.0-rc.16",
     "@nuxtjs/tailwindcss": "6.12.1",
     "@tailwindcss/typography": "0.5.13",
     "@textlint-rule/textlint-rule-no-unmatched-pair": "2.0.3",
     "@vueuse/core": "10.11.0",
     "@vueuse/nuxt": "10.11.0",
     "autoprefixer": "10.4.19",
-    "eslint": "9.6.0",
+    "eslint": "9.7.0",
     "feed": "4.2.2",
     "h3": "1.12.0",
-    "husky": "9.0.11",
+    "husky": "9.1.2",
     "lint-staged": "15.2.7",
-    "nuxt": "3.12.3",
-    "postcss": "8.4.39",
-    "prettier": "3.3.2",
+    "nuxt": "3.12.4",
+    "postcss": "8.4.40",
+    "prettier": "3.3.3",
     "prettier-plugin-tailwindcss": "0.6.5",
-    "tailwindcss": "3.4.4",
+    "tailwindcss": "3.4.6",
     "textlint": "14.0.4",
     "textlint-filter-rule-allowlist": "4.0.0",
     "textlint-rule-ja-space-around-code": "2.4.2",
     "textlint-rule-ja-space-around-link": "2.4.2",
     "textlint-rule-ja-space-between-half-and-full-width": "2.4.2",
     "textlint-rule-no-mixed-zenkaku-and-hankaku-alphabet": "1.0.1",
-    "typescript": "5.5.3",
-    "ufo": "1.5.3",
-    "vue": "3.4.31",
+    "typescript": "5.5.4",
+    "ufo": "1.5.4",
+    "vue": "3.4.34",
     "vue-router": "4.4.0",
-    "vue-tsc": "2.0.26"
+    "vue-tsc": "2.0.29"
   },
   "scripts": {
     "build": "nuxt build",
