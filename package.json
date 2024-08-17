@@ -48,7 +48,7 @@
     "@tailwindcss/typography": "0.5.14",
     "@textlint-rule/textlint-rule-no-unmatched-pair": "2.0.3",
     "@vueuse/core": "11.0.0",
-    "@vueuse/nuxt": "10.11.1",
+    "@vueuse/nuxt": "11.0.0",
     "autoprefixer": "10.4.20",
     "eslint": "9.9.0",
     "feed": "4.2.2",
