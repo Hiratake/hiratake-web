@@ -55,7 +55,7 @@
 
 ### Linter and Formatter
 
-このプロジェクトでは、 [ESLint](https://eslint.org/) および [Stylelint](https://stylelint.io/) でコードのリンティング、 [Prettier](https://prettier.io/) でコードの整形を行っています。  
+このプロジェクトでは、 [ESLint](https://eslint.org/) および [textlint](https://textlint.github.io/) でコードのリンティング、 [Prettier](https://prettier.io/) でコードの整形を行っています。  
 これらは、 Git のコミット時に自動的に実行され、適用されます。ただし、 `pnpm install` を実行している場合に限ります。
 
 プロジェクトによっては `ESLint` でコードの整形まで行っているものもありますが、このプロジェクトではそのような設定にはしておりません。
