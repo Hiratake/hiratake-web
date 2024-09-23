@@ -21,7 +21,7 @@
     "url": "https://github.com/Hiratake/hiratake-web.git"
   },
   "type": "module",
-  "packageManager": "pnpm@9.10.0",
+  "packageManager": "pnpm@9.11.0",
   "engines": {
     "node": ">=20.9.0"
   },
@@ -40,7 +40,7 @@
     "@hiratake/textlint-rule-front-matter": "1.1.2",
     "@hiratake/textlint-rule-space-around-bold": "1.0.4",
     "@iconify-json/ph": "1.2.0",
-    "@iconify-json/simple-icons": "1.2.3",
+    "@iconify-json/simple-icons": "1.2.4",
     "@nuxt/content": "2.13.2",
     "@nuxt/eslint": "0.5.7",
     "@nuxtjs/seo": "2.0.0-rc.21",
@@ -50,7 +50,7 @@
     "@vueuse/core": "11.1.0",
     "@vueuse/nuxt": "11.1.0",
     "autoprefixer": "10.4.20",
-    "eslint": "9.10.0",
+    "eslint": "9.11.0",
     "feed": "4.2.2",
     "h3": "1.12.0",
     "husky": "9.1.6",
@@ -68,7 +68,7 @@
     "textlint-rule-no-mixed-zenkaku-and-hankaku-alphabet": "1.0.1",
     "typescript": "5.6.2",
     "ufo": "1.5.4",
-    "vue": "3.5.6",
+    "vue": "3.5.8",
     "vue-router": "4.4.5",
     "vue-tsc": "2.1.6"
   },
