@@ -11,7 +11,6 @@
 [![ci](https://github.com/Hiratake/hiratake-web/actions/workflows/ci.yaml/badge.svg)](https://github.com/Hiratake/hiratake-web/actions/workflows/ci.yaml)
 [![Open in Codeflow](https://developer.stackblitz.com/img/start_pr_dark_small.svg)](https:///pr.new/Hiratake/hiratake-web)
 
-Hiratake's website built with [Nuxt](https://nuxt.com/).  
 [Nuxt](https://nuxt.com/) を使用してつくった、ひらたけのウェブサイト。
 
 ## 🚀 Setup
