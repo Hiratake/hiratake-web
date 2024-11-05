@@ -11,7 +11,7 @@ const props = defineProps<HomeProfileProps>()
 
 <template>
   <section
-    class="mx-auto box-content flex w-full max-w-6xl flex-col gap-10 sm:px-2 md:px-6"
+    class="mx-auto flex w-full max-w-6xl flex-col gap-10 sm:px-2 md:px-6"
   >
     <div class="flex items-center justify-between">
       <h2
