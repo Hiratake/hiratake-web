@@ -3,7 +3,7 @@ export default defineNuxtConfig({
   app: {
     head: { titleTemplate: '%pageTitle' },
   },
-  compatibilityDate: '2024-11-01',
+  compatibilityDate: '2024-12-01',
   content: {
     documentDriven: false,
     highlight: { theme: 'github-dark' },
@@ -46,7 +46,6 @@ export default defineNuxtConfig({
       ],
     },
   },
-  seo: { splash: false },
   site: {
     url: process.env.CF_PAGES_URL || 'https://hiratake.dev',
     name: 'Hiratake Web',
