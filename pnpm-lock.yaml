@@ -107,6 +107,9 @@ importers:
       textlint-filter-rule-allowlist:
         specifier: 4.0.0
         version: 4.0.0(textlint@14.4.0)
+      textlint-filter-rule-comments:
+        specifier: 1.2.2
+        version: 1.2.2(textlint@14.4.0)
       textlint-rule-ja-space-around-code:
         specifier: 2.4.2
         version: 2.4.2
@@ -5457,6 +5460,11 @@ packages:
     resolution: {integrity: sha512-rOlWr12sff9ZS8mOtRACPB3l1yK0oW21Owz8XsTAgFWmRhOnBbCKw8tKMDm6EtQHO92SOfyJmT4nowxiJ85Qiw==}
     peerDependencies:
       textlint: '>= 9.0.0'
+
+  textlint-filter-rule-comments@1.2.2:
+    resolution: {integrity: sha512-AtyxreCPb3Hq/bd6Qd6szY1OGgnW34LOjQXAHzE8NoXbTUudQqALPdRe+hvRsf81rnmGLxBiCUXZbnbpIseFyw==}
+    peerDependencies:
+      textlint: '>=6.8.0'
 
   textlint-rule-helper@2.3.1:
     resolution: {integrity: sha512-b1bijvyiUmKinfFE5hkQMSXs3Ky8jyZ3Y6SOoTRJKV9HLL2LWUVFAUezO7z4FpAkVvYruDYWCwA5qWV8GmvyUw==}
@@ -12709,6 +12717,10 @@ snapshots:
       '@textlint/get-config-base-dir': 2.0.0
       '@textlint/regexp-string-matcher': 1.1.1
       js-yaml: 4.1.0
+      textlint: 14.4.0
+
+  textlint-filter-rule-comments@1.2.2(textlint@14.4.0):
+    dependencies:
       textlint: 14.4.0
 
   textlint-rule-helper@2.3.1:
