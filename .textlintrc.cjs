@@ -28,5 +28,7 @@ module.exports = {
   filters: {
     // https://github.com/textlint/textlint-filter-rule-allowlist
     allowlist: { allow: ['/^:.+?\\{.+\\}$/m'] },
+    // https://github.com/textlint/textlint-filter-rule-comments
+    comments: true,
   },
 }
