@@ -12,10 +12,10 @@ export default defineNuxtConfig({
   future: { compatibilityVersion: 4 },
   linkChecker: { enabled: false },
   modules: [
-    '@nuxt/eslint',
-    '@nuxt/content',
     '@nuxtjs/seo',
     '@nuxtjs/tailwindcss',
+    '@nuxt/eslint',
+    '@nuxt/content',
     '@vueuse/nuxt',
   ],
   nitro: {
