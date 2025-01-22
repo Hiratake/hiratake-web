@@ -2,7 +2,7 @@
 const website = useWebsite()
 const route = useRoute()
 const { data, error } = await useAsyncData(pathToUseAsyncDataKey('/blog'), () =>
-  queryContent('/blog').findOne(),
+  queryCollection('diary').path('/blog').first(),
 )
 const { data: count, error: countError } = await useAsyncData(
   pathToUseAsyncDataKey('/blog', 'count'),
@@ -14,9 +14,7 @@ const { data: count, error: countError } = await useAsyncData(
       throw new Error('URLの形式が不正です')
     }
 
-    return queryContent('blog')
-      .where({ _path: { $not: '/blog' } })
-      .count()
+    return queryCollection('blog').count()
   },
 )
 
