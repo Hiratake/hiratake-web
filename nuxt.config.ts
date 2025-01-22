@@ -5,8 +5,11 @@ export default defineNuxtConfig({
   },
   compatibilityDate: '2025-01-01',
   content: {
-    documentDriven: false,
-    highlight: { theme: 'github-dark' },
+    build: {
+      markdown: {
+        highlight: { theme: 'github-dark' },
+      },
+    },
   },
   devtools: { enabled: true },
   future: { compatibilityVersion: 4 },
