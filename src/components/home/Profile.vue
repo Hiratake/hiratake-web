@@ -15,7 +15,7 @@ const props = defineProps<HomeProfileProps>()
   >
     <div class="flex items-center justify-between">
       <h2
-        class="font-accent text-4xl font-bold text-slate-800 dark:text-white md:text-5xl"
+        class="font-accent text-4xl font-bold text-slate-800 md:text-5xl dark:text-white"
       >
         {{ props.title }}
       </h2>

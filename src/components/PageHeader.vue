@@ -29,12 +29,12 @@ const updatedDate = computed(() => useDatetimeFormat(props.updated))
 <template>
   <header class="flex flex-col gap-5">
     <h1
-      class="text-3xl font-bold leading-snug text-slate-800 dark:text-white md:text-4xl md:leading-normal"
+      class="text-3xl leading-snug font-bold text-slate-800 md:text-4xl md:leading-normal dark:text-white"
     >
       {{ props.title }}
     </h1>
     <slot>
-      <dl class="grid grid-cols-fill-36 gap-3 text-xs sm:gap-4">
+      <dl class="grid-cols-fill-36 grid gap-3 text-xs sm:gap-4">
         <div
           v-if="props.created"
           class="flex flex-col gap-1 rounded-lg bg-slate-100 px-4 py-2.5 dark:bg-slate-800"

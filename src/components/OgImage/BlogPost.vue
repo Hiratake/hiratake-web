@@ -19,7 +19,7 @@ const props = withDefaults(defineProps<OgImageBlogPostProps>(), {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 222.73 500"
-      class="absolute left-20 top-0 w-56"
+      class="absolute top-0 left-20 w-56"
     >
       <polygon
         points="12 121.67 222.73 0 198.73 0 0 114.74 0 500 12 500 12 121.67"
@@ -29,7 +29,7 @@ const props = withDefaults(defineProps<OgImageBlogPostProps>(), {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 222.73 500"
-      class="absolute bottom-0 right-20 w-56"
+      class="absolute right-20 bottom-0 w-56"
     >
       <polygon
         points="210.73 378.33 0 500 24 500 222.73 385.26 222.73 0 210.73 0 210.73 378.33"

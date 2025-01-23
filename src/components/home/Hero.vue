@@ -46,7 +46,7 @@ const props = defineProps<HomeHeroProps>()
       </div>
     </div>
 
-    <div class="absolute right-0 top-16 w-20 sm:w-24 md:w-32">
+    <div class="absolute top-16 right-0 w-20 sm:w-24 md:w-32">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 44.57 38.52"

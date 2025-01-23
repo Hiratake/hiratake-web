@@ -83,7 +83,7 @@ whenever(
               :class="[
                 isVisibleRssFeedCopyTooltip ? 'opacity-100' : 'opacity-0',
               ]"
-              class="pointer-events-none absolute -top-5 whitespace-nowrap rounded bg-black/70 px-2 py-1 text-xs text-white transition-opacity dark:bg-white/80 dark:text-slate-900"
+              class="pointer-events-none absolute -top-5 rounded bg-black/70 px-2 py-1 text-xs whitespace-nowrap text-white transition-opacity dark:bg-white/80 dark:text-slate-900"
             >
               URLをコピーしました
             </span>

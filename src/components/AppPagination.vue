@@ -63,7 +63,7 @@ const items = computed(() =>
 <template>
   <nav
     v-if="props.current && props.itemCount"
-    class="mx-auto flex max-w-3xl items-center justify-center gap-3 rounded-3xl border border-primary bg-white px-8 py-1.5 font-accent shadow-xl dark:bg-slate-900 dark:shadow-slate-200/10"
+    class="border-primary font-accent mx-auto flex max-w-3xl items-center justify-center gap-3 rounded-3xl border bg-white px-8 py-1.5 shadow-xl dark:bg-slate-900 dark:shadow-slate-200/10"
   >
     <NuxtLink
       v-if="prev"
@@ -79,8 +79,8 @@ const items = computed(() =>
       :to="item.to"
       :class="[
         item.current
-          ? 'flex bg-primary text-white'
-          : 'hidden hover:bg-slate-100 hover:dark:bg-slate-800 sm:flex',
+          ? 'bg-primary flex text-white'
+          : 'hidden hover:bg-slate-100 sm:flex hover:dark:bg-slate-800',
       ]"
       class="size-9 items-center justify-center rounded-full transition-colors"
     >

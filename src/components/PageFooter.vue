@@ -53,7 +53,7 @@ const surroundPost = computed(() => [
                   ? 'i-ph-arrow-right-fill'
                   : 'i-ph-arrow-left-fill',
               ]"
-              class="size-5 text-primary"
+              class="text-primary size-5"
             />
             <span class="text-sm font-bold">
               {{ post.type === 'next' ? '次の投稿' : '前の投稿' }}
@@ -66,7 +66,7 @@ const surroundPost = computed(() => [
                 ? 'border-r-2 pr-6 before:-right-0.5'
                 : 'border-l-2 pl-6 before:-left-0.5',
             ]"
-            class="relative flex grow flex-col gap-1.5 border-slate-200 transition-colors before:absolute before:h-full before:w-0.5 before:origin-bottom before:scale-x-100 before:scale-y-0 before:bg-primary before:transition-transform hover:before:origin-top hover:before:scale-y-100 dark:border-slate-700 [&>*]:transition-opacity [&>*]:hover:opacity-70"
+            class="before:bg-primary relative flex grow flex-col gap-1.5 border-slate-200 transition-colors before:absolute before:h-full before:w-0.5 before:origin-bottom before:scale-x-100 before:scale-y-0 before:transition-transform hover:before:origin-top hover:before:scale-y-100 dark:border-slate-700 [&>*]:transition-opacity [&>*]:hover:opacity-70"
           >
             <dl>
               <dt class="sr-only">投稿した日</dt>
@@ -80,7 +80,7 @@ const surroundPost = computed(() => [
               {{ post.title }}
             </h2>
             <p
-              class="line-clamp-2 text-xs text-slate-500 dark:text-slate-400 md:text-sm"
+              class="line-clamp-2 text-xs text-slate-500 md:text-sm dark:text-slate-400"
             >
               {{ post.description }}
             </p>
@@ -99,7 +99,7 @@ const surroundPost = computed(() => [
       </p>
       <NuxtLink
         :to="website.socials.discord.url"
-        class="flex items-center gap-2 rounded-2xl bg-discord px-6 py-1.5 text-white transition-colors hover:bg-discord/80"
+        class="bg-discord hover:bg-discord/80 flex items-center gap-2 rounded-2xl px-6 py-1.5 text-white transition-colors"
       >
         <span class="i-simple-icons-discord size-5" />
         <span class="pb-0.5 text-xs font-bold">Discord に参加</span>
