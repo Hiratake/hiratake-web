@@ -16,7 +16,7 @@ importers:
         version: 19.6.0
       '@egoist/tailwindcss-icons':
         specifier: 1.8.2
-        version: 1.8.2(tailwindcss@3.4.17)
+        version: 1.8.2(tailwindcss@4.0.0)
       '@fontsource/lexend':
         specifier: 5.1.2
         version: 5.1.2
@@ -28,7 +28,7 @@ importers:
         version: 5.1.1
       '@headlessui/tailwindcss':
         specifier: 0.2.1
-        version: 0.2.1(tailwindcss@3.4.17)
+        version: 0.2.1(tailwindcss@4.0.0)
       '@headlessui/vue':
         specifier: 1.7.23
         version: 1.7.23(vue@3.5.13(typescript@5.7.3))
@@ -58,7 +58,7 @@ importers:
         version: 6.13.1(magicast@0.3.5)(rollup@4.30.1)
       '@tailwindcss/typography':
         specifier: 0.5.16
-        version: 0.5.16(tailwindcss@3.4.17)
+        version: 0.5.16(tailwindcss@4.0.0)
       '@textlint-rule/textlint-rule-no-unmatched-pair':
         specifier: 2.0.4
         version: 2.0.4
@@ -96,8 +96,8 @@ importers:
         specifier: 0.6.10
         version: 0.6.10(prettier@3.4.2)
       tailwindcss:
-        specifier: 3.4.17
-        version: 3.4.17
+        specifier: 4.0.0
+        version: 4.0.0
       textlint:
         specifier: 14.4.2
         version: 14.4.2
@@ -5407,6 +5407,9 @@ packages:
     engines: {node: '>=14.0.0'}
     hasBin: true
 
+  tailwindcss@4.0.0:
+    resolution: {integrity: sha512-ULRPI3A+e39T7pSaf1xoi58AqqJxVCLg8F/uM5A3FadUbnyDTgltVnXJvdkTjwCOGA6NazqHVcwPJC5h2vRYVQ==}
+
   tapable@2.2.1:
     resolution: {integrity: sha512-GNzQvQTOIP6RyTfE2Qxb8ZVlNmw0n88vp1szwWRimP02mnTsx3Wtn5qRdqY9w2XduFNUgvOwhNnQsjwCp+kqaQ==}
     engines: {node: '>=6'}
@@ -6486,10 +6489,10 @@ snapshots:
     dependencies:
       postcss-selector-parser: 7.0.0
 
-  '@egoist/tailwindcss-icons@1.8.2(tailwindcss@3.4.17)':
+  '@egoist/tailwindcss-icons@1.8.2(tailwindcss@4.0.0)':
     dependencies:
       '@iconify/utils': 2.2.1
-      tailwindcss: 3.4.17
+      tailwindcss: 4.0.0
     transitivePeerDependencies:
       - supports-color
 
@@ -6718,9 +6721,9 @@ snapshots:
 
   '@fontsource/source-code-pro@5.1.1': {}
 
-  '@headlessui/tailwindcss@0.2.1(tailwindcss@3.4.17)':
+  '@headlessui/tailwindcss@0.2.1(tailwindcss@4.0.0)':
     dependencies:
-      tailwindcss: 3.4.17
+      tailwindcss: 4.0.0
 
   '@headlessui/vue@1.7.23(vue@3.5.13(typescript@5.7.3))':
     dependencies:
@@ -7678,13 +7681,13 @@ snapshots:
       - supports-color
       - typescript
 
-  '@tailwindcss/typography@0.5.16(tailwindcss@3.4.17)':
+  '@tailwindcss/typography@0.5.16(tailwindcss@4.0.0)':
     dependencies:
       lodash.castarray: 4.4.0
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
       postcss-selector-parser: 6.0.10
-      tailwindcss: 3.4.17
+      tailwindcss: 4.0.0
 
   '@tanstack/virtual-core@3.11.2': {}
 
@@ -12694,6 +12697,8 @@ snapshots:
       sucrase: 3.35.0
     transitivePeerDependencies:
       - ts-node
+
+  tailwindcss@4.0.0: {}
 
   tapable@2.2.1: {}
 
