@@ -56,7 +56,7 @@ const items = computed(() =>
   <div class="mx-auto w-full max-w-5xl">
     <article v-for="post in items" :key="post.path" class="flex gap-10">
       <div
-        class="hidden shrink-0 basis-12 items-start justify-center text-slate-300 dark:text-slate-700 sm:flex"
+        class="hidden shrink-0 basis-12 items-start justify-center text-slate-300 sm:flex dark:text-slate-700"
       >
         <div class="grid h-full justify-items-center">
           <div class="col-span-full row-span-full w-px bg-current" />
@@ -87,15 +87,15 @@ const items = computed(() =>
           </h3>
           <div class="flex flex-col gap-3 pt-2 leading-relaxed md:pt-4">
             <p
-              class="line-clamp-2 text-xs text-slate-500 dark:text-slate-400 md:text-sm"
+              class="line-clamp-2 text-xs text-slate-500 md:text-sm dark:text-slate-400"
             >
               {{ post.description }}
             </p>
             <div class="flex items-center gap-2">
-              <span class="text-xs text-primary underline dark:text-white">
+              <span class="text-primary text-xs underline dark:text-white">
                 続きを読む
               </span>
-              <span class="i-ph-caret-right-bold mt-1 size-3 text-primary" />
+              <span class="i-ph-caret-right-bold text-primary mt-1 size-3" />
             </div>
           </div>
         </NuxtLink>

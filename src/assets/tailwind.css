@@ -11,5 +11,5 @@
 }
 
 .content {
-  @apply max-w-none text-[0.925rem] leading-loose tracking-wide text-inherit dark:prose-invert [&>div>*:first-child]:mt-0;
+  @apply dark:prose-invert max-w-none text-[0.925rem] leading-loose tracking-wide text-inherit [&>div>*:first-child]:mt-0;
 }

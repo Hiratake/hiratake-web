@@ -38,7 +38,7 @@ useSeoMeta({ title: title.value, description: description.value })
         <div class="flex gap-2 text-xs">
           <span class="shrink-0 py-1">現在のURL：</span>
           <div
-            class="break-all rounded bg-slate-100 px-2 py-1 font-mono dark:bg-slate-800"
+            class="rounded bg-slate-100 px-2 py-1 font-mono break-all dark:bg-slate-800"
           >
             {{ route.fullPath }}
           </div>
