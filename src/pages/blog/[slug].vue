@@ -1,7 +1,4 @@
 <script lang="ts" setup>
-// Types
-import type { BlogPost } from '@/types'
-
 const website = useWebsite()
 const route = useRoute()
 const { data, error } = await useAsyncData(
@@ -12,7 +9,7 @@ const { data, error } = await useAsyncData(
       !Array.isArray(route.params.slug) &&
       /^\d{8}$/.test(route.params.slug)
     ) {
-      return queryContent<BlogPost>(blogUrlToPath(route.path)).findOne()
+      return queryCollection('blog').path(blogUrlToPath(route.path)).first()
     } else {
       throw new Error('URLの形式が不正です')
     }
@@ -20,7 +17,7 @@ const { data, error } = await useAsyncData(
 )
 const { data: blogData, error: blogError } = await useAsyncData(
   pathToUseAsyncDataKey('/blog'),
-  () => queryContent('/blog').findOne(),
+  () => queryCollection('diary').path('/blog').first(),
 )
 const { data: surround, error: surroundError } = await useAsyncData(
   pathToUseAsyncDataKey(route.path, 'surround'),
@@ -30,10 +27,11 @@ const { data: surround, error: surroundError } = await useAsyncData(
       !Array.isArray(route.params.slug) &&
       /^\d{8}$/.test(route.params.slug)
     ) {
-      return queryContent<BlogPost>()
-        .where({ _path: { $regex: /^\/blog\/\d{4}\/\d{2}\/\d{2}/ } })
-        .only(['_path', 'title', 'description', 'created'])
-        .findSurround(blogUrlToPath(route.path))
+      return queryCollectionItemSurroundings(
+        'blog',
+        blogUrlToPath(route.path),
+        { fields: ['path', 'title', 'description', 'created'] },
+      )
     } else {
       throw new Error('URLの形式が不正です')
     }
@@ -58,7 +56,7 @@ const author = website.value.owner
 const prev = computed(() => {
   if (surround.value && surround.value[0]) {
     return {
-      _path: useTrailingSlash(blogPathToUrl(surround.value[0]._path)),
+      path: useTrailingSlash(blogPathToUrl(surround.value[0].path)),
       title: surround.value[0].title || '',
       description: surround.value[0].description || '',
       created: surround.value[0].created,
@@ -71,7 +69,7 @@ const prev = computed(() => {
 const next = computed(() => {
   if (surround.value && surround.value[1]) {
     return {
-      _path: useTrailingSlash(blogPathToUrl(surround.value[1]._path)),
+      path: useTrailingSlash(blogPathToUrl(surround.value[1].path)),
       title: surround.value[1].title || '',
       description: surround.value[1].description || '',
       created: surround.value[1].created,

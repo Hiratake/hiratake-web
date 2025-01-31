@@ -1,12 +1,9 @@
 <script lang="ts" setup>
-// Types
-import type { BlogPost } from '@/types'
-
 const website = useWebsite()
 const route = useRoute()
 const { data, error } = await useAsyncData(
   pathToUseAsyncDataKey(route.path),
-  () => queryContent<BlogPost>(route.path).findOne(),
+  () => queryCollection('docs').path(route.path).first(),
 )
 const { data: breadcrumbs, error: breadcrumbsError } = await useAsyncData(
   pathToUseAsyncDataKey(route.path, 'breadcrumbs'),
@@ -21,11 +18,11 @@ const { data: breadcrumbs, error: breadcrumbsError } = await useAsyncData(
           return [`/${current}`]
         }
       }, [])
-    return queryContent()
-      .where({ _path: { $in: ['/', ...items] } })
-      .only(['_path', 'title'])
-      .sort({ _path: 1 })
-      .find()
+    return queryCollection('docs')
+      .where('path', 'IN', items)
+      .select('path', 'title')
+      .order('path', 'ASC')
+      .all()
   },
 )
 
@@ -51,9 +48,12 @@ useSeoMeta({
 })
 useSchemaOrg([
   defineBreadcrumb({
-    itemListElement: (breadcrumbs.value ?? []).map((item) => ({
+    itemListElement: (breadcrumbs.value
+      ? [{ title: website.value.name, path: '/' }, ...breadcrumbs.value]
+      : []
+    ).map((item) => ({
       name: item.title,
-      item: useTrailingSlash(item._path || ''),
+      item: useTrailingSlash(item.path || ''),
     })),
   }),
 ])
