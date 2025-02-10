@@ -1,5 +1,5 @@
 // Types
-import type { MarkdownParsedContent } from '@nuxt/content'
+import type { BlogCollectionItem } from '@nuxt/content'
 import type { H3Event } from 'h3'
 
 /**
@@ -10,7 +10,7 @@ import type { H3Event } from 'h3'
  */
 export const generateContentFromAst = (
   event: H3Event,
-  children: MarkdownParsedContent['body']['children'],
+  children: BlogCollectionItem['body']['children'],
 ): string => {
   // @ts-ignore: Nuxt Site Config 側の問題が解決次第削除
   const site = useSiteConfig(event)
@@ -79,10 +79,10 @@ export const generateContentFromAst = (
         startTag = `<${node.tag}>`
         endTag = `</${node.tag}>`
       }
-    }
 
-    if (node.children) {
-      content += `${startTag}${generateContentFromAst(event, node.children)}${endTag}`
+      if (node.children) {
+        content += `${startTag}${generateContentFromAst(event, node.children)}${endTag}`
+      }
     }
   }
 
