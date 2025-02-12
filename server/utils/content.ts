@@ -12,7 +12,7 @@ export const generateContentFromAst = (
   event: H3Event,
   children: BlogCollectionItem['body']['children'],
 ): string => {
-  // @ts-ignore: Nuxt Site Config 側の問題が解決次第削除
+  // @ts-ignore: https://github.com/nuxt/nuxt/issues/29263
   const site = useSiteConfig(event)
   const config = useRuntimeConfig()
 

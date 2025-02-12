@@ -5,9 +5,10 @@ import { withoutTrailingSlash, withTrailingSlash } from 'ufo'
 
 export default defineEventHandler(async (event) => {
   /** ウェブサイトの情報 */
-  // @ts-ignore: Nuxt Site Config 側の問題が解決次第削除
+  // @ts-ignore: https://github.com/nuxt/nuxt/issues/29263
   const site = useSiteConfig(event)
   /** ブログ一覧ページの情報 */
+  // @ts-ignore: https://github.com/nuxt/nuxt/issues/29263
   const blogIndexContent = await queryCollection(event, 'diary').first()
 
   /**
@@ -29,7 +30,8 @@ export default defineEventHandler(async (event) => {
     copyright: site?.name || 'Hiratake Web',
   })
   /** ブログの投稿 */
-  const posts = await queryCollection(event, 'blog')
+  // @ts-ignore: https://github.com/nuxt/nuxt/issues/29263
+  const posts = await queryCollection<'blog'>(event, 'blog')
     .order('created', 'DESC')
     .limit(10)
     .all()
@@ -47,7 +49,7 @@ export default defineEventHandler(async (event) => {
         description: post.description.replace(/\r?\n/g, ''),
         content: generateContentFromAst(
           event,
-          // @ts-expect-error: Nuxt Content 側の型が間違っている
+          // @ts-expect-error: https://github.com/nuxt/content/issues/3072
           decompressTree(post.body).children,
         ),
         date: new Date(post.created || ''),
