@@ -21,12 +21,12 @@
     "url": "https://github.com/Hiratake/hiratake-web.git"
   },
   "type": "module",
-  "packageManager": "pnpm@10.2.0",
+  "packageManager": "pnpm@10.3.0",
   "engines": {
     "node": ">=20.9.0"
   },
   "volta": {
-    "node": "22.13.0"
+    "node": "22.14.0"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
