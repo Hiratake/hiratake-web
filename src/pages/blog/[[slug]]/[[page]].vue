@@ -4,7 +4,7 @@ const route = useRoute()
 const { data, error } = await useAsyncData(pathToUseAsyncDataKey('/blog'), () =>
   queryCollection('diary').path('/blog').first(),
 )
-const { data: count, error: countError } = await useAsyncData(
+const { count, error: countError } = await useAsyncData(
   pathToUseAsyncDataKey('/blog', 'count'),
   () => {
     if (!/^\/blog(\/page\/[1-9]\d*)?\/?$/.test(route.path)) {
@@ -14,11 +14,12 @@ const { data: count, error: countError } = await useAsyncData(
       throw new Error('URLの形式が不正です')
     }
 
-    return queryCollection('blog').count()
+    return queryCollection('blog').all()
   },
-)
+).then((res) => ({ count: res.data.value?.length, error: res.error }))
 
 if (error.value || countError.value) {
+  console.error(countError.value?.message)
   throw createError({
     statusCode: 404,
     message: 'ページが見つかりません',
