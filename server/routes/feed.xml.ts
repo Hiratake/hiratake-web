@@ -1,5 +1,4 @@
 // Utils
-import { decompressTree } from '../../node_modules/@nuxt/content/dist/runtime/internal/abstract-tree.js'
 import { Feed } from 'feed'
 import { withoutTrailingSlash, withTrailingSlash } from 'ufo'
 
@@ -47,11 +46,8 @@ export default defineEventHandler(async (event) => {
         id: url,
         link: url,
         description: post.description.replace(/\r?\n/g, ''),
-        content: generateContentFromAst(
-          event,
-          // @ts-expect-error: https://github.com/nuxt/content/issues/3072
-          decompressTree(post.body).children,
-        ),
+        // @ts-ignore: https://github.com/nuxt/content/issues/3072
+        content: generateContentFromMinimalNode(event, post.body.value),
         date: new Date(post.created || ''),
       })
     })
