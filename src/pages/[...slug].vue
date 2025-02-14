@@ -26,7 +26,7 @@ const { data: breadcrumbs, error: breadcrumbsError } = await useAsyncData(
   },
 )
 
-if (error.value || breadcrumbsError.value) {
+if (!data.value || error.value || breadcrumbsError.value) {
   throw createError({
     statusCode: 404,
     message: 'ページが見つかりません',
