@@ -56,6 +56,9 @@ export default defineNuxtConfig({
     defaultLocale: 'ja',
     trailingSlash: true,
   },
+  sitemap: {
+    exclude: [new RegExp(/^\/blog\/\d{4}\/\d{2}\/\d{2}\/$/)],
+  },
   srcDir: 'src/',
   tailwindcss: { cssPath: '@/assets/tailwind.css' },
 })
