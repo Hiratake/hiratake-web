@@ -1,20 +1,14 @@
-// Types
-import type { ParsedContent } from '@nuxt/content'
-import type { BlogPost } from '@/types'
 // Utils
-import { serverQueryContent } from '#content/server'
 import { Feed } from 'feed'
 import { withoutTrailingSlash, withTrailingSlash } from 'ufo'
 
 export default defineEventHandler(async (event) => {
   /** ウェブサイトの情報 */
-  // @ts-ignore: Nuxt Site Config 側の問題が解決次第削除
+  // @ts-ignore: https://github.com/nuxt/nuxt/issues/29263
   const site = useSiteConfig(event)
   /** ブログ一覧ページの情報 */
-  const blogIndexContent = await serverQueryContent<ParsedContent>(
-    event,
-    'blog',
-  ).findOne()
+  // @ts-ignore: https://github.com/nuxt/nuxt/issues/29263
+  const blogIndexContent = await queryCollection(event, 'diary').first()
 
   /**
    * 末尾のスラッシュの設定を反映したURLを返す
@@ -27,7 +21,7 @@ export default defineEventHandler(async (event) => {
   /** RSSフィード */
   const feed = new Feed({
     title: `${site.name || 'Hiratake Web'} Diary Feed`,
-    description: blogIndexContent?.description || '',
+    description: blogIndexContent.description || '',
     id: site.url,
     link: useTrailingSlash(`${site.url}/blog/`),
     language: site?.defaultLocale || 'ja',
@@ -35,28 +29,26 @@ export default defineEventHandler(async (event) => {
     copyright: site?.name || 'Hiratake Web',
   })
   /** ブログの投稿 */
-  const posts = await serverQueryContent<BlogPost>(event, 'blog')
-    .where({ _path: { $regex: /^\/blog\/\d{4}\/\d{2}\/\d{2}/ } })
-    .sort({ created: -1 })
+  // @ts-ignore: https://github.com/nuxt/nuxt/issues/29263
+  const posts = await queryCollection<'blog'>(event, 'blog')
+    .order('created', 'DESC')
     .limit(10)
-    .find()
+    .all()
 
   posts
-    .filter(
-      (post) =>
-        post._extension === 'md' && !post._empty && post._path && post.title,
-    )
+    .filter((post) => post.path && post.title)
     .forEach((post) => {
       /** 投稿のURL */
-      const url = `${site.url}/blog/${withTrailingSlash((post._path || '').replace('/blog', '').split('/').join(''))}`
+      const url = `${site.url}/blog/${withTrailingSlash((post.path || '').replace('/blog', '').split('/').join(''))}`
 
       feed.addItem({
         title: post.title || '',
         id: url,
         link: url,
         description: post.description.replace(/\r?\n/g, ''),
-        content: generateContentFromAst(event, post.body.children),
-        date: new Date(post?.created ? Date.parse(post.created) : ''),
+        // @ts-ignore: https://github.com/nuxt/content/issues/3072
+        content: generateContentFromMinimalNode(event, post.body.value),
+        date: new Date(post.created || ''),
       })
     })
 

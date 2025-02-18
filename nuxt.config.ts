@@ -5,17 +5,20 @@ export default defineNuxtConfig({
   },
   compatibilityDate: '2025-01-01',
   content: {
-    documentDriven: false,
-    highlight: { theme: 'github-dark' },
+    build: {
+      markdown: {
+        highlight: { theme: 'github-dark' },
+      },
+    },
   },
   devtools: { enabled: true },
   future: { compatibilityVersion: 4 },
   linkChecker: { enabled: false },
   modules: [
-    '@nuxt/eslint',
-    '@nuxt/content',
     '@nuxtjs/seo',
     '@nuxtjs/tailwindcss',
+    '@nuxt/eslint',
+    '@nuxt/content',
     '@vueuse/nuxt',
   ],
   nitro: {
@@ -52,6 +55,9 @@ export default defineNuxtConfig({
     description: 'ひらたけの個人ウェブサイトです。',
     defaultLocale: 'ja',
     trailingSlash: true,
+  },
+  sitemap: {
+    exclude: [new RegExp(/^\/blog\/\d{4}\/\d{2}\/\d{2}\/$/)],
   },
   srcDir: 'src/',
   tailwindcss: { cssPath: '@/assets/tailwind.css' },

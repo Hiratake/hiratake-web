@@ -10,7 +10,13 @@ const props = withDefaults(defineProps<ProseH2Props>(), {
 const { headings } = useRuntimeConfig().public.mdc
 
 /** リンクを設定するか */
-const generate = computed(() => props.id && headings?.anchorLinks?.h2)
+const generate = computed(
+  () =>
+    props.id &&
+    ((typeof headings?.anchorLinks === 'boolean' &&
+      headings?.anchorLinks === true) ||
+      (typeof headings?.anchorLinks === 'object' && headings?.anchorLinks?.h2)),
+)
 </script>
 
 <template>
