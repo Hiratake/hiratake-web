@@ -1,5 +1,5 @@
 // Types
-import type { MarkdownParsedContent } from '@nuxt/content'
+import type { MinimalNode } from '@nuxt/content'
 import type { H3Event } from 'h3'
 
 /**
@@ -8,11 +8,11 @@ import type { H3Event } from 'h3'
  * @param children Markdownノードの配列
  * @returns Markdownの本文テキスト
  */
-export const generateContentFromAst = (
+export const generateContentFromMinimalNode = (
   event: H3Event,
-  children: MarkdownParsedContent['body']['children'],
+  children: MinimalNode[],
 ): string => {
-  // @ts-ignore: Nuxt Site Config 側の問題が解決次第削除
+  // @ts-ignore: https://github.com/nuxt/nuxt/issues/29263
   const site = useSiteConfig(event)
   const config = useRuntimeConfig()
 
@@ -25,64 +25,67 @@ export const generateContentFromAst = (
     /** 終了タグ */
     let endTag = ''
 
-    if (node.type === 'text') {
+    if (typeof node === 'string') {
       // Text
-      content += `${node.value?.trim()}`
-    } else if (node.type === 'element' && node.tag) {
+      content += `${node.trim()}`
+    } else {
       // Element
-      if (['script', 'style'].includes(node.tag)) {
-        // 何も出力しない
-        continue
-      } else if (node.tag === 'img') {
-        // 画像
-        const imageId = (node.props?.src as string) || ''
-        const src = imageId
-          ? `${site.url}/cdn-cgi/imagedelivery/${config.public.cloudflareImageHash}/${imageId}/w=1536`
-          : ''
-        const alt = (node.props?.alt as string) || ''
-        content += `<${node.tag} src="${src}" alt="${alt}" />`
-        continue
-      } else if (node.tag === 'a') {
-        // リンク
-        const href = (node?.props?.href as string) || ''
-        startTag = `<${node.tag} href="${href}">`
-        endTag = `</${node.tag}>`
-      } else if (node.tag === 'pre') {
-        // コードブロック
-        const code =
-          (node.props?.code as string).trim().replace(/\n/g, '&#xA;') || ''
-        content += `<${node.tag}><code>${code}</code></${node.tag}>`
-        continue
-      } else if (['hr', 'br'].includes(node.tag)) {
-        // 空要素
-        content += `<${node.tag} />`
-        continue
-      } else if (
-        [
-          'h1',
-          'h2',
-          'h3',
-          'h4',
-          'h5',
-          'h6',
-          'p',
-          'ul',
-          'ol',
-          'li',
-          'blockquate',
-          'em',
-          'strong',
-          'del',
-          'code',
-        ].includes(node.tag)
-      ) {
-        startTag = `<${node.tag}>`
-        endTag = `</${node.tag}>`
-      }
-    }
+      const [tag, props, ...rest] = node
+      if (tag) {
+        if (['script', 'style'].includes(tag)) {
+          // 何も出力しない
+          continue
+        } else if (tag === 'img') {
+          // 画像
+          const imageId = (props?.src as string) || ''
+          const src = imageId
+            ? `${site.url}/cdn-cgi/imagedelivery/${config.public.cloudflareImageHash}/${imageId}/w=1536`
+            : ''
+          const alt = (props?.alt as string) || ''
+          content += `<${tag} src="${src}" alt="${alt}" />`
+          continue
+        } else if (tag === 'a') {
+          // リンク
+          const href = (props?.href as string) || ''
+          startTag = `<${tag} href="${href}">`
+          endTag = `</${tag}>`
+        } else if (tag === 'pre') {
+          // コードブロック
+          const code =
+            (props?.code as string).trim().replace(/\n/g, '&#xA;') || ''
+          content += `<${tag}><code>${code}</code></${tag}>`
+          continue
+        } else if (['hr', 'br'].includes(tag)) {
+          // 空要素
+          content += `<${tag} />`
+          continue
+        } else if (
+          [
+            'h1',
+            'h2',
+            'h3',
+            'h4',
+            'h5',
+            'h6',
+            'p',
+            'ul',
+            'ol',
+            'li',
+            'blockquate',
+            'em',
+            'strong',
+            'del',
+            'code',
+          ].includes(tag)
+        ) {
+          startTag = `<${tag}>`
+          endTag = `</${tag}>`
+        }
 
-    if (node.children) {
-      content += `${startTag}${generateContentFromAst(event, node.children)}${endTag}`
+        if (rest) {
+          content += `${startTag}${generateContentFromMinimalNode(event, rest)}${endTag}`
+        }
+      }
     }
   }
 
