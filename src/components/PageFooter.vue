@@ -1,31 +1,31 @@
 <script lang="ts" setup>
 // Types
-import type { BlogPost } from '@/types'
+import type { BlogCollectionItem } from '@nuxt/content'
 
 type PageFooterProps = {
-  prev?: Pick<BlogPost, '_path' | 'title' | 'description' | 'created'>
-  next?: Pick<BlogPost, '_path' | 'title' | 'description' | 'created'>
+  prev?: Pick<BlogCollectionItem, 'path' | 'title' | 'description' | 'created'>
+  next?: Pick<BlogCollectionItem, 'path' | 'title' | 'description' | 'created'>
 }
 
 const props = withDefaults(defineProps<PageFooterProps>(), {
-  prev: () => ({ _path: '', title: '', description: '', created: '' }),
-  next: () => ({ _path: '', title: '', description: '', created: '' }),
+  prev: () => ({ path: '', title: '', description: '', created: undefined }),
+  next: () => ({ path: '', title: '', description: '', created: undefined }),
 })
 
 const website = useWebsite()
 
 /** 前後の投稿 */
 const surroundPost = computed(() => [
-  props.prev._path && {
+  props.prev.path && {
     type: 'prev',
-    to: props.prev._path,
+    to: props.prev.path,
     title: props.prev.title || '',
     description: props.prev.description,
     created: useDatetimeFormat(props.prev.created),
   },
-  props.next._path && {
+  props.next.path && {
     type: 'next',
-    to: props.next._path,
+    to: props.next.path,
     title: props.next.title || '',
     description: props.next.description,
     created: useDatetimeFormat(props.next.created),
