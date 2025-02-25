@@ -1,7 +1,4 @@
 <script lang="ts" setup>
-// Types
-import type { BlogPost } from '@/types'
-
 type BlogPostListProps = {
   /** 取得する投稿数 */
   limit?: number
@@ -22,13 +19,12 @@ const { data, error } = await useAsyncData(
     `skip-${props.skip}`,
   ),
   () =>
-    queryContent<BlogPost>('blog')
-      .only(['_path', 'title', 'description', 'created'])
-      .where({ _path: { $not: '/blog' } })
-      .sort({ created: -1 })
+    queryCollection('blog')
+      .select('path', 'title', 'description', 'created')
+      .order('created', 'DESC')
       .limit(props.limit || website.value.itemPerPage)
       .skip(props.skip)
-      .find(),
+      .all(),
 )
 
 if (error.value || !data.value?.length) {
@@ -42,9 +38,9 @@ if (error.value || !data.value?.length) {
 /** ブログの投稿 */
 const items = computed(() =>
   (data.value || [])
-    .filter((item) => item._path && item.title && item.created)
+    .filter((item) => item.path && item.title && item.created)
     .map((item) => ({
-      path: useTrailingSlash(blogPathToUrl(item._path)),
+      path: useTrailingSlash(blogPathToUrl(item.path)),
       title: item.title || '',
       description: item.description || '',
       created: useDatetimeFormat(item.created),
