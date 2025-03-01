@@ -3,9 +3,9 @@ type PageHeaderProps = {
   /** タイトル */
   title?: string
   /** 投稿した日 */
-  created?: string
+  created?: Date | string
   /** 更新した日 */
-  updated?: string
+  updated?: Date | string
   /** 書いたひと */
   author?: {
     name: string
@@ -15,8 +15,8 @@ type PageHeaderProps = {
 
 const props = withDefaults(defineProps<PageHeaderProps>(), {
   title: '',
-  created: '',
-  updated: '',
+  created: undefined,
+  updated: undefined,
   author: () => ({ name: '', icon: '' }),
 })
 
