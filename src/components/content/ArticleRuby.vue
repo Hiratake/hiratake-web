@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 type ArticleRubyProps = {
   /** ルビの文字列 */
-  ruby: string
+  ruby?: string
 }
 
 const props = withDefaults(defineProps<ArticleRubyProps>(), {
