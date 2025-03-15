@@ -3,9 +3,9 @@ type PageHeaderProps = {
   /** タイトル */
   title?: string
   /** 投稿した日 */
-  created?: Date
+  created?: Date | string
   /** 更新した日 */
-  updated?: Date
+  updated?: Date | string
   /** 書いたひと */
   author?: {
     name: string

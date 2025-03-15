@@ -1,7 +1,7 @@
 ---
 title: 運営者情報
 created: 2023-10-15
-updated: 2024-07-15
+updated: 2025-02-22
 ---
 
 こんにちは、 **ひらたけ** です。このウェブサイト **「Hiratake Web」の運営** をしています💪
@@ -30,4 +30,3 @@ updated: 2024-07-15
 
 - **X** - [@Hirotaisou2012](https://x.com/Hirotaisou2012)
 - **Misskey** - [@Hiratake](https://misskey.io/@Hiratake)
-- **Mastodon** - [@hiratake](https://mozilla.social/@hiratake)
