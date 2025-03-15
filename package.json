@@ -51,7 +51,7 @@
     "@iconify-json/simple-icons": "1.2.26",
     "@nuxt/content": "3.1.1",
     "@nuxt/eslint": "1.1.0",
-    "@nuxtjs/seo": "2.2.0",
+    "@nuxtjs/seo": "3.0.1",
     "@nuxtjs/tailwindcss": "6.13.1",
     "@tailwindcss/typography": "0.5.16",
     "@textlint-rule/textlint-rule-no-unmatched-pair": "2.0.4",
