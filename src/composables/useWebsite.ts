@@ -194,4 +194,5 @@ export const useWebsite = () => {
   }))
 }
 
+/** useWebsite関数の返り値の型 */
 export type UseWebsiteReturn = ReturnType<typeof useWebsite>

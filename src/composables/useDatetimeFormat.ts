@@ -12,4 +12,5 @@ export const useDatetimeFormat = (val: string | Date = new Date()) => {
   }
 }
 
+/** useDatetimeFomat関数の返り値の型 */
 export type UseDatetimeFormatReturn = ReturnType<typeof useDatetimeFormat>
