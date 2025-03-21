@@ -14,7 +14,7 @@ const props = withDefaults(defineProps<ProseAProps>(), {
   <NuxtLink
     :href="props.href"
     :target="props.target"
-    class="underline hover:no-underline"
+    class="text-blue-900 underline hover:no-underline dark:text-blue-100"
   >
     <slot />
   </NuxtLink>
