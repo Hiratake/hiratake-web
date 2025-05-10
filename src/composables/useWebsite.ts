@@ -131,23 +131,23 @@ export const useWebsite = () => {
          */
         url: app.socials.misskey.url,
       },
-      /** Mastodon */
-      mastodon: {
+      /** Steam */
+      steam: {
         /**
          * サービス名
-         * @example 'Mastodon'
+         * @example 'Steam'
          */
-        name: app.socials.mastodon.name,
+        name: app.socials.steam.name,
         /**
          * ハンドルネーム
-         * @example '@hiratake@mozilla.social'
+         * @example '@Hirotaisou2012'
          */
-        handle: app.socials.mastodon.handle,
+        handle: app.socials.steam.handle,
         /**
          * URL
-         * @example 'https://mozilla.social/@hiratake'
+         * @example 'https://steamcommunity.com/id/Hirotaisou2012/'
          */
-        url: app.socials.mastodon.url,
+        url: app.socials.steam.url,
       },
       /** RSS */
       rss: {
