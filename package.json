@@ -21,26 +21,18 @@
     "url": "https://github.com/Hiratake/hiratake-web.git"
   },
   "type": "module",
-  "packageManager": "pnpm@10.7.1",
+  "packageManager": "pnpm@10.11.0",
   "engines": {
     "node": ">=20.9.0"
   },
   "volta": {
-    "node": "22.14.0"
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "@parcel/watcher",
-      "better-sqlite3",
-      "esbuild",
-      "lefthook"
-    ]
+    "node": "22.15.1"
   },
   "devDependencies": {
-    "@commitlint/cli": "19.8.0",
-    "@commitlint/config-conventional": "19.8.0",
+    "@commitlint/cli": "19.8.1",
+    "@commitlint/config-conventional": "19.8.1",
     "@egoist/tailwindcss-icons": "1.9.0",
-    "@fontsource/lexend": "5.2.6",
+    "@fontsource/lexend": "5.2.7",
     "@fontsource/noto-sans-jp": "5.2.5",
     "@fontsource/source-code-pro": "5.2.5",
     "@headlessui/tailwindcss": "0.2.2",
@@ -48,26 +40,26 @@
     "@hiratake/textlint-rule-front-matter": "1.1.2",
     "@hiratake/textlint-rule-space-around-bold": "1.0.4",
     "@iconify-json/ph": "1.2.2",
-    "@iconify-json/simple-icons": "1.2.30",
+    "@iconify-json/simple-icons": "1.2.34",
     "@nuxt/content": "3.1.1",
-    "@nuxt/eslint": "1.3.0",
-    "@nuxtjs/seo": "3.0.2",
-    "@nuxtjs/tailwindcss": "6.13.2",
+    "@nuxt/eslint": "1.3.1",
+    "@nuxtjs/seo": "3.0.3",
+    "@nuxtjs/tailwindcss": "6.14.0",
     "@tailwindcss/typography": "0.5.16",
     "@textlint-rule/textlint-rule-no-unmatched-pair": "2.0.4",
     "@vueuse/core": "13.0.0",
-    "@vueuse/nuxt": "13.0.0",
+    "@vueuse/nuxt": "13.2.0",
     "autoprefixer": "10.4.21",
-    "eslint": "9.24.0",
-    "feed": "5.0.0",
-    "h3": "1.15.1",
-    "lefthook": "1.11.6",
-    "nuxt": "3.16.2",
+    "eslint": "9.26.0",
+    "feed": "5.0.1",
+    "h3": "1.15.3",
+    "lefthook": "1.11.12",
+    "nuxt": "3.17.3",
     "postcss": "8.5.3",
     "prettier": "3.5.3",
     "prettier-plugin-tailwindcss": "0.6.11",
     "tailwindcss": "3.4.17",
-    "textlint": "14.6.0",
+    "textlint": "14.7.1",
     "textlint-filter-rule-allowlist": "4.0.0",
     "textlint-filter-rule-comments": "1.2.2",
     "textlint-rule-ja-space-around-code": "2.4.2",
@@ -75,10 +67,10 @@
     "textlint-rule-ja-space-between-half-and-full-width": "2.4.2",
     "textlint-rule-no-mixed-zenkaku-and-hankaku-alphabet": "1.0.1",
     "typescript": "5.8.3",
-    "ufo": "1.5.4",
-    "vue": "3.5.13",
-    "vue-router": "4.5.0",
-    "vue-tsc": "2.2.8"
+    "ufo": "1.6.1",
+    "vue": "3.5.14",
+    "vue-router": "4.5.1",
+    "vue-tsc": "2.2.10"
   },
   "scripts": {
     "build": "nuxt build",
