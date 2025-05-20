@@ -21,7 +21,7 @@ export default defineEventHandler(async (event) => {
   /** RSSフィード */
   const feed = new Feed({
     title: `${site.name || 'Hiratake Web'} Diary Feed`,
-    description: blogIndexContent.description || '',
+    description: blogIndexContent?.description || '',
     id: site.url,
     link: useTrailingSlash(`${site.url}/blog/`),
     language: site?.defaultLocale || 'ja',
