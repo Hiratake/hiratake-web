@@ -35,10 +35,10 @@ export default defineAppConfig({
       handle: '@Hiratake',
       url: 'https://misskey.io/@Hiratake',
     },
-    mastodon: {
-      name: 'Mastodon',
-      handle: '@hiratake@mozilla.social',
-      url: 'https://mozilla.social/@hiratake',
+    steam: {
+      name: 'Steam',
+      handle: '@Hirotaisou2012',
+      url: 'https://steamcommunity.com/id/Hirotaisou2012/',
     },
     rss: {
       name: 'Hiratake Web Diary RSS Feed',
