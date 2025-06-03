@@ -1,4 +1,11 @@
 <script lang="ts" setup>
+import type { BlogCollectionItem, ContentNavigationItem } from '@nuxt/content'
+
+type SurroundItem = ContentNavigationItem & {
+  description: BlogCollectionItem['description']
+  created: BlogCollectionItem['created']
+}
+
 const website = useWebsite()
 const route = useRoute()
 const { data, error } = await useAsyncData(
@@ -55,11 +62,12 @@ const author = website.value.owner
 /** 前の投稿 */
 const prev = computed(() => {
   if (surround.value && surround.value[0]) {
+    const val = surround.value[0] as SurroundItem
     return {
-      path: useTrailingSlash(blogPathToUrl(surround.value[0].path)),
-      title: surround.value[0].title || '',
-      description: surround.value[0].description || '',
-      created: surround.value[0].created,
+      path: useTrailingSlash(blogPathToUrl(val.path)),
+      title: val.title || '',
+      description: val.description || '',
+      created: val.created,
     }
   } else {
     return undefined
@@ -68,11 +76,12 @@ const prev = computed(() => {
 /** 次の投稿 */
 const next = computed(() => {
   if (surround.value && surround.value[1]) {
+    const val = surround.value[1] as SurroundItem
     return {
-      path: useTrailingSlash(blogPathToUrl(surround.value[1].path)),
-      title: surround.value[1].title || '',
-      description: surround.value[1].description || '',
-      created: surround.value[1].created,
+      path: useTrailingSlash(blogPathToUrl(val.path)),
+      title: val.title || '',
+      description: val.description || '',
+      created: val.created,
     }
   } else {
     return undefined
