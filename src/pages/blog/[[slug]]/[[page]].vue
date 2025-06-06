@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 const website = useWebsite()
 const route = useRoute()
+const robots = useRobotsRule()
 const { data, error } = await useAsyncData(pathToUseAsyncDataKey('/blog'), () =>
   queryCollection('diary').path('/blog').first(),
 )
@@ -25,6 +26,10 @@ if (error.value || countError.value) {
     message: 'ページが見つかりません',
     fatal: true,
   })
+}
+
+if (Number(route.params.page) > 1) {
+  robots.value = 'noindex, follow'
 }
 
 useSeoMeta({
