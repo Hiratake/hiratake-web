@@ -55,6 +55,7 @@
     "h3": "1.15.3",
     "lefthook": "1.11.13",
     "nuxt": "3.17.5",
+    "nuxt-llms": "0.1.3",
     "postcss": "8.5.4",
     "prettier": "3.5.3",
     "prettier-plugin-tailwindcss": "0.6.12",
