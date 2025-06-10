@@ -2,6 +2,7 @@
 const website = useWebsite()
 const route = useRoute()
 const router = useRouter()
+const robots = useRobotsRule()
 const { data, error } = await useAsyncData(pathToUseAsyncDataKey('/blog'), () =>
   queryCollection('diary').path('/blog').first(),
 )
@@ -42,6 +43,10 @@ const getRandomBlog = () => {
       router.push(blogPathToUrl(allBlogPaths.value[random].path))
     }
   }
+}
+
+if (Number(route.params.page) > 1) {
+  robots.value = 'noindex, follow'
 }
 
 useSeoMeta({
