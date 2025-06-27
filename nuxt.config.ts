@@ -14,12 +14,18 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   future: { compatibilityVersion: 4 },
   linkChecker: { enabled: false },
+  llms: {
+    domain: process.env.CF_PAGES_URL || 'https://hiratake.dev',
+    title: 'Hiratake Web',
+    description: 'ひらたけの個人ウェブサイトです。',
+  },
   modules: [
     '@nuxtjs/seo',
     '@nuxtjs/tailwindcss',
     '@nuxt/eslint',
     '@nuxt/content',
     '@vueuse/nuxt',
+    'nuxt-llms',
   ],
   nitro: {
     prerender: { failOnError: false, crawlLinks: true, routes: ['/feed.xml'] },
