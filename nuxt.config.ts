@@ -3,7 +3,7 @@ export default defineNuxtConfig({
   app: {
     head: { titleTemplate: '%pageTitle' },
   },
-  compatibilityDate: '2025-01-01',
+  compatibilityDate: '2025-08-01',
   content: {
     build: {
       markdown: {
@@ -12,7 +12,6 @@ export default defineNuxtConfig({
     },
   },
   devtools: { enabled: true },
-  future: { compatibilityVersion: 4 },
   linkChecker: { enabled: false },
   llms: {
     domain: process.env.CF_PAGES_URL || 'https://hiratake.dev',
