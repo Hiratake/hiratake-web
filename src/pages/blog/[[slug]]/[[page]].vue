@@ -80,7 +80,8 @@ defineOgImage({
         <div class="flex items-center gap-2">
           <span class="i-ph-pencil" />
           <span class="text-xs md:text-sm">
-<span class="font-bold">{{ (count || 0).toLocaleString() }}</span> 件の投稿
+            <span class="font-bold">{{ (count || 0).toLocaleString() }}</span>
+            件の投稿
           </span>
         </div>
 
