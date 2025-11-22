@@ -50,7 +50,7 @@
     "@vueuse/core": "14.0.0",
     "@vueuse/nuxt": "14.0.0",
     "autoprefixer": "10.4.22",
-    "better-sqlite3": "12.4.1",
+    "better-sqlite3": "12.4.6",
     "eslint": "9.39.1",
     "feed": "5.1.0",
     "h3": "1.15.4",
