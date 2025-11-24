@@ -36,7 +36,7 @@ const socials = website.value.socials
     </li>
     <li>
       <NuxtLink
-        :to="socials.github.url"
+        :to="socials.x.url"
         class="inline-flex items-center gap-2 rounded-3xl bg-black px-3 py-1 text-white no-underline transition-opacity hover:opacity-80"
       >
         <span class="i-simple-icons-x size-4" />
