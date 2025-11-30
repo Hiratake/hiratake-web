@@ -25,12 +25,12 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        node: [22]
+        node: [24]
     timeout-minutes: 10
 
     steps:
       - name: Checkout
-        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
+        uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3
 
       - name: Setup pnpm
         uses: pnpm/action-setup@41ff72655975bd51cab0327fa583b6e92b6d3061
@@ -57,12 +57,12 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        node: [22]
+        node: [24]
     timeout-minutes: 10
 
     steps:
       - name: Checkout
-        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
+        uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3
 
       - name: Setup pnpm
         uses: pnpm/action-setup@41ff72655975bd51cab0327fa583b6e92b6d3061
@@ -89,12 +89,12 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        node: [22]
+        node: [24]
     timeout-minutes: 10
 
     steps:
       - name: Checkout
-        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
+        uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3
 
       - name: Setup pnpm
         uses: pnpm/action-setup@41ff72655975bd51cab0327fa583b6e92b6d3061
@@ -121,12 +121,12 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        node: [22]
+        node: [24]
     timeout-minutes: 10
 
     steps:
       - name: Checkout
-        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
+        uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3
 
       - name: Setup pnpm
         uses: pnpm/action-setup@41ff72655975bd51cab0327fa583b6e92b6d3061
