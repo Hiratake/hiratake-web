@@ -21,7 +21,7 @@
     "url": "https://github.com/Hiratake/hiratake-web.git"
   },
   "type": "module",
-  "packageManager": "pnpm@10.26.0",
+  "packageManager": "pnpm@10.27.0",
   "engines": {
     "node": ">=20.9.0"
   },
