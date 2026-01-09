@@ -4,6 +4,7 @@
   "extends": ["config:base", "group:allNonMajor"],
   "ignoreDeps": ["node"],
   "labels": ["🤖dependencies"],
+  "minimumReleaseAge": "14 days",
   "packageRules": [
     {
       "depTypeList": ["peerDependencies"],
