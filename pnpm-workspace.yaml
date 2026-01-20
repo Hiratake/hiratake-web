@@ -1,6 +1,10 @@
+minimumReleaseAge: 20160
+
 onlyBuiltDependencies:
   - '@parcel/watcher'
   - better-sqlite3
   - esbuild
   - lefthook
   - unrs-resolver
+
+strictDepBuilds: true
