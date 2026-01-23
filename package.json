@@ -25,9 +25,6 @@
   "engines": {
     "node": ">=20.9.0"
   },
-  "volta": {
-    "node": "24.12.0"
-  },
   "devDependencies": {
     "@commitlint/cli": "20.2.0",
     "@commitlint/config-conventional": "20.2.0",
