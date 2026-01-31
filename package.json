@@ -21,7 +21,7 @@
     "url": "https://github.com/Hiratake/hiratake-web.git"
   },
   "type": "module",
-  "packageManager": "pnpm@10.27.0",
+  "packageManager": "pnpm@10.28.2",
   "engines": {
     "node": ">=20.9.0"
   },
@@ -50,7 +50,7 @@
     "better-sqlite3": "12.5.0",
     "eslint": "9.39.2",
     "feed": "5.1.0",
-    "h3": "1.15.4",
+    "h3": "1.15.5",
     "lefthook": "2.0.12",
     "nuxt": "4.2.2",
     "nuxt-llms": "0.1.3",
