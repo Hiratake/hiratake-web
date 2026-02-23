@@ -39,7 +39,7 @@ jobs:
           run_install: false
 
       - name: Setup Node.js
-        uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238
+        uses: actions/setup-node@774c1d62961e73038a114d59c8847023c003194d
         with:
           node-version: ${{ matrix.node }}
           cache: 'pnpm'
@@ -71,7 +71,7 @@ jobs:
           run_install: false
 
       - name: Setup Node.js
-        uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238
+        uses: actions/setup-node@774c1d62961e73038a114d59c8847023c003194d
         with:
           node-version: ${{ matrix.node }}
           cache: 'pnpm'
@@ -103,7 +103,7 @@ jobs:
           run_install: false
 
       - name: Setup Node.js
-        uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238
+        uses: actions/setup-node@774c1d62961e73038a114d59c8847023c003194d
         with:
           node-version: ${{ matrix.node }}
           cache: 'pnpm'
@@ -135,7 +135,7 @@ jobs:
           run_install: false
 
       - name: Setup Node.js
-        uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238
+        uses: actions/setup-node@774c1d62961e73038a114d59c8847023c003194d
         with:
           node-version: ${{ matrix.node }}
           cache: 'pnpm'
