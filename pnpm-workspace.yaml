@@ -1,5 +1,9 @@
 minimumReleaseAge: 7200
 
+minimumReleaseAgeExclude:
+  - h3@1.15.9
+  - serialize-javascript@7.0.5
+
 onlyBuiltDependencies:
   - '@parcel/watcher'
   - better-sqlite3
@@ -7,7 +11,7 @@ onlyBuiltDependencies:
   - lefthook
   - unrs-resolver
 
+overrides:
+  serialize-javascript@<7.0.5: '>=7.0.5'
+
 strictDepBuilds: true
-minimumReleaseAgeExclude:
-  # Renovate security update: h3@1.15.9
-  - h3@1.15.9
