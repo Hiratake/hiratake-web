@@ -1,10 +1,10 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "dependencyDashboard": false,
-  "extends": ["config:base", "group:allNonMajor"],
+  "extends": ["config:base"],
   "ignoreDeps": ["node"],
   "labels": ["🤖dependencies"],
-  "minimumReleaseAge": "14 days",
+  "minimumReleaseAge": "5 days",
   "packageRules": [
     {
       "depTypeList": ["peerDependencies"],
