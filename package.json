@@ -47,7 +47,7 @@
     "@vueuse/core": "14.2.1",
     "@vueuse/nuxt": "14.2.1",
     "autoprefixer": "10.4.27",
-    "better-sqlite3": "12.8.0",
+    "better-sqlite3": "12.9.0",
     "eslint": "10.2.0",
     "feed": "5.2.0",
     "h3": "1.15.11",
