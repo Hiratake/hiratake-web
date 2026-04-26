@@ -7,24 +7,12 @@
   "files.eol": "\n",
   "files.insertFinalNewline": true,
   "git.branchProtection": ["main"],
+  "js/ts.tsdk.path": "node_modules/typescript/lib",
   "scss.lint.unknownAtRules": "ignore",
   "tailwindCSS.includeLanguages": {
     "vue": "html"
   },
-  "typescript.tsdk": "node_modules/typescript/lib",
-  "[javascript][javascriptreact][typescript][typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true
-  },
-  "[css][scss]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true
-  },
-  "[json][yaml][html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true
-  },
-  "[vue]": {
+  "[javascript][typescript][css][scss][json][yaml][html][vue]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true
   }
