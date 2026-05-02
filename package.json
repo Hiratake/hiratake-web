@@ -40,7 +40,7 @@
     "@iconify-json/simple-icons": "1.2.80",
     "@nuxt/content": "3.13.0",
     "@nuxt/eslint": "1.15.2",
-    "@nuxtjs/seo": "3.4.0",
+    "@nuxtjs/seo": "5.1.3",
     "@nuxtjs/tailwindcss": "6.14.0",
     "@tailwindcss/typography": "0.5.19",
     "@textlint-rule/textlint-rule-no-unmatched-pair": "2.0.4",
