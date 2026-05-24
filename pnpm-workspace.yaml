@@ -1,13 +1,16 @@
+allowBuilds:
+  '@parcel/watcher': true
+  better-sqlite3: true
+  esbuild: true
+  lefthook: true
+  unrs-resolver: true
+
+engineStrict: true
+
 minimumReleaseAge: 7200
 
-onlyBuiltDependencies:
-  - '@parcel/watcher'
-  - better-sqlite3
-  - esbuild
-  - lefthook
-  - unrs-resolver
+saveExact: true
+
+sideEffectsCache: false
 
 strictDepBuilds: true
-minimumReleaseAgeExclude:
-  # Renovate security update: h3@1.15.9
-  - h3@1.15.9
