@@ -26,8 +26,8 @@
     "node": ">=22.19.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "21.0.1",
-    "@commitlint/config-conventional": "21.0.1",
+    "@commitlint/cli": "21.0.2",
+    "@commitlint/config-conventional": "21.0.2",
     "@egoist/tailwindcss-icons": "1.9.2",
     "@fontsource/lexend": "5.2.11",
     "@fontsource/noto-sans-jp": "5.2.9",
