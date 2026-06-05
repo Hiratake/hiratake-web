@@ -120,8 +120,8 @@ importers:
         specifier: 2.4.2
         version: 2.4.2
       textlint-rule-ja-space-between-half-and-full-width:
-        specifier: 2.4.2
-        version: 2.4.2
+        specifier: 3.0.0
+        version: 3.0.0
       textlint-rule-no-mixed-zenkaku-and-hankaku-alphabet:
         specifier: 1.0.1
         version: 1.0.1
@@ -6474,8 +6474,8 @@ packages:
   textlint-rule-ja-space-around-link@2.4.2:
     resolution: {integrity: sha512-++o4wwCnDiubgE60QuOv0xW/0EcF2ta4EfjOycYsLYqvJ6DzFEZFGv3S/TujzmrIdRc8sHAO62489flvPu1DsQ==}
 
-  textlint-rule-ja-space-between-half-and-full-width@2.4.2:
-    resolution: {integrity: sha512-GqwSy0ivm4Q5Bok9LaOwfg+H1auLRMoMi2aY/7aSIrgvX/RD5aZ2Rk2lm3TTX42mR1UrQu8GDqktUEZfvQ913w==}
+  textlint-rule-ja-space-between-half-and-full-width@3.0.0:
+    resolution: {integrity: sha512-L1pxdF5TzhyAgwEjpI7fOkOgxVSclEHKW7UsLG6dQPRxzhdFs9ewWAsN4unYXtwpixWgqjYKTOQwClUT2Eb03g==}
 
   textlint-rule-no-mixed-zenkaku-and-hankaku-alphabet@1.0.1:
     resolution: {integrity: sha512-jRiBtdslvtFNgWhCT1FZW0Ct5lfO3Af39iKJV20hxOZMhxM0sz+pnfmooEQ9wpAQm5kL+W1kJoX2O9uKw01AvA==}
@@ -14694,10 +14694,9 @@ snapshots:
       match-index: 1.0.3
       textlint-rule-helper: 2.5.0
 
-  textlint-rule-ja-space-between-half-and-full-width@2.4.2:
+  textlint-rule-ja-space-between-half-and-full-width@3.0.0:
     dependencies:
       '@textlint/regexp-string-matcher': 2.0.2
-      match-index: 1.0.3
       textlint-rule-helper: 2.5.0
 
   textlint-rule-no-mixed-zenkaku-and-hankaku-alphabet@1.0.1:
