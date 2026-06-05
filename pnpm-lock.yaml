@@ -114,8 +114,8 @@ importers:
         specifier: 1.3.0
         version: 1.3.0
       textlint-rule-ja-space-around-code:
-        specifier: 2.4.2
-        version: 2.4.2
+        specifier: 3.0.0
+        version: 3.0.0
       textlint-rule-ja-space-around-link:
         specifier: 2.4.2
         version: 2.4.2
@@ -6468,8 +6468,8 @@ packages:
   textlint-rule-helper@2.5.0:
     resolution: {integrity: sha512-QIbFPtyqLy0g5BJn8mryk9iHzGYicNaFIpLFPiEnb4RXxrEGeQ2W2aARQ9yEXLIAqo+OwK4ndWBAWkbgJEPzTQ==}
 
-  textlint-rule-ja-space-around-code@2.4.2:
-    resolution: {integrity: sha512-DM4OF7seafTKrxPFjUJyxx/lwlg8CO3wgwmTJWhQ+6po3mQVV6QaBHpc0861/32kUAJm1ZgRpiBlDWUdraXFFA==}
+  textlint-rule-ja-space-around-code@3.0.0:
+    resolution: {integrity: sha512-7gNOYLGBhrFjnkYlPU5MUN/Wp/nAyWxqdzcbsv7Jm+80m7kXDymC2TbrnNImC1AF87YgRGgX4OsgmoTnvsZppg==}
 
   textlint-rule-ja-space-around-link@2.4.2:
     resolution: {integrity: sha512-++o4wwCnDiubgE60QuOv0xW/0EcF2ta4EfjOycYsLYqvJ6DzFEZFGv3S/TujzmrIdRc8sHAO62489flvPu1DsQ==}
@@ -14684,9 +14684,8 @@ snapshots:
       structured-source: 4.0.0
       unist-util-visit: 2.0.3
 
-  textlint-rule-ja-space-around-code@2.4.2:
+  textlint-rule-ja-space-around-code@3.0.0:
     dependencies:
-      match-index: 1.0.3
       textlint-rule-helper: 2.5.0
 
   textlint-rule-ja-space-around-link@2.4.2:
