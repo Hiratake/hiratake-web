@@ -66,4 +66,7 @@ export default defineNuxtConfig({
   },
   srcDir: 'src/',
   tailwindcss: { cssPath: '@/assets/tailwind.css' },
+  vite: {
+    optimizeDeps: { include: ['@headlessui/vue'] },
+  },
 })
