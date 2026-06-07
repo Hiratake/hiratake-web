@@ -7,7 +7,7 @@ allowBuilds:
 
 engineStrict: true
 
-minimumReleaseAge: 4320
+minimumReleaseAge: 7200
 
 saveExact: true
 
