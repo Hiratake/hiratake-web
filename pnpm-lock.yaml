@@ -35,9 +35,6 @@ importers:
       '@hiratake/textlint-rule-front-matter':
         specifier: 1.1.2
         version: 1.1.2
-      '@hiratake/textlint-rule-space-around-bold':
-        specifier: 1.0.4
-        version: 1.0.4
       '@iconify-json/ph':
         specifier: 1.2.2
         version: 1.2.2
@@ -113,18 +110,12 @@ importers:
       textlint-filter-rule-comments:
         specifier: 1.3.0
         version: 1.3.0
-      textlint-rule-ja-space-around-code:
-        specifier: 2.4.2
-        version: 2.4.2
-      textlint-rule-ja-space-around-link:
-        specifier: 2.4.2
-        version: 2.4.2
-      textlint-rule-ja-space-between-half-and-full-width:
-        specifier: 2.4.2
-        version: 2.4.2
       textlint-rule-no-mixed-zenkaku-and-hankaku-alphabet:
         specifier: 1.0.1
         version: 1.0.1
+      textlint-rule-preset-ja-spacing:
+        specifier: 3.0.0
+        version: 3.0.0
       typescript:
         specifier: 6.0.3
         version: 6.0.3
@@ -853,10 +844,6 @@ packages:
 
   '@hiratake/textlint-rule-front-matter@1.1.2':
     resolution: {integrity: sha512-AxjymMlot4KVC2IxaB/6xzp21KjC+jCxh08jKAJ5Yn6dhF88aHiPVwNh6yJF1CBVo32wQwxuxa5YHZuGhpTESQ==}
-    engines: {node: '>=18.14.0'}
-
-  '@hiratake/textlint-rule-space-around-bold@1.0.4':
-    resolution: {integrity: sha512-wgmC+N//7qozIOO2v5iss38/0YOL/s/pD1ppj/+RiWrFih063xDoZ4rULiEHOkJ2tJt6dVHcPrwie3Vp4Wf8Kw==}
     engines: {node: '>=18.14.0'}
 
   '@hono/node-server@1.19.14':
@@ -5939,6 +5926,9 @@ packages:
     resolution: {integrity: sha512-dLsljMd9sqwRkby8zhO1gSg3PnJIBFid8f4CQj/sXx+7cKx+E7u0PKhZ+U4wmhx7EfmtvnA318oVaIkAB1lRJw==}
     hasBin: true
 
+  regx@1.0.4:
+    resolution: {integrity: sha512-Z/5ochRUyD5TkJgFq+66ajKePlj6KzpSLfDO2lOLOLu7E82xAjNux0m8mx1DAXBj5ECHiRCBWoqL25b4lkwcgw==}
+
   rehype-external-links@3.0.0:
     resolution: {integrity: sha512-yp+e5N9V3C6bwBeAC4n796kc86M4gJCdlVhiMTxIrJG5UHDMh+PJANf9heqORJbt1nrCbDwIlAZKjANIaVBbvw==}
 
@@ -6468,17 +6458,41 @@ packages:
   textlint-rule-helper@2.5.0:
     resolution: {integrity: sha512-QIbFPtyqLy0g5BJn8mryk9iHzGYicNaFIpLFPiEnb4RXxrEGeQ2W2aARQ9yEXLIAqo+OwK4ndWBAWkbgJEPzTQ==}
 
-  textlint-rule-ja-space-around-code@2.4.2:
-    resolution: {integrity: sha512-DM4OF7seafTKrxPFjUJyxx/lwlg8CO3wgwmTJWhQ+6po3mQVV6QaBHpc0861/32kUAJm1ZgRpiBlDWUdraXFFA==}
+  textlint-rule-ja-nakaguro-or-halfwidth-space-between-katakana@3.0.0:
+    resolution: {integrity: sha512-tyrHoTEuaW5BqoGsePJhYw07OmH5LhWpx2g8eWfVeaDfQJITJKS3mSXdOGhN++8Y+EkTAx7Z/ePIjBxJTGNcFg==}
 
-  textlint-rule-ja-space-around-link@2.4.2:
-    resolution: {integrity: sha512-++o4wwCnDiubgE60QuOv0xW/0EcF2ta4EfjOycYsLYqvJ6DzFEZFGv3S/TujzmrIdRc8sHAO62489flvPu1DsQ==}
+  textlint-rule-ja-no-space-around-parentheses@3.0.0:
+    resolution: {integrity: sha512-vrNIrZa8cx8Yw5EIcE9uMqolM0xr9YUGhqtdB+yz2dQGV8Ptml7rSfUNFbPDDOYqjJE33bTD14dv5cjqfHo1vw==}
 
-  textlint-rule-ja-space-between-half-and-full-width@2.4.2:
-    resolution: {integrity: sha512-GqwSy0ivm4Q5Bok9LaOwfg+H1auLRMoMi2aY/7aSIrgvX/RD5aZ2Rk2lm3TTX42mR1UrQu8GDqktUEZfvQ913w==}
+  textlint-rule-ja-no-space-between-full-width@3.0.0:
+    resolution: {integrity: sha512-Awhbyex7x26OnQmvbGNUZ2PF5RaH2fKHAM8SkxGyXK/IfCN1P7vnoGKk4ud6CWlEx6yKHDOJ0D9/2KgkZQr1sg==}
+
+  textlint-rule-ja-space-after-exclamation@3.0.0:
+    resolution: {integrity: sha512-iYv5G8Tvi3KmycvkY4Fd8byqkfFwp8lm1uB2On8chu55HYDhJ4EqKV2TZRQlJX5kNZk4+zKkrI1yiFTaUCQ80g==}
+
+  textlint-rule-ja-space-after-question@3.0.0:
+    resolution: {integrity: sha512-KYId9c6wTgVfIyJkbnlEkWpOpLKfdyYbZXIyjjAqZvfY8WOEttWLO6LCpbOooyIP+ZS6tqxaY4Q1gmIQD1wbPA==}
+
+  textlint-rule-ja-space-around-code@3.0.0:
+    resolution: {integrity: sha512-7gNOYLGBhrFjnkYlPU5MUN/Wp/nAyWxqdzcbsv7Jm+80m7kXDymC2TbrnNImC1AF87YgRGgX4OsgmoTnvsZppg==}
+
+  textlint-rule-ja-space-around-emphasis@3.0.0:
+    resolution: {integrity: sha512-1BZmoVXfhJqJqONGiaMF13PqIvRAVD3f8/ziDvT3OLNXHhGuvVhaeEKXTnzMGHOeYbkqYjunSwjEArumVT9mVw==}
+
+  textlint-rule-ja-space-around-link@3.0.0:
+    resolution: {integrity: sha512-qExiAO25+tE/KZdi/JaumDuuyZ13Ed4oZG1tnjUNA/6n8hpm9wg9nFU9xQ4feBW7r43lwD5VW99W0qk+eoNs8A==}
+
+  textlint-rule-ja-space-around-strong@3.0.0:
+    resolution: {integrity: sha512-6SN0Ax3j3cqdJmyRyQtQRjcd6AyGW0nuk6/ffsZyFoodu2QjBcUcMQgFcEsPrp1YINkedHCcQ4pqmk9OZYHkGw==}
+
+  textlint-rule-ja-space-between-half-and-full-width@3.0.0:
+    resolution: {integrity: sha512-L1pxdF5TzhyAgwEjpI7fOkOgxVSclEHKW7UsLG6dQPRxzhdFs9ewWAsN4unYXtwpixWgqjYKTOQwClUT2Eb03g==}
 
   textlint-rule-no-mixed-zenkaku-and-hankaku-alphabet@1.0.1:
     resolution: {integrity: sha512-jRiBtdslvtFNgWhCT1FZW0Ct5lfO3Af39iKJV20hxOZMhxM0sz+pnfmooEQ9wpAQm5kL+W1kJoX2O9uKw01AvA==}
+
+  textlint-rule-preset-ja-spacing@3.0.0:
+    resolution: {integrity: sha512-Tbx0Nz6t5ZEYz9nSpiaBZp/GCBfKGVT6UrunlKDdT1GlHwgMbojX7vIXgxV789wKcH1d452eIb9uNAhUq3N8NA==}
 
   textlint@15.7.1:
     resolution: {integrity: sha512-T6WRImq6XBnf7kRUE401/gz4USDcrsr9ksDfpwspPAHcvlptsTmd5CrRuPc2brd6t93Z6xSGIGlvV4QAMUHx+A==}
@@ -7841,8 +7855,6 @@ snapshots:
   '@hiratake/textlint-rule-front-matter@1.1.2':
     dependencies:
       gray-matter: 4.0.3
-
-  '@hiratake/textlint-rule-space-around-bold@1.0.4': {}
 
   '@hono/node-server@1.19.14(hono@4.12.23)':
     dependencies:
@@ -13940,6 +13952,8 @@ snapshots:
     dependencies:
       jsesc: 3.1.0
 
+  regx@1.0.4: {}
+
   rehype-external-links@3.0.0:
     dependencies:
       '@types/hast': 3.0.4
@@ -14684,20 +14698,46 @@ snapshots:
       structured-source: 4.0.0
       unist-util-visit: 2.0.3
 
-  textlint-rule-ja-space-around-code@2.4.2:
+  textlint-rule-ja-nakaguro-or-halfwidth-space-between-katakana@3.0.0:
     dependencies:
-      match-index: 1.0.3
       textlint-rule-helper: 2.5.0
 
-  textlint-rule-ja-space-around-link@2.4.2:
+  textlint-rule-ja-no-space-around-parentheses@3.0.0:
     dependencies:
-      match-index: 1.0.3
       textlint-rule-helper: 2.5.0
 
-  textlint-rule-ja-space-between-half-and-full-width@2.4.2:
+  textlint-rule-ja-no-space-between-full-width@3.0.0:
+    dependencies:
+      regx: 1.0.4
+      textlint-rule-helper: 2.5.0
+
+  textlint-rule-ja-space-after-exclamation@3.0.0:
+    dependencies:
+      textlint-rule-helper: 2.5.0
+
+  textlint-rule-ja-space-after-question@3.0.0:
+    dependencies:
+      textlint-rule-helper: 2.5.0
+
+  textlint-rule-ja-space-around-code@3.0.0:
+    dependencies:
+      textlint-rule-helper: 2.5.0
+
+  textlint-rule-ja-space-around-emphasis@3.0.0:
+    dependencies:
+      textlint-rule-helper: 2.5.0
+
+  textlint-rule-ja-space-around-link@3.0.0:
+    dependencies:
+      textlint-rule-helper: 2.5.0
+
+  textlint-rule-ja-space-around-strong@3.0.0:
+    dependencies:
+      textlint-rule-helper: 2.5.0
+
+  textlint-rule-ja-space-between-half-and-full-width@3.0.0:
     dependencies:
       '@textlint/regexp-string-matcher': 2.0.2
-      match-index: 1.0.3
       textlint-rule-helper: 2.5.0
 
   textlint-rule-no-mixed-zenkaku-and-hankaku-alphabet@1.0.1:
@@ -14705,6 +14745,19 @@ snapshots:
       match-index: 1.0.3
       moji: 0.5.1
       textlint-rule-helper: 2.5.0
+
+  textlint-rule-preset-ja-spacing@3.0.0:
+    dependencies:
+      textlint-rule-ja-nakaguro-or-halfwidth-space-between-katakana: 3.0.0
+      textlint-rule-ja-no-space-around-parentheses: 3.0.0
+      textlint-rule-ja-no-space-between-full-width: 3.0.0
+      textlint-rule-ja-space-after-exclamation: 3.0.0
+      textlint-rule-ja-space-after-question: 3.0.0
+      textlint-rule-ja-space-around-code: 3.0.0
+      textlint-rule-ja-space-around-emphasis: 3.0.0
+      textlint-rule-ja-space-around-link: 3.0.0
+      textlint-rule-ja-space-around-strong: 3.0.0
+      textlint-rule-ja-space-between-half-and-full-width: 3.0.0
 
   textlint@15.7.1:
     dependencies:
