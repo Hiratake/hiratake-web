@@ -14,3 +14,6 @@ saveExact: true
 sideEffectsCache: false
 
 strictDepBuilds: true
+minimumReleaseAgeExclude:
+  # Renovate security update: nuxt@4.4.7
+  - nuxt@4.4.7
