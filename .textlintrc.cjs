@@ -21,6 +21,7 @@ module.exports = {
     'preset-ja-spacing': {
       'ja-nakaguro-or-halfwidth-space-between-katakana': true,
       'ja-no-space-around-parentheses': false,
+      'ja-no-space-around-slash': false,
       'ja-no-space-between-full-width': false,
       'ja-space-between-half-and-full-width': {
         space: ['alphabets', 'numbers'],
