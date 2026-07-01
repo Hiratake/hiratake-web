@@ -45,7 +45,7 @@
     "@textlint-rule/textlint-rule-no-unmatched-pair": "2.0.4",
     "@vueuse/core": "14.3.0",
     "@vueuse/nuxt": "14.3.0",
-    "autoprefixer": "10.5.0",
+    "autoprefixer": "10.5.2",
     "better-sqlite3": "12.11.1",
     "eslint": "10.5.0",
     "feed": "5.2.1",
