@@ -27,7 +27,7 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     'nuxt-llms',
   ],
-  ogImage: { zeroRuntime: true },
+  ogImage: { zeroRuntime: true, security: { renderTimeout: 30000 } },
   routeRules: {
     '/': { prerender: true },
     '/feed.xml': {
