@@ -92,6 +92,7 @@ useSchemaOrg([
     author: [{ name: app.website.owner.name, url: app.website.owner.url }],
   }),
 ])
+defineOgImage('DiaryPost.takumi', { title: data.value?.title })
 </script>
 
 <template>
