@@ -14,7 +14,14 @@
 
 ## 🚀 Setup
 
-必要なパッケージをインストールします。
+動作には [Node.js](https://nodejs.org/ja) と [pnpm](https://pnpm.io/ja/) が動作する環境が必要です。
+
+[mise](https://mise.jdx.dev/) を利用している場合は `mise install` で必要なツールをインストールすることができます。  
+`mise.local.toml.example` ファイルを `mise.local.toml` としてコピーし、各環境変数を設定してください。
+
+- `NUXT_OG_IMAGE_SECRET` - `pnpm dlx nuxt-og-image generate-secret` で生成されたキー
+
+以下コマンドで、必要なパッケージをインストールします。
 
 ```bash
 pnpm install

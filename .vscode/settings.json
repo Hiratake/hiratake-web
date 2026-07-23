@@ -3,7 +3,10 @@
   "editor.insertSpaces": true,
   "editor.quickSuggestions": { "strings": "on" },
   "editor.tabSize": 2,
-  "files.associations": { "*.css": "tailwindcss" },
+  "files.associations": {
+    "*.css": "tailwindcss",
+    "mise.local.toml.example": "toml"
+  },
   "files.eol": "\n",
   "files.insertFinalNewline": true,
   "git.branchProtection": ["main"],
