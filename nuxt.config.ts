@@ -54,6 +54,9 @@ export default defineNuxtConfig({
     defaultLocale: 'ja',
     trailingSlash: true,
   },
-  sitemap: { exclude: [new RegExp(/^\/blog\/\d{4}\/\d{2}\/\d{2}\/$/)] },
+  sitemap: {
+    exclude: [new RegExp(/^\/blog\/\d{4}\/\d{2}\/\d{2}\/$/)],
+    zeroRuntime: true,
+  },
   ui: { prose: false },
 })
