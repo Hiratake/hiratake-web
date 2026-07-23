@@ -1,3 +1,4 @@
+import { queryCollection } from '@nuxt/content/server'
 import { Feed } from 'feed'
 import { withoutTrailingSlash, withTrailingSlash } from 'ufo'
 import { getSiteConfig } from '#site-config/server/composables'
