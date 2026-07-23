@@ -44,7 +44,7 @@ export default defineAppConfig({
           color: 'neutral',
           variant: 'outline',
           class:
-            'text-slate-600 before:bg-slate-600 after:text-slate-600 bg-transparent ring-0 hover:bg-transparent hover:text-white focus-visible:text-white focus-visible:outline-0 active:bg-transparent active:text-white',
+            'bg-transparent text-slate-600 ring-0 before:bg-slate-600 after:text-slate-600 hover:bg-transparent hover:text-white focus-visible:text-white focus-visible:outline-0 active:bg-transparent active:text-white dark:text-white dark:after:border-white',
         },
         {
           color: 'neutral',
@@ -77,6 +77,11 @@ export default defineAppConfig({
   // Hiratake Web
   website: {
     themeColor: '#a83d3d',
+    owner: {
+      name: 'ひらたけ',
+      url: 'https://hiratake.dev/',
+      icon: '/authors/hiratake-24x24.webp',
+    },
     socials: {
       bluesky: {
         name: 'Bluesky',
@@ -113,5 +118,6 @@ export default defineAppConfig({
         url: 'https://hiratake.dev/feed.xml',
       },
     },
+    itemPerPage: 20,
   },
 })
