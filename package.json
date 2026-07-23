@@ -1,6 +1,21 @@
 {
   "name": "hiratake-web",
+  "version": "0.0.0",
+  "license": "MIT",
   "private": true,
+  "description": "ひらたけの個人ウェブサイト",
+  "homepage": "https://hiratake.dev/",
+  "author": {
+    "name": "Hiratake",
+    "url": "https://hiratake.dev/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Hiratake/hiratake-web.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Hiratake/hiratake-web/issues"
+  },
   "type": "module",
   "packageManager": "pnpm@11.15.1",
   "devDependencies": {
