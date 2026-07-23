@@ -27,7 +27,13 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     'nuxt-llms',
   ],
-  routeRules: { '/': { prerender: true } },
+  routeRules: {
+    '/': { prerender: true },
+    '/feed.xml': {
+      headers: { 'content-type': 'application/rss+xml; charset=UTF-8' },
+      prerender: true,
+    },
+  },
   runtimeConfig: { public: { cloudflareImageHash: '3uWTcGTKoWPI8987WrI0hQ' } },
   schemaOrg: {
     identity: {
