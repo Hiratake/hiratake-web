@@ -48,7 +48,7 @@
     "autoprefixer": "10.5.2",
     "better-sqlite3": "12.11.1",
     "eslint": "10.6.0",
-    "feed": "5.2.1",
+    "feed": "6.0.0",
     "h3": "1.15.11",
     "lefthook": "2.1.9",
     "nuxt": "4.4.4",
