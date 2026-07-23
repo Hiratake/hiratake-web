@@ -1,0 +1,18 @@
+{
+  "editor.detectIndentation": false,
+  "editor.insertSpaces": true,
+  "editor.quickSuggestions": { "strings": "on" },
+  "editor.tabSize": 2,
+  "files.associations": { "*.css": "tailwindcss" },
+  "files.eol": "\n",
+  "files.insertFinalNewline": true,
+  "git.branchProtection": ["main"],
+  "js/ts.tsdk.path": "node_modules/typescript/lib",
+  "tailwindCSS.classAttributes": ["class", "ui"],
+  "tailwindCSS.classFunctions": ["defineAppConfig"],
+  "tailwindCSS.includeLanguages": { "vue": "html" },
+  "[javascript][typescript][css][scss][json][yaml][html][vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  }
+}
