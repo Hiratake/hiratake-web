@@ -74,4 +74,44 @@ export default defineAppConfig({
       },
     },
   },
+  // Hiratake Web
+  website: {
+    themeColor: '#a83d3d',
+    socials: {
+      bluesky: {
+        name: 'Bluesky',
+        handle: '@hiratake.dev',
+        url: 'https://bsky.app/profile/hiratake.dev',
+      },
+      github: {
+        name: 'GitHub',
+        handle: '@Hiratake',
+        url: 'https://github.com/Hiratake',
+      },
+      discord: {
+        name: 'Discord',
+        handle: '@hiratake',
+        url: 'https://chat.hiratake.dev/',
+      },
+      x: {
+        name: 'X',
+        handle: '@Hirotaisou2012',
+        url: 'https://x.com/Hirotaisou2012',
+      },
+      misskey: {
+        name: 'Misskey',
+        handle: '@Hiratake',
+        url: 'https://misskey.io/@Hiratake',
+      },
+      steam: {
+        name: 'Steam',
+        handle: '@Hirotaisou2012',
+        url: 'https://steamcommunity.com/id/Hirotaisou2012/',
+      },
+      rss: {
+        name: 'Hiratake Web Diary RSS Feed',
+        url: 'https://hiratake.dev/feed.xml',
+      },
+    },
+  },
 })
