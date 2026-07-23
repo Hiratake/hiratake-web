@@ -28,6 +28,7 @@ export default defineNuxtConfig({
     'nuxt-llms',
   ],
   routeRules: { '/': { prerender: true } },
+  runtimeConfig: { public: { cloudflareImageHash: '3uWTcGTKoWPI8987WrI0hQ' } },
   schemaOrg: {
     identity: {
       type: 'Person',
