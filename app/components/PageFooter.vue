@@ -96,6 +96,7 @@ const surroundPost = computed(() => {
         サーバにて受け付けております。もしよろしければ、以下のボタンよりご参加ください！
       </p>
       <UButton
+        :to="app.website.socials.discord.url"
         :ui="{
           base: 'bg-[#5865f2] font-bold hover:bg-[#5865f2]/80 focus-visible:bg-[#5865f2]/80 focus-visible:outline-0',
         }"

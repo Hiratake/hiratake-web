@@ -93,9 +93,9 @@ watch(
 
         <div class="flex items-center gap-1">
           <UButton
+            :aria-label="`${app.website.socials.discord.name} サーバに参加する`"
             :title="app.website.socials.discord.name"
             :to="app.website.socials.discord.url"
-            aria-label="Discordサーバに参加する"
             icon="i-simple-icons-discord"
             target="_blank"
             variant="ghost"
