@@ -3,18 +3,16 @@
   "private": true,
   "type": "module",
   "packageManager": "pnpm@11.15.1",
-  "dependencies": {
-    "@iconify-json/lucide": "^1.2.117",
-    "@iconify-json/simple-icons": "^1.2.90",
-    "@nuxt/ui": "^4.10.0",
-    "nuxt": "^4.4.8",
-    "tailwindcss": "^4.3.2"
-  },
   "devDependencies": {
-    "@nuxt/eslint": "^1.16.0",
-    "eslint": "^10.7.0",
-    "typescript": "^6.0.3",
-    "vue-tsc": "^3.3.7"
+    "@iconify-json/lucide": "1.2.118",
+    "@iconify-json/simple-icons": "1.2.90",
+    "@nuxt/eslint": "1.16.0",
+    "@nuxt/ui": "4.10.0",
+    "eslint": "10.7.0",
+    "nuxt": "4.4.8",
+    "tailwindcss": "4.3.3",
+    "typescript": "6.0.3",
+    "vue-tsc": "3.3.7"
   },
   "scripts": {
     "build": "nuxt build",
