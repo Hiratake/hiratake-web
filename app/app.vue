@@ -17,5 +17,6 @@ const app = useAppConfig()
     >
       <NuxtPage />
     </UMain>
+    <TheFooter />
   </UApp>
 </template>
