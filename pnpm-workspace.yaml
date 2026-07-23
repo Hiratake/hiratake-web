@@ -1,16 +1,6 @@
 allowBuilds:
-  '@parcel/watcher': true
-  better-sqlite3: true
-  esbuild: true
-  lefthook: true
-  unrs-resolver: true
-
-engineStrict: true
-
-minimumReleaseAge: 7200
-
-saveExact: true
-
-sideEffectsCache: false
-
-strictDepBuilds: true
+  '@parcel/watcher': false
+  '@tailwindcss/oxide': false
+  esbuild: false
+  unrs-resolver: false
+  vue-demi: false

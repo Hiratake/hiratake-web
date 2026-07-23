@@ -1,72 +1,28 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  app: {
-    head: { titleTemplate: '%pageTitle' },
-  },
-  compatibilityDate: '2025-08-01',
-  content: {
-    build: {
-      markdown: {
-        highlight: { theme: 'github-dark' },
-      },
-    },
-  },
-  devtools: { enabled: true },
-  linkChecker: { enabled: false },
-  llms: {
-    domain: process.env.CF_PAGES_URL || 'https://hiratake.dev',
-    title: 'Hiratake Web',
-    description: 'ひらたけの個人ウェブサイトです。',
-  },
   modules: [
-    '@nuxtjs/seo',
-    '@nuxtjs/tailwindcss',
     '@nuxt/eslint',
-    '@nuxt/content',
-    '@vueuse/nuxt',
-    'nuxt-llms',
+    '@nuxt/ui'
   ],
-  nitro: {
-    prerender: { failOnError: false, crawlLinks: true, routes: ['/feed.xml'] },
+
+  devtools: {
+    enabled: true
   },
-  ogImage: {
-    fonts: ['Noto+Sans+JP:400', 'Noto+Sans+JP:700'],
-  },
+
+  css: ['~/assets/css/main.css'],
+
   routeRules: {
-    '/feed.xml': {
-      headers: { 'content-type': 'application/rss+xml; charset=UTF-8' },
-    },
+    '/': { prerender: true }
   },
-  runtimeConfig: {
-    public: {
-      gtmId: 'GTM-WF3MQWM',
-      cloudflareImageHash: '3uWTcGTKoWPI8987WrI0hQ',
-    },
-  },
-  schemaOrg: {
-    identity: {
-      type: 'Person',
-      name: 'ひらたけ',
-      logo: '/logo.png',
-      sameAs: [
-        'https://bsky.app/profile/hiratake.dev',
-        'https://github.com/Hiratake',
-      ],
-    },
-  },
-  site: {
-    url: process.env.CF_PAGES_URL || 'https://hiratake.dev',
-    name: 'Hiratake Web',
-    description: 'ひらたけの個人ウェブサイトです。',
-    defaultLocale: 'ja',
-    trailingSlash: true,
-  },
-  sitemap: {
-    exclude: [new RegExp(/^\/blog\/\d{4}\/\d{2}\/\d{2}\/$/)],
-  },
-  srcDir: 'src/',
-  tailwindcss: { cssPath: '@/assets/tailwind.css' },
-  vite: {
-    optimizeDeps: { include: ['@headlessui/vue'] },
-  },
+
+  compatibilityDate: '2026-06-30',
+
+  eslint: {
+    config: {
+      stylistic: {
+        commaDangle: 'never',
+        braceStyle: '1tbs'
+      }
+    }
+  }
 })
