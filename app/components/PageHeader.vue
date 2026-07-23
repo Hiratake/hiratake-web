@@ -11,6 +11,10 @@ type PageHeaderProps = {
   /** 書いた人を表示するか */
   showAuthor?: boolean
 }
+type PageHeaderSlots = {
+  /** デフォルトのスロット */
+  default?: (props: object) => unknown
+}
 
 const props = withDefaults(defineProps<PageHeaderProps>(), {
   title: '',
@@ -18,6 +22,7 @@ const props = withDefaults(defineProps<PageHeaderProps>(), {
   created: undefined,
   updated: undefined,
 })
+defineSlots<PageHeaderSlots>()
 
 const app = useAppConfig()
 
@@ -30,7 +35,6 @@ const updatedDate = computed(() => useDatetimeFormat(props.updated))
 <template>
   <UPageHeader
     :title="props.title"
-    :description="props.description"
     :ui="{
       container: 'flex flex-col gap-5',
       description: 'mt-0 text-sm leading-relaxed text-inherit',
@@ -39,6 +43,14 @@ const updatedDate = computed(() => useDatetimeFormat(props.updated))
         'leading-snug text-slate-800 sm:text-3xl md:text-4xl md:leading-normal dark:text-white',
     }"
   >
+    <template #description>
+      <slot>
+        <div class="mt-0 text-sm leading-relaxed text-pretty text-inherit">
+          {{ props.description }}
+        </div>
+      </slot>
+    </template>
+
     <dl
       v-if="props.created || props.updated || props.showAuthor"
       class="grid grid-cols-[repeat(auto-fill,minmax(9rem,1fr))] gap-3 text-xs sm:gap-4"
