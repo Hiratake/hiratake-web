@@ -1,18 +1,24 @@
 @import 'tailwindcss';
 @import '@nuxt/ui';
 
-@theme static {
-  --font-sans: 'Public Sans', sans-serif;
+@plugin '@tailwindcss/typography';
 
-  --color-green-50: #effdf5;
-  --color-green-100: #d9fbe8;
-  --color-green-200: #b3f5d1;
-  --color-green-300: #75edae;
-  --color-green-400: #00dc82;
-  --color-green-500: #00c16a;
-  --color-green-600: #00a155;
-  --color-green-700: #007f45;
-  --color-green-800: #016538;
-  --color-green-900: #0a5331;
-  --color-green-950: #052e16;
+@source '../../../content/**/*';
+
+@theme static {
+  --font-sans: 'Noto Sans JP', sans-serif;
+  --font-mono: 'Source Code Pro', monospace;
+  --font-accent: 'Lexend', sans-serif;
+
+  --color-primary-50: #fcf5f4;
+  --color-primary-100: #f9edea;
+  --color-primary-200: #f3dbd8;
+  --color-primary-300: #eabdb7;
+  --color-primary-400: #dd978f;
+  --color-primary-500: #cd6e66;
+  --color-primary-600: #b64b48;
+  --color-primary-700: #a83d3d;
+  --color-primary-800: #803134;
+  --color-primary-900: #6f2c30;
+  --color-primary-950: #3d1416;
 }
