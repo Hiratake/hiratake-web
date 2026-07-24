@@ -36,7 +36,7 @@ const surroundPost = computed(() => {
 
 <template>
   <footer class="mt-14 flex flex-col gap-16">
-    <div class="flex flex-wrap gap-x-16 gap-y-10">
+    <div v-if="surroundPost.length" class="flex flex-wrap gap-x-16 gap-y-10">
       <template v-for="post in surroundPost" :key="post.type">
         <article
           :class="[post.type === 'next' ? 'items-end' : 'items-start']"
@@ -98,7 +98,7 @@ const surroundPost = computed(() => {
       <UButton
         :to="app.website.socials.discord.url"
         :ui="{
-          base: 'bg-[#5865f2] font-bold hover:bg-[#5865f2]/80 focus-visible:bg-[#5865f2]/80 focus-visible:outline-0',
+          base: 'bg-[#5865f2] font-bold hover:bg-[#5865f2]/80 focus-visible:bg-[#5865f2]/80 focus-visible:outline-0 dark:text-white',
         }"
         icon="i-simple-icons-discord"
         target="_blank"
