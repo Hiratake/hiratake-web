@@ -40,7 +40,7 @@ const updatedDate = computed(() => useDatetimeFormat(props.updated))
       description: 'mt-0 text-sm leading-relaxed text-inherit',
       root: 'border-b-0 py-0',
       title:
-        'leading-snug text-slate-800 sm:text-3xl md:text-4xl md:leading-normal dark:text-white',
+        'leading-snug text-wrap text-slate-800 sm:text-3xl md:text-4xl md:leading-normal dark:text-white',
     }"
   >
     <template #description>

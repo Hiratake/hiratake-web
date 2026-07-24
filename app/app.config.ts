@@ -30,7 +30,7 @@ export default defineAppConfig({
           base: 'text-[0.925rem] md:mt-7 md:text-lg hover:[&>a]:underline',
         },
       },
-      p: { base: 'my-6 leading-loose' },
+      p: { base: 'my-6 leading-loose text-wrap' },
       strong: { base: 'text-highlighted' },
       em: { base: 'text-highlighted' },
       a: {
