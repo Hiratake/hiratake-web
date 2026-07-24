@@ -1,7 +1,13 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2026-06-30',
-  content: { build: { markdown: { highlight: { theme: 'github-dark' } } } },
+  content: {
+    build: {
+      markdown: {
+        highlight: { theme: { default: 'github-light', dark: 'github-dark' } },
+      },
+    },
+  },
   css: ['~/assets/css/main.css'],
   devtools: { enabled: true },
   fonts: {
@@ -58,5 +64,5 @@ export default defineNuxtConfig({
     exclude: [new RegExp(/^\/blog\/\d{4}\/\d{2}\/\d{2}\/$/)],
     zeroRuntime: true,
   },
-  ui: { prose: false },
+  ui: { prose: true },
 })

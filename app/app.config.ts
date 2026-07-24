@@ -3,7 +3,50 @@ export default defineAppConfig({
   // Nuxt UI
   ui: {
     colors: { primary: 'primary' },
-    icons: { light: 'i-ph-sun-bold', dark: 'i-ph-moon-bold' },
+    icons: {
+      copy: 'i-ph-copy',
+      copyCheck: 'i-ph-check',
+      hash: 'i-ph-hash',
+      light: 'i-ph-sun-bold',
+      dark: 'i-ph-moon-bold',
+    },
+    prose: {
+      h2: {
+        slots: {
+          base: 'hover:[&>a>code]:border-primary-700 hover:[&>a>code]:text-primary-700 text-[1.375rem] md:mt-15 md:mb-7.5 md:text-[1.875rem] md:leading-10 hover:[&>a]:underline',
+          leading:
+            'top-3.5 -ms-5 items-center rounded-none bg-transparent p-0 text-inherit group-hover:text-inherit group-hover:opacity-40 group-focus:text-inherit group-focus:opacity-40 md:flex',
+        },
+      },
+      h3: {
+        slots: {
+          base: 'hover:[&>a>code]:border-primary-700 hover:[&>a>code]:text-primary-700 text-[1.16rem] md:mt-10 md:mb-3.75 md:text-2xl hover:[&>a]:underline',
+          leading:
+            'top-2.5 -ms-5 items-center rounded-none bg-transparent p-0 text-inherit group-hover:text-inherit group-hover:opacity-40 group-focus:text-inherit group-focus:opacity-40 md:flex',
+        },
+      },
+      h4: {
+        slots: {
+          base: 'text-[0.925rem] md:mt-7 md:text-lg hover:[&>a]:underline',
+        },
+      },
+      p: { base: 'my-6 leading-loose' },
+      strong: { base: 'text-highlighted' },
+      em: { base: 'text-highlighted' },
+      a: {
+        base: 'border-blue-900 font-normal text-blue-900 outline-blue-900/25 transition-none hover:border-transparent dark:border-blue-100 dark:text-blue-100 dark:outline-blue-100/25 [&>code]:outline-blue-900/25 hover:[&>code]:border-blue-900 hover:[&>code]:text-blue-900 focus-visible:[&>code]:border-blue-900 focus-visible:[&>code]:text-blue-900 dark:[&>code]:outline-blue-100/25 dark:hover:[&>code]:border-blue-100 dark:hover:[&>code]:text-blue-100 dark:focus-visible:[&>code]:border-blue-100 dark:focus-visible:[&>code]:text-blue-100',
+      },
+      blockquote: { base: '' },
+      ul: { base: 'my-8' },
+      ol: { base: 'my-8' },
+      li: { base: '[&>ol]:my-0' },
+      table: { slots: { root: 'my-10' } },
+      img: {
+        slots: {
+          base: 'my-10 rounded-lg border border-slate-100 bg-slate-200 dark:border-slate-800 dark:bg-slate-800 outline-blue-900/25 focus-visible:no-underline dark:text-blue-100',
+        },
+      },
+    },
     button: {
       slots: { base: 'cursor-pointer rounded-sm' },
       variants: {

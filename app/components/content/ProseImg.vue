@@ -1,52 +1,55 @@
 <script lang="ts" setup>
-type ProseImgProps = {
-  /** 画像URL */
-  src?: string
-  /** 代替テキスト */
-  alt?: string
-  /** 幅 */
-  width?: string | number
-  /** 高さ */
-  height?: string | number
-}
+import type { ProseImgProps as UProseImgProps } from '#ui/components/prose/Img.vue'
+import UProseImg from '#ui/components/prose/Img.vue'
+
+type ProseImgProps = UProseImgProps
 
 const props = withDefaults(defineProps<ProseImgProps>(), {
-  src: '',
-  alt: '',
   width: 1536,
   height: 864,
+  zoom: true,
 })
 
 const config = useRuntimeConfig()
 const site = useSiteConfig()
 
-/** 画像URL */
-const imageUrl = computed(() => {
-  const url = site.url
-  const hash = config.public.cloudflareImageHash
-  return `${url}/cdn-cgi/imagedelivery/${hash}/${props.src}`
+/** 画像のURL */
+const imgUrl = computed(() => {
+  const baseUrl = `${site.url}/cdn-cgi/imagedelivery/${config.public.cloudflareImageHash}/${props.src}`
+  const generatedSrcset = {
+    320: `${baseUrl}/w=320`,
+    640: `${baseUrl}/w=640`,
+    768: `${baseUrl}/w=768`,
+    1024: `${baseUrl}/w=1024`,
+    1280: `${baseUrl}/w=1280`,
+    1536: `${baseUrl}/w=1536`,
+  }
+  return {
+    src: generatedSrcset[1536],
+    srcset: `
+      ${generatedSrcset[320]} 320w,
+      ${generatedSrcset[640]} 640w,
+      ${generatedSrcset[768]} 768w,
+      ${generatedSrcset[1024]} 1024w,
+      ${generatedSrcset[1280]} 1280w,
+      ${generatedSrcset[1536]} 1536w,
+    `,
+  }
 })
 </script>
 
 <template>
-  <img
-    v-if="props.src"
-    :src="`${imageUrl}/w=1536`"
-    :srcset="`
-        ${imageUrl}/w=320 320w,
-        ${imageUrl}/w=640 640w,
-        ${imageUrl}/w=768 768w,
-        ${imageUrl}/w=1024 1024w,
-        ${imageUrl}/w=1280 1280w,
-        ${imageUrl}/w=1536 1536w
-      `"
+  <UProseImg
     :alt="props.alt"
-    :width="props.width"
+    :class="props.class"
     :height="props.height"
-    class="rounded-lg border border-slate-100 bg-slate-200 dark:border-slate-800 dark:bg-slate-800"
+    :src="imgUrl.src"
+    :srcset="imgUrl.srcset"
+    :ui="props.ui"
+    :width="props.width"
+    :zoom="props.zoom"
     decoding="async"
     loading="lazy"
     sizes="(max-width: 768px) calc(100vw - 48px), 768px"
-    style="margin-top: 2.5rem; margin-bottom: 2.5rem"
   />
 </template>
