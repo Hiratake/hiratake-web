@@ -3,11 +3,27 @@
   "editor.insertSpaces": true,
   "editor.quickSuggestions": { "strings": "on" },
   "editor.tabSize": 2,
+  "explorer.excludeGitIgnore": true,
   "files.associations": {
     "*.css": "tailwindcss",
     "mise.local.toml.example": "toml"
   },
   "files.eol": "\n",
+  "files.exclude": {
+    ".editorconfig": true,
+    ".github": true,
+    ".textlintrc.cjs": true,
+    ".prettierignore": true,
+    "commitlint.config.ts": true,
+    "eslint.config.ts": true,
+    "lefthook.yaml": true,
+    "LICENSE.md": true,
+    "mise.local.toml.example": true,
+    "mise.toml": true,
+    "pnpm-lock.yaml": true,
+    "prettier.config.ts": true,
+    "tsconfig.json": true
+  },
   "files.insertFinalNewline": true,
   "git.branchProtection": ["main"],
   "js/ts.tsdk.path": "node_modules/typescript/lib",
