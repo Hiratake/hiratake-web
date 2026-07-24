@@ -65,4 +65,11 @@ export default defineNuxtConfig({
     zeroRuntime: true,
   },
   ui: { prose: true },
+  $production: {
+    scripts: {
+      registry: {
+        googleTagManager: { id: 'GTM-WF3MQWM', trigger: 'onNuxtReady' },
+      },
+    },
+  },
 })
