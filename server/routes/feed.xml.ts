@@ -1,13 +1,12 @@
-// Utils
+import { queryCollection } from '@nuxt/content/server'
 import { Feed } from 'feed'
 import { withoutTrailingSlash, withTrailingSlash } from 'ufo'
+import { getSiteConfig } from '#site-config/server/composables'
 
 export default defineEventHandler(async (event) => {
   /** ウェブサイトの情報 */
-  // @ts-ignore: https://github.com/nuxt/nuxt/issues/29263
-  const site = useSiteConfig(event)
+  const site = getSiteConfig(event)
   /** ブログ一覧ページの情報 */
-  // @ts-ignore: https://github.com/nuxt/nuxt/issues/29263
   const blogIndexContent = await queryCollection(event, 'diary').first()
 
   /**
@@ -29,7 +28,6 @@ export default defineEventHandler(async (event) => {
     copyright: site?.name || 'Hiratake Web',
   })
   /** ブログの投稿 */
-  // @ts-ignore: https://github.com/nuxt/nuxt/issues/29263
   const posts = await queryCollection<'blog'>(event, 'blog')
     .order('created', 'DESC')
     .limit(10)
@@ -46,7 +44,6 @@ export default defineEventHandler(async (event) => {
         id: url,
         link: url,
         description: post.description.replace(/\r?\n/g, ''),
-        // @ts-ignore: https://github.com/nuxt/content/issues/3072
         content: generateContentFromMinimalNode(event, post.body.value),
         date: new Date(post.created || ''),
       })

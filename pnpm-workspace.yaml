@@ -4,13 +4,10 @@ allowBuilds:
   esbuild: true
   lefthook: true
   unrs-resolver: true
-
-engineStrict: true
+  vue-demi: true
 
 minimumReleaseAge: 7200
 
 saveExact: true
-
-sideEffectsCache: false
 
 strictDepBuilds: true
