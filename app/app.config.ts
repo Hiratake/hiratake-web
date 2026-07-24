@@ -104,6 +104,9 @@ export default defineAppConfig({
         { size: 'md', square: true, class: 'md:p-1.5' },
       ],
     },
+    main: {
+      base: 'box-content min-h-[calc(100vh-var(--ui-header-height)-24rem)] px-6 md:min-h-[calc(100vh-var(--ui-header-height)-25rem)]',
+    },
     navigationMenu: {
       slots: { link: 'font-bold before:hidden' },
       variants: { orientation: { horizontal: { item: 'py-0' } } },
