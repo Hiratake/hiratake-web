@@ -4,5 +4,6 @@
   "lockFileMaintenance": { "enabled": true },
   "minimumReleaseAge": "5 days",
   "packageRules": [{ "enabled": false, "matchDepTypes": ["resolutions"] }],
-  "postUpdateOptions": ["pnpmDedupe"]
+  "postUpdateOptions": ["pnpmDedupe"],
+  "timezone": "Asia/Tokyo"
 }
