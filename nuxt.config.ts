@@ -33,7 +33,8 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     'nuxt-llms',
   ],
-  ogImage: { zeroRuntime: true, security: { renderTimeout: 30000 } },
+  nitro: { prerender: { concurrency: 1, crawlLinks: true } },
+  ogImage: { zeroRuntime: true, security: { renderTimeout: 45000 } },
   routeRules: {
     '/': { prerender: true },
     '/feed.xml': {
