@@ -1,17 +1,23 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  app: {
-    head: { titleTemplate: '%pageTitle' },
-  },
-  compatibilityDate: '2025-08-01',
+  compatibilityDate: '2026-06-30',
   content: {
     build: {
       markdown: {
-        highlight: { theme: 'github-dark' },
+        highlight: { theme: { default: 'github-light', dark: 'github-dark' } },
       },
     },
   },
+  css: ['~/assets/css/main.css'],
   devtools: { enabled: true },
+  fonts: {
+    families: [
+      { name: 'Lexend', weights: [400, 900] },
+      { name: 'Noto Sans JP', weights: [400] },
+      { name: 'Noto Sans JP', weights: [700], global: true },
+      { name: 'Source Code Pro', weights: [400, 700] },
+    ],
+  },
   linkChecker: { enabled: false },
   llms: {
     domain: process.env.CF_PAGES_URL || 'https://hiratake.dev',
@@ -19,30 +25,24 @@ export default defineNuxtConfig({
     description: 'ひらたけの個人ウェブサイトです。',
   },
   modules: [
+    '@nuxt/ui',
     '@nuxtjs/seo',
-    '@nuxtjs/tailwindcss',
     '@nuxt/eslint',
     '@nuxt/content',
+    '@nuxt/scripts',
     '@vueuse/nuxt',
     'nuxt-llms',
   ],
-  nitro: {
-    prerender: { failOnError: false, crawlLinks: true, routes: ['/feed.xml'] },
-  },
-  ogImage: {
-    fonts: ['Noto+Sans+JP:400', 'Noto+Sans+JP:700'],
-  },
+  nitro: { prerender: { concurrency: 1, crawlLinks: true } },
+  ogImage: { zeroRuntime: true, security: { renderTimeout: 45000 } },
   routeRules: {
+    '/': { prerender: true },
     '/feed.xml': {
       headers: { 'content-type': 'application/rss+xml; charset=UTF-8' },
+      prerender: true,
     },
   },
-  runtimeConfig: {
-    public: {
-      gtmId: 'GTM-WF3MQWM',
-      cloudflareImageHash: '3uWTcGTKoWPI8987WrI0hQ',
-    },
-  },
+  runtimeConfig: { public: { cloudflareImageHash: '3uWTcGTKoWPI8987WrI0hQ' } },
   schemaOrg: {
     identity: {
       type: 'Person',
@@ -63,10 +63,14 @@ export default defineNuxtConfig({
   },
   sitemap: {
     exclude: [new RegExp(/^\/blog\/\d{4}\/\d{2}\/\d{2}\/$/)],
+    zeroRuntime: true,
   },
-  srcDir: 'src/',
-  tailwindcss: { cssPath: '@/assets/tailwind.css' },
-  vite: {
-    optimizeDeps: { include: ['@headlessui/vue'] },
+  ui: { prose: true },
+  $production: {
+    scripts: {
+      registry: {
+        googleTagManager: { id: 'GTM-WF3MQWM', trigger: 'onNuxtReady' },
+      },
+    },
   },
 })
