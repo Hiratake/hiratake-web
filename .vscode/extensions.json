@@ -1,11 +1,10 @@
 {
   "recommendations": [
     "bradlc.vscode-tailwindcss",
-    "csstools.postcss",
     "dbaeumer.vscode-eslint",
     "editorconfig.editorconfig",
     "esbenp.prettier-vscode",
+    "github.vscode-github-actions",
     "nuxtr.nuxt-vscode-extentions"
-  ],
-  "unwantedRecommendations": ["vue.vscode-typescript-vue-plugin"]
+  ]
 }

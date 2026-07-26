@@ -1,6 +1,6 @@
-// Types
-import type { MinimalNode } from '@nuxt/content'
+import type { MinimarkNode } from '@nuxt/content'
 import type { H3Event } from 'h3'
+import { getSiteConfig } from '#site-config/server/composables'
 
 /**
  * Markdownの本文テキストを生成する
@@ -10,10 +10,9 @@ import type { H3Event } from 'h3'
  */
 export const generateContentFromMinimalNode = (
   event: H3Event,
-  children: MinimalNode[],
+  children: MinimarkNode[],
 ): string => {
-  // @ts-ignore: https://github.com/nuxt/nuxt/issues/29263
-  const site = useSiteConfig(event)
+  const site = getSiteConfig(event)
   const config = useRuntimeConfig()
 
   /** 本文のテキスト */
