@@ -34,7 +34,7 @@
     "@takumi-rs/core": "2.3.0",
     "@textlint-rule/textlint-rule-no-unmatched-pair": "2.0.4",
     "@vueuse/nuxt": "14.3.0",
-    "better-sqlite3": "12.11.1",
+    "better-sqlite3": "13.0.1",
     "eslint": "10.7.0",
     "feed": "6.0.0",
     "lefthook": "2.1.10",
