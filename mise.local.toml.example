@@ -1,0 +1,2 @@
+[env]
+NUXT_OG_IMAGE_SECRET = "<YOUR_SECRET>"

@@ -1,87 +1,76 @@
-// https://content.nuxt.com/docs/collections/define
 import { defineCollection, defineContentConfig, z } from '@nuxt/content'
-import { asSeoCollection } from '@nuxtjs/seo/content'
+import {
+  defineOgImageSchema,
+  defineRobotsSchema,
+  defineSchemaOrgSchema,
+  defineSitemapSchema,
+} from '@nuxtjs/seo/content'
 
+// https://content.nuxt.com/docs/collections/define
 export default defineContentConfig({
   collections: {
-    blog: defineCollection(
-      asSeoCollection({
-        type: 'page',
-        source: 'blog/**/*.md',
-        schema: z.object({
-          /** 投稿した日 */
-          created: z.date().optional(),
-          /** 更新した日 */
-          updated: z.date().optional(),
-          /** 書いたひと */
-          author: z.string().optional(),
-        }),
-      }),
-    ),
-    diary: defineCollection(
-      asSeoCollection({
-        type: 'page',
-        source: 'blog/index.yaml',
-        schema: z.object({
-          /** タイトル */
+    home: defineCollection({
+      type: 'page',
+      source: 'index.yaml',
+      schema: z.object({
+        hero: z.object({
           title: z.string(),
-          /** 概要 */
-          description: z.string(),
+          subtitle: z.string(),
+          image: z.object({ sm: z.string(), md: z.string(), lg: z.string() }),
         }),
-      }),
-    ),
-    docs: defineCollection(
-      asSeoCollection({
-        type: 'page',
-        source: [
-          { include: 'about/index.md' },
-          { include: 'contact/index.md' },
-          { include: 'privacy/index.md' },
-        ],
-        schema: z.object({
-          /** 投稿した日 */
-          created: z.date().optional(),
-          /** 更新した日 */
-          updated: z.date().optional(),
-          /** 書いたひと */
-          author: z.string().optional(),
-        }),
-      }),
-    ),
-    home: defineCollection(
-      asSeoCollection({
-        type: 'page',
-        source: 'index.yaml',
-        schema: z.object({
-          /** タイトル */
+        profile: z.object({
           title: z.string(),
-          /** 概要 */
-          description: z.string(),
-          /** ヒーローセクション */
-          hero: z.object({
-            /** タイトル */
-            title: z.string(),
-            /** サブタイトル */
-            subtitle: z.string(),
-            /** 画像 */
-            image: z.object({ sm: z.string(), md: z.string(), lg: z.string() }),
-          }),
-          /** プロフィールセクション */
-          profile: z.object({
-            /** タイトル */
-            title: z.string(),
-            /** 紹介文 */
-            biography: z.array(z.string()),
-          }),
-          /** ブログセクション */
-          blog: z.object({
-            /** タイトル */
-            title: z.string(),
-            /** 概要 */
-            description: z.string(),
-          }),
+          biography: z.array(z.string()),
         }),
+        diary: z.object({ title: z.string(), description: z.string() }),
+        schemaOrg: defineSchemaOrgSchema(),
+        sitemap: defineSitemapSchema(),
+        ogImage: defineOgImageSchema(),
+        robots: defineRobotsSchema(),
       }),
-    ),
+    }),
+
+    docs: defineCollection({
+      type: 'page',
+      source: [
+        { include: 'about/index.md' },
+        { include: 'contact/index.md' },
+        { include: 'privacy/index.md' },
+      ],
+      schema: z.object({
+        created: z.date().optional(),
+        updated: z.date().optional(),
+        author: z.string().optional(),
+        schemaOrg: defineSchemaOrgSchema(),
+        sitemap: defineSitemapSchema(),
+        ogImage: defineOgImageSchema(),
+        robots: defineRobotsSchema(),
+      }),
+    }),
+
+    diary: defineCollection({
+      type: 'page',
+      source: 'blog/index.yaml',
+      schema: z.object({
+        schemaOrg: defineSchemaOrgSchema(),
+        sitemap: defineSitemapSchema(),
+        ogImage: defineOgImageSchema(),
+        robots: defineRobotsSchema(),
+      }),
+    }),
+
+    blog: defineCollection({
+      type: 'page',
+      source: 'blog/**/*.md',
+      schema: z.object({
+        created: z.date().optional(),
+        updated: z.date().optional(),
+        author: z.string().optional(),
+        schemaOrg: defineSchemaOrgSchema(),
+        sitemap: defineSitemapSchema(),
+        ogImage: defineOgImageSchema(),
+        robots: defineRobotsSchema(),
+      }),
+    }),
   },
 })
