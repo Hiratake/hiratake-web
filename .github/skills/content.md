@@ -21,7 +21,7 @@ updated: 2026-08-19   # コンテンツ更新日
 ```
 
 - `updated` は、`created` と同じか、それより後の日付を指定する必要があります。
-- `create` および `updated` は、`YYYY-MM-DD` の形式（ハイフン区切り）の日付を指定する必要があります。
+- `created` および `updated` は、`YYYY-MM-DD` の形式（ハイフン区切り）の日付を指定する必要があります。
 - `content/blog/` のコンテンツについて、`created` はファイルのパスと同じ日付が指定されていなければなりません（例：`content/blog/2023/07/01.md` → `created: 2023-07-01`）。
 
 ## Images
