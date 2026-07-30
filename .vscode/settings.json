@@ -10,10 +10,12 @@
   },
   "files.eol": "\n",
   "files.exclude": {
+    ".coderabbit.yaml": true,
     ".editorconfig": true,
     ".github": true,
     ".textlintrc.cjs": true,
     ".prettierignore": true,
+    "AGENTS.md": true,
     "commitlint.config.ts": true,
     "eslint.config.ts": true,
     "lefthook.yaml": true,
