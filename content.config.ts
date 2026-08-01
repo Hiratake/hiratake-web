@@ -1,10 +1,11 @@
-import { defineCollection, defineContentConfig, z } from '@nuxt/content'
+import { defineCollection, defineContentConfig } from '@nuxt/content'
 import {
   defineOgImageSchema,
   defineRobotsSchema,
   defineSchemaOrgSchema,
   defineSitemapSchema,
 } from '@nuxtjs/seo/content'
+import { z } from 'zod'
 
 // https://content.nuxt.com/docs/collections/define
 export default defineContentConfig({

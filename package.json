@@ -51,7 +51,8 @@
     "textlint-rule-preset-ja-spacing": "3.0.2",
     "typescript": "6.0.3",
     "ufo": "1.6.4",
-    "vue-tsc": "3.3.8"
+    "vue-tsc": "3.3.8",
+    "zod": "4.4.3"
   },
   "scripts": {
     "build": "nuxt build",
