@@ -67,7 +67,15 @@ export default defineContentConfig({
         updated: z.date().optional(),
         author: z.string().optional(),
         schemaOrg: defineSchemaOrgSchema(),
-        sitemap: defineSitemapSchema(),
+        sitemap: defineSitemapSchema({
+          name: 'blog',
+          onUrl: (url) => {
+            url.loc = url.loc.replace(
+              /\/blog\/(\d{4})\/(\d{2})\/(\d{2})\/?/,
+              '/blog/$1$2$3/',
+            )
+          },
+        }),
         ogImage: defineOgImageSchema(),
         robots: defineRobotsSchema(),
       }),
