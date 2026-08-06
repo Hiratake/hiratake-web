@@ -36,7 +36,6 @@ export default defineAppConfig({
       a: {
         base: 'border-blue-900 font-normal text-blue-900 outline-blue-900/25 transition-none hover:border-transparent dark:border-blue-100 dark:text-blue-100 dark:outline-blue-100/25 [&>code]:outline-blue-900/25 hover:[&>code]:border-blue-900 hover:[&>code]:text-blue-900 focus-visible:[&>code]:border-blue-900 focus-visible:[&>code]:text-blue-900 dark:[&>code]:outline-blue-100/25 dark:hover:[&>code]:border-blue-100 dark:hover:[&>code]:text-blue-100 dark:focus-visible:[&>code]:border-blue-100 dark:focus-visible:[&>code]:text-blue-100',
       },
-      blockquote: { base: '' },
       ul: { base: 'my-8' },
       ol: { base: 'my-8' },
       li: { base: '[&>ol]:my-0' },
@@ -45,6 +44,10 @@ export default defineAppConfig({
         slots: {
           base: 'my-10 rounded-lg border border-slate-100 bg-slate-200 dark:border-slate-800 dark:bg-slate-800 outline-blue-900/25 focus-visible:no-underline dark:text-blue-100',
         },
+      },
+      pre: {
+        slots: { root: 'code my-10 [&+.code]:-mt-4' },
+        variants: { filename: { true: { root: 'my-10' } } },
       },
     },
     button: {
