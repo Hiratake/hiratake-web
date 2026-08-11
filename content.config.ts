@@ -1,10 +1,11 @@
-import { defineCollection, defineContentConfig, z } from '@nuxt/content'
+import { defineCollection, defineContentConfig } from '@nuxt/content'
 import {
   defineOgImageSchema,
   defineRobotsSchema,
   defineSchemaOrgSchema,
   defineSitemapSchema,
 } from '@nuxtjs/seo/content'
+import { z } from 'zod'
 
 // https://content.nuxt.com/docs/collections/define
 export default defineContentConfig({
@@ -67,7 +68,15 @@ export default defineContentConfig({
         updated: z.date().optional(),
         author: z.string().optional(),
         schemaOrg: defineSchemaOrgSchema(),
-        sitemap: defineSitemapSchema(),
+        sitemap: defineSitemapSchema({
+          name: 'blog',
+          onUrl: (url) => {
+            url.loc = url.loc.replace(
+              /\/blog\/(\d{4})\/(\d{2})\/(\d{2})\/?/,
+              '/blog/$1$2$3/',
+            )
+          },
+        }),
         ogImage: defineOgImageSchema(),
         robots: defineRobotsSchema(),
       }),
