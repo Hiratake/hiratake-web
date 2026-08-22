@@ -18,6 +18,9 @@ export default defineNuxtConfig({
       { name: 'Source Code Pro', weights: [400, 700] },
     ],
   },
+  icon: {
+    clientBundle: { icons: ['ph:moon-bold', 'ph:sun-bold'], scan: true },
+  },
   linkChecker: { enabled: false },
   llms: {
     domain: process.env.CF_PAGES_URL || 'https://hiratake.dev',
