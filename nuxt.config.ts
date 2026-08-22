@@ -19,7 +19,7 @@ export default defineNuxtConfig({
     ],
   },
   icon: {
-    clientBundle: { icons: ['ph:moon-bold', 'ph:sun-bold'] },
+    clientBundle: { icons: ['ph:moon-bold', 'ph:sun-bold'], scan: true },
   },
   linkChecker: { enabled: false },
   llms: {
