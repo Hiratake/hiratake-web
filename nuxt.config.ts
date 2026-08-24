@@ -13,8 +13,7 @@ export default defineNuxtConfig({
   fonts: {
     families: [
       { name: 'Lexend', weights: [400, 900] },
-      { name: 'Noto Sans JP', weights: [400] },
-      { name: 'Noto Sans JP', weights: [700], global: true },
+      { name: 'Noto Sans JP', weights: [400, 700], global: true },
       { name: 'Source Code Pro', weights: [400, 700] },
     ],
   },
