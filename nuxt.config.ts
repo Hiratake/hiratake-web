@@ -18,7 +18,18 @@ export default defineNuxtConfig({
     ],
   },
   icon: {
-    clientBundle: { icons: ['ph:moon-bold', 'ph:sun-bold'], scan: true },
+    clientBundle: {
+      icons: [
+        'ph:arrow-left-fill',
+        'ph:arrow-right-fill',
+        'ph:check',
+        'ph:copy',
+        'ph:hash',
+        'ph:moon-bold',
+        'ph:sun-bold',
+      ],
+      scan: true,
+    },
   },
   linkChecker: { enabled: false },
   llms: {
