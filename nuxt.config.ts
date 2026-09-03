@@ -13,10 +13,23 @@ export default defineNuxtConfig({
   fonts: {
     families: [
       { name: 'Lexend', weights: [400, 900] },
-      { name: 'Noto Sans JP', weights: [400] },
-      { name: 'Noto Sans JP', weights: [700], global: true },
+      { name: 'Noto Sans JP', weights: [400, 700], global: true },
       { name: 'Source Code Pro', weights: [400, 700] },
     ],
+  },
+  icon: {
+    clientBundle: {
+      icons: [
+        'ph:arrow-left-fill',
+        'ph:arrow-right-fill',
+        'ph:check',
+        'ph:copy',
+        'ph:hash',
+        'ph:moon-bold',
+        'ph:sun-bold',
+      ],
+      scan: true,
+    },
   },
   linkChecker: { enabled: false },
   llms: {
@@ -61,10 +74,7 @@ export default defineNuxtConfig({
     defaultLocale: 'ja',
     trailingSlash: true,
   },
-  sitemap: {
-    exclude: [new RegExp(/^\/blog\/\d{4}\/\d{2}\/\d{2}\/$/)],
-    zeroRuntime: true,
-  },
+  sitemap: { zeroRuntime: true },
   ui: { prose: true },
   $production: {
     scripts: {

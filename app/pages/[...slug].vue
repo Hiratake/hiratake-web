@@ -40,15 +40,17 @@ useSeoMeta({
   ogImageAlt: site.name,
 })
 useSchemaOrg([
-  defineBreadcrumb(
-    (breadcrumbs.value
-      ? [{ title: site.name, path: '/' }, ...breadcrumbs.value]
-      : []
-    ).map((item) => ({
-      name: item.title,
-      item: useTrailingSlash(item.path || ''),
-    })),
-  ),
+  defineBreadcrumb({
+    itemListElement: [
+      ...(breadcrumbs.value
+        ? [{ title: site.name, path: '/' }, ...breadcrumbs.value]
+        : []
+      ).map((item) => ({
+        name: item.title,
+        item: useTrailingSlash(item.path || ''),
+      })),
+    ],
+  }),
 ])
 </script>
 
