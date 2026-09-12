@@ -34,6 +34,7 @@ jobs:
         uses: pnpm/setup@703c52620218391530e48b9e8870d5c0082e1b9b # v2.1.0
         with:
           runtime: node@${{ matrix.node }}
+          cache: true
       - name: Run lint
         run: pnpm lint
 
@@ -53,5 +54,6 @@ jobs:
         uses: pnpm/setup@703c52620218391530e48b9e8870d5c0082e1b9b # v2.1.0
         with:
           runtime: node@${{ matrix.node }}
+          cache: true
       - name: Run typecheck
         run: pnpm typecheck
