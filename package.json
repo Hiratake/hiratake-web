@@ -17,7 +17,7 @@
     "url": "https://github.com/Hiratake/hiratake-web/issues"
   },
   "type": "module",
-  "packageManager": "pnpm@11.25.0",
+  "packageManager": "pnpm@12.3.4",
   "devDependencies": {
     "@commitlint/cli": "21.2.2",
     "@commitlint/config-conventional": "21.2.2",
