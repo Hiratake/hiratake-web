@@ -4,7 +4,7 @@ export default defineNuxtConfig({
   content: {
     build: {
       markdown: {
-        highlight: { theme: { default: 'github-light', dark: 'github-dark' } },
+        highlight: { theme: { default: 'github-dark', dark: 'github-dark' } },
       },
     },
   },
@@ -67,6 +67,7 @@ export default defineNuxtConfig({
       ],
     },
   },
+  seo: { minify: { build: false } },
   site: {
     url: process.env.CF_PAGES_URL || 'https://hiratake.dev',
     name: 'Hiratake Web',
