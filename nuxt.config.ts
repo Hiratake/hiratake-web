@@ -9,6 +9,7 @@ export default defineNuxtConfig({
     },
   },
   css: ['~/assets/css/main.css'],
+  devServer: { host: 'localhost' },
   devtools: { enabled: true },
   fonts: {
     families: [
