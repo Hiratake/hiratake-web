@@ -8,7 +8,7 @@ const app = useAppConfig()
       class="bg-white text-slate-600 dark:bg-slate-900 dark:text-slate-100"
     />
     <TheSeo />
-    <NuxtRouteAnnouncer class="" />
+    <NuxtRouteAnnouncer />
     <NuxtLoadingIndicator :height="2" :color="app.website.themeColor" />
     <TheHeader />
     <UMain>
