@@ -5,7 +5,7 @@ allowBuilds:
   unrs-resolver: true
   vue-demi: true
 
-minimumReleaseAge: 7200
+minimumReleaseAge: 7200 # 5 days
 
 saveExact: true
 
