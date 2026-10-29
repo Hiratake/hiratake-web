@@ -4,11 +4,12 @@ export default defineNuxtConfig({
   content: {
     build: {
       markdown: {
-        highlight: { theme: { default: 'github-light', dark: 'github-dark' } },
+        highlight: { theme: { default: 'github-dark', dark: 'github-dark' } },
       },
     },
   },
   css: ['~/assets/css/main.css'],
+  devServer: { host: 'localhost' },
   devtools: { enabled: true },
   fonts: {
     families: [
@@ -67,6 +68,7 @@ export default defineNuxtConfig({
       ],
     },
   },
+  seo: { minify: { build: false } },
   site: {
     url: process.env.CF_PAGES_URL || 'https://hiratake.dev',
     name: 'Hiratake Web',

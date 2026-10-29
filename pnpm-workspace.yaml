@@ -1,12 +1,11 @@
 allowBuilds:
-  '@parcel/watcher': true
   better-sqlite3: true
   esbuild: true
   lefthook: true
   unrs-resolver: true
   vue-demi: true
 
-minimumReleaseAge: 7200
+minimumReleaseAge: 7200 # 5 days
 
 saveExact: true
 
