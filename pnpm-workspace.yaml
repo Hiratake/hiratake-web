@@ -7,6 +7,10 @@ allowBuilds:
 
 minimumReleaseAge: 7200 # 5 days
 
+permissions:
+  nuxtseo-layer-devtools:
+    skills: true
+
 saveExact: true
 
 strictDepBuilds: true
