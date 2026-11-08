@@ -5,6 +5,18 @@ const app = useAppConfig()
 const route = useRoute()
 const site = useSiteConfig()
 const [open, toggle] = useToggle()
+const isDesktop = useMediaQuery('(min-width: 768px)')
+const isScrollLocked = useScrollLock(() =>
+  import.meta.client ? document.body : null,
+)
+
+// メニュー表示中は背景を固定し、PC表示に切り替わったら閉じる
+watch(open, (value) => {
+  isScrollLocked.value = value
+})
+watch(isDesktop, (value) => {
+  if (value) toggle(false)
+})
 const { copy } = useClipboard({ source: app.website.socials.rss.url })
 
 /** ナビゲーション項目 */
@@ -126,6 +138,9 @@ watch(
 
     <template #toggle>
       <UButton
+        :class="{ 'fixed top-6 right-4': open }"
+        :aria-expanded="open"
+        aria-controls="mobile-navigation"
         :ui="{
           base: 'z-50 aspect-square w-11 md:hidden dark:text-white [&>span]:absolute [&>span]:inset-x-0 [&>span]:m-auto [&>span]:h-0.5 [&>span]:bg-current [&>span]:duration-200 [&>span]:ease-in-out',
         }"
@@ -143,53 +158,57 @@ watch(
     </template>
 
     <div
+      id="mobile-navigation"
+      :inert="!open"
       :class="[
         open
           ? 'pointer-events-auto opacity-100'
           : 'pointer-events-none opacity-0',
       ]"
-      class="fixed inset-0 z-40 px-8 pt-20 text-white transition-opacity before:absolute before:inset-0 before:bg-slate-900 dark:before:bg-black"
+      class="fixed inset-0 z-40 flex flex-col bg-slate-900 px-8 pt-20 text-white transition-opacity md:hidden dark:bg-black"
     >
-      <UNavigationMenu
-        :items="navigationItems"
-        :ui="{
-          link: 'after:bg-primary-700 justify-center px-4 py-2 text-sm text-inherit after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:origin-right after:scale-x-0 after:scale-y-100 after:transition-transform hover:text-inherit hover:after:origin-left hover:after:scale-x-100 focus-visible:after:origin-left focus-visible:after:scale-x-100',
-          list: 'flex flex-col items-start gap-2',
-        }"
-        orientation="vertical"
-      />
-
-      <div class="flex items-center gap-1 px-2.5 py-6">
-        <UButton
-          :aria-label="`${app.website.socials.discord.name}サーバに参加する`"
-          :title="app.website.socials.discord.name"
-          :to="app.website.socials.discord.url"
-          :ui="{ base: 'text-white' }"
-          icon="i-simple-icons-discord"
-          target="_blank"
-          variant="ghost"
+      <div class="min-h-0 overflow-y-auto overscroll-contain pb-8">
+        <UNavigationMenu
+          :items="navigationItems"
+          :ui="{
+            link: 'after:bg-primary-700 justify-center px-4 py-2 text-sm text-inherit after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:origin-right after:scale-x-0 after:scale-y-100 after:transition-transform hover:text-inherit hover:after:origin-left hover:after:scale-x-100 focus-visible:after:origin-left focus-visible:after:scale-x-100',
+            list: 'flex flex-col items-start gap-2',
+          }"
+          orientation="vertical"
         />
 
-        <UTooltip
-          :open="isVisibleCopyRssFeedUrlTooltip.footer"
-          text="URLをコピーしました"
-          disabled
-        >
+        <div class="flex items-center gap-1 px-2.5 py-6">
           <UButton
-            :title="app.website.socials.rss.name"
+            :aria-label="`${app.website.socials.discord.name}サーバに参加する`"
+            :title="app.website.socials.discord.name"
+            :to="app.website.socials.discord.url"
             :ui="{ base: 'text-white' }"
-            aria-label="RSSフィードのURLをコピーする"
-            icon="i-ph-rss-bold"
+            icon="i-simple-icons-discord"
+            target="_blank"
             variant="ghost"
-            @click="() => copyRssFeedUrl('footer')"
           />
-        </UTooltip>
 
-        <UColorModeButton
-          :ui="{ base: 'text-white' }"
-          aria-label="カラーモードを切り替える"
-          variant="ghost"
-        />
+          <UTooltip
+            :open="isVisibleCopyRssFeedUrlTooltip.footer"
+            text="URLをコピーしました"
+            disabled
+          >
+            <UButton
+              :title="app.website.socials.rss.name"
+              :ui="{ base: 'text-white' }"
+              aria-label="RSSフィードのURLをコピーする"
+              icon="i-ph-rss-bold"
+              variant="ghost"
+              @click="() => copyRssFeedUrl('footer')"
+            />
+          </UTooltip>
+
+          <UColorModeButton
+            :ui="{ base: 'text-white' }"
+            aria-label="カラーモードを切り替える"
+            variant="ghost"
+          />
+        </div>
       </div>
     </div>
   </UHeader>
