@@ -46,7 +46,7 @@ export default defineAppConfig({
         },
       },
       pre: {
-        slots: { root: 'code my-10 [&+.code]:-mt-4' },
+        slots: { root: 'code dark my-10 [&+.code]:-mt-4' },
         variants: { filename: { true: { root: 'my-10' } } },
       },
     },
