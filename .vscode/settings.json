@@ -10,7 +10,6 @@
   },
   "files.eol": "\n",
   "files.exclude": {
-    ".coderabbit.yaml": true,
     ".editorconfig": true,
     ".github": true,
     ".textlintrc.cjs": true,
