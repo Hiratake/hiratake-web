@@ -4,8 +4,24 @@ import type { NavigationMenuItem } from '@nuxt/ui'
 const app = useAppConfig()
 const route = useRoute()
 const site = useSiteConfig()
+const isDesktop = useMediaQuery('(min-width: 768px)')
 const [open, toggle] = useToggle()
 const { copy } = useClipboard({ source: app.website.socials.rss.url })
+const body = ref<HTMLElement | null>(null)
+const isScrollLocked = useScrollLock(body)
+
+onMounted(() => {
+  body.value = document.body
+})
+
+watch(open, (value) => {
+  isScrollLocked.value = value
+})
+watch(isDesktop, (value) => {
+  if (value) {
+    toggle(false)
+  }
+})
 
 /** ナビゲーション項目 */
 const navigationItems = ref<NavigationMenuItem[]>([
@@ -126,6 +142,7 @@ watch(
 
     <template #toggle>
       <UButton
+        :class="{ 'fixed top-6 right-4': open }"
         :ui="{
           base: 'z-50 aspect-square w-11 md:hidden dark:text-white [&>span]:absolute [&>span]:inset-x-0 [&>span]:m-auto [&>span]:h-0.5 [&>span]:bg-current [&>span]:duration-200 [&>span]:ease-in-out',
         }"
@@ -148,7 +165,7 @@ watch(
           ? 'pointer-events-auto opacity-100'
           : 'pointer-events-none opacity-0',
       ]"
-      class="fixed inset-0 z-40 px-8 pt-20 text-white transition-opacity before:absolute before:inset-0 before:bg-slate-900 dark:before:bg-black"
+      class="fixed inset-0 z-40 overflow-y-auto overscroll-contain px-8 pt-20 text-white transition-opacity before:fixed before:inset-0 before:bg-slate-900 dark:before:bg-black"
     >
       <UNavigationMenu
         :items="navigationItems"
