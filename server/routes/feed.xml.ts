@@ -37,13 +37,14 @@ export default defineEventHandler(async (event) => {
     .filter((post) => post.path && post.title)
     .forEach((post) => {
       /** 投稿のURL */
-      const url = `${site.url}/blog/${withTrailingSlash((post.path || '').replace('/blog', '').split('/').join(''))}`
+      const url = useTrailingSlash(blogPathToUrl(post.path || ''))
+      const link = new URL(url, site.url).toString()
 
       feed.addItem({
         title: post.title || '',
-        id: url,
-        link: url,
-        description: post.description.replace(/\r?\n/g, ''),
+        id: link,
+        link,
+        description: post.description?.replace(/\r?\n/g, '') || '',
         content: generateContentFromMinimalNode(event, post.body.value),
         date: new Date(post.created || ''),
       })
