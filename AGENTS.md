@@ -32,6 +32,8 @@ content/
 └── index.yaml      # トップページのコンテンツ
 public/
 server/             # サーバープログラム
+shared/             # アプリケーションとサーバーで共有するコード
+└── utils/          # 共通のユーティリティ関数
 ```
 
 ## Commands
