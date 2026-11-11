@@ -47,7 +47,13 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     'nuxt-llms',
   ],
-  nitro: { prerender: { concurrency: 1, crawlLinks: true } },
+  nitro: {
+    prerender: {
+      concurrency: 1,
+      crawlLinks: true,
+      routes: ['/llms.txt', '/'],
+    },
+  },
   ogImage: { zeroRuntime: true, security: { renderTimeout: 45000 } },
   routeRules: {
     '/': { prerender: true },
