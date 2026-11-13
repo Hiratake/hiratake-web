@@ -1,19 +1,33 @@
 import type { MinimarkNode } from '@nuxt/content'
 import type { H3Event } from 'h3'
+import { withoutTrailingSlash } from 'ufo'
 import { getSiteConfig } from '#site-config/server/composables'
 
 /**
- * Markdownの本文テキストを生成する
+ * HTML 本文に安全に埋め込める文字列へ変換する
+ * @param value HTML 本文に埋め込む文字列
+ * @returns HTML エンティティにエスケープした文字列
+ */
+const escapeHtml = (value: string): string =>
+  value
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;')
+
+/**
+ * Markdown の本文テキストを生成する
  * @param event イベント
- * @param children Markdownノードの配列
- * @returns Markdownの本文テキスト
+ * @param children Markdown ノードの配列
+ * @returns Markdown の本文テキスト
  */
 export const generateContentFromMinimalNode = (
   event: H3Event,
   children: MinimarkNode[],
 ): string => {
   const site = getSiteConfig(event)
-  const config = useRuntimeConfig()
+  const config = useRuntimeConfig(event)
 
   /** 本文のテキスト */
   let content = ''
@@ -26,7 +40,7 @@ export const generateContentFromMinimalNode = (
 
     if (typeof node === 'string') {
       // Text
-      content += `${node.trim()}`
+      content += escapeHtml(node)
     } else {
       // Element
       const [tag, props, ...rest] = node
@@ -38,20 +52,19 @@ export const generateContentFromMinimalNode = (
           // 画像
           const imageId = (props?.src as string) || ''
           const src = imageId
-            ? `${site.url}/cdn-cgi/imagedelivery/${config.public.cloudflareImageHash}/${imageId}/w=1536`
+            ? `${withoutTrailingSlash(site.url)}/cdn-cgi/imagedelivery/${config.public.cloudflareImageHash}/${encodeURIComponent(imageId)}/w=1536`
             : ''
           const alt = (props?.alt as string) || ''
-          content += `<${tag} src="${src}" alt="${alt}" />`
+          content += `<${tag} src="${escapeHtml(src)}" alt="${escapeHtml(alt)}" />`
           continue
         } else if (tag === 'a') {
           // リンク
           const href = (props?.href as string) || ''
-          startTag = `<${tag} href="${href}">`
+          startTag = `<${tag} href="${escapeHtml(href)}">`
           endTag = `</${tag}>`
         } else if (tag === 'pre') {
           // コードブロック
-          const code =
-            (props?.code as string).trim().replace(/\n/g, '&#xA;') || ''
+          const code = escapeHtml((props?.code as string) || '')
           content += `<${tag}><code>${code}</code></${tag}>`
           continue
         } else if (['hr', 'br'].includes(tag)) {
@@ -70,7 +83,7 @@ export const generateContentFromMinimalNode = (
             'ul',
             'ol',
             'li',
-            'blockquate',
+            'blockquote',
             'em',
             'strong',
             'del',
