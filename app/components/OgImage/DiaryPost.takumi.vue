@@ -42,7 +42,11 @@ const props = withDefaults(defineProps<DiaryPostProps>(), { title: '日記' })
         {{ props.title }}
       </h1>
 
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 162 40" class="w-40">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 162 40"
+        class="relative w-40"
+      >
         <path
           d="m155.49,24.99h-9.86c.39,1.51,1.62,2.35,3.39,2.35,1.32,0,2.63-.53,3.42-1.46l2.16,2.16c-1.23,1.65-3.53,2.55-5.82,2.55-4,0-6.94-2.74-6.94-6.78s3.19-6.86,6.94-6.86,6.78,2.63,6.78,6.64c0,.36-.03.81-.05,1.4h0Zm-3.61-2.38c-.11-1.54-1.4-2.46-3.05-2.46-1.48,0-2.8.7-3.19,2.46h6.24Z"
           class="fill-slate-700"
