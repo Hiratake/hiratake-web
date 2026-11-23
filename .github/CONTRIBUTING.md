@@ -46,17 +46,17 @@
 パッケージマネージャーの準備ができたら、以下の手順で環境構築を行ってください。
 
 1. リポジトリを [Fork](https://docs.github.com/ja/github/getting-started-with-github/fork-a-repo) し、ローカルへ [clone](https://docs.github.com/ja/github/creating-cloning-and-archiving-repositories/cloning-a-repository) します。
-2. `pnpm install` を実行し、必要なパッケージをインストールします。
+2. `pn install` を実行し、必要なパッケージをインストールします。
 3. 必要な環境変数を設定します。`mise` を使用している場合は `mise.local.toml.example` ファイルを `mise.local.toml` としてコピーし、各環境変数を設定してください。
-   - `NUXT_OG_IMAGE_SECRET` - `pnpm dlx nuxt-og-image generate-secret` で生成されたキー
+   - `NUXT_APP_SECRET` - `pnx nuxt-og-image generate-secret` で生成されたキー
 4. 開発を開始します。
 
-インストールされているパッケージは、GitHub 上で [Renovate](https://www.mend.io/renovate/) を用いて更新するか、`pnpm up --latest` コマンドを用いて更新してください。  
+インストールされているパッケージは、GitHub 上で [Renovate](https://www.mend.io/renovate/) を用いて更新するか、`pn up --latest` コマンドを用いて更新してください。  
 リリース直後のパッケージはインストールできず、5 日（7200 分）経過したバージョンのみインストール可能です。
 
 ### ✨️ Linter and Formatter
 
 このプロジェクトでは、 [ESLint](https://eslint.org/) および [textlint](https://textlint.github.io/) でコードのリンティング、 [Prettier](https://prettier.io/) でコードの整形を行っています。  
-これらは、 Git のコミット時に自動的に実行され、適用されます。ただし、 `pnpm install` を実行している場合に限ります。
+これらは、 Git のコミット時に自動的に実行され、適用されます。ただし、 `pn install` を実行している場合に限ります。
 
 プロジェクトによっては `ESLint` でコードの整形まで行っているものもありますが、このプロジェクトではそのような設定にはしておりません。

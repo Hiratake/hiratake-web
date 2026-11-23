@@ -1,8 +1,9 @@
 # Agent Instructions
 
-このファイルは、Codex や Claude Code、GitHub Copilot などの AI ツールが、このリポジトリについて理解したり、作業を行う際に遵守すべき事項などをまとめたりしたものです。
+このファイルは、Codex や Claude Code、GitHub Copilot などの AI ツールが、このリポジトリについて理解したり、作業を行う際に遵守すべき事項などをまとめたりしたものです。  
+新しい機能の実装、既存のコードの変更、ドキュメントの更新などを行う際には、以下のコンテキストと規約を厳守して回答・コード生成を行なってください。
 
-新しい機能を実装したり、既存のコードを変更する際には、以下のコンテキストと規約を厳守して回答・コード生成を行なってください。
+規約を変更する場合は、このファイルもしくは `.agents/docs/` 内のファイルを更新し、`README.md` や `.github/CONTRIBUTING.md` に重複して記載しないでください。
 
 ## Project Overview
 
@@ -41,19 +42,19 @@ shared/             # アプリケーションとサーバーで共有するコ�
 コマンドを実行するには Node.js および pnpm が動作する環境が必要です。各ツールの使用するバージョンは `mise.toml` に記載されています。
 
 ```
-pnpm build            # アプリケーションをビルドする
-pnpm dev              # 開発用のサーバーを起動する
-pnpm generate         # 静的な HTML ファイルとして書き出す
-pnpm preview          # プレビューを起動する
-pnpm postinstall      # `nuxt prepare` を実行する
-pnpm lint             # `pnpm lint:script` と `pnpm lint:text` を実行する
-pnpm lint:fix         # `pnpm lint:script:fix` と `pnpm lint:text:fix` を実行する
-pnpm lint:script      # ESLint でコードをチェックする
-pnpm lint:script:fix  # ESLint でコードを修正する
-pnpm lint:text        # textlint で Markdown ファイルをチェックする
-pnpm lint:text:fix    # textlint で Markdown ファイルを修正する
-pnpm typecheck        # TypeScript の型をチェックする
-pnpm format           # Prettier でコードを整形する
+pn build            # アプリケーションをビルドする
+pn dev              # 開発用のサーバーを起動する
+pn generate         # 静的な HTML ファイルとして書き出す
+pn preview          # プレビューを起動する
+pn postinstall      # `nuxt prepare` を実行する
+pn lint             # `pn lint:script` と `pn lint:text` を実行する
+pn lint:fix         # `pn lint:script:fix` と `pn lint:text:fix` を実行する
+pn lint:script      # ESLint でコードをチェックする
+pn lint:script:fix  # ESLint でコードを修正する
+pn lint:text        # textlint で Markdown ファイルをチェックする
+pn lint:text:fix    # textlint で Markdown ファイルを修正する
+pn typecheck        # TypeScript の型をチェックする
+pn format           # Prettier でコードを整形する
 ```
 
 ## General Rules
@@ -64,7 +65,7 @@ pnpm format           # Prettier でコードを整形する
 - ユーザーから渡された仕様に不足がある場合には、実装前にユーザーへ質問をしてください。
 - コードを変更する際に、変更量が 200 行を超過する可能性が高い場合は、事前に「この指示では変更量が 200 行を超える可能性がありますが、実行しますか？」とユーザーに確認をとるようにしてください。
 - コードを新しく追加・変更する際には、まず何をするのか計画を立てた上で、ユーザーに「このような計画で進めようと思います」と提案してください。このとき、ユーザーから計画の修正を求められた場合には、計画を修正し、ユーザーへ再提案してください。
-- コードの追加・変更を行なった際は、作業内容に応じて作業の最後に `pnpm lint`、`pnpm typecheck`、`pnpm format` を実行してください。
+- コードの追加・変更を行なった際は、作業内容に応じて作業の最後に `pn lint`、`pn typecheck`、`pn format` を実行してください。
 - 全てのコミットメッセージは [Conventional Commits](https://www.conventionalcommits.org/ja/) に従う必要があります。（例：`fix: ボタンのホバー状態を修正`、`feat: モーダルコンポーネントに fullscreen Prop を追加`）
 - GitHub 上で提出されたプルリクエストについてレビューする際、コードの誤りやコンテンツの誤字脱字などを指摘する場合には、GitHub 上で 1 クリックで修正を適用できるように Markdown の `suggestion` ブロック（ ```suggestion ）を用いたインライン修正提案を出力してください。
 
@@ -74,7 +75,7 @@ pnpm format           # Prettier でコードを整形する
 
 1. ユーザーの明示的な指示
 2. このファイルの指示
-3. `.github/docs/` 配下のタスク別ドキュメント
+3. `.agents/docs/` 配下のタスク別ドキュメント
 4. その他の慣例や推測
 
 ## References
@@ -83,9 +84,9 @@ pnpm format           # Prettier でコードを整形する
 
 | File | Description |
 |:--|:--|
-| `.github/docs/blog-content.md` | `content/` ディレクトリ内に配置された、ウェブサイトのコンテンツを執筆する際に参照する |
+| `.agents/docs/blog-content.md` | `content/` ディレクトリ内に配置された、ウェブサイトのコンテンツの執筆・レビューを行う際に参照する |
 
 ## Agent Skills
 
 - タスクに関連するスキルが利用可能な場合は、その指示に従ってください。
-- スキルは `.github/skills/` 配下に格納されています。
+- スキルは `.agents/skills/` 配下に格納されています。
