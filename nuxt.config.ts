@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  aiReady: { enabled: false },
   compatibilityDate: '2026-06-30',
   content: {
     build: {
@@ -48,11 +49,7 @@ export default defineNuxtConfig({
     'nuxt-llms',
   ],
   nitro: {
-    prerender: {
-      concurrency: 1,
-      crawlLinks: true,
-      routes: ['/llms.txt', '/'],
-    },
+    prerender: { concurrency: 1, crawlLinks: true, routes: ['/llms.txt', '/'] },
   },
   ogImage: { zeroRuntime: true, security: { renderTimeout: 45000 } },
   routeRules: {
@@ -82,7 +79,8 @@ export default defineNuxtConfig({
     defaultLocale: 'ja',
     trailingSlash: true,
   },
-  sitemap: { zeroRuntime: true },
+  sitemap: { minify: true, zeroRuntime: true },
+  skewProtection: { enabled: false },
   ui: { prose: true },
   $production: {
     scripts: {
