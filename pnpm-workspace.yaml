@@ -1,17 +1,21 @@
 minimumReleaseAge: 7200 # 5 days
 
 permissions:
+  '@nuxtjs/seo':
+    skills: true
   better-sqlite3:
     build: true
   esbuild:
     build: true
   lefthook:
     build: true
-  nuxtseo-layer-devtools:
-    skills: true
   vue-demi:
     build: true
 
 saveExact: true
+
+skills:
+  dirs:
+    - .agents/skills
 
 strictDepBuilds: true
