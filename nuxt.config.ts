@@ -1,6 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  aiReady: { enabled: false },
   compatibilityDate: '2026-06-30',
   content: {
     build: {
@@ -34,11 +33,6 @@ export default defineNuxtConfig({
     },
   },
   linkChecker: { enabled: false },
-  llms: {
-    domain: process.env.CF_PAGES_URL || 'https://hiratake.dev',
-    title: 'Hiratake Web',
-    description: 'ひらたけの個人ウェブサイトです。',
-  },
   modules: [
     '@nuxt/ui',
     '@nuxtjs/seo',
@@ -46,11 +40,8 @@ export default defineNuxtConfig({
     '@nuxt/content',
     '@nuxt/scripts',
     '@vueuse/nuxt',
-    'nuxt-llms',
   ],
-  nitro: {
-    prerender: { concurrency: 1, crawlLinks: true, routes: ['/llms.txt', '/'] },
-  },
+  nitro: { prerender: { concurrency: 1, crawlLinks: true } },
   ogImage: { zeroRuntime: true, security: { renderTimeout: 45000 } },
   routeRules: {
     '/': { prerender: true },
