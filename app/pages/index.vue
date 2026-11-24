@@ -23,7 +23,11 @@ useSchemaOrg([
 </script>
 
 <template>
-  <UPage v-if="data" :ui="{ root: 'max-w-(--ui-container)' }">
+  <UPage
+    v-if="data"
+    data-skew-preview="verify"
+    :ui="{ root: 'max-w-(--ui-container)' }"
+  >
     <UPageBody :ui="{ base: 'gap-16 md:gap-20' }">
       <HomeHero
         :title="data.hero.title || site.name"
