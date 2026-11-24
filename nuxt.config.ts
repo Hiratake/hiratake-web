@@ -80,7 +80,12 @@ export default defineNuxtConfig({
     trailingSlash: true,
   },
   sitemap: { minify: true, zeroRuntime: true },
-  skewProtection: { enabled: false },
+  skewProtection: {
+    storage: {
+      driver: 'fs-lite',
+      base: 'node_modules/.cache/nuxt/skew-protection',
+    },
+  },
   ui: { prose: true },
   $production: {
     scripts: {
