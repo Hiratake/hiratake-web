@@ -1,11 +1,12 @@
 <script lang="ts" setup>
+import type { BadgeProps } from '#ui/components/Badge.vue'
 import { ULink } from '#components'
 
 type BadgeListItemProps = {
   /** ラベル */
   label: string
   /** アイコン */
-  icon: string
+  icon: BadgeProps['icon']
   /** 6 桁の RGB カラーコード */
   backgroundColor: `#${string}`
   /** リンク先 URL */
