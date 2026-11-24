@@ -9,9 +9,12 @@ const skills = [
   ['React', 'i-simple-icons-react', '#61dafb'],
   ['Next.js', 'i-simple-icons-nextdotjs', '#000000'],
   ['Tailwind CSS', 'i-simple-icons-tailwindcss', '#06b6d4'],
+  ['Electron', 'i-simple-icons-electron', '#47848f'],
+  ['Tauri', 'i-simple-icons-tauri', '#24c8d8'],
   ['Sass', 'i-simple-icons-sass', '#cc6699'],
   ['PHP', 'i-simple-icons-php', '#777bb4'],
   ['Laravel', 'i-simple-icons-laravel', '#ff2d20'],
+  ['Rust', 'i-simple-icons-rust', '#000000'],
   ['C言語', 'i-simple-icons-c', '#a8b9cc'],
 ] as const
 </script>
