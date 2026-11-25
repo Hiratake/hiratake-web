@@ -1,0 +1,206 @@
+lockfile_version: '4'
+apm_version: 0.38.1
+manifest_targets:
+  - codex
+dependencies:
+  - repo_url: nuxt/ui
+    name: ui
+    host: github.com
+    resolved_commit: 64207da7971c6c998408c9562f12dcd73c383086
+    resolved_ref: v4
+    version: unknown
+    package_type: skill_bundle
+    deployed_files:
+      - .agents/skills/nuxt-ui
+      - .agents/skills/nuxt-ui/LICENSE.md
+      - .agents/skills/nuxt-ui/SKILL.md
+      - .agents/skills/nuxt-ui/references/components.md
+      - .agents/skills/nuxt-ui/references/guidelines/component-selection.md
+      - .agents/skills/nuxt-ui/references/guidelines/conventions.md
+      - .agents/skills/nuxt-ui/references/guidelines/design-system.md
+      - .agents/skills/nuxt-ui/references/guidelines/forms.md
+      - .agents/skills/nuxt-ui/references/layouts/chat.md
+      - .agents/skills/nuxt-ui/references/layouts/dashboard.md
+      - .agents/skills/nuxt-ui/references/layouts/docs.md
+      - .agents/skills/nuxt-ui/references/layouts/editor.md
+      - .agents/skills/nuxt-ui/references/layouts/landing.md
+      - .agents/skills/nuxt-ui/references/recipes/auth.md
+      - .agents/skills/nuxt-ui/references/recipes/data-tables.md
+      - .agents/skills/nuxt-ui/references/recipes/navigation.md
+      - .agents/skills/nuxt-ui/references/recipes/overlays.md
+    deployed_file_hashes:
+      .agents/skills/nuxt-ui/LICENSE.md: sha256:6ccc347b162c046440394e641e4ab2ac7238b3c7b81bb77c39435e7540ac7748
+      .agents/skills/nuxt-ui/SKILL.md: sha256:98f11149fc566b2826c15f1ce78b031bdd0476413b35b22bd0edb6df02ddb95e
+      .agents/skills/nuxt-ui/references/components.md: sha256:9648870284476354c4073f559c8892c670f67ecfed8a43af2ae7e8c0cca75526
+      .agents/skills/nuxt-ui/references/guidelines/component-selection.md: sha256:b4a7bd45aad3376848eca5a2b872365c0224bf06623f9453ce4f6a4d253f811c
+      .agents/skills/nuxt-ui/references/guidelines/conventions.md: sha256:3c9f73e7bf6625af90f457494282dc94db005d50a6e56086ca91da7cf31f2316
+      .agents/skills/nuxt-ui/references/guidelines/design-system.md: sha256:e6e42bd531f82fcc6ed4375edc704b4f7d19ae0d63fde52f0f418e5b6564ade6
+      .agents/skills/nuxt-ui/references/guidelines/forms.md: sha256:2d98511a0c12729cb7ffbe75913fd71ad33c0dadc1936489a98891e1d5feefab
+      .agents/skills/nuxt-ui/references/layouts/chat.md: sha256:fb089e1ca50b142b4242309847364d9b594aba6769d6883128aaef7b645bc9c9
+      .agents/skills/nuxt-ui/references/layouts/dashboard.md: sha256:fee6235a7cc3b08d2a2344d6980763c6613a8201ebf6c37998b4467443263e57
+      .agents/skills/nuxt-ui/references/layouts/docs.md: sha256:761190a26517a3084a7cabd673a84b040766ce15c6ae53378ab4519e3b419510
+      .agents/skills/nuxt-ui/references/layouts/editor.md: sha256:7bc96dd3b88e97adc70a8f124a46c256e36dccf17c0e1233bf88238f10d18d8d
+      .agents/skills/nuxt-ui/references/layouts/landing.md: sha256:c9732e93e82e9d9fb95d5d7e21e1104797ab19d8f66c244a1362862c307cefca
+      .agents/skills/nuxt-ui/references/recipes/auth.md: sha256:85721c3eac6d9d7ad5a882b9f7e124ba4ffc7368e5d8c3e06342017a1276fad0
+      .agents/skills/nuxt-ui/references/recipes/data-tables.md: sha256:bad64265045f212cdf18d73b6cef358779db1a9ad2e7903200a9a74dd05da525
+      .agents/skills/nuxt-ui/references/recipes/navigation.md: sha256:5c6a7ee61a6938596c12800e2647dec7e72dbc2c1149c84ee3cd9c4aee15755b
+      .agents/skills/nuxt-ui/references/recipes/overlays.md: sha256:109556d0a67687312bc3e462ed1b921cd0356309bfc07eef527c3ca4fc780063
+    content_hash: sha256:a54461c35b260b37e610d54ac2177e6b9795332d2562bc0c6a49e6af4d5e2a41
+    carried_licenses:
+      - path: skills/nuxt-ui/LICENSE.md
+        source: LICENSE.md
+        hash: sha256:6ccc347b162c046440394e641e4ab2ac7238b3c7b81bb77c39435e7540ac7748
+deployments:
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/nuxt-ui
+    runtime: null
+    scope: project
+    owners:
+      - nuxt/ui
+    active_owner: nuxt/ui
+    content_hash: null
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/nuxt-ui/LICENSE.md
+    runtime: null
+    scope: project
+    owners:
+      - nuxt/ui
+    active_owner: nuxt/ui
+    content_hash: sha256:6ccc347b162c046440394e641e4ab2ac7238b3c7b81bb77c39435e7540ac7748
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/nuxt-ui/SKILL.md
+    runtime: null
+    scope: project
+    owners:
+      - nuxt/ui
+    active_owner: nuxt/ui
+    content_hash: sha256:98f11149fc566b2826c15f1ce78b031bdd0476413b35b22bd0edb6df02ddb95e
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/nuxt-ui/references/components.md
+    runtime: null
+    scope: project
+    owners:
+      - nuxt/ui
+    active_owner: nuxt/ui
+    content_hash: sha256:9648870284476354c4073f559c8892c670f67ecfed8a43af2ae7e8c0cca75526
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/nuxt-ui/references/guidelines/component-selection.md
+    runtime: null
+    scope: project
+    owners:
+      - nuxt/ui
+    active_owner: nuxt/ui
+    content_hash: sha256:b4a7bd45aad3376848eca5a2b872365c0224bf06623f9453ce4f6a4d253f811c
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/nuxt-ui/references/guidelines/conventions.md
+    runtime: null
+    scope: project
+    owners:
+      - nuxt/ui
+    active_owner: nuxt/ui
+    content_hash: sha256:3c9f73e7bf6625af90f457494282dc94db005d50a6e56086ca91da7cf31f2316
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/nuxt-ui/references/guidelines/design-system.md
+    runtime: null
+    scope: project
+    owners:
+      - nuxt/ui
+    active_owner: nuxt/ui
+    content_hash: sha256:e6e42bd531f82fcc6ed4375edc704b4f7d19ae0d63fde52f0f418e5b6564ade6
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/nuxt-ui/references/guidelines/forms.md
+    runtime: null
+    scope: project
+    owners:
+      - nuxt/ui
+    active_owner: nuxt/ui
+    content_hash: sha256:2d98511a0c12729cb7ffbe75913fd71ad33c0dadc1936489a98891e1d5feefab
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/nuxt-ui/references/layouts/chat.md
+    runtime: null
+    scope: project
+    owners:
+      - nuxt/ui
+    active_owner: nuxt/ui
+    content_hash: sha256:fb089e1ca50b142b4242309847364d9b594aba6769d6883128aaef7b645bc9c9
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/nuxt-ui/references/layouts/dashboard.md
+    runtime: null
+    scope: project
+    owners:
+      - nuxt/ui
+    active_owner: nuxt/ui
+    content_hash: sha256:fee6235a7cc3b08d2a2344d6980763c6613a8201ebf6c37998b4467443263e57
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/nuxt-ui/references/layouts/docs.md
+    runtime: null
+    scope: project
+    owners:
+      - nuxt/ui
+    active_owner: nuxt/ui
+    content_hash: sha256:761190a26517a3084a7cabd673a84b040766ce15c6ae53378ab4519e3b419510
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/nuxt-ui/references/layouts/editor.md
+    runtime: null
+    scope: project
+    owners:
+      - nuxt/ui
+    active_owner: nuxt/ui
+    content_hash: sha256:7bc96dd3b88e97adc70a8f124a46c256e36dccf17c0e1233bf88238f10d18d8d
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/nuxt-ui/references/layouts/landing.md
+    runtime: null
+    scope: project
+    owners:
+      - nuxt/ui
+    active_owner: nuxt/ui
+    content_hash: sha256:c9732e93e82e9d9fb95d5d7e21e1104797ab19d8f66c244a1362862c307cefca
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/nuxt-ui/references/recipes/auth.md
+    runtime: null
+    scope: project
+    owners:
+      - nuxt/ui
+    active_owner: nuxt/ui
+    content_hash: sha256:85721c3eac6d9d7ad5a882b9f7e124ba4ffc7368e5d8c3e06342017a1276fad0
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/nuxt-ui/references/recipes/data-tables.md
+    runtime: null
+    scope: project
+    owners:
+      - nuxt/ui
+    active_owner: nuxt/ui
+    content_hash: sha256:bad64265045f212cdf18d73b6cef358779db1a9ad2e7903200a9a74dd05da525
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/nuxt-ui/references/recipes/navigation.md
+    runtime: null
+    scope: project
+    owners:
+      - nuxt/ui
+    active_owner: nuxt/ui
+    content_hash: sha256:5c6a7ee61a6938596c12800e2647dec7e72dbc2c1149c84ee3cd9c4aee15755b
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/nuxt-ui/references/recipes/overlays.md
+    runtime: null
+    scope: project
+    owners:
+      - nuxt/ui
+    active_owner: nuxt/ui
+    content_hash: sha256:109556d0a67687312bc3e462ed1b921cd0356309bfc07eef527c3ca4fc780063
