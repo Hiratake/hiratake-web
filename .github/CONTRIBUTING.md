@@ -38,10 +38,11 @@
 
 ### 📦️ Package Manager
 
-このリポジトリでは、パッケージマネージャーに [pnpm](https://pnpm.io/ja/) を採用しています。  
-`npm` や `yarn` を使用している場合は、ご変更ください。
+このリポジトリでは、パッケージマネージャーに [pnpm](https://pnpm.io/ja/) を採用しています。
+`npm` や `yarn` を使用している場合は、ご変更ください。  
+また、AI ツール向けのスキルのパッケージマネージャーとして [APM](https://microsoft.github.io/apm/) を採用しています。
 
-[mise](https://mise.jdx.dev/) を使用している場合は `mise install` を実行し、リポジトリで使用しているバージョンの `Node.js` と `pnpm` をインストールすることができます。
+[mise](https://mise.jdx.dev/) を使用している場合は `mise install` を実行し、リポジトリで使用しているバージョンの Node.js、pnpm、APM をインストールすることができます。
 
 パッケージマネージャーの準備ができたら、以下の手順で環境構築を行ってください。
 
