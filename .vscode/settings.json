@@ -14,6 +14,7 @@
     ".codex": true,
     ".editorconfig": true,
     ".github": true,
+    ".textlintignore": true,
     ".textlintrc.cjs": true,
     ".prettierignore": true,
     "AGENTS.md": true,
