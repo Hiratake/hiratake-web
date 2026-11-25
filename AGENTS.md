@@ -85,8 +85,10 @@ pn format           # Prettier でコードを整形する
 | File | Description |
 |:--|:--|
 | `.agents/docs/blog-content.md` | `content/` ディレクトリ内に配置された、ウェブサイトのコンテンツの執筆・レビューを行う際に参照する |
+| `.agents/docs/coding.md` | TypeScript / Vue.js のコードを記述・レビューする際に参照する（コーディング規約） |
 
 ## Agent Skills
 
-- タスクに関連するスキルが利用可能な場合は、その指示に従ってください。
-- スキルは `.agents/skills/` 配下に格納されています。
+`.agents/skills/` 内に格納されているスキルを読み込み、その指示に従ってください。
+
+スキルは [Agent Package Manager](https://microsoft.github.io/apm/) で管理しているものと、Node.js のパッケージをインストールする際に自動で追加されるものがあります。
