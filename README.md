@@ -18,13 +18,13 @@
 以下コマンドを実行し、必要なパッケージをインストールします。
 
 ```bash
-pnpm install
+pn install
 ```
 
 [mise](https://mise.jdx.dev/) を利用している場合は `mise install` で必要なツールをインストールすることができます。  
 `mise.local.toml.example` ファイルを `mise.local.toml` としてコピーし、各環境変数を設定してください。
 
-- `NUXT_OG_IMAGE_SECRET` - `pnpm dlx nuxt-og-image generate-secret` で生成されたキー
+- `NUXT_APP_SECRET` - `pnx nuxt-og-image generate-secret` で生成されたキー
 
 その他のツールを使用している場合は、`.env` ファイルを設置するなどして各環境変数を設定してください。
 
@@ -33,7 +33,7 @@ pnpm install
 開発用サーバを起動します。
 
 ```bash
-pnpm dev
+pn dev
 ```
 
 ## 🏗 Build
@@ -41,19 +41,19 @@ pnpm dev
 ウェブサイトをビルドします。
 
 ```bash
-pnpm build
+pn build
 ```
 
 または、静的ファイルを生成します。
 
 ```bash
-pnpm generate
+pn generate
 ```
 
 ローカル環境でプレビューを確認するには、以下のコマンドを実行します。
 
 ```bash
-pnpm preview
+pn preview
 ```
 
 ## 🌟 Contributing

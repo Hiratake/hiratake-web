@@ -33,11 +33,6 @@ export default defineNuxtConfig({
     },
   },
   linkChecker: { enabled: false },
-  llms: {
-    domain: process.env.CF_PAGES_URL || 'https://hiratake.dev',
-    title: 'Hiratake Web',
-    description: 'ひらたけの個人ウェブサイトです。',
-  },
   modules: [
     '@nuxt/ui',
     '@nuxtjs/seo',
@@ -45,7 +40,6 @@ export default defineNuxtConfig({
     '@nuxt/content',
     '@nuxt/scripts',
     '@vueuse/nuxt',
-    'nuxt-llms',
   ],
   nitro: { prerender: { concurrency: 1, crawlLinks: true } },
   ogImage: { zeroRuntime: true, security: { renderTimeout: 45000 } },
@@ -76,7 +70,13 @@ export default defineNuxtConfig({
     defaultLocale: 'ja',
     trailingSlash: true,
   },
-  sitemap: { zeroRuntime: true },
+  sitemap: { minify: true, zeroRuntime: true },
+  skewProtection: {
+    storage: {
+      driver: 'fs-lite',
+      base: 'node_modules/.cache/nuxt/skew-protection',
+    },
+  },
   ui: { prose: true },
   $production: {
     scripts: {
