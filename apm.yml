@@ -11,6 +11,7 @@ targets:
 dependencies:
   apm:
     - nuxt/ui#v4
+    - vueuse/skills#vueuse-v15.0.0
   mcp: []
 includes: auto
 scripts: {}
