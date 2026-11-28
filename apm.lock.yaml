@@ -1,0 +1,3225 @@
+lockfile_version: '4'
+apm_version: 0.38.1
+manifest_targets:
+  - codex
+dependencies:
+  - repo_url: nuxt/ui
+    name: ui
+    host: github.com
+    resolved_commit: 64207da7971c6c998408c9562f12dcd73c383086
+    resolved_ref: v4
+    version: unknown
+    package_type: skill_bundle
+    deployed_files:
+      - .agents/skills/nuxt-ui
+      - .agents/skills/nuxt-ui/LICENSE.md
+      - .agents/skills/nuxt-ui/SKILL.md
+      - .agents/skills/nuxt-ui/references/components.md
+      - .agents/skills/nuxt-ui/references/guidelines/component-selection.md
+      - .agents/skills/nuxt-ui/references/guidelines/conventions.md
+      - .agents/skills/nuxt-ui/references/guidelines/design-system.md
+      - .agents/skills/nuxt-ui/references/guidelines/forms.md
+      - .agents/skills/nuxt-ui/references/layouts/chat.md
+      - .agents/skills/nuxt-ui/references/layouts/dashboard.md
+      - .agents/skills/nuxt-ui/references/layouts/docs.md
+      - .agents/skills/nuxt-ui/references/layouts/editor.md
+      - .agents/skills/nuxt-ui/references/layouts/landing.md
+      - .agents/skills/nuxt-ui/references/recipes/auth.md
+      - .agents/skills/nuxt-ui/references/recipes/data-tables.md
+      - .agents/skills/nuxt-ui/references/recipes/navigation.md
+      - .agents/skills/nuxt-ui/references/recipes/overlays.md
+    deployed_file_hashes:
+      .agents/skills/nuxt-ui/LICENSE.md: sha256:6ccc347b162c046440394e641e4ab2ac7238b3c7b81bb77c39435e7540ac7748
+      .agents/skills/nuxt-ui/SKILL.md: sha256:98f11149fc566b2826c15f1ce78b031bdd0476413b35b22bd0edb6df02ddb95e
+      .agents/skills/nuxt-ui/references/components.md: sha256:9648870284476354c4073f559c8892c670f67ecfed8a43af2ae7e8c0cca75526
+      .agents/skills/nuxt-ui/references/guidelines/component-selection.md: sha256:b4a7bd45aad3376848eca5a2b872365c0224bf06623f9453ce4f6a4d253f811c
+      .agents/skills/nuxt-ui/references/guidelines/conventions.md: sha256:3c9f73e7bf6625af90f457494282dc94db005d50a6e56086ca91da7cf31f2316
+      .agents/skills/nuxt-ui/references/guidelines/design-system.md: sha256:e6e42bd531f82fcc6ed4375edc704b4f7d19ae0d63fde52f0f418e5b6564ade6
+      .agents/skills/nuxt-ui/references/guidelines/forms.md: sha256:2d98511a0c12729cb7ffbe75913fd71ad33c0dadc1936489a98891e1d5feefab
+      .agents/skills/nuxt-ui/references/layouts/chat.md: sha256:fb089e1ca50b142b4242309847364d9b594aba6769d6883128aaef7b645bc9c9
+      .agents/skills/nuxt-ui/references/layouts/dashboard.md: sha256:fee6235a7cc3b08d2a2344d6980763c6613a8201ebf6c37998b4467443263e57
+      .agents/skills/nuxt-ui/references/layouts/docs.md: sha256:761190a26517a3084a7cabd673a84b040766ce15c6ae53378ab4519e3b419510
+      .agents/skills/nuxt-ui/references/layouts/editor.md: sha256:7bc96dd3b88e97adc70a8f124a46c256e36dccf17c0e1233bf88238f10d18d8d
+      .agents/skills/nuxt-ui/references/layouts/landing.md: sha256:c9732e93e82e9d9fb95d5d7e21e1104797ab19d8f66c244a1362862c307cefca
+      .agents/skills/nuxt-ui/references/recipes/auth.md: sha256:85721c3eac6d9d7ad5a882b9f7e124ba4ffc7368e5d8c3e06342017a1276fad0
+      .agents/skills/nuxt-ui/references/recipes/data-tables.md: sha256:bad64265045f212cdf18d73b6cef358779db1a9ad2e7903200a9a74dd05da525
+      .agents/skills/nuxt-ui/references/recipes/navigation.md: sha256:5c6a7ee61a6938596c12800e2647dec7e72dbc2c1149c84ee3cd9c4aee15755b
+      .agents/skills/nuxt-ui/references/recipes/overlays.md: sha256:109556d0a67687312bc3e462ed1b921cd0356309bfc07eef527c3ca4fc780063
+    content_hash: sha256:a54461c35b260b37e610d54ac2177e6b9795332d2562bc0c6a49e6af4d5e2a41
+    carried_licenses:
+      - path: skills/nuxt-ui/LICENSE.md
+        source: LICENSE.md
+        hash: sha256:6ccc347b162c046440394e641e4ab2ac7238b3c7b81bb77c39435e7540ac7748
+  - repo_url: vueuse/skills
+    name: d016d5f8f4816002
+    host: github.com
+    resolved_commit: cfa3a86aba0645eba8b79b92b4a90380628694e4
+    resolved_ref: vueuse-v15.0.0
+    version: cfa3a86
+    package_type: marketplace_plugin
+    deployed_files:
+      - .agents/skills/vueuse-functions
+      - .agents/skills/vueuse-functions/LICENSE
+      - .agents/skills/vueuse-functions/SKILL.md
+      - .agents/skills/vueuse-functions/references/computedAsync.md
+      - .agents/skills/vueuse-functions/references/computedEager.md
+      - .agents/skills/vueuse-functions/references/computedInject.md
+      - .agents/skills/vueuse-functions/references/computedWithControl.md
+      - .agents/skills/vueuse-functions/references/createDisposableDirective.md
+      - .agents/skills/vueuse-functions/references/createEventHook.md
+      - .agents/skills/vueuse-functions/references/createGenericProjection.md
+      - .agents/skills/vueuse-functions/references/createGlobalState.md
+      - .agents/skills/vueuse-functions/references/createInjectionState.md
+      - .agents/skills/vueuse-functions/references/createProjection.md
+      - .agents/skills/vueuse-functions/references/createRef.md
+      - .agents/skills/vueuse-functions/references/createReusableTemplate.md
+      - .agents/skills/vueuse-functions/references/createSharedComposable.md
+      - .agents/skills/vueuse-functions/references/createTemplatePromise.md
+      - .agents/skills/vueuse-functions/references/createUnrefFn.md
+      - .agents/skills/vueuse-functions/references/extendRef.md
+      - .agents/skills/vueuse-functions/references/from.md
+      - .agents/skills/vueuse-functions/references/get.md
+      - .agents/skills/vueuse-functions/references/injectLocal.md
+      - .agents/skills/vueuse-functions/references/isDefined.md
+      - .agents/skills/vueuse-functions/references/logicAnd.md
+      - .agents/skills/vueuse-functions/references/logicNot.md
+      - .agents/skills/vueuse-functions/references/logicOr.md
+      - .agents/skills/vueuse-functions/references/makeDestructurable.md
+      - .agents/skills/vueuse-functions/references/onClickOutside.md
+      - .agents/skills/vueuse-functions/references/onElementRemoval.md
+      - .agents/skills/vueuse-functions/references/onKeyStroke.md
+      - .agents/skills/vueuse-functions/references/onLongPress.md
+      - .agents/skills/vueuse-functions/references/onStartTyping.md
+      - .agents/skills/vueuse-functions/references/provideLocal.md
+      - .agents/skills/vueuse-functions/references/reactify.md
+      - .agents/skills/vueuse-functions/references/reactifyObject.md
+      - .agents/skills/vueuse-functions/references/reactiveComputed.md
+      - .agents/skills/vueuse-functions/references/reactiveOmit.md
+      - .agents/skills/vueuse-functions/references/reactivePick.md
+      - .agents/skills/vueuse-functions/references/refAutoReset.md
+      - .agents/skills/vueuse-functions/references/refDebounced.md
+      - .agents/skills/vueuse-functions/references/refDefault.md
+      - .agents/skills/vueuse-functions/references/refManualReset.md
+      - .agents/skills/vueuse-functions/references/refThrottled.md
+      - .agents/skills/vueuse-functions/references/refWithControl.md
+      - .agents/skills/vueuse-functions/references/set.md
+      - .agents/skills/vueuse-functions/references/syncRef.md
+      - .agents/skills/vueuse-functions/references/syncRefs.md
+      - .agents/skills/vueuse-functions/references/templateRef.md
+      - .agents/skills/vueuse-functions/references/toObserver.md
+      - .agents/skills/vueuse-functions/references/toReactive.md
+      - .agents/skills/vueuse-functions/references/toRef.md
+      - .agents/skills/vueuse-functions/references/toRefs.md
+      - .agents/skills/vueuse-functions/references/tryOnBeforeMount.md
+      - .agents/skills/vueuse-functions/references/tryOnBeforeUnmount.md
+      - .agents/skills/vueuse-functions/references/tryOnMounted.md
+      - .agents/skills/vueuse-functions/references/tryOnScopeDispose.md
+      - .agents/skills/vueuse-functions/references/tryOnUnmounted.md
+      - .agents/skills/vueuse-functions/references/unrefElement.md
+      - .agents/skills/vueuse-functions/references/until.md
+      - .agents/skills/vueuse-functions/references/useAbs.md
+      - .agents/skills/vueuse-functions/references/useActiveElement.md
+      - .agents/skills/vueuse-functions/references/useAnimate.md
+      - .agents/skills/vueuse-functions/references/useArrayDifference.md
+      - .agents/skills/vueuse-functions/references/useArrayEvery.md
+      - .agents/skills/vueuse-functions/references/useArrayFilter.md
+      - .agents/skills/vueuse-functions/references/useArrayFind.md
+      - .agents/skills/vueuse-functions/references/useArrayFindIndex.md
+      - .agents/skills/vueuse-functions/references/useArrayFindLast.md
+      - .agents/skills/vueuse-functions/references/useArrayIncludes.md
+      - .agents/skills/vueuse-functions/references/useArrayJoin.md
+      - .agents/skills/vueuse-functions/references/useArrayMap.md
+      - .agents/skills/vueuse-functions/references/useArrayReduce.md
+      - .agents/skills/vueuse-functions/references/useArraySome.md
+      - .agents/skills/vueuse-functions/references/useArrayUnique.md
+      - .agents/skills/vueuse-functions/references/useAsyncQueue.md
+      - .agents/skills/vueuse-functions/references/useAsyncState.md
+      - .agents/skills/vueuse-functions/references/useAsyncValidator.md
+      - .agents/skills/vueuse-functions/references/useAuth.md
+      - .agents/skills/vueuse-functions/references/useAverage.md
+      - .agents/skills/vueuse-functions/references/useAxios.md
+      - .agents/skills/vueuse-functions/references/useBase64.md
+      - .agents/skills/vueuse-functions/references/useBattery.md
+      - .agents/skills/vueuse-functions/references/useBluetooth.md
+      - .agents/skills/vueuse-functions/references/useBreakpoints.md
+      - .agents/skills/vueuse-functions/references/useBroadcastChannel.md
+      - .agents/skills/vueuse-functions/references/useBrowserLocation.md
+      - .agents/skills/vueuse-functions/references/useCached.md
+      - .agents/skills/vueuse-functions/references/useCeil.md
+      - .agents/skills/vueuse-functions/references/useChangeCase.md
+      - .agents/skills/vueuse-functions/references/useClamp.md
+      - .agents/skills/vueuse-functions/references/useClipboard.md
+      - .agents/skills/vueuse-functions/references/useClipboardItems.md
+      - .agents/skills/vueuse-functions/references/useCloned.md
+      - .agents/skills/vueuse-functions/references/useColorMode.md
+      - .agents/skills/vueuse-functions/references/useConfirmDialog.md
+      - .agents/skills/vueuse-functions/references/useCookies.md
+      - .agents/skills/vueuse-functions/references/useCountdown.md
+      - .agents/skills/vueuse-functions/references/useCounter.md
+      - .agents/skills/vueuse-functions/references/useCssSupports.md
+      - .agents/skills/vueuse-functions/references/useCssVar.md
+      - .agents/skills/vueuse-functions/references/useCurrentElement.md
+      - .agents/skills/vueuse-functions/references/useCycleList.md
+      - .agents/skills/vueuse-functions/references/useDark.md
+      - .agents/skills/vueuse-functions/references/useDateFormat.md
+      - .agents/skills/vueuse-functions/references/useDebounceFn.md
+      - .agents/skills/vueuse-functions/references/useDebouncedRefHistory.md
+      - .agents/skills/vueuse-functions/references/useDeviceMotion.md
+      - .agents/skills/vueuse-functions/references/useDeviceOrientation.md
+      - .agents/skills/vueuse-functions/references/useDevicePixelRatio.md
+      - .agents/skills/vueuse-functions/references/useDevicesList.md
+      - .agents/skills/vueuse-functions/references/useDisplayMedia.md
+      - .agents/skills/vueuse-functions/references/useDocumentVisibility.md
+      - .agents/skills/vueuse-functions/references/useDraggable.md
+      - .agents/skills/vueuse-functions/references/useDrauu.md
+      - .agents/skills/vueuse-functions/references/useDropZone.md
+      - .agents/skills/vueuse-functions/references/useElementBounding.md
+      - .agents/skills/vueuse-functions/references/useElementByPoint.md
+      - .agents/skills/vueuse-functions/references/useElementHover.md
+      - .agents/skills/vueuse-functions/references/useElementOverflow.md
+      - .agents/skills/vueuse-functions/references/useElementSize.md
+      - .agents/skills/vueuse-functions/references/useElementVisibility.md
+      - .agents/skills/vueuse-functions/references/useEventBus.md
+      - .agents/skills/vueuse-functions/references/useEventListener.md
+      - .agents/skills/vueuse-functions/references/useEventSource.md
+      - .agents/skills/vueuse-functions/references/useExtractedObservable.md
+      - .agents/skills/vueuse-functions/references/useEyeDropper.md
+      - .agents/skills/vueuse-functions/references/useFavicon.md
+      - .agents/skills/vueuse-functions/references/useFetch.md
+      - .agents/skills/vueuse-functions/references/useFileDialog.md
+      - .agents/skills/vueuse-functions/references/useFileSystemAccess.md
+      - .agents/skills/vueuse-functions/references/useFirestore.md
+      - .agents/skills/vueuse-functions/references/useFloor.md
+      - .agents/skills/vueuse-functions/references/useFocus.md
+      - .agents/skills/vueuse-functions/references/useFocusTrap.md
+      - .agents/skills/vueuse-functions/references/useFocusWithin.md
+      - .agents/skills/vueuse-functions/references/useFps.md
+      - .agents/skills/vueuse-functions/references/useFullscreen.md
+      - .agents/skills/vueuse-functions/references/useFuse.md
+      - .agents/skills/vueuse-functions/references/useGamepad.md
+      - .agents/skills/vueuse-functions/references/useGeolocation.md
+      - .agents/skills/vueuse-functions/references/useIDBKeyval.md
+      - .agents/skills/vueuse-functions/references/useIdle.md
+      - .agents/skills/vueuse-functions/references/useImage.md
+      - .agents/skills/vueuse-functions/references/useInfiniteScroll.md
+      - .agents/skills/vueuse-functions/references/useIntersectionObserver.md
+      - .agents/skills/vueuse-functions/references/useInterval.md
+      - .agents/skills/vueuse-functions/references/useIntervalFn.md
+      - .agents/skills/vueuse-functions/references/useIpcRenderer.md
+      - .agents/skills/vueuse-functions/references/useIpcRendererInvoke.md
+      - .agents/skills/vueuse-functions/references/useIpcRendererOn.md
+      - .agents/skills/vueuse-functions/references/useJwt.md
+      - .agents/skills/vueuse-functions/references/useKeyModifier.md
+      - .agents/skills/vueuse-functions/references/useLastChanged.md
+      - .agents/skills/vueuse-functions/references/useLiveAnnouncer.md
+      - .agents/skills/vueuse-functions/references/useLocalStorage.md
+      - .agents/skills/vueuse-functions/references/useMagicKeys.md
+      - .agents/skills/vueuse-functions/references/useManualRefHistory.md
+      - .agents/skills/vueuse-functions/references/useMath.md
+      - .agents/skills/vueuse-functions/references/useMax.md
+      - .agents/skills/vueuse-functions/references/useMediaControls.md
+      - .agents/skills/vueuse-functions/references/useMediaQuery.md
+      - .agents/skills/vueuse-functions/references/useMemoize.md
+      - .agents/skills/vueuse-functions/references/useMemory.md
+      - .agents/skills/vueuse-functions/references/useMin.md
+      - .agents/skills/vueuse-functions/references/useMounted.md
+      - .agents/skills/vueuse-functions/references/useMouse.md
+      - .agents/skills/vueuse-functions/references/useMouseInElement.md
+      - .agents/skills/vueuse-functions/references/useMousePressed.md
+      - .agents/skills/vueuse-functions/references/useMutationObserver.md
+      - .agents/skills/vueuse-functions/references/useNProgress.md
+      - .agents/skills/vueuse-functions/references/useNavigatorLanguage.md
+      - .agents/skills/vueuse-functions/references/useNetwork.md
+      - .agents/skills/vueuse-functions/references/useNow.md
+      - .agents/skills/vueuse-functions/references/useObjectUrl.md
+      - .agents/skills/vueuse-functions/references/useObservable.md
+      - .agents/skills/vueuse-functions/references/useOffsetPagination.md
+      - .agents/skills/vueuse-functions/references/useOnline.md
+      - .agents/skills/vueuse-functions/references/usePageLeave.md
+      - .agents/skills/vueuse-functions/references/useParallax.md
+      - .agents/skills/vueuse-functions/references/useParentElement.md
+      - .agents/skills/vueuse-functions/references/usePerformanceObserver.md
+      - .agents/skills/vueuse-functions/references/usePermission.md
+      - .agents/skills/vueuse-functions/references/usePointer.md
+      - .agents/skills/vueuse-functions/references/usePointerLock.md
+      - .agents/skills/vueuse-functions/references/usePointerSwipe.md
+      - .agents/skills/vueuse-functions/references/usePrecision.md
+      - .agents/skills/vueuse-functions/references/usePreferredColorScheme.md
+      - .agents/skills/vueuse-functions/references/usePreferredContrast.md
+      - .agents/skills/vueuse-functions/references/usePreferredDark.md
+      - .agents/skills/vueuse-functions/references/usePreferredLanguages.md
+      - .agents/skills/vueuse-functions/references/usePreferredReducedMotion.md
+      - .agents/skills/vueuse-functions/references/usePreferredReducedTransparency.md
+      - .agents/skills/vueuse-functions/references/usePrevious.md
+      - .agents/skills/vueuse-functions/references/useProjection.md
+      - .agents/skills/vueuse-functions/references/useQRCode.md
+      - .agents/skills/vueuse-functions/references/useRTDB.md
+      - .agents/skills/vueuse-functions/references/useRafFn.md
+      - .agents/skills/vueuse-functions/references/useRefHistory.md
+      - .agents/skills/vueuse-functions/references/useResizeObserver.md
+      - .agents/skills/vueuse-functions/references/useRound.md
+      - .agents/skills/vueuse-functions/references/useRouteHash.md
+      - .agents/skills/vueuse-functions/references/useRouteParams.md
+      - .agents/skills/vueuse-functions/references/useRouteQuery.md
+      - .agents/skills/vueuse-functions/references/useSSRWidth.md
+      - .agents/skills/vueuse-functions/references/useScreenOrientation.md
+      - .agents/skills/vueuse-functions/references/useScreenSafeArea.md
+      - .agents/skills/vueuse-functions/references/useScriptTag.md
+      - .agents/skills/vueuse-functions/references/useScroll.md
+      - .agents/skills/vueuse-functions/references/useScrollLock.md
+      - .agents/skills/vueuse-functions/references/useSessionStorage.md
+      - .agents/skills/vueuse-functions/references/useShare.md
+      - .agents/skills/vueuse-functions/references/useSortable.md
+      - .agents/skills/vueuse-functions/references/useSorted.md
+      - .agents/skills/vueuse-functions/references/useSpeechRecognition.md
+      - .agents/skills/vueuse-functions/references/useSpeechSynthesis.md
+      - .agents/skills/vueuse-functions/references/useStepper.md
+      - .agents/skills/vueuse-functions/references/useStorage.md
+      - .agents/skills/vueuse-functions/references/useStorageAsync.md
+      - .agents/skills/vueuse-functions/references/useStyleTag.md
+      - .agents/skills/vueuse-functions/references/useSubject.md
+      - .agents/skills/vueuse-functions/references/useSubscription.md
+      - .agents/skills/vueuse-functions/references/useSum.md
+      - .agents/skills/vueuse-functions/references/useSupported.md
+      - .agents/skills/vueuse-functions/references/useSwipe.md
+      - .agents/skills/vueuse-functions/references/useTemplateRefsList.md
+      - .agents/skills/vueuse-functions/references/useTemporalNow.md
+      - .agents/skills/vueuse-functions/references/useTextDirection.md
+      - .agents/skills/vueuse-functions/references/useTextSelection.md
+      - .agents/skills/vueuse-functions/references/useTextareaAutosize.md
+      - .agents/skills/vueuse-functions/references/useThrottleFn.md
+      - .agents/skills/vueuse-functions/references/useThrottledRefHistory.md
+      - .agents/skills/vueuse-functions/references/useTimeAgo.md
+      - .agents/skills/vueuse-functions/references/useTimeAgoIntl.md
+      - .agents/skills/vueuse-functions/references/useTimeout.md
+      - .agents/skills/vueuse-functions/references/useTimeoutFn.md
+      - .agents/skills/vueuse-functions/references/useTimeoutPoll.md
+      - .agents/skills/vueuse-functions/references/useTimestamp.md
+      - .agents/skills/vueuse-functions/references/useTitle.md
+      - .agents/skills/vueuse-functions/references/useToNumber.md
+      - .agents/skills/vueuse-functions/references/useToString.md
+      - .agents/skills/vueuse-functions/references/useToggle.md
+      - .agents/skills/vueuse-functions/references/useTransition.md
+      - .agents/skills/vueuse-functions/references/useTrunc.md
+      - .agents/skills/vueuse-functions/references/useUrlSearchParams.md
+      - .agents/skills/vueuse-functions/references/useUserMedia.md
+      - .agents/skills/vueuse-functions/references/useVModel.md
+      - .agents/skills/vueuse-functions/references/useVModels.md
+      - .agents/skills/vueuse-functions/references/useVibrate.md
+      - .agents/skills/vueuse-functions/references/useVirtualList.md
+      - .agents/skills/vueuse-functions/references/useWakeLock.md
+      - .agents/skills/vueuse-functions/references/useWebMCP.md
+      - .agents/skills/vueuse-functions/references/useWebNotification.md
+      - .agents/skills/vueuse-functions/references/useWebSocket.md
+      - .agents/skills/vueuse-functions/references/useWebWorker.md
+      - .agents/skills/vueuse-functions/references/useWebWorkerFn.md
+      - .agents/skills/vueuse-functions/references/useWindowFocus.md
+      - .agents/skills/vueuse-functions/references/useWindowScroll.md
+      - .agents/skills/vueuse-functions/references/useWindowSize.md
+      - .agents/skills/vueuse-functions/references/useZoomFactor.md
+      - .agents/skills/vueuse-functions/references/useZoomLevel.md
+      - .agents/skills/vueuse-functions/references/watchArray.md
+      - .agents/skills/vueuse-functions/references/watchAtMost.md
+      - .agents/skills/vueuse-functions/references/watchDebounced.md
+      - .agents/skills/vueuse-functions/references/watchDeep.md
+      - .agents/skills/vueuse-functions/references/watchExtractedObservable.md
+      - .agents/skills/vueuse-functions/references/watchIgnorable.md
+      - .agents/skills/vueuse-functions/references/watchImmediate.md
+      - .agents/skills/vueuse-functions/references/watchOnce.md
+      - .agents/skills/vueuse-functions/references/watchPausable.md
+      - .agents/skills/vueuse-functions/references/watchThrottled.md
+      - .agents/skills/vueuse-functions/references/watchTriggerable.md
+      - .agents/skills/vueuse-functions/references/watchWithFilter.md
+      - .agents/skills/vueuse-functions/references/whenever.md
+    deployed_file_hashes:
+      .agents/skills/vueuse-functions/LICENSE: sha256:44d916aa917ef8232a46995f444a3997956468ced8bef4354a60671bc5d4c2f4
+      .agents/skills/vueuse-functions/SKILL.md: sha256:ec22fb39602221cef5165dac22232e5012fcbd20be276c0abf5311fb6fea3793
+      .agents/skills/vueuse-functions/references/computedAsync.md: sha256:028f0643b3f5a6f5df4be8486ab6373fe7eb1c261db51f794b7f9f44c0fa349b
+      .agents/skills/vueuse-functions/references/computedEager.md: sha256:ec8db12bc47db477a6eca2786f3052201d70d96f22a165b2a590e9599210169d
+      .agents/skills/vueuse-functions/references/computedInject.md: sha256:6d617c53655acfb24eafa9e02a6f47955f6860b799ce122bb96fdc02bcd8faff
+      .agents/skills/vueuse-functions/references/computedWithControl.md: sha256:198d61123decfbf809580a5875f510d356e41bf6cfd53ec845ae3959b730c83a
+      .agents/skills/vueuse-functions/references/createDisposableDirective.md: sha256:dfb1689420b06b16fdf24b51254a69ca7ab699a56e49dbfdecf9e9db88b5e300
+      .agents/skills/vueuse-functions/references/createEventHook.md: sha256:ab6bb48f7cc25b30654e48b40410e14c4ba25ea151d0aae17327d1eedae1864e
+      .agents/skills/vueuse-functions/references/createGenericProjection.md: sha256:57a8dbad37f715b83a98bb3ca326f15b59e6b323e485e63c53fd85bb08356ed3
+      .agents/skills/vueuse-functions/references/createGlobalState.md: sha256:43a260724cb8610553d487a4cd59591efbc61a9876c07dbea04b07381ca7479f
+      .agents/skills/vueuse-functions/references/createInjectionState.md: sha256:5d48b46fb0a0debe31494e61165c0979c7ba4da90d1241ac88f84bf5b45124fe
+      .agents/skills/vueuse-functions/references/createProjection.md: sha256:5180e0a5875242a0067e8b3ee57a9cee53c772846d83f04c45d1c2475316966e
+      .agents/skills/vueuse-functions/references/createRef.md: sha256:3794cc3878c1729122e76f88849b9eb168399c2aa9f9f62629d4c53d44944805
+      .agents/skills/vueuse-functions/references/createReusableTemplate.md: sha256:ebd79a51ce3cd0c1e17dd6a1d10f08a099b2cee732155599d81e2ebed2a73b71
+      .agents/skills/vueuse-functions/references/createSharedComposable.md: sha256:6dd2dc0146bcd5b3d2daf8f960e1c9f1de44c8861d559135c0ca4ac67a0dcf28
+      .agents/skills/vueuse-functions/references/createTemplatePromise.md: sha256:d68bb260bef8340cf78dc90d13eb1c9517f83e7be33c7157710344ed91bc56f4
+      .agents/skills/vueuse-functions/references/createUnrefFn.md: sha256:1119a0b7b0fc2047353b7c8bb83b5a6aba8917fd914bc012bf3eada3db6e8233
+      .agents/skills/vueuse-functions/references/extendRef.md: sha256:54969789cfc8d0c2839d00d52f70b7dfaaba9f53fedac686608c1acd71df20f1
+      .agents/skills/vueuse-functions/references/from.md: sha256:ca67668da4a08bc3aeba57cf6eb5202b9e5b7ceab9971965fb57e28671e5c8ee
+      .agents/skills/vueuse-functions/references/get.md: sha256:ffb0de9a74e9522829296ab2a3b3185a4329aa28e84004952507dfa8d61dc2b7
+      .agents/skills/vueuse-functions/references/injectLocal.md: sha256:e915862782045042fc61d643880ab7e30a75e3eb6fad58e052bfeaf26815a775
+      .agents/skills/vueuse-functions/references/isDefined.md: sha256:c1448d81a120879d8dd3349bdb1f2583e02fa81cfd23b90adbb0b9943b5aab77
+      .agents/skills/vueuse-functions/references/logicAnd.md: sha256:6798d1e07ca411ec090b34de1720940f263a732d92dd2b98a5f8d86dbd360430
+      .agents/skills/vueuse-functions/references/logicNot.md: sha256:e71f449ae2a30a7bad8eae1cd6daa265ada83bf1937546d7215de6a6e14db87a
+      .agents/skills/vueuse-functions/references/logicOr.md: sha256:f09d0de683078fd1fe8a233e9fb399589fb1b5e0cd2a2e304455a0902301e0c7
+      .agents/skills/vueuse-functions/references/makeDestructurable.md: sha256:c5d6304bb7065a8da1e29c5881872221d8cb04ae14d978542a997fdc23d869fb
+      .agents/skills/vueuse-functions/references/onClickOutside.md: sha256:ebd896bdcce2dd6cb1e3d727ba1492629d4631dd1aa89a960576a5f85cad4ab4
+      .agents/skills/vueuse-functions/references/onElementRemoval.md: sha256:769112d5e08512d4c51be8d7328f640dab9314f259b6c80a64d5638f111f448d
+      .agents/skills/vueuse-functions/references/onKeyStroke.md: sha256:40e332a505fda01c426ac685d1a1e2c87d044b234da24ae56e111350d2c11424
+      .agents/skills/vueuse-functions/references/onLongPress.md: sha256:aa207d8f8d95d57017ae0cfcf92046d0646137fd96ad80eb1b29eb26ad1a9efe
+      .agents/skills/vueuse-functions/references/onStartTyping.md: sha256:00aae43ae5dac3b3d864db9b93ff6548963f99b6354567fcf9d9cdedfba0ffef
+      .agents/skills/vueuse-functions/references/provideLocal.md: sha256:731a48d2be7dbfae11b3ffd9e7954acc49b6303d6b3e37e35fa611c5b8e0dbb1
+      .agents/skills/vueuse-functions/references/reactify.md: sha256:e09b52ccefd75ef8951e744e892799f0cdbd64e10462f0c307f8c79ebc414cb8
+      .agents/skills/vueuse-functions/references/reactifyObject.md: sha256:38d6bd16dffd13abf893a6a33ef2d7a7a3514e4810865ae404b8a7054df02a5f
+      .agents/skills/vueuse-functions/references/reactiveComputed.md: sha256:e77c31e7da5c85b2976c330aef5f02292ce78ee9cf974f51595ef3751f3deef0
+      .agents/skills/vueuse-functions/references/reactiveOmit.md: sha256:06021647f000be3a6dd33eece42db32b31f13a59d8e967539b9b3d1ee9ac63c6
+      .agents/skills/vueuse-functions/references/reactivePick.md: sha256:ec20b59e63ba42c17b1973fe83d4a8f550a6e114b6f6477705b480678addf06d
+      .agents/skills/vueuse-functions/references/refAutoReset.md: sha256:ec83c77303e99cddac04a25b74e21e7860412f88084da7a239215ccbeb982288
+      .agents/skills/vueuse-functions/references/refDebounced.md: sha256:2602eadb5103a66fe8fa1e9b1972866b6301617f422e3dfe4f385cd8926daed8
+      .agents/skills/vueuse-functions/references/refDefault.md: sha256:541357fef0a38f4ece4caabefd3d44bd2fd0278774a0ae08730322ed5a38379f
+      .agents/skills/vueuse-functions/references/refManualReset.md: sha256:2953106fe00297f9d3cf2e50a0cb8d1bf95bbd14c43695c811467dab9b7269a7
+      .agents/skills/vueuse-functions/references/refThrottled.md: sha256:90f5505e677e8e3f283e96587ebd5050b0d76c64e03a15550999b6b02e8fb76d
+      .agents/skills/vueuse-functions/references/refWithControl.md: sha256:8aa2d32fb608d9e4c3ddc84b5c4acc5257acba177bf1c1d74c626b17d272aa48
+      .agents/skills/vueuse-functions/references/set.md: sha256:6dfa9a73dd8f5420520521c56029ec4c83cbf3b4b5244d646fb6106231899118
+      .agents/skills/vueuse-functions/references/syncRef.md: sha256:00561019c13e0d593c9101069ced5693335c7f99d33b316b477677110d85a162
+      .agents/skills/vueuse-functions/references/syncRefs.md: sha256:02d90ad30334b791e67ff721c39d81a2997f3c2965fbcf75c8094cbedf6ec74d
+      .agents/skills/vueuse-functions/references/templateRef.md: sha256:a01df713abcda0515b7d6c8d8491a77d7d1aa919cf96468f128f512b79249920
+      .agents/skills/vueuse-functions/references/toObserver.md: sha256:d8207f7dae7d1d0decc0a717e6b05c53177a0ca1fe11d79620371a4f6a36f0a6
+      .agents/skills/vueuse-functions/references/toReactive.md: sha256:7e8fda81ee8b655ac649ae386ec86ccd2d7c7be673f21db7c30dab96f23daa05
+      .agents/skills/vueuse-functions/references/toRef.md: sha256:7b5bd1aeee7f1306ae7f86f5aae89b6178b6bd7f015b5fc98b603c8fe849e98f
+      .agents/skills/vueuse-functions/references/toRefs.md: sha256:2f741ea8d5ad21e70542c2b7017fc4f75aeb08e0dc653312ab13bd836664cd9b
+      .agents/skills/vueuse-functions/references/tryOnBeforeMount.md: sha256:0054b94d4f3fcf6e6ec86e21acdaa6b86f759db5e92b7a1fac5d8aaefb530131
+      .agents/skills/vueuse-functions/references/tryOnBeforeUnmount.md: sha256:5313df961b2d7f1662b772ef4200b02f3f28e6aee1f88610e394a40e7601aca5
+      .agents/skills/vueuse-functions/references/tryOnMounted.md: sha256:fae5a4d145772ac6e491361727d27f8edad81ed7149c2f8cc232e22a4e625dcd
+      .agents/skills/vueuse-functions/references/tryOnScopeDispose.md: sha256:31ffa27dcfba3cfcbab6d5ce4276d70d7de021f7833b637cd9469cec2bdd2a5d
+      .agents/skills/vueuse-functions/references/tryOnUnmounted.md: sha256:276289803fd49ab0fbf91f9d50e7af5ac6c1201ae3fa7df3e227e722ceab0a92
+      .agents/skills/vueuse-functions/references/unrefElement.md: sha256:95d3a8897a3804abe9ff27ed91faf3523ddf168c10586121a30e9a4508c5ad38
+      .agents/skills/vueuse-functions/references/until.md: sha256:27c86fb53d6851064354281524222865468934dfd884d5e6930ba69c16191163
+      .agents/skills/vueuse-functions/references/useAbs.md: sha256:cbbace8ba591904d27db87e5ce24e05be72dc50b368413bdff29ec2ebced0fa9
+      .agents/skills/vueuse-functions/references/useActiveElement.md: sha256:48870732e4f46f15ad01955876782f481c32600ba7b599ccc762e28ab44f3e65
+      .agents/skills/vueuse-functions/references/useAnimate.md: sha256:b435cb3bd501300e257900dfde15ea45647f1cd7084450bf3365391d0bd13e7b
+      .agents/skills/vueuse-functions/references/useArrayDifference.md: sha256:b86f7875b1b5e893f6e30bdd02fd2b1e9f704142b15811cd21873016a2d142bb
+      .agents/skills/vueuse-functions/references/useArrayEvery.md: sha256:495419d7fde224e08729ecb7ad45996af4b719cdf6cab516aef71600e466dc09
+      .agents/skills/vueuse-functions/references/useArrayFilter.md: sha256:c231c34b1e621fde7c5299acf54b34dcc6d8b6a8f48cd6e8187e6e1d8bbc0a98
+      .agents/skills/vueuse-functions/references/useArrayFind.md: sha256:b70c7c09613b42cf43816bd9d18a7b91aabf3bac09499bda8b1ad8a9e95e1a8b
+      .agents/skills/vueuse-functions/references/useArrayFindIndex.md: sha256:2de584ceff0f0bd48aec70635d9294c76172ea2bcfe6c10ee29d9736e36a273b
+      .agents/skills/vueuse-functions/references/useArrayFindLast.md: sha256:7cb4c219fce5d961ae1a046da39074f8c7e7080a1691b830529d7fd5de3bbc6e
+      .agents/skills/vueuse-functions/references/useArrayIncludes.md: sha256:0cec4f26d465b5e9c7741b6a0159894100d27d8671684cc5bb24d80e8dae4d72
+      .agents/skills/vueuse-functions/references/useArrayJoin.md: sha256:cffccf556f745f9962ea3fe60c619f125d905a558311c7649f79ab5e2a73cc88
+      .agents/skills/vueuse-functions/references/useArrayMap.md: sha256:a2846e305821761d6bc23a9800c949f9fb27c8aa98ff31a5489b3609ed2a8165
+      .agents/skills/vueuse-functions/references/useArrayReduce.md: sha256:5a522fbc13256a46c7b840991921aed06b3270a42e812d05bb0efaf2b7e9dd4c
+      .agents/skills/vueuse-functions/references/useArraySome.md: sha256:3a3e9ef69e26db9073d6c209abbc8604dafb0fc1846a2b0fc2e025c064459528
+      .agents/skills/vueuse-functions/references/useArrayUnique.md: sha256:67182eba431c63436bc65eaa70266c771018304766b6da13321344c62ac63380
+      .agents/skills/vueuse-functions/references/useAsyncQueue.md: sha256:2ee7a6ef33dbb3fe79bf76ee1579e631e64d99813071ec80c87969b44b092d27
+      .agents/skills/vueuse-functions/references/useAsyncState.md: sha256:6fcbbc78551132a1b4e69e203b729b0e8310c99daf75bd301c29687b00610253
+      .agents/skills/vueuse-functions/references/useAsyncValidator.md: sha256:625e339bc1a519fcb28d47f65d20cfa9cc43eb732e2abaaefce1d2be3f5996bb
+      .agents/skills/vueuse-functions/references/useAuth.md: sha256:ec93251e3c77f2cd2eeec026366c107083fa31784af09d458d6c94f080c14d37
+      .agents/skills/vueuse-functions/references/useAverage.md: sha256:587ff28415451a710002b56f2de7ee7c03d29a166e10b643dac10da8068e937e
+      .agents/skills/vueuse-functions/references/useAxios.md: sha256:91468e8241e390c7ca0fc2f44345716ccbe8133328d614fa50bd02ff844e8c87
+      .agents/skills/vueuse-functions/references/useBase64.md: sha256:6c1c6ac203d658368695b44001ae173934de29d7dd30a2428427e9f26f53df60
+      .agents/skills/vueuse-functions/references/useBattery.md: sha256:c3acfe097e7afbc8b1bee4d90aaf4f2e9e860caf0dcfd44f029a1056f8304165
+      .agents/skills/vueuse-functions/references/useBluetooth.md: sha256:48a5d47c82360f7bfcba2b624be7a735b3a16d99de3aa9678f32333304718c11
+      .agents/skills/vueuse-functions/references/useBreakpoints.md: sha256:42510de5fc7d4cb034ee499c12bb24fd0fe1b8cff6a1dd4466a9bb7057305446
+      .agents/skills/vueuse-functions/references/useBroadcastChannel.md: sha256:629812275ffc2bf2d126c66a58ec39ca53239b50fde766dc5aa85e37de2e4751
+      .agents/skills/vueuse-functions/references/useBrowserLocation.md: sha256:bd4f8796041a0d729390233e2a0e654b42bac60eb573d26ea8e52e636b859917
+      .agents/skills/vueuse-functions/references/useCached.md: sha256:5981229035fb0033064a27a358424d51423e978ff2ab607c0cf6f1645d3e143e
+      .agents/skills/vueuse-functions/references/useCeil.md: sha256:f97c34b8cbe729d20ef694d274b5d41a56d0f2c6779946b4f273b6b56f89107c
+      .agents/skills/vueuse-functions/references/useChangeCase.md: sha256:160b3201fd8ebc81fe0ded2df1e6038566a16c3c94406d77e3b5e7dbc6f80cc3
+      .agents/skills/vueuse-functions/references/useClamp.md: sha256:0fe500bfb884005bfbe6fe4a40704f7580b83b152fca5f07e3b80a7a04a05ed7
+      .agents/skills/vueuse-functions/references/useClipboard.md: sha256:5e4d1350e1fc4f1acb63bb26cd53f63186362610cf1763ed827bba501d6482a2
+      .agents/skills/vueuse-functions/references/useClipboardItems.md: sha256:34a754a49c8392e6eb82f99bb000647ec257dc67631268ef6e9bc5afddfdeeba
+      .agents/skills/vueuse-functions/references/useCloned.md: sha256:b2f1adac36f1e9b299d5e5026c3219564714c8be5f1a5f778153b332182d5cc4
+      .agents/skills/vueuse-functions/references/useColorMode.md: sha256:5a1cb244cd4cf1641be5feee115e98911a64f23dedf26f13a5711cc53b9697b1
+      .agents/skills/vueuse-functions/references/useConfirmDialog.md: sha256:023d0ee359871d39ec10844448765c4fc51ee3b7ac7a90626a6d69df98ce81e8
+      .agents/skills/vueuse-functions/references/useCookies.md: sha256:22c1f1ef60150e2067de151197b07ddf9ecef88e2369101ddfb65c6c5c69dd4c
+      .agents/skills/vueuse-functions/references/useCountdown.md: sha256:7e33c7a03fb78a2c3a10dae6f894bea3b4ec7ba298d7144ab1be3bae9a8f9e29
+      .agents/skills/vueuse-functions/references/useCounter.md: sha256:5a60fbcfcdd2f98b0cecf62b73483af26ebd299abcb126fe8286729f64d4eb22
+      .agents/skills/vueuse-functions/references/useCssSupports.md: sha256:f1d5de50de2057dbfd10eff772feab47242b706ee7f23bfa29befa882286c1c6
+      .agents/skills/vueuse-functions/references/useCssVar.md: sha256:fdcfcd678a5220e2548108d285a8963f3cc1d436c6cb4bb9ca63c1899a63c0ee
+      .agents/skills/vueuse-functions/references/useCurrentElement.md: sha256:b6d3122b1596f9d4eb08c4b177496a5c5e0d48f7b3b52d49205e3229aa5a6878
+      .agents/skills/vueuse-functions/references/useCycleList.md: sha256:a5b62630d0666798ba70459e708d77cafa473d9ebf93ac8c937da9b2edfb5854
+      .agents/skills/vueuse-functions/references/useDark.md: sha256:b53e0f33e08bd5eecbc7f106691b7abb86a7b329967c6c800aa27e3100f6dc50
+      .agents/skills/vueuse-functions/references/useDateFormat.md: sha256:055e785b7a5cf6ca5cb1bbe24be50ec174f8b25d45991e588f419aaf38761407
+      .agents/skills/vueuse-functions/references/useDebounceFn.md: sha256:ebeea5995010699015f4e13e433654877d13ddc55a13c174044f84b3dec25648
+      .agents/skills/vueuse-functions/references/useDebouncedRefHistory.md: sha256:56b7241ae053baa0dfb85c18df0aa4b87fc2e1e16a70dee35a86f72e25f86237
+      .agents/skills/vueuse-functions/references/useDeviceMotion.md: sha256:58e6ed59863da04e7e58dd471d4528987be925b6b3da65520f07920c0a22be56
+      .agents/skills/vueuse-functions/references/useDeviceOrientation.md: sha256:5ef59fe7752a4c4e2ce685f3715d9777689beaf3a5d96d9c45dcb2dc2a20412b
+      .agents/skills/vueuse-functions/references/useDevicePixelRatio.md: sha256:8afc7b73471a25d7894656f41d5593269e95bbc3a2eec98572fef5e30906f40b
+      .agents/skills/vueuse-functions/references/useDevicesList.md: sha256:b82ec83265c1778175a376ffd0f957d63afb41988feb49e8c52ffc7fb9213208
+      .agents/skills/vueuse-functions/references/useDisplayMedia.md: sha256:e599542193e881a8523a3e610d29a0b7020314dd9e140ab99dae6d73db3978ae
+      .agents/skills/vueuse-functions/references/useDocumentVisibility.md: sha256:e35a63d04a7a69b5e0bd5eb3f3e7427d6ca725ee7c4cdb16f8e41deccd3e1cd3
+      .agents/skills/vueuse-functions/references/useDraggable.md: sha256:1888d36900fe1157a51b331d87fc3d759e6badb74380000367e9183cd40bc78b
+      .agents/skills/vueuse-functions/references/useDrauu.md: sha256:9ba4de9433b34e5ec9de1fe3d358daa9062fe15e76e1550b798837a5cac062a6
+      .agents/skills/vueuse-functions/references/useDropZone.md: sha256:f759db632c1fd29222ea8521ec61604986d09b4dbe4e4bbec093135683fe739f
+      .agents/skills/vueuse-functions/references/useElementBounding.md: sha256:fc5825b79aa7a5a7ace599d5763c06ea060565bdc65cbfe603fe734a9adf38b8
+      .agents/skills/vueuse-functions/references/useElementByPoint.md: sha256:9a4c5ee890e9c1a56a0d4640807608e70c7a60040742eb3b5d18a9c82c5b9ccf
+      .agents/skills/vueuse-functions/references/useElementHover.md: sha256:f0d5db48bbf1d4948a7d5d44b8b4f08bcf98cfbe97bd8a276c27d9c3dd0e8802
+      .agents/skills/vueuse-functions/references/useElementOverflow.md: sha256:36c12072336fe0702034d0e5884298f809561437b805fe02f69fe23969d97c99
+      .agents/skills/vueuse-functions/references/useElementSize.md: sha256:7ce07a9a4a143a754e04c20a6ceff46efe9c925bee8642bbfc2c21cae606746d
+      .agents/skills/vueuse-functions/references/useElementVisibility.md: sha256:71f6aed9041cf3216133a95b331ea1539beca3b605e32fae8fb0dc3d29ed4fa9
+      .agents/skills/vueuse-functions/references/useEventBus.md: sha256:0a1ad55654b2bf3d11109554fa2cff7b4aa43e27f3aa1801064dcbd73fc42fdb
+      .agents/skills/vueuse-functions/references/useEventListener.md: sha256:7b8857ef57999ee7c31362c3087a0b67a0eaa2929b9ee9b1025595d6a79155af
+      .agents/skills/vueuse-functions/references/useEventSource.md: sha256:1199117998a695e8f660e72cac258a9c4eb19fa0de43d3ff6f50b767c55f5fbc
+      .agents/skills/vueuse-functions/references/useExtractedObservable.md: sha256:f59ace8c9aac254ccd9deea3415d76a94bfc22d4cefefd7f208fe2d203519163
+      .agents/skills/vueuse-functions/references/useEyeDropper.md: sha256:b55a75e0e074f5ca16cfad9016a2cac87ebc7b4217e13d053f5157147edc1989
+      .agents/skills/vueuse-functions/references/useFavicon.md: sha256:686a53d31c453c470c5226501790b63e18b7bbc38a2568729726b730fcf5bb90
+      .agents/skills/vueuse-functions/references/useFetch.md: sha256:abdf558236c498adb4aba893bdb219b84e4aa7e21c3080ca542e7f957f210f96
+      .agents/skills/vueuse-functions/references/useFileDialog.md: sha256:1890096f821c5479c67fc1629dbff780ed9f5bc8c8beddff0caf218f497cae68
+      .agents/skills/vueuse-functions/references/useFileSystemAccess.md: sha256:61fc484d99f215b7bf40139176b6fa91f27ce0a68414192ce5e26e15cf1ef96d
+      .agents/skills/vueuse-functions/references/useFirestore.md: sha256:cf59a9fb9d8620a98a755ae77666a9ec0041da618b61e903873f10d8d2ace8a0
+      .agents/skills/vueuse-functions/references/useFloor.md: sha256:00451d13f68071ba9a3aec06b7ba996bf306d248727fea21658ac0ffc883ea58
+      .agents/skills/vueuse-functions/references/useFocus.md: sha256:0193b270a53e61834d1f9678cda40e0472c2e3c699c51570c3e83a5da12b4c7b
+      .agents/skills/vueuse-functions/references/useFocusTrap.md: sha256:f8ab2a04e1380bf97fbbab6def6cd8250ba7d65467180474ecd593dfb5db4631
+      .agents/skills/vueuse-functions/references/useFocusWithin.md: sha256:a5b5cc8fccba2abb646a1fc273f70f2f1f46d6127a5b474437e83bf7386490a4
+      .agents/skills/vueuse-functions/references/useFps.md: sha256:7e241da721cdca170671d8f868057980a776e7e62d1e4087064e51ba88b5ebbf
+      .agents/skills/vueuse-functions/references/useFullscreen.md: sha256:0a08cc0662b4d79e8c4364937949685733ed9a17bf3f6ca4a07bf15e59ba96c6
+      .agents/skills/vueuse-functions/references/useFuse.md: sha256:c83933cc9592c3ae587535e9924eee1735ef00f2ca6f8616db1c14371ee3af3b
+      .agents/skills/vueuse-functions/references/useGamepad.md: sha256:a7ea4f814c374442999de01f29e0b4221cd97d1a1dbff90ca3204f99a01d5ceb
+      .agents/skills/vueuse-functions/references/useGeolocation.md: sha256:90303e5a29de99ed7d2c9d11f578388a5fbd61e13cc96aece76532552d2ec190
+      .agents/skills/vueuse-functions/references/useIDBKeyval.md: sha256:9e4f6cf5857714480ffdf9c50b707f8089df29baf2ca300f336a7cd8a2502671
+      .agents/skills/vueuse-functions/references/useIdle.md: sha256:3fb458dec5eb08ed81c6347e750b203356737c19fbed58bad1345ea88f6fe256
+      .agents/skills/vueuse-functions/references/useImage.md: sha256:4a33cfddf99675a1f4f99301e497ac45a2e198c1c6c45873b3a73d27530980c0
+      .agents/skills/vueuse-functions/references/useInfiniteScroll.md: sha256:a5556984c93872623cc95a5f49d962726b6e0df22d35ae37ddf7e259b1f607f8
+      .agents/skills/vueuse-functions/references/useIntersectionObserver.md: sha256:f083a0c606907d5b24f1d7870f05b3f8cbb05ab1445c66a1bc9d41506c4f4e32
+      .agents/skills/vueuse-functions/references/useInterval.md: sha256:cc0b71f8bb0231adde95f37be4182267506c4df2235fd141383939fcdce3decb
+      .agents/skills/vueuse-functions/references/useIntervalFn.md: sha256:0a892c5b1b2aa48ef94fc8d571b61957cfe80abc287fa4f56ae7883cfbb1398d
+      .agents/skills/vueuse-functions/references/useIpcRenderer.md: sha256:a5338954728edadd48e8b0412d868a79e2bf66a72a0fc557f2d232d5aa3df471
+      .agents/skills/vueuse-functions/references/useIpcRendererInvoke.md: sha256:ee68b8684f9580889cec4ac9790a840e2479f3e9c849210132af7145baf29a04
+      .agents/skills/vueuse-functions/references/useIpcRendererOn.md: sha256:c66ac50a03f13ae10814ea5636f762445d753a73d5e6801ba5c1657dc86b5b15
+      .agents/skills/vueuse-functions/references/useJwt.md: sha256:a1a5de113dd2e57338bf4b62e5ae28aad29bb9860898ccdb35d38ce33a9fdb28
+      .agents/skills/vueuse-functions/references/useKeyModifier.md: sha256:8b6887b5898e7a8d2ecfea8d3170ee6c6bae8b959ccfa73659dfcc4d18d2b553
+      .agents/skills/vueuse-functions/references/useLastChanged.md: sha256:49923cbae61983be901940258a78c0858b672f0faa516c31282f8575c99f7bca
+      .agents/skills/vueuse-functions/references/useLiveAnnouncer.md: sha256:e327fbb081ded87614a8ecc595852c3b02b32d803b2f9a4b4a23efdf5b2f5724
+      .agents/skills/vueuse-functions/references/useLocalStorage.md: sha256:f17a8fb769164ee096222d233db51c78e3a1b613c8496949bf5fb5a79be58e22
+      .agents/skills/vueuse-functions/references/useMagicKeys.md: sha256:70bd22fab3ed9c10f493151d6f1101b58ac8e2bcdd3f2f15a6625a9c30b6bdb5
+      .agents/skills/vueuse-functions/references/useManualRefHistory.md: sha256:35ee11fb580918aa14672fa8c0ff9b25b4a1eb0b32d073a0c4c7a90cb512b413
+      .agents/skills/vueuse-functions/references/useMath.md: sha256:5aa61131577e8587561e627c13fecc3594571d745152e545cddfdc93185bfed2
+      .agents/skills/vueuse-functions/references/useMax.md: sha256:6ec5a359cea679e099268890a4da0d82dbf402435cd13cf1441666936aa1a474
+      .agents/skills/vueuse-functions/references/useMediaControls.md: sha256:b53db83e00c95f2e4745216b528d502314b59ab59be5fba0aeab228f1e35b9e8
+      .agents/skills/vueuse-functions/references/useMediaQuery.md: sha256:4b12a0f673d80e295552497955e5ab85c3b0676b08f3ec2098fe79bafaa0b8a3
+      .agents/skills/vueuse-functions/references/useMemoize.md: sha256:6660e721e7143720a4066a50a5173f4ee61062e6fb2025758af2917ad5fcf8a7
+      .agents/skills/vueuse-functions/references/useMemory.md: sha256:952fa573a644d57af39303243f9bb2c0c6ff847be1115307a00aa04947313ef1
+      .agents/skills/vueuse-functions/references/useMin.md: sha256:40557b6dc75ed299c5d2b0303d3fdb8207cead90440db6dd2989c4d4a0c9a1ca
+      .agents/skills/vueuse-functions/references/useMounted.md: sha256:46e8e03b2e57f7fd1a1712767335faad58252376f70b01725d6c7761e2240ee1
+      .agents/skills/vueuse-functions/references/useMouse.md: sha256:567b7a2361801d0e004f638ffdd2aecefbc0f2270d68b43123f3dd48d3bcbe0b
+      .agents/skills/vueuse-functions/references/useMouseInElement.md: sha256:a3e0de0f45e9fd610ea8b1221274bc4d9724f3f137517f9e0c3b7315c57abc26
+      .agents/skills/vueuse-functions/references/useMousePressed.md: sha256:dcd8eb5bbe22bc13443a3d845fea246e2a9439a5dff2cb75d16a07a8166c9ee6
+      .agents/skills/vueuse-functions/references/useMutationObserver.md: sha256:8c75d8e6fe53aab1cae57094ca8cc3494bc80c363597368cb673776884385be1
+      .agents/skills/vueuse-functions/references/useNProgress.md: sha256:16734ccfa5d9711d4f10395e7f2e15a1096eec231f0dbcaf640455920c56a971
+      .agents/skills/vueuse-functions/references/useNavigatorLanguage.md: sha256:5e2834f6f7a90117cb2af61d40307f64f725b86f1635bf924e36be1d9a7c4b58
+      .agents/skills/vueuse-functions/references/useNetwork.md: sha256:6ab76d70990faa3575f584e67d4d3d451bcb5e16b7f0d369cc56e4883ecde43d
+      .agents/skills/vueuse-functions/references/useNow.md: sha256:a69cebecb2623cd0eaa4fdafa6deafa15c11b9bf9efaf1fe235a037dfda922d5
+      .agents/skills/vueuse-functions/references/useObjectUrl.md: sha256:5f5afb913b4daa0fd05eceb4a11da174691640e35e09fe0b4b8feb3ef324e2e1
+      .agents/skills/vueuse-functions/references/useObservable.md: sha256:71685806b3b593664e20fcf067900bb5c4ff586bed662a90b98e71ad50ef8e1b
+      .agents/skills/vueuse-functions/references/useOffsetPagination.md: sha256:59156418280f0418953ee2128d0ce5854eb70160e3b1ecdd3ce800df6e462c97
+      .agents/skills/vueuse-functions/references/useOnline.md: sha256:33306a59772f83ce5ffd62aa008a4ba5885600bc45c0faf658b2efdd872de27c
+      .agents/skills/vueuse-functions/references/usePageLeave.md: sha256:954fe54cecf7443c174e3f004735231ee4cd02a61a5501b9119f2326ebf749ed
+      .agents/skills/vueuse-functions/references/useParallax.md: sha256:c2ea1d90e584ec86fb750393b2c0ee8bac2dae1d292465de12bd03aba57737cb
+      .agents/skills/vueuse-functions/references/useParentElement.md: sha256:de5ddaecd9fb1cf126c20145cc4553fca672bfe34cf85dce1db7b82897505097
+      .agents/skills/vueuse-functions/references/usePerformanceObserver.md: sha256:e4d08a6fe29999df23260a33b7338b3fbb261c57519986bef8b3ad3265c41b7d
+      .agents/skills/vueuse-functions/references/usePermission.md: sha256:7795b7643071c4a99b023eda5b5856af6a6c062ca0d6c57b22301270bcc5a7ee
+      .agents/skills/vueuse-functions/references/usePointer.md: sha256:3096e3198ebef52c5a8a108c1fcab4f54301f54e4dbc4ffd7199627d13ad7422
+      .agents/skills/vueuse-functions/references/usePointerLock.md: sha256:8d08a87a4135e1a001f43c4ee08eeff19fc1a3c2f09514fdaefe5cd3c6742601
+      .agents/skills/vueuse-functions/references/usePointerSwipe.md: sha256:7617eda227b011439740852bb3afc9e3e30f94506542fd6c69c5ce52abe85ce0
+      .agents/skills/vueuse-functions/references/usePrecision.md: sha256:0a94094ef8bb7659cd63844ac113def81b8a3ac2d6723e847e59c568257fe958
+      .agents/skills/vueuse-functions/references/usePreferredColorScheme.md: sha256:25c97e786607edbe34f60fec16e71b8f0a8a6d0db2ffde4582c0ec783a71d39a
+      .agents/skills/vueuse-functions/references/usePreferredContrast.md: sha256:19d4c40156dde55c9b625ef62efe1d9da0732360af53a2f5741622dc870026e8
+      .agents/skills/vueuse-functions/references/usePreferredDark.md: sha256:ba9a9f11b5252367c5c70e150418ba37ca5d59a88a0b75b1e877399e3cc7cd89
+      .agents/skills/vueuse-functions/references/usePreferredLanguages.md: sha256:39abf8b4e9848b8d1fd617c61d3e28c5de824a58c059ff339aecee8acae8bb3a
+      .agents/skills/vueuse-functions/references/usePreferredReducedMotion.md: sha256:fee9885231f487e385b8b81913773c26d1b88b4b0d8ea2e7c2c1ce4aa0ba8198
+      .agents/skills/vueuse-functions/references/usePreferredReducedTransparency.md: sha256:0e078f3338c838487a2a8bac9715bbbbaadefa0371aa337be98c3a2afa2e3426
+      .agents/skills/vueuse-functions/references/usePrevious.md: sha256:275f8e5f761534a87eed6063dfb10627378843fc756ae52bcc2e5cec328b8c14
+      .agents/skills/vueuse-functions/references/useProjection.md: sha256:e50deb798391a9827880710edd2dfafa9d2578de3c2a46dcc74fc23f3c32ad22
+      .agents/skills/vueuse-functions/references/useQRCode.md: sha256:492ac04d588c39600af85281d12cf97f4a4c5f061769905463602995b3ddb5c2
+      .agents/skills/vueuse-functions/references/useRTDB.md: sha256:64fcefdd491c9d4649ed4dfcb411e391da9f620e09af8a724c5f9bae6752f22d
+      .agents/skills/vueuse-functions/references/useRafFn.md: sha256:0ae0a77ff67407c0d85a96a4eddb041f5c2be76fdf005a8ce3fa3c5ce6753fcf
+      .agents/skills/vueuse-functions/references/useRefHistory.md: sha256:cdcaa8fbc381581bddfbd0763fc3465625cf16d726a547dfd606eb861c4595fd
+      .agents/skills/vueuse-functions/references/useResizeObserver.md: sha256:181ccaba2dc01d114cf26f7e49b4c2b8958b5036ecafbd20f3b9dc54afa5c857
+      .agents/skills/vueuse-functions/references/useRound.md: sha256:0c679f89de4cc342ea534635ab2a6f34c3f2640999ceecb3f70133011dec159e
+      .agents/skills/vueuse-functions/references/useRouteHash.md: sha256:12416e7f4a5ee64b51dc7827d42a1f279b48e893180f0bd7184b64ff04f32834
+      .agents/skills/vueuse-functions/references/useRouteParams.md: sha256:211ab2d00909cc6511e4ad4c75c5a9614a3299f6eaf7d6bad3143ad6fb60d746
+      .agents/skills/vueuse-functions/references/useRouteQuery.md: sha256:a03e5029fb2f3cf9c295d7cbfae62cda0a2bf1ec4b2ab99481e7a9b77542a885
+      .agents/skills/vueuse-functions/references/useSSRWidth.md: sha256:c55b29428278b5eaf0f66787485e764749572a48bc6f25b3c54892c2bc30b2e9
+      .agents/skills/vueuse-functions/references/useScreenOrientation.md: sha256:cb6e81054288c462782b31f59004d391ae1bf7ce966878c2006697b23422a57d
+      .agents/skills/vueuse-functions/references/useScreenSafeArea.md: sha256:82c6c358f42dfb558adb2e2c860f76a6b2b5967538cd0b261e13d576e6345fda
+      .agents/skills/vueuse-functions/references/useScriptTag.md: sha256:d6c3cfee44f806d4dec8ccba3491ac39fac5a28d1217bb370de3ab4574421827
+      .agents/skills/vueuse-functions/references/useScroll.md: sha256:99538e7a9023ec65c604c9c05cb76582791f85f7bf2b7959bd592b8fff125a4b
+      .agents/skills/vueuse-functions/references/useScrollLock.md: sha256:0901f163f5f907512f4d3e5c5a24c581fb546f9b4786d45c8f54f6568e182cc9
+      .agents/skills/vueuse-functions/references/useSessionStorage.md: sha256:b273ce17f32622cdd387f2595d1573b34b625f71ee0d68cd7e7680a7f92856a8
+      .agents/skills/vueuse-functions/references/useShare.md: sha256:c87894dcef3bf4b1b48fbf96374a1e7e2823af0a382e9803d307cac8bdc20d2e
+      .agents/skills/vueuse-functions/references/useSortable.md: sha256:9df5d289a25994efe22ef8e5e56b3160ffa43ccf83fdaa227539ef6659f5f303
+      .agents/skills/vueuse-functions/references/useSorted.md: sha256:9446f7d6de3054faa9a901f8ae94e64b85a4b4d61dc59f8c8a3ec1f33a550b0f
+      .agents/skills/vueuse-functions/references/useSpeechRecognition.md: sha256:6aa171f3c8490a826ac7794399cf7996b0a9484544573603a5df0ab7d855f781
+      .agents/skills/vueuse-functions/references/useSpeechSynthesis.md: sha256:da176aeca78e964a52f4c506c0e4c6ed726e967431a9ac9ffb46637ee3a16f11
+      .agents/skills/vueuse-functions/references/useStepper.md: sha256:6647e4bf8d8d782a34115700e18e7ba1dec82706b4cbc9ca57bc06e215b97417
+      .agents/skills/vueuse-functions/references/useStorage.md: sha256:055dd34a5a2dea27b398138a2818ff3dca67eb6000686651b11dd9e5e7a78172
+      .agents/skills/vueuse-functions/references/useStorageAsync.md: sha256:ff9a9e565d93fad4e7f5a5c688c978b8e3bf8f5991e6ee1f7d08be0a0993bc7c
+      .agents/skills/vueuse-functions/references/useStyleTag.md: sha256:d4813df222d9534aa7e6a820708a6201f6910b257d11b583a1ecfcf1e9e253bf
+      .agents/skills/vueuse-functions/references/useSubject.md: sha256:2fa09944450eeba37d63fd80c323a1e3de5da95cf30b46399a5f98516ffb8f56
+      .agents/skills/vueuse-functions/references/useSubscription.md: sha256:6007e11d57a68c3811dbfdac576b4b5aff9ad6a62ac0957f6ee71af3080a942f
+      .agents/skills/vueuse-functions/references/useSum.md: sha256:91c01211bd2e25c353bdaaacb17d0a4903500a77f3e7f6bd33425982f38c90fe
+      .agents/skills/vueuse-functions/references/useSupported.md: sha256:851afe051e3ee8a25486c9fcbac9436ae4f8b9ad28b0bc0e1c0fd0856be71937
+      .agents/skills/vueuse-functions/references/useSwipe.md: sha256:80d36644cbbf4c1e8bb7eeda9fca70cf38231d83d62d7c02e48cb2932c58f798
+      .agents/skills/vueuse-functions/references/useTemplateRefsList.md: sha256:e32c4076dca47d17f6f493a707eb57773a22e05b1dd36aae4725e304514453c5
+      .agents/skills/vueuse-functions/references/useTemporalNow.md: sha256:8080ae1d420ffea4a790ef05b6dd40c40d3c3efc244df1a5d4e9984c958cf098
+      .agents/skills/vueuse-functions/references/useTextDirection.md: sha256:82e44c0cac58572a9fe3f0587752301fa302bdadbc2266e78f3ec7bd520de7cf
+      .agents/skills/vueuse-functions/references/useTextSelection.md: sha256:fe4a606f2e8da35d4250b608e8bd7cd25deb85b63a60dde12741a2c0ee583b58
+      .agents/skills/vueuse-functions/references/useTextareaAutosize.md: sha256:e4e1512b3fd6b9f3642e16407dbc6929888a100c87175cc3dea45eae9cd7742e
+      .agents/skills/vueuse-functions/references/useThrottleFn.md: sha256:025e14e8f1513c8bcbeca45f5fe4e11f668cbd8f1a8cfc14182ba4e8da9f68d4
+      .agents/skills/vueuse-functions/references/useThrottledRefHistory.md: sha256:e5d38de5baf9fdca5a44a5c56033312ed1605dc8e723e6a83402598d7594c110
+      .agents/skills/vueuse-functions/references/useTimeAgo.md: sha256:9fda8a54576e200bfb5e52ebf309b583d74117d86e7d7a92b471fe8a9d166ca2
+      .agents/skills/vueuse-functions/references/useTimeAgoIntl.md: sha256:b36281b08180b04cb12a6237fe9f55e61737d47953a25cab8e523014ab3f9a8d
+      .agents/skills/vueuse-functions/references/useTimeout.md: sha256:1c6cd74f79b3dfec87b9f21d106755810ab2f7a74893353023b061dd1b4ba0aa
+      .agents/skills/vueuse-functions/references/useTimeoutFn.md: sha256:1c382d48eaa773367f273e9db4fdec43ece2e8292a3718dc1f64426f5590ea81
+      .agents/skills/vueuse-functions/references/useTimeoutPoll.md: sha256:ee3658bf35fef96ea8f8d3636123731664213692f3ab927d559d88d04da35f10
+      .agents/skills/vueuse-functions/references/useTimestamp.md: sha256:ef44c529e6fefb8cd5a126a6408cfe07bfe58abaa0bd9342d8ab3397aba864a1
+      .agents/skills/vueuse-functions/references/useTitle.md: sha256:9dd7094c16803c58dbab9e7c4eaf6a40cd15bdca05356f5132fb8e9eaac6a122
+      .agents/skills/vueuse-functions/references/useToNumber.md: sha256:66c1134df7da70325913944560a05f08273ac594fd6ea271dda0da7492bf841a
+      .agents/skills/vueuse-functions/references/useToString.md: sha256:8fb5da6e9fc107b54e07064335e91887db0541c5629a111d1676d39474e184d4
+      .agents/skills/vueuse-functions/references/useToggle.md: sha256:6e4e50c65bbb0f56c14946c42bcc7b1dee4c3d7aa2dc10c1ea1dc358c8d87fd1
+      .agents/skills/vueuse-functions/references/useTransition.md: sha256:bc6554d49f07cbea33d95af82bd7b0d64f22b6e93332728981b6db63750720fd
+      .agents/skills/vueuse-functions/references/useTrunc.md: sha256:0b5a820bc016852c69a3b0ff23e135692ff16dfce82f9ba72a0e85f6d126903b
+      .agents/skills/vueuse-functions/references/useUrlSearchParams.md: sha256:a5fdc15161cf9460bb186a2c53b88c894784f472a27a322afc6da57085787771
+      .agents/skills/vueuse-functions/references/useUserMedia.md: sha256:7ccb5ac41d39a7d07fc4c69b2ab34e6d9e19cfa861e46ee443c128083d7d4f4d
+      .agents/skills/vueuse-functions/references/useVModel.md: sha256:516581825e284ab4cb1d2a7ebdae7d6add0a70092e62cc4d95a73fe624dedb6e
+      .agents/skills/vueuse-functions/references/useVModels.md: sha256:7239ad95ed54dc551e006e46516a6455f45c6fca45da64a69746e9a8e6bdd701
+      .agents/skills/vueuse-functions/references/useVibrate.md: sha256:c545b53fce30cdc99b02ffed5b2b04ee07b57a2287ce681c022772ca8b757363
+      .agents/skills/vueuse-functions/references/useVirtualList.md: sha256:9d27da4fb06d3a3860fde13175e277f940fcd31f84186b1c53c7577a0f59069d
+      .agents/skills/vueuse-functions/references/useWakeLock.md: sha256:3eb9000244e7e478c029b5f1075c08dd8b0a2f1b178635f539cc6dd8da37b619
+      .agents/skills/vueuse-functions/references/useWebMCP.md: sha256:5dd17bc2387909cfe113a6572b9e236240a4715ac4c6b380caa68c75cb8a8496
+      .agents/skills/vueuse-functions/references/useWebNotification.md: sha256:0112ca0a331e59accc79e9467a86dde63d02a1c178f69b389acbafb8d5405884
+      .agents/skills/vueuse-functions/references/useWebSocket.md: sha256:c9aba94052393a3dba8986a2f65b456defaa5645e2233ddd3696d2040f69967e
+      .agents/skills/vueuse-functions/references/useWebWorker.md: sha256:4bc9240e3bc14c5e5db8e3c5b41b63d9b23ad286b5ae86606640a1b744999934
+      .agents/skills/vueuse-functions/references/useWebWorkerFn.md: sha256:c6646615a09bc55e9d44f0b0349283a86138e5a0b31ced4728286e5c38fa3655
+      .agents/skills/vueuse-functions/references/useWindowFocus.md: sha256:8317bf35fa08f9a3babf2549c7f36b98cf268b4f2c86f1c07b614dfa1f089d57
+      .agents/skills/vueuse-functions/references/useWindowScroll.md: sha256:564bb964dae2c51a9b75e9550247f97c80bd6d99d15b3769fd0e84e18283f6b6
+      .agents/skills/vueuse-functions/references/useWindowSize.md: sha256:eb41f40edc625036a15f69917b7e4a234dcb9b383b5514ffdf58a1bd9819feaa
+      .agents/skills/vueuse-functions/references/useZoomFactor.md: sha256:204895b74c22d9247f127255b3da75b164c07f9cd872c9e7dc7c12b28d8e8252
+      .agents/skills/vueuse-functions/references/useZoomLevel.md: sha256:273c55a58d1b0306f6ee54c93a5b55c0151bb8b9d9cf0d26a58306735a048e84
+      .agents/skills/vueuse-functions/references/watchArray.md: sha256:eb3730e84f59450706b6955ea1ad3f626c78d1e95b192ddbe81d0e344ccd4694
+      .agents/skills/vueuse-functions/references/watchAtMost.md: sha256:32b83e4666c86c3bd848ebc65ee7c43a527669a78f7877285dfd6c35f27f6cc7
+      .agents/skills/vueuse-functions/references/watchDebounced.md: sha256:d52125ab74a7104d9b781911145d7ec4e72b8c2db1e8928e76a17b630959a057
+      .agents/skills/vueuse-functions/references/watchDeep.md: sha256:75206fc362aa651be732181a9393ac7f2ac179636289549b305e24a56d26ed0a
+      .agents/skills/vueuse-functions/references/watchExtractedObservable.md: sha256:2a9ab189b51fdc9f8c454f28113824ebdaa2f4399e491a0ee05b1b67bbc97108
+      .agents/skills/vueuse-functions/references/watchIgnorable.md: sha256:6d7acd0eaff9bd0ea1c4853cad72114948dea7f25c52a6c1ee564c412a612bed
+      .agents/skills/vueuse-functions/references/watchImmediate.md: sha256:69b388c29825dc339c447e10805439675a70bc353a427a4d1514067599e4d1e8
+      .agents/skills/vueuse-functions/references/watchOnce.md: sha256:5872c4de88c66b038aa618cb5b36dcfe0eb1a13ca4f5b636f5fb62de10bd9a28
+      .agents/skills/vueuse-functions/references/watchPausable.md: sha256:e10e409e148cff52adca99dfcd32a657a683be6361feb9cfea0f8aabbb232237
+      .agents/skills/vueuse-functions/references/watchThrottled.md: sha256:50f90f0d772a2e3dace88507ca7e10345a38cc3ad95c9e5e65505b90d0b0299e
+      .agents/skills/vueuse-functions/references/watchTriggerable.md: sha256:0320c96a1d2b4b4fd44cb007ff15c6be99ebc821609347fdc0fd9d4fc81a956b
+      .agents/skills/vueuse-functions/references/watchWithFilter.md: sha256:78e6f9e2b099873e21359d424344bc4b488e8fa64ae9a44c553b6420def35117
+      .agents/skills/vueuse-functions/references/whenever.md: sha256:3f414db7da638478ae17699ed57c1ea470c8c8c5f17373a469f35f1241333553
+    content_hash: sha256:0cb55271e621d45f1ec0fc2912935aa17a5f21087da93740878b70ea49bb386f
+    carried_licenses:
+      - path: .apm/skills/vueuse-functions/LICENSE
+        source: LICENSE
+        hash: sha256:44d916aa917ef8232a46995f444a3997956468ced8bef4354a60671bc5d4c2f4
+      - path: skills/vueuse-functions/LICENSE
+        source: LICENSE
+        hash: sha256:44d916aa917ef8232a46995f444a3997956468ced8bef4354a60671bc5d4c2f4
+deployments:
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/nuxt-ui
+    runtime: null
+    scope: project
+    owners:
+      - nuxt/ui
+    active_owner: nuxt/ui
+    content_hash: null
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/nuxt-ui/LICENSE.md
+    runtime: null
+    scope: project
+    owners:
+      - nuxt/ui
+    active_owner: nuxt/ui
+    content_hash: sha256:6ccc347b162c046440394e641e4ab2ac7238b3c7b81bb77c39435e7540ac7748
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/nuxt-ui/SKILL.md
+    runtime: null
+    scope: project
+    owners:
+      - nuxt/ui
+    active_owner: nuxt/ui
+    content_hash: sha256:98f11149fc566b2826c15f1ce78b031bdd0476413b35b22bd0edb6df02ddb95e
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/nuxt-ui/references/components.md
+    runtime: null
+    scope: project
+    owners:
+      - nuxt/ui
+    active_owner: nuxt/ui
+    content_hash: sha256:9648870284476354c4073f559c8892c670f67ecfed8a43af2ae7e8c0cca75526
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/nuxt-ui/references/guidelines/component-selection.md
+    runtime: null
+    scope: project
+    owners:
+      - nuxt/ui
+    active_owner: nuxt/ui
+    content_hash: sha256:b4a7bd45aad3376848eca5a2b872365c0224bf06623f9453ce4f6a4d253f811c
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/nuxt-ui/references/guidelines/conventions.md
+    runtime: null
+    scope: project
+    owners:
+      - nuxt/ui
+    active_owner: nuxt/ui
+    content_hash: sha256:3c9f73e7bf6625af90f457494282dc94db005d50a6e56086ca91da7cf31f2316
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/nuxt-ui/references/guidelines/design-system.md
+    runtime: null
+    scope: project
+    owners:
+      - nuxt/ui
+    active_owner: nuxt/ui
+    content_hash: sha256:e6e42bd531f82fcc6ed4375edc704b4f7d19ae0d63fde52f0f418e5b6564ade6
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/nuxt-ui/references/guidelines/forms.md
+    runtime: null
+    scope: project
+    owners:
+      - nuxt/ui
+    active_owner: nuxt/ui
+    content_hash: sha256:2d98511a0c12729cb7ffbe75913fd71ad33c0dadc1936489a98891e1d5feefab
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/nuxt-ui/references/layouts/chat.md
+    runtime: null
+    scope: project
+    owners:
+      - nuxt/ui
+    active_owner: nuxt/ui
+    content_hash: sha256:fb089e1ca50b142b4242309847364d9b594aba6769d6883128aaef7b645bc9c9
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/nuxt-ui/references/layouts/dashboard.md
+    runtime: null
+    scope: project
+    owners:
+      - nuxt/ui
+    active_owner: nuxt/ui
+    content_hash: sha256:fee6235a7cc3b08d2a2344d6980763c6613a8201ebf6c37998b4467443263e57
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/nuxt-ui/references/layouts/docs.md
+    runtime: null
+    scope: project
+    owners:
+      - nuxt/ui
+    active_owner: nuxt/ui
+    content_hash: sha256:761190a26517a3084a7cabd673a84b040766ce15c6ae53378ab4519e3b419510
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/nuxt-ui/references/layouts/editor.md
+    runtime: null
+    scope: project
+    owners:
+      - nuxt/ui
+    active_owner: nuxt/ui
+    content_hash: sha256:7bc96dd3b88e97adc70a8f124a46c256e36dccf17c0e1233bf88238f10d18d8d
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/nuxt-ui/references/layouts/landing.md
+    runtime: null
+    scope: project
+    owners:
+      - nuxt/ui
+    active_owner: nuxt/ui
+    content_hash: sha256:c9732e93e82e9d9fb95d5d7e21e1104797ab19d8f66c244a1362862c307cefca
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/nuxt-ui/references/recipes/auth.md
+    runtime: null
+    scope: project
+    owners:
+      - nuxt/ui
+    active_owner: nuxt/ui
+    content_hash: sha256:85721c3eac6d9d7ad5a882b9f7e124ba4ffc7368e5d8c3e06342017a1276fad0
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/nuxt-ui/references/recipes/data-tables.md
+    runtime: null
+    scope: project
+    owners:
+      - nuxt/ui
+    active_owner: nuxt/ui
+    content_hash: sha256:bad64265045f212cdf18d73b6cef358779db1a9ad2e7903200a9a74dd05da525
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/nuxt-ui/references/recipes/navigation.md
+    runtime: null
+    scope: project
+    owners:
+      - nuxt/ui
+    active_owner: nuxt/ui
+    content_hash: sha256:5c6a7ee61a6938596c12800e2647dec7e72dbc2c1149c84ee3cd9c4aee15755b
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/nuxt-ui/references/recipes/overlays.md
+    runtime: null
+    scope: project
+    owners:
+      - nuxt/ui
+    active_owner: nuxt/ui
+    content_hash: sha256:109556d0a67687312bc3e462ed1b921cd0356309bfc07eef527c3ca4fc780063
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: null
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/LICENSE
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:44d916aa917ef8232a46995f444a3997956468ced8bef4354a60671bc5d4c2f4
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/SKILL.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:ec22fb39602221cef5165dac22232e5012fcbd20be276c0abf5311fb6fea3793
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/computedAsync.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:028f0643b3f5a6f5df4be8486ab6373fe7eb1c261db51f794b7f9f44c0fa349b
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/computedEager.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:ec8db12bc47db477a6eca2786f3052201d70d96f22a165b2a590e9599210169d
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/computedInject.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:6d617c53655acfb24eafa9e02a6f47955f6860b799ce122bb96fdc02bcd8faff
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/computedWithControl.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:198d61123decfbf809580a5875f510d356e41bf6cfd53ec845ae3959b730c83a
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/createDisposableDirective.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:dfb1689420b06b16fdf24b51254a69ca7ab699a56e49dbfdecf9e9db88b5e300
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/createEventHook.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:ab6bb48f7cc25b30654e48b40410e14c4ba25ea151d0aae17327d1eedae1864e
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/createGenericProjection.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:57a8dbad37f715b83a98bb3ca326f15b59e6b323e485e63c53fd85bb08356ed3
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/createGlobalState.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:43a260724cb8610553d487a4cd59591efbc61a9876c07dbea04b07381ca7479f
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/createInjectionState.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:5d48b46fb0a0debe31494e61165c0979c7ba4da90d1241ac88f84bf5b45124fe
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/createProjection.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:5180e0a5875242a0067e8b3ee57a9cee53c772846d83f04c45d1c2475316966e
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/createRef.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:3794cc3878c1729122e76f88849b9eb168399c2aa9f9f62629d4c53d44944805
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/createReusableTemplate.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:ebd79a51ce3cd0c1e17dd6a1d10f08a099b2cee732155599d81e2ebed2a73b71
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/createSharedComposable.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:6dd2dc0146bcd5b3d2daf8f960e1c9f1de44c8861d559135c0ca4ac67a0dcf28
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/createTemplatePromise.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:d68bb260bef8340cf78dc90d13eb1c9517f83e7be33c7157710344ed91bc56f4
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/createUnrefFn.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:1119a0b7b0fc2047353b7c8bb83b5a6aba8917fd914bc012bf3eada3db6e8233
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/extendRef.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:54969789cfc8d0c2839d00d52f70b7dfaaba9f53fedac686608c1acd71df20f1
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/from.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:ca67668da4a08bc3aeba57cf6eb5202b9e5b7ceab9971965fb57e28671e5c8ee
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/get.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:ffb0de9a74e9522829296ab2a3b3185a4329aa28e84004952507dfa8d61dc2b7
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/injectLocal.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:e915862782045042fc61d643880ab7e30a75e3eb6fad58e052bfeaf26815a775
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/isDefined.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:c1448d81a120879d8dd3349bdb1f2583e02fa81cfd23b90adbb0b9943b5aab77
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/logicAnd.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:6798d1e07ca411ec090b34de1720940f263a732d92dd2b98a5f8d86dbd360430
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/logicNot.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:e71f449ae2a30a7bad8eae1cd6daa265ada83bf1937546d7215de6a6e14db87a
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/logicOr.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:f09d0de683078fd1fe8a233e9fb399589fb1b5e0cd2a2e304455a0902301e0c7
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/makeDestructurable.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:c5d6304bb7065a8da1e29c5881872221d8cb04ae14d978542a997fdc23d869fb
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/onClickOutside.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:ebd896bdcce2dd6cb1e3d727ba1492629d4631dd1aa89a960576a5f85cad4ab4
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/onElementRemoval.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:769112d5e08512d4c51be8d7328f640dab9314f259b6c80a64d5638f111f448d
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/onKeyStroke.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:40e332a505fda01c426ac685d1a1e2c87d044b234da24ae56e111350d2c11424
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/onLongPress.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:aa207d8f8d95d57017ae0cfcf92046d0646137fd96ad80eb1b29eb26ad1a9efe
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/onStartTyping.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:00aae43ae5dac3b3d864db9b93ff6548963f99b6354567fcf9d9cdedfba0ffef
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/provideLocal.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:731a48d2be7dbfae11b3ffd9e7954acc49b6303d6b3e37e35fa611c5b8e0dbb1
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/reactify.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:e09b52ccefd75ef8951e744e892799f0cdbd64e10462f0c307f8c79ebc414cb8
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/reactifyObject.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:38d6bd16dffd13abf893a6a33ef2d7a7a3514e4810865ae404b8a7054df02a5f
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/reactiveComputed.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:e77c31e7da5c85b2976c330aef5f02292ce78ee9cf974f51595ef3751f3deef0
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/reactiveOmit.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:06021647f000be3a6dd33eece42db32b31f13a59d8e967539b9b3d1ee9ac63c6
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/reactivePick.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:ec20b59e63ba42c17b1973fe83d4a8f550a6e114b6f6477705b480678addf06d
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/refAutoReset.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:ec83c77303e99cddac04a25b74e21e7860412f88084da7a239215ccbeb982288
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/refDebounced.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:2602eadb5103a66fe8fa1e9b1972866b6301617f422e3dfe4f385cd8926daed8
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/refDefault.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:541357fef0a38f4ece4caabefd3d44bd2fd0278774a0ae08730322ed5a38379f
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/refManualReset.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:2953106fe00297f9d3cf2e50a0cb8d1bf95bbd14c43695c811467dab9b7269a7
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/refThrottled.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:90f5505e677e8e3f283e96587ebd5050b0d76c64e03a15550999b6b02e8fb76d
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/refWithControl.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:8aa2d32fb608d9e4c3ddc84b5c4acc5257acba177bf1c1d74c626b17d272aa48
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/set.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:6dfa9a73dd8f5420520521c56029ec4c83cbf3b4b5244d646fb6106231899118
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/syncRef.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:00561019c13e0d593c9101069ced5693335c7f99d33b316b477677110d85a162
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/syncRefs.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:02d90ad30334b791e67ff721c39d81a2997f3c2965fbcf75c8094cbedf6ec74d
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/templateRef.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:a01df713abcda0515b7d6c8d8491a77d7d1aa919cf96468f128f512b79249920
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/toObserver.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:d8207f7dae7d1d0decc0a717e6b05c53177a0ca1fe11d79620371a4f6a36f0a6
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/toReactive.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:7e8fda81ee8b655ac649ae386ec86ccd2d7c7be673f21db7c30dab96f23daa05
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/toRef.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:7b5bd1aeee7f1306ae7f86f5aae89b6178b6bd7f015b5fc98b603c8fe849e98f
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/toRefs.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:2f741ea8d5ad21e70542c2b7017fc4f75aeb08e0dc653312ab13bd836664cd9b
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/tryOnBeforeMount.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:0054b94d4f3fcf6e6ec86e21acdaa6b86f759db5e92b7a1fac5d8aaefb530131
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/tryOnBeforeUnmount.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:5313df961b2d7f1662b772ef4200b02f3f28e6aee1f88610e394a40e7601aca5
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/tryOnMounted.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:fae5a4d145772ac6e491361727d27f8edad81ed7149c2f8cc232e22a4e625dcd
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/tryOnScopeDispose.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:31ffa27dcfba3cfcbab6d5ce4276d70d7de021f7833b637cd9469cec2bdd2a5d
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/tryOnUnmounted.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:276289803fd49ab0fbf91f9d50e7af5ac6c1201ae3fa7df3e227e722ceab0a92
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/unrefElement.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:95d3a8897a3804abe9ff27ed91faf3523ddf168c10586121a30e9a4508c5ad38
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/until.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:27c86fb53d6851064354281524222865468934dfd884d5e6930ba69c16191163
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useAbs.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:cbbace8ba591904d27db87e5ce24e05be72dc50b368413bdff29ec2ebced0fa9
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useActiveElement.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:48870732e4f46f15ad01955876782f481c32600ba7b599ccc762e28ab44f3e65
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useAnimate.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:b435cb3bd501300e257900dfde15ea45647f1cd7084450bf3365391d0bd13e7b
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useArrayDifference.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:b86f7875b1b5e893f6e30bdd02fd2b1e9f704142b15811cd21873016a2d142bb
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useArrayEvery.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:495419d7fde224e08729ecb7ad45996af4b719cdf6cab516aef71600e466dc09
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useArrayFilter.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:c231c34b1e621fde7c5299acf54b34dcc6d8b6a8f48cd6e8187e6e1d8bbc0a98
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useArrayFind.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:b70c7c09613b42cf43816bd9d18a7b91aabf3bac09499bda8b1ad8a9e95e1a8b
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useArrayFindIndex.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:2de584ceff0f0bd48aec70635d9294c76172ea2bcfe6c10ee29d9736e36a273b
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useArrayFindLast.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:7cb4c219fce5d961ae1a046da39074f8c7e7080a1691b830529d7fd5de3bbc6e
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useArrayIncludes.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:0cec4f26d465b5e9c7741b6a0159894100d27d8671684cc5bb24d80e8dae4d72
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useArrayJoin.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:cffccf556f745f9962ea3fe60c619f125d905a558311c7649f79ab5e2a73cc88
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useArrayMap.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:a2846e305821761d6bc23a9800c949f9fb27c8aa98ff31a5489b3609ed2a8165
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useArrayReduce.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:5a522fbc13256a46c7b840991921aed06b3270a42e812d05bb0efaf2b7e9dd4c
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useArraySome.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:3a3e9ef69e26db9073d6c209abbc8604dafb0fc1846a2b0fc2e025c064459528
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useArrayUnique.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:67182eba431c63436bc65eaa70266c771018304766b6da13321344c62ac63380
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useAsyncQueue.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:2ee7a6ef33dbb3fe79bf76ee1579e631e64d99813071ec80c87969b44b092d27
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useAsyncState.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:6fcbbc78551132a1b4e69e203b729b0e8310c99daf75bd301c29687b00610253
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useAsyncValidator.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:625e339bc1a519fcb28d47f65d20cfa9cc43eb732e2abaaefce1d2be3f5996bb
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useAuth.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:ec93251e3c77f2cd2eeec026366c107083fa31784af09d458d6c94f080c14d37
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useAverage.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:587ff28415451a710002b56f2de7ee7c03d29a166e10b643dac10da8068e937e
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useAxios.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:91468e8241e390c7ca0fc2f44345716ccbe8133328d614fa50bd02ff844e8c87
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useBase64.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:6c1c6ac203d658368695b44001ae173934de29d7dd30a2428427e9f26f53df60
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useBattery.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:c3acfe097e7afbc8b1bee4d90aaf4f2e9e860caf0dcfd44f029a1056f8304165
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useBluetooth.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:48a5d47c82360f7bfcba2b624be7a735b3a16d99de3aa9678f32333304718c11
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useBreakpoints.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:42510de5fc7d4cb034ee499c12bb24fd0fe1b8cff6a1dd4466a9bb7057305446
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useBroadcastChannel.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:629812275ffc2bf2d126c66a58ec39ca53239b50fde766dc5aa85e37de2e4751
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useBrowserLocation.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:bd4f8796041a0d729390233e2a0e654b42bac60eb573d26ea8e52e636b859917
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useCached.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:5981229035fb0033064a27a358424d51423e978ff2ab607c0cf6f1645d3e143e
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useCeil.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:f97c34b8cbe729d20ef694d274b5d41a56d0f2c6779946b4f273b6b56f89107c
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useChangeCase.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:160b3201fd8ebc81fe0ded2df1e6038566a16c3c94406d77e3b5e7dbc6f80cc3
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useClamp.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:0fe500bfb884005bfbe6fe4a40704f7580b83b152fca5f07e3b80a7a04a05ed7
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useClipboard.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:5e4d1350e1fc4f1acb63bb26cd53f63186362610cf1763ed827bba501d6482a2
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useClipboardItems.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:34a754a49c8392e6eb82f99bb000647ec257dc67631268ef6e9bc5afddfdeeba
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useCloned.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:b2f1adac36f1e9b299d5e5026c3219564714c8be5f1a5f778153b332182d5cc4
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useColorMode.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:5a1cb244cd4cf1641be5feee115e98911a64f23dedf26f13a5711cc53b9697b1
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useConfirmDialog.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:023d0ee359871d39ec10844448765c4fc51ee3b7ac7a90626a6d69df98ce81e8
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useCookies.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:22c1f1ef60150e2067de151197b07ddf9ecef88e2369101ddfb65c6c5c69dd4c
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useCountdown.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:7e33c7a03fb78a2c3a10dae6f894bea3b4ec7ba298d7144ab1be3bae9a8f9e29
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useCounter.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:5a60fbcfcdd2f98b0cecf62b73483af26ebd299abcb126fe8286729f64d4eb22
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useCssSupports.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:f1d5de50de2057dbfd10eff772feab47242b706ee7f23bfa29befa882286c1c6
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useCssVar.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:fdcfcd678a5220e2548108d285a8963f3cc1d436c6cb4bb9ca63c1899a63c0ee
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useCurrentElement.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:b6d3122b1596f9d4eb08c4b177496a5c5e0d48f7b3b52d49205e3229aa5a6878
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useCycleList.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:a5b62630d0666798ba70459e708d77cafa473d9ebf93ac8c937da9b2edfb5854
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useDark.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:b53e0f33e08bd5eecbc7f106691b7abb86a7b329967c6c800aa27e3100f6dc50
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useDateFormat.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:055e785b7a5cf6ca5cb1bbe24be50ec174f8b25d45991e588f419aaf38761407
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useDebounceFn.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:ebeea5995010699015f4e13e433654877d13ddc55a13c174044f84b3dec25648
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useDebouncedRefHistory.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:56b7241ae053baa0dfb85c18df0aa4b87fc2e1e16a70dee35a86f72e25f86237
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useDeviceMotion.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:58e6ed59863da04e7e58dd471d4528987be925b6b3da65520f07920c0a22be56
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useDeviceOrientation.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:5ef59fe7752a4c4e2ce685f3715d9777689beaf3a5d96d9c45dcb2dc2a20412b
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useDevicePixelRatio.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:8afc7b73471a25d7894656f41d5593269e95bbc3a2eec98572fef5e30906f40b
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useDevicesList.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:b82ec83265c1778175a376ffd0f957d63afb41988feb49e8c52ffc7fb9213208
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useDisplayMedia.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:e599542193e881a8523a3e610d29a0b7020314dd9e140ab99dae6d73db3978ae
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useDocumentVisibility.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:e35a63d04a7a69b5e0bd5eb3f3e7427d6ca725ee7c4cdb16f8e41deccd3e1cd3
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useDraggable.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:1888d36900fe1157a51b331d87fc3d759e6badb74380000367e9183cd40bc78b
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useDrauu.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:9ba4de9433b34e5ec9de1fe3d358daa9062fe15e76e1550b798837a5cac062a6
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useDropZone.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:f759db632c1fd29222ea8521ec61604986d09b4dbe4e4bbec093135683fe739f
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useElementBounding.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:fc5825b79aa7a5a7ace599d5763c06ea060565bdc65cbfe603fe734a9adf38b8
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useElementByPoint.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:9a4c5ee890e9c1a56a0d4640807608e70c7a60040742eb3b5d18a9c82c5b9ccf
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useElementHover.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:f0d5db48bbf1d4948a7d5d44b8b4f08bcf98cfbe97bd8a276c27d9c3dd0e8802
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useElementOverflow.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:36c12072336fe0702034d0e5884298f809561437b805fe02f69fe23969d97c99
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useElementSize.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:7ce07a9a4a143a754e04c20a6ceff46efe9c925bee8642bbfc2c21cae606746d
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useElementVisibility.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:71f6aed9041cf3216133a95b331ea1539beca3b605e32fae8fb0dc3d29ed4fa9
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useEventBus.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:0a1ad55654b2bf3d11109554fa2cff7b4aa43e27f3aa1801064dcbd73fc42fdb
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useEventListener.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:7b8857ef57999ee7c31362c3087a0b67a0eaa2929b9ee9b1025595d6a79155af
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useEventSource.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:1199117998a695e8f660e72cac258a9c4eb19fa0de43d3ff6f50b767c55f5fbc
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useExtractedObservable.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:f59ace8c9aac254ccd9deea3415d76a94bfc22d4cefefd7f208fe2d203519163
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useEyeDropper.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:b55a75e0e074f5ca16cfad9016a2cac87ebc7b4217e13d053f5157147edc1989
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useFavicon.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:686a53d31c453c470c5226501790b63e18b7bbc38a2568729726b730fcf5bb90
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useFetch.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:abdf558236c498adb4aba893bdb219b84e4aa7e21c3080ca542e7f957f210f96
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useFileDialog.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:1890096f821c5479c67fc1629dbff780ed9f5bc8c8beddff0caf218f497cae68
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useFileSystemAccess.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:61fc484d99f215b7bf40139176b6fa91f27ce0a68414192ce5e26e15cf1ef96d
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useFirestore.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:cf59a9fb9d8620a98a755ae77666a9ec0041da618b61e903873f10d8d2ace8a0
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useFloor.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:00451d13f68071ba9a3aec06b7ba996bf306d248727fea21658ac0ffc883ea58
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useFocus.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:0193b270a53e61834d1f9678cda40e0472c2e3c699c51570c3e83a5da12b4c7b
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useFocusTrap.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:f8ab2a04e1380bf97fbbab6def6cd8250ba7d65467180474ecd593dfb5db4631
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useFocusWithin.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:a5b5cc8fccba2abb646a1fc273f70f2f1f46d6127a5b474437e83bf7386490a4
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useFps.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:7e241da721cdca170671d8f868057980a776e7e62d1e4087064e51ba88b5ebbf
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useFullscreen.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:0a08cc0662b4d79e8c4364937949685733ed9a17bf3f6ca4a07bf15e59ba96c6
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useFuse.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:c83933cc9592c3ae587535e9924eee1735ef00f2ca6f8616db1c14371ee3af3b
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useGamepad.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:a7ea4f814c374442999de01f29e0b4221cd97d1a1dbff90ca3204f99a01d5ceb
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useGeolocation.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:90303e5a29de99ed7d2c9d11f578388a5fbd61e13cc96aece76532552d2ec190
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useIDBKeyval.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:9e4f6cf5857714480ffdf9c50b707f8089df29baf2ca300f336a7cd8a2502671
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useIdle.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:3fb458dec5eb08ed81c6347e750b203356737c19fbed58bad1345ea88f6fe256
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useImage.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:4a33cfddf99675a1f4f99301e497ac45a2e198c1c6c45873b3a73d27530980c0
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useInfiniteScroll.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:a5556984c93872623cc95a5f49d962726b6e0df22d35ae37ddf7e259b1f607f8
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useIntersectionObserver.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:f083a0c606907d5b24f1d7870f05b3f8cbb05ab1445c66a1bc9d41506c4f4e32
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useInterval.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:cc0b71f8bb0231adde95f37be4182267506c4df2235fd141383939fcdce3decb
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useIntervalFn.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:0a892c5b1b2aa48ef94fc8d571b61957cfe80abc287fa4f56ae7883cfbb1398d
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useIpcRenderer.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:a5338954728edadd48e8b0412d868a79e2bf66a72a0fc557f2d232d5aa3df471
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useIpcRendererInvoke.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:ee68b8684f9580889cec4ac9790a840e2479f3e9c849210132af7145baf29a04
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useIpcRendererOn.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:c66ac50a03f13ae10814ea5636f762445d753a73d5e6801ba5c1657dc86b5b15
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useJwt.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:a1a5de113dd2e57338bf4b62e5ae28aad29bb9860898ccdb35d38ce33a9fdb28
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useKeyModifier.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:8b6887b5898e7a8d2ecfea8d3170ee6c6bae8b959ccfa73659dfcc4d18d2b553
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useLastChanged.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:49923cbae61983be901940258a78c0858b672f0faa516c31282f8575c99f7bca
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useLiveAnnouncer.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:e327fbb081ded87614a8ecc595852c3b02b32d803b2f9a4b4a23efdf5b2f5724
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useLocalStorage.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:f17a8fb769164ee096222d233db51c78e3a1b613c8496949bf5fb5a79be58e22
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useMagicKeys.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:70bd22fab3ed9c10f493151d6f1101b58ac8e2bcdd3f2f15a6625a9c30b6bdb5
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useManualRefHistory.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:35ee11fb580918aa14672fa8c0ff9b25b4a1eb0b32d073a0c4c7a90cb512b413
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useMath.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:5aa61131577e8587561e627c13fecc3594571d745152e545cddfdc93185bfed2
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useMax.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:6ec5a359cea679e099268890a4da0d82dbf402435cd13cf1441666936aa1a474
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useMediaControls.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:b53db83e00c95f2e4745216b528d502314b59ab59be5fba0aeab228f1e35b9e8
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useMediaQuery.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:4b12a0f673d80e295552497955e5ab85c3b0676b08f3ec2098fe79bafaa0b8a3
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useMemoize.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:6660e721e7143720a4066a50a5173f4ee61062e6fb2025758af2917ad5fcf8a7
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useMemory.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:952fa573a644d57af39303243f9bb2c0c6ff847be1115307a00aa04947313ef1
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useMin.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:40557b6dc75ed299c5d2b0303d3fdb8207cead90440db6dd2989c4d4a0c9a1ca
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useMounted.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:46e8e03b2e57f7fd1a1712767335faad58252376f70b01725d6c7761e2240ee1
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useMouse.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:567b7a2361801d0e004f638ffdd2aecefbc0f2270d68b43123f3dd48d3bcbe0b
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useMouseInElement.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:a3e0de0f45e9fd610ea8b1221274bc4d9724f3f137517f9e0c3b7315c57abc26
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useMousePressed.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:dcd8eb5bbe22bc13443a3d845fea246e2a9439a5dff2cb75d16a07a8166c9ee6
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useMutationObserver.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:8c75d8e6fe53aab1cae57094ca8cc3494bc80c363597368cb673776884385be1
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useNProgress.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:16734ccfa5d9711d4f10395e7f2e15a1096eec231f0dbcaf640455920c56a971
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useNavigatorLanguage.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:5e2834f6f7a90117cb2af61d40307f64f725b86f1635bf924e36be1d9a7c4b58
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useNetwork.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:6ab76d70990faa3575f584e67d4d3d451bcb5e16b7f0d369cc56e4883ecde43d
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useNow.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:a69cebecb2623cd0eaa4fdafa6deafa15c11b9bf9efaf1fe235a037dfda922d5
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useObjectUrl.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:5f5afb913b4daa0fd05eceb4a11da174691640e35e09fe0b4b8feb3ef324e2e1
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useObservable.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:71685806b3b593664e20fcf067900bb5c4ff586bed662a90b98e71ad50ef8e1b
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useOffsetPagination.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:59156418280f0418953ee2128d0ce5854eb70160e3b1ecdd3ce800df6e462c97
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useOnline.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:33306a59772f83ce5ffd62aa008a4ba5885600bc45c0faf658b2efdd872de27c
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/usePageLeave.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:954fe54cecf7443c174e3f004735231ee4cd02a61a5501b9119f2326ebf749ed
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useParallax.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:c2ea1d90e584ec86fb750393b2c0ee8bac2dae1d292465de12bd03aba57737cb
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useParentElement.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:de5ddaecd9fb1cf126c20145cc4553fca672bfe34cf85dce1db7b82897505097
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/usePerformanceObserver.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:e4d08a6fe29999df23260a33b7338b3fbb261c57519986bef8b3ad3265c41b7d
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/usePermission.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:7795b7643071c4a99b023eda5b5856af6a6c062ca0d6c57b22301270bcc5a7ee
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/usePointer.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:3096e3198ebef52c5a8a108c1fcab4f54301f54e4dbc4ffd7199627d13ad7422
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/usePointerLock.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:8d08a87a4135e1a001f43c4ee08eeff19fc1a3c2f09514fdaefe5cd3c6742601
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/usePointerSwipe.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:7617eda227b011439740852bb3afc9e3e30f94506542fd6c69c5ce52abe85ce0
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/usePrecision.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:0a94094ef8bb7659cd63844ac113def81b8a3ac2d6723e847e59c568257fe958
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/usePreferredColorScheme.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:25c97e786607edbe34f60fec16e71b8f0a8a6d0db2ffde4582c0ec783a71d39a
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/usePreferredContrast.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:19d4c40156dde55c9b625ef62efe1d9da0732360af53a2f5741622dc870026e8
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/usePreferredDark.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:ba9a9f11b5252367c5c70e150418ba37ca5d59a88a0b75b1e877399e3cc7cd89
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/usePreferredLanguages.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:39abf8b4e9848b8d1fd617c61d3e28c5de824a58c059ff339aecee8acae8bb3a
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/usePreferredReducedMotion.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:fee9885231f487e385b8b81913773c26d1b88b4b0d8ea2e7c2c1ce4aa0ba8198
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/usePreferredReducedTransparency.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:0e078f3338c838487a2a8bac9715bbbbaadefa0371aa337be98c3a2afa2e3426
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/usePrevious.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:275f8e5f761534a87eed6063dfb10627378843fc756ae52bcc2e5cec328b8c14
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useProjection.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:e50deb798391a9827880710edd2dfafa9d2578de3c2a46dcc74fc23f3c32ad22
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useQRCode.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:492ac04d588c39600af85281d12cf97f4a4c5f061769905463602995b3ddb5c2
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useRTDB.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:64fcefdd491c9d4649ed4dfcb411e391da9f620e09af8a724c5f9bae6752f22d
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useRafFn.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:0ae0a77ff67407c0d85a96a4eddb041f5c2be76fdf005a8ce3fa3c5ce6753fcf
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useRefHistory.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:cdcaa8fbc381581bddfbd0763fc3465625cf16d726a547dfd606eb861c4595fd
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useResizeObserver.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:181ccaba2dc01d114cf26f7e49b4c2b8958b5036ecafbd20f3b9dc54afa5c857
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useRound.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:0c679f89de4cc342ea534635ab2a6f34c3f2640999ceecb3f70133011dec159e
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useRouteHash.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:12416e7f4a5ee64b51dc7827d42a1f279b48e893180f0bd7184b64ff04f32834
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useRouteParams.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:211ab2d00909cc6511e4ad4c75c5a9614a3299f6eaf7d6bad3143ad6fb60d746
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useRouteQuery.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:a03e5029fb2f3cf9c295d7cbfae62cda0a2bf1ec4b2ab99481e7a9b77542a885
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useSSRWidth.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:c55b29428278b5eaf0f66787485e764749572a48bc6f25b3c54892c2bc30b2e9
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useScreenOrientation.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:cb6e81054288c462782b31f59004d391ae1bf7ce966878c2006697b23422a57d
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useScreenSafeArea.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:82c6c358f42dfb558adb2e2c860f76a6b2b5967538cd0b261e13d576e6345fda
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useScriptTag.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:d6c3cfee44f806d4dec8ccba3491ac39fac5a28d1217bb370de3ab4574421827
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useScroll.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:99538e7a9023ec65c604c9c05cb76582791f85f7bf2b7959bd592b8fff125a4b
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useScrollLock.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:0901f163f5f907512f4d3e5c5a24c581fb546f9b4786d45c8f54f6568e182cc9
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useSessionStorage.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:b273ce17f32622cdd387f2595d1573b34b625f71ee0d68cd7e7680a7f92856a8
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useShare.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:c87894dcef3bf4b1b48fbf96374a1e7e2823af0a382e9803d307cac8bdc20d2e
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useSortable.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:9df5d289a25994efe22ef8e5e56b3160ffa43ccf83fdaa227539ef6659f5f303
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useSorted.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:9446f7d6de3054faa9a901f8ae94e64b85a4b4d61dc59f8c8a3ec1f33a550b0f
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useSpeechRecognition.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:6aa171f3c8490a826ac7794399cf7996b0a9484544573603a5df0ab7d855f781
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useSpeechSynthesis.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:da176aeca78e964a52f4c506c0e4c6ed726e967431a9ac9ffb46637ee3a16f11
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useStepper.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:6647e4bf8d8d782a34115700e18e7ba1dec82706b4cbc9ca57bc06e215b97417
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useStorage.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:055dd34a5a2dea27b398138a2818ff3dca67eb6000686651b11dd9e5e7a78172
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useStorageAsync.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:ff9a9e565d93fad4e7f5a5c688c978b8e3bf8f5991e6ee1f7d08be0a0993bc7c
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useStyleTag.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:d4813df222d9534aa7e6a820708a6201f6910b257d11b583a1ecfcf1e9e253bf
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useSubject.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:2fa09944450eeba37d63fd80c323a1e3de5da95cf30b46399a5f98516ffb8f56
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useSubscription.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:6007e11d57a68c3811dbfdac576b4b5aff9ad6a62ac0957f6ee71af3080a942f
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useSum.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:91c01211bd2e25c353bdaaacb17d0a4903500a77f3e7f6bd33425982f38c90fe
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useSupported.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:851afe051e3ee8a25486c9fcbac9436ae4f8b9ad28b0bc0e1c0fd0856be71937
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useSwipe.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:80d36644cbbf4c1e8bb7eeda9fca70cf38231d83d62d7c02e48cb2932c58f798
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useTemplateRefsList.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:e32c4076dca47d17f6f493a707eb57773a22e05b1dd36aae4725e304514453c5
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useTemporalNow.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:8080ae1d420ffea4a790ef05b6dd40c40d3c3efc244df1a5d4e9984c958cf098
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useTextDirection.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:82e44c0cac58572a9fe3f0587752301fa302bdadbc2266e78f3ec7bd520de7cf
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useTextSelection.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:fe4a606f2e8da35d4250b608e8bd7cd25deb85b63a60dde12741a2c0ee583b58
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useTextareaAutosize.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:e4e1512b3fd6b9f3642e16407dbc6929888a100c87175cc3dea45eae9cd7742e
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useThrottleFn.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:025e14e8f1513c8bcbeca45f5fe4e11f668cbd8f1a8cfc14182ba4e8da9f68d4
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useThrottledRefHistory.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:e5d38de5baf9fdca5a44a5c56033312ed1605dc8e723e6a83402598d7594c110
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useTimeAgo.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:9fda8a54576e200bfb5e52ebf309b583d74117d86e7d7a92b471fe8a9d166ca2
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useTimeAgoIntl.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:b36281b08180b04cb12a6237fe9f55e61737d47953a25cab8e523014ab3f9a8d
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useTimeout.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:1c6cd74f79b3dfec87b9f21d106755810ab2f7a74893353023b061dd1b4ba0aa
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useTimeoutFn.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:1c382d48eaa773367f273e9db4fdec43ece2e8292a3718dc1f64426f5590ea81
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useTimeoutPoll.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:ee3658bf35fef96ea8f8d3636123731664213692f3ab927d559d88d04da35f10
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useTimestamp.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:ef44c529e6fefb8cd5a126a6408cfe07bfe58abaa0bd9342d8ab3397aba864a1
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useTitle.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:9dd7094c16803c58dbab9e7c4eaf6a40cd15bdca05356f5132fb8e9eaac6a122
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useToNumber.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:66c1134df7da70325913944560a05f08273ac594fd6ea271dda0da7492bf841a
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useToString.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:8fb5da6e9fc107b54e07064335e91887db0541c5629a111d1676d39474e184d4
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useToggle.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:6e4e50c65bbb0f56c14946c42bcc7b1dee4c3d7aa2dc10c1ea1dc358c8d87fd1
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useTransition.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:bc6554d49f07cbea33d95af82bd7b0d64f22b6e93332728981b6db63750720fd
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useTrunc.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:0b5a820bc016852c69a3b0ff23e135692ff16dfce82f9ba72a0e85f6d126903b
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useUrlSearchParams.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:a5fdc15161cf9460bb186a2c53b88c894784f472a27a322afc6da57085787771
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useUserMedia.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:7ccb5ac41d39a7d07fc4c69b2ab34e6d9e19cfa861e46ee443c128083d7d4f4d
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useVModel.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:516581825e284ab4cb1d2a7ebdae7d6add0a70092e62cc4d95a73fe624dedb6e
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useVModels.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:7239ad95ed54dc551e006e46516a6455f45c6fca45da64a69746e9a8e6bdd701
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useVibrate.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:c545b53fce30cdc99b02ffed5b2b04ee07b57a2287ce681c022772ca8b757363
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useVirtualList.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:9d27da4fb06d3a3860fde13175e277f940fcd31f84186b1c53c7577a0f59069d
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useWakeLock.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:3eb9000244e7e478c029b5f1075c08dd8b0a2f1b178635f539cc6dd8da37b619
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useWebMCP.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:5dd17bc2387909cfe113a6572b9e236240a4715ac4c6b380caa68c75cb8a8496
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useWebNotification.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:0112ca0a331e59accc79e9467a86dde63d02a1c178f69b389acbafb8d5405884
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useWebSocket.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:c9aba94052393a3dba8986a2f65b456defaa5645e2233ddd3696d2040f69967e
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useWebWorker.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:4bc9240e3bc14c5e5db8e3c5b41b63d9b23ad286b5ae86606640a1b744999934
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useWebWorkerFn.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:c6646615a09bc55e9d44f0b0349283a86138e5a0b31ced4728286e5c38fa3655
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useWindowFocus.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:8317bf35fa08f9a3babf2549c7f36b98cf268b4f2c86f1c07b614dfa1f089d57
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useWindowScroll.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:564bb964dae2c51a9b75e9550247f97c80bd6d99d15b3769fd0e84e18283f6b6
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useWindowSize.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:eb41f40edc625036a15f69917b7e4a234dcb9b383b5514ffdf58a1bd9819feaa
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useZoomFactor.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:204895b74c22d9247f127255b3da75b164c07f9cd872c9e7dc7c12b28d8e8252
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/useZoomLevel.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:273c55a58d1b0306f6ee54c93a5b55c0151bb8b9d9cf0d26a58306735a048e84
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/watchArray.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:eb3730e84f59450706b6955ea1ad3f626c78d1e95b192ddbe81d0e344ccd4694
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/watchAtMost.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:32b83e4666c86c3bd848ebc65ee7c43a527669a78f7877285dfd6c35f27f6cc7
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/watchDebounced.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:d52125ab74a7104d9b781911145d7ec4e72b8c2db1e8928e76a17b630959a057
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/watchDeep.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:75206fc362aa651be732181a9393ac7f2ac179636289549b305e24a56d26ed0a
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/watchExtractedObservable.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:2a9ab189b51fdc9f8c454f28113824ebdaa2f4399e491a0ee05b1b67bbc97108
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/watchIgnorable.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:6d7acd0eaff9bd0ea1c4853cad72114948dea7f25c52a6c1ee564c412a612bed
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/watchImmediate.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:69b388c29825dc339c447e10805439675a70bc353a427a4d1514067599e4d1e8
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/watchOnce.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:5872c4de88c66b038aa618cb5b36dcfe0eb1a13ca4f5b636f5fb62de10bd9a28
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/watchPausable.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:e10e409e148cff52adca99dfcd32a657a683be6361feb9cfea0f8aabbb232237
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/watchThrottled.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:50f90f0d772a2e3dace88507ca7e10345a38cc3ad95c9e5e65505b90d0b0299e
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/watchTriggerable.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:0320c96a1d2b4b4fd44cb007ff15c6be99ebc821609347fdc0fd9d4fc81a956b
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/watchWithFilter.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:78e6f9e2b099873e21359d424344bc4b488e8fa64ae9a44c553b6420def35117
+  - kind: project-relative
+    target: codex
+    value: .agents/skills/vueuse-functions/references/whenever.md
+    runtime: null
+    scope: project
+    owners:
+      - vueuse/skills
+    active_owner: vueuse/skills
+    content_hash: sha256:3f414db7da638478ae17699ed57c1ea470c8c8c5f17373a469f35f1241333553
